@@ -287,7 +287,7 @@ const config: Config = {
     },
     animation: {
       none: 'none',
-      spin: 'spin 1s linear infinite',
+      spin: 'spin 0.85s cubic-bezier(0.4, 0.15, 0.6, 0.85) infinite normal',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
       'fade-in': 'fade-in 1s ease',
@@ -311,10 +311,11 @@ const config: Config = {
         }
       },
       spin: {
-        '0%, 100%': { transform: 'rotate(1turn)' },
+        '100%': { transform: 'rotate(1turn)' },
       },
       'fade-in': {
-        '0%, 100%': { opacity: theme('opacity.100') },
+        '0%': { opacity: theme('opacity.0') },
+        '100%': { opacity: theme('opacity.100') },
       },
       'appear-above': {
         '0%': {
