@@ -1,4 +1,4 @@
-import { inter } from '@/styles/fonts'
+import { inter } from '@/fonts'
 import './globals.css'
 import type { Metadata } from 'next'
 
