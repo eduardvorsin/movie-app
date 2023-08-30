@@ -193,7 +193,7 @@ const config: Config = {
       32: '8rem',
     },
     fontFamily: {
-      'sans': ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'var(--font-roboto)', 'Helvetica Neue', 'sans-serif'],
+      'sans': 'var(--font-inter)',
       'mono': ['ui-monospace', 'SFMono-Regular', 'SF Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'monospace'],
     },
     fontSize: {
