@@ -7,7 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "storybook": "concurrently 'npm:watch:*'",
+    "watch:tailwind": "tailwindcss -i ./src/app/globals.css -o ./src/styles/tailwind.css --watch",
+    "build:tailwind": "tailwindcss -i ./src/app/globals.css -o ./src/styles/tailwind.css",
+    "watch:storybook": "storybook dev -p 6006",
+    "test-storybook": "test-storybook",
+    "build-storybook": "npm build:tailwind && storybook build"
   },
   "dependencies": {
     "@types/node": "20.5.0",
