@@ -33,6 +33,14 @@ const sizeTypes = {
 	custom: '',
 } as const;
 
+const iconSizes = {
+	micro: 'w-3 h-3',
+	slim: 'w-4 h-4',
+	medium: 'w-5 h-5',
+	large: 'w-5 h-5',
+	custom: '',
+} as const;
+
 export default function Button({
 	className,
 	appearance = 'primary',
@@ -59,9 +67,17 @@ export default function Button({
 
 	const Children =
 		<>
-			{iconAfter}
+			{iconBefore && (
+				<span className={`${iconSizes[size]} ${size === 'micro' ? 'mr-1' : 'mr-2'}`}>
+					{iconBefore}
+				</span>
+			)}
 			{children}
-			{iconBefore}
+			{iconAfter && (
+				<span className={`${iconSizes[size]} ${size === 'micro' ? 'ml-1' : 'ml-2'}`}>
+					{iconAfter}
+				</span>
+			)}
 		</>
 
 	return (
