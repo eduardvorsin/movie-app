@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { MouseEventHandler } from 'react';
 
-type Props = {
+export type Props = {
 	className?: string,
 	appearance?: 'circle' | 'square',
 	isDisabled?: boolean,
