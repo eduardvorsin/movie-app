@@ -20,7 +20,7 @@ export type Props = {
 
 const appearanceTypes = {
 	primary: 'bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200',
-	secondary: 'bg-neutral-300 enabled:hover:bg-neutral-400 enabled:active:bg-neutral-500 dark:enabled:hover:bg-neutral-200 dark:enabled:active:bg-neutral-100',
+	secondary: 'bg-neutral-300 text-dark-neutral-0 enabled:hover:bg-neutral-400 enabled:active:bg-neutral-500 dark:enabled:hover:bg-neutral-200 dark:enabled:active:bg-neutral-100',
 	danger: 'bg-red-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-red-800 enabled:active:bg-red-900 dark:bg-red-400 dark:enabled:hover:bg-red-300 dark:enabled:active:bg-red-200',
 	warning: 'bg-yellow-400 text-neutral-1000 enabled:hover:bg-yellow-500 enabled:active:bg-yellow-600 dark:enabled:hover:bg-yellow-300 dark:enabled:active:bg-yellow-200',
 } as const;
@@ -49,11 +49,11 @@ export default function Button({
 	testId,
 }: Props) {
 	const classes = [
-		'font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] text-100 leading-2 inline-flex relative transition-colors duration-150 disabled:opacity-disabled disabled:cursor-not-allowed',
+		'items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] text-100 leading-2 inline-flex relative transition-colors duration-150 disabled:opacity-disabled disabled:cursor-not-allowed',
 		appearanceTypes[appearance],
 		sizeTypes[size],
-		fullWidth ? 'w-full' : '',
-		isLoading ? 'pointer-events-none text-transparent select-none' : '',
+		fullWidth ? 'w-full justify-center' : '',
+		isLoading ? 'pointer-events-none text-transparent dark:text-transparent select-none' : '',
 		className,
 	].join(' ');
 
@@ -77,6 +77,7 @@ export default function Button({
 				<Spinner
 					className='w-auto h-[80%] stroke-1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
 					size='custom'
+					color={appearance === 'secondary' ? 'stroke-dark-neutral-0' : 'stroke-neutral-0'}
 				/>
 			)}
 			{Children}
