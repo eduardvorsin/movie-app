@@ -2,7 +2,7 @@
 import { FocusEventHandler, MouseEventHandler, ReactNode } from 'react';
 import Spinner from '../Spinner/Spinner';
 
-type Props = {
+export type Props = {
 	appearance?: 'primary' | 'secondary' | 'warning' | 'danger',
 	className?: string,
 	iconAfter?: ReactNode,
