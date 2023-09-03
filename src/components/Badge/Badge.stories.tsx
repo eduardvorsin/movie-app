@@ -129,5 +129,3 @@ export const All: Story = {
 		},
 	},
 };
-
-//! прочесть https://storybook.js.org/docs/react/writing-tests/accessibility-testing
