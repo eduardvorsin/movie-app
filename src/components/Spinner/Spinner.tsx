@@ -2,6 +2,7 @@ type Props = {
 	className?: string,
 	size?: 'small' | 'medium' | 'large' | 'xlarge' | 'custom',
 	testId?: string,
+	color?: string,
 };
 
 const sizesTypes = {
@@ -15,12 +16,18 @@ const sizesTypes = {
 export default function Spinner({
 	className,
 	size = 'medium',
+	color,
 	testId,
 }: Props) {
 	const classes = [
 		'inline-flex align-middle',
 		sizesTypes[size],
 		className,
+	].join(' ');
+
+	const circleClasses = [
+		'stroke-[0.75] fill-none',
+		color ? color : 'dark:stroke-blue-300 stroke-blue-800',
 	].join(' ');
 
 	return (
@@ -33,7 +40,7 @@ export default function Spinner({
 				viewBox='0 0 16 16'
 			>
 				<circle
-					className='stroke-[0.75] fill-none dark:stroke-blue-300 stroke-blue-800'
+					className={circleClasses}
 					cx='8'
 					cy='8'
 					r='7'
