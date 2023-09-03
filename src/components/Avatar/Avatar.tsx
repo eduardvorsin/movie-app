@@ -7,7 +7,7 @@ export type Props = {
 	className?: string,
 	appearance?: 'circle' | 'square',
 	isDisabled?: boolean,
-	name: string,
+	label: string,
 	onClick?: MouseEventHandler<HTMLElement>,
 	size?: 'small' | 'xsmall' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'custom',
 	initials?: string,
@@ -126,7 +126,7 @@ export default function Avatar({
 	className,
 	appearance = 'circle',
 	isDisabled,
-	name,
+	label,
 	onClick,
 	presence,
 	size = 'medium',
@@ -148,6 +148,7 @@ export default function Avatar({
 	].join(' ');
 
 	const imageClasses = [
+		'object-cover',
 		appearance === 'circle' ? 'rounded-full' : borderRadiusTypes[size],
 	].join(' ');
 
@@ -169,8 +170,8 @@ export default function Avatar({
 		:
 		initials;
 
-	const labelText = !src ? `${name} ${status ?? presence ?? ''}` : undefined;
-	const altText = `${name} ${status ?? presence ?? ''}`;
+	const labelText = !src ? `${label} ${status ?? presence ?? ''}` : undefined;
+	const altText = `${label} ${status ?? presence ?? ''}`;
 
 	return (
 		<span
