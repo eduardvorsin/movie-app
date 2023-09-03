@@ -13,7 +13,7 @@ export type Props = {
 	onBlur?: FocusEventHandler<HTMLButtonElement>,
 	onClick?: MouseEventHandler<HTMLButtonElement>,
 	onFocus?: FocusEventHandler<HTMLButtonElement>,
-	size?: 'micro' | 'slim' | 'medium' | 'large',
+	size?: 'micro' | 'slim' | 'medium' | 'large' | 'custom',
 	children: ReactNode,
 	testId?: string,
 };
@@ -30,7 +30,8 @@ const sizeTypes = {
 	slim: 'py-1 px-3',
 	medium: 'py-2 px-4',
 	large: 'py-3 px-6 text-200',
-}
+	custom: '',
+} as const;
 
 export default function Button({
 	className,
