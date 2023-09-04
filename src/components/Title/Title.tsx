@@ -12,12 +12,12 @@ export type Props = {
 }
 
 const levelTypes = {
-	1: 'text-700 leading-6 text-dark-neutral-0 dark:text-neutral-0 font-bold',
-	2: 'text-600 leading-5 text-dark-neutral-0 dark:text-neutral-0 font-semibold',
-	3: 'text-500 leading-4 text-dark-neutral-0 dark:text-neutral-0 font-semibold',
-	4: 'text-400 leading-3 text-dark-neutral-0 dark:text-neutral-0 font-semibold',
-	5: 'text-300 leading-2 text-dark-neutral-0 dark:text-neutral-0 font-semibold',
-	6: 'text-200 leading-1 text-dark-neutral-0 dark:text-neutral-0 font-semibold',
+	1: 'text-700 leading-6 font-bold',
+	2: 'text-600 leading-5 font-semibold',
+	3: 'text-500 leading-4 font-semibold',
+	4: 'text-400 leading-3 font-semibold',
+	5: 'text-300 leading-2 font-semibold',
+	6: 'text-200 leading-1 font-semibold',
 } as const;
 
 export default function Title({
@@ -27,7 +27,7 @@ export default function Title({
 	as = 'h6',
 }: Props) {
 	const classes = [
-		'text-200 -tracking-[0.01em]',
+		'text-200 text-dark-neutral-0 dark:text-neutral-0 -tracking-[0.01em]',
 		levelTypes[level],
 		className,
 	].join(' ');
