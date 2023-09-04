@@ -1,4 +1,4 @@
-type Props = {
+export type Props = {
 	className?: string,
 	size?: 'small' | 'medium' | 'large' | 'xlarge' | 'custom',
 	testId?: string,
