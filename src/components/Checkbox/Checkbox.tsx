@@ -47,7 +47,6 @@ export default function Checkbox({
 }: Props) {
 	const labelClasses = [
 		'inline-flex py-1 pl-5 items-center',
-		sizeTypes[size],
 		isDisabled ? 'opacity-disabled cursor-not-allowed' : 'cursor-pointer',
 	].join(' ');
 
@@ -76,7 +75,7 @@ export default function Checkbox({
 					data-invalid={isInvalid}
 				/>
 				<svg
-					className='-ml-5 w-5 h-5 rounded-1 border-2 border-neutral-500 fill-none peer-checked:bg-blue-700 peer-checked:fill-neutral-0 peer-checked:border-blue-500 peer-focus:border-blue-500 peer-data-[invalid]:border-red-600 transition-colors duration-100 ease-linear dark:peer-data-[invalid]:border-red-500 dark:peer-checked:bg-blue-400 dark:peer-focus:border-blue-300 dark:peer-checked:fill-dark-neutral-0 dark:peer-checked:border-blue-300 dark:border-dark-neutral-800'
+					className={`${sizeTypes[size]} -ml-5 rounded-1 border-2 border-neutral-500 fill-none peer-checked:bg-blue-700 peer-checked:fill-neutral-0 peer-checked:border-blue-500 peer-focus:border-blue-500 peer-data-[invalid]:border-red-600 transition-colors duration-100 ease-linear dark:peer-data-[invalid]:border-red-500 dark:peer-checked:bg-blue-400 dark:peer-focus:border-blue-300 dark:peer-checked:fill-dark-neutral-0 dark:peer-checked:border-blue-300 dark:border-dark-neutral-800`}
 					viewBox='0 0 20 20'
 				>
 					<path
