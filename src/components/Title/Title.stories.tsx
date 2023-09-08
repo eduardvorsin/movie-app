@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Title from './Title';
+import Title, { Props } from './Title';
 
-const levels = [1, 2, 3, 4, 5, 6] as const;
+type Levels = Exclude<Props['level'], undefined>;
+const levels: Levels[] = [1, 2, 3, 4, 5, 6];
 
 const meta: Meta<typeof Title> = {
 	title: 'components/Title',
