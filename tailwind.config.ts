@@ -174,7 +174,7 @@ const config: Config = {
       '2xl': '90rem',
     },
     spacing: {
-      0: '0',
+      0: '0rem',
       0.25: '0.0625rem',
       0.5: '0.125rem',
       1: '0.25rem',
