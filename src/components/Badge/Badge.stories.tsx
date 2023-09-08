@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Badge from './Badge';
+import Badge, { Props } from './Badge';
+
+type Appearance = Exclude<Props['appearance'], undefined>;
+const appearances: Appearance[] = ['default', 'info', 'sucsess', 'warning', 'danger'];
 
 const meta: Meta<typeof Badge> = {
 	title: 'components/Badge',
@@ -100,8 +103,6 @@ export const Danger: Story = {
 		},
 	},
 };
-
-const appearances = ['default', 'info', 'sucsess', 'warning', 'danger'] as const;
 
 export const All: Story = {
 	render: () => {
