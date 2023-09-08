@@ -64,6 +64,7 @@ export const Levels: Story = {
 		>
 			{levels.map((level) => (
 				<Title
+					key={level}
 					className='mb-4 last:mb-4'
 					level={level}
 					as={`h${level}`}
