@@ -3,6 +3,10 @@ import Button, { Props } from './Button';
 import Add from '../../assets/icons/add.svg';
 import Minus from '../../assets/icons/minus.svg';
 
+type Sizes = Exclude<Props['size'], undefined>;
+
+const sizes: Sizes[] = ['micro', 'slim', 'medium', 'large'];
+
 type Variant = {
 	appearance: Props['appearance'],
 	children: string,
@@ -183,8 +187,6 @@ const all: AllVariants = {
 		}
 	],
 };
-
-const sizes = ['micro', 'slim', 'medium', 'large'] as const;
 
 const meta: Meta<typeof Button> = {
 	title: 'components/Button',
