@@ -2,19 +2,23 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Avatar, { Props } from './Avatar';
 import AvatarPicture from '../../assets/avatar-example.jpg';
 
+type Statuses = Exclude<Props['status'], undefined>;
+type Sizes = Exclude<Props['size'], undefined>;
+type Presences = Exclude<Props['presence'], undefined>;
+
 type Variant = {
 	id: number,
 	appearance?: Props['appearance'],
 	isDisabled?: Props['isDisabled'],
 	initials?: Props['initials'],
-	presence?: Props['presence'],
-	status?: Props['status'],
+	presence?: Presences,
+	status?: Statuses,
 	src?: Props['src'],
 };
 
-const statuses = ['approved', 'declined', 'locked'] as const;
-const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'] as const;
-const presences = ['offline', 'online'] as const;
+const statuses: Statuses[] = ['approved', 'declined', 'locked'];
+const sizes: Sizes[] = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
+const presences: Presences[] = ['offline', 'online'];
 const variants: Variant[] = [
 	{
 		id: 0,
