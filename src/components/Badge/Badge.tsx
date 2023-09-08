@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-type Props = {
+export type Props = {
 	className?: string,
 	testId?: string,
 	appearance?: 'default' | 'info' | 'sucsess' | 'warning' | 'danger',
