@@ -300,7 +300,7 @@ export const All: Story = {
 						<Avatar
 							className='mr-4 last:mr-0 mb-4 last:mb-0'
 							appearance={variant.appearance}
-							key={variant.id}
+							key={`${variant.id}-${size}`}
 							isDisabled={variant.isDisabled}
 							initials={variant.initials}
 							src={variant.src}
