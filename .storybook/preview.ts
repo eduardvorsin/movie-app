@@ -13,6 +13,19 @@ const preview: Preview = {
     },
     docs: {
       toc: true,
+    },
+    backgrounds: {
+      default: 'light',
+      values: [
+        {
+          name: 'light',
+          value: '#ffffff',
+        },
+        {
+          name: 'dark',
+          value: '#1d2125',
+        }
+      ],
     }
   },
 
