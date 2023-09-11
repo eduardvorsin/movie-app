@@ -3,7 +3,7 @@ import Button, { Props } from './Button';
 import Add from '../../assets/icons/add.svg';
 import Minus from '../../assets/icons/minus.svg';
 
-type Sizes = Exclude<Props['size'], undefined>;
+type Sizes = Exclude<Props['size'], 'custom' | undefined>;
 
 const sizes: Sizes[] = ['micro', 'slim', 'medium', 'large'];
 
@@ -15,13 +15,7 @@ type Variant = {
 	hasIcon?: boolean,
 };
 
-type AllVariants = {
-	micro: Variant[],
-	slim: Variant[],
-	medium: Variant[],
-	large: Variant[],
-	fullWidth: Variant[],
-};
+type AllVariants = Record<Sizes | 'fullWidth', Variant[]>;
 
 const all: AllVariants = {
 	micro: [
