@@ -1,0 +1,15 @@
+import { Meta, ColorPalette, ColorItem, Title } from '@storybook/blocks';
+import config from '../../../tailwind.config.ts';
+import SpacingList from '../../_docs/blocks/SpacingList.tsx';
+
+<Meta title="Desing System/Spacing" />
+
+<Title>Spacing</Title>
+
+## Vertical
+
+<SpacingList data={config.theme.spacing} isVertical/>
+
+## Horizontal
+
+<SpacingList data={config.theme.spacing} />
