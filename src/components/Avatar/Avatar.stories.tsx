@@ -5,7 +5,6 @@ import AvatarPicture from '../../assets/avatar-example.jpg';
 type Statuses = Exclude<Props['status'], undefined>;
 type Sizes = Exclude<Props['size'], undefined>;
 type Presences = Exclude<Props['presence'], undefined>;
-
 type Variant = {
 	id: number,
 	appearance?: Props['appearance'],
@@ -296,10 +295,13 @@ export const All: Story = {
 	},
 	render: () => (
 		<div
-			className='grid gap-y-6 items-start'
+			className='flex flex-col'
 		>
 			{sizes.map((size) => (
-				<div className='flex flex-wrap items-start'>
+				<div
+					key={size}
+					className='flex flex-wrap items-start mb-6 last:mb-0'
+				>
 					{variants.map((variant) => (
 						<Avatar
 							className='mr-4 last:mr-0 mb-4 last:mb-0'
@@ -319,3 +321,4 @@ export const All: Story = {
 		</div>
 	),
 };
+
