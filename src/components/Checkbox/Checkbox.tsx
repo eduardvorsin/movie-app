@@ -2,21 +2,21 @@
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 import InlineMessage from '../InlineMessage/InlineMessage';
 
-type Props = {
+export type Props = {
+	id: string,
+	value: string,
+	name: string,
+	label: string,
+	onChange: ChangeEventHandler<HTMLInputElement>,
 	className?: string,
-	id?: string,
-	value?: string,
 	testId?: string,
 	size?: 'small' | 'medium' | 'large' | 'xlarge',
-	name?: string,
-	label?: string,
 	error?: string,
 	isChecked?: boolean,
 	defaultChecked?: boolean,
 	isDisabled?: boolean,
 	isRequired?: boolean,
 	isInvalid?: boolean,
-	onChange?: ChangeEventHandler<HTMLInputElement>,
 	onFocus?: FocusEventHandler<HTMLInputElement>,
 	onBlur?: FocusEventHandler<HTMLInputElement>,
 };
