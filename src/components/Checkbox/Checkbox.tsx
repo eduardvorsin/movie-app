@@ -73,7 +73,7 @@ export default function Checkbox({
 					defaultChecked={defaultChecked}
 					required={isRequired}
 					aria-invalid={isInvalid}
-					aria-describedby={`${id}-error-message`}
+					aria-describedby={error ? `${id}-error-message` : undefined}
 					data-invalid={isInvalid}
 				/>
 				<svg
@@ -104,8 +104,10 @@ export default function Checkbox({
 					className='mt-1'
 					message={error}
 					fieldId={`${id}-error-message`}
+					appearance='error'
 				/>
 			)}
 		</div>
 	);
 };
+
