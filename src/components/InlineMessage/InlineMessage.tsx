@@ -11,10 +11,10 @@ export type Props = {
 
 const appearanceTypes = {
 	connectivity: 'text-blue-700 dark:text-blue-400',
-	confirmation: 'text-green-600 dark:text-green-500',
-	info: 'text-purple-600 dark:text-purple-500',
-	warning: 'text-orange-600 dark:text-yellow-500',
-	error: 'text-red-600 dark:text-red-500',
+	confirmation: 'text-green-800 dark:text-green-400',
+	info: 'text-purple-700 dark:text-purple-400',
+	warning: 'text-orange-800 dark:text-yellow-300',
+	error: 'text-red-700 dark:text-red-400',
 } as const;
 
 const apperanceIcons = {
