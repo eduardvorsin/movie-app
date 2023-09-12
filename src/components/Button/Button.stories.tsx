@@ -425,11 +425,11 @@ export const Sizes: Story = {
 export const All: Story = {
 	render: () => {
 		return (
-			<div className='grid gap-y-6 items-start'>
+			<div className='flex flex-col items-start'>
 				{(Object.keys(all) as Array<keyof typeof all>).map((size) => (
 					<div
 						key={size}
-						className='flex flex-wrap items-start'
+						className='flex flex-wrap items-start mb-6 last:mb-6'
 					>
 						{all[size].map((variant) => (
 							<Button
@@ -459,4 +459,3 @@ export const All: Story = {
 		},
 	},
 };
-
