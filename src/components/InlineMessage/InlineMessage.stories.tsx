@@ -126,7 +126,7 @@ export const All: Story = {
 				variants[variant].map((appearance) => (
 					<InlineMessage
 						key={`${variant}-${appearance}`}
-						fieldId={appearance}
+						fieldId={`${variant}-${appearance}`}
 						message={appearance}
 						iconPosition={variant}
 						appearance={appearance}
