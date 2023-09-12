@@ -1,8 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Spinner, { Props } from './Spinner';
 
+type Sizes = Exclude<Props['size'], undefined>;
+const sizes: Sizes[] = ['small', 'medium', 'large', 'xlarge'];
+
 type Variant = {
-	size: Props['size'],
+	size: Sizes,
 	color: Props['color'],
 }
 
@@ -77,8 +80,6 @@ export const Color: Story = {
 		},
 	},
 };
-
-const sizes = ['small', 'medium', 'large', 'xlarge'] as const;
 
 export const Sizes: Story = {
 	parameters: {
