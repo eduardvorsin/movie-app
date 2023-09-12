@@ -118,7 +118,6 @@ const TextFieldWithHooks = (props: Omit<Props, 'onChange' | 'value'>) => {
 	)
 };
 
-
 export const Default: Story = {
 	args: {
 		label: 'Default',
@@ -284,15 +283,15 @@ export const Error: Story = {
 };
 
 type Variant = {
-	label: string
+	label: Props['label']
 	isDisabled?: boolean,
 	isInvalid?: boolean,
 	isReadOnly?: boolean,
 	isRequired?: boolean,
 	labelHidden?: boolean,
 	clearButton?: boolean,
-	error?: string,
-	placeholder?: string,
+	error?: Props['error'],
+	placeholder?: Props['placeholder'],
 }
 
 const variants: Variant[] = [
