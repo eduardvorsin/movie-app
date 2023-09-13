@@ -27,7 +27,7 @@ export default function Title({
 	as = 'h6',
 }: Props) {
 	const classes = [
-		'text-200 text-dark-neutral-0 dark:text-neutral-0 -tracking-[0.01em]',
+		'text-dark-neutral-0 dark:text-neutral-0 -tracking-[0.01em]',
 		levelTypes[level],
 		className,
 	].join(' ');
