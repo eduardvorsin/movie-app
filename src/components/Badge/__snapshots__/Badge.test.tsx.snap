@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge tests is a basic snapshot 1`] = `
+<span
+  class="inline-flex rounded-5 text-75 text-center leading-1 py-0.5 px-2 bg-neutral-300 "
+>
+  Badge
+</span>
+`;
+
+exports[`Badge tests is a snapshot with the appearance type "danger" 1`] = `
+<span
+  class="inline-flex rounded-5 text-75 text-center leading-1 py-0.5 px-2 bg-red-200 "
+>
+  Badge
+</span>
+`;
+
+exports[`Badge tests is a snapshot with the appearance type "default" 1`] = `
+<span
+  class="inline-flex rounded-5 text-75 text-center leading-1 py-0.5 px-2 bg-neutral-300 "
+>
+  Badge
+</span>
+`;
+
+exports[`Badge tests is a snapshot with the appearance type "info" 1`] = `
+<span
+  class="inline-flex rounded-5 text-75 text-center leading-1 py-0.5 px-2 bg-blue-200 "
+>
+  Badge
+</span>
+`;
+
+exports[`Badge tests is a snapshot with the appearance type "sucsess" 1`] = `
+<span
+  class="inline-flex rounded-5 text-75 text-center leading-1 py-0.5 px-2 bg-green-200 "
+>
+  Badge
+</span>
+`;
+
+exports[`Badge tests is a snapshot with the appearance type "warning" 1`] = `
+<span
+  class="inline-flex rounded-5 text-75 text-center leading-1 py-0.5 px-2 bg-yellow-200 "
+>
+  Badge
+</span>
+`;
