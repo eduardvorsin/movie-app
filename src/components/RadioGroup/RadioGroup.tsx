@@ -1,6 +1,7 @@
 'use client';
 import { ChangeEventHandler } from 'react';
 import Radio from '../Radio/Radio';
+import InlineMessage from '../InlineMessage/InlineMessage';
 
 type Choice = {
 	value: string,
@@ -10,6 +11,7 @@ type Choice = {
 }
 
 type Props = {
+	id: string,
 	className?: string,
 	titleHidden?: boolean,
 	isDisabled?: boolean,
@@ -25,6 +27,7 @@ type Props = {
 };
 
 export default function RadioGroup({
+	id,
 	className,
 	titleHidden,
 	isDisabled,
@@ -67,7 +70,9 @@ export default function RadioGroup({
 				)}
 			</legend>
 
-			<ul>
+			<ul
+				aria-labelledby={`${id}-error-message`}
+			>
 				{choices.map((choice) => (
 					<li
 						className='mb-1'
@@ -89,18 +94,12 @@ export default function RadioGroup({
 			</ul>
 
 			{error && (
-				<p className='mt-1 text-red-800 dark:text-red-300 flex items-center text-75'>
-					<svg
-						className='fill-current w-4 h-4 mr-0.5'
-						viewBox="0 0 20 20">
-						<path d="M10 6a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5a.75.75 0 0 1 .75-.75Z" />
-						<path d="M11 13a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" />
-						<path fillRule="evenodd" d="M11.237 3.177a1.75 1.75 0 0 0-2.474 0l-5.586 5.585a1.75 1.75 0 0 0 0 2.475l5.586 5.586a1.75 1.75 0 0 0 2.474 0l5.586-5.586a1.75 1.75 0 0 0 0-2.475l-5.586-5.585Zm-1.414 1.06a.25.25 0 0 1 .354 0l5.586 5.586a.25.25 0 0 1 0 .354l-5.586 5.585a.25.25 0 0 1-.354 0l-5.586-5.585a.25.25 0 0 1 0-.354l5.586-5.586Z" />
-					</svg>
-					{error}
-				</p>
+				<InlineMessage
+					className='mt-1'
+					message={error}
+					fieldId={`${id}-error-message`}
+				/>
 			)}
 		</fieldset>
 	);
 };
-
