@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title tests is a basic snapshot 1`] = `
+<h6
+  class="text-dark-neutral-0 dark:text-neutral-0 -tracking-[0.01em] text-400 leading-3 font-semibold "
+>
+  Title
+</h6>
+`;
+
+exports[`Title tests is a snapshot with header level 2 1`] = `
+<h6
+  class="text-dark-neutral-0 dark:text-neutral-0 -tracking-[0.01em] text-600 leading-5 font-semibold "
+>
+  Title
+</h6>
+`;
+
+exports[`Title tests is a snapshot with html element h5 1`] = `
+<h5
+  class="text-dark-neutral-0 dark:text-neutral-0 -tracking-[0.01em] text-500 leading-4 font-semibold "
+>
+  Title
+</h5>
+`;
