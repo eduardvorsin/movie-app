@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner tests is a basic snapshot 1`] = `
+<span
+  class="inline-flex align-middle w-6 h-6 "
+  data-testid="spinner"
+>
+  <svg
+    class="animate-spin"
+    viewBox="0 0 16 16"
+  >
+    <circle
+      class="stroke-[0.75] fill-none dark:stroke-blue-300 stroke-blue-800"
+      cx="8"
+      cy="8"
+      r="7"
+      stroke-dasharray="60"
+      stroke-dashoffset="50"
+      stroke-linecap="round"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Spinner tests is a snapshot with a size of type "custom" 1`] = `
+<span
+  class="inline-flex align-middle  "
+  data-testid="spinner"
+>
+  <svg
+    class="animate-spin"
+    viewBox="0 0 16 16"
+  >
+    <circle
+      class="stroke-[0.75] fill-none dark:stroke-blue-300 stroke-blue-800"
+      cx="8"
+      cy="8"
+      r="7"
+      stroke-dasharray="60"
+      stroke-dashoffset="50"
+      stroke-linecap="round"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Spinner tests is a snapshot with a size of type "large" 1`] = `
+<span
+  class="inline-flex align-middle w-12 h-12 "
+  data-testid="spinner"
+>
+  <svg
+    class="animate-spin"
+    viewBox="0 0 16 16"
+  >
+    <circle
+      class="stroke-[0.75] fill-none dark:stroke-blue-300 stroke-blue-800"
+      cx="8"
+      cy="8"
+      r="7"
+      stroke-dasharray="60"
+      stroke-dashoffset="50"
+      stroke-linecap="round"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Spinner tests is a snapshot with a size of type "medium" 1`] = `
+<span
+  class="inline-flex align-middle w-6 h-6 "
+  data-testid="spinner"
+>
+  <svg
+    class="animate-spin"
+    viewBox="0 0 16 16"
+  >
+    <circle
+      class="stroke-[0.75] fill-none dark:stroke-blue-300 stroke-blue-800"
+      cx="8"
+      cy="8"
+      r="7"
+      stroke-dasharray="60"
+      stroke-dashoffset="50"
+      stroke-linecap="round"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Spinner tests is a snapshot with a size of type "small" 1`] = `
+<span
+  class="inline-flex align-middle w-4, h-4 "
+  data-testid="spinner"
+>
+  <svg
+    class="animate-spin"
+    viewBox="0 0 16 16"
+  >
+    <circle
+      class="stroke-[0.75] fill-none dark:stroke-blue-300 stroke-blue-800"
+      cx="8"
+      cy="8"
+      r="7"
+      stroke-dasharray="60"
+      stroke-dashoffset="50"
+      stroke-linecap="round"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Spinner tests is a snapshot with a size of type "xlarge" 1`] = `
+<span
+  class="inline-flex align-middle w-24 h-24 "
+  data-testid="spinner"
+>
+  <svg
+    class="animate-spin"
+    viewBox="0 0 16 16"
+  >
+    <circle
+      class="stroke-[0.75] fill-none dark:stroke-blue-300 stroke-blue-800"
+      cx="8"
+      cy="8"
+      r="7"
+      stroke-dasharray="60"
+      stroke-dashoffset="50"
+      stroke-linecap="round"
+    />
+  </svg>
+</span>
+`;
