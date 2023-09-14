@@ -3,6 +3,7 @@ import CommentInfoItem from '../CommentInfoItem/CommentInfoItem';
 import InlineMessage from '../InlineMessage/InlineMessage';
 
 type Props = {
+	className?: string,
 	actions?: ReactNode[],
 	errorActions?: ReactNode[],
 	error?: string,
@@ -26,6 +27,7 @@ type Props = {
 };
 
 export default function Comment({
+	className,
 	id,
 	avatar,
 	content,
@@ -50,6 +52,7 @@ export default function Comment({
 	const Heading = headingLevel;
 	const classes = [
 		'grid grid-cols-[auto_1fr] gap-x-2 gap-y-4 p-2 relative',
+		className
 	].join(' ');
 	const actionItemClasses = 'before:content-["·"] before:ml-1 before:mr-1 first:before:hidden';
 
