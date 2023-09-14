@@ -19,12 +19,12 @@ export default function CommentAction({
 	onFocus,
 }: Props) {
 	const classes = [
-		'disabled:opacity-disabled disabled:cursor-not-allowed',
+		'inline-flex font-medium text-100 text-neutral-800 dark:text-dark-neutral-800 enabled:hover:text-neutral-700 dark:enabled:hover:text-dark-neutral-900 enabled:hover:underline enabled:active:text-neutral-600 dark:enabled:active:text-dark-neutral-1000 disabled:opacity-disabled disabled:cursor-not-allowed',
 		className,
 	].join(' ');
 	return (
 		<button
-			className={`${classes} inline-flex font-medium text-100 text-neutral-800 dark:text-dark-neutral-800 hover:text-neutral-700 dark:hover:text-dark-neutral-900 hover:underline active:text-neutral-600 dark:active:text-dark-neutral-1000`}
+			className={classes}
 			disabled={isDisabled}
 			data-testid={testId}
 			onClick={onClick}
