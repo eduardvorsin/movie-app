@@ -1,5 +1,3 @@
-'use client'
-
 export type Props = {
 	className?: string,
 	appearance?: 'connectivity' | 'confirmation' | 'info' | 'warning' | 'error',
