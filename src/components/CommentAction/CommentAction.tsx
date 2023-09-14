@@ -5,7 +5,7 @@ type Props = {
 	className?: string,
 	children: ReactNode,
 	isDisabled?: boolean,
-	onClick?: MouseEventHandler<HTMLButtonElement>,
+	onClick: MouseEventHandler<HTMLButtonElement>,
 	onFocus?: FocusEventHandler<HTMLButtonElement>,
 	testId?: string,
 };
