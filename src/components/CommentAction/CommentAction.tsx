@@ -1,3 +1,4 @@
+'use client';
 import { FocusEventHandler, MouseEventHandler, ReactNode } from 'react';
 
 type Props = {
