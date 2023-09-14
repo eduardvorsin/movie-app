@@ -3,17 +3,18 @@ import CommentInfoItem from '../CommentInfoItem/CommentInfoItem';
 import InlineMessage from '../InlineMessage/InlineMessage';
 
 type Props = {
+	id: string,
+	author: string,
+	avatar: ReactNode,
+	content: string,
+	type: string,
 	className?: string,
 	actions?: ReactNode[],
 	errorActions?: ReactNode[],
 	error?: string,
-	id: string,
 	isError?: boolean,
 	afterContent?: ReactNode,
-	author: string,
-	avatar: ReactNode,
 	children?: ReactNode,
-	content: string,
 	isEdited?: boolean,
 	restrictedTo?: string,
 	savingText?: string,
@@ -23,7 +24,6 @@ type Props = {
 	headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
 	shouldRenderNestedCommentsInline?: boolean,
 	testId?: string,
-	type: string,
 };
 
 export default function Comment({
