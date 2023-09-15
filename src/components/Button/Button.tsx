@@ -1,6 +1,7 @@
 'use client';
 import { FocusEventHandler, MouseEventHandler, ReactNode } from 'react';
 import Spinner from '../Spinner/Spinner';
+import Link from 'next/link';
 
 export type Props = {
 	appearance?: 'primary' | 'secondary' | 'warning' | 'danger',
@@ -10,12 +11,13 @@ export type Props = {
 	isDisabled?: boolean,
 	isLoading?: boolean,
 	fullWidth?: boolean,
-	onBlur?: FocusEventHandler<HTMLButtonElement>,
-	onClick?: MouseEventHandler<HTMLButtonElement>,
-	onFocus?: FocusEventHandler<HTMLButtonElement>,
+	onBlur?: FocusEventHandler<HTMLElement>,
+	onClick?: MouseEventHandler<HTMLElement>,
+	onFocus?: FocusEventHandler<HTMLElement>,
 	size?: 'micro' | 'slim' | 'medium' | 'large' | 'custom',
 	children: ReactNode,
 	testId?: string,
+	href?: string,
 };
 
 const appearanceTypes = {
@@ -54,10 +56,12 @@ export default function Button({
 	onFocus,
 	size = 'medium',
 	children,
+	href,
 	testId,
 }: Props) {
 	const classes = [
-		'items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] text-100 leading-2 inline-flex relative transition-colors duration-150 disabled:opacity-disabled disabled:cursor-not-allowed',
+		'items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] text-100 leading-2 inline-flex relative transition-colors duration-150',
+		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
 		appearanceTypes[appearance],
 		sizeTypes[size],
 		fullWidth ? 'w-full justify-center' : '',
@@ -66,19 +70,45 @@ export default function Button({
 	].join(' ');
 
 	const Children =
-		<>
-			{iconBefore && (
-				<span className={`${iconSizes[size]} ${size === 'micro' ? 'mr-1' : 'mr-2'}`}>
-					{iconBefore}
-				</span>
-			)}
-			{children}
-			{iconAfter && (
-				<span className={`${iconSizes[size]} ${size === 'micro' ? 'ml-1' : 'ml-2'}`}>
-					{iconAfter}
-				</span>
-			)}
-		</>
+		(
+			<>
+				{isLoading && (
+					<Spinner
+						className='w-auto h-[80%] stroke-1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
+						size='custom'
+						color={appearance === 'secondary' ? 'stroke-dark-neutral-0' : 'stroke-neutral-0'}
+						testId='spinner'
+					/>
+				)}
+
+				{iconBefore && (
+					<span className={`${iconSizes[size]} ${size === 'micro' ? 'mr-1' : 'mr-2'}`}>
+						{iconBefore}
+					</span>
+				)}
+				{children}
+				{iconAfter && (
+					<span className={`${iconSizes[size]} ${size === 'micro' ? 'ml-1' : 'ml-2'}`}>
+						{iconAfter}
+					</span>
+				)}
+			</>
+		);
+
+	if (href) {
+		return (
+			<Link
+				className={classes}
+				href={href}
+				onClick={onClick}
+				onBlur={onBlur}
+				onFocus={onFocus}
+				data-testid={testId}
+			>
+				{Children}
+			</Link>
+		);
+	}
 
 	return (
 		<button
@@ -89,15 +119,7 @@ export default function Button({
 			disabled={isDisabled}
 			data-testid={testId}
 		>
-			{isLoading && (
-				<Spinner
-					className='w-auto h-[80%] stroke-1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
-					size='custom'
-					color={appearance === 'secondary' ? 'stroke-dark-neutral-0' : 'stroke-neutral-0'}
-				/>
-			)}
 			{Children}
 		</button>
 	);
 };
-
