@@ -29,8 +29,8 @@ export default function Link({
 	target,
 }: Props) {
 	const linkClasses = [
-		'underline  text-blue-500 hover:text-blue-600 hover:no-underline active:text-blue-700',
-		isDisabled ? 'opacity-disabled pointer-events-none cursor-not-allowed' : '',
+		'underline text-blue-500 hover:text-blue-600 hover:no-underline active:text-blue-700',
+		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
 		className,
 	].join(' ');
 
