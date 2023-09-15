@@ -340,6 +340,20 @@ export const FullWidth: Story = {
 	},
 };
 
+export const ReactRouterLink: Story = {
+	args: {
+		children: 'Router Link',
+		href: '/',
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'Allows you to use the button as a link for routing',
+			},
+		},
+	},
+};
+
 export const EventCallbacks: Story = {
 	argTypes: {
 		onClick: {
