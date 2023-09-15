@@ -2,10 +2,9 @@ import { AnchorHTMLAttributes, FocusEventHandler, MouseEventHandler, ReactNode }
 import NextLink from 'next/link';
 
 type Props = {
-	id?: string,
-	appearance: 'default' | 'danger' | 'link' | 'primary' | 'warning',
 	children: ReactNode,
 	href: string,
+	id?: string,
 	className?: string,
 	onClick?: MouseEventHandler<HTMLAnchorElement>,
 	onFocus?: FocusEventHandler<HTMLAnchorElement>,
