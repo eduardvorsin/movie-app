@@ -23,7 +23,7 @@ export default function Link({
 	onClick,
 	onFocus,
 	onBlur,
-	isExternal,
+	isExternal = false,
 	testId,
 	isDisabled = false,
 	target,
