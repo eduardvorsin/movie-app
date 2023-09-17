@@ -18,6 +18,7 @@ export type Props = {
 	children: ReactNode,
 	testId?: string,
 	href?: string,
+	iconButton?: boolean,
 };
 
 const appearanceTypes = {
@@ -28,13 +29,21 @@ const appearanceTypes = {
 	danger: 'bg-red-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-red-800 enabled:active:bg-red-900 dark:bg-red-400 dark:enabled:hover:bg-red-300 dark:enabled:active:bg-red-200',
 	warning: 'bg-yellow-500 text-neutral-1000 enabled:hover:bg-yellow-600 enabled:active:bg-yellow-700 dark:enabled:hover:bg-yellow-300 dark:enabled:active:bg-yellow-200',
 } as const;
+
+const iconButtonAppearances = {
+	primary: 'text-blue-700 enabled:hover:text-blue-800 enabled:active:text-blue-900 dark:text-blue-400 dark:enabled:hover:text-blue-300 dark:enabled:active:text-blue-200',
+	secondary: 'text-neutral-300 enabled:hover:text-neutral-400 enabled:active:text-neutral-500 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100',
+	success: 'text-green-700 enabled:hover:text-green-800 enabled:active:text-green-900 dark:text-green-400 dark:enabled:hover:text-green-300 dark:enabled:active:text-green-200',
+	discovery: 'text-purple-700 enabled:hover:text-purple-800 enabled:active:text-purple-900 dark:text-purple-400 dark:enabled:hover:text-purple-300 dark:enabled:active:text-purple-200',
+	danger: 'text-red-700 enabled:hover:text-red-800 enabled:active:text-red-900 dark:text-red-400 dark:enabled:hover:text-red-300 dark:enabled:active:text-red-200',
+	warning: 'text-yellow-500 enabled:hover:text-yellow-600 enabled:active:text-yellow-700 dark:enabled:hover:text-yellow-300 dark:enabled:active:text-yellow-300',
 } as const;
 
 const sizeTypes = {
 	micro: 'py-0.5 px-2',
 	slim: 'py-1 px-3',
 	medium: 'py-2 px-4',
-	large: 'py-3 px-6 text-200',
+	large: 'py-3 px-6',
 	custom: '',
 } as const;
 
@@ -60,13 +69,15 @@ export default function Button({
 	size = 'medium',
 	children,
 	href,
+	iconButton,
 	testId,
 }: Props) {
 	const classes = [
-		'items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] text-100 leading-2 inline-flex relative transition-colors duration-150',
+		'items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150',
+		size === 'large' ? 'text-200' : 'text-100',
 		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
-		appearanceTypes[appearance],
-		sizeTypes[size],
+		iconButton ? iconButtonAppearances[appearance] : appearanceTypes[appearance],
+		iconButton ? '' : `${sizeTypes[size]} relative`,
 		fullWidth ? 'w-full justify-center' : '',
 		isLoading ? 'pointer-events-none text-transparent dark:text-transparent select-none' : '',
 		className,
@@ -75,7 +86,7 @@ export default function Button({
 	const Children =
 		(
 			<>
-				{isLoading && (
+				{!iconButton && isLoading && (
 					<Spinner
 						className='w-auto h-[80%] stroke-1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
 						size='custom'
@@ -84,13 +95,19 @@ export default function Button({
 					/>
 				)}
 
-				{iconBefore && (
+				{!iconButton && iconBefore && (
 					<span className={`${iconSizes[size]} ${size === 'micro' ? 'mr-1' : 'mr-2'}`}>
 						{iconBefore}
 					</span>
 				)}
-				{children}
-				{iconAfter && (
+
+				<span
+					className={iconButton ? 'inline-flex' : undefined}
+				>
+					{children}
+				</span>
+
+				{!iconButton && iconAfter && (
 					<span className={`${iconSizes[size]} ${size === 'micro' ? 'ml-1' : 'ml-2'}`}>
 						{iconAfter}
 					</span>
