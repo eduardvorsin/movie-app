@@ -37,6 +37,14 @@ const all: AllVariants = {
 			children: 'micro danger',
 		},
 		{
+			appearance: 'success',
+			children: 'micro success',
+		},
+		{
+			appearance: 'discovery',
+			children: 'micro discovery',
+		},
+		{
 			appearance: 'primary',
 			children: 'micro loading',
 			isLoading: true,
@@ -67,6 +75,14 @@ const all: AllVariants = {
 		{
 			appearance: 'danger',
 			children: 'slim danger',
+		},
+		{
+			appearance: 'success',
+			children: 'slim success',
+		},
+		{
+			appearance: 'discovery',
+			children: 'slim discovery',
 		},
 		{
 			appearance: 'primary',
@@ -101,6 +117,14 @@ const all: AllVariants = {
 			children: 'medium danger',
 		},
 		{
+			appearance: 'success',
+			children: 'medium success',
+		},
+		{
+			appearance: 'discovery',
+			children: 'medium discovery',
+		},
+		{
 			appearance: 'primary',
 			children: 'medium loading',
 			isLoading: true,
@@ -133,6 +157,14 @@ const all: AllVariants = {
 			children: 'large danger',
 		},
 		{
+			appearance: 'success',
+			children: 'large success',
+		},
+		{
+			appearance: 'discovery',
+			children: 'large discovery',
+		},
+		{
 			appearance: 'primary',
 			children: 'large loading',
 			isLoading: true,
@@ -163,6 +195,14 @@ const all: AllVariants = {
 		{
 			appearance: 'danger',
 			children: 'full width danger',
+		},
+		{
+			appearance: 'success',
+			children: 'full success',
+		},
+		{
+			appearance: 'discovery',
+			children: 'full discovery',
 		},
 		{
 			appearance: 'primary',
@@ -293,6 +333,34 @@ export const Danger: Story = {
 		docs: {
 			description: {
 				story: 'It is used to warn the user about the irrevocability of actions when clicking',
+			},
+		},
+	},
+};
+
+export const Success: Story = {
+	args: {
+		appearance: 'success',
+		children: 'Success'
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'It is usually used to indicate the successful completion of an action or operation.',
+			},
+		},
+	},
+};
+
+export const Discovery: Story = {
+	args: {
+		appearance: 'discovery',
+		children: 'Discovery'
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'It is employed to notify users about changes in the user interface or to offer details about newly introduced features and their execution.',
 			},
 		},
 	},
@@ -443,7 +511,7 @@ export const All: Story = {
 				{(Object.keys(all) as Array<keyof typeof all>).map((size) => (
 					<div
 						key={size}
-						className='flex flex-wrap items-start mb-6 last:mb-6'
+						className='flex flex-wrap items-start last:self-stretch mb-6 last:mb-6'
 					>
 						{all[size].map((variant) => (
 							<Button
@@ -473,3 +541,4 @@ export const All: Story = {
 		},
 	},
 };
+
