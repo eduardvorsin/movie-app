@@ -4,7 +4,7 @@ import Spinner from '../Spinner/Spinner';
 import Link from 'next/link';
 
 export type Props = {
-	appearance?: 'primary' | 'secondary' | 'warning' | 'danger',
+	appearance?: 'primary' | 'secondary' | 'warning' | 'danger' | 'success' | 'discovery',
 	className?: string,
 	iconAfter?: ReactNode,
 	iconBefore?: ReactNode,
@@ -23,6 +23,8 @@ export type Props = {
 const appearanceTypes = {
 	primary: 'bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200',
 	secondary: 'bg-neutral-300 text-dark-neutral-0 enabled:hover:bg-neutral-400 enabled:active:bg-neutral-500 dark:enabled:hover:bg-neutral-200 dark:enabled:active:bg-neutral-100',
+	success: 'bg-green-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-green-800 enabled:active:bg-green-900 dark:bg-green-400 dark:enabled:hover:bg-green-300 dark:enabled:active:bg-green-200',
+	discovery: 'bg-purple-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-purple-800 enabled:active:bg-purple-900 dark:bg-purple-400 dark:enabled:hover:bg-purple-300 dark:enabled:active:bg-purple-200',
 	danger: 'bg-red-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-red-800 enabled:active:bg-red-900 dark:bg-red-400 dark:enabled:hover:bg-red-300 dark:enabled:active:bg-red-200',
 	warning: 'bg-yellow-400 text-neutral-1000 enabled:hover:bg-yellow-500 enabled:active:bg-yellow-600 dark:enabled:hover:bg-yellow-300 dark:enabled:active:bg-yellow-200',
 } as const;
