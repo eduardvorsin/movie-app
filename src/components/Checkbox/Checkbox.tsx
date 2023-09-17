@@ -1,6 +1,7 @@
 'use client';
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 import InlineMessage from '../InlineMessage/InlineMessage';
+import Accept from '../../assets/icons/accept.svg?url';
 
 export type Props = {
 	id: string,
@@ -76,14 +77,8 @@ export default function Checkbox({
 					aria-describedby={error ? `${id}-error-message` : undefined}
 					data-invalid={isInvalid}
 				/>
-				<svg
-					className={`${sizeTypes[size]} -ml-5 shrink-0 rounded-1 border-2 border-neutral-500 fill-none peer-checked:bg-blue-700 peer-checked:fill-neutral-0 peer-checked:border-blue-500 peer-focus:border-blue-500 peer-data-[invalid]:border-red-600 transition-colors duration-100 ease-linear dark:peer-data-[invalid]:border-red-500 dark:peer-checked:bg-blue-400 dark:peer-focus:border-blue-300 dark:peer-checked:fill-dark-neutral-0 dark:peer-checked:border-blue-300 dark:border-dark-neutral-800`}
-					viewBox='0 0 20 20'
-				>
-					<path
-						fillRule='evenodd'
-						d='M15.78 5.97a.75.75 0 0 1 0 1.06l-6.5 6.5a.75.75 0 0 1-1.06 0l-3.25-3.25a.75.75 0 1 1 1.06-1.06l2.72 2.72 5.97-5.97a.75.75 0 0 1 1.06 0Z'
-					/>
+				<svg className={`${sizeTypes[size]} -ml-5 shrink-0 rounded-1 border-2 border-neutral-500 fill-none peer-checked:bg-blue-700 peer-checked:fill-neutral-0 peer-checked:border-blue-500 peer-focus:border-blue-500 peer-data-[invalid]:border-red-600 transition-colors duration-100 ease-linear dark:peer-data-[invalid]:border-red-500 dark:peer-checked:bg-blue-400 dark:peer-focus:border-blue-300 dark:peer-checked:fill-dark-neutral-0 dark:peer-checked:border-blue-300 dark:border-dark-neutral-800`} viewBox='0 0 20 20'>
+					<use href={`${Accept.src}#accept`}></use>
 				</svg>
 				<span
 					className='ml-2 text-100 text-dark-neutral-0 dark:text-neutral-0'

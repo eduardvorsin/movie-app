@@ -1,6 +1,7 @@
 'use client';
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 import InlineMessage from '../InlineMessage/InlineMessage';
+import Cancel from '../../assets/icons/cancel.svg?url';
 
 export type Props = {
 	className?: string,
@@ -118,11 +119,8 @@ export default function TextField({
 						onClick={onClear}
 					>
 						clear
-						<svg
-							className='fill-current'
-							viewBox="0 0 20 20"
-						>
-							<path fillRule="evenodd" d="M10 15.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Zm0 1.5a7 7 0 1 0 0-14 7 7 0 0 0 0 14Zm3.03-10.03a.75.75 0 0 1 0 1.06l-1.97 1.97 1.97 1.97a.75.75 0 1 1-1.06 1.06l-1.97-1.97-1.97 1.97a.75.75 0 0 1-1.06-1.06l1.97-1.97-1.97-1.97a.75.75 0 0 1 1.06-1.06l1.97 1.97 1.97-1.97a.75.75 0 0 1 1.06 0Z" />
+						<svg className='fill-current' viewBox='0 0 20 20'>
+							<use href={`${Cancel.src}#cancel`}></use>
 						</svg>
 					</button>
 				)}
