@@ -132,8 +132,9 @@ export default function Comment({
 						/>
 
 						<div>
-							{errorActions?.map((action) => (
+							{errorActions?.map((action, index) => (
 								<span
+									key={index}
 									className={actionItemClasses}
 								>
 									{action}
