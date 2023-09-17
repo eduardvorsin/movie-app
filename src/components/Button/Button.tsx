@@ -26,7 +26,8 @@ const appearanceTypes = {
 	success: 'bg-green-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-green-800 enabled:active:bg-green-900 dark:bg-green-400 dark:enabled:hover:bg-green-300 dark:enabled:active:bg-green-200',
 	discovery: 'bg-purple-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-purple-800 enabled:active:bg-purple-900 dark:bg-purple-400 dark:enabled:hover:bg-purple-300 dark:enabled:active:bg-purple-200',
 	danger: 'bg-red-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-red-800 enabled:active:bg-red-900 dark:bg-red-400 dark:enabled:hover:bg-red-300 dark:enabled:active:bg-red-200',
-	warning: 'bg-yellow-400 text-neutral-1000 enabled:hover:bg-yellow-500 enabled:active:bg-yellow-600 dark:enabled:hover:bg-yellow-300 dark:enabled:active:bg-yellow-200',
+	warning: 'bg-yellow-500 text-neutral-1000 enabled:hover:bg-yellow-600 enabled:active:bg-yellow-700 dark:enabled:hover:bg-yellow-300 dark:enabled:active:bg-yellow-200',
+} as const;
 } as const;
 
 const sizeTypes = {
