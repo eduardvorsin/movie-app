@@ -44,5 +44,3 @@ const preview: Preview = {
 };
 
 export default preview;
-
-//! задать потом basePath для мока next router https://storybook.js.org/blog/integrate-nextjs-and-storybook-automatically/#:~:text=all%20available%20parameters.-,next/router,-Within%20the
