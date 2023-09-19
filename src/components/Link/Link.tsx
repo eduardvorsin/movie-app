@@ -45,6 +45,7 @@ export default function Link({
 				onClick={onClick}
 				onFocus={onFocus}
 				onBlur={onBlur}
+				role={!href ? 'link' : undefined}
 				aria-disabled={!href}
 				data-testid={testId}
 				style={style}
