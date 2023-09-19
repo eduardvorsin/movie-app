@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, FocusEventHandler, MouseEventHandler, ReactNode } from 'react';
+import { AnchorHTMLAttributes, CSSProperties, FocusEventHandler, MouseEventHandler, ReactNode } from 'react';
 import NextLink from 'next/link';
 
 type Props = {
@@ -13,6 +13,7 @@ type Props = {
 	target?: AnchorHTMLAttributes<HTMLButtonElement>['target'],
 	isExternal?: boolean,
 	testId?: string,
+	style?: CSSProperties,
 };
 
 export default function Link({
@@ -26,6 +27,7 @@ export default function Link({
 	isExternal = false,
 	testId,
 	isDisabled = false,
+	style,
 	target,
 }: Props) {
 	const linkClasses = [
@@ -45,6 +47,7 @@ export default function Link({
 				onBlur={onBlur}
 				aria-disabled={!href}
 				data-testid={testId}
+				style={style}
 			>
 				{children}
 			</NextLink>
@@ -62,6 +65,7 @@ export default function Link({
 			target={target}
 			role={!href ? 'link' : undefined}
 			data-testid={testId}
+			style={style}
 		>
 			{children}
 		</a>
