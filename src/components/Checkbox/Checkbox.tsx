@@ -8,13 +8,12 @@ export type Props = {
 	value: string,
 	name: string,
 	label: string,
+	isChecked: boolean,
 	onChange: ChangeEventHandler<HTMLInputElement>,
 	className?: string,
 	testId?: string,
 	size?: 'small' | 'medium' | 'large' | 'xlarge',
 	error?: string,
-	isChecked?: boolean,
-	defaultChecked?: boolean,
 	isDisabled?: boolean,
 	isRequired?: boolean,
 	isInvalid?: boolean,
@@ -42,7 +41,6 @@ export default function Checkbox({
 	isChecked,
 	isRequired,
 	isInvalid,
-	defaultChecked,
 	onChange,
 	onFocus,
 	onBlur,
@@ -71,13 +69,13 @@ export default function Checkbox({
 					onBlur={onBlur}
 					value={value}
 					checked={isChecked}
-					defaultChecked={defaultChecked}
 					required={isRequired}
 					aria-invalid={isInvalid}
 					aria-describedby={error ? `${id}-error-message` : undefined}
 					data-invalid={isInvalid}
 				/>
-				<svg className={`${sizeTypes[size]} -ml-5 shrink-0 rounded-1 border-2 border-neutral-500 fill-none peer-checked:bg-blue-700 peer-checked:fill-neutral-0 peer-checked:border-blue-500 peer-focus:border-blue-500 peer-data-[invalid]:border-red-600 transition-colors duration-100 ease-linear dark:peer-data-[invalid]:border-red-500 dark:peer-checked:bg-blue-400 dark:peer-focus:border-blue-300 dark:peer-checked:fill-dark-neutral-0 dark:peer-checked:border-blue-300 dark:border-dark-neutral-800`} viewBox='0 0 20 20'>
+				<svg
+					className={`${sizeTypes[size]} -ml-5 shrink-0 rounded-1 border-2 border-neutral-500 fill-none peer-checked:bg-blue-700 peer-checked:fill-neutral-0 peer-checked:border-blue-500 peer-focus:border-blue-500 peer-data-[invalid]:border-red-600 transition-colors duration-100 ease-linear dark:peer-data-[invalid]:border-red-500 dark:peer-checked:bg-blue-400 dark:peer-focus:border-blue-300 dark:peer-checked:fill-dark-neutral-0 dark:peer-checked:border-blue-300 dark:border-dark-neutral-800`} viewBox='0 0 20 20'>
 					<use href={`${Accept.src}#accept`}></use>
 				</svg>
 				<span

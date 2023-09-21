@@ -5,7 +5,6 @@ import { ChangeEventHandler, useState } from 'react';
 type Sizes = Exclude<Props['size'], undefined>;
 type Variant = {
 	id: string,
-	defaultChecked?: Props['defaultChecked'],
 	isDisabled?: Props['isDisabled'],
 	isRequired?: Props['isRequired'],
 	isInvalid?: Props['isInvalid'],
@@ -16,22 +15,18 @@ const sizes: Sizes[] = ['small', 'medium', 'large', 'xlarge'];
 const variants: Variant[] = [
 	{
 		id: '0',
-		defaultChecked: true,
-	},
-	{
-		id: '1',
 		isDisabled: true,
 	},
 	{
-		id: '2',
+		id: '1',
 		isInvalid: true,
 	},
 	{
-		id: '3',
+		id: '2',
 		isRequired: true,
 	},
 	{
-		id: '4',
+		id: '3',
 		error: 'error message',
 	},
 ];
@@ -60,9 +55,6 @@ const meta: Meta<typeof Checkbox> = {
 		},
 		id: {
 			description: 'Input id',
-		},
-		defaultChecked: {
-			description: 'Allows you to mark the status of the checkbox by default',
 		},
 		isChecked: {
 			description: 'Determines whether the checkbox is marked or not',
@@ -106,7 +98,7 @@ export default meta;
 type Story = StoryObj<typeof Checkbox>;
 
 const CheckboxWithHooks = (props: Omit<Props, 'onChange' | 'isChecked'>) => {
-	const [isChecked, setIsChecked] = useState<boolean>(props.defaultChecked ?? false);
+	const [isChecked, setIsChecked] = useState<boolean>(false);
 
 	const changeHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
 		setIsChecked(e.currentTarget.checked);
@@ -281,7 +273,6 @@ export const All: Story = {
 						label={`${size}-${variant.id}`}
 						value={`${size}-${variant.id}`}
 						size={size}
-						defaultChecked={variant.defaultChecked}
 						isDisabled={variant.isDisabled}
 						isInvalid={variant.isInvalid}
 						isRequired={variant.isRequired}
