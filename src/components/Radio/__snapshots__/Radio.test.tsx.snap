@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio tests is a basic snapshot 1`] = `
+<input
+  class="appearance-none absolute peer"
+  id="test-radio"
+  name="test-radio"
+  type="radio"
+  value=""
+/>
+`;
+
+exports[`Radio tests is a snapshot with IsInvalid equal to true 1`] = `
+<input
+  class="appearance-none absolute peer"
+  data-invalid="true"
+  id="test-radio"
+  name="test-radio"
+  type="radio"
+  value=""
+/>
+`;
+
+exports[`Radio tests is a snapshot with isDisabled set to true 1`] = `
+<input
+  class="appearance-none absolute peer"
+  disabled=""
+  id="test-radio"
+  name="test-radio"
+  type="radio"
+  value=""
+/>
+`;
