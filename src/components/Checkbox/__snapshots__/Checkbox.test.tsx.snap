@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox tests is a basic snapshot 1`] = `
+<input
+  checked=""
+  class="appearance-none absolute peer"
+  id="test-checkbox"
+  name="test-checkbox"
+  type="checkbox"
+  value=""
+/>
+`;
+
+exports[`Checkbox tests is a snapshot with error element 1`] = `
+<input
+  aria-describedby="test-checkbox-error-message"
+  checked=""
+  class="appearance-none absolute peer"
+  id="test-checkbox"
+  name="test-checkbox"
+  type="checkbox"
+  value=""
+/>
+`;
+
+exports[`Checkbox tests is a snapshot with the "large" size type 1`] = `
+<input
+  checked=""
+  class="appearance-none absolute peer"
+  id="test-checkbox"
+  name="test-checkbox"
+  type="checkbox"
+  value=""
+/>
+`;
+
+exports[`Checkbox tests is a snapshot with the "medium" size type 1`] = `
+<input
+  checked=""
+  class="appearance-none absolute peer"
+  id="test-checkbox"
+  name="test-checkbox"
+  type="checkbox"
+  value=""
+/>
+`;
+
+exports[`Checkbox tests is a snapshot with the "small" size type 1`] = `
+<input
+  checked=""
+  class="appearance-none absolute peer"
+  id="test-checkbox"
+  name="test-checkbox"
+  type="checkbox"
+  value=""
+/>
+`;
+
+exports[`Checkbox tests is a snapshot with the "xlarge" size type 1`] = `
+<input
+  checked=""
+  class="appearance-none absolute peer"
+  id="test-checkbox"
+  name="test-checkbox"
+  type="checkbox"
+  value=""
+/>
+`;
+
+exports[`Checkbox tests is snapshot with isDisabled equal to true 1`] = `
+<input
+  checked=""
+  class="appearance-none absolute peer"
+  disabled=""
+  id="test-checkbox"
+  name="test-checkbox"
+  type="checkbox"
+  value=""
+/>
+`;
+
+exports[`Checkbox tests is snapshot with isInvalid equal to true 1`] = `
+<input
+  aria-invalid="true"
+  checked=""
+  class="appearance-none absolute peer"
+  data-invalid="true"
+  id="test-checkbox"
+  name="test-checkbox"
+  type="checkbox"
+  value=""
+/>
+`;
+
+exports[`Checkbox tests is snapshot with isRequired equal to true 1`] = `
+<input
+  checked=""
+  class="appearance-none absolute peer"
+  id="test-checkbox"
+  name="test-checkbox"
+  required=""
+  type="checkbox"
+  value=""
+/>
+`;
