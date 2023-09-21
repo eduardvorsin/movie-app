@@ -6,7 +6,7 @@ import InlineMessage from '../InlineMessage/InlineMessage';
 type Choice = {
 	value: string,
 	label: string,
-	id?: string,
+	id: string,
 	disabled?: boolean,
 }
 
@@ -17,9 +17,9 @@ type Props = {
 	isDisabled?: boolean,
 	error?: string,
 	choices: Choice[],
-	onChange?: ChangeEventHandler<HTMLInputElement>,
+	onChange: ChangeEventHandler<HTMLInputElement>,
 	testId?: string,
-	name?: string,
+	name: string,
 	value: string,
 	title?: string,
 	isRequired?: boolean,
