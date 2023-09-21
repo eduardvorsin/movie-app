@@ -1,18 +1,18 @@
 'use client';
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 
-type Props = {
+export type Props = {
+	id: string,
+	value: string,
+	name: string,
+	label: string,
+	isChecked: boolean,
+	onChange: ChangeEventHandler<HTMLInputElement>,
 	className?: string,
-	id?: string,
-	value?: string,
 	testId?: string,
-	name?: string,
-	label?: string,
-	isChecked?: boolean,
 	isDisabled?: boolean,
 	isRequired?: boolean,
 	isInvalid?: boolean,
-	onChange?: ChangeEventHandler<HTMLInputElement>,
 	onFocus?: FocusEventHandler<HTMLInputElement>,
 	onBlur?: FocusEventHandler<HTMLInputElement>,
 };
