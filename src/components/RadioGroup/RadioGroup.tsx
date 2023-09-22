@@ -43,7 +43,7 @@ export default function RadioGroup({
 }: Props) {
 	const groupClasses = [
 		'',
-		isDisabled ? 'opacity-disabled cursor-not-allowed' : 'cursor-pointer',
+		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
 		className,
 	].join(' ');
 	const titleClasses = [
