@@ -87,13 +87,13 @@ describe('Radio tests', () => {
 				name='test-radio'
 				label='test-radio'
 				value=''
+				isDisabled
 				onChange={mockFn}
 				isChecked={false}
 			/>
 		);
 
-		await user.tab();
-		await user.click(document.body);
+		await user.click(screen.getByRole<HTMLInputElement>('radio'));
 
 		expect(mockFn).toHaveBeenCalledTimes(0);
 	});
