@@ -51,6 +51,8 @@ export default function RadioGroup({
 		titleHidden ? 'sr-only' : '',
 	].join(' ');
 
+	const uniqueId = useId();
+
 	return (
 		<fieldset
 			className={groupClasses}
@@ -76,10 +78,10 @@ export default function RadioGroup({
 				{choices.map((choice) => (
 					<li
 						className='mb-1'
-						key={value}
+						key={choice.id}
 					>
 						<Radio
-							id={choice.id}
+							id={`${choice.id}-${uniqueId}`}
 							name={name}
 							label={choice.label}
 							value={choice.value}
