@@ -1,16 +1,16 @@
 'use client';
-import { ChangeEventHandler } from 'react';
+import { ChangeEventHandler, useId } from 'react';
 import Radio from '../Radio/Radio';
 import InlineMessage from '../InlineMessage/InlineMessage';
 
-type Choice = {
+export type Choice = {
 	value: string,
 	label: string,
 	id: string,
 	disabled?: boolean,
 }
 
-type Props = {
+export type Props = {
 	id: string,
 	className?: string,
 	titleHidden?: boolean,
