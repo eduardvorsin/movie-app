@@ -96,6 +96,7 @@ export default function RadioGroup({
 			{error && (
 				<InlineMessage
 					className='mt-1'
+					appearance='error'
 					message={error}
 					fieldId={`${id}-error-message`}
 				/>
