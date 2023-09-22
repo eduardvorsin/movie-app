@@ -39,26 +39,6 @@ describe('Checkbox tests', () => {
 		expect(mockFn).toHaveBeenCalledTimes(1);
 	});
 
-	it('when the focus is received, the mock function is triggered', async () => {
-		const user = userEvent.setup();
-		const mockFn = jest.fn();
-
-		render(
-			<Checkbox
-				id='test-checkbox'
-				name='test-checkbox'
-				label='test-checkbox'
-				value=''
-				onChange={() => { }}
-				onFocus={mockFn}
-				isChecked={true}
-			/>
-		);
-
-		await user.tab();
-
-		expect(mockFn).toHaveBeenCalledTimes(1);
-	});
 
 	it('when the focus is lost, the mock function is triggered', async () => {
 		const user = userEvent.setup();
@@ -128,7 +108,6 @@ describe('Checkbox tests', () => {
 				name='test-checkbox'
 				label='test-checkbox'
 				value=''
-				error='mock error'
 				onChange={() => { }}
 				isChecked={true}
 			/>

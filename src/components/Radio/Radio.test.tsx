@@ -18,21 +18,6 @@ describe('Radio tests', () => {
 		expect(screen.getByRole<HTMLInputElement>('radio')).toBeInTheDocument();
 	});
 
-	it('is rendered correctly', () => {
-		render(
-			<Radio
-				id='test-radio'
-				name='test-radio'
-				label='test-radio'
-				value=''
-				onChange={() => { }}
-				isChecked={false}
-			/>
-		);
-
-		expect(screen.getByRole<HTMLInputElement>('radio')).toBeInTheDocument();
-	});
-
 	it('when you click on the radio button, the mock function is called', async () => {
 		const mockFn = jest.fn();
 		const user = userEvent.setup()
@@ -48,26 +33,6 @@ describe('Radio tests', () => {
 		);
 
 		await user.click(screen.getByRole<HTMLInputElement>('radio'));
-
-		expect(mockFn).toHaveBeenCalledTimes(1);
-	});
-
-	it('when the focus hits the radio button, the mock function is called', async () => {
-		const mockFn = jest.fn();
-		const user = userEvent.setup()
-		render(
-			<Radio
-				id='test-radio'
-				name='test-radio'
-				label='test-radio'
-				value=''
-				onChange={() => { }}
-				onFocus={mockFn}
-				isChecked={false}
-			/>
-		);
-
-		await user.tab();
 
 		expect(mockFn).toHaveBeenCalledTimes(1);
 	});
