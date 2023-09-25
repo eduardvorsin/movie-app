@@ -70,9 +70,8 @@ export default function Banner({
 	testId,
 }: Props) {
 	const classes = [
-		'py-4 pl-4 rounded-[0.1875rem] grid gap-x-4 gap-y-2 auto-rows-min relative',
+		'py-4 pl-4 rounded-[0.1875rem] flex relative',
 		appearances[appearance],
-		hideIcon ? 'grid-cols-1' : 'grid-cols-[1.5rem_1fr]',
 		closeButton ? 'pr-12' : 'pr-4',
 		className
 	].join(' ');
@@ -85,27 +84,29 @@ export default function Banner({
 		>
 			{!hideIcon && (
 				<span
-					className='w-6 h-6'
+					className='w-6 h-6 mr-4'
 				>
 					{apperanceIcons[appearance]}
 				</span>
 			)}
+			<div>
 			<Heading
-				className='text-200 font-bold text-neutral-1000 dark:text-dark-neutral-900'
+						className='mb-2 text-200 font-bold text-neutral-1000 dark:text-dark-neutral-900'
 			>
 				{title}
 			</Heading>
 			<p
-				className={`text-100 text-neutral-1000 dark:text-dark-neutral-900 ${!hideIcon ? 'col-start-2 col-end-3' : ''}`}
+					className={'text-100 text-neutral-1000 dark:text-dark-neutral-900'}
 			>
 				{children}
 			</p>
 			<div
-				className={`flex mt-1 ${!hideIcon ? 'col-start-2 col-end-3' : ''}`}
+						className={'flex mt-3'}
 			>
 				{actions?.map((action, index) => (
 					<div key={index} className='mr-2 last:mr-0'>{action}</div>
 				))}
+					</div>
 			</div>
 			{closeButton && (
 				<Button
