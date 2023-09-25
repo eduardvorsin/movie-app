@@ -90,11 +90,13 @@ export default function Banner({
 				</span>
 			)}
 			<div>
+				{title && (
 			<Heading
 						className='mb-2 text-200 font-bold text-neutral-1000 dark:text-dark-neutral-900'
 			>
 				{title}
 			</Heading>
+				)}
 			<p
 					className={'text-100 text-neutral-1000 dark:text-dark-neutral-900'}
 			>
