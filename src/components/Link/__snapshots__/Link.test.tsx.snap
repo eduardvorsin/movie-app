@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link tests is a basic snapshot 1`] = `
+<a
+  aria-disabled="false"
+  class="underline text-blue-500 hover:text-blue-600 hover:no-underline active:text-blue-700  "
+  href="/"
+>
+  test link
+</a>
+`;
+
+exports[`Link tests is a snapshot with isDisabled set to true 1`] = `
+<a
+  aria-disabled="false"
+  class="underline text-blue-500 hover:text-blue-600 hover:no-underline active:text-blue-700 opacity-disabled cursor-not-allowed "
+  href="/"
+>
+  test link
+</a>
+`;
+
+exports[`Link tests is a snapshot with isExternal equal to true 1`] = `
+<a
+  aria-disabled="false"
+  class="underline text-blue-500 hover:text-blue-600 hover:no-underline active:text-blue-700  "
+  href="/"
+  rel="noopener noreferrer"
+>
+  test link
+</a>
+`;
