@@ -91,24 +91,26 @@ export default function Banner({
 			)}
 			<div>
 				{title && (
-			<Heading
+					<Heading
 						className='mb-2 text-200 font-bold text-neutral-1000 dark:text-dark-neutral-900'
-			>
-				{title}
-			</Heading>
+					>
+						{title}
+					</Heading>
 				)}
-			<p
+				<p
 					className={'text-100 text-neutral-1000 dark:text-dark-neutral-900'}
-			>
-				{children}
-			</p>
-			<div
+				>
+					{children}
+				</p>
+				{actions && (
+					<div
 						className={'flex mt-3'}
-			>
-				{actions?.map((action, index) => (
-					<div key={index} className='mr-2 last:mr-0'>{action}</div>
-				))}
+					>
+						{actions.map((action, index) => (
+							<div key={index} className='mr-2 last:mr-0'>{action}</div>
+						))}
 					</div>
+				)}
 			</div>
 			{closeButton && (
 				<Button
