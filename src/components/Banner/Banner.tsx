@@ -16,7 +16,7 @@ type Props = {
 	appearance?: 'success' | 'info' | 'warning' | 'danger' | 'discovery',
 	onClose?: () => void,
 	closeButton?: boolean,
-	titleLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
+	titleLevel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
 	actions?: ReactNode[],
 	testId?: string,
 };
@@ -66,7 +66,7 @@ export default function Banner({
 	actions,
 	onClose,
 	closeButton,
-	titleLevel = 'h2',
+	titleLevel,
 	testId,
 }: Props) {
 	const classes = [
