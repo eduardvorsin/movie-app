@@ -164,6 +164,19 @@ export const HideIcon: Story = {
 	},
 };
 
+export const WithoutTitle: Story = {
+	args: {
+		children: 'Without Title banner Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt non repellendus ullam quam dolore inventore deleniti reiciendis esse dolor sed.'
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'If you do not pass the value to the property for the header, it will not be displayed in the banner',
+			},
+		},
+	},
+};
+
 export const WithActions: Story = {
 	args: {
 		appearance: 'discovery',
