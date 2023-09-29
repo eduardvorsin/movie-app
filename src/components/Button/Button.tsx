@@ -4,7 +4,7 @@ import Spinner from '../Spinner/Spinner';
 import Link from 'next/link';
 
 export type Props = {
-	appearance?: 'primary' | 'secondary' | 'warning' | 'danger' | 'success' | 'discovery',
+	appearance?: 'primary' | 'secondary' | 'warning' | 'danger' | 'success' | 'discovery' | 'ghost',
 	className?: string,
 	iconAfter?: ReactNode,
 	iconBefore?: ReactNode,
@@ -28,6 +28,7 @@ const appearanceTypes = {
 	discovery: 'bg-purple-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-purple-800 enabled:active:bg-purple-900 dark:bg-purple-400 dark:enabled:hover:bg-purple-300 dark:enabled:active:bg-purple-200',
 	danger: 'bg-red-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-red-800 enabled:active:bg-red-900 dark:bg-red-400 dark:enabled:hover:bg-red-300 dark:enabled:active:bg-red-200',
 	warning: 'bg-yellow-500 text-neutral-1000 enabled:hover:bg-yellow-600 enabled:active:bg-yellow-700 dark:enabled:hover:bg-yellow-300 dark:enabled:active:bg-yellow-200',
+	ghost: 'text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-200 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600',
 } as const;
 
 const iconButtonAppearances = {
@@ -37,6 +38,7 @@ const iconButtonAppearances = {
 	discovery: 'text-purple-700 enabled:hover:text-purple-800 enabled:active:text-purple-900 dark:text-purple-400 dark:enabled:hover:text-purple-300 dark:enabled:active:text-purple-200',
 	danger: 'text-red-700 enabled:hover:text-red-800 enabled:active:text-red-900 dark:text-red-400 dark:enabled:hover:text-red-300 dark:enabled:active:text-red-200',
 	warning: 'text-yellow-500 enabled:hover:text-yellow-600 enabled:active:text-yellow-700 dark:enabled:hover:text-yellow-300 dark:enabled:active:text-yellow-300',
+	ghost: 'text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-0 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600',
 } as const;
 
 const sizeTypes = {
