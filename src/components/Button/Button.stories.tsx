@@ -45,6 +45,10 @@ const all: AllVariants = {
 			children: 'micro discovery',
 		},
 		{
+			appearance: 'ghost',
+			children: 'micro ghost',
+		},
+		{
 			appearance: 'primary',
 			children: 'micro loading',
 			isLoading: true,
@@ -83,6 +87,10 @@ const all: AllVariants = {
 		{
 			appearance: 'discovery',
 			children: 'slim discovery',
+		},
+		{
+			appearance: 'ghost',
+			children: 'slim ghost',
 		},
 		{
 			appearance: 'primary',
@@ -125,6 +133,10 @@ const all: AllVariants = {
 			children: 'medium discovery',
 		},
 		{
+			appearance: 'ghost',
+			children: 'medium ghost',
+		},
+		{
 			appearance: 'primary',
 			children: 'medium loading',
 			isLoading: true,
@@ -165,6 +177,10 @@ const all: AllVariants = {
 			children: 'large discovery',
 		},
 		{
+			appearance: 'ghost',
+			children: 'large ghost',
+		},
+		{
 			appearance: 'primary',
 			children: 'large loading',
 			isLoading: true,
@@ -203,6 +219,10 @@ const all: AllVariants = {
 		{
 			appearance: 'discovery',
 			children: 'full discovery',
+		},
+		{
+			appearance: 'ghost',
+			children: 'full ghost',
 		},
 		{
 			appearance: 'primary',
@@ -361,6 +381,20 @@ export const Discovery: Story = {
 		docs: {
 			description: {
 				story: 'It is employed to notify users about changes in the user interface or to offer details about newly introduced features and their execution.',
+			},
+		},
+	},
+};
+
+export const Ghost: Story = {
+	args: {
+		appearance: 'ghost',
+		children: 'Ghost'
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'Button view without background color. It can be used to indicate additional actions, menus or navigation, cancel or clear, etc.',
 			},
 		},
 	},
