@@ -89,7 +89,7 @@ export default function Comment({
 							{savingText ?? 'Sending...'}
 						</span>
 					)}
-					{!isError && !isSaving ?
+					{!isError && !isSaving && time ?
 						(
 							<CommentInfoItem
 								className='mr-2 last:mr-0 mb-1'
