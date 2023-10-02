@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import CommentInfoItem from '../CommentInfoItem/CommentInfoItem';
 import InlineMessage from '../InlineMessage/InlineMessage';
 import Locked from '../../assets/icons/locked.svg?url';
+import Title from '../Title/Title';
 
 type Props = {
 	id: string,
@@ -9,6 +10,7 @@ type Props = {
 	avatar: ReactNode,
 	content: string,
 	type: string,
+	titleElement: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
 	className?: string,
 	actions?: ReactNode[],
 	errorActions?: ReactNode[],
@@ -22,7 +24,6 @@ type Props = {
 	time?: string,
 	isSaving?: boolean,
 	highlighted?: boolean,
-	headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
 	shouldRenderNestedCommentsInline?: boolean,
 	testId?: string,
 };
@@ -48,9 +49,8 @@ export default function Comment({
 	children,
 	errorActions,
 	shouldRenderNestedCommentsInline,
-	headingLevel = 'h3',
+	titleElement,
 }: Props) {
-	const Heading = headingLevel;
 	const classes = [
 		'grid grid-cols-[auto_1fr] gap-x-2 gap-y-4 p-2 relative',
 		className
@@ -66,7 +66,9 @@ export default function Comment({
 		>
 			{avatar}
 			<div className='text-100'>
-				<Heading
+				<Title
+					level={6}
+					as={titleElement}
 					className='flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800'
 				>
 					<CommentInfoItem
@@ -116,7 +118,7 @@ export default function Comment({
 							</span>
 						</span>
 					)}
-				</Heading>
+				</Title>
 				<p
 					className={`mb-2 ${isError ? 'text-neutral-400 ' : 'text-neutral-1000 dark:text-dark-neutral-900'}`}
 				>

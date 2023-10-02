@@ -7,6 +7,7 @@ import Info from '../../assets/icons/info.svg?url';
 import Question from '../../assets/icons/question.svg?url';
 import Cancel from '../../assets/icons/cancel.svg?url';
 import Button from '../Button/Button';
+import Title from '../Title/Title';
 
 type Props = {
 	className?: string,
@@ -16,7 +17,7 @@ type Props = {
 	appearance?: 'success' | 'info' | 'warning' | 'danger' | 'discovery',
 	onClose?: () => void,
 	closeButton?: boolean,
-	titleLevel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
+	titleElement: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
 	actions?: ReactNode[],
 	testId?: string,
 };
@@ -66,7 +67,7 @@ export default function Banner({
 	actions,
 	onClose,
 	closeButton,
-	titleLevel,
+	titleElement,
 	testId,
 }: Props) {
 	const classes = [
@@ -75,7 +76,6 @@ export default function Banner({
 		closeButton ? 'pr-12' : 'pr-4',
 		className
 	].join(' ');
-	const Heading = titleLevel;
 
 	return (
 		<div
@@ -91,11 +91,13 @@ export default function Banner({
 			)}
 			<div>
 				{title && (
-					<Heading
-						className='mb-2 text-200 font-bold text-neutral-1000 dark:text-dark-neutral-900'
+					<Title
+						as={titleElement}
+						level={6}
+						className='mb-2 font-bold text-neutral-1000 dark:text-dark-neutral-900'
 					>
 						{title}
-					</Heading>
+					</Title>
 				)}
 				<p
 					className={'text-100 text-neutral-1000 dark:text-dark-neutral-900'}
