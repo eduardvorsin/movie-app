@@ -67,8 +67,8 @@ const meta: Meta<typeof Comment> = {
 		isSaving: {
 			description: 'Allows you to set the save status at which the corresponding message will appear and the action buttons will disappear'
 		},
-		headingLevel: {
-			description: 'Allows you to set the level of the title for the comment'
+		titleElement: {
+			description: 'Allows you to set a title element for a comment'
 		},
 		shouldRenderNestedCommentsInline: {
 			description: 'A property that allows you to determine how comments will be visually positioned nested inside each other or vertically in a column'

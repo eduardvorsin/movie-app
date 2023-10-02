@@ -31,8 +31,8 @@ const meta: Meta<typeof Banner> = {
 		closeButton: {
 			description: 'Show or hide the banner close button',
 		},
-		titleLevel: {
-			description: 'Header level from 1 to 6',
+		titleElement: {
+			description: 'Header element from h1 to h6',
 		},
 		actions: {
 			control: false,
