@@ -8,10 +8,10 @@ type Sizes = Exclude<Props['size'], 'custom' | undefined>;
 const sizes: Sizes[] = ['micro', 'slim', 'medium', 'large'];
 
 type Variant = {
-	appearance: Props['appearance'],
+	appearance: Exclude<Props['appearance'], undefined>,
 	children: string,
-	isLoading?: Props['isLoading'],
-	isDisabled?: Props['isDisabled'],
+	isLoading?: Exclude<Props['isLoading'], undefined>,
+	isDisabled?: Exclude<Props['isDisabled'], undefined>,
 	hasIcon?: boolean,
 };
 
