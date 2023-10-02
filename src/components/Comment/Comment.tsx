@@ -120,7 +120,7 @@ export default function Comment({
 					)}
 				</Title>
 				<p
-					className={`mb-2 ${isError ? 'text-neutral-400 ' : 'text-neutral-1000 dark:text-dark-neutral-900'}`}
+					className={`mb-2 ${isError ? 'text-neutral-400' : 'text-neutral-1000 dark:text-dark-neutral-900'}`}
 				>
 					{content}
 				</p>
@@ -159,11 +159,11 @@ export default function Comment({
 				{afterContent}
 			</div>
 			{children && (
-			<div
-				className={shouldRenderNestedCommentsInline ? 'col-span-full' : 'col-start-2 col-end-3'}
-			>
-				{children}
-			</div>
+				<div
+					className={shouldRenderNestedCommentsInline ? 'col-span-full' : 'col-start-2 col-end-3'}
+				>
+					{children}
+				</div>
 			)}
 			{highlighted && (
 				<div
