@@ -72,7 +72,7 @@ export default function Comment({
 					className='flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800'
 				>
 					<CommentInfoItem
-						className='mr-2 last:mr-0 mb-1'
+						className='mr-2 last:mr-0 mb-1 text-100'
 						type='author'
 					>
 						{author}
@@ -84,7 +84,7 @@ export default function Comment({
 					</span>
 					{isSaving && (
 						<span
-							className='mr-2 last:mr-0 mb-1 max-w-[120px] truncate'
+							className='mr-2 last:mr-0 mb-1 text-100 font-regular max-w-[120px] truncate'
 						>
 							{savingText ?? 'Sending...'}
 						</span>
@@ -92,7 +92,7 @@ export default function Comment({
 					{!isError && !isSaving && time ?
 						(
 							<CommentInfoItem
-								className='mr-2 last:mr-0 mb-1'
+								className='mr-2 last:mr-0 mb-1 text-100 font-regular'
 								type='time'
 							>
 								{time}
@@ -101,14 +101,14 @@ export default function Comment({
 					}
 					{isEdited && (
 						<span
-							className='text-neutral-700 dark:text-dark-neutral-700 mr-2 last:mr-0 mb-1'
+							className='text-neutral-700 dark:text-dark-neutral-700 mr-2 last:mr-0 mb-1 font-regular text-100'
 						>
 							Edited
 						</span>
 					)}
 					{restrictedTo && (
 						<span
-							className='mr-2 last:mr-0 mb-1 inline-flex items-center text-neutral-700 dark:text-dark-neutral-700'
+							className='mr-2 last:mr-0 mb-1 text-100 font-medium inline-flex items-center text-neutral-700 dark:text-dark-neutral-700'
 						>
 							<svg className='w-4 h-4 mr-1 fill-current' viewBox='0 0 20 20'>
 								<use href={`${Locked.src}#locked`}></use>
