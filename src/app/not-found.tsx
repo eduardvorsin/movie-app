@@ -1,8 +1,16 @@
+import { headers } from "next/headers";
+import { getLocalesFromString } from "src/helpers/helpers";
+import { fallbackLng } from "src/i18n/settings";
 import Button from '@/components/Button/Button';
 import NotFoundIcon from '../assets/icons/404.svg?url';
 import Title from '@/components/Title/Title';
+import { useTranslation } from 'src/i18n/server';
 
-export default function NotFound() {
+
+export default async function NotFound() {
+	const lang = getLocalesFromString(headers().get('accept-language') ?? fallbackLng)[0];
+	const { t } = await useTranslation(lang);
+
 	return (
 		<div className='max-w-[77rem] h-[100vh] min-h-[25.75rem] mx-auto my-0 py-0 px-4 flex items-center justify-center'
 		>
@@ -15,19 +23,19 @@ export default function NotFound() {
 					level={1}
 					as='h1'
 				>
-					Страница не найдена
+					{t('notFound.title')}
 				</Title>
-				<p className='text-center text-dark-neutral-400 dark:text-neutral-400 mb-4 sm:mb-5 md:mb-6 lg:mb-8'>Попробуйте вернуться сюда позднее</p>
+				<p className='text-center text-dark-neutral-400 dark:text-neutral-400 mb-4 sm:mb-5 md:mb-6 lg:mb-8'>
+					{t('notFound.description')}
+				</p>
 				<Button
 					href='/'
 					size='large'
 					fullWidth
 				>
-					Перейти на главную
+					{t('notFound.linkText')}
 				</Button>
 			</div>
 		</div>
 	);
 }
-
-//todo подумать нужно ли добавить что нибудь для адаптива
