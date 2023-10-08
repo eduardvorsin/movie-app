@@ -1,6 +1,14 @@
+import { KeyWithoutId } from './../../types/shared';
+import { ExternalIDS } from "src/app/[lang]/persons/[id]/page";
+
 export type CharacteristicItem = {
 	name: string,
 	value: string,
+};
+
+type SocialNetworkItem = {
+	name: KeyWithoutId<keyof ExternalIDS>,
+	url: string,
 };
 
 export const createPersonCharacteristicsArray = (data:
@@ -39,3 +47,30 @@ export const createPersonCharacteristicsArray = (data:
 
 	return characteristics;
 }
+
+export const createSocialNetworksArray = (data: ExternalIDS): SocialNetworkItem[] => {
+	const socialNetworkUrls = {
+		imdb_id: 'https://www.imdb.com/name/',
+		facebook_id: 'https://www.facebook.com/',
+		instagram_id: 'https://www.instagram.com/',
+		tiktok_id: 'https://www.tiktok.com/@',
+		twitter_id: 'https://twitter.com/',
+		youtube_id: 'https://www.youtube.com/@',
+	} as const;
+
+	const socialNetworkFields = new Set<keyof ExternalIDS>([
+		'imdb_id',
+		'facebook_id',
+		'instagram_id',
+		'tiktok_id',
+		'twitter_id',
+		'youtube_id',
+	]);
+
+	const keys = Object.keys(data) as Array<keyof ExternalIDS>;
+
+	return keys.filter((key) => socialNetworkFields.has(key) && data[key]).map((key) => ({
+		name: key.slice(0, -3) as KeyWithoutId<typeof key>,
+		url: `${socialNetworkUrls[key]}${data[key]}`,
+	}));
+};
