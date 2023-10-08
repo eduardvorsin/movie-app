@@ -16,7 +16,7 @@ const levelTypes = {
 	1: 'text-400 sm:text-500 md:text-600 lg:text-700 leading-6',
 	2: 'text-400 sm:text-500 md:text-600 leading-5',
 	3: 'text-400 sm:text-500 leading-4',
-	4: 'text-400 leading-3',
+	4: 'text-300 sm:text-400  leading-3',
 	5: 'text-300 leading-2',
 	6: 'text-200 leading-1',
 } as const;
