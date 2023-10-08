@@ -1,8 +1,9 @@
-import Image from 'next/image'
+import { headers } from 'next/headers';
+import { redirect } from 'next/navigation';
+import { getLocalesFromString } from 'src/helpers/helpers';
+import { fallbackLng } from 'src/i18n/settings';
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-    </main>
-  )
+export default function RootPage() {
+	const lang = getLocalesFromString(headers().get('accept-language') ?? fallbackLng)[0];
+	redirect(`/${lang}`);
 }
