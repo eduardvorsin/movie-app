@@ -21,7 +21,7 @@ export default function CharacteristicList({
 			{data.map((characteristic) => (
 				<li
 					key={characteristic.name}
-					className='text-100 flex py-2 break-all'
+					className='text-100 flex break-all py-1 xs:py-2'
 				>
 					<span
 						className='text-neutral-700 dark:text-dark-neutral-700 basis-[8rem] xs:basis-[10rem] shrink-0 grow-0 mr-2'
