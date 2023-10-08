@@ -1,8 +1,8 @@
-import { createPersonCharacteristicsArray } from 'src/helpers/helpers';
+import { CharacteristicItem } from 'src/helpers/helpers';
 
 type Props = {
 	className?: string,
-	data: { [key: string]: string | string[] | number | null | boolean | object },
+	data: CharacteristicItem[],
 	testId?: string,
 };
 
@@ -14,13 +14,11 @@ export default function CharacteristicList({
 		className,
 	].join(' ');
 
-	const characteristicData = createPersonCharacteristicsArray(data);
-
 	return (
 		<ul
 			className={characteristicListClasses}
 		>
-			{characteristicData.map((characteristic) => (
+			{data.map((characteristic) => (
 				<li
 					key={characteristic.name}
 					className='text-100 flex py-2 break-all'
