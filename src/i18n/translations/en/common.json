@@ -1,0 +1,21 @@
+{
+	"title": "Title text",
+	"expandableText": {
+		"collapseButton": "Collapse",
+		"expandButton": "Expand"
+	},
+	"notFound": {
+		"title": "Page not found",
+		"description": "Try to come back here later",
+		"linkText": "Go to the main page"
+	},
+	"genderValues": {
+		"0": "Unknown",
+		"1": "Female",
+		"2": "Male",
+		"3": "Non-binary"
+	},
+	"errors": {
+		"pageNotFound": "This page was not found"
+	}
+}
