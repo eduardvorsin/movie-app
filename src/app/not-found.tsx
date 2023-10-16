@@ -29,7 +29,7 @@ export default async function NotFound() {
 					{t('notFound.description')}
 				</p>
 				<Button
-					href='/'
+					href={`/${lang}`}
 					size='large'
 					fullWidth
 				>
