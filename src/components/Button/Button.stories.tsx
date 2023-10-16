@@ -275,6 +275,9 @@ const meta: Meta<typeof Button> = {
 			control: false,
 			description: 'The icon that will be placed after the content of the button',
 		},
+		iconButton: {
+			description: 'Allows you to show a button without text, consisting only of an icon',
+		},
 		onBlur: {
 			control: false,
 			description: 'The callback is executed when the button loses focus'
@@ -439,6 +442,20 @@ export const FullWidth: Story = {
 		docs: {
 			description: {
 				story: 'Use the fullWidth property to allow the button to expand to the full width of its container',
+			},
+		},
+	},
+};
+
+export const IconButton: Story = {
+	args: {
+		iconButton: true,
+		children: 'Icon Button'
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'This type of button can be used to represent actions or operations available to the user, such as calling, moving to the trash, adding to favorites, etc.',
 			},
 		},
 	},
