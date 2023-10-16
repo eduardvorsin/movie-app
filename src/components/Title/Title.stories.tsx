@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Title, { Props } from './Title';
 
-type Levels = Exclude<Props['level'], undefined>;
-const levels: Levels[] = [1, 2, 3, 4, 5, 6];
+const levels: Exclude<Props['level'], undefined>[] = [1, 2, 3, 4, 5, 6];
+const weights: Exclude<Props['weight'], undefined>[] = [400, 500, 600, 700];
 
 const meta: Meta<typeof Title> = {
 	title: 'components/Title',
@@ -51,11 +51,38 @@ export const Default: Story = {
 	},
 };
 
+export const Weights: Story = {
+	parameters: {
+		docs: {
+			description: {
+				story: 'There are 4 levels of weight(400-700) for this font',
+			},
+		},
+	},
+	render: () => (
+		<div
+			className='flex flex-col'
+		>
+			{weights.map((weight) => (
+				<Title
+					key={weight}
+					className='mb-4 last:mb-4'
+					weight={weight}
+					level={3}
+					as={`h${3}`}
+				>
+					Weight {weight}
+				</Title>
+			))}
+		</div>
+	)
+};
+
 export const Levels: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'There are 6 levels of headings, which differ in font size, line height and fat content.',
+				story: 'There are 6 levels of headers, which differ in font size and line height',
 			},
 		},
 	},
