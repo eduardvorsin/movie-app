@@ -17,7 +17,7 @@ type Props = {
 	appearance?: 'success' | 'info' | 'warning' | 'danger' | 'discovery',
 	onClose?: () => void,
 	closeButton?: boolean,
-	titleElement: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
+	titleElement?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
 	actions?: ReactNode[],
 	testId?: string,
 };
