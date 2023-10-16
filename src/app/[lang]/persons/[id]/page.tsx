@@ -174,10 +174,12 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 				<div className='flex items-center flex-wrap -ml-[0.375rem]'>
 					{socialNetworks.map((item) => (
-						<div className='px-[0.375rem] pt-3'>
+						<div
+							className='px-[0.375rem] pt-3'
+							key={item.name}
+						>
 							<Link
-								key={item.name}
-								className='text-[0rem] flex w-10 h-10 fill-neutral-300 text-dark-neutral-300 hover:fill-neutral-400 hover:text-dark-neutral-250 active:fill-dark-neutral-500 active:text-dark-neutral-200 dark:fill-dark-neutral-400 dark:text-neutral-300 dark:hover:fill-dark-neutral-500 dark:hover:text-neutral-200 dark:active:fill-dark-neutral-600 dark:active:text-neutral-100 transition-colors duration-150'
+								className='text-0 flex w-10 h-10 fill-neutral-300 text-dark-neutral-300 hover:fill-neutral-400 hover:text-dark-neutral-250 active:fill-dark-neutral-500 active:text-dark-neutral-200 dark:fill-dark-neutral-400 dark:text-neutral-300 dark:hover:fill-dark-neutral-500 dark:hover:text-neutral-200 dark:active:fill-dark-neutral-600 dark:active:text-neutral-100 transition-colors duration-150'
 								href={item.url}
 								isExternal
 								target='_blank'
