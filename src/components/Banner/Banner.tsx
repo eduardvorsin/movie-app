@@ -84,6 +84,7 @@ export default function Banner({
 		>
 			{!hideIcon && (
 				<span
+					role="presentation"
 					className='w-6 h-6 mr-4'
 				>
 					{apperanceIcons[appearance]}
