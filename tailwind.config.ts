@@ -197,6 +197,7 @@ const config: Config = {
       'mono': ['ui-monospace', 'SFMono-Regular', 'SF Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'monospace'],
     },
     fontSize: {
+      0: '0rem',
       75: '0.75rem',
       100: '0.875rem',
       200: '1rem',
