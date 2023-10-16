@@ -2,6 +2,8 @@
 import { MouseEventHandler, useLayoutEffect, useRef, useState } from 'react';
 import Button from '../Button/Button';
 import { useTranslation } from 'src/i18n/client';
+import { useParams } from 'next/navigation';
+import { Locales } from 'src/i18n/settings';
 
 type Props = {
 	className?: string,
@@ -27,7 +29,8 @@ export default function ExpandableText({
 	defaultExpanded,
 	visibleRowsCount = 2,
 }: Props) {
-	const { t } = useTranslation();
+	const lang = useParams()?.lang as Locales;
+	const { t } = useTranslation(lang);
 	const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded ?? false);
 
 	const textRef = useRef<HTMLParagraphElement | null>(null);
