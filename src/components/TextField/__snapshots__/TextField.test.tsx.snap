@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField tests is a basic snapshot 1`] = `
+<div
+  class=""
+  data-testid="test-field"
+>
+  <label
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    for="test-field"
+    id="label-test-field"
+  >
+    test-field
+  </label>
+  <div
+    class="relative"
+  >
+    <input
+      class="cursor-[inherit] py-1 text-100 leading-2 font-regular block w-full min-h-[2.25rem] border-2 text-dark-neutral-0 placeholder-dark-neutral-700 rounded-1 transition-colors ease-ease-in-out duration-150 enabled:hover:bg-neutral-100 focus:outline-none enabled:focus:border-blue-500 dark:bg-dark-neutral-200 dark:enabled:hover:bg-dark-neutral-250 dark:text-neutral-400 dark:placeholder-neutral-600 dark:enabled:focus:border-blue-300 border-neutral-300 dark:border-dark-neutral-350 px-3 "
+      id="test-field"
+      name="test-field"
+      value="mock"
+    />
+  </div>
+</div>
+`;
+
+exports[`TextField tests is a snapshot with an error message 1`] = `
+<div
+  class=""
+  data-testid="test-field"
+>
+  <label
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    for="test-field"
+    id="label-test-field"
+  >
+    test-field
+  </label>
+  <div
+    class="relative"
+  >
+    <input
+      aria-labelledby="test-field-error-message"
+      class="cursor-[inherit] py-1 text-100 leading-2 font-regular block w-full min-h-[2.25rem] border-2 text-dark-neutral-0 placeholder-dark-neutral-700 rounded-1 transition-colors ease-ease-in-out duration-150 enabled:hover:bg-neutral-100 focus:outline-none enabled:focus:border-blue-500 dark:bg-dark-neutral-200 dark:enabled:hover:bg-dark-neutral-250 dark:text-neutral-400 dark:placeholder-neutral-600 dark:enabled:focus:border-blue-300 border-neutral-300 dark:border-dark-neutral-350 px-3 "
+      id="test-field"
+      name="test-field"
+      value="mock"
+    />
+  </div>
+  <p
+    class="flex items-center text-75 text-blue-700 dark:text-blue-400 mt-1"
+    id="test-field-error-message"
+    role="alert"
+  >
+    <span
+      aria-hidden="true"
+      class="mr-1 w-6 h-6"
+    >
+      <svg
+        class="fill-current"
+        viewBox="0 0 20 20"
+      >
+        <use
+          href="undefined#connectivity"
+        />
+      </svg>
+    </span>
+    mock error
+  </p>
+</div>
+`;
+
+exports[`TextField tests is a snapshot with clear button 1`] = `
+<div
+  class=""
+  data-testid="test-field"
+>
+  <label
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    for="test-field"
+    id="label-test-field"
+  >
+    test-field
+  </label>
+  <div
+    class="relative"
+  >
+    <input
+      class="cursor-[inherit] py-1 text-100 leading-2 font-regular block w-full min-h-[2.25rem] border-2 text-dark-neutral-0 placeholder-dark-neutral-700 rounded-1 transition-colors ease-ease-in-out duration-150 enabled:hover:bg-neutral-100 focus:outline-none enabled:focus:border-blue-500 dark:bg-dark-neutral-200 dark:enabled:hover:bg-dark-neutral-250 dark:text-neutral-400 dark:placeholder-neutral-600 dark:enabled:focus:border-blue-300 border-neutral-300 dark:border-dark-neutral-350 pl-3 pr-8 "
+      id="test-field"
+      name="test-field"
+      value="mock"
+    />
+    <button
+      class="text-dark-neutral-0 dark:text-neutral-400 w-5 h-5 absolute top-1/2 right-[0.5rem] -translate-y-1/2 text-0"
+    >
+      clear
+      <svg
+        class="fill-current"
+        viewBox="0 0 20 20"
+      >
+        <use
+          href="undefined#cancel"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`TextField tests is a snapshot with isDisabled set to true 1`] = `
+<div
+  class="opacity-disabled cursor-not-allowed"
+  data-testid="test-field"
+>
+  <label
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    for="test-field"
+    id="label-test-field"
+  >
+    test-field
+  </label>
+  <div
+    class="relative"
+  >
+    <input
+      class="cursor-[inherit] py-1 text-100 leading-2 font-regular block w-full min-h-[2.25rem] border-2 text-dark-neutral-0 placeholder-dark-neutral-700 rounded-1 transition-colors ease-ease-in-out duration-150 enabled:hover:bg-neutral-100 focus:outline-none enabled:focus:border-blue-500 dark:bg-dark-neutral-200 dark:enabled:hover:bg-dark-neutral-250 dark:text-neutral-400 dark:placeholder-neutral-600 dark:enabled:focus:border-blue-300 border-neutral-300 dark:border-dark-neutral-350 px-3 "
+      disabled=""
+      id="test-field"
+      name="test-field"
+      value="mock"
+    />
+  </div>
+</div>
+`;
+
+exports[`TextField tests is a snapshot with isInvalid set to true 1`] = `
+<div
+  class=""
+  data-testid="test-field"
+>
+  <label
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    for="test-field"
+    id="label-test-field"
+  >
+    test-field
+  </label>
+  <div
+    class="relative"
+  >
+    <input
+      aria-invalid="true"
+      class="cursor-[inherit] py-1 text-100 leading-2 font-regular block w-full min-h-[2.25rem] border-2 text-dark-neutral-0 placeholder-dark-neutral-700 rounded-1 transition-colors ease-ease-in-out duration-150 enabled:hover:bg-neutral-100 focus:outline-none enabled:focus:border-blue-500 dark:bg-dark-neutral-200 dark:enabled:hover:bg-dark-neutral-250 dark:text-neutral-400 dark:placeholder-neutral-600 dark:enabled:focus:border-blue-300 border-red-600 dark:border-red-300 px-3 "
+      id="test-field"
+      name="test-field"
+      value="mock"
+    />
+  </div>
+</div>
+`;
+
+exports[`TextField tests is a snapshot with isReadonly set to true 1`] = `
+<div
+  class=""
+  data-testid="test-field"
+>
+  <label
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    for="test-field"
+    id="label-test-field"
+  >
+    test-field
+  </label>
+  <div
+    class="relative"
+  >
+    <input
+      class="cursor-[inherit] py-1 text-100 leading-2 font-regular block w-full min-h-[2.25rem] border-2 text-dark-neutral-0 placeholder-dark-neutral-700 rounded-1 transition-colors ease-ease-in-out duration-150 enabled:hover:bg-neutral-100 focus:outline-none enabled:focus:border-blue-500 dark:bg-dark-neutral-200 dark:enabled:hover:bg-dark-neutral-250 dark:text-neutral-400 dark:placeholder-neutral-600 dark:enabled:focus:border-blue-300 border-neutral-300 dark:border-dark-neutral-350 px-3 "
+      id="test-field"
+      name="test-field"
+      readonly=""
+      value="mock"
+    />
+  </div>
+</div>
+`;
+
+exports[`TextField tests is a snapshot with isRequired set to true 1`] = `
+<div
+  class=""
+  data-testid="test-field"
+>
+  <label
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    for="test-field"
+    id="label-test-field"
+  >
+    test-field
+    <span
+      aria-hidden="true"
+      class="pl-0.5 text-red-800 dark:text-red-300"
+    >
+      *
+    </span>
+  </label>
+  <div
+    class="relative"
+  >
+    <input
+      class="cursor-[inherit] py-1 text-100 leading-2 font-regular block w-full min-h-[2.25rem] border-2 text-dark-neutral-0 placeholder-dark-neutral-700 rounded-1 transition-colors ease-ease-in-out duration-150 enabled:hover:bg-neutral-100 focus:outline-none enabled:focus:border-blue-500 dark:bg-dark-neutral-200 dark:enabled:hover:bg-dark-neutral-250 dark:text-neutral-400 dark:placeholder-neutral-600 dark:enabled:focus:border-blue-300 border-neutral-300 dark:border-dark-neutral-350 px-3 "
+      id="test-field"
+      name="test-field"
+      required=""
+      value="mock"
+    />
+  </div>
+</div>
+`;
+
+exports[`TextField tests is a snapshot with labelHidden set to true 1`] = `
+<div
+  class=""
+  data-testid="test-field"
+>
+  <label
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] sr-only"
+    for="test-field"
+    id="label-test-field"
+  >
+    test-field
+  </label>
+  <div
+    class="relative"
+  >
+    <input
+      class="cursor-[inherit] py-1 text-100 leading-2 font-regular block w-full min-h-[2.25rem] border-2 text-dark-neutral-0 placeholder-dark-neutral-700 rounded-1 transition-colors ease-ease-in-out duration-150 enabled:hover:bg-neutral-100 focus:outline-none enabled:focus:border-blue-500 dark:bg-dark-neutral-200 dark:enabled:hover:bg-dark-neutral-250 dark:text-neutral-400 dark:placeholder-neutral-600 dark:enabled:focus:border-blue-300 border-neutral-300 dark:border-dark-neutral-350 px-3 "
+      id="test-field"
+      name="test-field"
+      value="mock"
+    />
+  </div>
+</div>
+`;
