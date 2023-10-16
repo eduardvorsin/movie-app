@@ -1,4 +1,4 @@
-import { fallbackLng, languages } from 'src/i18n/settings';
+import { fallbackLng, locales as langs } from 'src/i18n/settings';
 import { KeyWithoutId } from './../../types/shared';
 import { ExternalIDS } from "src/app/[lang]/persons/[id]/page";
 
@@ -78,7 +78,7 @@ export const createSocialNetworksArray = (data: ExternalIDS): SocialNetworkItem[
 
 export const getLocalesFromString = (localesString: string): string[] => {
 	const regexp = /\*|[a-z]{1,8}(-[a-z0-9]{1,8})*/g;
-	const supportedLngs = new Set<string>(languages);
+	const supportedLngs = new Set<string>(langs);
 	const locales = localesString.match(regexp)?.filter((locale) => locale !== 'q' && supportedLngs.has(locale)) ?? [];
 
 	return locales;

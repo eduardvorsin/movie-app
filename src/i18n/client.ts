@@ -1,43 +1,55 @@
+'use client';
+
+// eslint-disable-next-line import/named
+import i18next, { i18n } from 'i18next'
 import { useEffect, useState } from 'react';
-import i18next from 'i18next'
 import { initReactI18next, useTranslation as useTranslationOrg } from 'react-i18next'
 import resourcesToBackend from 'i18next-resources-to-backend';
-import { getOptions, languages, runsOnServerSide } from './settings';
-import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector';
+import { Locales, defaultNS, getOptions, locales, runsOnServerSide } from './settings';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 i18next
 	.use(initReactI18next)
-	.use(I18nextBrowserLanguageDetector)
-	.use(resourcesToBackend((language: string, namespace: string) => import(`./translations/${language}/${namespace}.json`)))
+	.use(LanguageDetector)
+	.use(
+		resourcesToBackend(
+			(language: string, namespace: string) => import(`./translations/${language}/${namespace}.json`),
+		),
+	)
 	.init({
 		...getOptions(),
 		lng: undefined,
 		detection: {
 			order: ['path', 'htmlTag', 'cookie', 'navigator'],
 		},
-		preload: runsOnServerSide ? languages : [],
+		preload: runsOnServerSide ? locales : [],
 	});
 
-export const useTranslation = (lng?: string, ns?: string | string[]) => {
-	const ret = useTranslationOrg(ns);
-	const { i18n } = ret;
+export const useTranslation = (lng: Locales, ns?: string | string[]) => {
+	const translator = useTranslationOrg(ns ?? defaultNS);
+	const { i18n } = translator;
 
 	if (runsOnServerSide && lng && i18n.resolvedLanguage !== lng) {
-		i18n.changeLanguage(lng)
+		i18n.changeLanguage(lng);
 	} else {
-		const [activeLang, setActiveLang] = useState<string | undefined>(i18n.resolvedLanguage);
-
-		useEffect(() => {
-			if (activeLang === i18n.resolvedLanguage) return;
-			setActiveLang(i18n.resolvedLanguage);
-		}, [lng, i18n]);
-
-		useEffect(() => {
-			if (!lng || activeLang === i18n.resolvedLanguage) return;
-			i18n.changeLanguage(i18n.resolvedLanguage);
-		}, [lng, i18n]);
+		// eslint-disable-next-line react-hooks/rules-of-hooks
+		useCustomTranslation(i18n, lng);
 	}
 
-	return ret;
+	return translator;
 };
+
+const useCustomTranslation = (i18n:i18n, lng:Locales) =>{
+	const [activeLang, setActiveLang] = useState<string | undefined>(i18n.resolvedLanguage);
+
+	useEffect(() => {
+		if (activeLang === i18n.resolvedLanguage) return;
+		setActiveLang(i18n.resolvedLanguage);
+	}, [activeLang, i18n.resolvedLanguage]);
+
+	useEffect(() => {
+		if (!lng || i18n.resolvedLanguage === lng) return;
+		i18n.changeLanguage(i18n.resolvedLanguage);
+	}, [lng, i18n]);
+}
 

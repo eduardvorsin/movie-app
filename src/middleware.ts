@@ -1,24 +1,35 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getLocalesFromString } from './helpers/helpers';
-import { fallbackLng, languages } from './i18n/settings';
+import { fallbackLng, locales } from './i18n/settings';
 
 export function middleware(request: NextRequest) {
 	const { pathname } = request.nextUrl;
-	const localeRegexp = /(?!\/)[a-z]{2}(?!\/)?/;
-	const currentLocale = pathname.match(localeRegexp)?.[0] ?? fallbackLng;
+	
+	if(
+		pathname.startsWith(`/${fallbackLng}`)||
+		pathname === `/${fallbackLng}`
+	){
+		const url = new URL(
+				pathname.replace(
+					`/${fallbackLng}`,
+					pathname===`/${fallbackLng}` ? '/' : '',
+				),
+				request.url
+		);
 
-	const pathnameHasSupportedLang = languages.some((lang) => lang === currentLocale);
+		return NextResponse.redirect(url);
+	}
 
-	if (pathnameHasSupportedLang) return;
+	const pathnameIsMissingLocale = locales.every(locale =>{
+		return !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`;
+	});
 
-	const locale = getLocalesFromString(request.headers.get('accept-language') ?? fallbackLng)[0];
-	request.nextUrl.pathname = `/${locale}/${pathname}`;
-
-	return NextResponse.redirect(request.nextUrl);
+	if(pathnameIsMissingLocale){
+		return NextResponse.rewrite(
+			new URL(`/${fallbackLng}${pathname}`,request.url),
+		)
+	}
 }
 
 export const config = {
-	matcher: [
-		'/((?!_next).*)',
-	],
+	matcher: '/((?!api|_next/static|_next/image|manifest.json|assets|favicon.ico).*)',
 }

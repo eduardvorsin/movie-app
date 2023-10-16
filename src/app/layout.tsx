@@ -3,8 +3,6 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { dir } from 'i18next';
 import { fallbackLng } from 'src/i18n/settings';
-import { headers } from 'next/headers';
-import { getLocalesFromString } from 'src/helpers/helpers';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,12 +16,10 @@ type Props = {
 export default function RootLayout({
   children,
 }: Props) {
-  const lang = getLocalesFromString(headers().get('accept-language') ?? fallbackLng)[0];
-
   return (
     <html
-      lang={lang}
-      dir={dir(lang)}
+      lang={fallbackLng}
+      dir={dir(fallbackLng)}
       className={`${inter.variable}`}
     >
       <body className='bg-neutral-200 dark:bg-dark-neutral-100'>

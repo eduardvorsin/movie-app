@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 import { getLocalesFromString } from "src/helpers/helpers";
-import { fallbackLng } from "src/i18n/settings";
+import { Locales, fallbackLng } from "src/i18n/settings";
 import Button from '@/components/Button/Button';
 import NotFoundIcon from '../assets/icons/404.svg?url';
 import Title from '@/components/Title/Title';
@@ -8,7 +8,7 @@ import { fetchTranslation } from 'src/i18n/server';
 
 
 export default async function NotFound() {
-	const lang = getLocalesFromString(headers().get('accept-language') ?? fallbackLng)[0];
+	const lang = getLocalesFromString(headers().get('accept-language') ?? fallbackLng)[0] as Locales;
 	const { t } = await fetchTranslation(lang);
 
 	return (
