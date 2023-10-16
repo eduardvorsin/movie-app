@@ -4,12 +4,12 @@ import { fallbackLng } from "src/i18n/settings";
 import Button from '@/components/Button/Button';
 import NotFoundIcon from '../assets/icons/404.svg?url';
 import Title from '@/components/Title/Title';
-import { useTranslation } from 'src/i18n/server';
+import { fetchTranslation } from 'src/i18n/server';
 
 
 export default async function NotFound() {
 	const lang = getLocalesFromString(headers().get('accept-language') ?? fallbackLng)[0];
-	const { t } = await useTranslation(lang);
+	const { t } = await fetchTranslation(lang);
 
 	return (
 		<div className='max-w-[77rem] h-[100vh] min-h-[25.75rem] mx-auto my-0 py-0 px-4 flex items-center justify-center'

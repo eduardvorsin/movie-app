@@ -12,7 +12,7 @@ import Link from '@/components/Link/Link';
 import CharacteristicList from '@/components/CharacteristicList/CharacteristicList';
 import ExpandableText from '@/components/ExpandableText/ExpandableText';
 import { createPersonCharacteristicsArray, createSocialNetworksArray, getLocalizedDate } from 'src/helpers/helpers';
-import { useTranslation } from 'src/i18n/server';
+import { fetchTranslation } from 'src/i18n/server';
 import { fallbackLng } from 'src/i18n/settings';
 
 export type ExternalIDS = {
@@ -43,8 +43,8 @@ export type ActorResponseData = {
 };
 
 const fetchActor = async (id: string, options?: { lang: 'string' }): Promise<ActorResponseData | Error> => {
-	let currentLang = options?.lang ?? fallbackLng;
-	const { t } = await useTranslation(currentLang, ['common']);
+	const currentLang = options?.lang ?? fallbackLng;
+	const { t } = await fetchTranslation(currentLang, ['common']);
 
 	let actor;
 	try {
@@ -87,7 +87,7 @@ type Props = {
 };
 
 export default async function Page({ params: { id, lang } }: Props) {
-	const { t } = await useTranslation(lang, ['personsPage', 'common']);
+	const { t } = await fetchTranslation(lang, ['personsPage', 'common']);
 	const actor = await fetchActor(id);
 
 	if (actor instanceof Error) {
