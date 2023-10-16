@@ -117,7 +117,7 @@ export default function Banner({
 			{closeButton && (
 				<Button
 					appearance={appearance === 'info' ? 'primary' : appearance}
-					className='text-[0rem] p-2 w-10 h-10 absolute top-2 right-0'
+					className='text-0 p-2 w-10 h-10 absolute top-2 right-0'
 					iconButton
 					onClick={onClose}
 				>

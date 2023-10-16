@@ -115,7 +115,7 @@ export default function TextField({
 				/>
 				{clearButton && (
 					<button
-						className='text-dark-neutral-0 dark:text-neutral-400 w-5 h-5 absolute top-1/2 right-[0.5rem] -translate-y-1/2 text-[0rem]'
+						className='text-dark-neutral-0 dark:text-neutral-400 w-5 h-5 absolute top-1/2 right-[0.5rem] -translate-y-1/2 text-0'
 						onClick={onClear}
 					>
 						clear
