@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner tests is a basic snapshot 1`] = `
+<div
+  class="py-4 pl-4 rounded-[0.1875rem] flex relative bg-blue-100 dark:bg-blue-1000 pr-4 "
+  data-testid="test-banner"
+>
+  <span
+    class="w-6 h-6 mr-4"
+    role="presentation"
+  >
+    <svg
+      class="fill-blue-700 dark:fill-blue-400"
+      viewBox="0 0 20 20"
+    >
+      <use
+        href="undefined#info"
+      />
+    </svg>
+  </span>
+  <div>
+    <p
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Banner tests is a snapshot with a "danger" type appearance 1`] = `
+<div
+  class="py-4 pl-4 rounded-[0.1875rem] flex relative bg-red-100 dark:bg-red-1000 pr-4 "
+  data-testid="test-banner"
+>
+  <span
+    class="w-6 h-6 mr-4"
+    role="presentation"
+  >
+    <svg
+      class="fill-red-700 dark:fill-red-400"
+      viewBox="0 0 20 20"
+    >
+      <use
+        href="undefined#error"
+      />
+    </svg>
+  </span>
+  <div>
+    <p
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Banner tests is a snapshot with a "discovery" type appearance 1`] = `
+<div
+  class="py-4 pl-4 rounded-[0.1875rem] flex relative bg-purple-100 dark:bg-purple-1000 pr-4 "
+  data-testid="test-banner"
+>
+  <span
+    class="w-6 h-6 mr-4"
+    role="presentation"
+  >
+    <svg
+      class="fill-purple-700 dark:fill-purple-400 "
+      viewBox="0 0 20 20"
+    >
+      <use
+        href="undefined#question"
+      />
+    </svg>
+  </span>
+  <div>
+    <p
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Banner tests is a snapshot with a "info" type appearance 1`] = `
+<div
+  class="py-4 pl-4 rounded-[0.1875rem] flex relative bg-blue-100 dark:bg-blue-1000 pr-4 "
+  data-testid="test-banner"
+>
+  <span
+    class="w-6 h-6 mr-4"
+    role="presentation"
+  >
+    <svg
+      class="fill-blue-700 dark:fill-blue-400"
+      viewBox="0 0 20 20"
+    >
+      <use
+        href="undefined#info"
+      />
+    </svg>
+  </span>
+  <div>
+    <p
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Banner tests is a snapshot with a "success" type appearance 1`] = `
+<div
+  class="py-4 pl-4 rounded-[0.1875rem] flex relative bg-green-100 dark:bg-green-1000 pr-4 "
+  data-testid="test-banner"
+>
+  <span
+    class="w-6 h-6 mr-4"
+    role="presentation"
+  >
+    <svg
+      class="fill-green-800 dark:fill-green-400"
+      viewBox="0 0 20 20"
+    >
+      <use
+        href="undefined#confirmation"
+      />
+    </svg>
+  </span>
+  <div>
+    <p
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Banner tests is a snapshot with a "warning" type appearance 1`] = `
+<div
+  class="py-4 pl-4 rounded-[0.1875rem] flex relative bg-yellow-100 dark:bg-yellow-1000 pr-4 "
+  data-testid="test-banner"
+>
+  <span
+    class="w-6 h-6 mr-4"
+    role="presentation"
+  >
+    <svg
+      class="fill-yellow-600 dark:fill-yellow-500"
+      viewBox="0 0 20 20"
+    >
+      <use
+        href="undefined#warning"
+      />
+    </svg>
+  </span>
+  <div>
+    <p
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Banner tests is a snapshot with action buttons 1`] = `
+<div
+  class="py-4 pl-4 rounded-[0.1875rem] flex relative bg-blue-100 dark:bg-blue-1000 pr-4 "
+  data-testid="test-banner"
+>
+  <span
+    class="w-6 h-6 mr-4"
+    role="presentation"
+  >
+    <svg
+      class="fill-blue-700 dark:fill-blue-400"
+      viewBox="0 0 20 20"
+    >
+      <use
+        href="undefined#info"
+      />
+    </svg>
+  </span>
+  <div>
+    <p
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+    </p>
+    <div
+      class="flex mt-3"
+    >
+      <div
+        class="mr-2 last:mr-0"
+      >
+        <button
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative   "
+        >
+          <span>
+            action
+          </span>
+        </button>
+      </div>
+      <div
+        class="mr-2 last:mr-0"
+      >
+        <button
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative   "
+        >
+          <span>
+            action
+          </span>
+        </button>
+      </div>
+      <div
+        class="mr-2 last:mr-0"
+      >
+        <button
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative   "
+        >
+          <span>
+             action
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Banner tests is a snapshot with closeButton equal to true 1`] = `
+<div
+  class="py-4 pl-4 rounded-[0.1875rem] flex relative bg-blue-100 dark:bg-blue-1000 pr-12 "
+  data-testid="test-banner"
+>
+  <span
+    class="w-6 h-6 mr-4"
+    role="presentation"
+  >
+    <svg
+      class="fill-blue-700 dark:fill-blue-400"
+      viewBox="0 0 20 20"
+    >
+      <use
+        href="undefined#info"
+      />
+    </svg>
+  </span>
+  <div>
+    <p
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+    </p>
+  </div>
+  <button
+    class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  text-blue-700 enabled:hover:text-blue-800 enabled:active:text-blue-900 dark:text-blue-400 dark:enabled:hover:text-blue-300 dark:enabled:active:text-blue-200    text-0 p-2 w-10 h-10 absolute top-2 right-0"
+  >
+    <span
+      class="inline-flex"
+    >
+      close
+      <svg
+        aria-hidden="true"
+        class="fill-current w-6 h-6"
+        viewBox="0 0 20 20"
+      >
+        <use
+          href="undefined#cancel"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Banner tests is a snapshot with hideIcon equal to true 1`] = `
+<div
+  class="py-4 pl-4 rounded-[0.1875rem] flex relative bg-blue-100 dark:bg-blue-1000 pr-4 "
+  data-testid="test-banner"
+>
+  <div>
+    <p
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+    </p>
+  </div>
+</div>
+`;
