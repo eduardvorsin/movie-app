@@ -268,9 +268,11 @@ const meta: Meta<typeof Button> = {
 			description: 'Sets the size of the button. You can choose a ready-made or choose a custom option and set your own styles for the sizes.',
 		},
 		iconBefore: {
+			control: false,
 			description: 'The icon that will be placed before the content of the button',
 		},
 		iconAfter: {
+			control: false,
 			description: 'The icon that will be placed after the content of the button',
 		},
 		onBlur: {
