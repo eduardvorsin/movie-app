@@ -88,7 +88,7 @@ type Props = {
 
 export default async function Page({ params: { id, lang } }: Props) {
 	const { t } = await fetchTranslation(lang, ['personsPage', 'common']);
-	const actor = await fetchActor(id);
+	const actor = await fetchActor(id, { lang });
 
 	if (actor instanceof Error) {
 		return notFound();
