@@ -13,7 +13,7 @@ import CharacteristicList from '@/components/CharacteristicList/CharacteristicLi
 import ExpandableText from '@/components/ExpandableText/ExpandableText';
 import { createPersonCharacteristicsArray, createSocialNetworksArray, getLocalizedDate } from 'src/helpers/helpers';
 import { fetchTranslation } from 'src/i18n/server';
-import { fallbackLng } from 'src/i18n/settings';
+import { Locales, fallbackLng } from 'src/i18n/settings';
 
 export type ExternalIDS = {
 	imdb_id: string | null,
@@ -42,7 +42,7 @@ export type ActorResponseData = {
 	external_ids: ExternalIDS
 };
 
-const fetchActor = async (id: string, options?: { lang: 'string' }): Promise<ActorResponseData | Error> => {
+const fetchActor = async (id: string, options?: { lang: Locales }): Promise<ActorResponseData | Error> => {
 	const currentLang = options?.lang ?? fallbackLng;
 	const { t } = await fetchTranslation(currentLang, ['common']);
 
@@ -82,7 +82,7 @@ const socialNetworkIcons = {
 type Props = {
 	params: {
 		id: string
-		lang: string,
+		lang: Locales,
 	}
 };
 
