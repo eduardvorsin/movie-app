@@ -2,7 +2,7 @@
 
 exports[`Title tests is a basic snapshot 1`] = `
 <h6
-  class="text-dark-neutral-0 dark:text-neutral-0 -tracking-[0.01em] text-400 leading-3 font-semibold "
+  class="-tracking-[0.01em] text-300 sm:text-400  leading-3 font-bold "
 >
   Title
 </h6>
@@ -10,7 +10,7 @@ exports[`Title tests is a basic snapshot 1`] = `
 
 exports[`Title tests is a snapshot with header level 2 1`] = `
 <h6
-  class="text-dark-neutral-0 dark:text-neutral-0 -tracking-[0.01em] text-600 leading-5 font-semibold "
+  class="-tracking-[0.01em] text-400 sm:text-500 md:text-600 leading-5 font-bold "
 >
   Title
 </h6>
@@ -18,7 +18,7 @@ exports[`Title tests is a snapshot with header level 2 1`] = `
 
 exports[`Title tests is a snapshot with html element h5 1`] = `
 <h5
-  class="text-dark-neutral-0 dark:text-neutral-0 -tracking-[0.01em] text-500 leading-4 font-semibold "
+  class="-tracking-[0.01em] text-400 sm:text-500 leading-4 font-bold "
 >
   Title
 </h5>

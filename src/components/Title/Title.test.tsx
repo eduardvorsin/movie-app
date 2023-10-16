@@ -8,10 +8,10 @@ describe('Title tests', () => {
 		expect(screen.getByText<HTMLHeadingElement>(/title/i)).toBeInTheDocument();
 	});
 
-	it('If the prop Level is 4, then the text-400 class should be added', () => {
+	it('If the prop Level is 4, then the text-300 class should be added', () => {
 		render(<Title level={4}>Title</Title>)
 
-		expect(screen.getByText<HTMLHeadingElement>(/title/i)).toHaveClass('text-400');
+		expect(screen.getByText<HTMLHeadingElement>(/title/i)).toHaveClass('text-300');
 	});
 
 	it('is a basic snapshot', () => {
