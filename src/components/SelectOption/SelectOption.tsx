@@ -10,6 +10,7 @@ type Props = {
 	onKeyDown: KeyboardEventHandler<HTMLLIElement>,
 	onClick: MouseEventHandler<HTMLLIElement>,
 	className?: string,
+	testId?: string,
 };
 
 export default function SelectOption({
