@@ -62,23 +62,23 @@ export const Type: Story = {
 				story: 'Allows you to set the block type. There are 2 types in total: author and time, which differ only in styling.',
 			},
 		},
-		render: () => {
-			<div className='flex'>
-				<CommentInfoItem
-					className='mr-4 last:mr-0'
-					type='author'
-				>
-					Author
-				</CommentInfoItem>
-				<CommentInfoItem
-					className='mr-4 last:mr-0'
-					type='time'
-				>
-					Time
-				</CommentInfoItem>
-			</div>
-		}
 	},
+	render: () => (
+		<div className='flex'>
+			<CommentInfoItem
+				className='mr-4 last:mr-0'
+				type='author'
+			>
+				Author
+			</CommentInfoItem>
+			<CommentInfoItem
+				className='mr-4 last:mr-0'
+				type='time'
+			>
+				Time
+			</CommentInfoItem>
+		</div>
+	),
 };
 
 export const EventCallbacks: Story = {
