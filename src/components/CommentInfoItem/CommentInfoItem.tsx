@@ -43,12 +43,13 @@ export default function CommentInfoItem({
 	}
 
 	return (
-		<span
+		<button
 			className={classes}
 			onClick={onClick}
+			onFocus={onFocus}
 			data-testid={testId}
 		>
 			{children}
-		</span>
+		</button>
 	);
 };
