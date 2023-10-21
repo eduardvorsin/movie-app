@@ -3,29 +3,29 @@ import { fallbackLng, locales } from './i18n/settings';
 
 export function middleware(request: NextRequest) {
 	const { pathname } = request.nextUrl;
-	
-	if(
-		pathname.startsWith(`/${fallbackLng}`)||
+
+	if (
+		pathname.startsWith(`/${fallbackLng}`) ||
 		pathname === `/${fallbackLng}`
-	){
+	) {
 		const url = new URL(
-				pathname.replace(
-					`/${fallbackLng}`,
-					pathname===`/${fallbackLng}` ? '/' : '',
-				),
-				request.url
+			pathname.replace(
+				`/${fallbackLng}`,
+				pathname === `/${fallbackLng}` ? '/' : '',
+			),
+			request.url
 		);
 
 		return NextResponse.redirect(url);
 	}
 
-	const pathnameIsMissingLocale = locales.every(locale =>{
+	const pathnameIsMissingLocale = locales.every(locale => {
 		return !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`;
 	});
 
-	if(pathnameIsMissingLocale){
+	if (pathnameIsMissingLocale) {
 		return NextResponse.rewrite(
-			new URL(`/${fallbackLng}${pathname}`,request.url),
+			new URL(`/${fallbackLng}${pathname}`, request.url),
 		)
 	}
 }
