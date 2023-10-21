@@ -48,7 +48,7 @@ export default function ExpandableText({
 
 			setShouldShowButton(numberOfRows > visibleRowsCount);
 		}
-	}, []);
+	}, [visibleRowsCount]);
 
 	const textClasses = [
 		'text-dark-neutral-250 dark:text-neutral-300',
