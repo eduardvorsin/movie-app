@@ -29,7 +29,7 @@ export default function ExpandableText({
 	defaultExpanded,
 	visibleRowsCount = 2,
 }: Props) {
-	const lang = useParams()?.lang as Locales;
+	const lang = useParams()?.lang as Locales ?? fallbackLng;
 	const { t } = useTranslation(lang);
 	const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded ?? false);
 
