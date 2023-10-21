@@ -74,9 +74,10 @@ export default function Button({
 	iconButton,
 	testId,
 }: Props) {
+	const currentFontSize = size === 'large' ? 'text-200' : 'text-100';
 	const classes = [
 		'items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150',
-		size === 'large' ? 'text-200' : 'text-100',
+		iconButton ? 'text-0' : currentFontSize,
 		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
 		iconButton ? iconButtonAppearances[appearance] : appearanceTypes[appearance],
 		iconButton ? '' : `${sizeTypes[size]} relative`,
