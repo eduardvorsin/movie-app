@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentAction tests is a basic snapshot 1`] = `
+<button
+  class="inline-flex font-medium text-100 text-neutral-800 dark:text-dark-neutral-800 enabled:hover:text-neutral-700 dark:enabled:hover:text-dark-neutral-900 enabled:hover:underline enabled:active:text-neutral-600 dark:enabled:active:text-dark-neutral-1000 disabled:opacity-disabled disabled:cursor-not-allowed "
+>
+  <span
+    class="max-w-[80px] truncate"
+  >
+    test item
+  </span>
+</button>
+`;
+
+exports[`CommentAction tests is a snapshot with an element in the form of a link 1`] = `
+<button
+  class="inline-flex font-medium text-100 text-neutral-800 dark:text-dark-neutral-800 enabled:hover:text-neutral-700 dark:enabled:hover:text-dark-neutral-900 enabled:hover:underline enabled:active:text-neutral-600 dark:enabled:active:text-dark-neutral-1000 disabled:opacity-disabled disabled:cursor-not-allowed "
+>
+  <span
+    class="max-w-[80px] truncate"
+  >
+    test item
+  </span>
+</button>
+`;
