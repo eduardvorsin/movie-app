@@ -1,9 +1,9 @@
 'use client';
 import { MouseEventHandler, useLayoutEffect, useRef, useState } from 'react';
 import Button from '../Button/Button';
-import { useTranslation } from 'src/i18n/client';
+import { useTranslation } from '../../i18n/client';
 import { useParams } from 'next/navigation';
-import { Locales } from 'src/i18n/settings';
+import { Locales, fallbackLng } from '../../i18n/settings';
 
 type Props = {
 	className?: string,
