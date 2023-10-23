@@ -11,6 +11,7 @@ type Props = {
 	onChange: ChangeEventHandler<HTMLInputElement>,
 	onSubmit: FormEventHandler<HTMLFormElement>,
 	onFocus?: FocusEventHandler<HTMLInputElement>,
+	onBlur?: FocusEventHandler<HTMLInputElement>,
 	labelHidden?: boolean,
 	className?: string,
 	testId?: string,
@@ -35,6 +36,7 @@ export default function Search({
 	value,
 	onChange,
 	onFocus,
+	onBlur,
 	onSubmit,
 }: Props) {
 	const labelClasses = [
@@ -77,6 +79,7 @@ export default function Search({
 							onChange={onChange}
 							value={value}
 							onFocus={onFocus}
+							onBlur={onBlur}
 						/>
 						<Button
 							appearance='ghost'
