@@ -80,6 +80,7 @@ export default function Search({
 							value={value}
 							onFocus={onFocus}
 							onBlur={onBlur}
+							aria-invalid={isInvalid}
 						/>
 						<Button
 							appearance='ghost'
