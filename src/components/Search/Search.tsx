@@ -8,6 +8,7 @@ export type Props = {
 	value: string,
 	id: string,
 	label: string,
+	name: string,
 	onChange: ChangeEventHandler<HTMLInputElement>,
 	onSubmit: FormEventHandler<HTMLFormElement>,
 	onFocus?: FocusEventHandler<HTMLInputElement>,
@@ -25,6 +26,7 @@ export type Props = {
 export default function Search({
 	id,
 	className,
+	name,
 	testId,
 	isDisabled,
 	isReadOnly,
@@ -73,6 +75,7 @@ export default function Search({
 							className={inputClasses}
 							id={id}
 							type='text'
+							name={name}
 							placeholder={placeholder}
 							disabled={isDisabled}
 							readOnly={isReadOnly}

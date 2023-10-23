@@ -8,6 +8,7 @@ describe('Search tests', () => {
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -26,6 +27,7 @@ describe('Search tests', () => {
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -46,6 +48,7 @@ describe('Search tests', () => {
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -67,6 +70,7 @@ describe('Search tests', () => {
 		const focusMockFn = jest.fn();
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -89,6 +93,7 @@ describe('Search tests', () => {
 		const blurMockFn = jest.fn();
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -111,6 +116,7 @@ describe('Search tests', () => {
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -135,6 +141,7 @@ describe('Search tests', () => {
 		const focusMockFn = jest.fn();
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -158,6 +165,7 @@ describe('Search tests', () => {
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -176,6 +184,7 @@ describe('Search tests', () => {
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -194,6 +203,7 @@ describe('Search tests', () => {
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -212,6 +222,7 @@ describe('Search tests', () => {
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -229,6 +240,7 @@ describe('Search tests', () => {
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -247,6 +259,7 @@ describe('Search tests', () => {
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -266,6 +279,7 @@ describe('Search tests', () => {
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
@@ -285,6 +299,7 @@ describe('Search tests', () => {
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
 			<Search
+				name='test-search'
 				id='test-search'
 				label='test-search'
 				value=''
