@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import InlineMessage from '../InlineMessage/InlineMessage';
 import Loupe from '../../assets/icons/loupe.svg?url';
 
-type Props = {
+export type Props = {
 	value: string,
 	id: string,
 	label: string,
