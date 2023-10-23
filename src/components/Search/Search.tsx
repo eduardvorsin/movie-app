@@ -42,7 +42,7 @@ export default function Search({
 	const labelClasses = [
 		'block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000',
 		labelHidden ? 'sr-only' : '',
-	].join('');
+	].join(' ');
 
 	const inputClasses = [
 		'outline-none w-full h-[2.25rem] py-2 pl-[0.375rem] pr-8 bg-neutral-0 dark:bg-dark-neutral-200 border-neutral-300 dark:border-dark-neutral-350 text-neutral-1000 dark:text-dark-neutral-900 rounded rounded-[0.1875rem] border-2 text-100 enabled:hover:bg-neutral-100 enabled:hover:border-neutral-400 dark:enabled:hover:bg-dark-neutral-250 dark:enabled:hover:border-dark-neutral-350 focus:border-blue-500 dark:focus:border-blue-300 transition-colors duration-150 ',
