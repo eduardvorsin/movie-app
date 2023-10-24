@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import Checkbox, { Props } from './Checkbox';
 import { ChangeEventHandler, useState } from 'react';
 
@@ -102,6 +103,7 @@ const CheckboxWithHooks = (props: Omit<Props, 'onChange' | 'isChecked'>) => {
 
 	const changeHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
 		setIsChecked(e.currentTarget.checked);
+		action('Changed')(e);
 	}
 
 	return (

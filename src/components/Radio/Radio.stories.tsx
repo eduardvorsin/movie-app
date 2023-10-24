@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import Radio, { Props } from './Radio';
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import Button from '../Button/Button';
 
 const meta: Meta<typeof Radio> = {
@@ -66,7 +67,11 @@ type Story = StoryObj<typeof Radio>;
 const RadioWithHooks = (props: Omit<Props, 'onChange' | 'isChecked'>) => {
 	const [isChecked, setIsChecked] = useState<boolean>(false);
 
-	const setChecked = (): void => setIsChecked(true);
+	const setChecked = (e: ChangeEvent<HTMLInputElement>): void => {
+		setIsChecked(true);
+		action('Changed')(e);
+	};
+
 	const clearChecked = (): void => setIsChecked(false);
 
 	return (

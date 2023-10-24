@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { action } from '@storybook/addon-actions';
 import TextField, { Props } from "./TextField";
 import { ChangeEventHandler, useState } from "react";
 
@@ -101,6 +102,7 @@ const TextFieldWithHooks = (props: Omit<Props, 'onChange' | 'value'>) => {
 
 	const changeHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
 		setValue(e.currentTarget.value);
+		action('Changed')(e);
 	}
 
 	const clearHandler = () => {
