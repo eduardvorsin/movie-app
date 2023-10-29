@@ -281,6 +281,7 @@ export const NestedComments: Story = {
 		),
 		children: (
 			<Comment
+				titleElement='h3'
 				id='nested-comment'
 				author='Lorraine Braelyn'
 				time='Sept 10, 2023'
@@ -308,8 +309,8 @@ export const Error: Story = {
 		isError: true,
 		error: 'error message',
 		errorActions: [
-			<CommentAction onClick={() => { }}>Resend</CommentAction>,
-			<CommentAction onClick={() => { }}>Remove</CommentAction>,
+			<CommentAction key={1} onClick={() => { }}>Resend</CommentAction>,
+			<CommentAction key={2} onClick={() => { }}>Remove</CommentAction>,
 		],
 		avatar: (
 			<Avatar
@@ -336,8 +337,8 @@ export const Actions: Story = {
 		content: 'Actions comment with Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ipsa recusandae ratione, inventore eveniet magni earum consequatur labore hic harum facilis asperiores maxime! Cum, itaque!',
 		type: 'author',
 		actions: [
-			<CommentAction onClick={() => { }}>Like</CommentAction>,
-			<CommentAction onClick={() => { }}>Repost</CommentAction>,
+			<CommentAction key={1} onClick={() => { }}>Like</CommentAction>,
+			<CommentAction key={2} onClick={() => { }}>Repost</CommentAction>,
 		],
 		avatar: (
 			<Avatar

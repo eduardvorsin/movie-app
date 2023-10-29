@@ -147,8 +147,9 @@ export default function Comment({
 				)}
 				{(!isError && !isSaving) && (
 					<div>
-						{actions?.map((action) => (
+						{actions?.map((action, index) => (
 							<span
+								key={index}
 								className={actionItemClasses}
 							>
 								{action}
