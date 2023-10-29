@@ -32,6 +32,7 @@ export default function AutocompleteSearch({
 	label,
 	labelHidden,
 	error,
+	name,
 	value,
 	onChange,
 	onFocus,
@@ -63,6 +64,7 @@ export default function AutocompleteSearch({
 		>
 			<Search
 				id={id}
+				name={name}
 				isDisabled={isDisabled}
 				isReadOnly={isReadOnly}
 				isInvalid={isInvalid}
