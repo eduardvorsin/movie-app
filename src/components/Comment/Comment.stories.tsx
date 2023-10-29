@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Comment from './Comment';
 import Avatar from '../Avatar/Avatar';
 import AvatarPicture from '../../assets/avatar-example.jpg';
-import CommentAction from '../CommentAction/CommentAction';
+import CommentAction from './CommentAction/CommentAction';
 
 const meta: Meta<typeof Comment> = {
 	title: 'components/Comment',

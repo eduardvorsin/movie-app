@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import CommentInfoItem from './CommentInfoItem';
 
 const meta: Meta<typeof CommentInfoItem> = {
-	title: 'components/CommentInfoItem',
+	title: 'components/Comment/CommentInfoItem',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {
