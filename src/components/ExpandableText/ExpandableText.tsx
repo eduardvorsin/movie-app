@@ -9,7 +9,7 @@ type Props = {
 	className?: string,
 	testId?: string,
 	defaultExpanded?: boolean,
-	text: string | string[],
+	children: string | string[],
 	visibleRowsCount?: 1 | 2 | 3 | 4 | 5 | 6;
 };
 
@@ -24,7 +24,7 @@ const lineClamps = {
 
 export default function ExpandableText({
 	className,
-	text,
+	children,
 	testId,
 	defaultExpanded,
 	visibleRowsCount = 2,
@@ -60,13 +60,13 @@ export default function ExpandableText({
 			className={className}
 			data-testid={testId}
 		>
-			{typeof text === 'string' ?
+			{typeof children === 'string' ?
 				(
 					<p
 						ref={textRef}
 						className={textClasses}
 					>
-						{text}
+						{children}
 					</p>
 				)
 				:
@@ -75,7 +75,7 @@ export default function ExpandableText({
 						ref={textRef}
 						className={textClasses}
 					>
-						{text.map((paragraphText, index) => (
+						{children.map((paragraphText, index) => (
 							<p key={index} className='mb-2 last:mb-0'>{paragraphText}</p>
 						))}
 					</div>

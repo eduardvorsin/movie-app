@@ -11,7 +11,7 @@ const meta: Meta<typeof ExpandableText> = {
 		visibleRowsCount: {
 			description: 'The number of visible rows in the non-expanded state. It can take values from 1 to 6',
 		},
-		text: {
+		children: {
 			description: 'ExpandableText contents',
 		},
 		defaultExpanded: {
@@ -37,7 +37,7 @@ type Story = StoryObj<typeof ExpandableText>;
 export const Default: Story = {
 	args: {
 		className: 'max-w-[15rem]',
-		text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dolore voluptate delectus facilis libero odio. Nisi doloremque nulla dolore eius adipisci? Reiciendis aliquam hic est laboriosam inventore expedita mollitia quidem?'
+		children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dolore voluptate delectus facilis libero odio. Nisi doloremque nulla dolore eius adipisci? Reiciendis aliquam hic est laboriosam inventore expedita mollitia quidem?'
 	},
 	parameters: {
 		docs: {
@@ -51,7 +51,7 @@ export const Default: Story = {
 export const DefaultExpanded: Story = {
 	args: {
 		className: 'max-w-[15rem]',
-		text: ['Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dolore voluptate delectus facilis libero odio.', ' Nisi doloremque nulla dolore eius adipisci?', ' Reiciendis aliquam hic est laboriosam inventore expedita mollitia quidem?'],
+		children: ['Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dolore voluptate delectus facilis libero odio.', ' Nisi doloremque nulla dolore eius adipisci?', ' Reiciendis aliquam hic est laboriosam inventore expedita mollitia quidem?'],
 		defaultExpanded: true,
 	},
 	parameters: {
