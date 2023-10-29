@@ -1,0 +1,16 @@
+.mask::before,
+.mask::after {
+	content: '';
+	inset: 0;
+	border-radius: 50%;
+	position: absolute;
+	mask: var(--mask);
+}
+
+.mask::before {
+	background: var(--track-gradient);
+}
+
+.mask::after {
+	background: var(--gradient);
+}
