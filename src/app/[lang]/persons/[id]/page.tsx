@@ -206,8 +206,9 @@ export default async function Page({ params: { id, lang } }: Props) {
 					<ExpandableText
 						className='text-neutral-900 dark:text-dark-neutral-900'
 						visibleRowsCount={2}
-						text={biography}
-					/>
+					>
+						{biography}
+					</ExpandableText>
 				</div>
 			)}
 		</div>
