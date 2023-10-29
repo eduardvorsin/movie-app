@@ -1,6 +1,7 @@
 import { fallbackLng, locales as langs } from 'src/i18n/settings';
 import { KeyWithoutId } from './../../types/shared';
 import { ExternalIDS } from "src/app/[lang]/persons/[id]/page";
+import { Theme } from '@/components/ThemeProvider/ThemeProvider';
 
 export type CharacteristicItem = {
 	name: string,
@@ -93,3 +94,22 @@ export const getLocalizedDate = (date: string, lang: string): string => {
 	const timeStamp = Date.parse(date);
 	return dateFormatter.format(new Date(timeStamp));
 };
+
+export const setColorTheme = (value: Theme): void => {
+	if (typeof value !== 'string') return;
+
+	if (value !== 'light' && value !== 'dark') {
+		throw new Error('The value parameter should only be equal to light or dark');
+	}
+
+	localStorage.setItem('theme', value);
+}
+
+export const getColorTheme = (): Theme => {
+	return (localStorage.getItem('theme') as Theme) ?? getSytemColorTheme();
+}
+
+export const getSytemColorTheme = (): Theme => {
+	const isDarkTheme = matchMedia('(prefers-color-scheme:dark)').matches;
+	return isDarkTheme ? 'dark' : 'light' as Theme;
+}

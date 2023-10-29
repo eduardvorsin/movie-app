@@ -3,6 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { dir } from 'i18next';
 import { fallbackLng } from 'src/i18n/settings';
+import ThemeProvider from '@/components/ThemeProvider/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,9 +22,12 @@ export default function RootLayout({
       lang={fallbackLng}
       dir={dir(fallbackLng)}
       className={`${inter.variable}`}
+      suppressHydrationWarning
     >
       <body className='bg-neutral-200 dark:bg-dark-neutral-100'>
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
