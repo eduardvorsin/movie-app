@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabButton tests is a basic snapshot 1`] = `
+<button
+  aria-controls="tab-panel-0"
+  aria-selected="false"
+  class="text-100 font-medium p-1 rounded-[0.1875rem] text-center text-neutral-100 dark:text-dark-neutral-100 transition-colors duration-150 bg-neutral-700 dark:bg-dark-neutral-700 enabled:hover:bg-neutral-800 enabled:active:bg-neutral-900 dark:enabled:hover:bg-dark-neutral-800 dark:enabled:active:bg-dark-neutral-900  "
+  data-index="0"
+  id="test-tab-button"
+  role="tab"
+  tabindex="-1"
+>
+  test-tab-button
+</button>
+`;
+
+exports[`TabButton tests snapshot with isActive equal to true 1`] = `
+<button
+  aria-controls="tab-panel-0"
+  aria-selected="true"
+  class="text-100 font-medium p-1 rounded-[0.1875rem] text-center text-neutral-100 dark:text-dark-neutral-100 transition-colors duration-150 bg-blue-700 dark:bg-blue-300 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:enabled:hover:bg-blue-200 dark:enabled:active:bg-blue-100  "
+  data-index="0"
+  id="test-tab-button"
+  role="tab"
+  tabindex="0"
+>
+  test-tab-button
+</button>
+`;
+
+exports[`TabButton tests snapshot with isDisabled set to true 1`] = `
+<button
+  aria-controls="tab-panel-0"
+  aria-selected="false"
+  class="text-100 font-medium p-1 rounded-[0.1875rem] text-center text-neutral-100 dark:text-dark-neutral-100 transition-colors duration-150 bg-neutral-700 dark:bg-dark-neutral-700 enabled:hover:bg-neutral-800 enabled:active:bg-neutral-900 dark:enabled:hover:bg-dark-neutral-800 dark:enabled:active:bg-dark-neutral-900 opacity-disabled cursor-not-allowed "
+  data-index="0"
+  disabled=""
+  id="test-tab-button"
+  role="tab"
+  tabindex="-1"
+>
+  test-tab-button
+</button>
+`;

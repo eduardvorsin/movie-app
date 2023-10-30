@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs tests is a basic shapshot 1`] = `
+<div
+  class="w-full bg-neutral-100 dark:bg-dark-neutral-200 rounded-[0.1875rem] border-2 border-neutral-300 dark:border-dark-neutral-350 "
+  data-testid="test-tabs"
+  id="tabs"
+>
+  <div
+    class="flex p-2 overflow-hidden"
+    role="tablist"
+  >
+    <button
+      aria-controls="tabs-tabpanel-0"
+      aria-selected="true"
+      class="text-100 font-medium p-1 rounded-[0.1875rem] text-center text-neutral-100 dark:text-dark-neutral-100 transition-colors duration-150 bg-blue-700 dark:bg-blue-300 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:enabled:hover:bg-blue-200 dark:enabled:active:bg-blue-100  mr-1 last:mr-0  "
+      data-index="0"
+      id="tabs-tab-0"
+      role="tab"
+      tabindex="0"
+    >
+      apple
+    </button>
+    <button
+      aria-controls="tabs-tabpanel-1"
+      aria-selected="false"
+      class="text-100 font-medium p-1 rounded-[0.1875rem] text-center text-neutral-100 dark:text-dark-neutral-100 transition-colors duration-150 bg-neutral-700 dark:bg-dark-neutral-700 enabled:hover:bg-neutral-800 enabled:active:bg-neutral-900 dark:enabled:hover:bg-dark-neutral-800 dark:enabled:active:bg-dark-neutral-900  mr-1 last:mr-0  "
+      data-index="1"
+      id="tabs-tab-1"
+      role="tab"
+      tabindex="-1"
+    >
+      banana
+    </button>
+    <button
+      aria-controls="tabs-tabpanel-2"
+      aria-selected="false"
+      class="text-100 font-medium p-1 rounded-[0.1875rem] text-center text-neutral-100 dark:text-dark-neutral-100 transition-colors duration-150 bg-neutral-700 dark:bg-dark-neutral-700 enabled:hover:bg-neutral-800 enabled:active:bg-neutral-900 dark:enabled:hover:bg-dark-neutral-800 dark:enabled:active:bg-dark-neutral-900  mr-1 last:mr-0  "
+      data-index="2"
+      id="tabs-tab-2"
+      role="tab"
+      tabindex="-1"
+    >
+      orange
+    </button>
+  </div>
+  <div
+    aria-labelledby="tabs-tab-0"
+    class="flex min-h-[5rem] text-neutral-1000 dark:text-dark-neutral-900 p-2 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350"
+    id="tabs-tabpanel-0"
+    role="tabpanel"
+    tabindex="0"
+  >
+    <div
+      data-label="apple"
+    >
+      apple
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs tests is a snapshot with fitted set to true 1`] = `
+<div
+  class="w-full bg-neutral-100 dark:bg-dark-neutral-200 rounded-[0.1875rem] border-2 border-neutral-300 dark:border-dark-neutral-350 "
+  data-testid="test-tabs"
+  id="tabs"
+>
+  <div
+    class="flex p-2 overflow-hidden"
+    role="tablist"
+  >
+    <button
+      aria-controls="tabs-tabpanel-0"
+      aria-selected="true"
+      class="text-100 font-medium p-1 rounded-[0.1875rem] text-center text-neutral-100 dark:text-dark-neutral-100 transition-colors duration-150 bg-blue-700 dark:bg-blue-300 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:enabled:hover:bg-blue-200 dark:enabled:active:bg-blue-100  mr-1 last:mr-0  grow"
+      data-index="0"
+      id="tabs-tab-0"
+      role="tab"
+      tabindex="0"
+    >
+      apple
+    </button>
+    <button
+      aria-controls="tabs-tabpanel-1"
+      aria-selected="false"
+      class="text-100 font-medium p-1 rounded-[0.1875rem] text-center text-neutral-100 dark:text-dark-neutral-100 transition-colors duration-150 bg-neutral-700 dark:bg-dark-neutral-700 enabled:hover:bg-neutral-800 enabled:active:bg-neutral-900 dark:enabled:hover:bg-dark-neutral-800 dark:enabled:active:bg-dark-neutral-900  mr-1 last:mr-0  grow"
+      data-index="1"
+      id="tabs-tab-1"
+      role="tab"
+      tabindex="-1"
+    >
+      banana
+    </button>
+    <button
+      aria-controls="tabs-tabpanel-2"
+      aria-selected="false"
+      class="text-100 font-medium p-1 rounded-[0.1875rem] text-center text-neutral-100 dark:text-dark-neutral-100 transition-colors duration-150 bg-neutral-700 dark:bg-dark-neutral-700 enabled:hover:bg-neutral-800 enabled:active:bg-neutral-900 dark:enabled:hover:bg-dark-neutral-800 dark:enabled:active:bg-dark-neutral-900  mr-1 last:mr-0  grow"
+      data-index="2"
+      id="tabs-tab-2"
+      role="tab"
+      tabindex="-1"
+    >
+      orange
+    </button>
+  </div>
+  <div
+    aria-labelledby="tabs-tab-0"
+    class="flex min-h-[5rem] text-neutral-1000 dark:text-dark-neutral-900 p-2 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350"
+    id="tabs-tabpanel-0"
+    role="tabpanel"
+    tabindex="0"
+  >
+    <div
+      data-label="apple"
+    >
+      apple
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs tests is a snapshot with isDisabled set to true 1`] = `
+<div
+  class="w-full bg-neutral-100 dark:bg-dark-neutral-200 rounded-[0.1875rem] border-2 border-neutral-300 dark:border-dark-neutral-350 "
+  data-testid="test-tabs"
+  id="tabs"
+>
+  <div
+    class="flex p-2 overflow-hidden"
+    role="tablist"
+  >
+    <button
+      aria-controls="tabs-tabpanel-0"
+      aria-selected="true"
+      class="text-100 font-medium p-1 rounded-[0.1875rem] text-center text-neutral-100 dark:text-dark-neutral-100 transition-colors duration-150 bg-blue-700 dark:bg-blue-300 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:enabled:hover:bg-blue-200 dark:enabled:active:bg-blue-100 opacity-disabled cursor-not-allowed mr-1 last:mr-0  "
+      data-index="0"
+      disabled=""
+      id="tabs-tab-0"
+      role="tab"
+      tabindex="0"
+    >
+      apple
+    </button>
+    <button
+      aria-controls="tabs-tabpanel-1"
+      aria-selected="false"
+      class="text-100 font-medium p-1 rounded-[0.1875rem] text-center text-neutral-100 dark:text-dark-neutral-100 transition-colors duration-150 bg-neutral-700 dark:bg-dark-neutral-700 enabled:hover:bg-neutral-800 enabled:active:bg-neutral-900 dark:enabled:hover:bg-dark-neutral-800 dark:enabled:active:bg-dark-neutral-900 opacity-disabled cursor-not-allowed mr-1 last:mr-0  "
+      data-index="1"
+      disabled=""
+      id="tabs-tab-1"
+      role="tab"
+      tabindex="-1"
+    >
+      banana
+    </button>
+    <button
+      aria-controls="tabs-tabpanel-2"
+      aria-selected="false"
+      class="text-100 font-medium p-1 rounded-[0.1875rem] text-center text-neutral-100 dark:text-dark-neutral-100 transition-colors duration-150 bg-neutral-700 dark:bg-dark-neutral-700 enabled:hover:bg-neutral-800 enabled:active:bg-neutral-900 dark:enabled:hover:bg-dark-neutral-800 dark:enabled:active:bg-dark-neutral-900 opacity-disabled cursor-not-allowed mr-1 last:mr-0  "
+      data-index="2"
+      disabled=""
+      id="tabs-tab-2"
+      role="tab"
+      tabindex="-1"
+    >
+      orange
+    </button>
+  </div>
+  <div
+    aria-labelledby="tabs-tab-0"
+    class="flex min-h-[5rem] text-neutral-1000 dark:text-dark-neutral-900 p-2 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350"
+    id="tabs-tabpanel-0"
+    role="tabpanel"
+    tabindex="0"
+  >
+    <div
+      data-label="apple"
+    >
+      apple
+    </div>
+  </div>
+</div>
+`;
