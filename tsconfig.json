@@ -31,6 +31,27 @@
       "@/fonts": [
         "./src/styles/fonts.ts"
       ],
+      "@/helpers": [
+        "./src/helpers/helpers.ts"
+      ],
+      "@/i18n/*": [
+        "./src/i18n/*"
+      ],
+      "@/context/*": [
+        "./src/context/*"
+      ],
+      "@/pages/*": [
+        "./src/app/[lang]/*",
+      ],
+      "@/hooks/*": [
+        "./src/hooks/*",
+      ],
+      "@/services/*": [
+        "./src/services/*",
+      ],
+      "@/test-utils/*": [
+        "./src/test-utils/*",
+      ],
     },
     "types": [
       "node",
