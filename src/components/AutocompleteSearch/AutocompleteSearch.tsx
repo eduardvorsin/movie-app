@@ -1,9 +1,9 @@
 'use client';
 
-import Search, { Props as SearchProps } from '../Search/Search';
-import Link from "../Link/Link";
-import Spinner from '../Spinner/Spinner';
-import Title from '../Title/Title';
+import Search, { Props as SearchProps } from '@/components/Search/Search';
+import Link from "@/components/Link/Link";
+import Spinner from '@/components/Spinner/Spinner';
+import Title from '@/components/Title/Title';
 import BrokenLoupe from '../../assets/icons/broken-loupe.svg?url';
 import { FocusEventHandler, useState } from 'react';
 

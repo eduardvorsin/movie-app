@@ -1,10 +1,10 @@
 import { headers } from "next/headers";
-import { getLocalesFromString } from "src/helpers/helpers";
-import { Locales, fallbackLng } from "src/i18n/settings";
+import { getLocalesFromString } from "@/helpers";
+import { fallbackLng, Locales } from "@/i18n/settings";
 import Button from '@/components/Button/Button';
 import NotFoundIcon from '../assets/icons/404.svg?url';
 import Title from '@/components/Title/Title';
-import { fetchTranslation } from 'src/i18n/server';
+import { fetchTranslation } from '@/i18n/server';
 
 
 export default async function NotFound() {

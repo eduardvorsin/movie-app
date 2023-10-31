@@ -1,7 +1,7 @@
 'use client';
 import { ChangeEventHandler, useId } from 'react';
-import Radio from '../Radio/Radio';
-import InlineMessage from '../InlineMessage/InlineMessage';
+import Radio from '@/components/Radio/Radio';
+import InlineMessage from '@/components/InlineMessage/InlineMessage';
 
 export type Choice = {
 	value: string,

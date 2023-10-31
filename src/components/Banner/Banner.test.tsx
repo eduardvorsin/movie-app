@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import Banner from "./Banner";
 import userEvent from "@testing-library/user-event";
-import Button from "../Button/Button";
+import Button from "@/components/Button/Button";
 
 describe('Banner tests', () => {
 	it('This is rendered correctly', () => {

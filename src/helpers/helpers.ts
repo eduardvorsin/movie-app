@@ -1,7 +1,7 @@
-import { fallbackLng, locales as langs } from 'src/i18n/settings';
+import { fallbackLng, locales as langs } from '@/i18n/settings';
 import { KeyWithoutId } from './../../types/shared';
-import { ExternalIDS } from "src/app/[lang]/persons/[id]/page";
-import { Theme } from '@/components/ThemeProvider/ThemeProvider';
+import { ExternalIDS } from "@/pages/persons/[id]/page";
+import { Theme } from '@/context/ThemeProvider/ThemeProvider';
 
 export type CharacteristicItem = {
 	name: string,

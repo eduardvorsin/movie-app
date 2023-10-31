@@ -1,6 +1,6 @@
 'use client';
 import { ChangeEventHandler, FocusEventHandler } from 'react';
-import InlineMessage from '../InlineMessage/InlineMessage';
+import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import Cancel from '../../assets/icons/cancel.svg?url';
 
 export type Props = {

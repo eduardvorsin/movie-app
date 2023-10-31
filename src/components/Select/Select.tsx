@@ -1,7 +1,7 @@
 'use client';
 import { FocusEventHandler, KeyboardEventHandler, MouseEventHandler, useCallback, useEffect, useId, useRef, useState } from 'react';
-import InlineMessage from '../InlineMessage/InlineMessage';
-import SelectOption from '../SelectOption/SelectOption';
+import InlineMessage from '@/components/InlineMessage/InlineMessage';
+import SelectOption from '@/components/SelectOption/SelectOption';
 
 export type SelectOption = {
 	label: string,

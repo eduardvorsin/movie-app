@@ -2,8 +2,8 @@ import { inter } from '@/fonts';
 import './globals.css';
 import type { Metadata } from 'next';
 import { dir } from 'i18next';
-import { fallbackLng } from 'src/i18n/settings';
-import ThemeProvider from '@/components/ThemeProvider/ThemeProvider';
+import { fallbackLng } from '@/i18n/settings';
+import ThemeProvider from '@/context/ThemeProvider/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',

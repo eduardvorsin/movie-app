@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Comment from './Comment';
-import Avatar from '../Avatar/Avatar';
+import Avatar from '@/components/Avatar/Avatar';
 import AvatarPicture from '../../assets/avatar-example.jpg';
 import CommentAction from './CommentAction/CommentAction';
 

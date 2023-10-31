@@ -1,7 +1,7 @@
 'use client';
 import { CSSProperties } from 'react';
 import classes from './PieChart.module.css';
-import { useTheme } from '../ThemeProvider/ThemeProvider';
+import { useTheme } from '@/context/ThemeProvider/ThemeProvider';
 
 type Props = {
 	size: number,

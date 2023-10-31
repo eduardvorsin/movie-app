@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Radio, { Props } from './Radio';
 import { ChangeEvent, useState } from 'react';
-import Button from '../Button/Button';
+import Button from '@/components/Button/Button';
 
 const meta: Meta<typeof Radio> = {
 	title: 'components/Radio',

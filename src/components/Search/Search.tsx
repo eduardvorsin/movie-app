@@ -1,7 +1,7 @@
 'use client';
 import { ChangeEventHandler, FocusEventHandler, FormEventHandler } from 'react';
-import Button from '../Button/Button';
-import InlineMessage from '../InlineMessage/InlineMessage';
+import Button from '@/components/Button/Button';
+import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import Loupe from '../../assets/icons/loupe.svg?url';
 
 export type Props = {

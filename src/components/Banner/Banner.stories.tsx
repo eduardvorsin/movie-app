@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Banner from './Banner';
-import Button from '../Button/Button';
+import Button from '@/components/Button/Button';
 
 const meta: Meta<typeof Banner> = {
 	title: 'components/Banner',
@@ -183,8 +183,8 @@ export const WithActions: Story = {
 		title: 'With Actions',
 		children: 'With actions banner Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt non repellendus ullam quam dolore inventore deleniti reiciendis esse dolor sed.',
 		actions: [
-			<Button appearance='discovery'>Add</Button>,
-			<Button appearance='discovery'>Remove</Button>
+			<Button key={0} appearance='discovery'>Add</Button>,
+			<Button key={1} appearance='discovery'>Remove</Button>
 		]
 	},
 	parameters: {

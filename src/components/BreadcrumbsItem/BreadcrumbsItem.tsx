@@ -1,6 +1,6 @@
 'use client';
 import { AnchorHTMLAttributes, MouseEventHandler, ReactNode } from 'react';
-import Link from '../Link/Link';
+import Link from '@/components/Link/Link';
 
 type Props = {
 	text: string,

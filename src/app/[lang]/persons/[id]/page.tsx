@@ -11,9 +11,9 @@ import ExternalLinkIcon from '../../../../assets/icons/external-link.svg?url';
 import Link from '@/components/Link/Link';
 import CharacteristicList from '@/components/CharacteristicList/CharacteristicList';
 import ExpandableText from '@/components/ExpandableText/ExpandableText';
-import { createPersonCharacteristicsArray, createSocialNetworksArray, getLocalizedDate } from 'src/helpers/helpers';
-import { fetchTranslation } from 'src/i18n/server';
-import { Locales, fallbackLng } from 'src/i18n/settings';
+import { createPersonCharacteristicsArray, createSocialNetworksArray, getLocalizedDate } from '@/helpers';
+import { fetchTranslation } from '@/i18n/server';
+import { Locales, fallbackLng } from '@/i18n/settings';
 
 export type ExternalIDS = {
 	imdb_id: string | null,

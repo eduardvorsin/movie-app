@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { Adventure, Romance, Fantastic, History, Music, Military, Thriller, Animation, Crime, Documentary, Drama, Family, Fantasy, Horror, Mystery, TVMovie, Western, Action, Comedy } from './GenreIcons';
 import { MouseEventHandler } from 'react';
-import Title from '../Title/Title';
+import Title from '@/components/Title/Title';
 
 export type Genres = 'adventure' | 'romance' | 'fantastic' | 'history' | 'music' | 'war' | 'thriller' | 'animation' | 'crime' | 'documentary' | 'drama' | 'family' | 'fantasy' | 'horror' | 'mystery' | 'tv movie' | 'western' | 'action' | 'comedy';
 

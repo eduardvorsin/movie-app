@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 import CommentInfoItem from './CommentInfoItem/CommentInfoItem';
-import InlineMessage from '../InlineMessage/InlineMessage';
+import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import Locked from '../../assets/icons/locked.svg?url';
-import Title from '../Title/Title';
+import Title from '@/components/Title/Title';
 
 type Props = {
 	id: string,

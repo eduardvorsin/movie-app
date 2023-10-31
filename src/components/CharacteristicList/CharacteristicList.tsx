@@ -1,4 +1,4 @@
-import { CharacteristicItem } from 'src/helpers/helpers';
+import { CharacteristicItem } from '@/helpers';
 
 type Props = {
 	className?: string,
