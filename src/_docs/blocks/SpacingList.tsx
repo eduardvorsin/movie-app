@@ -1,5 +1,3 @@
-import { Fragment } from 'react';
-
 type SpacingData = { [key: string]: string };
 type Spacing = {
 	name: string,
