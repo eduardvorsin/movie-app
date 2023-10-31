@@ -1,6 +1,6 @@
 'use client';
 import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { getColorTheme } from 'src/helpers/helpers';
+import { getColorTheme } from '@/helpers';
 
 export type Theme = 'light' | 'dark';
 type ThemeContextValue = {
