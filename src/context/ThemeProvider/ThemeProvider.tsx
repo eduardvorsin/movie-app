@@ -9,7 +9,7 @@ type ThemeContextValue = {
 }
 
 const defaultTheme = getColorTheme()
-const ThemeContext = createContext<ThemeContextValue>({
+export const ThemeContext = createContext<ThemeContextValue>({
 	value: defaultTheme,
 	toggleTheme: () => { }
 });
