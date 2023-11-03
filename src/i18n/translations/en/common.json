@@ -17,5 +17,8 @@
 	},
 	"errors": {
 		"pageNotFound": "This page was not found"
+	},
+	"themeToggle": {
+		"label": "Light and dark theme switch"
 	}
 }
