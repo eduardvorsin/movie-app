@@ -3,14 +3,14 @@ import { ReactNode } from "react";
 export type Props = {
 	className?: string,
 	testId?: string,
-	appearance?: 'default' | 'info' | 'sucsess' | 'warning' | 'danger',
+	appearance?: 'default' | 'info' | 'success' | 'warning' | 'danger',
 	children: ReactNode
 };
 
 const appearanceTypes = {
 	default: 'bg-neutral-300',
 	info: 'bg-blue-200',
-	sucsess: 'bg-green-200',
+	success: 'bg-green-200',
 	warning: 'bg-yellow-200',
 	danger: 'bg-red-200',
 } as const;

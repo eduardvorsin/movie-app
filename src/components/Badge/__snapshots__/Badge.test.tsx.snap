@@ -32,7 +32,7 @@ exports[`Badge tests is a snapshot with the appearance type "info" 1`] = `
 </span>
 `;
 
-exports[`Badge tests is a snapshot with the appearance type "sucsess" 1`] = `
+exports[`Badge tests is a snapshot with the appearance type "success" 1`] = `
 <span
   class="inline-flex rounded-5 text-75 text-center leading-1 py-0.5 px-2 bg-green-200 "
 >

@@ -26,8 +26,8 @@ describe('Badge tests', () => {
 		expect(screen.getByText<HTMLSpanElement>(/badge/i)).toMatchSnapshot();
 	});
 
-	it('is a snapshot with the appearance type "sucsess"', () => {
-		render(<Badge appearance='sucsess'>Badge</Badge>);
+	it('is a snapshot with the appearance type "success"', () => {
+		render(<Badge appearance='success'>Badge</Badge>);
 
 		expect(screen.getByText<HTMLSpanElement>(/badge/i)).toMatchSnapshot();
 	});
