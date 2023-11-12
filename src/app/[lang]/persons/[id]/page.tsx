@@ -1,13 +1,6 @@
 import { notFound } from 'next/navigation'
 import Title from '@/components/Title/Title';
 import Image from 'next/image';
-import IMDBIcon from '../../../../assets/icons/imdb.svg?url';
-import InstagramIcon from '../../../../assets/icons/instagram.svg?url';
-import TikTokIcon from '../../../../assets/icons/tiktok.svg?url';
-import FacebookIcon from '../../../../assets/icons/facebook.svg?url';
-import TwitterIcon from '../../../../assets/icons/twitter.svg?url';
-import YoutubeIcon from '../../../../assets/icons/youtube.svg?url';
-import ExternalLinkIcon from '../../../../assets/icons/external-link.svg?url';
 import Link from '@/components/Link/Link';
 import CharacteristicList from '@/components/CharacteristicList/CharacteristicList';
 import ExpandableText from '@/components/ExpandableText/ExpandableText';
@@ -71,12 +64,12 @@ const fetchActor = async (id: string, options?: { lang: Locales }): Promise<Acto
 };
 
 const socialNetworkIcons = {
-	imdb: `${IMDBIcon.src}#imdb`,
-	twitter: `${TwitterIcon.src}#twitter`,
-	youtube: `${YoutubeIcon.src}#youtube`,
-	tiktok: `${TikTokIcon.src}#tiktok`,
-	facebook: `${FacebookIcon.src}#facebook`,
-	instagram: `${InstagramIcon.src}#instagram`,
+	imdb: '/assets/icons/imdb.svg#imdb',
+	twitter: '/assets/icons/twitter.svg#twitter',
+	youtube: '/assets/icons/youtube.svg#youtube',
+	tiktok: '/assets/icons/tiktok.svg#tiktok',
+	facebook: '/assets/icons/facebook.svg#facebook',
+	instagram: '/assets/icons/instagram.svg#instagram',
 } as const;
 
 type Props = {
@@ -166,7 +159,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						>
 							{actor.homepage}
 							<svg className='w-4 h-4 ml-2 fill-current' viewBox='0 0 32 32'>
-								<use href={`${ExternalLinkIcon.src}#external-link`}></use>
+								<use href={'/assets/icons/external-link.svg#external-link'}></use>
 							</svg>
 						</Link>
 					</p>
