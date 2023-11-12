@@ -8,6 +8,7 @@ import Question from '../../assets/icons/question.svg?url';
 import Cancel from '../../assets/icons/cancel.svg?url';
 import Button from '../Button/Button';
 import Title from '../Title/Title';
+import { HeadingElement } from '@/types/shared';
 
 type Props = {
 	className?: string,
@@ -17,7 +18,7 @@ type Props = {
 	appearance?: 'success' | 'info' | 'warning' | 'danger' | 'discovery',
 	onClose?: () => void,
 	closeButton?: boolean,
-	titleElement?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
+	titleElement?: HeadingElement,
 	actions?: ReactNode[],
 	testId?: string,
 };

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Adventure, Romance, Fantastic, History, Music, Military, Thriller, Animation, Crime, Documentary, Drama, Family, Fantasy, Horror, Mystery, TVMovie, Western, Action, Comedy } from './GenreIcons';
 import { MouseEventHandler } from 'react';
 import Title from '@/components/Title/Title';
+import { HeadingElement } from '@/types/shared';
 
 export type Genres = 'adventure' | 'romance' | 'fantastic' | 'history' | 'music' | 'war' | 'thriller' | 'animation' | 'crime' | 'documentary' | 'drama' | 'family' | 'fantasy' | 'horror' | 'mystery' | 'tv movie' | 'western' | 'action' | 'comedy';
 
@@ -10,7 +11,7 @@ export type Props = {
 	href: string,
 	genre: Genres,
 	title: string,
-	titleElement: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
+	titleElement: HeadingElement,
 	onClick?: MouseEventHandler<HTMLAnchorElement>,
 	className?: string,
 	testId?: string,

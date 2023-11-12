@@ -3,6 +3,7 @@ import CommentInfoItem from './CommentInfoItem/CommentInfoItem';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import Locked from '../../assets/icons/locked.svg?url';
 import Title from '@/components/Title/Title';
+import { HeadingElement } from '@/types/shared';
 
 type Props = {
 	id: string,
@@ -10,7 +11,7 @@ type Props = {
 	avatar: ReactNode,
 	content: string,
 	type: string,
-	titleElement: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
+	titleElement: HeadingElement,
 	className?: string,
 	actions?: ReactNode[],
 	errorActions?: ReactNode[],

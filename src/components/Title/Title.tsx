@@ -1,12 +1,10 @@
+import { HeadingElement, HeadingLevel } from '@/types/shared';
 import React from 'react';
-
-type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
-type Headings = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export type Props = {
 	children: React.ReactNode,
 	level: HeadingLevel,
-	as?: Headings,
+	as?: HeadingElement,
 	className?: string,
 	weight?: 400 | 500 | 600 | 700,
 	testId?: string,
@@ -42,7 +40,7 @@ export default function Title({
 		className,
 	].join(' ');
 
-	const Heading: Headings = as;
+	const Heading: HeadingElement = as;
 
 	return (
 		<Heading
