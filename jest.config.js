@@ -25,6 +25,7 @@ module.exports = {
     '^@/hooks/(.*)$': '<rootDir>/src/hooks/$1',
     '^@/services/(.*)$': '<rootDir>/src/services/$1',
     '^@/test-utils/(.*)$': '<rootDir>/src/test-utils/$1',
+    '^@/types/(.*)$': '<rootDir>/src/types/$1',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
