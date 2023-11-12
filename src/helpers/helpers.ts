@@ -77,24 +77,6 @@ export const createSocialNetworksArray = (data: ExternalIDS): SocialNetworkItem[
 	}));
 };
 
-export const getLocalesFromString = (localesString: string): string[] => {
-	const regexp = /\*|[a-z]{1,8}(-[a-z0-9]{1,8})*/g;
-	const supportedLngs = new Set<string>(langs);
-	const locales = localesString.match(regexp)?.filter((locale) => locale !== 'q' && supportedLngs.has(locale)) ?? [];
-
-	return locales;
-};
-
-export const getLocalizedDate = (date: string, lang: string): string => {
-	if (Number.isNaN(Date.parse(date))) {
-		throw new Error('Строка с датой должна быть в формате "YYYY-MM-DDTHH:mm:ss.sssZ"');
-	}
-
-	const dateFormatter = new Intl.DateTimeFormat([lang, fallbackLng]);
-	const timeStamp = Date.parse(date);
-	return dateFormatter.format(new Date(timeStamp));
-};
-
 export const setColorTheme = (value: Theme): void => {
 	if (typeof value !== 'string') return;
 
