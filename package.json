@@ -16,6 +16,7 @@
     "build-storybook": "npm build:tailwind && storybook build"
   },
   "dependencies": {
+    "@plaiceholder/next": "^3.0.0",
     "@types/node": "20.5.0",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
@@ -26,6 +27,7 @@
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-resources-to-backend": "^1.1.4",
     "next": "13.4.16",
+    "plaiceholder": "^3.0.0",
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",
