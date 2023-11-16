@@ -5,7 +5,7 @@ import { Props as TabPanelProps } from './TabPanel/TabPanel';
 type Props = {
 	children: ReactElement<TabPanelProps>[],
 	id: string,
-	onSelect: (index: number) => void,
+	onSelect?: (index: number) => void,
 	defaultSelected?: number,
 	className?: string,
 	testId?: string,
@@ -30,7 +30,7 @@ export default function Tabs({
 		const { index } = e.currentTarget.dataset;
 		if (!index) return;
 		setSelectedTabIndex(+index);
-		onSelect(+index);
+		if (onSelect) onSelect(+index);
 	}
 
 	const keyDownHandler: KeyboardEventHandler<HTMLButtonElement> = (e) => {
