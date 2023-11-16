@@ -1,9 +1,13 @@
-import { KeyboardEventHandler, MouseEventHandler, ReactElement, useRef, useState } from 'react';
+'use client';
+
+import { KeyboardEventHandler, MouseEventHandler, ReactElement, ReactNode, useRef, useState } from 'react';
 import TabButton from './TabButton/TabButton';
-import { Props as TabPanelProps } from './TabPanel/TabPanel';
 
 type Props = {
-	children: ReactElement<TabPanelProps>[],
+	children: ReactElement<{
+		children: ReactNode,
+		'data-label': string,
+	}>[],
 	id: string,
 	onSelect?: (index: number) => void,
 	defaultSelected?: number,
@@ -77,8 +81,8 @@ export default function Tabs({
 				{children.map((child, index) => (
 					<TabButton
 						className={tabButtonClasses}
-						key={child.props.label}
-						label={child.props.label}
+						key={child.props['data-label']}
+						label={child.props['data-label']}
 						id={`${id}-tab-${index}`}
 						onClick={clickHandler}
 						onKeyDown={keyDownHandler}
