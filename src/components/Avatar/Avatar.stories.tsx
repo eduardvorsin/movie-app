@@ -98,6 +98,9 @@ const meta: Meta<typeof Avatar> = {
 		},
 		testId: {
 			description: 'Id for testing the component',
+		},
+		imgProps: {
+			description: 'Props for next image',
 		}
 	},
 	component: Avatar,
@@ -265,7 +268,7 @@ export const Sizes: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'Allows you to set the size of the avatar. Medium is set by default. There are 7 sizes in total, 6 sizes with an explicit width and height, and the 7th custom option in which you need to set the sizes yourself through classes.',
+				story: 'Allows you to set the size of the avatar. The average size is set by default. There are 6 sizes in total with clearly defined width and height.',
 			},
 		},
 	},
