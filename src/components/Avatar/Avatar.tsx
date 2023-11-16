@@ -11,7 +11,7 @@ export type Props = {
 	isDisabled?: boolean,
 	label: string,
 	onClick?: MouseEventHandler<HTMLElement>,
-	size?: 'small' | 'xsmall' | 'medium' | 'large' | 'xlarge' | 'xxlarge' | 'custom',
+	size?: 'small' | 'xsmall' | 'medium' | 'large' | 'xlarge' | 'xxlarge',
 	initials?: string,
 	src?: string,
 	testId?: string,
@@ -45,7 +45,6 @@ const presencePositions = {
 		large: 'after:-bottom-[10%] after:-right-[10%]',
 		xlarge: 'after:-bottom-[4%] after:-right-[4%]',
 		xxlarge: 'after:-bottom-[2%] after:-right-[2%]',
-		custom: '',
 	},
 	circle: {
 		xsmall: 'after:-bottom-[12%] after:-right-[12%]',
@@ -54,7 +53,6 @@ const presencePositions = {
 		large: 'after:-bottom-[4%] after:-right-[4%]',
 		xlarge: 'after:bottom-[2%] after:right-[2%]',
 		xxlarge: 'after:bottom-[4%] after:right-[4%]',
-		custom: '',
 	}
 } as const;
 
@@ -66,7 +64,6 @@ const statusPositions = {
 		large: '-top-[6%] -right-[6%]',
 		xlarge: '-top-[2%] -right-[2%]',
 		xxlarge: '-top-[1%] -right-[1%]',
-		custom: '',
 	},
 	circle: {
 		xsmall: '',
@@ -75,7 +72,6 @@ const statusPositions = {
 		large: '-top-[4%] -right-[4%]',
 		xlarge: 'top-[4%] right-[4%]',
 		xxlarge: 'top-[6%] right-[6%]',
-		custom: '',
 	}
 } as const;
 
@@ -86,7 +82,6 @@ const sizeTypes = {
 	large: 'w-10 h-10 text-300 border-2 after:w-[0.9375rem] after:h-[0.9375rem] after:border-2',
 	xlarge: 'w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2',
 	xxlarge: 'w-32 h-32 text-[4rem] border-2 after:w-[1.25rem] after:h-[1.25rem] after:border-2',
-	custom: '',
 } as const;
 
 const statusSizesTypes = {
@@ -96,7 +91,6 @@ const statusSizesTypes = {
 	large: 'w-[0.9375rem] h-[0.9375rem]',
 	xlarge: 'w-[1.125rem] h-[1.125rem]',
 	xxlarge: 'w-[1.25rem] h-[1.25rem]',
-	custom: '',
 } as const;
 
 const borderRadiusTypes = {
@@ -106,7 +100,6 @@ const borderRadiusTypes = {
 	large: 'rounded-[0.1875rem]',
 	xlarge: 'rounded-[0.375rem]',
 	xxlarge: 'rounded-3',
-	custom: '',
 } as const;
 
 export default function Avatar({
