@@ -1,8 +1,6 @@
-import { CharacteristicItem } from '@/helpers';
-
 type Props = {
 	className?: string,
-	data: CharacteristicItem[],
+	data: Record<'name' | 'value', string>[],
 	testId?: string,
 };
 
