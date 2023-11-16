@@ -4,9 +4,21 @@ import Image from 'next/image';
 import Link from '@/components/Link/Link';
 import CharacteristicList from '@/components/CharacteristicList/CharacteristicList';
 import ExpandableText from '@/components/ExpandableText/ExpandableText';
-import { createPersonCharacteristicsArray, createSocialNetworksArray, getLocalizedDate } from '@/helpers';
+import { createCharacteristicsArray, createSocialNetworksArray } from '@/helpers';
 import { fetchTranslation } from '@/i18n/server';
+import { Locales } from '@/i18n/settings';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
+import { fetchActor } from '@/services/fetchActor/fetchActor';
+import { fetchImageWithPlaceholder } from 'src/helpers/fetchImageWithPlaceholder/fetchImageWithPlaceholder';
+
+const characteristicFields = new Set([
+	'known_for_department',
+	'place_of_birth',
+	'gender',
+	'birthday',
+	'deathday',
+	'popularity',
+]);
 
 const socialNetworkIcons = {
 	imdb: '/assets/icons/imdb.svg#imdb',
@@ -36,21 +48,23 @@ export default async function Page({ params: { id, lang } }: Props) {
 	const socialNetworks = createSocialNetworksArray(actor.external_ids);
 	const biography = actor.biography.split('\n').filter((str) => str !== '');
 
-	const characteristicData = createPersonCharacteristicsArray(actor).map(({ name, value }) => {
-		let currentValue = value;
-		if (name === 'gender') {
-			currentValue = t(`genderValues.${value}`, { ns: 'common' });
-		} else if (name === 'known_for_department' && lang !== 'en') {
-			currentValue = t(`department.${value.toLowerCase()}`, { ns: 'personsPage' });
-		} else if (name === 'birthday' || name === 'deathday') {
-			currentValue = getLocalizedDate(value, lang);
-		}
+	const characteristicData = createCharacteristicsArray(actor)
+		.filter((item) => characteristicFields.has(item.name))
+		.map(({ name, value }) => {
+			let currentValue = value;
+			if (name === 'gender') {
+				currentValue = t(`genderValues.${value}`, { ns: 'common' });
+			} else if (name === 'known_for_department' && lang !== 'en') {
+				currentValue = t(`department.${value.toLowerCase()}`, { ns: 'personsPage' });
+			} else if (name === 'birthday' || name === 'deathday') {
+				currentValue = getLocalizedDate(value, lang);
+			}
 
-		return {
-			name: t(`personCharacteristics.${name}`, { ns: 'personsPage' }),
-			value: currentValue,
-		}
-	});
+			return {
+				name: t(`personCharacteristics.${name}`, { ns: 'personsPage' }),
+				value: currentValue,
+			}
+		});
 
 	return (
 		<div
