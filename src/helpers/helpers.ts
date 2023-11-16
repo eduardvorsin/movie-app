@@ -20,7 +20,10 @@ export const createCharacteristicsArray = (data: { [key: string]: unknown },
 	return characteristics;
 }
 
-export const createSocialNetworksArray = (data: ExternalIDS): SocialNetworkItem[] => {
+export const createSocialNetworksArray = (data: ExternalIDS): {
+	name: KeyWithoutId<keyof ExternalIDS>,
+	url: string,
+}[] => {
 	const socialNetworkUrls = {
 		imdb_id: 'https://www.imdb.com/name/',
 		facebook_id: 'https://www.facebook.com/',
