@@ -20,5 +20,6 @@
 	},
 	"themeToggle": {
 		"label": "Light and dark theme switch"
-	}
+	},
+	"unknown": "Unknown"
 }
