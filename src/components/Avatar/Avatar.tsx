@@ -152,14 +152,13 @@ export default function Avatar({
 		:
 		initials;
 
-	const labelText = !src ? `${label} ${status ?? presence ?? ''}` : undefined;
-	const altText = `${label} ${status ?? presence ?? ''}`;
+	const labelText = `${label} ${status ?? ''} ${presence ?? ''}`;
 
 	return (
 		<span
 			className={classes}
 			role={!src ? 'img' : undefined}
-			aria-label={labelText}
+			aria-label={!src ? labelText : undefined}
 			onClick={onClick}
 			data-testid={testId}
 		>
@@ -177,7 +176,7 @@ export default function Avatar({
 					<Image
 						className={imageClasses}
 						src={src}
-						alt={altText}
+						alt={labelText}
 						fill
 						{...imgProps}
 					/>
