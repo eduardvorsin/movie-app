@@ -1,5 +1,5 @@
 'use client';
-import Image from 'next/image';
+import Image, { ImageProps } from 'next/image';
 import { MouseEventHandler } from 'react';
 import Approved from '../../assets/icons/approved.svg?url';
 import Declined from '../../assets/icons/declined.svg?url';
@@ -17,6 +17,7 @@ export type Props = {
 	testId?: string,
 	presence?: 'offline' | 'online',
 	status?: 'approved' | 'declined' | 'locked',
+	imgProps?: Omit<ImageProps, 'src' | 'alt'>,
 };
 
 const statusIcons = {
@@ -114,6 +115,7 @@ export default function Avatar({
 	src,
 	status,
 	testId,
+	imgProps,
 }: Props) {
 	const classes = [
 		'flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250',
@@ -177,6 +179,7 @@ export default function Avatar({
 						src={src}
 						alt={altText}
 						fill
+						{...imgProps}
 					/>
 				)
 			}
