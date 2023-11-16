@@ -1,43 +1,13 @@
-import { fallbackLng, locales as langs } from '@/i18n/settings';
-import { KeyWithoutId } from './../../types/shared';
-import { ExternalIDS } from "@/pages/persons/[id]/page";
+import { ExternalIDS, KeyWithoutId } from '@/types/shared';
 import { Theme } from '@/context/ThemeProvider/ThemeProvider';
 
-export type CharacteristicItem = {
-	name: string,
-	value: string,
-};
+export const createCharacteristicsArray = (data: { [key: string]: unknown },
+): Record<'name' | 'value', string>[] => {
 
-type SocialNetworkItem = {
-	name: KeyWithoutId<keyof ExternalIDS>,
-	url: string,
-};
+	const characteristics = [] as Record<'name' | 'value', string>[];
 
-export const createPersonCharacteristicsArray = (data:
-	{ [key: string]: string | string[] | number | null | boolean | object }
-): CharacteristicItem[] => {
-	type PersonData = {
-		known_for_department: string,
-		place_of_birth: string,
-		gender: number,
-		birthday: string,
-		deathday: string | null,
-		popularity: number,
-	};
-
-	const characteristicFields = new Set<keyof PersonData>([
-		'known_for_department',
-		'place_of_birth',
-		'gender',
-		'birthday',
-		'deathday',
-		'popularity',
-	]);
-
-	const characteristics = [] as CharacteristicItem[];
-
-	(Object.keys(data) as Array<keyof PersonData>).forEach((key) => {
-		if (!characteristicFields.has(key) || data[key] === null || typeof data[key] === 'object') {
+	Object.keys(data).forEach((key) => {
+		if (data[key] === null || typeof data[key] === 'object') {
 			return;
 		}
 
