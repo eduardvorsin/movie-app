@@ -123,14 +123,14 @@ export default function Avatar({
 	testId,
 }: Props) {
 	const classes = [
-		'flex items-center font-regular justify-center relative text-neutral-0 after:absolute after:border-light-100 dark:text-dark-neutral-0 dark:after:border-dark-neutral-250 dark:border-dark-neutral-250 after:rounded-full',
+		'flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250',
 		appearance === 'circle' ? 'rounded-full' : borderRadiusTypes[size],
 		sizeTypes[size],
-		presencePositions[appearance][size],
 		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
 		!src ? 'bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700' : 'bg-transparent border-transparent',
-		!presence ? 'after:hidden' : '',
-		presence === 'online' ? 'after:bg-green-600 dark:after:bg-green-500' : 'after:bg-red-600 dark:after:bg-red-500',
+		presence ? `after:absolute after:border-light-100 dark:after:border-dark-neutral-250 after:rounded-full ${presencePositions[appearance][size]}` : 'after:hidden',
+		presence === 'online' ? 'after:bg-green-600 dark:after:bg-green-500' : '',
+		presence === 'offline' ? 'after:bg-red-600 dark:after:bg-red-500' : '',
 		className,
 	].join(' ');
 
