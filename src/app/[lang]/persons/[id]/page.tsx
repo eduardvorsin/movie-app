@@ -44,7 +44,9 @@ export default async function Page({ params: { id, lang } }: Props) {
 		return notFound();
 	}
 
-	const imageUrl = `https://image.tmdb.org/t/p/w342/${actor.profile_path}`;
+	const imageUrl = `https://image.tmdb.org/t/p/w342${actor.profile_path}`;
+	const imageData = await fetchImageWithPlaceholder(imageUrl, true);
+
 	const socialNetworks = createSocialNetworksArray(actor.external_ids);
 	const biography = actor.biography.split('\n').filter((str) => str !== '');
 
@@ -74,9 +76,11 @@ export default async function Page({ params: { id, lang } }: Props) {
 				className='object-cover rounded-2 max-w-[14.375rem] bg-neutral-300 dark:bg-dark-neutral-100 sm:max-w-[16.25rem] md:max-w-[18.75rem] lg:max-w-[21.375rem] justify-self-center'
 				width={342}
 				height={513}
-				src={imageUrl}
+				src={imageData.img.src}
 				alt={actor.name}
 				sizes='(min-width: 1024px) 342px, (min-width: 768px) 300px, (min-width: 640px) 260px, 230px'
+				placeholder='blur'
+				blurDataURL={imageData.base64}
 				priority
 			/>
 
@@ -145,6 +149,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 					))}
 				</div>
 			</div>
+
 			{biography.length !== 0 && (
 				<div className='col-span-full lg:col-span-1'>
 					<Title
