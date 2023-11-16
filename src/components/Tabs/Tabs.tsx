@@ -90,7 +90,7 @@ export default function Tabs({
 				))}
 			</div>
 			<div
-				className='flex min-h-[5rem] text-neutral-1000 dark:text-dark-neutral-900 p-2 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350'
+				className='flex min-h-[5rem] text-neutral-1000 dark:text-dark-neutral-900 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350'
 				id={`${id}-tabpanel-${selectedTabIndex}`}
 				role='tabpanel'
 				aria-labelledby={`${id}-tab-${selectedTabIndex}`}
