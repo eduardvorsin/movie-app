@@ -31,8 +31,8 @@
       "@/fonts": [
         "./src/styles/fonts.ts"
       ],
-      "@/helpers": [
-        "./src/helpers/helpers.ts"
+      "@/helpers/*": [
+        "./src/helpers/*"
       ],
       "@/i18n/*": [
         "./src/i18n/*"

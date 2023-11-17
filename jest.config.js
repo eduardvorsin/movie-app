@@ -18,7 +18,7 @@ module.exports = {
     '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg|svg\\?url)$': '<rootDir>/__mocks__/assetsMock.ts',
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
     '@/fonts': '<rootDir>/src/styles/fonts.ts',
-    '@/helpers': '<rootDir>/src/helpers/helpers.ts',
+    '@/helpers/(.*)$': '<rootDir>/src/helpers/$1',
     '^@/i18n/(.*)$': '<rootDir>/src/i18n/$1',
     '^@/context/(.*)$': '<rootDir>/src/context/$1',
     '^@/pages/(.*)$': '<rootDir>/src/app/[lang]/$1',
