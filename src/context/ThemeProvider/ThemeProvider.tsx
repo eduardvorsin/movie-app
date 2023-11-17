@@ -1,8 +1,26 @@
 'use client';
 import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { getColorTheme, setColorTheme } from '@/helpers';
 
 export type Theme = 'light' | 'dark';
+
+const setColorTheme = (value: Theme): void => {
+	if (typeof value !== 'string') return;
+	if (value !== 'light' && value !== 'dark') {
+		throw new Error('The value parameter should only be equal to light or dark');
+	}
+
+	localStorage.setItem('theme', value);
+}
+
+const getColorTheme = (): Theme => {
+	return (localStorage.getItem('theme') as Theme) ?? getSytemColorTheme();
+}
+
+const getSytemColorTheme = (): Theme => {
+	const isDarkTheme = matchMedia('(prefers-color-scheme:dark)').matches;
+	return isDarkTheme ? 'dark' : 'light' as Theme;
+}
+
 type ThemeContextValue = {
 	value: Theme,
 	toggleTheme: () => void,

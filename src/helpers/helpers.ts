@@ -1,5 +1,4 @@
 import { ExternalIDS, KeyWithoutId } from '@/types/shared';
-import { Theme } from '@/context/ThemeProvider/ThemeProvider';
 
 export const createCharacteristicsArray = (data: { [key: string]: unknown },
 ): Record<'name' | 'value', string>[] => {
@@ -49,22 +48,3 @@ export const createSocialNetworksArray = (data: ExternalIDS): {
 		url: `${socialNetworkUrls[key]}${data[key]}`,
 	}));
 };
-
-export const setColorTheme = (value: Theme): void => {
-	if (typeof value !== 'string') return;
-
-	if (value !== 'light' && value !== 'dark') {
-		throw new Error('The value parameter should only be equal to light or dark');
-	}
-
-	localStorage.setItem('theme', value);
-}
-
-export const getColorTheme = (): Theme => {
-	return (localStorage.getItem('theme') as Theme) ?? getSytemColorTheme();
-}
-
-export const getSytemColorTheme = (): Theme => {
-	const isDarkTheme = matchMedia('(prefers-color-scheme:dark)').matches;
-	return isDarkTheme ? 'dark' : 'light' as Theme;
-}
