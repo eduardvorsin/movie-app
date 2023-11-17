@@ -4,7 +4,7 @@ import { useTranslation } from '@/i18n/client';
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { useParams } from 'next/navigation';
 import { ChangeEventHandler, useContext, useState } from 'react';
-import Toggle from '../Toggle/Toggle';
+import Toggle from '@/components/Toggle/Toggle';
 import MoonIcon from '../../assets/icons/moon.svg';
 import SunIcon from '../../assets/icons/sun.svg';
 
