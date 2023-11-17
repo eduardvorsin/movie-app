@@ -1,6 +1,6 @@
 'use client';
 import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { getColorTheme } from '@/helpers';
+import { getColorTheme, setColorTheme } from '@/helpers';
 
 export type Theme = 'light' | 'dark';
 type ThemeContextValue = {
@@ -22,7 +22,9 @@ export default function ThemeProvider({
 }: Props) {
 	const [theme, setTheme] = useState<Theme>(defaultTheme);
 	const toggleTheme = (): void => {
-		setTheme((prevTheme) => prevTheme === 'dark' ? 'light' : 'dark');
+		const currentTheme = theme === 'dark' ? 'light' : 'dark'
+		setTheme(currentTheme);
+		setColorTheme(currentTheme);
 	}
 
 	const themeContextValue = useMemo<ThemeContextValue>(() => ({
