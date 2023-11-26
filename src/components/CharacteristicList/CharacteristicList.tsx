@@ -7,6 +7,7 @@ type Props = {
 export default function CharacteristicList({
 	className,
 	data,
+	testId,
 }: Props) {
 	const characteristicListClasses = [
 		className,
@@ -15,6 +16,7 @@ export default function CharacteristicList({
 	return (
 		<ul
 			className={characteristicListClasses}
+			data-testid={testId}
 		>
 			{data.map((characteristic) => (
 				<li

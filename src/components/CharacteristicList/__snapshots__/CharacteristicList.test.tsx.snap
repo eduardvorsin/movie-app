@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacteristicList tests is is a basic snapshot 1`] = `
+<ul
+  class=""
+  data-testid="characteristic-list"
+>
+  <li
+    class="text-100 flex break-all py-1 xs:py-2"
+  >
+    <span
+      class="text-neutral-700 dark:text-dark-neutral-700 basis-[8rem] xs:basis-[11rem] shrink-0 grow-0 mr-2"
+    >
+      first
+      :
+    </span>
+    <span
+      class="text-neutral-1000 dark:text-dark-neutral-900 flex-grow"
+    >
+      banana
+    </span>
+  </li>
+  <li
+    class="text-100 flex break-all py-1 xs:py-2"
+  >
+    <span
+      class="text-neutral-700 dark:text-dark-neutral-700 basis-[8rem] xs:basis-[11rem] shrink-0 grow-0 mr-2"
+    >
+      second
+      :
+    </span>
+    <span
+      class="text-neutral-1000 dark:text-dark-neutral-900 flex-grow"
+    >
+      orange
+    </span>
+  </li>
+  <li
+    class="text-100 flex break-all py-1 xs:py-2"
+  >
+    <span
+      class="text-neutral-700 dark:text-dark-neutral-700 basis-[8rem] xs:basis-[11rem] shrink-0 grow-0 mr-2"
+    >
+      third
+      :
+    </span>
+    <span
+      class="text-neutral-1000 dark:text-dark-neutral-900 flex-grow"
+    >
+      apple
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`CharacteristicList tests snapshot with an empty data array 1`] = `
+<ul
+  class=""
+  data-testid="characteristic-list"
+/>
+`;
