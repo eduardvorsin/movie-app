@@ -28,7 +28,6 @@ export default function CarouselPagination({
 		}
 
 		const index = Array.from(dotsContainerNode.children).findIndex((dotElement) => dotElement === target);
-		console.log('index', index);
 		onDotClick(index);
 	};
 
@@ -78,7 +77,7 @@ export default function CarouselPagination({
 			<span
 				className='bg-blue-700 dark:bg-blue-300 w-full h-full scale-y-100 origin-top-left transition-transform duration-150'
 				style={{
-					transform: `scaleX(${(1 * (activeIndex + 1)) / totalCount})`
+					transform: `scaleX(${(activeIndex + 1) / totalCount})`
 				}}
 			/>
 		);
