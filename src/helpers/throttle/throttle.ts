@@ -1,4 +1,5 @@
-export const throttle = <T extends (...args: unknown[]) => void>(callback: T, delay: number) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const throttle = <T extends (...args: any[]) => void>(callback: T, delay: number) => {
 	let isThrottled = false;
 	let savedArgs: Parameters<T> | null = null;
 	let savedThis: ThisParameterType<T> | null = null;
