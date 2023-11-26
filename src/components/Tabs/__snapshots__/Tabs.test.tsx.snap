@@ -46,7 +46,7 @@ exports[`Tabs tests is a basic shapshot 1`] = `
   </div>
   <div
     aria-labelledby="tabs-tab-0"
-    class="flex min-h-[5rem] text-neutral-1000 dark:text-dark-neutral-900 p-2 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350"
+    class="flex min-h-[5rem] text-neutral-1000 dark:text-dark-neutral-900 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350"
     id="tabs-tabpanel-0"
     role="tabpanel"
     tabindex="0"
@@ -106,7 +106,7 @@ exports[`Tabs tests is a snapshot with fitted set to true 1`] = `
   </div>
   <div
     aria-labelledby="tabs-tab-0"
-    class="flex min-h-[5rem] text-neutral-1000 dark:text-dark-neutral-900 p-2 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350"
+    class="flex min-h-[5rem] text-neutral-1000 dark:text-dark-neutral-900 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350"
     id="tabs-tabpanel-0"
     role="tabpanel"
     tabindex="0"
@@ -169,7 +169,7 @@ exports[`Tabs tests is a snapshot with isDisabled set to true 1`] = `
   </div>
   <div
     aria-labelledby="tabs-tab-0"
-    class="flex min-h-[5rem] text-neutral-1000 dark:text-dark-neutral-900 p-2 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350"
+    class="flex min-h-[5rem] text-neutral-1000 dark:text-dark-neutral-900 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350"
     id="tabs-tabpanel-0"
     role="tabpanel"
     tabindex="0"
