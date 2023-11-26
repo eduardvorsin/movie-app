@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 export type Theme = 'light' | 'dark';
 
@@ -39,16 +39,16 @@ export default function ThemeProvider({
 	children
 }: Props) {
 	const [theme, setTheme] = useState<Theme>(defaultTheme);
-	const toggleTheme = (): void => {
+	const toggleTheme = useCallback((): void => {
 		const currentTheme = theme === 'dark' ? 'light' : 'dark'
 		setTheme(currentTheme);
 		setColorTheme(currentTheme);
-	}
+	}, [theme]);
 
 	const themeContextValue = useMemo<ThemeContextValue>(() => ({
 		value: theme,
 		toggleTheme,
-	}), [theme]);
+	}), [theme, toggleTheme]);
 
 	useEffect(() => {
 		document.documentElement.classList.add(theme);
