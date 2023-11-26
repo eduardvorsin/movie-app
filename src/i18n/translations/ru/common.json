@@ -4,6 +4,9 @@
 		"collapseButton": "Свернуть",
 		"expandButton": "Развернуть"
 	},
+	"personCard": {
+		"rating": "Популярность"
+	},
 	"notFound": {
 		"title": "Страница не найдена",
 		"description": "Попробуйте вернуться сюда позднее",

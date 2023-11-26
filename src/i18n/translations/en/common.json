@@ -4,6 +4,9 @@
 		"collapseButton": "Collapse",
 		"expandButton": "Expand"
 	},
+	"PersonCard": {
+		"rating": "Popularity"
+	},
 	"notFound": {
 		"title": "Page not found",
 		"description": "Try to come back here later",
