@@ -1,0 +1,20 @@
+{
+	"movieCharacteristics": {
+		"production_countries": "Страна",
+		"genres": "Жанры",
+		"original_title": "Оригинальное название",
+		"release_date": "Дата выхода",
+		"runtime": "Продолжительность",
+		"vote_average": "$t(rating)",
+		"original_language": "Язык оригинала",
+		"budget": "Бюджет",
+		"revenue": "Сборы",
+		"status": "Статус"
+	},
+	"review": "Обзор",
+	"rating": "Рейтинг",
+	"starring": "В главных ролях",
+	"aboutMovie": "Информация о фильме",
+	"recommendations": "Рекомендации",
+	"relatedMovies": "Похожие фильмы"
+}

@@ -1,0 +1,20 @@
+{
+	"movieCharacteristics": {
+		"production_countries": "Country",
+		"genres": "Genres",
+		"original_title": "Original Title",
+		"release_date": "Release Date",
+		"runtime": "Duration",
+		"vote_average": "$t(rating)",
+		"original_language": "Original Language",
+		"budget": "Budget",
+		"revenue": "Revenue",
+		"status": "Status"
+	},
+	"review": "Review",
+	"rating": "Rating",
+	"starring": "Starring",
+	"aboutMovie": "Information about the film",
+	"recommendations": "Recommendations",
+	"relatedMovies": "Related Movies"
+}
