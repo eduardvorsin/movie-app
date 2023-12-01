@@ -3,7 +3,6 @@
 import { throttle } from '@/helpers/throttle/throttle';
 import { MouseEventHandler, ReactNode, forwardRef, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import CarouselPagination from './CarouselPagination/CarouselPagination';
-import classes from './Carousel.module.css';
 import CarouselArrow from './CarouselArrow/CarouselArrow';
 
 type Props = {
