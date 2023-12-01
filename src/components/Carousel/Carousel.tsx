@@ -150,8 +150,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 	].join(' ');
 
 	const containerClasses = [
-		'flex overflow-x-auto snap-mandatory snap-x',
-		classes['carousel-container'],
+		'flex overflow-x-auto snap-mandatory snap-x no-scrollbar',
 		noSwiping ? 'touch-none' : '',
 	].join(' ');
 	return (
