@@ -1,7 +1,7 @@
 'use client';
 
 import { throttle } from '@/helpers/throttle/throttle';
-import { MouseEventHandler, ReactNode, useCallback, useEffect, useId, useRef, useState } from 'react';
+import { MouseEventHandler, ReactNode, forwardRef, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import CarouselPagination from './CarouselPagination/CarouselPagination';
 import classes from './Carousel.module.css';
 import CarouselArrow from './CarouselArrow/CarouselArrow';
@@ -25,7 +25,7 @@ type Props = {
 	paginationType: 'dots' | 'progress' | 'fraction',
 };
 
-export default function Carousel({
+export default forwardRef<HTMLDivElement, Props>(function Carousel({
 	children,
 	label,
 	slidesPerView = 1,
@@ -42,7 +42,7 @@ export default function Carousel({
 	noSwiping,
 	mousewheel,
 	paginationType = 'fraction',
-}: Props) {
+}, ref) {
 	const [activeIndex, setActiveIndex] = useState<number>(0);
 	const [isSliderHovered, setIsSliderHovered] = useState<boolean>(false);
 	const containerRef = useRef<HTMLDivElement>(null);
@@ -160,6 +160,7 @@ export default function Carousel({
 		<div
 			className={wrapperClases}
 			onKeyDown={keyDownHandler}
+			ref={ref}
 			data-testid={testId}
 			role='region'
 			aria-roledescription='carousel'
@@ -223,4 +224,4 @@ export default function Carousel({
 			)}
 		</div>
 	);
-}
+});
