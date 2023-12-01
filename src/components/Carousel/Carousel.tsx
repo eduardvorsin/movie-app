@@ -47,7 +47,9 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 	const containerRef = useRef<HTMLDivElement>(null);
 	const id = useId();
 
-	const slides: ReactNode[] = Array.isArray(children) ? children : [children];
+	const slides: ReactNode[] = useMemo(() => {
+		return Array.isArray(children) ? children : [children];
+	}, [children]);
 	const lastIndex = Math.ceil((slides.length - slidesPerView) / slidesPerGroup);
 
 	const moveSlide = useCallback((newActiveIndex: number): void => {
