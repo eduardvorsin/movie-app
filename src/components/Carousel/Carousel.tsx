@@ -21,7 +21,7 @@ type Props = {
 	showArrows?: boolean,
 	noSwiping?: boolean,
 	mousewheel?: boolean,
-	paginationType: 'dots' | 'progress' | 'fraction',
+	paginationType?: 'dots' | 'progress' | 'fraction',
 };
 
 export default forwardRef<HTMLDivElement, Props>(function Carousel({
