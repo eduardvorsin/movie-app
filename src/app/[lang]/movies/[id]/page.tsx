@@ -4,6 +4,7 @@ import ExpandableText from '@/components/ExpandableText/ExpandableText';
 import Link from '@/components/Link/Link';
 import PieChart from '@/components/PieChart/PieChart';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
+import ThemedImage from '@/components/ThemedImage/ThemedImage';
 import Title from '@/components/Title/Title';
 import { createCharacteristicsArray } from '@/helpers/createCharacteristicsArray/createCharacteristicsArray';
 import { createSocialNetworksArray } from '@/helpers/createSocialNetworksArray/createSocialNetworksArray';
