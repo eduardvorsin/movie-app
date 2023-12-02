@@ -1,6 +1,6 @@
 'use client';
 
-import { KeyboardEventHandler, MouseEventHandler, ReactElement, ReactNode, useRef, useState } from 'react';
+import { KeyboardEventHandler, MouseEventHandler, ReactElement, ReactNode, useLayoutEffect, useRef, useState } from 'react';
 import TabButton from './TabButton/TabButton';
 import { throttle } from '@/helpers/throttle/throttle';
 
@@ -37,6 +37,7 @@ export default function Tabs({
 }: Props) {
 	const tabsGroupRef = useRef<HTMLDivElement>(null);
 	const [selectedTabIndex, setSelectedTabIndex] = useState<number>(defaultSelected);
+	const [isScrollable, setIsScrollable] = useState<boolean>(false);
 
 	const clickHandler: MouseEventHandler<HTMLButtonElement> = (e) => {
 		const { index } = e.currentTarget.dataset;
@@ -67,6 +68,7 @@ export default function Tabs({
 
 	const classes = [
 		'w-full bg-neutral-100 dark:bg-dark-neutral-200 rounded-[0.1875rem] border-2 border-neutral-300 dark:border-dark-neutral-350',
+		isScrollable ? 'relative after:w-16 after:h-full after:absolute after:top-0 after:right-0 after:bg-gradient-to-r after:from-transparent after:to-neutral-200 dark:after:to-dark-neutral-100 after:pointer-events-none' : '',
 		className,
 	].join(' ');
 
@@ -85,6 +87,12 @@ export default function Tabs({
 			behavior: 'smooth',
 		});
 	}, 300);
+
+	useLayoutEffect(() => {
+		const containerNode = tabsGroupRef.current;
+		if (!containerNode) return;
+		setIsScrollable(containerNode.scrollWidth > containerNode.clientWidth);
+	}, []);
 
 	return (
 		<div
