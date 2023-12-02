@@ -12,6 +12,7 @@ import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate
 import { fetchActor } from '@/services/fetchActor/fetchActor';
 import { fetchImageWithPlaceholder } from 'src/helpers/fetchImageWithPlaceholder/fetchImageWithPlaceholder';
 import Container from '@/components/Container/Container';
+import { imgPath } from 'src/constants';
 
 const characteristicFields = new Set([
 	'known_for_department',
@@ -46,11 +47,24 @@ export default async function Page({ params: { id, lang } }: Props) {
 		return notFound();
 	}
 
-	const imageUrl = `https://image.tmdb.org/t/p/w342${actor.profile_path}`;
-	const imageData = await fetchImageWithPlaceholder(imageUrl, true);
+	const {
+		profile_path,
+		external_ids,
+		biography,
+		combined_credits,
+		name,
+		homepage,
+	} = actor;
 
-	const socialNetworks = createSocialNetworksArray(actor.external_ids);
-	const biography = actor.biography.split('\n').filter((str) => str !== '');
+	let imageData: PlaceholderData | null = null;
+	if (profile_path) {
+		imageData = await fetchImageWithPlaceholder(
+			`${imgPath['profile']}${profile_path}`,
+			true
+		);
+	}
+
+	const currentBiography = biography.split('\n').filter((str) => str !== '');
 
 	const characteristicData = createCharacteristicsArray(actor)
 		.filter((item) => characteristicFields.has(item.name))
@@ -81,11 +95,10 @@ export default async function Page({ params: { id, lang } }: Props) {
 					className='object-cover rounded-2 max-w-[14.375rem] mb-5 md:mb-6 lg:mb-8 bg-neutral-300 dark:bg-dark-neutral-100 sm:max-w-[16.25rem] md:max-w-[18.75rem] lg:max-w-[21.375rem]'
 					width={342}
 					height={513}
-					src={imageData.img.src}
-					alt={actor.name}
+					alt={name}
 					sizes='(min-width: 1024px) 342px, (min-width: 768px) 300px, (min-width: 640px) 260px, 230px'
-					placeholder='blur'
-					blurDataURL={imageData.base64}
+					placeholder={profile_path ? 'blur' : 'empty'}
+					blurDataURL={imageData?.base64}
 					priority
 				/>
 
@@ -97,18 +110,18 @@ export default async function Page({ params: { id, lang } }: Props) {
 					>
 						Links to social networks
 					</Title>
-					{actor.homepage && (
+					{homepage && (
 						<p className='flex items-center flex-wrap'>
 							<span className='text-dark-neutral-250 dark:text-neutral-300 mr-2'>
 								{t('personalWebsite', { ns: 'personsPage' })}
 							</span>
 							<Link
 								className='flex items-center'
-								href={actor.homepage}
+								href={homepage}
 								target='_blank'
 								isExternal
 							>
-								{actor.homepage}
+								{homepage}
 								<svg className='w-4 h-4 ml-2 fill-current' viewBox='0 0 32 32'>
 									<use href={'/assets/icons/external-link.svg#external-link'}></use>
 								</svg>
@@ -145,7 +158,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 					weight={500}
 					level={1}
 				>
-					{actor.name}
+					{name}
 				</Title>
 
 				<section>
@@ -164,7 +177,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 					/>
 				</section>
 
-				{biography.length !== 0 && (
+				{currentBiography.length !== 0 && (
 					<section>
 						<Title
 							className='text-neutral-1000 dark:text-dark-neutral-1000 mb-2'
@@ -178,7 +191,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							className='text-neutral-900 dark:text-dark-neutral-900'
 							visibleRowsCount={2}
 						>
-							{biography}
+							{currentBiography}
 						</ExpandableText>
 					</section>
 				)}
