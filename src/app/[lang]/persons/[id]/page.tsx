@@ -14,6 +14,7 @@ import { fetchImageWithPlaceholder } from 'src/helpers/fetchImageWithPlaceholder
 import Container from '@/components/Container/Container';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
 import { imgPath } from 'src/constants';
+import ThemedImage from '@/components/ThemedImage/ThemedImage';
 
 const characteristicFields = new Set([
 	'known_for_department',
@@ -83,8 +84,8 @@ export default async function Page({ params: { id, lang } }: Props) {
 			<div
 				className='basis-full sm:basis-[16.25rem] md:basis-[18.75rem] lg:basis-[21.375rem] mr-0 sm:mr-8 md:mr-10 lg:mr-12 self-center sm:self-start flex flex-col items-center'
 			>
-				<Image
-					className='object-cover rounded-2 max-w-[14.375rem] mb-5 md:mb-6 lg:mb-8 bg-neutral-300 dark:bg-dark-neutral-100 sm:max-w-[16.25rem] md:max-w-[18.75rem] lg:max-w-[21.375rem]'
+				<ThemedImage
+					className='self-center object-cover rounded-2 max-w-[14.375rem] mb-5 md:mb-6 lg:mb-8 bg-neutral-300 dark:bg-dark-neutral-350 sm:max-w-[16.25rem] md:max-w-[18.75rem] lg:max-w-[21.375rem]'
 					width={342}
 					height={513}
 					alt={name}
@@ -92,6 +93,14 @@ export default async function Page({ params: { id, lang } }: Props) {
 					placeholder={profile_path ? 'blur' : 'empty'}
 					blurDataURL={imageData?.base64}
 					priority
+					src={{
+						light: imageData?.img.src ?? '',
+						dark: imageData?.img.src ?? '',
+					}}
+					fallback={{
+						light: '/assets/images/light-person-placeholder.svg',
+						dark: '/assets/images/dark-person-placeholder.svg'
+					}}
 				/>
 
 				<section>
