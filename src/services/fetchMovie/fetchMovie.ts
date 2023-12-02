@@ -1,6 +1,6 @@
 import { fetchTranslation } from '@/i18n/server';
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { Genre, ProductionCompany, ProductionCounty } from '@/types/shared';
+import { ExternalIDS, Genre, ProductionCompany, ProductionCounty } from '@/types/shared';
 
 export type Movie = {
 	backdrop_path: string | null,
@@ -24,6 +24,7 @@ export type Movie = {
 	video: boolean,
 	vote_average: number,
 	vote_count: number,
+	external_ids: ExternalIDS,
 }
 
 export const fetchMovie = async (id: string, options?: { lang: Locales }): Promise<Movie | Error> => {
@@ -32,7 +33,7 @@ export const fetchMovie = async (id: string, options?: { lang: Locales }): Promi
 
 	let movie;
 	try {
-		const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?&language=${currentLang}`, {
+		const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=external_ids&language=${currentLang}`, {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',
