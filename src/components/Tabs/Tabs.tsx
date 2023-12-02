@@ -2,6 +2,7 @@
 
 import { KeyboardEventHandler, MouseEventHandler, ReactElement, ReactNode, useRef, useState } from 'react';
 import TabButton from './TabButton/TabButton';
+import { throttle } from '@/helpers/throttle/throttle';
 
 type TabPanelElement =
 	{
@@ -70,9 +71,20 @@ export default function Tabs({
 	].join(' ');
 
 	const tabButtonClasses = [
-		'mr-1 last:mr-0 ',
+		'shrink-0 mr-1 last:mr-0 enabled:snap-start enabled:snap-always enabled:scroll-mx-2',
 		fitted ? 'grow' : '',
 	].join(' ');
+
+	const wheelHandler = throttle((e: React.WheelEvent<HTMLDivElement>) => {
+		const containerNode = tabsGroupRef.current;
+		if (!containerNode || isDisabled) return;
+
+		const nextOffset = e.deltaY > 0 ? 100 : -100;
+		containerNode.scrollTo({
+			left: containerNode.scrollLeft + nextOffset,
+			behavior: 'smooth',
+		});
+	}, 300);
 
 	return (
 		<div
@@ -82,8 +94,9 @@ export default function Tabs({
 		>
 			<div
 				role='tablist'
-				className='flex p-2 overflow-hidden'
+				className='flex p-2 overflow-x-auto no-scrollbar enabled:snap-mandatory enabled:snap-x '
 				ref={tabsGroupRef}
+				onWheel={wheelHandler}
 			>
 				{children.map((child, index) => (
 					<TabButton
