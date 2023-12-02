@@ -5,6 +5,7 @@ import Link from '@/components/Link/Link';
 import PieChart from '@/components/PieChart/PieChart';
 import Title from '@/components/Title/Title';
 import { createCharacteristicsArray } from '@/helpers/createCharacteristicsArray/createCharacteristicsArray';
+import { fetchImageWithPlaceholder } from '@/helpers/fetchImageWithPlaceholder/fetchImageWithPlaceholder';
 import { fetchTranslation } from '@/i18n/server';
 import { Locales } from '@/i18n/settings';
 import { formatCurrency } from '@/i18n/utils/formatCurrency/formatCurrency';
@@ -13,6 +14,7 @@ import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate
 import { fetchMovie } from '@/services/fetchMovie/fetchMovie';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import { imgPath } from 'src/constants';
 
 const characteristicFields = new Set([
 	'production_countries',
@@ -70,8 +72,11 @@ export default async function Page({ params: { id, lang } }: Props) {
 		homepage,
 	} = movie;
 
-	const backdropUrl = `https://image.tmdb.org/t/p/original${backdrop_path}`;
-	const posterUrl = `https://image.tmdb.org/t/p/w300${poster_path}`;
+	const backdropUrl = `${imgPath['backdrop']}${backdrop_path}`;
+	const posterData = await fetchImageWithPlaceholder(
+		`${imgPath['poster']}${poster_path}`,
+		true,
+	);
 	const releaseYear = release_date.slice(0, 4) || '-';
 	const allGenres = genres.map((genre) => genre.name.toLowerCase()).join(', ');
 	const movieDuration = `${runtime}m | ${Math.floor(runtime / 60)}:${runtime % 60}`;
@@ -117,17 +122,17 @@ export default async function Page({ params: { id, lang } }: Props) {
 		<main>
 			<section
 				className='py-8 bg-blend-overlay bg-cover bg-no-repeat bg-neutral-300 dark:bg-dark-neutral-100'
-				style={{
-					backgroundImage: `url(${backdropUrl})`,
-				}}
+				style={{ backgroundImage: `url(${backdropUrl})` }}
 			>
 				<Container className='flex'>
 					<Image
 						className='mr-10 object-cover rounded-2 max-w-[18.75rem] w-full shrink-0 grow-0 self-start bg-neutral-300 dark:bg-dark-neutral-300 justify-self-center border-1 border-neutral-300 dark:border-dark-neutral-300'
 						width={300}
 						height={450}
-						src={posterUrl}
+						src={posterData.img.src}
 						alt='poster'
+						placeholder='blur'
+						blurDataURL={posterData.base64}
 						priority
 					/>
 					<div>
