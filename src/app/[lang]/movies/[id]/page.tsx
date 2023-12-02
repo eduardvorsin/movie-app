@@ -14,7 +14,7 @@ import { formatCurrency } from '@/i18n/utils/formatCurrency/formatCurrency';
 import { getLanguageNameFromLocale } from '@/i18n/utils/getLanguageNameFromLocale/getLanguageNameFromLocale';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
 import { fetchMovie } from '@/services/fetchMovie/fetchMovie';
-import Image from 'next/image';
+import { PlaceholderData } from '@/types/shared';
 import { notFound } from 'next/navigation';
 import { imgPath } from 'src/constants';
 
@@ -76,10 +76,13 @@ export default async function Page({ params: { id, lang } }: Props) {
 	} = movie;
 
 	const backdropUrl = `${imgPath['backdrop']}${backdrop_path}`;
-	const posterData = await fetchImageWithPlaceholder(
-		`${imgPath['poster']}${poster_path}`,
-		true,
-	);
+	let posterData: PlaceholderData | null = null;
+	if (poster_path) {
+		posterData = await fetchImageWithPlaceholder(
+			`${imgPath['poster']}${poster_path}`,
+			true,
+		);
+	}
 	const releaseYear = release_date.slice(0, 4) || '-';
 	const allGenres = genres.map((genre) => genre.name.toLowerCase()).join(', ');
 	const movieDuration = `${runtime}m | ${Math.floor(runtime / 60)}:${runtime % 60}`;
@@ -132,15 +135,23 @@ export default async function Page({ params: { id, lang } }: Props) {
 				style={{ backgroundImage: `url(${backdropUrl})` }}
 			>
 				<Container className='flex'>
-					<Image
+					<ThemedImage
 						className='mr-10 object-cover rounded-2 max-w-[18.75rem] w-full shrink-0 grow-0 self-start bg-neutral-300 dark:bg-dark-neutral-300 justify-self-center border-1 border-neutral-300 dark:border-dark-neutral-300'
 						width={300}
 						height={450}
 						src={posterData.img.src}
 						alt='poster'
 						placeholder='blur'
-						blurDataURL={posterData.base64}
+						blurDataURL={poster_path ? 'blur' : 'empty'}
 						priority
+						src={{
+							light: posterData?.img.src ?? '',
+							dark: posterData?.img.src ?? '',
+						}}
+						fallback={{
+							light: '/assets/images/light-movie-placeholder.svg',
+							dark: '/assets/images/dark-movie-placeholder.svg',
+						}}
 					/>
 					<div>
 						<div className='mb-6'>
