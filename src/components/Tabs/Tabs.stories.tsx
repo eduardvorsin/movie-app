@@ -43,31 +43,21 @@ const meta: Meta<typeof Tabs> = {
 export default meta;
 type Story = StoryObj<typeof Tabs>;
 
-const tabPanels = [
+const tabLabels = ['banana', 'orange', 'apple', 'avocado', 'blackberry', 'blueberry', 'cherry', 'cocount', 'grape', 'lemon', 'lime', 'nectarine', 'watermelon', 'raspberry', 'strawberry', 'mango', 'pear', 'papaya', 'pomegranate', 'peach', 'pineapple', 'cabbage', 'broccoli', 'mushroom', 'zucchini', 'red chilli pepper', 'sweet potato'];
+const tabPanels = tabLabels.map((label, index) => (
 	<TabPanel
-		key={1}
-		label='banana'
+		className='p-2'
+		key={index}
+		label={label}
 	>
-		banana
-	</TabPanel>,
-	<TabPanel
-		key={2}
-		label='orange'
-	>
-		orange
-	</TabPanel>,
-	<TabPanel
-		key={3}
-		label='apple'
-	>
-		apple
+		{label}
 	</TabPanel>
-];
+));
 
 export const Default: Story = {
 	args: {
 		id: 'tabs',
-		children: tabPanels,
+		children: tabPanels.slice(0, 3),
 	},
 	parameters: {
 		docs: {
@@ -81,7 +71,7 @@ export const Default: Story = {
 export const Disabled: Story = {
 	args: {
 		id: 'tabs',
-		children: tabPanels,
+		children: tabPanels.slice(0, 3),
 		isDisabled: true,
 	},
 	parameters: {
@@ -96,8 +86,22 @@ export const Disabled: Story = {
 export const Fitted: Story = {
 	args: {
 		id: 'tabs',
-		children: tabPanels,
+		children: tabPanels.slice(0, 3),
 		fitted: true,
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'Tab buttons occupy the entire free width, in equal parts',
+			},
+		},
+	},
+};
+
+export const ManyTabs: Story = {
+	args: {
+		id: 'tabs',
+		children: tabPanels,
 	},
 	parameters: {
 		docs: {
@@ -116,7 +120,7 @@ export const EventCallbacks: Story = {
 	},
 	args: {
 		id: 'tabs',
-		children: tabPanels,
+		children: tabPanels.slice(0, 3),
 	},
 	parameters: {
 		docs: {
