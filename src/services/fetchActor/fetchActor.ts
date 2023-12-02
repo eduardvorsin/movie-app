@@ -34,7 +34,7 @@ export type Actor = {
 	name: string,
 	place_of_birth: string,
 	popularity: number,
-	profile_path: string,
+	profile_path: string | null,
 	external_ids: ExternalIDS
 	combined_credits: ActorCredits,
 };
