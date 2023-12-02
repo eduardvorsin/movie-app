@@ -29,6 +29,12 @@ export type ExternalIDS = {
 	twitter_id: string | null,
 	youtube_id: string | null,
 }
+
+export type SocialNetworksItem = {
+	name: KeyWithoutId<keyof ExternalIDS>,
+	url: string,
+};
+
 export type PlaceholderData = {
 	img: {
 		src: string;
