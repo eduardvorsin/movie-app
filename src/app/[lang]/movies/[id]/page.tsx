@@ -214,16 +214,20 @@ export default async function Page({ params: { id, lang } }: Props) {
 								className='mb-4'
 								data={socialNetworks}
 							/>
-							<Title
-								className='mb-2 text-neutral-900 dark:text-dark-neutral-800'
-								level={3}
-								as='h2'
-							>
-								{t('review', { ns: 'moviesPage' })}
-							</Title>
-							<ExpandableText className='mb-5'>
-								{overview}
-							</ExpandableText>
+							{overview.length > 0 && (
+								<>
+									<Title
+										className='mb-2 text-neutral-900 dark:text-dark-neutral-800'
+										level={3}
+										as='h2'
+									>
+										{t('review', { ns: 'moviesPage' })}
+									</Title>
+									<ExpandableText className='mb-5'>
+										{overview}
+									</ExpandableText>
+								</>
+							)}
 						</div>
 					</div>
 				</Container>
