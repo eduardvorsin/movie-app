@@ -3,8 +3,10 @@ import Container from '@/components/Container/Container';
 import ExpandableText from '@/components/ExpandableText/ExpandableText';
 import Link from '@/components/Link/Link';
 import PieChart from '@/components/PieChart/PieChart';
+import SocialLinks from '@/components/SocialLinks/SocialLinks';
 import Title from '@/components/Title/Title';
 import { createCharacteristicsArray } from '@/helpers/createCharacteristicsArray/createCharacteristicsArray';
+import { createSocialNetworksArray } from '@/helpers/createSocialNetworksArray/createSocialNetworksArray';
 import { fetchImageWithPlaceholder } from '@/helpers/fetchImageWithPlaceholder/fetchImageWithPlaceholder';
 import { fetchTranslation } from '@/i18n/server';
 import { Locales } from '@/i18n/settings';
@@ -70,6 +72,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		tagline,
 		overview,
 		homepage,
+		external_ids,
 	} = movie;
 
 	const backdropUrl = `${imgPath['backdrop']}${backdrop_path}`;
@@ -82,6 +85,10 @@ export default async function Page({ params: { id, lang } }: Props) {
 	const movieDuration = `${runtime}m | ${Math.floor(runtime / 60)}:${runtime % 60}`;
 	const rating = Math.floor(vote_average * 10);
 
+	const socialNetworks = createSocialNetworksArray({
+		...external_ids,
+		imdb_id: `title/${external_ids.imdb_id}`,
+	});
 	const characteristicData = createCharacteristicsArray({
 		...movie,
 		production_countries: production_countries[0]?.name ?? '-',
@@ -192,6 +199,10 @@ export default async function Page({ params: { id, lang } }: Props) {
 							>
 								{tagline}
 							</p>
+							<SocialLinks
+								className='mb-4'
+								data={socialNetworks}
+							/>
 							<Title
 								className='mb-2 text-neutral-900 dark:text-dark-neutral-800'
 								level={3}
