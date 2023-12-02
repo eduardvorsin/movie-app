@@ -131,7 +131,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 	return (
 		<main>
 			<section
-				className='py-8 bg-blend-overlay bg-cover bg-no-repeat bg-neutral-300 dark:bg-dark-neutral-100'
+				className='py-8 bg-blend-overlay bg-cover bg-no-repeat bg-neutral-100 dark:bg-dark-neutral-0'
 				style={{ backgroundImage: `url(${backdropUrl})` }}
 			>
 				<Container className='flex'>
