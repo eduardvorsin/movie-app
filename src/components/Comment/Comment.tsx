@@ -170,6 +170,7 @@ export default function Comment({
 			{highlighted && (
 				<div
 					className='absolute -top-2 -left-2 w-[calc(100%+16px)] h-[calc(100%+16px)] bg-neutral-100 dark:bg-dark-neutral-200 -z-100 pointer-events-none col-span-full row-start-1 row-end-1'
+					data-testid={testId ? 'highlighting' : undefined}
 					aria-hidden
 				/>
 			)}
