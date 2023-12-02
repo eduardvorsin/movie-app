@@ -82,7 +82,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 			className='bg-neutral-0 dark:bg-dark-neutral-250 py-4 sm:py-6 md:py-8 lg:py-10 min-h-[100vh] h-full flex flex-col sm:flex-row items-start'
 		>
 			<div
-				className='basis-full sm:basis-[16.25rem] md:basis-[18.75rem] lg:basis-[21.375rem] mr-0 sm:mr-8 md:mr-10 lg:mr-12 self-center sm:self-start flex flex-col items-center'
+				className='basis-full sm:basis-[16.25rem] md:basis-[18.75rem] lg:basis-[21.375rem] mr-0 sm:mr-8 md:mr-10 lg:mr-12 self-center sm:self-start flex flex-col'
 			>
 				<ThemedImage
 					className='self-center object-cover rounded-2 max-w-[14.375rem] mb-5 md:mb-6 lg:mb-8 bg-neutral-300 dark:bg-dark-neutral-350 sm:max-w-[16.25rem] md:max-w-[18.75rem] lg:max-w-[21.375rem]'
