@@ -139,7 +139,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 						className='mr-10 object-cover rounded-2 max-w-[18.75rem] w-full shrink-0 grow-0 self-start bg-neutral-300 dark:bg-dark-neutral-300 justify-self-center border-1 border-neutral-300 dark:border-dark-neutral-300'
 						width={300}
 						height={450}
-						src={posterData.img.src}
 						alt='poster'
 						placeholder='blur'
 						blurDataURL={poster_path ? 'blur' : 'empty'}
