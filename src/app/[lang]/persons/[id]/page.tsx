@@ -57,6 +57,10 @@ export default async function Page({ params: { id, lang } }: Props) {
 		);
 	}
 
+	const socialNetworks = createSocialNetworksArray({
+		...external_ids,
+		imdb_id: `name/${external_ids.imdb_id}`,
+	});
 	const currentBiography = biography.split('\n').filter((str) => str !== '');
 
 	const characteristicData = createCharacteristicsArray(actor)
