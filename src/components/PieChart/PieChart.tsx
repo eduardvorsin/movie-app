@@ -7,8 +7,8 @@ type Props = {
 	size: number,
 	value: number,
 	className?: string,
-	barColor?: string,
-	trackColor?: string,
+	barColor?: Record<'light' | 'dark', string>,
+	trackColor?: Record<'light' | 'dark', string>,
 	thickness?: number,
 	testId?: string,
 };
@@ -29,8 +29,8 @@ export default function PieChart({
 	const styles = {
 		'--width': `${size}px`,
 		'--height': `${size}px`,
-		'--gradient': `conic-gradient(${barColor ?? themeBarColor} ${value}%, #0000 0)`,
-		'--track-gradient': `conic-gradient(${trackColor ?? themeTrackColor} 100%, #0000 0)`,
+		'--gradient': `conic-gradient(${barColor?.[theme] ?? themeBarColor} ${value}%, #0000 0)`,
+		'--track-gradient': `conic-gradient(${trackColor?.[theme] ?? themeTrackColor} 100%, #0000 0)`,
 		'--mask': `radial-gradient(farthest-side, #0000 calc(99% - ${thickness}px),#000 calc(100% - ${thickness}px))`,
 	} as CSSProperties;
 
