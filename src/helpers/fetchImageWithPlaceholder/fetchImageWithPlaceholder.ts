@@ -1,21 +1,7 @@
 import path from 'node:path';
 import fs from 'node:fs/promises';
 import { getPlaiceholder } from 'plaiceholder';
-
-type PlaceholderData = {
-	img: {
-		src: string;
-		height: number;
-		width: number;
-	};
-	color: {
-		r: number;
-		g: number;
-		b: number;
-		hex: string;
-	};
-	base64: string;
-};
+import { PlaceholderData } from '@/types/shared';
 
 export const fetchImageWithPlaceholder = async (src: string, isRemote?: boolean): Promise<PlaceholderData> => {
 

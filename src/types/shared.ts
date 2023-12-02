@@ -29,3 +29,17 @@ export type ExternalIDS = {
 	twitter_id: string | null,
 	youtube_id: string | null,
 }
+export type PlaceholderData = {
+	img: {
+		src: string;
+		height: number;
+		width: number;
+	};
+	color: {
+		r: number;
+		g: number;
+		b: number;
+		hex: string;
+	};
+	base64: string;
+};
