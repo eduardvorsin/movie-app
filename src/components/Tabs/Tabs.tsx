@@ -68,13 +68,12 @@ export default function Tabs({
 
 	const classes = [
 		'w-full bg-neutral-100 dark:bg-dark-neutral-200 rounded-[0.1875rem] border-2 border-neutral-300 dark:border-dark-neutral-350',
-		isScrollable ? 'relative after:w-16 after:h-full after:absolute after:top-0 after:right-0 after:bg-gradient-to-r after:from-transparent after:to-neutral-200 dark:after:to-dark-neutral-100 after:pointer-events-none' : '',
 		className,
 	].join(' ');
 
 	const tabButtonClasses = [
-		'shrink-0 mr-1 last:mr-0 enabled:snap-start enabled:snap-always enabled:scroll-mx-2',
-		fitted ? 'grow' : '',
+		'shrink-0 mr-1 last:mr-0 enabled:snap-start enabled:snap-always enabled:scroll-mx-2 break-all',
+		fitted ? 'grow' : 'grow-0',
 	].join(' ');
 
 	const wheelHandler = throttle((e: React.WheelEvent<HTMLDivElement>) => {
@@ -101,28 +100,33 @@ export default function Tabs({
 			data-testid={testId}
 		>
 			<div
-				role='tablist'
-				className='flex p-2 overflow-x-auto no-scrollbar enabled:snap-mandatory enabled:snap-x '
-				ref={tabsGroupRef}
-				onWheel={wheelHandler}
+				className={`${isScrollable ? 'relative after:w-16 after:h-full after:absolute after:top-0 after:right-0 after:bg-gradient-to-r after:from-transparent after:to-neutral-200 dark:after:to-dark-neutral-100 after:pointer-events-none' : ''}`}
 			>
-				{children.map((child, index) => (
-					<TabButton
-						className={tabButtonClasses}
-						key={child.props['data-label'] ?? child.props.label}
-						label={child.props['data-label'] ?? child.props.label}
-						id={`${id}-tab-${index}`}
-						onClick={clickHandler}
-						onKeyDown={keyDownHandler}
-						index={index}
-						isActive={index === selectedTabIndex}
-						ariaControls={`${id}-tabpanel-${index}`}
-						isDisabled={isDisabled}
-					/>
-				))}
+				<div
+					role='tablist'
+					className={`flex p-2 overflow-x-auto no-scrollbar ${isDisabled ? 'snap-mandatory snap-x' : ''}`}
+					ref={tabsGroupRef}
+					onWheel={wheelHandler}
+				>
+					{children.map((child, index) => (
+						<TabButton
+							className={tabButtonClasses}
+							key={child.props['data-label'] ?? child.props.label}
+							label={child.props['data-label'] ?? child.props.label}
+							id={`${id}-tab-${index}`}
+							onClick={clickHandler}
+							onKeyDown={keyDownHandler}
+							index={index}
+							isActive={index === selectedTabIndex}
+							ariaControls={`${id}-tabpanel-${index}`}
+							isDisabled={isDisabled}
+						/>
+					))}
+				</div>
 			</div>
+
 			<div
-				className='flex min-h-[5rem] text-neutral-1000 dark:text-dark-neutral-900 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350'
+				className='flex min-h-[4rem] text-neutral-1000 dark:text-dark-neutral-900 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350'
 				id={`${id}-tabpanel-${selectedTabIndex}`}
 				role='tabpanel'
 				aria-labelledby={`${id}-tab-${selectedTabIndex}`}
