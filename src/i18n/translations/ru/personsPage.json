@@ -19,5 +19,22 @@
 	},
 	"personalWebsite": "Личный сайт:",
 	"biography": "Биография",
-	"viewProfile": "Смотреть профиль на"
+	"filmography": {
+		"title": "Фильмография",
+		"tabs": {
+			"actors": "Актер",
+			"production": "Продюсер",
+			"writing": "Сценарист",
+			"directing": "Режиссер",
+			"sound": "Звукорежиссер",
+			"creator": "Создатель",
+			"camera": "Оператор",
+			"editing": "Монтажер",
+			"crew": "Участник съемочной группы",
+			"lighting": "Светотехник",
+			"art": "Художник",
+			"visual effects": "Специалист по спецэффектам",
+			"costume & make-up": "Костюмер или гример"
+		}
+	}
 }

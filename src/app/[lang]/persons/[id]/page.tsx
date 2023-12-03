@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Title from '@/components/Title/Title';
-import Image from 'next/image';
 import Link from '@/components/Link/Link';
+import NextLink from 'next/link'
 import CharacteristicList from '@/components/CharacteristicList/CharacteristicList';
 import ExpandableText from '@/components/ExpandableText/ExpandableText';
 import { createSocialNetworksArray } from '@/helpers/createSocialNetworksArray/createSocialNetworksArray';
@@ -12,6 +12,10 @@ import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate
 import { fetchActor } from '@/services/fetchActor/fetchActor';
 import { fetchImageWithPlaceholder } from 'src/helpers/fetchImageWithPlaceholder/fetchImageWithPlaceholder';
 import Container from '@/components/Container/Container';
+import { createFilmographyData } from '@/helpers/createFilmographyData/createFilmographyData';
+import TabPanel from '@/components/Tabs/TabPanel/TabPanel';
+import { Department, PlaceholderData } from '@/types/shared';
+import Tabs from '@/components/Tabs/Tabs';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
 import { imgPath } from 'src/constants';
 import ThemedImage from '@/components/ThemedImage/ThemedImage';
@@ -80,6 +84,8 @@ export default async function Page({ params: { id, lang } }: Props) {
 				value: currentValue,
 			}
 		});
+
+	const filmography = createFilmographyData(combined_credits);
 
 	return (
 		<Container
@@ -180,6 +186,69 @@ export default async function Page({ params: { id, lang } }: Props) {
 						</ExpandableText>
 					</section>
 				)}
+				<section className='mb-4 md:mb-5 lg:mb-6'>
+					<Title
+						className='text-neutral-1000 dark:text-dark-neutral-1000 mb-2 sm:mb-3 md:mb-4'
+						level={4}
+						weight={500}
+						as='h2'
+					>
+						{t('filmography.title', { ns: 'personsPage' })}
+					</Title>
+					<Tabs
+						className='col-start-2 col-end-3 overflow-hidden'
+						id='filmography'
+					>
+						{(Object.keys(filmography) as Lowercase<Department>[]).map((key) => (
+							<TabPanel
+								className='w-full'
+								key={key}
+								label={t(`filmography.tabs.${key}`, { ns: 'personsPage' })}
+							>
+								<ul>
+									{filmography[key].map((item, index) => (
+										<li
+											className='border-neutral-300 dark:border-dark-neutral-350 border-b-2 last:border-b-[0px]'
+											key={`${item.id}-${index}`}
+										>
+											<NextLink
+												className='flex px-2 py-3 justify-between items-center
+                    hover:bg-neutral-200 active:bg-neutral-300 dark:hover:bg-dark-neutral-250 dark:active:bg-dark-neutral-300 transition-colors duration-150'
+												href={typeof item.first_air_date === 'string' ? `/tv/${item.id}` : `/movies/${item.id}`}
+											>
+												<div>
+													<Title
+														className='line-clamp-2'
+														weight={500}
+														level={6}
+														as='h3'
+													>
+														{item.title ?? item.name}
+														({item.release_date || item.first_air_date || '-'})
+													</Title>
+													{item.character && (
+														<p className='block mt-1 text-100 text-neutral-900 dark:text-dark-neutral-800'>
+															{item.character}
+														</p>
+													)}
+												</div>
+
+												<p className='flex flex-col flex-shrink-0 flex-grow-0 basis-16 text-center leading-none'>
+													<span className='text-200 font-bold text-blue-700 dark:text-blue-400'>
+														{item.vote_average}
+													</span>
+													<span className='text-100 mt-1 text-neutral-900 dark:text-dark-neutral-800'>
+														{item.vote_count}
+													</span>
+												</p>
+											</NextLink>
+										</li>
+									))}
+								</ul>
+							</TabPanel>
+						))}
+					</Tabs>
+				</section>
 			</div>
 		</Container>
 	);
