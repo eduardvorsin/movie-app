@@ -18,7 +18,6 @@ export default function ThemedImage({
 		currentSrc = src[theme];
 	} else {
 		const inverseTheme = theme === 'light' ? 'dark' : 'light';
-		console.log('inverseTheme', inverseTheme);
 		currentSrc = fallback?.[theme] ?? src[inverseTheme];
 	}
 
