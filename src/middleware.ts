@@ -1,32 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { fallbackLng, locales } from '@/i18n/settings';
+import { Locales, fallbackLng, locales } from '@/i18n/settings';
 
 export function middleware(request: NextRequest) {
+	const userLang = request.headers.get('accept-language')?.slice(0, 2) ?? fallbackLng;
+
 	const { pathname } = request.nextUrl;
 
-	if (
-		pathname.startsWith(`/${fallbackLng}`) ||
-		pathname === `/${fallbackLng}`
-	) {
-		const url = new URL(
-			pathname.replace(
-				`/${fallbackLng}`,
-				pathname === `/${fallbackLng}` ? '/' : '',
-			),
-			request.url
-		);
-
-		return NextResponse.redirect(url);
-	}
-
 	const pathnameIsMissingLocale = locales.every(locale => {
-		return !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`;
+		return !pathname.startsWith(`/${locale}`) && pathname !== `/${locale}`;
 	});
 
 	if (pathnameIsMissingLocale) {
-		return NextResponse.rewrite(
-			new URL(`/${fallbackLng}${pathname}`, request.url),
-		)
+		const currentLocale = locales.includes(userLang as Locales) ? userLang : fallbackLng;
+		const newUrl = new URL(`/${currentLocale}${pathname}`, request.url);
+
+		return NextResponse.redirect(newUrl);
 	}
 }
 
