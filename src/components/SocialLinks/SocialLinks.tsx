@@ -25,7 +25,7 @@ export default function SocialLinks({
 		<div className='flex items-center flex-wrap -ml-[0.375rem]'>
 			{data.map((item) => (
 				<div
-					className={`px-[0.375rem] ${className}`}
+					className={`px-[0.375rem] py-[0.375rem] ${className}`}
 					key={item.name}
 					data-testid={testId}
 				>
