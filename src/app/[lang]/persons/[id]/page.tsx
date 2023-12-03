@@ -89,10 +89,10 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 	return (
 		<Container
-			className='bg-neutral-0 dark:bg-dark-neutral-250 py-4 sm:py-6 md:py-8 lg:py-10 min-h-[100vh] h-full flex flex-col sm:flex-row items-start'
+			className='bg-neutral-0 dark:bg-dark-neutral-250 py-4 sm:py-6 md:py-8 lg:py-10 min-h-[100vh] h-full flex flex-col md:flex-row items-start'
 		>
 			<div
-				className='basis-full sm:basis-[16.25rem] md:basis-[18.75rem] lg:basis-[21.375rem] mr-0 sm:mr-8 md:mr-10 lg:mr-12 self-center sm:self-start flex flex-col'
+				className='basis-full md:basis-[18.75rem] lg:basis-[21.375rem] mr-0 md:mr-8 lg:mr-12 mb-5 md:mb-0 self-center md:self-start flex flex-col'
 			>
 				<ThemedImage
 					className='self-center object-cover rounded-2 max-w-[14.375rem] mb-5 md:mb-6 lg:mb-8 bg-neutral-300 dark:bg-dark-neutral-350 sm:max-w-[16.25rem] md:max-w-[18.75rem] lg:max-w-[21.375rem]'
@@ -122,7 +122,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						Links to social networks
 					</Title>
 					{homepage && (
-						<p className='flex items-center flex-wrap'>
+						<p className='flex items-center flex-wrap mb-2'>
 							<span className='text-dark-neutral-250 dark:text-neutral-300 mr-2'>
 								{t('personalWebsite', { ns: 'personsPage' })}
 							</span>
@@ -152,7 +152,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 					{name}
 				</Title>
 
-				<section>
+				<section className='mb-4 md:mb-5 lg:mb-6'>
 					<Title
 						className='text-neutral-1000 dark:text-dark-neutral-1000 mb-1 xs:mb-2'
 						level={4}
@@ -163,15 +163,15 @@ export default async function Page({ params: { id, lang } }: Props) {
 					</Title>
 
 					<CharacteristicList
-						className='max-w-[36.25rem] mb-4 md:mb-5 lg:mb-6'
+						className='max-w-[36.25rem]'
 						data={characteristicData}
 					/>
 				</section>
 
 				{currentBiography.length !== 0 && (
-					<section>
+					<section className='mb-4 md:mb-5 lg:mb-6'>
 						<Title
-							className='text-neutral-1000 dark:text-dark-neutral-1000 mb-2'
+							className='text-neutral-1000 dark:text-dark-neutral-1000 mb-2 sm:mb-3 md:mb-4'
 							level={4}
 							weight={500}
 							as='h2'
