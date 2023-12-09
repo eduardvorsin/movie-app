@@ -2,11 +2,11 @@
 import { MouseEventHandler, ReactNode } from 'react';
 import Title from '@/components/Title/Title';
 import Link from 'next/link';
-import Image from 'next/image';
 import { HeadingElement, HeadingLevel } from '@/types/shared';
 import { useParams } from 'next/navigation';
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
+import ThemedImage from '../ThemedImage/ThemedImage';
 
 type Props = {
 	personId: number,
@@ -47,13 +47,20 @@ export default function PersonCard({
 			onClick={onClick}
 			data-testid={testId}
 		>
-			<div className='relative self-center mb-3'>
-				<Image
-					className='w-[9.625rem] h-[9.625rem] rounded-[50%] object-cover'
+			<div className='w-[9.625rem] h-[9.625rem] relative self-center mb-3'>
+				<ThemedImage
+					className='rounded-[50%] object-cover w-full h-full'
 					width={154}
 					height={231}
-					src={src}
 					alt={alt}
+					src={{
+						light: src,
+						dark: src,
+					}}
+					fallback={{
+						light: '/assets/images/person-card-placeholder-l.svg',
+						dark: '/assets/images/person-card-placeholder-d.svg'
+					}}
 				/>
 				{showRating && (
 					<span className='absolute bottom-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center rounded-[50%] border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold'>
