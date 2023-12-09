@@ -149,8 +149,8 @@ export default async function Page({ params: { id, lang } }: Props) {
 							dark: posterData?.img.src ?? '',
 						}}
 						fallback={{
-							light: '/assets/images/light-movie-placeholder.svg',
-							dark: '/assets/images/dark-movie-placeholder.svg',
+							light: '/assets/images/movie-placeholder-l.svg',
+							dark: '/assets/images/movie-placeholder-d.svg',
 						}}
 					/>
 					<div>
