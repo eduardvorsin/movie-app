@@ -89,13 +89,13 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 	return (
 		<Container
-			className='bg-neutral-0 dark:bg-dark-neutral-250 py-4 sm:py-6 md:py-8 lg:py-10 min-h-[100vh] h-full flex flex-col md:flex-row items-start'
+			className='bg-neutral-0 dark:bg-dark-neutral-250 py-4 sm:py-6 md:py-8 lg:py-10 min-h-[100vh] h-full grid grid-cols-[1fr] md:grid-cols-[18.75rem_1fr] lg:grid-cols-[21.375rem_1fr] gap-x-0 md:gap-x-8 lg:gap-x-12 gap-y-5 md:gap-y-6 lg:gap-y-8'
 		>
 			<div
-				className='basis-full md:basis-[18.75rem] lg:basis-[21.375rem] mr-0 md:mr-8 lg:mr-12 mb-5 md:mb-0 self-center md:self-start flex flex-col'
+				className='self-center md:self-start flex flex-col'
 			>
 				<ThemedImage
-					className='self-center object-cover rounded-2 max-w-[14.375rem] mb-5 md:mb-6 lg:mb-8 bg-neutral-300 dark:bg-dark-neutral-350 sm:max-w-[16.25rem] md:max-w-[18.75rem] lg:max-w-[21.375rem]'
+					className='self-center object-cover rounded-2 max-w-[14.375rem] mb-6 sm:mb-8 bg-neutral-300 dark:bg-dark-neutral-350 sm:max-w-[16.25rem] md:max-w-[18.75rem] lg:max-w-[21.375rem]'
 					width={342}
 					height={513}
 					alt={name}
@@ -186,7 +186,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						</ExpandableText>
 					</section>
 				)}
-				<section className='mb-4 md:mb-5 lg:mb-6'>
+				<section>
 					<Title
 						className='text-neutral-1000 dark:text-dark-neutral-1000 mb-2 sm:mb-3 md:mb-4'
 						level={4}
