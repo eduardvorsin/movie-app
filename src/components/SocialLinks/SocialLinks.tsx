@@ -22,10 +22,10 @@ export default function SocialLinks({
 	data,
 }: Props) {
 	return (
-		<div className='flex items-center flex-wrap -ml-[0.375rem]'>
+		<div className={`flex items-center flex-wrap -ml-[0.375rem] ${className}`}>
 			{data.map((item) => (
 				<div
-					className={`px-[0.375rem] py-[0.375rem] ${className}`}
+					className='px-[0.375rem] py-[0.375rem] mb-2'
 					key={item.name}
 					data-testid={testId}
 				>
