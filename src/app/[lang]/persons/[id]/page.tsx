@@ -19,6 +19,9 @@ import Tabs from '@/components/Tabs/Tabs';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
 import { imgPath } from 'src/constants';
 import ThemedImage from '@/components/ThemedImage/ThemedImage';
+import { fetchPopularPersons } from '@/services/fetchPopularPersons/fetchPopularPersons';
+import PersonCard from '@/components/PersonCard/PersonCard';
+import Carousel from '@/components/Carousel/Carousel';
 
 const characteristicFields = new Set([
 	'known_for_department',
@@ -86,6 +89,8 @@ export default async function Page({ params: { id, lang } }: Props) {
 		});
 
 	const filmography = createFilmographyData(combined_credits);
+
+	const popularPersons = await fetchPopularPersons(1, { lang });
 
 	return (
 		<Container
@@ -248,6 +253,49 @@ export default async function Page({ params: { id, lang } }: Props) {
 							</TabPanel>
 						))}
 					</Tabs>
+				</section>
+			</div>
+
+			<div className='md:col-span-full overflow-hidden'>
+				<section>
+					<Title
+						className='text-neutral-1000 dark:text-dark-neutral-1000 mb-2 sm:mb-3 md:mb-4'
+						level={4}
+						weight={500}
+						as='h2'
+					>
+						{t('personsTitle', { ns: 'personsPage' })}
+					</Title>
+					<Carousel
+						label='cast'
+						mousewheel
+						slidesPerView={8}
+						spaceBetween={20}
+						showScrollShadow
+					>
+						{!(popularPersons instanceof Error) && popularPersons.results.map(({
+							id,
+							profile_path,
+							name,
+							popularity,
+							known_for_department,
+
+						}) => (
+							<PersonCard
+								personId={id}
+								key={id}
+								src={profile_path ? `${imgPath['profileCard']}${profile_path}` : ''}
+								alt={name}
+								title={name}
+								titleElement='h4'
+								titleLevel={6}
+								showRating
+								rating={popularity}
+							>
+								{t(`department.${known_for_department.toLowerCase()}`, { ns: 'personsPage' })}
+							</PersonCard>
+						))}
+					</Carousel>
 				</section>
 			</div>
 		</Container>
