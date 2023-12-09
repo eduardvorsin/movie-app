@@ -4,6 +4,14 @@ export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export type Department = 'Actors' | 'Production' | 'Crew' | 'Writing' | 'Directing' | 'Costume & Make-Up' | 'Visual Effects' | 'Editing' | 'Art' | 'Lighting' | 'Camera' | 'Creator';
 
+type CommonGenres = 'animation' | 'comedy' | 'crime' | 'documentary' | 'drama' | 'family' | 'mystery' | 'western';
+
+export type MovieGenres = 'adventure' | 'romance' | 'fantastic' | 'history' | 'music' | 'war' | 'thriller' | 'fantasy' | 'horror' | 'tv movie' | 'action' | 'science fiction';
+
+export type TVGenres = CommonGenres | 'action & adventure' | 'kids' | 'news' | 'reality' | 'sci-fi & fantasy' | 'soap' | 'talk' | 'war & politics';
+
+export type Genres = MovieGenres | TVGenres;
+
 export type ProductionCompany = {
 	id: string,
 	logo_path: string,

@@ -1,11 +1,10 @@
 'use client';
 import Link from 'next/link';
-import { Adventure, Romance, Fantastic, History, Music, Military, Thriller, Animation, Crime, Documentary, Drama, Family, Fantasy, Horror, Mystery, TVMovie, Western, Action, Comedy } from './GenreIcons';
+import { Adventure, Romance, Fantastic, History, Music, War, Thriller, Animation, Crime, Documentary, Drama, Family, Fantasy, Horror, Mystery, TVMovie, Western, Action, Comedy, ActionAndAdventure, Politics, Talk, Series, News, Reality, Kids, SciFi, Science } from './GenreIcons';
 import { MouseEventHandler } from 'react';
 import Title from '@/components/Title/Title';
-import { HeadingElement } from '@/types/shared';
+import { Genres, HeadingElement } from '@/types/shared';
 
-export type Genres = 'adventure' | 'romance' | 'fantastic' | 'history' | 'music' | 'war' | 'thriller' | 'animation' | 'crime' | 'documentary' | 'drama' | 'family' | 'fantasy' | 'horror' | 'mystery' | 'tv movie' | 'western' | 'action' | 'comedy';
 
 export type Props = {
 	href: string,
@@ -23,11 +22,11 @@ const iconsByGenre = {
 		src: Adventure.src,
 	},
 	romance: {
-		name: 'hearts',
+		name: 'romance',
 		src: Romance.src,
 	},
 	fantastic: {
-		name: 'ufo',
+		name: 'fantastic',
 		src: Fantastic.src,
 	},
 	history: {
@@ -39,15 +38,15 @@ const iconsByGenre = {
 		src: Music.src,
 	},
 	war: {
-		name: 'military',
-		src: Military.src,
+		name: 'war',
+		src: War.src,
 	},
 	thriller: {
 		name: 'thriller',
 		src: Thriller.src,
 	},
 	animation: {
-		name: 'kid',
+		name: 'animation',
 		src: Animation.src,
 	},
 	crime: {
@@ -94,7 +93,45 @@ const iconsByGenre = {
 		name: 'comedy',
 		src: Comedy.src,
 	},
+	'action & adventure': {
+		name: 'action_adventure',
+		src: ActionAndAdventure.src,
+	},
+	'war & politics': {
+		name: 'politics',
+		src: Politics.src,
+	},
+	talk: {
+		name: 'talk',
+		src: Talk.src,
+	},
+	soap: {
+		name: 'series',
+		src: Series.src,
+	},
+	news: {
+		name: 'news',
+		src: News.src,
+	},
+	reality: {
+		name: 'reality',
+		src: Reality.src,
+	},
+	kids: {
+		name: 'kids',
+		src: Kids.src,
+	},
+	'sci-fi & fantasy': {
+		name: 'sci-fi',
+		src: SciFi.src,
+	},
+	'science fiction': {
+		name: 'science',
+		src: Science.src,
+	},
 } as const;
+
+console.log('ActionAndAdventure', ActionAndAdventure);
 
 export default function GenreCard({
 	href,
