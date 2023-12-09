@@ -65,7 +65,7 @@ export default function PersonCard({
 				{showRating && (
 					<span className='absolute bottom-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center rounded-[50%] border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold'>
 						<span className='sr-only'>{t('personCard.rating')}</span>
-						{rating}
+						{Math.trunc(rating ?? 0)}
 					</span>
 				)}
 			</div>
