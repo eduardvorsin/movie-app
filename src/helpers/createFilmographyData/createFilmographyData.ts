@@ -1,8 +1,8 @@
-import { ActorCredit, ActorCredits } from '@/services/fetchActor/fetchActor';
+import { PersonCredit, PersonCredits } from '@/services/fetchActor/fetchActor';
 import { Department } from '@/types/shared';
 
-type Filmography = Record<Lowercase<Department>, ActorCredit[]>;
-export const createFilmographyData = (credits: ActorCredits): Filmography => {
+type Filmography = Record<Lowercase<Department>, PersonCredit[]>;
+export const createFilmographyData = (credits: PersonCredits): Filmography => {
 	const filmography = {} as Filmography;
 	filmography.actors = [...credits.cast];
 

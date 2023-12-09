@@ -2,7 +2,7 @@ import { Department, ExternalIDS } from '@/types/shared';
 import { fetchTranslation } from '@/i18n/server';
 import { Locales, fallbackLng } from '@/i18n/settings';
 
-export type ActorCredit = {
+export type PersonCredit = {
 	id: number,
 	title?: string,
 	name?: string,
@@ -15,9 +15,9 @@ export type ActorCredit = {
 	job?: string,
 };
 
-export type ActorCredits = {
-	cast: ActorCredit[],
-	crew: Array<ActorCredit & { department: Department }>
+export type PersonCredits = {
+	cast: PersonCredit[],
+	crew: Array<PersonCredit & { department: Department }>
 };
 
 export type Actor = {
@@ -30,13 +30,13 @@ export type Actor = {
 	homepage: string | null,
 	id: number,
 	imdb_id: string,
-	known_for_department: string,
+	known_for_department: Department,
 	name: string,
 	place_of_birth: string,
 	popularity: number,
 	profile_path: string | null,
 	external_ids: ExternalIDS
-	combined_credits: ActorCredits,
+	combined_credits: PersonCredits,
 };
 
 export const fetchActor = async (id: string, options?: { lang: Locales }): Promise<Actor | Error> => {
