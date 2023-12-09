@@ -19,7 +19,7 @@ type Props = {
 	alt: string,
 	showRating?: boolean,
 	rating?: number,
-	children: ReactNode,
+	children?: ReactNode,
 	onClick?: MouseEventHandler<HTMLAnchorElement>,
 };
 
@@ -78,11 +78,13 @@ export default function PersonCard({
 					{title}
 				</Title>
 			)}
-			<p
-				className='text-100 text-neutral-900 dark:text-dark-neutral-800 line-clamp-3'
-			>
-				{children}
-			</p>
+			{children && (
+				<p
+					className='text-100 text-neutral-900 dark:text-dark-neutral-800 line-clamp-3'
+				>
+					{children}
+				</p>
+			)}
 		</Link>
 	);
 }
