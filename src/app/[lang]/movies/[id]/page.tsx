@@ -23,6 +23,10 @@ import { imgPath } from 'src/constants';
 import Carousel from '@/components/Carousel/Carousel';
 import MovieCard from '@/components/MovieCard/MovieCard';
 import { convertToTime } from '@/helpers/convertToTime/convertToTime';
+import { fetchTrailers } from '@/services/fetchTrailers/fetchTrailers';
+import YouTubeVideo from '@/components/YouTubeVideo/YouTubeVideo';
+import Tabs from '@/components/Tabs/Tabs';
+import TabPanel from '@/components/Tabs/TabPanel/TabPanel';
 
 const characteristicFields = new Set([
 	'production_countries',
@@ -62,6 +66,7 @@ type Props = {
 export default async function Page({ params: { id, lang } }: Props) {
 	const { t } = await fetchTranslation(lang, ['moviesPage', 'common']);
 	const movie = await fetchMovie(id, { lang });
+	const trailers = await fetchTrailers(id, { lang });
 
 	if (movie instanceof Error) {
 		notFound();
@@ -140,6 +145,11 @@ export default async function Page({ params: { id, lang } }: Props) {
 	}
 
 	const authors = createAuthorsArray(credits.crew).slice(0, 6);
+
+	let availableTrailers;
+	if (!(trailers instanceof Error)) {
+		availableTrailers = trailers.results.filter((trailer) => trailer.site === 'YouTube');
+	}
 
 	return (
 		<main>
@@ -336,6 +346,40 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 				</Container>
 			</section>
+
+			{availableTrailers && (
+				<section className='py-5 md:py-8'>
+					<Container className='flex flex-col'>
+						<Title
+							className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+							as='h2'
+							level={3}
+						>
+							{t('trailer', { ns: 'moviesPage' })}
+						</Title>
+
+						<Tabs id='trailers'>
+							{availableTrailers.map((trailer) => (
+								<TabPanel
+									className='md:p-5'
+									key={trailer.id}
+									label={trailer.name}
+								>
+									<YouTubeVideo
+										className='mx-auto'
+										width={960}
+										height={540}
+										videoId={trailer.key}
+										title={trailer.name}
+										loading='lazy'
+									/>
+								</TabPanel>
+							))}
+						</Tabs>
+					</Container>
+				</section>
+			)}
+
 			<section className='py-5 md:py-8'>
 				<Container className='flex flex-col'>
 					<Title
