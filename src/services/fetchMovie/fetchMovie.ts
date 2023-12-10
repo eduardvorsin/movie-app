@@ -1,6 +1,6 @@
 import { fetchTranslation } from '@/i18n/server';
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { ExternalIDS, Genre, ProductionCompany, ProductionCounty } from '@/types/shared';
+import { Department, ExternalIDS, Genre, ProductionCompany, ProductionCounty } from '@/types/shared';
 
 export type Movie = {
 	backdrop_path: string | null,
@@ -12,7 +12,24 @@ export type Movie = {
 	original_language: string,
 	original_title: string,
 	overview: string,
-	poster_path: string,
+
+type Credit = {
+	id: number,
+	known_for_department: Department,
+	name: string,
+	profile_path: string | null,
+	popularity: number,
+}
+
+export type ActorCredit = Credit & { character: string };
+export type CrewCredit = Credit & {
+	department: Department,
+	job: string,
+};
+export type MovieCredits = {
+	cast: ActorCredit[],
+	crew: CrewCredit[],
+}
 	production_companies: ProductionCompany[],
 	production_countries: ProductionCounty[],
 	release_date: string,
@@ -25,6 +42,7 @@ export type Movie = {
 	vote_average: number,
 	vote_count: number,
 	external_ids: ExternalIDS,
+	credits: MovieCredits,
 }
 
 export const fetchMovie = async (id: string, options?: { lang: Locales }): Promise<Movie | Error> => {
@@ -33,7 +51,7 @@ export const fetchMovie = async (id: string, options?: { lang: Locales }): Promi
 
 	let movie;
 	try {
-		const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=external_ids&language=${currentLang}`, {
+		const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=external_ids,credits,similar,recommendations&language=${currentLang}`, {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',

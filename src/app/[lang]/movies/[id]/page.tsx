@@ -6,6 +6,7 @@ import PieChart from '@/components/PieChart/PieChart';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
 import ThemedImage from '@/components/ThemedImage/ThemedImage';
 import Title from '@/components/Title/Title';
+import { createAuthorsArray } from '@/helpers/createAuthorsArray/createAuthorsArray';
 import { createCharacteristicsArray } from '@/helpers/createCharacteristicsArray/createCharacteristicsArray';
 import { createSocialNetworksArray } from '@/helpers/createSocialNetworksArray/createSocialNetworksArray';
 import { fetchImageWithPlaceholder } from '@/helpers/fetchImageWithPlaceholder/fetchImageWithPlaceholder';
@@ -74,6 +75,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		overview,
 		homepage,
 		external_ids,
+		credits,
 	} = movie;
 
 	const backdropUrl = `${imgPath['backdrop']}${backdrop_path}`;
@@ -128,6 +130,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 	} else {
 		ratingType = 'high';
 	}
+	const authors = createAuthorsArray(credits.crew).slice(0, 6);
 
 	return (
 		<main>
@@ -228,6 +231,34 @@ export default async function Page({ params: { id, lang } }: Props) {
 									</ExpandableText>
 								</>
 							)}
+
+							<Title
+								className='mb-2 text-neutral-900 dark:text-dark-neutral-800'
+								level={3}
+								as='h2'
+							>
+								{t('authors.title', { ns: 'moviesPage' })}
+							</Title>
+
+							<ul
+								className='text-neutral-1000 dark:text-dark-neutral-900'
+							>
+								{authors.map(({ job, name, id }) => (
+									<li
+										key={id}
+										className='mb-1'
+									>
+										<Link
+											className='no-underline font-bold'
+											href={`/persons/${id}`}
+										>
+											{name}
+										</Link>
+										<span className='mx-2'>—</span>
+										<span>{t(`authors.jobs.${job.toLowerCase()}`)}</span>
+									</li>
+								))}
+							</ul>
 						</div>
 					</div>
 				</Container>
