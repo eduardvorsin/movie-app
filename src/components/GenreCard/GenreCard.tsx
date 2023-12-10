@@ -131,8 +131,6 @@ const iconsByGenre = {
 	},
 } as const;
 
-console.log('ActionAndAdventure', ActionAndAdventure);
-
 export default function GenreCard({
 	href,
 	className,
@@ -168,3 +166,5 @@ export default function GenreCard({
 		</Link>
 	);
 };
+
+//todo прочитать обязательно https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/
