@@ -15,7 +15,7 @@ export default function TabPanel({
 }: Props) {
 	return (
 		<div
-			className={className}
+			className={`w-full ${className}`}
 			data-label={label}
 			data-testid={testId}
 		>
