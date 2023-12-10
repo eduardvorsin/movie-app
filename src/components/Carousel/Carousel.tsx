@@ -22,6 +22,7 @@ type Props = {
 	noSwiping?: boolean,
 	mousewheel?: boolean,
 	paginationType?: 'dots' | 'progress' | 'fraction',
+	showScrollShadow?: boolean,
 };
 
 export default forwardRef<HTMLDivElement, Props>(function Carousel({
@@ -41,6 +42,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 	noSwiping,
 	mousewheel,
 	paginationType = 'fraction',
+	showScrollShadow,
 }, ref) {
 	const [activeIndex, setActiveIndex] = useState<number>(0);
 	const [isSliderHovered, setIsSliderHovered] = useState<boolean>(false);
@@ -149,6 +151,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 
 	const wrapperClases = [
 		'overflow-hidden relative',
+		showScrollShadow ? 'z-100 after:w-10 md:after:w-16 after:h-full after:absolute after:top-0 after:right-0 after:bg-gradient-to-r after:from-transparent after:to-neutral-200 dark:after:via-dark-neutral-100/90 dark:after:to-dark-neutral-100 after:pointer-events-none' : '',
 		className
 	].join(' ');
 
