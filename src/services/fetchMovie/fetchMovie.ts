@@ -2,16 +2,30 @@ import { fetchTranslation } from '@/i18n/server';
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { Department, ExternalIDS, Genre, ProductionCompany, ProductionCounty } from '@/types/shared';
 
-export type Movie = {
+type Movie = {
 	backdrop_path: string | null,
-	budget: number,
-	genres: Genre[],
-	homepage: string,
+	genre_ids: number[],
 	id: number,
-	imdb_id: string,
 	original_language: string,
 	original_title: string,
 	overview: string,
+	popularity: number,
+	poster_path: string | null,
+	release_date: string,
+	title: string,
+	video: boolean,
+	vote_average: number,
+	vote_count: number,
+}
+
+type SimilarMovies = {
+	page: number,
+	results: Movie[],
+	total_page: number,
+	total_results: number,
+};
+
+type RecommendedMovies = SimilarMovies;
 
 type Credit = {
 	id: number,
@@ -30,22 +44,25 @@ export type MovieCredits = {
 	cast: ActorCredit[],
 	crew: CrewCredit[],
 }
+
+export type MovieDetails = Omit<Movie, 'genres_id' | 'popularity'> & {
+	genres: Genre[],
+	budget: number,
+	imdb_id: string,
 	production_companies: ProductionCompany[],
 	production_countries: ProductionCounty[],
-	release_date: string,
+	homepage: string,
 	revenue: number,
 	runtime: number,
 	status: string,
 	tagline: string,
-	title: string,
-	video: boolean,
-	vote_average: number,
-	vote_count: number,
 	external_ids: ExternalIDS,
 	credits: MovieCredits,
+	similar: SimilarMovies,
+	recommendations: RecommendedMovies,
 }
 
-export const fetchMovie = async (id: string, options?: { lang: Locales }): Promise<Movie | Error> => {
+export const fetchMovie = async (id: string, options?: { lang: Locales }): Promise<MovieDetails | Error> => {
 	const currentLang = options?.lang ?? fallbackLng;
 	const { t } = await fetchTranslation(currentLang, ['common']);
 

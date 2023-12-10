@@ -21,6 +21,8 @@ import { PlaceholderData } from '@/types/shared';
 import { notFound } from 'next/navigation';
 import { imgPath } from 'src/constants';
 import Carousel from '@/components/Carousel/Carousel';
+import MovieCard from '@/components/MovieCard/MovieCard';
+import { convertToTime } from '@/helpers/convertToTime/convertToTime';
 
 const characteristicFields = new Set([
 	'production_countries',
@@ -78,6 +80,8 @@ export default async function Page({ params: { id, lang } }: Props) {
 		homepage,
 		external_ids,
 		credits,
+		similar,
+		recommendations,
 	} = movie;
 
 	const backdropUrl = `${imgPath['backdrop']}${backdrop_path}`;
@@ -328,6 +332,93 @@ export default async function Page({ params: { id, lang } }: Props) {
 						))}
 					</Carousel>
 
+				</Container>
+			</section>
+			<section className='py-5 md:py-8'>
+				<Container className='flex flex-col'>
+					<Title
+						className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+						as='h2'
+						level={3}
+					>
+						{t('relatedMovies', { ns: 'moviesPage' })}
+					</Title>
+					<Carousel
+						label={t('relatedMovies', { ns: 'moviesPage' })}
+						mousewheel
+						slidesPerView={4}
+						spaceBetween={20}
+						showScrollShadow
+						showPagination
+						paginationType='dots'
+					>
+						{similar.results.map(({
+							id,
+							backdrop_path,
+							title,
+							vote_average,
+							release_date,
+							genre_ids,
+						}) => (
+							<MovieCard
+								movieId={id}
+								key={id}
+								src={backdrop_path ? `${imgPath['backdrop']}${backdrop_path}` : ''}
+								alt={title}
+								title={title}
+								titleElement='h4'
+								genres={genre_ids}
+								releaseDate={getLocalizedDate(release_date, lang)}
+								titleLevel={5}
+								showRating
+								rating={vote_average * 10}
+							/>
+						))}
+					</Carousel>
+				</Container>
+			</section>
+
+			<section className='py-5 md:py-8'>
+				<Container className='flex flex-col'>
+					<Title
+						className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+						as='h2'
+						level={3}
+					>
+						{t('recommendations', { ns: 'moviesPage' })}
+					</Title>
+					<Carousel
+						label={t('recommendations', { ns: 'moviesPage' })}
+						mousewheel
+						slidesPerView={4}
+						spaceBetween={20}
+						showScrollShadow
+						showPagination
+						paginationType='dots'
+					>
+						{recommendations.results.map(({
+							id,
+							backdrop_path,
+							title,
+							vote_average,
+							release_date,
+							genre_ids,
+						}) => (
+							<MovieCard
+								movieId={id}
+								key={id}
+								src={backdrop_path ? `${imgPath['backdrop']}${backdrop_path}` : ''}
+								alt={title}
+								title={title}
+								titleElement='h4'
+								genres={genre_ids}
+								releaseDate={getLocalizedDate(release_date, lang)}
+								titleLevel={5}
+								showRating
+								rating={vote_average * 10}
+							/>
+						))}
+					</Carousel>
 				</Container>
 			</section>
 		</main>
