@@ -2,6 +2,7 @@ import CharacteristicList from '@/components/CharacteristicList/CharacteristicLi
 import Container from '@/components/Container/Container';
 import ExpandableText from '@/components/ExpandableText/ExpandableText';
 import Link from '@/components/Link/Link';
+import PersonCard from '@/components/PersonCard/PersonCard';
 import PieChart from '@/components/PieChart/PieChart';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
 import ThemedImage from '@/components/ThemedImage/ThemedImage';
@@ -19,6 +20,7 @@ import { fetchMovie } from '@/services/fetchMovie/fetchMovie';
 import { PlaceholderData } from '@/types/shared';
 import { notFound } from 'next/navigation';
 import { imgPath } from 'src/constants';
+import Carousel from '@/components/Carousel/Carousel';
 
 const characteristicFields = new Set([
 	'production_countries',
@@ -286,6 +288,48 @@ export default async function Page({ params: { id, lang } }: Props) {
 				</Container>
 			</section>
 
+			<section className='py-5 md:py-8'>
+				<Container className='flex flex-col'>
+					<Title
+						className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+						as='h2'
+						level={3}
+					>
+						{t('starring', { ns: 'moviesPage' })}
+					</Title>
+
+					<Carousel
+						label='cast'
+						mousewheel
+						slidesPerView={8}
+						spaceBetween={20}
+						showScrollShadow
+					>
+						{credits.cast.map(({
+							id,
+							profile_path,
+							name,
+							popularity,
+							character
+						}) => (
+							<PersonCard
+								personId={id}
+								key={id}
+								src={profile_path ? `${imgPath['profileCard']}${profile_path}` : ''}
+								alt={name}
+								title={name}
+								titleElement='h4'
+								titleLevel={6}
+								showRating
+								rating={popularity}
+							>
+								{character}
+							</PersonCard>
+						))}
+					</Carousel>
+
+				</Container>
+			</section>
 		</main>
 	);
 }
