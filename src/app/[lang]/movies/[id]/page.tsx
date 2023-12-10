@@ -87,8 +87,8 @@ export default async function Page({ params: { id, lang } }: Props) {
 		);
 	}
 	const releaseYear = release_date.slice(0, 4) || '-';
-	const allGenres = genres.map((genre) => genre.name.toLowerCase()).join(', ');
-	const movieDuration = `${runtime}m | ${Math.floor(runtime / 60)}:${runtime % 60}`;
+	const currentGenres = genres.slice(0, 3).map((genre) => genre.name.toLowerCase()).join(', ');
+	const movieDuration = `${t('duration', { ns: 'moviesPage', time: runtime })} | ${convertToTime(runtime)}`;
 	const rating = Math.floor(vote_average * 10);
 
 	const socialNetworks = createSocialNetworksArray({
@@ -103,7 +103,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		.map(({ name, value }) => {
 			let currentValue = value;
 			if (name === 'genres') {
-				currentValue = allGenres;
+				currentValue = currentGenres;
 			} else if (name === 'release_date') {
 				currentValue = getLocalizedDate(value, lang);
 			} else if (name === 'original_language') {
@@ -130,6 +130,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 	} else {
 		ratingType = 'high';
 	}
+
 	const authors = createAuthorsArray(credits.crew).slice(0, 6);
 
 	return (
@@ -188,7 +189,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								<li
 									className='after:content-["/"] after:ml-2 after:mr-2'
 								>
-									{allGenres}
+									{currentGenres}
 								</li>
 								<li>
 									{movieDuration}
