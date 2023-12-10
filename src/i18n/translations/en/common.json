@@ -24,5 +24,41 @@
 	"themeToggle": {
 		"label": "Light and dark theme switch"
 	},
+	"movieCard": {
+		"popularity": "Popularity",
+		"genres": "Genres",
+		"releaseDate": "Release date",
+		"productionCountry": "Production Country",
+		"duration": "Duration"
+	},
+	"genres": {
+		"action": "Action",
+		"adventure": "Adventure",
+		"animation": "Animation",
+		"comedy": "Comedy",
+		"crime": "Crime",
+		"documentary": "Documentary",
+		"drama": "Drama",
+		"family": "Family",
+		"fantasy": "Fantasy",
+		"history": "History",
+		"horror": "Horror",
+		"music": "Music",
+		"mystery": "Mystery",
+		"romance": "Romance",
+		"science fiction": "Fiction",
+		"tv movie": "Movie",
+		"thriller": "Thriller",
+		"war": "War",
+		"western": "Western",
+		"action & adventure": "Adventure",
+		"kids": "Kids",
+		"news": "News",
+		"reality": "Reality",
+		"sci-fi & fantasy": "Sci-Fi",
+		"soap": "Soap",
+		"talk": "Talk",
+		"war & politics": "Politics"
+	},
 	"unknown": "Unknown"
 }

@@ -9,12 +9,30 @@
 		"original_language": "Язык оригинала",
 		"budget": "Бюджет",
 		"revenue": "Сборы",
-		"status": "Статус"
+		"status": "Статус",
+		"statusValue": {
+			"released": "Выпущено",
+			"planned": "Планируется",
+			"post production": "Пост-продакшн"
+		}
 	},
 	"review": "Обзор",
 	"rating": "Рейтинг",
 	"starring": "В главных ролях",
 	"aboutMovie": "Информация о фильме",
 	"recommendations": "Рекомендации",
-	"relatedMovies": "Похожие фильмы"
+	"relatedMovies": "Похожие фильмы",
+	"trailer": "Трейлер фильма",
+	"authors": {
+		"title": "Авторы",
+		"jobs": {
+			"director": "Режиссер",
+			"producer": "Продюсер",
+			"screenplay": "Сценарист",
+			"novel": "Роман",
+			"characters": "Персонажи",
+			"story": "$t(authors.jobs.screenplay)",
+			"writer": "$t(authors.jobs.screenplay)"
+		}
+	}
 }

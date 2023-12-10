@@ -9,12 +9,30 @@
 		"original_language": "Original Language",
 		"budget": "Budget",
 		"revenue": "Revenue",
-		"status": "Status"
+		"status": "Status",
+		"statusValue": {
+			"released": "Released",
+			"planned": "Planned",
+			"post production": "Post Production"
+		}
 	},
 	"review": "Review",
 	"rating": "Rating",
 	"starring": "Starring",
 	"aboutMovie": "Information about the film",
 	"recommendations": "Recommendations",
-	"relatedMovies": "Related Movies"
+	"relatedMovies": "Related Movies",
+	"trailer": "Movie Trailer",
+	"authors": {
+		"title": "Authors",
+		"jobs": {
+			"director": "Director",
+			"producer": "Producer",
+			"screenplay": "Screenplay",
+			"novel": "Novel",
+			"characters": "Characters",
+			"story": "Story",
+			"writer": "Writer"
+		}
+	}
 }

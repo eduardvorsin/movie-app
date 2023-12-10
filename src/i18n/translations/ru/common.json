@@ -24,5 +24,41 @@
 	"themeToggle": {
 		"label": "Переключатель светлой и темной тем"
 	},
+	"movieCard": {
+		"popularity": "Популярность",
+		"genres": "Жанры",
+		"releaseDate": "Дата релиза",
+		"productionCountry": "Страна производства",
+		"duration": "Продолжительность"
+	},
+	"genres": {
+		"action": "Экшен",
+		"adventure": "Приключение",
+		"animation": "Мультфильм",
+		"comedy": "Комедия",
+		"crime": "Боевик",
+		"documentary": "Документальное",
+		"drama": "Драма",
+		"family": "Семейное",
+		"fantasy": "Фэнтези",
+		"history": "Историческое",
+		"horror": "Хоррор",
+		"music": "Мюзикл",
+		"mystery": "Детектив",
+		"romance": "Романтика",
+		"science fiction": "Научная Фантастика",
+		"tv movie": "Телефильм",
+		"thriller": "Триллер",
+		"war": "Военное",
+		"western": "Вестерн",
+		"action & adventure": "Приколючение",
+		"kids": "Детское",
+		"news": "Новости",
+		"reality": "Реалити-шоу",
+		"sci-fi & fantasy": "Научная Фантастика",
+		"soap": "Сериал",
+		"talk": "Обсуждения",
+		"war & politics": "Политика"
+	},
 	"unknown": "Неизвестно"
 }
