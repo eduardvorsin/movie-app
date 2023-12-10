@@ -45,6 +45,7 @@ export default function PersonCard({
 			className={`flex flex-col max-w-[10.625rem] group/card ${className}`}
 			href={`/persons/${personId}`}
 			onClick={onClick}
+			title={title}
 			data-testid={testId}
 		>
 			<div className='w-[9.625rem] h-[9.625rem] relative self-center mb-3'>
