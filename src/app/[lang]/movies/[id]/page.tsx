@@ -136,18 +136,19 @@ export default async function Page({ params: { id, lang } }: Props) {
 	return (
 		<main>
 			<section
-				className='py-8 bg-blend-overlay bg-cover bg-no-repeat bg-neutral-100 dark:bg-dark-neutral-0'
+				className='py-5 md:py-8 bg-blend-overlay bg-cover bg-no-repeat bg-neutral-100/80 dark:bg-dark-neutral-0'
 				style={{ backgroundImage: `url(${backdropUrl})` }}
 			>
-				<Container className='flex'>
+				<Container className='flex flex-col sm:flex-row'>
 					<ThemedImage
-						className='mr-10 object-cover rounded-2 max-w-[18.75rem] w-full shrink-0 grow-0 self-start bg-neutral-300 dark:bg-dark-neutral-300 justify-self-center border-1 border-neutral-300 dark:border-dark-neutral-300'
+						className='self-center sm:self-start mb-8 sm:mb-0 sm:mr-6 md:mr-8 lg:mr-10 object-cover rounded-2 max-w-[14.375rem] sm:max-w-[16.25rem] md:max-w-[17.5rem] lg:max-w-[18.75rem] w-full shrink-0 grow-0 bg-neutral-300 dark:bg-dark-neutral-300 border-1 border-neutral-300 dark:border-dark-neutral-300'
 						width={300}
 						height={450}
 						alt='poster'
 						placeholder='blur'
 						blurDataURL={poster_path ? 'blur' : 'empty'}
 						priority
+						sizes='(min-width: 1024px) 300px, (min-width: 768px) 280px, (min-width: 640px) 260px, 230px'
 						src={{
 							light: posterData?.img.src ?? '',
 							dark: posterData?.img.src ?? '',
@@ -158,7 +159,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						}}
 					/>
 					<div>
-						<div className='mb-6'>
+						<div className='mb-5 lg:mb-6'>
 							<Title
 								className='mb-1'
 								level={2}
@@ -179,15 +180,15 @@ export default async function Page({ params: { id, lang } }: Props) {
 								</span>
 							</Title>
 							<ul
-								className='flex text-neutral-900 dark:text-dark-neutral-900'
+								className='flex flex-wrap md:flex-nowrap text-neutral-900 dark:text-dark-neutral-900'
 							>
 								<li
-									className='after:content-["/"] after:ml-2 after:mr-2'
+									className='mr-2 md:mr-0 after:hidden md:after:inline-block md:after:content-["/"] after:ml-2 after:mr-2'
 								>
 									{movie.release_date || '-'}
 								</li>
 								<li
-									className='after:content-["/"] after:ml-2 after:mr-2'
+									className='mr-2 md:mr-0 after:hidden md:after:inline-block md:after:content-["/"] after:ml-2 after:mr-2'
 								>
 									{currentGenres}
 								</li>
@@ -196,28 +197,33 @@ export default async function Page({ params: { id, lang } }: Props) {
 								</li>
 							</ul>
 						</div>
-						<div className='mb-5'>
-							<span
-								className='text-neutral-1000 dark:text-dark-neutral-900 font-medium mr-2'
-							>
-								{t('rating', { ns: 'moviesPage' })}
-							</span>
-							<PieChart
-								size={60}
-								value={rating}
-								barColor={chartBarColors[ratingType]}
+						<div className='flex flex-wrap'>
+							<div className='mr-4 mb-3 md:mb-4 lg:mb-5'>
+								<span
+									className='text-neutral-1000 dark:text-dark-neutral-900 font-medium mr-2'
+								>
+									{t('rating', { ns: 'moviesPage' })}
+								</span>
+								<PieChart
+									size={60}
+									value={rating}
+									barColor={chartBarColors[ratingType]}
+								/>
+							</div>
+
+							<SocialLinks
+								className='mb-1 md:mb-2 lg:mb-3'
+								data={socialNetworks}
 							/>
 						</div>
 						<div>
-							<p
-								className='text-neutral-900 dark:text-dark-neutral-700 italic mb-[0.625rem]'
-							>
-								{tagline}
-							</p>
-							<SocialLinks
-								className='mb-4'
-								data={socialNetworks}
-							/>
+							{tagline && (
+								<p
+									className='text-neutral-900 dark:text-dark-neutral-700 italic mb-[0.625rem]'
+								>
+									{tagline}
+								</p>
+							)}
 							{overview.length > 0 && (
 								<>
 									<Title
@@ -227,7 +233,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									>
 										{t('review', { ns: 'moviesPage' })}
 									</Title>
-									<ExpandableText className='mb-5'>
+									<ExpandableText className='mb-4 lg:mb-5'>
 										{overview}
 									</ExpandableText>
 								</>
@@ -264,10 +270,11 @@ export default async function Page({ params: { id, lang } }: Props) {
 					</div>
 				</Container>
 			</section>
-			<section className='py-8'>
+
+			<section className='py-5 md:py-8'>
 				<Container>
 					<Title
-						className='mb-5 text-neutral-900 dark:text-dark-neutral-800'
+						className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
 						as='h2'
 						level={3}
 					>
@@ -278,6 +285,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 					/>
 				</Container>
 			</section>
+
 		</main>
 	);
 }
