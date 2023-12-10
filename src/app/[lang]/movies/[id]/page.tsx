@@ -120,10 +120,12 @@ export default async function Page({ params: { id, lang } }: Props) {
 				currentValue = movieDuration;
 			} else if (name === 'budget' || name === 'revenue') {
 				currentValue = formatCurrency(+value, lang);
+			} else if (name === 'status') {
+				currentValue = t(`characteristics.statusValue.${value.toLowerCase()}`, { ns: 'moviesPage' });
 			}
 
 			return {
-				name: t(`movieCharacteristics.${name}`, { ns: 'moviesPage' }),
+				name: t(`characteristics.${name}`, { ns: 'moviesPage' }),
 				value: currentValue,
 			}
 		});

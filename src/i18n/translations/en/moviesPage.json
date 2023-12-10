@@ -1,5 +1,6 @@
 {
-	"movieCharacteristics": {
+	"duration": "{{time}}m",
+	"characteristics": {
 		"production_countries": "Country",
 		"genres": "Genres",
 		"original_title": "Original Title",
