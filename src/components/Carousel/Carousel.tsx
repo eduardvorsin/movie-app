@@ -57,11 +57,14 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 		if (!containerNode) return;
 
 		const { width } = containerNode.getBoundingClientRect();
+
+		const leftOffset = width * newActiveIndex * (slidesPerGroup / slidesPerView) + spaceBetween * newActiveIndex;
+
 		containerNode.scrollTo({
-			left: width * (slidesPerGroup / slidesPerView) * newActiveIndex,
+			left: leftOffset,
 			behavior: 'smooth',
 		})
-	}, [slidesPerGroup, slidesPerView]);
+	}, [slidesPerGroup, slidesPerView, spaceBetween]);
 
 	const slideNext = useCallback((): void => {
 		const currentActiveIndex = Math.min(activeIndex + 1, slides.length - 1);
@@ -110,11 +113,10 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 
 		const scrollHandler = throttle(() => {
 			if (!containerNode.firstElementChild) return;
-
 			const firstElementRectData = containerNode.firstElementChild?.getBoundingClientRect();
 			const containerRectData = containerNode.getBoundingClientRect();
 			const shift = firstElementRectData.left - containerRectData.left;
-			const slideWidthInGroup = containerRectData.width * (slidesPerGroup / slidesPerView);
+			const slideWidthInGroup = containerRectData.width * (slidesPerGroup / slidesPerView) + spaceBetween;
 			const currentIndex = Math.abs(Math.round(shift / slideWidthInGroup));
 
 			setActiveIndex(currentIndex);
@@ -124,9 +126,9 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 		containerNode.addEventListener('scroll', scrollHandler);
 
 		return () => {
-			containerNode?.removeEventListener('scroll', scrollHandler);
+			containerNode.removeEventListener('scroll', scrollHandler);
 		}
-	}, [activeIndex, onSlideChange, slidesPerGroup, slidesPerView]);
+	}, [slidesPerGroup, slidesPerView, onSlideChange, spaceBetween]);
 
 	useEffect(() => {
 		let interval: ReturnType<typeof setTimeout> | undefined;
