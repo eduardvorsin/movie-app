@@ -4,4 +4,5 @@ export const imgPath = {
 	poster: `${imgURL}/w300`,
 	backdrop: `${imgURL}/original`,
 	profile: `${imgURL}/w342`,
+	profileCard: `${imgURL}/w154`,
 }
