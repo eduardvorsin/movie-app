@@ -27,6 +27,9 @@ import { fetchTrailers } from '@/services/fetchTrailers/fetchTrailers';
 import YouTubeVideo from '@/components/YouTubeVideo/YouTubeVideo';
 import Tabs from '@/components/Tabs/Tabs';
 import TabPanel from '@/components/Tabs/TabPanel/TabPanel';
+import Comment from '@/components/Comment/Comment';
+import Avatar from '@/components/Avatar/Avatar';
+import { nameToInitials } from '@/helpers/nameToInitials/nameToInitials';
 
 const characteristicFields = new Set([
 	'production_countries',
@@ -87,6 +90,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		credits,
 		similar,
 		recommendations,
+		reviews,
 	} = movie;
 
 	const backdropUrl = `${imgPath['backdrop']}${backdrop_path}`;
@@ -355,7 +359,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('trailer', { ns: 'moviesPage' })}
+							{t('trailers', { ns: 'moviesPage' })}
 						</Title>
 
 						<Tabs id='trailers'>
@@ -380,6 +384,57 @@ export default async function Page({ params: { id, lang } }: Props) {
 				</section>
 			)}
 
+			{reviews.results.length > 0 && (
+				<section className='py-5 md:py-8'>
+					<Container>
+						<Title
+							className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+							as='h2'
+							level={3}
+						>
+							{t('reviews', { ns: 'moviesPage' })}
+						</Title>
+
+						<Carousel
+							label='reviews'
+							mousewheel
+							showPagination
+							paginationType='dots'
+							slidesPerView={3}
+							spaceBetween={20}
+						>
+							{reviews.results.map(({
+								id,
+								author,
+								content,
+								created_at,
+								author_details,
+							}) => (
+								<Comment
+									key={id}
+									id={id}
+									author={author}
+									content={content}
+									type={'user review'}
+									titleElement='h3'
+									highlighted
+									time={getLocalizedDate(created_at, lang)}
+									rating={author_details.rating}
+									avatar={
+										<Avatar
+											size='large'
+											src={author_details.avatar_path ? `${imgPath.avatar}${author_details.avatar_path}` : ''}
+											initials={nameToInitials(author_details.name)}
+											label={author_details.name}
+										/>
+									}
+								/>
+							))}
+						</Carousel>
+					</Container>
+				</section>
+			)}
+
 			<section className='py-5 md:py-8'>
 				<Container className='flex flex-col'>
 					<Title
@@ -394,7 +449,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 						mousewheel
 						slidesPerView={4}
 						spaceBetween={20}
-						showScrollShadow
 						showPagination
 						paginationType='dots'
 					>
@@ -438,7 +492,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 						mousewheel
 						slidesPerView={4}
 						spaceBetween={20}
-						showScrollShadow
 						showPagination
 						paginationType='dots'
 					>

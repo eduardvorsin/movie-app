@@ -18,6 +18,29 @@ type Movie = {
 	vote_count: number,
 }
 
+type Review = {
+	author: string,
+	author_details: {
+		name: string,
+		username: string,
+		avatar_path: string | null,
+		rating: number,
+	},
+	content: string,
+	created_at: string,
+	id: string,
+	updated_at: string,
+	url: string,
+};
+
+type Reviews = {
+	page: number,
+	results: Review[],
+	total_page: number,
+	total_results: number,
+};
+
+
 type SimilarMovies = {
 	page: number,
 	results: Movie[],
@@ -60,6 +83,7 @@ export type MovieDetails = Omit<Movie, 'genres_id' | 'popularity'> & {
 	credits: MovieCredits,
 	similar: SimilarMovies,
 	recommendations: RecommendedMovies,
+	reviews: Reviews,
 }
 
 export const fetchMovie = async (id: string, options?: { lang: Locales }): Promise<MovieDetails | Error> => {
@@ -68,7 +92,7 @@ export const fetchMovie = async (id: string, options?: { lang: Locales }): Promi
 
 	let movie;
 	try {
-		const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=external_ids,credits,similar,recommendations&language=${currentLang}`, {
+		const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=external_ids,credits,similar,recommendations,reviews&language=${currentLang}`, {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',
