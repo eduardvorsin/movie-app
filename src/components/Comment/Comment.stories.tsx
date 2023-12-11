@@ -357,3 +357,56 @@ export const Actions: Story = {
 		},
 	},
 };
+
+export const WithRating: Story = {
+	args: {
+		id: 'time',
+		author: 'Devin Nigel',
+		content: 'Time comment with Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ipsa recusandae ratione, inventore eveniet magni earum consequatur labore hic harum facilis asperiores maxime! Cum, itaque!',
+		type: 'author',
+		time: 'Sept 14, 2023',
+		rating: 5,
+		avatar: (
+			<Avatar
+				label='John FLick'
+				initials='JF'
+				src={AvatarPicture.src}
+				size='large'
+			/>
+		),
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'Shows the rating from the author of the comment',
+			},
+		},
+	},
+};
+
+export const WithLongText: Story = {
+	args: {
+		className: 'max-w-[25rem]',
+		id: 'time',
+		author: 'Devin Nigel',
+		content: 'Time comment with Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ipsa recusandae ratione, inventore eveniet magni earum consequatur labore hic harum facilis asperiores maxime! Cum, itaque! Time comment with Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ipsa recusandae ratione, inventore eveniet magni earum consequatur labore hic harum facilis asperiores maxime! Cum, itaque! Time comment with Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ipsa recusandae ratione, inventore eveniet magni earum consequatur labore hic harum facilis asperiores maxime! Cum, itaque!',
+		type: 'author',
+		time: 'Sept 14, 2023',
+		rating: 5,
+		avatar: (
+			<Avatar
+				label='John FLick'
+				initials='JF'
+				src={AvatarPicture.src}
+				size='large'
+			/>
+		),
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'Shows the hide/expand text button when the text does not fit in 6 lines',
+			},
+		},
+	},
+};
