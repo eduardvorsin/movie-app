@@ -294,17 +294,49 @@ export default async function Page({ params: { id, lang } }: Props) {
 			</section>
 
 			<section className='py-5 md:py-8'>
-				<Container>
-					<Title
-						className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
-						as='h2'
-						level={3}
-					>
-						{t('aboutMovie', { ns: 'moviesPage' })}
-					</Title>
-					<CharacteristicList
-						data={characteristicData}
-					/>
+				<Container className='flex flex-col gap-5 sm:gap-10 sm:flex-row'>
+					<div className='grow shrink-0 lg:basis-1/2'>
+						<Title
+							className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+							as='h2'
+							level={3}
+						>
+							{t('aboutMovie', { ns: 'moviesPage' })}
+						</Title>
+						<CharacteristicList
+							data={characteristicData}
+						/>
+					</div>
+
+					<div className='lg:basis-1/2'>
+						<Title
+							className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+							as='h2'
+							level={3}
+						>
+							{t('sponsors', { ns: 'moviesPage' })}
+						</Title>
+
+						<div className='flex gap-4 flex-wrap'>
+							{movie.production_companies.map(({
+								id,
+								name,
+								logo_path,
+							}) => (
+								<ThemedImage
+									className='basis-[8.125rem] lg:basis-[11.5625rem]'
+									key={id}
+									alt={t('logo', { ns: 'common', company_name: name })}
+									width={185}
+									height={50}
+									src={{
+										light: `${imgPath.logo}${logo_path}`,
+										dark: `${imgPath.logo}${logo_path}`
+									}}
+								/>
+							))}
+						</div>
+					</div>
 				</Container>
 			</section>
 
