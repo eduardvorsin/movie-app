@@ -28,6 +28,7 @@ type Props = {
 	highlighted?: boolean,
 	shouldRenderNestedCommentsInline?: boolean,
 	testId?: string,
+	rating?: number,
 };
 
 export default function Comment({
@@ -52,6 +53,7 @@ export default function Comment({
 	errorActions,
 	shouldRenderNestedCommentsInline,
 	titleElement,
+	rating,
 }: Props) {
 	const classes = [
 		'grid grid-cols-[auto_1fr] gap-x-2 gap-y-4 p-2 relative',
@@ -121,6 +123,24 @@ export default function Comment({
 						</span>
 					)}
 				</Title>
+
+				{rating && (
+					<span className='flex items-end mb-1'>
+						<svg
+							className='w-4 h-4 text-neutral-700 dark:text-dark-neutral-700 mr-2'
+							viewBox='0 0 20 20'
+						>
+							<use href={'/assets/icons/star.svg#star'}></use>
+						</svg>
+
+						<span
+							className='text-neutral-800 dark:text-dark-neutral-800 font-bold leading-none'
+							aria-label='rating'
+						>
+							{rating}
+						</span>
+					</span>
+				)}
 
 				<ExpandableText
 					visibleRowsCount={6}
