@@ -4,6 +4,7 @@ import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import Locked from '../../assets/icons/locked.svg?url';
 import Title from '@/components/Title/Title';
 import { HeadingElement } from '@/types/shared';
+import ExpandableText from '../ExpandableText/ExpandableText';
 
 type Props = {
 	id: string,
@@ -120,11 +121,14 @@ export default function Comment({
 						</span>
 					)}
 				</Title>
-				<p
-					className={`mb-2 ${isError ? 'text-neutral-400' : 'text-neutral-1000 dark:text-dark-neutral-900'}`}
+
+				<ExpandableText
+					visibleRowsCount={6}
+					className='mb-2 text-neutral-1000 dark:text-dark-neutral-900'
 				>
 					{content}
-				</p>
+				</ExpandableText>
+
 				{(isError && !isSaving) && (
 					<>
 						<InlineMessage
