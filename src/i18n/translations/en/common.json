@@ -60,5 +60,6 @@
 		"talk": "Talk",
 		"war & politics": "Politics"
 	},
-	"unknown": "Unknown"
+	"unknown": "Unknown",
+	"logo": "{{company_name}} logo"
 }

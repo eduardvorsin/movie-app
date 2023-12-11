@@ -23,7 +23,9 @@
 	"aboutMovie": "Information about the film",
 	"recommendations": "Recommendations",
 	"relatedMovies": "Related Movies",
-	"trailer": "Movie Trailer",
+	"sponsors": "Sponsors",
+	"reviews": "Reviews",
+	"trailers": "Movie Trailers",
 	"authors": {
 		"title": "Authors",
 		"jobs": {

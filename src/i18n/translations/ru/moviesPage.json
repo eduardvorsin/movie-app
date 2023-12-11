@@ -23,7 +23,9 @@
 	"aboutMovie": "Информация о фильме",
 	"recommendations": "Рекомендации",
 	"relatedMovies": "Похожие фильмы",
-	"trailer": "Трейлер фильма",
+	"sponsors": "Спонсоры",
+	"reviews": "Отзывы",
+	"trailers": "Трейлеры фильма",
 	"authors": {
 		"title": "Авторы",
 		"jobs": {

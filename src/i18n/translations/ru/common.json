@@ -60,5 +60,6 @@
 		"talk": "Обсуждения",
 		"war & politics": "Политика"
 	},
-	"unknown": "Неизвестно"
+	"unknown": "Неизвестно",
+	"logo": "логотип {{company_name}}"
 }
