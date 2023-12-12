@@ -166,6 +166,7 @@ const config: Config = {
       }
     },
     screens: {
+      '2xs': '20rem',
       xs: '30rem',
       sm: '40rem',
       md: '48rem',
