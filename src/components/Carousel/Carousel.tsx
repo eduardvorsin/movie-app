@@ -4,6 +4,13 @@ import { throttle } from '@/helpers/throttle/throttle';
 import { MouseEventHandler, ReactNode, forwardRef, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import CarouselPagination from './CarouselPagination/CarouselPagination';
 import CarouselArrow from './CarouselArrow/CarouselArrow';
+import { useScreenWidth } from '@/hooks/useScreenWidth/useScreenWidth';
+
+type Breakpoints = {
+	[key: number]: Partial<
+		Record<'slidesPerView' | 'slidesPerGroup' | 'spaceBetween', number>
+	>
+};
 
 type Props = {
 	children: ReactNode,
@@ -23,6 +30,7 @@ type Props = {
 	mousewheel?: boolean,
 	paginationType?: 'dots' | 'progress' | 'fraction',
 	showScrollShadow?: boolean,
+	breakpoints?: Breakpoints,
 };
 
 export default forwardRef<HTMLDivElement, Props>(function Carousel({
@@ -43,16 +51,23 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 	mousewheel,
 	paginationType = 'fraction',
 	showScrollShadow,
+	breakpoints,
 }, ref) {
 	const [activeIndex, setActiveIndex] = useState<number>(0);
 	const [isSliderHovered, setIsSliderHovered] = useState<boolean>(false);
 	const containerRef = useRef<HTMLDivElement>(null);
 	const id = useId();
+	const screenWidth = useScreenWidth();
+
+	const currentBreakpoint = getBreakpointFromValue(screenWidth, breakpoints);
+	const visibleSlidesCount = currentBreakpoint?.slidesPerView ?? slidesPerView;
+	const scrollingSlidesCount = currentBreakpoint?.slidesPerGroup ?? slidesPerGroup;
+	const slideGap = currentBreakpoint?.spaceBetween ?? spaceBetween;
 
 	const slides: ReactNode[] = useMemo(() => {
 		return Array.isArray(children) ? children : [children];
 	}, [children]);
-	const lastIndex = Math.ceil((slides.length - slidesPerView) / slidesPerGroup);
+	const lastIndex = Math.ceil((slides.length - visibleSlidesCount) / scrollingSlidesCount);
 
 	const moveSlide = useCallback((newActiveIndex: number): void => {
 		const containerNode = containerRef.current;
@@ -60,13 +75,13 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 
 		const { width } = containerNode.getBoundingClientRect();
 
-		const leftOffset = width * newActiveIndex * (slidesPerGroup / slidesPerView) + spaceBetween * newActiveIndex;
+		const leftOffset = width * newActiveIndex * (scrollingSlidesCount / visibleSlidesCount) + slideGap * newActiveIndex;
 
 		containerNode.scrollTo({
 			left: leftOffset,
 			behavior: 'smooth',
 		})
-	}, [slidesPerGroup, slidesPerView, spaceBetween]);
+	}, [scrollingSlidesCount, visibleSlidesCount, slideGap]);
 
 	const slideNext = useCallback((): void => {
 		const currentActiveIndex = Math.min(activeIndex + 1, slides.length - 1);
@@ -118,7 +133,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 			const firstElementRectData = containerNode.firstElementChild?.getBoundingClientRect();
 			const containerRectData = containerNode.getBoundingClientRect();
 			const shift = firstElementRectData.left - containerRectData.left;
-			const slideWidthInGroup = containerRectData.width * (slidesPerGroup / slidesPerView) + spaceBetween;
+			const slideWidthInGroup = containerRectData.width * (scrollingSlidesCount / visibleSlidesCount) + slideGap;
 			const currentIndex = Math.abs(Math.round(shift / slideWidthInGroup));
 
 			setActiveIndex(currentIndex);
@@ -130,7 +145,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 		return () => {
 			containerNode.removeEventListener('scroll', scrollHandler);
 		}
-	}, [slidesPerGroup, slidesPerView, onSlideChange, spaceBetween]);
+	}, [scrollingSlidesCount, visibleSlidesCount, onSlideChange, slideGap]);
 
 	useEffect(() => {
 		let interval: ReturnType<typeof setTimeout> | undefined;
@@ -159,6 +174,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 		'flex overflow-x-auto snap-mandatory snap-x no-scrollbar',
 		noSwiping ? 'touch-none' : '',
 	].join(' ');
+
 	return (
 		//event bubbling 
 		// eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
@@ -187,10 +203,10 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 						aria-roledescription='slide'
 						className='flex-shrink-0 flex-grow-0'
 						style={{
-							marginRight: `${slides.length - 1 === index ? 0 : spaceBetween}px`,
-							flexBasis: `${100 / slidesPerView}%`,
-							scrollSnapAlign: index % slidesPerGroup === 0 ? 'start' : 'none',
-							scrollSnapStop: index % slidesPerGroup === 0 ? 'always' : 'normal',
+							marginRight: `${slides.length - 1 === index ? 0 : slideGap}px`,
+							flexBasis: `${100 / visibleSlidesCount}%`,
+							scrollSnapAlign: index % scrollingSlidesCount === 0 ? 'start' : 'none',
+							scrollSnapStop: index % scrollingSlidesCount === 0 ? 'always' : 'normal',
 						}}
 					>
 						{slide}
@@ -230,3 +246,19 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 		</div>
 	);
 });
+
+function getBreakpointFromValue(value: number, breakpoints?: Breakpoints): Breakpoints[number] | null {
+	if (!breakpoints) return null;
+
+	const breakpointValues = Object.keys(breakpoints).map(Number);
+	const lastIndex = breakpointValues.length - 1;
+
+	let result: Breakpoints[number] | null = null;
+	breakpointValues.forEach((currentValue, index) => {
+		if (value >= currentValue && (index === lastIndex || value < breakpointValues[index + 1])) {
+			result = breakpoints[currentValue];
+		}
+	});
+
+	return result;
+}
