@@ -328,17 +328,21 @@ export default async function Page({ params: { id, lang } }: Props) {
 								name,
 								logo_path,
 							}) => (
-								<ThemedImage
-									className='basis-[8.125rem] lg:basis-[11.5625rem]'
+								<div
 									key={id}
-									alt={t('logo', { ns: 'common', company_name: name })}
-									width={185}
-									height={50}
-									src={{
-										light: `${imgPath.logo}${logo_path}`,
-										dark: `${imgPath.logo}${logo_path}`
-									}}
-								/>
+									className='basis-[8.125rem] lg:basis-[11.5625rem] relative h-[3.125rem] lg:h-[6.25rem]'
+								>
+									<ThemedImage
+										className='object-contain'
+										alt={t('logo', { ns: 'common', company_name: name })}
+										sizes='185px'
+										fill
+										src={{
+											light: `${imgPath.logo}${logo_path}`,
+											dark: `${imgPath.logo}${logo_path}`
+										}}
+									/>
+								</div>
 							))}
 						</div>
 					</div>
