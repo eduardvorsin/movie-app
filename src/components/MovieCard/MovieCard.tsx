@@ -77,7 +77,7 @@ export default function MovieCard({
 				title={title}
 			>
 				<ThemedImage
-					className='rounded-3'
+					className='rounded-3 w-full'
 					alt={alt}
 					width={300}
 					height={169}
