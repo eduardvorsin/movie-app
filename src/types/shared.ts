@@ -14,7 +14,7 @@ export type Genres = MovieGenres | TVGenres;
 
 export type ProductionCompany = {
 	id: string,
-	logo_path: string,
+	logo_path: string | null,
 	name: string,
 	origin_country: string,
 }
