@@ -18,6 +18,7 @@ export default function CarouselPagination({
 	activeIndex,
 	totalCount,
 }: Props) {
+
 	const dotsContainerRef = useRef<HTMLDivElement>(null);
 
 	const clickHandler: MouseEventHandler<HTMLButtonElement | HTMLDivElement> = (e) => {
@@ -36,7 +37,6 @@ export default function CarouselPagination({
 		paginationType === 'progress' ? 'h-1 bg-neutral-300 dark:bg-dark-neutral-300' : '',
 		className,
 	].join(' ');
-
 
 	let Pagination: JSX.Element;
 
@@ -57,7 +57,7 @@ export default function CarouselPagination({
 			//event bubbling 
 			// eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
 			<div
-				className='flex py-1'
+				className='flex py-1 gap-2 overflow-x-auto'
 				ref={dotsContainerRef}
 				onClick={clickHandler}
 				role='group'
@@ -66,7 +66,7 @@ export default function CarouselPagination({
 				{dots.map((_, index) => (
 					<button
 						key={index}
-						className={`w-[0.625rem] h-[0.625rem] border-2 rounded-full transition-colors duration-150 mr-2 last:mr-0 ${index === activeIndex ? activeDotClasses : nonActiveDotClasses} `}
+						className={`w-[0.9375rem] h-[0.9375rem] sm:w-[0.625rem] sm:h-[0.625rem] shrink-0 border-2 rounded-full transition-colors duration-150 ${index === activeIndex ? activeDotClasses : nonActiveDotClasses} `}
 						aria-disabled={index === activeIndex}
 					/>
 				))}
