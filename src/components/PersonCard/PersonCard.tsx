@@ -52,7 +52,7 @@ export default function PersonCard({
 				<ThemedImage
 					className='rounded-[50%] object-cover w-full h-full'
 					width={154}
-					height={231}
+					height={154}
 					alt={alt}
 					src={{
 						light: src,
