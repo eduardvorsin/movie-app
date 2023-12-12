@@ -362,9 +362,30 @@ export default async function Page({ params: { id, lang } }: Props) {
 					<Carousel
 						label='cast'
 						mousewheel
-						slidesPerView={8}
 						spaceBetween={20}
 						showScrollShadow
+						showPagination
+						paginationType='fraction'
+						breakpoints={{
+							0: {
+								slidesPerView: 1,
+							},
+							320: {
+								slidesPerView: 2,
+							},
+							480: {
+								slidesPerView: 3,
+							},
+							640: {
+								slidesPerView: 4,
+							},
+							768: {
+								slidesPerView: 5,
+							},
+							1024: {
+								slidesPerView: 6,
+							}
+						}}
 					>
 						{credits.cast.map(({
 							id,
@@ -374,6 +395,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							character
 						}) => (
 							<PersonCard
+								className='mx-auto 2xs:mx-0'
 								personId={id}
 								key={id}
 								src={profile_path ? `${imgPath['profileCard']}${profile_path}` : ''}
@@ -388,7 +410,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 							</PersonCard>
 						))}
 					</Carousel>
-
 				</Container>
 			</section>
 
@@ -492,7 +513,20 @@ export default async function Page({ params: { id, lang } }: Props) {
 							slidesPerView={4}
 							spaceBetween={20}
 							showPagination
-							paginationType='dots'
+							breakpoints={{
+								0: {
+									slidesPerView: 1,
+								},
+								480: {
+									slidesPerView: 2,
+								},
+								768: {
+									slidesPerView: 3,
+								},
+								1024: {
+									slidesPerView: 4,
+								}
+							}}
 						>
 							{similar.results.map(({
 								id,
@@ -503,6 +537,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
+									className='mx-auto xs:mx-0'
 									movieId={id}
 									key={id}
 									src={backdrop_path ? `${imgPath['backdrop']}${backdrop_path}` : ''}
@@ -537,7 +572,20 @@ export default async function Page({ params: { id, lang } }: Props) {
 							slidesPerView={4}
 							spaceBetween={20}
 							showPagination
-							paginationType='dots'
+							breakpoints={{
+								0: {
+									slidesPerView: 1,
+								},
+								480: {
+									slidesPerView: 2,
+								},
+								768: {
+									slidesPerView: 3,
+								},
+								1024: {
+									slidesPerView: 4,
+								}
+							}}
 						>
 							{recommendations.results.map(({
 								id,
@@ -548,6 +596,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
+									className='mx-auto xs:mx-0'
 									movieId={id}
 									key={id}
 									src={backdrop_path ? `${imgPath['backdrop']}${backdrop_path}` : ''}
