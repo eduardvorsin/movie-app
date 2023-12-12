@@ -77,6 +77,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 	const {
 		production_countries,
+		production_companies,
 		runtime,
 		backdrop_path,
 		poster_path,
@@ -110,6 +111,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		...external_ids,
 		imdb_id: `title/${external_ids.imdb_id}`,
 	});
+
 	const characteristicData = createCharacteristicsArray({
 		...movie,
 		production_countries: production_countries[0]?.name ?? '-',
@@ -154,6 +156,9 @@ export default async function Page({ params: { id, lang } }: Props) {
 	if (!(trailers instanceof Error)) {
 		availableTrailers = trailers.results.filter(({ site }) => site === 'YouTube');
 	}
+
+	const productionCompanies = production_companies
+		.filter(({ logo_path }) => logo_path !== null && logo_path !== '');
 
 	return (
 		<main>
@@ -318,7 +323,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						</Title>
 
 						<div className='flex gap-4 flex-wrap'>
-							{movie.production_companies.map(({
+							{productionCompanies.map(({
 								id,
 								name,
 								logo_path,
