@@ -461,7 +461,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							label='reviews'
 							mousewheel
 							showPagination
-							paginationType='dots'
+							paginationType='progress'
 							slidesPerView={3}
 							spaceBetween={20}
 						>
@@ -510,9 +510,9 @@ export default async function Page({ params: { id, lang } }: Props) {
 						<Carousel
 							label={t('relatedMovies', { ns: 'moviesPage' })}
 							mousewheel
-							slidesPerView={4}
 							spaceBetween={20}
 							showPagination
+							paginationType='progress'
 							breakpoints={{
 								0: {
 									slidesPerView: 1,
@@ -572,6 +572,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							slidesPerView={4}
 							spaceBetween={20}
 							showPagination
+							paginationType='progress'
 							breakpoints={{
 								0: {
 									slidesPerView: 1,
