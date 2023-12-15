@@ -28,6 +28,9 @@ export default function RootLayout({
       <body className='bg-neutral-200 dark:bg-dark-neutral-100'>
         <ThemeProvider>
           <Header />
+          <main className='mt-[5rem]'>
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>
