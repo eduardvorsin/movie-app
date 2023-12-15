@@ -61,8 +61,18 @@
 		"war & politics": "Politics"
 	},
 	"unknown": "Unknown",
+	"navigation": {
+		"movies": "movies",
+		"persons": "persons",
+		"collections": "collections",
+		"series": "series and shows",
+		"trailers": "trailers",
+		"new": "new releases"
+	},
 	"navigationMenuButton": {
 		"active": "Close the navigation menu",
 		"inactive": "Open the navigation menu"
 	},
+	"searchButton": "to find",
+	"accountButton": "log in to your account"
 }

@@ -61,8 +61,18 @@
 		"war & politics": "Политика"
 	},
 	"unknown": "Неизвестно",
+	"navigation": {
+		"movies": "фильмы",
+		"persons": "люди",
+		"collections": "коллекции",
+		"series": "сериалы и шоу",
+		"trailers": "трейлеры",
+		"new": "новинки"
+	},
 	"navigationMenuButton": {
 		"active": "Закрыть меню навигации",
 		"inactive": "Открыть меню навигации"
 	},
+	"searchButton": "Найти",
+	"accountButton": "Войти в аккаунт"
 }
