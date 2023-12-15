@@ -94,7 +94,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 	return (
 		<Container
-			className='bg-neutral-0 dark:bg-dark-neutral-250 py-4 sm:py-6 md:py-8 lg:py-10 min-h-[100vh] h-full grid grid-cols-[1fr] md:grid-cols-[18.75rem_1fr] lg:grid-cols-[21.375rem_1fr] gap-x-0 md:gap-x-8 lg:gap-x-12 gap-y-5 md:gap-y-6 lg:gap-y-8'
+			className='bg-neutral-0 dark:bg-dark-neutral-250 py-4 sm:py-6 md:py-8 lg:py-10 min-h-[calc(100vh-80px)] h-full grid grid-cols-[1fr] md:grid-cols-[18.75rem_1fr] lg:grid-cols-[21.375rem_1fr] gap-x-0 md:gap-x-8 lg:gap-x-12 gap-y-5 md:gap-y-6 lg:gap-y-8'
 		>
 			<div
 				className='self-center md:self-start flex flex-col'
