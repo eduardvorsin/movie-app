@@ -61,5 +61,8 @@
 		"war & politics": "Политика"
 	},
 	"unknown": "Неизвестно",
-	"logo": "логотип {{company_name}}"
+	"navigationMenuButton": {
+		"active": "Закрыть меню навигации",
+		"inactive": "Открыть меню навигации"
+	},
 }

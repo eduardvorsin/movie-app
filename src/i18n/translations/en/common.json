@@ -61,5 +61,8 @@
 		"war & politics": "Politics"
 	},
 	"unknown": "Unknown",
-	"logo": "{{company_name}} logo"
+	"navigationMenuButton": {
+		"active": "Close the navigation menu",
+		"inactive": "Open the navigation menu"
+	},
 }
