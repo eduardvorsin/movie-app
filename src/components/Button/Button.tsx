@@ -33,7 +33,7 @@ const appearanceTypes = {
 
 const iconButtonAppearances = {
 	primary: 'text-blue-700 enabled:hover:text-blue-800 enabled:active:text-blue-900 dark:text-blue-400 dark:enabled:hover:text-blue-300 dark:enabled:active:text-blue-200',
-	secondary: 'text-neutral-300 enabled:hover:text-neutral-400 enabled:active:text-neutral-500 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100',
+	secondary: 'text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100',
 	success: 'text-green-700 enabled:hover:text-green-800 enabled:active:text-green-900 dark:text-green-400 dark:enabled:hover:text-green-300 dark:enabled:active:text-green-200',
 	discovery: 'text-purple-700 enabled:hover:text-purple-800 enabled:active:text-purple-900 dark:text-purple-400 dark:enabled:hover:text-purple-300 dark:enabled:active:text-purple-200',
 	danger: 'text-red-700 enabled:hover:text-red-800 enabled:active:text-red-900 dark:text-red-400 dark:enabled:hover:text-red-300 dark:enabled:active:text-red-200',
