@@ -61,6 +61,8 @@
 		"war & politics": "Politics"
 	},
 	"unknown": "Unknown",
+	"logo": "{{company_name}} logo",
+	"logoLink": "to home page",
 	"navigation": {
 		"movies": "movies",
 		"persons": "persons",
