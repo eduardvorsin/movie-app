@@ -26,10 +26,10 @@ export default function Navigation({
 
 	return (
 		<div
-			className={`fixed inset-0 bg-neutral-100/90 dark:bg-dark-neutral-100/90 z-0 md:static md:bg-transparent mt-[3.75rem] md:mt-0 ${className}`}
+			className={`fixed inset-0 bg-neutral-100/90 dark:bg-dark-neutral-100/90 z-0 md:static md:bg-transparent dark:md:bg-transparent mt-[3.75rem] md:mt-0 ${className}`}
 		>
 			<nav
-				className='z-100 w-full p-6 pt-3 md:p-0 bg-neutral-200 dark:bg-dark-neutral-250 md:bg-transparent flex flex-col md:flex-row'
+				className='z-100 w-full p-6 pt-3 md:p-0 bg-neutral-200 dark:bg-dark-neutral-250 md:bg-transparent dark:md:bg-transparent flex flex-col md:flex-row'
 				data-testid={testId}
 			>
 				<ul className='flex md:flex-wrap md:gap-2 flex-col md:flex-row'>
