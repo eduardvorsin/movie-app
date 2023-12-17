@@ -7,7 +7,9 @@ export const imgPath = {
 	profileCard: `${imgURL}/w154`,
 	logo: `${imgURL}/w185`,
 	avatar: `${imgURL}/w45_and_h45_face`,
+	movieCard: `${imgURL}/w185`,
 }
+
 export const navigationRoutes = {
 	movies: '/movies/',
 	persons: '/persons/',
