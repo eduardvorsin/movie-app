@@ -1,7 +1,8 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { Department } from '@/types/shared';
+import { APIListsResponse, Department } from '@/types/shared';
 
 type PopularPerson = {
+	adult: boolean,
 	gender: number,
 	id: number,
 	known_for_department: Department,
@@ -10,14 +11,7 @@ type PopularPerson = {
 	profile_path: string | null,
 }
 
-type PopularPersons = {
-	page: number,
-	results: PopularPerson[],
-	total_page: number,
-	total_results: number,
-}
-
-export const fetchPopularPersons = async (page: number, options?: { lang: Locales }): Promise<PopularPersons | Error> => {
+export const fetchPopularPersons = async (page: number, options?: { lang: Locales }): Promise<APIListsResponse<PopularPerson> | Error> => {
 	const currentLang = options?.lang ?? fallbackLng;
 
 	let popularPersons;

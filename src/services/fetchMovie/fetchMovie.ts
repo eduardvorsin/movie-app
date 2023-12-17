@@ -1,22 +1,6 @@
 import { fetchTranslation } from '@/i18n/server';
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { Department, ExternalIDS, Genre, ProductionCompany, ProductionCounty } from '@/types/shared';
-
-type Movie = {
-	backdrop_path: string | null,
-	genre_ids: number[],
-	id: number,
-	original_language: string,
-	original_title: string,
-	overview: string,
-	popularity: number,
-	poster_path: string | null,
-	release_date: string,
-	title: string,
-	video: boolean,
-	vote_average: number,
-	vote_count: number,
-}
+import { APICreditsResponse, APIListsResponse, APIMovieResponse, Department, ExternalIDS, Genre, ProductionCompany, ProductionCountry } from '@/types/shared';
 
 type Review = {
 	author: string,
@@ -33,23 +17,6 @@ type Review = {
 	url: string,
 };
 
-type Reviews = {
-	page: number,
-	results: Review[],
-	total_page: number,
-	total_results: number,
-};
-
-
-type SimilarMovies = {
-	page: number,
-	results: Movie[],
-	total_page: number,
-	total_results: number,
-};
-
-type RecommendedMovies = SimilarMovies;
-
 type Credit = {
 	id: number,
 	known_for_department: Department,
@@ -63,12 +30,8 @@ export type CrewCredit = Credit & {
 	department: Department,
 	job: string,
 };
-export type MovieCredits = {
-	cast: ActorCredit[],
-	crew: CrewCredit[],
-}
 
-export type MovieDetails = Omit<Movie, 'genres_id' | 'popularity'> & {
+export type MovieDetails = Omit<APIMovieResponse, 'genres_id' | 'popularity'> & {
 	genres: Genre[],
 	budget: number,
 	imdb_id: string,
@@ -80,10 +43,10 @@ export type MovieDetails = Omit<Movie, 'genres_id' | 'popularity'> & {
 	status: string,
 	tagline: string,
 	external_ids: ExternalIDS,
-	credits: MovieCredits,
-	similar: SimilarMovies,
-	recommendations: RecommendedMovies,
-	reviews: Reviews,
+	credits: APICreditsResponse<ActorCredit, CrewCredit>,
+	similar: APIListsResponse<APIMovieResponse>,
+	recommendations: APIListsResponse<APIMovieResponse>,
+	reviews: APIListsResponse<Review>,
 }
 
 export const fetchMovie = async (id: string, options?: { lang: Locales }): Promise<MovieDetails | Error> => {

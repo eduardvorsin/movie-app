@@ -1,4 +1,4 @@
-import { Department, ExternalIDS } from '@/types/shared';
+import { APICreditsResponse, Department, ExternalIDS } from '@/types/shared';
 import { fetchTranslation } from '@/i18n/server';
 import { Locales, fallbackLng } from '@/i18n/settings';
 
@@ -15,12 +15,9 @@ export type PersonCredit = {
 	job?: string,
 };
 
-export type PersonCredits = {
-	cast: PersonCredit[],
-	crew: Array<PersonCredit & { department: Department }>
-};
+export type PersonCredits = APICreditsResponse<PersonCredit, PersonCredit & { department: Department }>;
 
-export type Actor = {
+export type PersonDetails = {
 	adult: boolean,
 	also_known_as: string[],
 	biography: string,
@@ -39,7 +36,7 @@ export type Actor = {
 	combined_credits: PersonCredits,
 };
 
-export const fetchActor = async (id: string, options?: { lang: Locales }): Promise<Actor | Error> => {
+export const fetchActor = async (id: string, options?: { lang: Locales }): Promise<PersonDetails | Error> => {
 	const currentLang = options?.lang ?? fallbackLng;
 	const { t } = await fetchTranslation(currentLang, ['common']);
 
@@ -64,5 +61,5 @@ export const fetchActor = async (id: string, options?: { lang: Locales }): Promi
 		}
 	}
 
-	return actor;
+	return actor as Promise<PersonDetails>;
 };

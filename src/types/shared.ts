@@ -57,3 +57,32 @@ export type PlaceholderData = {
 	};
 	base64: string;
 };
+
+export type APIListsResponse<T> = {
+	page: number,
+	results: T[],
+	total_page: number,
+	total_results: number,
+}
+
+export type APIMovieResponse = {
+	adult: boolean,
+	backdrop_path: string | null,
+	genre_ids: number[],
+	id: number,
+	original_language: string,
+	original_title: string,
+	title: string,
+	video: boolean,
+	overview: string,
+	popularity: number,
+	poster_path: string | null,
+	release_date: string,
+	vote_average: number,
+	vote_count: number,
+}
+
+export type APICreditsResponse<T, U> = {
+	cast: T[],
+	crew: U[],
+}
