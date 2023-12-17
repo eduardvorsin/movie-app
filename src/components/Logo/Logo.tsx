@@ -6,6 +6,7 @@ import { useTranslation } from '@/i18n/client';
 import { useParams } from 'next/navigation';
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { MouseEventHandler } from 'react';
+import { routes } from 'src/constants';
 
 type Props = {
 	className?: string,
@@ -41,7 +42,7 @@ export default function Logo({
 	return (
 		<Link
 			className={`inline-flex ${className}`}
-			href={'/'}
+			href={routes.home}
 			data-testid={testId}
 			onClick={onClick}
 			style={{

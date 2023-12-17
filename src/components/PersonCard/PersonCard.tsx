@@ -7,6 +7,7 @@ import { useParams } from 'next/navigation';
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
 import ThemedImage from '../ThemedImage/ThemedImage';
+import { routes } from 'src/constants';
 
 type Props = {
 	personId: number,
@@ -43,7 +44,7 @@ export default function PersonCard({
 	return (
 		<Link
 			className={`flex flex-col max-w-[10.625rem] group/card ${className}`}
-			href={`/persons/${personId}`}
+			href={`${routes.persons}${personId}`}
 			onClick={onClick}
 			title={title}
 			data-testid={testId}

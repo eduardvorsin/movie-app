@@ -19,7 +19,7 @@ import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate
 import { fetchMovie } from '@/services/fetchMovie/fetchMovie';
 import { PlaceholderData } from '@/types/shared';
 import { notFound } from 'next/navigation';
-import { imgPath } from 'src/constants';
+import { imgPath, routes } from 'src/constants';
 import Carousel from '@/components/Carousel/Carousel';
 import MovieCard from '@/components/MovieCard/MovieCard';
 import { convertToTime } from '@/helpers/convertToTime/convertToTime';
@@ -284,7 +284,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									>
 										<Link
 											className='no-underline font-bold'
-											href={`/persons/${id}`}
+											href={`${routes.persons}${id}`}
 										>
 											{name}
 										</Link>

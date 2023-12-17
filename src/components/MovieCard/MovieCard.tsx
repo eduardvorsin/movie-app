@@ -9,6 +9,7 @@ import { isArrayOfNumbers } from '@/helpers/isArrayOfNumbers/isArrayOfNumbers';
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { useParams } from 'next/navigation';
 import { useTranslation } from '@/i18n/client';
+import { routes } from 'src/constants';
 
 type Props = {
 	movieId: number,
@@ -83,7 +84,7 @@ export default function MovieCard({
 		>
 			<Link
 				className={`break-words text-neutral-1000 dark:text-dark-neutral-1100 hover:text-neutral-800 active:text-neutral-700 dark:hover:text-dark-neutral-900 dark:active:text-dark-neutral-800 transition-colors duration-150 ${variant === 'vertical' ? 'line-clamp-2' : 'line-clamp-1'}`}
-				href={`/movies/${movieId}`}
+				href={`${routes.movies}${movieId}`}
 				title={title}
 			>
 				{title}
@@ -117,7 +118,7 @@ export default function MovieCard({
 			data-testid={testId}
 		>
 			<Link
-				href={`/movies/${movieId}`}
+				href={`${routes.movies}${movieId}`}
 				className='block relative group'
 				title={title}
 			>

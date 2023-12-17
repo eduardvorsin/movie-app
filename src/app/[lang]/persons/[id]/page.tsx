@@ -17,7 +17,7 @@ import TabPanel from '@/components/Tabs/TabPanel/TabPanel';
 import { Department, PlaceholderData } from '@/types/shared';
 import Tabs from '@/components/Tabs/Tabs';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
-import { imgPath } from 'src/constants';
+import { imgPath, routes } from 'src/constants';
 import ThemedImage from '@/components/ThemedImage/ThemedImage';
 import { fetchPopularPersons } from '@/services/fetchPopularPersons/fetchPopularPersons';
 import PersonCard from '@/components/PersonCard/PersonCard';
@@ -215,7 +215,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 												<NextLink
 													className='flex px-2 py-3 justify-between items-center
 													hover:bg-neutral-200 active:bg-neutral-300 dark:hover:bg-dark-neutral-250 dark:active:bg-dark-neutral-300 transition-colors duration-150'
-													href={typeof item.first_air_date === 'string' ? `/tv/${item.id}` : `/movies/${item.id}`}
+													href={typeof item.first_air_date === 'string' ? `${routes.series}${item.id}` : `${routes.movies}${item.id}`}
 												>
 													<div>
 														<Title
