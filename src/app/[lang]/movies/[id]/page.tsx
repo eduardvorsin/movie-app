@@ -150,7 +150,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		ratingType = 'high';
 	}
 
-	const authors = createAuthorsArray(credits.crew).slice(0, 6);
+	const authors = createAuthorsArray(credits.crew).slice(0, 4);
 
 	let availableTrailers;
 	if (!(trailers instanceof Error)) {
