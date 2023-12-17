@@ -60,33 +60,34 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 	const screenWidth = useScreenWidth();
 
 	const currentBreakpoint = getBreakpointFromValue(screenWidth, breakpoints);
-	const visibleSlidesCount = currentBreakpoint?.slidesPerView ?? slidesPerView;
-	const scrollingSlidesCount = currentBreakpoint?.slidesPerGroup ?? slidesPerGroup;
+	const visibleSlides = currentBreakpoint?.slidesPerView ?? slidesPerView;
+	const scrollingSlides = currentBreakpoint?.slidesPerGroup ?? slidesPerGroup;
 	const slideGap = currentBreakpoint?.spaceBetween ?? spaceBetween;
 
 	const slides: ReactNode[] = useMemo(() => {
 		return Array.isArray(children) ? children : [children];
 	}, [children]);
-	const lastIndex = Math.ceil((slides.length - visibleSlidesCount) / scrollingSlidesCount);
+	const lastIndex = Math.ceil((slides.length - visibleSlides) / scrollingSlides);
 
 	const moveSlide = useCallback((newActiveIndex: number): void => {
 		const containerNode = containerRef.current;
-		if (!containerNode) return;
+		if (!containerNode || !containerNode.firstElementChild) return;
 
-		const { width } = containerNode.getBoundingClientRect();
+		const {
+			width: childWidth,
+		} = containerNode.firstElementChild?.getBoundingClientRect();
 
-		const leftOffset = width * newActiveIndex * (scrollingSlidesCount / visibleSlidesCount) + slideGap * newActiveIndex;
-
+		const leftOffset = (childWidth + slideGap) * scrollingSlides * newActiveIndex;
 		containerNode.scrollTo({
 			left: leftOffset,
 			behavior: 'smooth',
 		})
-	}, [scrollingSlidesCount, visibleSlidesCount, slideGap]);
+	}, [slideGap, scrollingSlides]);
 
 	const slideNext = useCallback((): void => {
-		const currentActiveIndex = Math.min(activeIndex + 1, slides.length - 1);
+		const currentActiveIndex = Math.min(activeIndex + 1, lastIndex);
 		moveSlide(currentActiveIndex);
-	}, [activeIndex, slides.length, moveSlide]);
+	}, [activeIndex, moveSlide, lastIndex]);
 
 	const slidePrev = () => {
 		const currentActiveIndex = Math.max(0, activeIndex - 1);
@@ -130,10 +131,14 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 
 		const scrollHandler = throttle(() => {
 			if (!containerNode.firstElementChild) return;
-			const firstElementRectData = containerNode.firstElementChild?.getBoundingClientRect();
+			const {
+				width: childWidth,
+				left: childLeft
+			} = containerNode.firstElementChild?.getBoundingClientRect();
+
 			const containerRectData = containerNode.getBoundingClientRect();
-			const shift = firstElementRectData.left - containerRectData.left;
-			const slideWidthInGroup = containerRectData.width * (scrollingSlidesCount / visibleSlidesCount) + slideGap;
+			const shift = childLeft - containerRectData.left;
+			const slideWidthInGroup = childWidth * scrollingSlides + slideGap;
 			const currentIndex = Math.abs(Math.round(shift / slideWidthInGroup));
 
 			setActiveIndex(currentIndex);
@@ -145,7 +150,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 		return () => {
 			containerNode.removeEventListener('scroll', scrollHandler);
 		}
-	}, [scrollingSlidesCount, visibleSlidesCount, onSlideChange, slideGap]);
+	}, [scrollingSlides, visibleSlides, onSlideChange, slideGap]);
 
 	useEffect(() => {
 		let interval: ReturnType<typeof setTimeout> | undefined;
@@ -204,9 +209,9 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 						className='flex-shrink-0 flex-grow-0'
 						style={{
 							marginRight: `${slides.length - 1 === index ? 0 : slideGap}px`,
-							flexBasis: `${100 / visibleSlidesCount}%`,
-							scrollSnapAlign: index % scrollingSlidesCount === 0 ? 'start' : 'none',
-							scrollSnapStop: index % scrollingSlidesCount === 0 ? 'always' : 'normal',
+							flexBasis: `calc(${100 / visibleSlides}% - ${slideGap * ((visibleSlides - 1) / visibleSlides)}px)`,
+							scrollSnapAlign: index % scrollingSlides === 0 ? 'start' : 'none',
+							scrollSnapStop: index % scrollingSlides === 0 ? 'always' : 'normal',
 						}}
 					>
 						{slide}
