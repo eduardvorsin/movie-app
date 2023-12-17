@@ -1,5 +1,6 @@
 import { HeadingElement, HeadingLevel } from '@/types/shared';
 import React from 'react';
+import { twMerge } from '../../../tailwind.config';
 
 export type Props = {
 	children: React.ReactNode,
@@ -11,12 +12,12 @@ export type Props = {
 }
 
 const levelTypes = {
-	1: 'text-400 sm:text-500 md:text-600 lg:text-700 leading-6',
-	2: 'text-400 sm:text-500 md:text-600 leading-5',
-	3: 'text-400 sm:text-500 leading-4',
-	4: 'text-300 sm:text-400  leading-3',
-	5: 'text-300 leading-2',
-	6: 'text-200 leading-1',
+	1: 'text-400 sm:text-500 md:text-600 lg:text-700',
+	2: 'text-400 sm:text-500 md:text-600',
+	3: 'text-400 sm:text-500',
+	4: 'text-300 sm:text-400',
+	5: 'text-300',
+	6: 'text-200',
 } as const;
 
 const fontWeights = {
@@ -33,12 +34,12 @@ export default function Title({
 	weight = 700,
 	as = 'h6',
 }: Props) {
-	const classes = [
-		'-tracking-[0.01em]',
+	const classes = twMerge(
+		'-tracking-[0.01em] leading-[1.25]',
 		levelTypes[level],
 		fontWeights[weight],
 		className,
-	].join(' ');
+	);
 
 	const Heading: HeadingElement = as;
 
