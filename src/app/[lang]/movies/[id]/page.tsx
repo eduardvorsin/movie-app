@@ -161,7 +161,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		.filter(({ logo_path }) => logo_path !== null && logo_path !== '');
 
 	return (
-		<>
+		<main className='mt-[5rem]'>
 			<section
 				className='py-5 md:py-8 bg-blend-overlay bg-cover bg-no-repeat bg-neutral-100/80 dark:bg-dark-neutral-0'
 				style={{ backgroundImage: `url(${backdropUrl})` }}
@@ -615,6 +615,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 					</Container>
 				</section>
 			)}
-		</>
+		</main>
 	);
 }
