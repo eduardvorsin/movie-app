@@ -248,7 +248,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 			{showPagination && (
 				<>
 					<CarouselPagination
-						className={`${paginationType !== 'progress' ? 'mt-2' : ''}`}
+						className={`${paginationType !== 'progress' ? 'mt-3' : ''}`}
 						activeIndex={activeIndex}
 						totalCount={lastIndex + 1}
 						paginationType={paginationType}
