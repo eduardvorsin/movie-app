@@ -173,6 +173,7 @@ const config: Config = {
       lg: '64rem',
       xl: '80rem',
       '2xl': '90rem',
+      'fine-pointer': { 'raw': '(pointer: fine)' },
     },
     spacing: {
       0: '0rem',
