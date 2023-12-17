@@ -24,6 +24,7 @@ type Props = {
 	genres?: string | number | string[] | number[],
 	titleElement?: HeadingElement,
 	titleLevel?: HeadingLevel,
+	variant?: 'vertical' | 'horizontal',
 	testId?: string,
 };
 
@@ -41,6 +42,7 @@ export default function MovieCard({
 	genres,
 	titleElement = 'h6',
 	titleLevel = 6,
+	variant = 'horizontal',
 	testId,
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
@@ -66,21 +68,64 @@ export default function MovieCard({
 			.join(', ');
 	}
 
+	const details = [
+		{ name: 'genres', value: allGenres },
+		{ name: 'releaseDate', value: releaseDate, },
+		{ name: 'duration', value: runtime, },
+		{ name: 'country', value: country },
+	].filter((detail) => detail.value !== undefined && detail.value.length > 0);
+
+	const CardTitle = (
+		<Title
+			className={`text-200 ${variant === 'vertical' ? 'mt-2' : 'mb-1 sm:text-[1.125rem]'}`}
+			level={titleLevel}
+			as={titleElement}
+		>
+			<Link
+				className={`break-words text-neutral-1000 dark:text-dark-neutral-1100 hover:text-neutral-800 active:text-neutral-700 dark:hover:text-dark-neutral-900 dark:active:text-dark-neutral-800 transition-colors duration-150 ${variant === 'vertical' ? 'line-clamp-2' : 'line-clamp-1'}`}
+				href={`/movies/${movieId}`}
+				title={title}
+			>
+				{title}
+			</Link>
+		</Title>
+	);
+
+	const CardContent = (
+		<div className={`absolute left-0 w-full flex flex-col p-2 bg-gradient-to-t z-100 ${variant === 'horizontal' ? 'bottom-0 from-neutral-100/95 to-neutral-100/40 dark:from-dark-neutral-100/95 dark:to-dark-neutral-100/40' : 'invisible opacity-0 fine-pointer:group-hover:visible fine-pointer:group-hover:opacity-100 top-0 pt-[3.125rem] justify-end h-full bg-neutral-100/80 dark:bg-dark-neutral-100/80 transition-[visibility,opacity] duration-150'}`}>
+			{title && variant === 'horizontal' && (CardTitle)}
+
+			{details.map((detail) => (
+				<p
+					key={detail.name}
+					className={`text-100 text-neutral-1000 dark:text-dark-neutral-1000 font-medium break-words ${variant === 'vertical' ? 'line-clamp-2 mb-1 last:mb-0' : 'truncate'}`}
+				>
+					{t(`movieCard.${detail.name}`)}:
+					<span
+						className={'ml-1 text-neutral-900 dark:text-dark-neutral-900 font-regular'}
+					>
+						{detail.value}
+					</span>
+				</p>
+			))}
+		</div>
+	);
+
 	return (
 		<div
-			className={`flex flex-col relative max-w-[342px] min-w-[280px] ${className} `}
+			className={`flex flex-col relative overflow-hidden ${variant === 'horizontal' ? 'max-w-[300px]' : 'max-w-[185px]'} ${className} `}
 			data-testid={testId}
 		>
 			<Link
 				href={`/movies/${movieId}`}
-				className='block relative'
+				className='block relative group'
 				title={title}
 			>
 				<ThemedImage
-					className='rounded-3 w-full'
+					className='rounded-3'
 					alt={alt}
-					width={300}
-					height={169}
+					width={variant === 'horizontal' ? 300 : 185}
+					height={variant === 'horizontal' ? 169 : 278}
 					src={{
 						light: src,
 						dark: src,
@@ -90,79 +135,20 @@ export default function MovieCard({
 						dark: '/assets/images/movie-card-placeholder-d-h.svg'
 					}}
 				/>
+
 				{showRating && rating !== undefined && (
-					<span className='absolute top-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center rounded-1 border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold'>
+					<span className='absolute z-200 top-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center rounded-1 border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold'>
 						<span className='sr-only'>{t('movieCard.popularity')}: </span>
 						{Math.trunc(rating)}
 					</span>
 				)}
+
+				{variant === 'vertical' && (CardContent)}
 			</Link>
 
-			<div className='absolute bottom-0 left-0 w-full p-2 bg-gradient-to-t from-neutral-100/95 to-neutral-100/40 dark:from-dark-neutral-100/95 dark:to-dark-neutral-100/40'>
-				{title && (
-					<Title
-						className='mb-1'
-						level={titleLevel}
-						as={titleElement}
-					>
-						<Link
-							className='break-words line-clamp-1 text-neutral-1000 dark:text-dark-neutral-1100 hover:text-neutral-800 active:text-neutral-700 dark:hover:text-dark-neutral-900 dark:active:text-dark-neutral-800 transition-colors duration-150'
-							href={`/movies/${movieId}`}
-							title={title}
-						>
-							{title}
-						</Link>
-					</Title>
-				)}
-				{allGenres.length > 0 && (
-					<p
-						className='text-100 text-neutral-1000 dark:text-dark-neutral-1000 font-medium truncate'
-					>
-						{t('movieCard.genres')}:
-						<span
-							className='ml-1 text-neutral-900 dark:text-dark-neutral-900 font-regular'
-						>
-							{allGenres}
-						</span>
-					</p>
-				)}
-				{releaseDate && (
-					<p
-						className='text-100 text-neutral-1000 dark:text-dark-neutral-1000 font-medium truncate'
-					>
-						{t('movieCard.releaseDate')}:
-						<span
-							className='ml-1 text-neutral-900 dark:text-dark-neutral-900 font-regular'
-						>
-							{releaseDate}
-						</span>
-					</p>
-				)}
-				{country && (
-					<p
-						className='text-100 text-neutral-1000 dark:text-dark-neutral-1000 font-medium truncate'
-					>
-						{t('movieCard.productionCountry')}:
-						<span
-							className='ml-1 text-neutral-900 dark:text-dark-neutral-900 font-regular'
-						>
-						</span>
-						{country}
-					</p>
-				)}
-				{runtime && (
-					<p
-						className='text-100 text-neutral-1000 dark:text-dark-neutral-1000 font-medium truncate'
-					>
-						{t('movieCard.duration')}:
-						<span
-							className='ml-1 text-neutral-900 dark:text-dark-neutral-900 font-regular'
-						>
-						</span>
-						{runtime}
-					</p>
-				)}
-			</div>
+			{variant === 'horizontal' && (CardContent)}
+
+			{title && variant === 'vertical' && (CardTitle)}
 		</div>
 	);
 };
