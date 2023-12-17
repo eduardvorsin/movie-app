@@ -20,7 +20,7 @@ type Breakpoints = {
 
 type Props = {
 	children: ReactNode,
-	label: string,
+	label?: string,
 	slidesPerView?: number,
 	slidesPerGroup?: number,
 	onSlideChange?: (activeIndex: number) => void,
