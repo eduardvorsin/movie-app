@@ -28,7 +28,7 @@
 		"popularity": "Popularity",
 		"genres": "Genres",
 		"releaseDate": "Release date",
-		"productionCountry": "Production Country",
+		"country": "Country",
 		"duration": "Duration"
 	},
 	"genres": {

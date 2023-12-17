@@ -28,8 +28,8 @@
 		"popularity": "Популярность",
 		"genres": "Жанры",
 		"releaseDate": "Дата релиза",
-		"productionCountry": "Страна производства",
-		"duration": "Продолжительность"
+		"country": "Страна",
+		"duration": "Длительность"
 	},
 	"genres": {
 		"action": "Экшен",
