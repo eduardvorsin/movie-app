@@ -73,7 +73,7 @@ export type MovieDetails = Omit<Movie, 'genres_id' | 'popularity'> & {
 	budget: number,
 	imdb_id: string,
 	production_companies: ProductionCompany[],
-	production_countries: ProductionCounty[],
+	production_countries: ProductionCountry[],
 	homepage: string,
 	revenue: number,
 	runtime: number,
