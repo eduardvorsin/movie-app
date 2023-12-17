@@ -1,4 +1,5 @@
 import { AriaAttributes, MouseEventHandler } from 'react';
+import { twMerge } from '../../../../tailwind.config';
 
 type Props = {
 	className?: string,
@@ -16,11 +17,11 @@ export default function CarouselArrow({
 	onClick,
 	...props
 }: Props) {
-	const classes = [
-		'p-2 sm:p-1 absolute z-100 top-1/2 -translate-y-1/2 bg-neutral-300/80 enabled:hover:bg-neutral-300/[0.85] enabled:active:bg-neutral-300/90 dark:bg-dark-neutral-300/80 dark:enabled:hover:bg-dark-neutral-300/[0.85] dark:enabled:active:bg-dark-neutral-300/90 text-blue-700 enabled:hover:text-blue-800 enabled:active:text-blue-900 dark:text-blue-300 dark:enabled:hover:text-blue-400 dark:enabled:active:text-blue-500 transition-colors transition-opacity duration-150 disabled:opacity-disabled disabled:cursor-not-allowed',
+	const classes = twMerge(
+		'p-2 sm:p-1 absolute z-100 -translate-y-1/2 bg-neutral-300/80 enabled:hover:bg-neutral-300/[0.85] enabled:active:bg-neutral-300/90 dark:bg-dark-neutral-300/80 dark:enabled:hover:bg-dark-neutral-300/[0.85] dark:enabled:active:bg-dark-neutral-300/90 text-blue-700 enabled:hover:text-blue-800 enabled:active:text-blue-900 dark:text-blue-300 dark:enabled:hover:text-blue-400 dark:enabled:active:text-blue-500 transition-colors transition-opacity duration-150 disabled:opacity-disabled disabled:cursor-not-allowed',
 		direction === 'left' ? 'left-[0.625rem]' : 'right-[0.625rem]',
 		className
-	].join(' ');
+	);
 
 	const iconFilename = direction === 'left' ? 'back-arrow.svg#back-arrow' : 'forward-arrow.svg#forward-arrow';
 

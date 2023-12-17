@@ -6,6 +6,12 @@ import CarouselPagination from './CarouselPagination/CarouselPagination';
 import CarouselArrow from './CarouselArrow/CarouselArrow';
 import { useScreenWidth } from '@/hooks/useScreenWidth/useScreenWidth';
 
+const arrowVerticalPostion = {
+	dots: 'top-[calc(50%-35px)] sm:top-[calc(50%-30px)]',
+	progress: 'top-[calc(50%-4px)]',
+	fraction: 'top-[calc(50%-36px)]',
+} as const;
+
 type Breakpoints = {
 	[key: number]: Partial<
 		Record<'slidesPerView' | 'slidesPerGroup' | 'spaceBetween', number>
@@ -222,6 +228,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 			{showArrows && (
 				<>
 					<CarouselArrow
+						className={arrowVerticalPostion[paginationType]}
 						direction='left'
 						onClick={slidePrev}
 						isDisabled={activeIndex === 0}
@@ -229,6 +236,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 
 					/>
 					<CarouselArrow
+						className={arrowVerticalPostion[paginationType]}
 						direction='right'
 						onClick={slideNext}
 						isDisabled={activeIndex === lastIndex}
