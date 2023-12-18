@@ -14,7 +14,8 @@ const arrowVerticalPostion = {
 
 type Breakpoints = {
 	[key: number]: Partial<
-		Record<'slidesPerView' | 'slidesPerGroup' | 'spaceBetween', number>
+		Record<'slidesPerView' | 'slidesPerGroup' | 'spaceBetween', number> &
+		{ showArrows: boolean }
 	>
 };
 
@@ -69,6 +70,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 	const visibleSlides = currentBreakpoint?.slidesPerView ?? slidesPerView;
 	const scrollingSlides = currentBreakpoint?.slidesPerGroup ?? slidesPerGroup;
 	const slideGap = currentBreakpoint?.spaceBetween ?? spaceBetween;
+	const isArrowsVisible = currentBreakpoint?.showArrows ?? showArrows;
 
 	const slides: ReactNode[] = useMemo(() => {
 		return Array.isArray(children) ? children : [children];
@@ -225,7 +227,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 				))}
 			</div>
 
-			{showArrows && (
+			{isArrowsVisible && (
 				<>
 					<CarouselArrow
 						className={arrowVerticalPostion[paginationType]}
