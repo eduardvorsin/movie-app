@@ -1,8 +1,9 @@
+import { twMerge } from "tailwind.config";
+
 export type Props = {
 	className?: string,
 	size?: 'small' | 'medium' | 'large' | 'xlarge' | 'custom',
 	testId?: string,
-	color?: string,
 };
 
 const sizesTypes = {
@@ -16,19 +17,13 @@ const sizesTypes = {
 export default function Spinner({
 	className,
 	size = 'medium',
-	color,
 	testId,
 }: Props) {
-	const classes = [
-		'inline-flex align-middle',
+	const classes = twMerge(
+		'inline-flex align-middle dark:text-blue-300 text-blue-800',
 		sizesTypes[size],
 		className,
-	].join(' ');
-
-	const circleClasses = [
-		'stroke-[0.75] fill-none',
-		color ? color : 'dark:stroke-blue-300 stroke-blue-800',
-	].join(' ');
+	);
 
 	return (
 		<span
@@ -36,11 +31,10 @@ export default function Spinner({
 			data-testid={testId}
 		>
 			<svg
-				className='animate-spin'
+				className='animate-spin stroke-[0.75] fill-none stroke-current'
 				viewBox='0 0 16 16'
 			>
 				<circle
-					className={circleClasses}
 					cx='8'
 					cy='8'
 					r='7'
