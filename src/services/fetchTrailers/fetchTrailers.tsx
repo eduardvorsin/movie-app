@@ -30,7 +30,7 @@ const fetchTrailersByLocale = async (id: string, locale: Locales): Promise<Trail
 		});
 
 		if (!res.ok) {
-			throw new Error('The trailers for the movie project could not be uploaded');
+			throw new Error(`${res.status} ${res.statusText}`);
 		}
 
 		trailers = await res.json();

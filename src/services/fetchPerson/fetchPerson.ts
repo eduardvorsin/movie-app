@@ -1,5 +1,4 @@
 import { APICreditsResponse, Department, ExternalIDS } from '@/types/shared';
-import { fetchTranslation } from '@/i18n/server';
 import { Locales, fallbackLng } from '@/i18n/settings';
 
 export type PersonCredit = {
@@ -38,7 +37,6 @@ export type PersonDetails = {
 
 export const fetchPerson = async (id: string, options?: { lang: Locales }): Promise<PersonDetails | Error> => {
 	const currentLang = options?.lang ?? fallbackLng;
-	const { t } = await fetchTranslation(currentLang, ['common']);
 
 	let person;
 	try {
@@ -51,7 +49,7 @@ export const fetchPerson = async (id: string, options?: { lang: Locales }): Prom
 		});
 
 		if (!res.ok) {
-			throw new Error(t('errors.pageNotFound'));
+			throw new Error(`${res.status} ${res.statusText}`);
 		}
 
 		person = await res.json();

@@ -1,4 +1,3 @@
-import { fetchTranslation } from '@/i18n/server';
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { APICreditsResponse, APIListsResponse, APIMovieResponse, Department, ExternalIDS, Genre, ProductionCompany, ProductionCountry } from '@/types/shared';
 
@@ -51,7 +50,6 @@ export type MovieDetails = Omit<APIMovieResponse, 'genres_id' | 'popularity'> & 
 
 export const fetchMovie = async (id: string, options?: { lang: Locales }): Promise<MovieDetails | Error> => {
 	const currentLang = options?.lang ?? fallbackLng;
-	const { t } = await fetchTranslation(currentLang, ['common']);
 
 	let movie;
 	try {
@@ -64,7 +62,7 @@ export const fetchMovie = async (id: string, options?: { lang: Locales }): Promi
 		});
 
 		if (!res.ok) {
-			throw new Error(t('errors.pageNotFound'));
+			throw new Error(`${res.status} ${res.statusText}`);
 		}
 
 		movie = await res.json();
