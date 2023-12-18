@@ -261,11 +261,30 @@ export default async function Page({ params: { id, lang } }: Props) {
 							{t('personsTitle', { ns: 'personsPage' })}
 						</Title>
 						<Carousel
-							label='cast'
 							mousewheel
-							slidesPerView={8}
 							spaceBetween={20}
 							showScrollShadow
+							paginationType='fraction'
+							breakpoints={{
+								0: {
+									slidesPerView: 1,
+								},
+								375: {
+									slidesPerView: 2,
+								},
+								480: {
+									slidesPerView: 3,
+								},
+								640: {
+									slidesPerView: 4,
+								},
+								768: {
+									slidesPerView: 5,
+								},
+								1024: {
+									slidesPerView: 6,
+								}
+							}}
 						>
 							{popularPersons && popularPersons.results.map(({
 								id,
@@ -275,6 +294,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								known_for_department,
 							}) => (
 								<PersonCard
+									className='mb-2 mx-auto xs:mx-0'
 									personId={id}
 									key={id}
 									src={profile_path ? `${imgPath['profileCard']}${profile_path}` : ''}

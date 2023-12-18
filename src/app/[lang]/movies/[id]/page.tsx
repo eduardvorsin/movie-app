@@ -357,7 +357,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 					</Title>
 
 					<Carousel
-						label='cast'
 						mousewheel
 						spaceBetween={20}
 						showScrollShadow
@@ -367,7 +366,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							0: {
 								slidesPerView: 1,
 							},
-							320: {
+							375: {
 								slidesPerView: 2,
 							},
 							480: {
@@ -392,7 +391,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							character
 						}) => (
 							<PersonCard
-								className='mx-auto 2xs:mx-0'
+								className='mb-2 mx-auto xs:mx-0'
 								personId={id}
 								key={id}
 								src={profile_path ? `${imgPath['profileCard']}${profile_path}` : ''}
@@ -455,12 +454,21 @@ export default async function Page({ params: { id, lang } }: Props) {
 						</Title>
 
 						<Carousel
-							label='reviews'
 							mousewheel
 							showPagination
 							paginationType='progress'
-							slidesPerView={3}
 							spaceBetween={20}
+							breakpoints={{
+								0: {
+									slidesPerView: 1,
+								},
+								640: {
+									slidesPerView: 2,
+								},
+								1024: {
+									slidesPerView: 3,
+								}
+							}}
 						>
 							{reviews.results.map(({
 								id,
@@ -470,6 +478,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								author_details,
 							}) => (
 								<Comment
+									className='h-full'
 									key={id}
 									id={id}
 									author={author}
@@ -505,7 +514,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 							{t('relatedMovies', { ns: 'moviesPage' })}
 						</Title>
 						<Carousel
-							label={t('relatedMovies', { ns: 'moviesPage' })}
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -534,7 +542,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									className='mx-auto xs:mx-0'
+									className='mx-auto md:mx-0'
 									movieId={id}
 									key={id}
 									src={backdrop_path ? `${imgPath['backdrop']}${backdrop_path}` : ''}
@@ -564,7 +572,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 							{t('recommendations', { ns: 'moviesPage' })}
 						</Title>
 						<Carousel
-							label={t('recommendations', { ns: 'moviesPage' })}
 							mousewheel
 							slidesPerView={4}
 							spaceBetween={20}
