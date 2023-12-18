@@ -5,6 +5,7 @@ import NotFoundIcon from '../assets/icons/404.svg?url';
 import Title from '@/components/Title/Title';
 import { fetchTranslation } from '@/i18n/server';
 import { getLocalesFromString } from "@/i18n/utils/getLocalesFromString/getLocalesFromString";
+import { routes } from "src/constants";
 
 export default async function NotFound() {
 	const lang = getLocalesFromString(headers().get('accept-language') ?? fallbackLng)[0] as Locales;
@@ -28,7 +29,7 @@ export default async function NotFound() {
 					{t('notFound.description')}
 				</p>
 				<Button
-					href={`/${lang}`}
+					href={routes.home}
 					size='large'
 					fullWidth
 				>
