@@ -78,7 +78,7 @@ export default function MovieCard({
 
 	const CardTitle = (
 		<Title
-			className={`text-200 ${variant === 'vertical' ? 'mt-2' : 'mb-1 sm:text-[1.125rem]'}`}
+			className={`text-200 leading-[1.25] ${variant === 'vertical' ? 'mt-2' : 'mb-1 sm:text-[1.125rem]'}`}
 			level={titleLevel}
 			as={titleElement}
 		>
@@ -99,7 +99,7 @@ export default function MovieCard({
 			{details.map((detail) => (
 				<p
 					key={detail.name}
-					className={`text-100 text-neutral-1000 dark:text-dark-neutral-1000 font-medium break-words ${variant === 'vertical' ? 'line-clamp-2 mb-1 last:mb-0' : 'truncate'}`}
+					className={`text-100 leading-[1.25] text-neutral-1000 dark:text-dark-neutral-1000 font-medium break-words ${variant === 'vertical' ? 'line-clamp-2 mb-1 last:mb-0' : 'truncate'}`}
 				>
 					{t(`movieCard.${detail.name}`)}:
 					<span
