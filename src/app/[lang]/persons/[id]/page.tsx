@@ -9,7 +9,7 @@ import { createCharacteristicsArray } from '@/helpers/createCharacteristicsArray
 import { fetchTranslation } from '@/i18n/server';
 import { Locales } from '@/i18n/settings';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
-import { fetchActor } from '@/services/fetchActor/fetchActor';
+import { fetchPerson } from '@/services/fetchPerson/fetchPerson';
 import { fetchImageWithPlaceholder } from 'src/helpers/fetchImageWithPlaceholder/fetchImageWithPlaceholder';
 import Container from '@/components/Container/Container';
 import { createFilmographyData } from '@/helpers/createFilmographyData/createFilmographyData';
@@ -41,9 +41,9 @@ type Props = {
 
 export default async function Page({ params: { id, lang } }: Props) {
 	const { t } = await fetchTranslation(lang, ['personsPage', 'common']);
-	const actor = await fetchActor(id, { lang });
+	const person = await fetchPerson(id, { lang });
 
-	if (actor instanceof Error) {
+	if (person instanceof Error) {
 		return notFound();
 	}
 
@@ -54,7 +54,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		combined_credits,
 		name,
 		homepage,
-	} = actor;
+	} = person;
 
 	let imageData: PlaceholderData | null = null;
 	if (profile_path) {
@@ -70,7 +70,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 	});
 	const currentBiography = biography.split('\n').filter((str) => str !== '');
 
-	const characteristicData = createCharacteristicsArray(actor)
+	const characteristicData = createCharacteristicsArray(person)
 		.filter((item) => characteristicFields.has(item.name))
 		.map(({ name, value }) => {
 			let currentValue = value;

@@ -1,4 +1,4 @@
-import { PersonCredit, PersonCredits } from '@/services/fetchActor/fetchActor';
+import { PersonCredit, PersonCredits } from '@/services/fetchPerson/fetchPerson';
 import { Department } from '@/types/shared';
 
 type Filmography = Record<Lowercase<Department>, PersonCredit[]>;

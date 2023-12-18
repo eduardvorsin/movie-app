@@ -36,11 +36,11 @@ export type PersonDetails = {
 	combined_credits: PersonCredits,
 };
 
-export const fetchActor = async (id: string, options?: { lang: Locales }): Promise<PersonDetails | Error> => {
+export const fetchPerson = async (id: string, options?: { lang: Locales }): Promise<PersonDetails | Error> => {
 	const currentLang = options?.lang ?? fallbackLng;
 	const { t } = await fetchTranslation(currentLang, ['common']);
 
-	let actor;
+	let person;
 	try {
 		const res = await fetch(`https://api.themoviedb.org/3/person/${id}?append_to_response=external_ids,combined_credits&language=${currentLang}`, {
 			method: 'GET',
@@ -54,12 +54,12 @@ export const fetchActor = async (id: string, options?: { lang: Locales }): Promi
 			throw new Error(t('errors.pageNotFound'));
 		}
 
-		actor = await res.json();
+		person = await res.json();
 	} catch (error) {
 		if (error instanceof Error) {
 			return error;
 		}
 	}
 
-	return actor as Promise<PersonDetails>;
+	return person as Promise<PersonDetails>;
 };
