@@ -6,7 +6,7 @@
 		"original_title": "Original Title",
 		"release_date": "Release Date",
 		"runtime": "Duration",
-		"vote_average": "$t(rating)",
+		"vote_average": "$t(common:ratingLabel)",
 		"original_language": "Original Language",
 		"budget": "Budget",
 		"revenue": "Revenue",
@@ -18,7 +18,6 @@
 		}
 	},
 	"review": "Review",
-	"rating": "Rating",
 	"starring": "Starring",
 	"aboutMovie": "Information about the film",
 	"recommendations": "Recommendations",

@@ -1,5 +1,6 @@
 {
-	"title": "Текст заголовка",
+	"ratingLabel": "Рейтинг",
+	"genresLabel": "Жанры",
 	"expandableText": {
 		"collapseButton": "Свернуть",
 		"expandButton": "Развернуть"

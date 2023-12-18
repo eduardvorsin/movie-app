@@ -226,7 +226,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								<span
 									className='text-neutral-1000 dark:text-dark-neutral-900 font-medium mr-2'
 								>
-									{t('rating', { ns: 'moviesPage' })}
+									{t('ratingLabel', { ns: 'moviesPage' })}
 								</span>
 								<PieChart
 									size={60}
@@ -618,3 +618,4 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 //todo нужно сделать компонент модального окна и добавить кнопку для трейлеров - https://developer.themoviedb.org/reference/movie-videos
 //todo добавить адаптивности блоку с отзывами
+//todo фоновую картинку лучше добавить через <ThemedImage> чтобы размер картинки на разных устройствах был подходящий 

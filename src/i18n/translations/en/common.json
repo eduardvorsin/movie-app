@@ -1,5 +1,6 @@
 {
-	"title": "Title text",
+	"ratingLabel": "Rating",
+	"genresLabel": "Genres",
 	"expandableText": {
 		"collapseButton": "Collapse",
 		"expandButton": "Expand"
