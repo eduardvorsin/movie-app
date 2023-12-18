@@ -48,7 +48,7 @@ export type MovieDetails = Omit<APIMovieResponse, 'genres_id' | 'popularity'> & 
 	reviews: APIListsResponse<Review>,
 }
 
-export const fetchMovie = async (id: string, options?: { lang: Locales }): Promise<MovieDetails | Error> => {
+export const fetchMovie = async (id: string, options?: { lang: Locales }): Promise<MovieDetails | null> => {
 	const currentLang = options?.lang ?? fallbackLng;
 
 	let movie;
@@ -68,9 +68,10 @@ export const fetchMovie = async (id: string, options?: { lang: Locales }): Promi
 		movie = await res.json();
 	} catch (error) {
 		if (error instanceof Error) {
-			return error;
+			console.error(error);
+			return null;
 		}
 	}
 
-	return movie;
+	return movie as Promise<MovieDetails>;
 };

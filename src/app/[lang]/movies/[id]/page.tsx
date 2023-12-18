@@ -71,7 +71,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 	const movie = await fetchMovie(id, { lang });
 	const trailers = await fetchTrailers(id, { lang });
 
-	if (movie instanceof Error) {
+	if (!movie) {
 		notFound();
 	}
 
@@ -152,10 +152,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 	const authors = createAuthorsArray(credits.crew).slice(0, 4);
 
-	let availableTrailers;
-	if (!(trailers instanceof Error)) {
-		availableTrailers = trailers.results.filter(({ site }) => site === 'YouTube');
-	}
+	const availableTrailers = trailers?.results.filter(({ site }) => site === 'YouTube');
 
 	const productionCompanies = production_companies
 		.filter(({ logo_path }) => logo_path !== null && logo_path !== '');
@@ -618,3 +615,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 		</main>
 	);
 }
+
+//todo нужно сделать компонент модального окна и добавить кнопку для трейлеров - https://developer.themoviedb.org/reference/movie-videos
+//todo добавить адаптивности блоку с отзывами

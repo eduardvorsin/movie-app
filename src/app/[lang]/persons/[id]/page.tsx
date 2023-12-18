@@ -43,7 +43,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 	const { t } = await fetchTranslation(lang, ['personsPage', 'common']);
 	const person = await fetchPerson(id, { lang });
 
-	if (person instanceof Error) {
+	if (!person) {
 		return notFound();
 	}
 
@@ -267,7 +267,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							spaceBetween={20}
 							showScrollShadow
 						>
-							{!(popularPersons instanceof Error) && popularPersons.results.map(({
+							{popularPersons && popularPersons.results.map(({
 								id,
 								profile_path,
 								name,

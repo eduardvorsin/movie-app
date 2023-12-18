@@ -11,7 +11,7 @@ type PopularPerson = {
 	profile_path: string | null,
 }
 
-export const fetchPopularPersons = async (page: number, options?: { lang: Locales }): Promise<APIListsResponse<PopularPerson> | Error> => {
+export const fetchPopularPersons = async (page: number, options?: { lang: Locales }): Promise<APIListsResponse<PopularPerson> | null> => {
 	const currentLang = options?.lang ?? fallbackLng;
 
 	let popularPersons;
@@ -25,15 +25,16 @@ export const fetchPopularPersons = async (page: number, options?: { lang: Locale
 		});
 
 		if (!res.ok) {
-			throw new Error('Couldn\'t fetch a list of popular people');
+			throw new Error(`${res.status} ${res.statusText}`);
 		}
 
 		popularPersons = await res.json();
 	} catch (error) {
 		if (error instanceof Error) {
-			return error;
+			console.error(error);
+			return null;
 		}
 	}
 
-	return popularPersons;
+	return popularPersons as APIListsResponse<PopularPerson>;
 };

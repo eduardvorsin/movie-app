@@ -16,7 +16,7 @@ type TrailersData = {
 	results: Trailer[],
 }
 
-const fetchTrailersByLocale = async (id: string, locale: Locales): Promise<TrailersData | Error> => {
+const fetchTrailersByLocale = async (id: string, locale: Locales): Promise<TrailersData | null> => {
 	let trailers;
 
 	try {
@@ -36,19 +36,20 @@ const fetchTrailersByLocale = async (id: string, locale: Locales): Promise<Trail
 		trailers = await res.json();
 	} catch (error) {
 		if (error instanceof Error) {
-			return error;
+			console.error(error);
+			return null;
 		}
 	}
 
-	return trailers;
+	return trailers as Promise<TrailersData>;
 };
 
-export const fetchTrailers = async (id: string, options: {
+export const fetchTrailers = async (id: string, options?: {
 	lang: Locales,
-}): Promise<TrailersData | Error> => {
-	const preferredTrailers = await fetchTrailersByLocale(id, options.lang);
+}): Promise<TrailersData | null> => {
+	const preferredTrailers = await fetchTrailersByLocale(id, options?.lang ?? fallbackLng);
 
-	if (!(preferredTrailers instanceof Error) && preferredTrailers.results.length === 0) {
+	if (preferredTrailers && preferredTrailers.results.length === 0) {
 		const fallbackTrailers = await fetchTrailersByLocale(id, fallbackLng);
 
 		return fallbackTrailers;

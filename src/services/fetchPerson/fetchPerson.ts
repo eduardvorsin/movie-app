@@ -35,7 +35,7 @@ export type PersonDetails = {
 	combined_credits: PersonCredits,
 };
 
-export const fetchPerson = async (id: string, options?: { lang: Locales }): Promise<PersonDetails | Error> => {
+export const fetchPerson = async (id: string, options?: { lang: Locales }): Promise<PersonDetails | null> => {
 	const currentLang = options?.lang ?? fallbackLng;
 
 	let person;
@@ -55,7 +55,8 @@ export const fetchPerson = async (id: string, options?: { lang: Locales }): Prom
 		person = await res.json();
 	} catch (error) {
 		if (error instanceof Error) {
-			return error;
+			console.error(error);
+			return null;
 		}
 	}
 
