@@ -49,11 +49,12 @@ export default function PersonCard({
 			title={title}
 			data-testid={testId}
 		>
-			<div className='w-[9.625rem] h-[9.625rem] relative self-center mb-3'>
+			<div className='w-full max-w-[9.625rem] min-w[7.5rem] aspect-square relative self-center mb-3'>
 				<ThemedImage
-					className='rounded-[50%] object-cover w-full h-full bg-neutral-300 dark:bg-dark-neutral-250'
-					width={154}
-					height={154}
+					className='rounded-[50%] object-cover bg-neutral-300 dark:bg-dark-neutral-250'
+					fill
+					quality={85}
+					sizes='154px'
 					alt={alt}
 					src={{
 						light: src,
