@@ -51,7 +51,7 @@ export default function PersonCard({
 		>
 			<div className='w-[9.625rem] h-[9.625rem] relative self-center mb-3'>
 				<ThemedImage
-					className='rounded-[50%] object-cover w-full h-full'
+					className='rounded-[50%] object-cover w-full h-full bg-neutral-300 dark:bg-dark-neutral-250'
 					width={154}
 					height={154}
 					alt={alt}
