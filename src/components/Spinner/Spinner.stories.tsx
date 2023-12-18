@@ -4,30 +4,6 @@ import Spinner, { Props } from './Spinner';
 type Sizes = Exclude<Props['size'], undefined>;
 const sizes: Sizes[] = ['small', 'medium', 'large', 'xlarge'];
 
-type Variant = {
-	size: Sizes,
-	color: Props['color'],
-}
-
-const variants: Variant[] = [
-	{
-		size: 'small',
-		color: 'stroke-lime-800 dark:stroke-lime-300',
-	},
-	{
-		size: 'medium',
-		color: 'stroke-red-800 dark:stroke-red-300',
-	},
-	{
-		size: 'large',
-		color: 'stroke-orange-800 dark:stroke-orange-300',
-	},
-	{
-		size: 'xlarge',
-		color: 'stroke-teal-800 dark:stroke-teal-300',
-	},
-];
-
 const meta: Meta<typeof Spinner> = {
 	title: 'components/Spinner',
 	tags: ['autodocs'],
@@ -37,9 +13,6 @@ const meta: Meta<typeof Spinner> = {
 		},
 		className: {
 			description: 'Additional classes for the Spinner'
-		},
-		color: {
-			description: 'Color for spinner',
 		},
 		testId: {
 			description: 'Id for testing the component',
@@ -68,19 +41,6 @@ export const Default: Story = {
 	},
 };
 
-export const Color: Story = {
-	args: {
-		color: 'stroke-lime-500 dark:stroke-lime-300',
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'The color can be changed if you pass to the prop color class with a new color for svg stroke',
-			},
-		},
-	},
-};
-
 export const Sizes: Story = {
 	parameters: {
 		docs: {
@@ -98,30 +58,6 @@ export const Sizes: Story = {
 					className='mr-4 last:mr-0'
 					key={size}
 					size={size}
-				/>
-			))}
-		</div>
-	)
-};
-
-export const All: Story = {
-	parameters: {
-		docs: {
-			description: {
-				story: 'Here are all kinds of spinners, in size and colors',
-			},
-		},
-	},
-	render: () => (
-		<div
-			className='flex items-start'
-		>
-			{variants.map((variant) => (
-				<Spinner
-					className='mr-4 last:mr-0'
-					key={variant.size}
-					size={variant.size}
-					color={variant.color}
 				/>
 			))}
 		</div>
