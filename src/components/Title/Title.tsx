@@ -35,7 +35,7 @@ export default function Title({
 	as = 'h6',
 }: Props) {
 	const classes = twMerge(
-		'-tracking-[0.01em] leading-[1.25]',
+		'leading-[1.25] -tracking-[0.01em]',
 		levelTypes[level],
 		fontWeights[weight],
 		className,
