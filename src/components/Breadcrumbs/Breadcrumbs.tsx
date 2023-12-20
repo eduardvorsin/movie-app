@@ -1,37 +1,77 @@
 'use client';
-import { ReactNode } from 'react';
+import { useTranslation } from '@/i18n/client';
+import { Locales, fallbackLng, locales } from '@/i18n/settings';
+import { useParams, usePathname } from 'next/navigation';
+import { AnchorHTMLAttributes, MouseEventHandler, useState } from 'react';
+import BreadcrumbsItem from './BreadcrumbsItem/BreadcrumbsItem';
+import { navigationRoutes } from 'src/constants';
+import { toCapitalizeCase } from '@/helpers/toCapitalizeCase/toCapitalizeCase';
 
 type Props = {
 	label: string,
-	children: ReactNode,
 	className?: string,
-	isExpanded?: boolean,
 	isNavigation?: boolean,
 	maxItems?: number,
-	onExpand?: () => void,
 	testId?: string,
-	ellipsisLabel?: string,
 	separator?: string,
+	truncationWidth?: number,
+	target?: AnchorHTMLAttributes<HTMLButtonElement>['target'],
+	lastItemLabel?: string,
 };
 
 export default function Breadcrumbs({
-	label = 'Breadcrumbs',
-	children,
+	label,
 	className,
-	isExpanded,
 	isNavigation = true,
 	maxItems = +Infinity,
-	onExpand,
 	testId,
-	ellipsisLabel = 'expand all links',
 	separator = '/',
+	truncationWidth,
+	target,
+	lastItemLabel,
 }: Props) {
-	const classes = [
-		className,
-	].join(' ');
+	const lang = useParams()?.lang as Locales ?? fallbackLng;
+	const { t } = useTranslation(lang);
+	const [isExpanded, setIsExpanded] = useState<boolean>(false);
+
+	const parts = usePathname().split('/').slice(1);
+	const segments = parts
+		.map((segment, index) => {
+			let localizedSegment = segment;
+			if (locales.includes(segment as Locales)) {
+				localizedSegment = t('breadcrumbs.home');
+			}
+			if ((Object.keys(navigationRoutes)).includes(segment)) {
+				localizedSegment = t(`breadcrumbs.${segment}`);
+			}
+
+			return {
+				label: toCapitalizeCase(localizedSegment),
+				value: `/${parts.slice(0, index + 1).join('/')}`,
+			};
+		});
+
+	if (lastItemLabel) {
+		segments[segments.length - 1].label = lastItemLabel;
+	}
+
+	const clickHandler: MouseEventHandler<HTMLButtonElement> = () => {
+		setIsExpanded(true);
+	}
 
 	const Wrapper = isNavigation ? 'nav' : 'div';
-	const totalItems: ReactNode[] = Array.isArray(children) ? children : [children];
+	const totalItems = segments.map((segment, index) => (
+		<BreadcrumbsItem
+			key={segment.label}
+			className={index === segments.length - 1 ? 'pointer-events-none' : ''}
+			href={index === segments.length - 1 ? '' : segment.value}
+			truncationWidth={truncationWidth}
+			target={target}
+			aria-current={index === segments.length - 1 ? 'page' : undefined}
+		>
+			{segment.label}
+		</BreadcrumbsItem >
+	));
 
 	let visibleItems;
 	if (maxItems >= totalItems.length || totalItems.length < 3 || isExpanded) {
@@ -39,11 +79,11 @@ export default function Breadcrumbs({
 	} else {
 		const elipsisButton: JSX.Element = (
 			<button
-				className='underline text-blue-500 hover:text-blue-600 hover:no-underline active:text-blue-700'
-				onClick={onExpand}
+				className='no-underline text-blue-500 hover:text-blue-600 hover:underline active:text-blue-700 transition-colors duration-150'
+				onClick={clickHandler}
 			>
 				<span>...</span>
-				<span className='sr-only'>{ellipsisLabel}</span>
+				<span className='sr-only'>{t('elipsisLabel')}</span>
 			</button>
 		);
 
@@ -56,15 +96,15 @@ export default function Breadcrumbs({
 
 	return (
 		<Wrapper
-			className={classes}
+			className={className}
 			data-testid={testId}
 			aria-label={label}
 		>
-			<ol className='flex items-center flex-wrap'>
+			<ol className='flex items-center flex-wrap gap-y-1'>
 				{visibleItems.map((child, index) => (
 					<li
 						key={index}
-						className='text-100 after:content-[attr(data-separator)] last:after:content-none after:w-2 after:px-2 after:text-center after:text-100'
+						className='text-100 after:content-[attr(data-separator)] last:after:content-none after:w-2 after:mx-2 after:text-center after:text-100 dark:after:text-dark-neutral-1000 after:text-neutral-1000'
 						data-separator={separator}
 					>
 						{child}

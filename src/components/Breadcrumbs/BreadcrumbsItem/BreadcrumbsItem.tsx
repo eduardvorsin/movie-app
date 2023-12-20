@@ -1,67 +1,39 @@
 'use client';
-import { AnchorHTMLAttributes, MouseEventHandler, ReactNode } from 'react';
+import { AnchorHTMLAttributes, AriaAttributes, MouseEventHandler, ReactNode } from 'react';
 import Link from '@/components/Link/Link';
 
 type Props = {
-	text: string,
+	children: ReactNode,
 	className?: string,
 	href?: string,
-	iconBefore?: ReactNode,
-	iconAfter?: ReactNode,
 	onClick?: MouseEventHandler<HTMLAnchorElement>,
 	truncationWidth?: number,
 	target?: AnchorHTMLAttributes<HTMLButtonElement>['target'],
 	testId?: string,
-};
+} & AriaAttributes;
 
 export default function BreadcrumbsItem({
-	text,
+	children,
 	className,
 	href = '',
-	iconBefore,
-	iconAfter,
 	onClick,
 	truncationWidth,
 	target,
 	testId,
 }: Props) {
 
-	const classes = [
-		truncationWidth ? 'truncate' : '',
-		className,
-	].join(' ');
-
-	const Children: JSX.Element =
-		(
-			<>
-				{iconBefore && (
-					<span className='w-6 h-6 mr-1'>
-						{iconBefore}
-					</span>
-				)}
-
-				<span>
-					{text}
-				</span>
-
-				{iconAfter && (
-					<span className='w-6 h-6 ml-1'>
-						{iconAfter}
-					</span>
-				)}
-			</>
-		);
-
 	return (
 		<Link
 			style={truncationWidth ? { 'maxWidth': `${truncationWidth}px` } : undefined}
-			className={classes}
+			className={`inline-flex ${className}`}
 			href={href}
 			onClick={onClick}
 			target={target}
-			data-testid={testId}
+			testId={testId}
 		>
-			{Children}
+			<span className={truncationWidth ? 'truncate' : ''}>
+				{children}
+			</span>
 		</Link>
 	);
 };
