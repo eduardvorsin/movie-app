@@ -384,7 +384,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							}
 						}}
 					>
-						{credits.cast.map(({
+						{credits.cast.slice(0, 40).map(({
 							id,
 							profile_path,
 							name,
