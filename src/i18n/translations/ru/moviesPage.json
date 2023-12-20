@@ -5,7 +5,7 @@
 		"genres": "Жанры",
 		"original_title": "Оригинальное название",
 		"release_date": "Дата выхода",
-		"runtime": "Продолжительность",
+		"runtime": "Длительность",
 		"vote_average": "$t(common:ratingLabel)",
 		"original_language": "Язык оригинала",
 		"budget": "Бюджет",
