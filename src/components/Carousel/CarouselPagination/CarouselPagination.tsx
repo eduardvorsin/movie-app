@@ -1,14 +1,13 @@
 'use client';
+import { GeneralProps } from '@/types/shared';
 import { MouseEventHandler, useRef } from 'react';
 
 type Props = {
-	className?: string,
-	testId?: string,
 	activeIndex: number,
 	totalCount: number,
 	onDotClick: (index: number) => void,
 	paginationType: 'dots' | 'progress' | 'fraction',
-};
+} & GeneralProps;
 
 export default function CarouselPagination({
 	className,
@@ -17,6 +16,7 @@ export default function CarouselPagination({
 	paginationType,
 	activeIndex,
 	totalCount,
+	...props
 }: Props) {
 
 	const dotsContainerRef = useRef<HTMLDivElement>(null);
@@ -87,6 +87,7 @@ export default function CarouselPagination({
 		<div
 			className={classes}
 			data-testid={testId}
+			{...props}
 		>
 			{Pagination}
 		</div>

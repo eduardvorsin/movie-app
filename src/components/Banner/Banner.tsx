@@ -8,10 +8,9 @@ import Question from '../../assets/icons/question.svg?url';
 import Cancel from '../../assets/icons/cancel.svg?url';
 import Button from '../Button/Button';
 import Title from '../Title/Title';
-import { HeadingElement } from '@/types/shared';
+import { GeneralProps, HeadingElement } from '@/types/shared';
 
 type Props = {
-	className?: string,
 	title?: string,
 	hideIcon?: boolean,
 	children: ReactNode,
@@ -20,8 +19,7 @@ type Props = {
 	closeButton?: boolean,
 	titleElement?: HeadingElement,
 	actions?: ReactNode[],
-	testId?: string,
-};
+} & GeneralProps;
 
 const appearances = {
 	success: 'bg-green-100 dark:bg-green-1000',
@@ -70,6 +68,7 @@ export default function Banner({
 	closeButton,
 	titleElement,
 	testId,
+	...props
 }: Props) {
 	const classes = [
 		'py-4 pl-4 rounded-[0.1875rem] flex relative',
@@ -82,6 +81,7 @@ export default function Banner({
 		<div
 			className={`${classes}`}
 			data-testid={testId}
+			{...props}
 		>
 			{!hideIcon && (
 				<span

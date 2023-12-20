@@ -3,6 +3,7 @@ import { ChangeEventHandler, FocusEventHandler, FormEventHandler } from 'react';
 import Button from '@/components/Button/Button';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import Loupe from '../../assets/icons/loupe.svg?url';
+import { GeneralProps } from '@/types/shared';
 
 export type Props = {
 	value: string,
@@ -14,14 +15,12 @@ export type Props = {
 	onFocus?: FocusEventHandler<HTMLInputElement>,
 	onBlur?: FocusEventHandler<HTMLInputElement>,
 	labelHidden?: boolean,
-	className?: string,
-	testId?: string,
 	isDisabled?: boolean,
 	isReadOnly?: boolean,
 	isInvalid?: boolean,
 	placeholder?: string,
 	error?: string,
-};
+} & GeneralProps;
 
 export default function Search({
 	id,
@@ -40,6 +39,7 @@ export default function Search({
 	onFocus,
 	onBlur,
 	onSubmit,
+	...props
 }: Props) {
 	const labelClasses = [
 		'block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000',
@@ -56,6 +56,7 @@ export default function Search({
 		<div
 			className={className}
 			data-testid={testId}
+			{...props}
 		>
 			<form
 				onSubmit={onSubmit}

@@ -3,7 +3,7 @@ import CommentInfoItem from './CommentInfoItem/CommentInfoItem';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import Locked from '../../assets/icons/locked.svg?url';
 import Title from '@/components/Title/Title';
-import { HeadingElement } from '@/types/shared';
+import { GeneralProps, HeadingElement } from '@/types/shared';
 import ExpandableText from '../ExpandableText/ExpandableText';
 
 type Props = {
@@ -13,7 +13,6 @@ type Props = {
 	content: string,
 	type: string,
 	titleElement: HeadingElement,
-	className?: string,
 	actions?: ReactNode[],
 	errorActions?: ReactNode[],
 	error?: string,
@@ -27,9 +26,8 @@ type Props = {
 	isSaving?: boolean,
 	highlighted?: boolean,
 	shouldRenderNestedCommentsInline?: boolean,
-	testId?: string,
 	rating?: number,
-};
+} & GeneralProps;
 
 export default function Comment({
 	className,
@@ -54,6 +52,7 @@ export default function Comment({
 	shouldRenderNestedCommentsInline,
 	titleElement,
 	rating,
+	...props
 }: Props) {
 	const classes = [
 		'grid grid-cols-[auto_1fr] gap-x-2 gap-y-4 p-2 relative',
@@ -67,8 +66,13 @@ export default function Comment({
 			id={id}
 			data-testid={testId}
 			aria-describedby={`${id}-error-message`}
+			{...props}
 		>
-			{avatar}
+			<div
+				className='mx-auto xs:mx-0'
+			>
+				{avatar}
+			</div>
 			<div className='text-100'>
 				<Title
 					level={6}

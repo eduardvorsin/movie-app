@@ -9,15 +9,14 @@ import Navigation from '../Navigation/Navigation';
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
 import { useParams } from 'next/navigation';
+import { GeneralProps } from '@/types/shared';
 
-type Props = {
-	className?: string,
-	testId?: string,
-}
+type Props = GeneralProps;
 
 export default function Header({
 	className,
 	testId,
+	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
 	const { t } = useTranslation(lang);
@@ -45,6 +44,7 @@ export default function Header({
 		<header
 			className={`fixed z-500 top-0 left-0 w-full h-[60px] bg-neutral-300 dark:bg-dark-neutral-300 ${className}`}
 			data-testid={testId}
+			{...props}
 		>
 			<Container
 				className='flex items-center h-full'

@@ -1,13 +1,12 @@
-import { AriaAttributes, MouseEventHandler } from 'react';
+import { MouseEventHandler } from 'react';
 import { twMerge } from '../../../../tailwind.config';
+import { GeneralProps } from '@/types/shared';
 
 type Props = {
-	className?: string,
-	testId?: string,
 	direction: 'left' | 'right',
 	isDisabled?: boolean,
 	onClick: MouseEventHandler<HTMLButtonElement>,
-} & AriaAttributes;
+} & GeneralProps;
 
 export default function CarouselArrow({
 	className,

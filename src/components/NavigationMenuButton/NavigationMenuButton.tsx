@@ -3,19 +3,19 @@ import Button from '@/components/Button/Button';
 import { useParams } from 'next/navigation';
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
+import { GeneralProps } from '@/types/shared';
 
 type Props = {
 	isActive: boolean,
-	className?: string,
-	testId?: string,
 	onClick: MouseEventHandler<HTMLButtonElement>,
-}
+} & GeneralProps;
 
 export default function NavigationMenuButton({
 	isActive,
 	onClick,
 	className,
 	testId,
+	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
 	const { t } = useTranslation(lang);
@@ -33,6 +33,7 @@ export default function NavigationMenuButton({
 			iconButton
 			onClick={onClick}
 			testId={testId}
+			{...props}
 		>
 			<svg
 				className='p-2 w-[2.25rem] h-[2.25rem]'

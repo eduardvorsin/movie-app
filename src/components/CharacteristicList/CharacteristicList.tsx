@@ -1,13 +1,14 @@
+import { GeneralProps } from "@/types/shared";
+
 type Props = {
-	className?: string,
 	data: Record<'name' | 'value', string>[],
-	testId?: string,
-};
+} & GeneralProps;
 
 export default function CharacteristicList({
 	className,
 	data,
 	testId,
+	...props
 }: Props) {
 	const characteristicListClasses = [
 		className,
@@ -17,6 +18,7 @@ export default function CharacteristicList({
 		<ul
 			className={characteristicListClasses}
 			data-testid={testId}
+			{...props}
 		>
 			{data.map((characteristic) => (
 				<li

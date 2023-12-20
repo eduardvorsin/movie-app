@@ -3,18 +3,7 @@ import Link from 'next/link';
 import { Adventure, Romance, Fantastic, History, Music, War, Thriller, Animation, Crime, Documentary, Drama, Family, Fantasy, Horror, Mystery, TVMovie, Western, Action, Comedy, ActionAndAdventure, Politics, Talk, Series, News, Reality, Kids, SciFi, Science } from './GenreIcons';
 import { MouseEventHandler } from 'react';
 import Title from '@/components/Title/Title';
-import { Genres, HeadingElement } from '@/types/shared';
-
-
-export type Props = {
-	href: string,
-	genre: Genres,
-	title: string,
-	titleElement: HeadingElement,
-	onClick?: MouseEventHandler<HTMLAnchorElement>,
-	className?: string,
-	testId?: string,
-};
+import { GeneralProps, Genres, HeadingElement } from '@/types/shared';
 
 const iconsByGenre = {
 	adventure: {
@@ -131,6 +120,14 @@ const iconsByGenre = {
 	},
 } as const;
 
+export type Props = {
+	href: string,
+	genre: Genres,
+	title: string,
+	titleElement: HeadingElement,
+	onClick?: MouseEventHandler<HTMLAnchorElement>,
+} & GeneralProps;
+
 export default function GenreCard({
 	href,
 	className,
@@ -139,6 +136,7 @@ export default function GenreCard({
 	titleElement,
 	onClick,
 	testId,
+	...props
 }: Props) {
 	const classes = [
 		'px-2 py-6 rounded-2 h-[6.75rem] w-[9.75rem] bg-neutral-200 dark:bg-dark-neutral-300 text-neutral-1000 dark:text-dark-neutral-900 flex flex-col items-center relative after:absolute after:top-0 after:left-0 after:z-100 after:w-full after:h-full transition-colors duration-150 hover:bg-neutral-300 active:bg-neutral-400 dark:hover:bg-dark-neutral-400 dark:active:bg-dark-neutral-500 ',
@@ -151,6 +149,7 @@ export default function GenreCard({
 			href={href}
 			onClick={onClick}
 			data-testid={testId}
+			{...props}
 		>
 			<svg className='w-8 h-8 mb-2 fill-current' viewBox='0 0 32 32'>
 				<use href={`${iconsByGenre[genre].src}#${iconsByGenre[genre].name}`}></use>

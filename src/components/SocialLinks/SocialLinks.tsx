@@ -1,4 +1,4 @@
-import { SocialNetworksItem } from '@/types/shared';
+import { GeneralProps, SocialNetworksItem } from '@/types/shared';
 import Link from '@/components/Link/Link';
 
 const socialNetworkIcons = {
@@ -11,18 +11,20 @@ const socialNetworkIcons = {
 } as const;
 
 type Props = {
-	className?: string,
-	testId?: string,
 	data: SocialNetworksItem[],
-};
+} & GeneralProps;
 
 export default function SocialLinks({
 	className,
 	testId,
 	data,
+	...props
 }: Props) {
 	return (
-		<div className={`flex items-center flex-wrap -ml-[0.375rem] ${className}`}>
+		<div
+			className={`flex items-center flex-wrap -ml-[0.375rem] ${className}`}
+			{...props}
+		>
 			{data.map((item) => (
 				<div
 					className='px-[0.375rem] py-[0.375rem] mb-2'

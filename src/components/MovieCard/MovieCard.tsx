@@ -2,7 +2,7 @@
 
 import Title from '../Title/Title';
 import Link from 'next/link';
-import { HeadingElement, HeadingLevel } from '@/types/shared';
+import { GeneralProps, HeadingElement, HeadingLevel } from '@/types/shared';
 import ThemedImage from '../ThemedImage/ThemedImage';
 import { getGenreById } from '@/helpers/getGenreById/getGenreById';
 import { isArrayOfNumbers } from '@/helpers/isArrayOfNumbers/isArrayOfNumbers';
@@ -13,7 +13,6 @@ import { routes } from 'src/constants';
 
 type Props = {
 	movieId: number,
-	className?: string,
 	src: string,
 	alt: string,
 	releaseDate?: string,
@@ -26,8 +25,7 @@ type Props = {
 	titleElement?: HeadingElement,
 	titleLevel?: HeadingLevel,
 	variant?: 'vertical' | 'horizontal',
-	testId?: string,
-};
+} & GeneralProps;
 
 export default function MovieCard({
 	movieId,
@@ -45,6 +43,7 @@ export default function MovieCard({
 	titleLevel = 6,
 	variant = 'horizontal',
 	testId,
+	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
 	const { t } = useTranslation(lang);
@@ -116,6 +115,7 @@ export default function MovieCard({
 		<div
 			className={`flex flex-col relative overflow-hidden ${variant === 'horizontal' ? 'max-w-[300px]' : 'max-w-[185px]'} ${className} `}
 			data-testid={testId}
+			{...props}
 		>
 			<Link
 				href={`${routes.movies}${movieId}`}

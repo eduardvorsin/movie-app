@@ -1,18 +1,18 @@
+import { GeneralProps } from '@/types/shared';
 import { ElementType, ReactNode } from 'react';
 import { twMerge } from 'tailwind.config';
 
 type Props = {
-	className?: string,
-	testId?: string,
 	children: ReactNode,
 	component?: ElementType,
-};
+} & GeneralProps;
 
 export default function Container({
 	className,
 	testId,
 	component,
 	children,
+	...props
 }: Props) {
 	const Container = component ?? 'div';
 	const classes = twMerge(
@@ -24,6 +24,7 @@ export default function Container({
 		<Container
 			className={classes}
 			data-testid={testId}
+			{...props}
 		>
 			{children}
 		</Container>

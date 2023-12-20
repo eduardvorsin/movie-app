@@ -1,4 +1,5 @@
 'use client';
+import { GeneralProps } from '@/types/shared';
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 
 export type Props = {
@@ -8,14 +9,12 @@ export type Props = {
 	label: string,
 	isChecked: boolean,
 	onChange: ChangeEventHandler<HTMLInputElement>,
-	className?: string,
-	testId?: string,
 	isDisabled?: boolean,
 	isRequired?: boolean,
 	isInvalid?: boolean,
 	onFocus?: FocusEventHandler<HTMLInputElement>,
 	onBlur?: FocusEventHandler<HTMLInputElement>,
-};
+} & GeneralProps;
 
 export default function Radio({
 	className,
@@ -31,6 +30,7 @@ export default function Radio({
 	onChange,
 	onFocus,
 	onBlur,
+	...props
 }: Props) {
 	const labelClasses = [
 		'inline-flex py-1 pl-5 items-center',
@@ -42,6 +42,7 @@ export default function Radio({
 		<label
 			className={labelClasses}
 			data-testid={testId}
+			{...props}
 		>
 			<input
 				className='appearance-none absolute peer'

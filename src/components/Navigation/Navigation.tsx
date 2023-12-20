@@ -6,17 +6,17 @@ import { Locales, fallbackLng } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
 import { useParams, useSelectedLayoutSegments } from 'next/navigation';
 import { MouseEventHandler } from 'react';
+import { GeneralProps } from '@/types/shared';
 
 type Props = {
-	className?: string,
-	testId?: string,
 	onClick: MouseEventHandler<HTMLAnchorElement>,
-};
+} & GeneralProps;
 
 export default function Navigation({
 	className,
 	testId,
 	onClick,
+	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
 	const { t } = useTranslation(lang);
@@ -27,6 +27,7 @@ export default function Navigation({
 	return (
 		<div
 			className={`fixed inset-0 bg-neutral-100/90 dark:bg-dark-neutral-100/90 z-0 md:static md:bg-transparent dark:md:bg-transparent mt-[3.75rem] md:mt-0 ${className}`}
+			{...props}
 		>
 			<nav
 				className='z-100 w-full p-6 pt-3 md:p-0 bg-neutral-200 dark:bg-dark-neutral-250 md:bg-transparent dark:md:bg-transparent flex flex-col md:flex-row'

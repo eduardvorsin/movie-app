@@ -2,6 +2,7 @@
 import { ChangeEventHandler, useId } from 'react';
 import Radio from '@/components/Radio/Radio';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
+import { GeneralProps } from '@/types/shared';
 
 export type Choice = {
 	value: string,
@@ -12,19 +13,17 @@ export type Choice = {
 
 export type Props = {
 	id: string,
-	className?: string,
 	titleHidden?: boolean,
 	isDisabled?: boolean,
 	error?: string,
 	choices: Choice[],
 	onChange: ChangeEventHandler<HTMLInputElement>,
-	testId?: string,
 	name: string,
 	value: string,
 	title?: string,
 	isRequired?: boolean,
 	isInvalid?: boolean,
-};
+} & GeneralProps;
 
 export default function RadioGroup({
 	id,
@@ -40,6 +39,7 @@ export default function RadioGroup({
 	title,
 	isRequired,
 	isInvalid,
+	...props
 }: Props) {
 	const groupClasses = [
 		'',
@@ -57,6 +57,7 @@ export default function RadioGroup({
 		<fieldset
 			className={groupClasses}
 			data-testid={testId}
+			{...props}
 		>
 			<legend
 				className={titleClasses}

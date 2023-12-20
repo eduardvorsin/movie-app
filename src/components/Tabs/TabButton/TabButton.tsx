@@ -1,3 +1,4 @@
+import { GeneralProps } from '@/types/shared';
 import { KeyboardEventHandler, MouseEventHandler } from 'react';
 
 type Props = {
@@ -9,9 +10,7 @@ type Props = {
 	onKeyDown: KeyboardEventHandler<HTMLButtonElement>,
 	index: number,
 	isDisabled?: boolean,
-	className?: string,
-	testId?: string,
-};
+} & GeneralProps;
 
 export default function TabButton({
 	className,
@@ -23,7 +22,8 @@ export default function TabButton({
 	isDisabled,
 	ariaControls,
 	onClick,
-	onKeyDown
+	onKeyDown,
+	...props
 }: Props) {
 	const classes = [
 		'text-100 font-medium p-1 rounded-[0.1875rem] text-center text-neutral-100 dark:text-dark-neutral-100 transition-colors duration-150',
@@ -45,6 +45,7 @@ export default function TabButton({
 			data-testid={testId}
 			data-index={index}
 			disabled={isDisabled}
+			{...props}
 		>
 			{label}
 		</button>

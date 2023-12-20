@@ -7,15 +7,14 @@ import { ChangeEventHandler, useContext, useState } from 'react';
 import Toggle from '@/components/Toggle/Toggle';
 import MoonIcon from '../../assets/icons/moon.svg';
 import SunIcon from '../../assets/icons/sun.svg';
+import { GeneralProps } from '@/types/shared';
 
-type Props = {
-	className?: string,
-	testId?: string,
-}
+type Props = GeneralProps;
 
 export default function ThemeToggle({
 	className,
 	testId,
+	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
 	const theme = useContext(ThemeContext);
@@ -41,6 +40,7 @@ export default function ThemeToggle({
 			checkedIcon={<MoonIcon />}
 			uncheckedIcon={<SunIcon />}
 			testId={testId}
+			{...props}
 		/>
 	);
 };

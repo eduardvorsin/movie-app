@@ -4,14 +4,13 @@ import Button from '@/components/Button/Button';
 import { useTranslation } from '@/i18n/client';
 import { useParams } from 'next/navigation';
 import { Locales, fallbackLng } from '@/i18n/settings';
+import { GeneralProps } from '@/types/shared';
 
 type Props = {
-	className?: string,
-	testId?: string,
 	defaultExpanded?: boolean,
 	children: string | string[],
-	visibleRowsCount?: 1 | 2 | 3 | 4 | 5 | 6;
-};
+	visibleRowsCount?: 1 | 2 | 3 | 4 | 5 | 6,
+} & GeneralProps;
 
 const lineClamps = {
 	1: 'line-clamp-1',
@@ -28,6 +27,7 @@ export default function ExpandableText({
 	testId,
 	defaultExpanded,
 	visibleRowsCount = 2,
+	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
 	const { t } = useTranslation(lang);
@@ -59,6 +59,7 @@ export default function ExpandableText({
 		<div
 			className={className}
 			data-testid={testId}
+			{...props}
 		>
 			{typeof children === 'string' ?
 				(

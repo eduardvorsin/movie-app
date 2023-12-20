@@ -2,7 +2,7 @@
 import { MouseEventHandler, ReactNode } from 'react';
 import Title from '@/components/Title/Title';
 import Link from 'next/link';
-import { HeadingElement, HeadingLevel } from '@/types/shared';
+import { GeneralProps, HeadingElement, HeadingLevel } from '@/types/shared';
 import { useParams } from 'next/navigation';
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
@@ -11,8 +11,6 @@ import { routes } from 'src/constants';
 
 type Props = {
 	personId: number,
-	className?: string,
-	testId?: string,
 	title?: string,
 	titleElement?: HeadingElement,
 	titleLevel?: HeadingLevel,
@@ -22,7 +20,7 @@ type Props = {
 	rating?: number,
 	children?: ReactNode,
 	onClick?: MouseEventHandler<HTMLAnchorElement>,
-};
+} & GeneralProps;
 
 export default function PersonCard({
 	personId,
@@ -37,6 +35,7 @@ export default function PersonCard({
 	rating,
 	children,
 	onClick,
+	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
 	const { t } = useTranslation(lang);
@@ -48,6 +47,7 @@ export default function PersonCard({
 			onClick={onClick}
 			title={title}
 			data-testid={testId}
+			{...props}
 		>
 			<div className='w-full max-w-[9.625rem] min-w[7.5rem] aspect-square relative self-center mb-3'>
 				<ThemedImage

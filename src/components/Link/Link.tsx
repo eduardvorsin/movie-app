@@ -1,21 +1,19 @@
-import { AnchorHTMLAttributes, CSSProperties, FocusEventHandler, MouseEventHandler, ReactNode } from 'react';
+import { AnchorHTMLAttributes, FocusEventHandler, MouseEventHandler, ReactNode } from 'react';
 import NextLink from 'next/link';
 import { twMerge } from 'tailwind.config';
+import { GeneralProps } from '@/types/shared';
 
 type Props = {
 	children: ReactNode,
 	href: string,
 	id?: string,
-	className?: string,
 	onClick?: MouseEventHandler<HTMLAnchorElement>,
 	onFocus?: FocusEventHandler<HTMLAnchorElement>,
 	onBlur?: FocusEventHandler<HTMLAnchorElement>,
 	isDisabled?: boolean,
 	target?: AnchorHTMLAttributes<HTMLButtonElement>['target'],
 	isExternal?: boolean,
-	testId?: string,
-	style?: CSSProperties,
-};
+} & GeneralProps;
 
 export default function Link({
 	id,
@@ -30,6 +28,7 @@ export default function Link({
 	isDisabled = false,
 	style,
 	target,
+	...props
 }: Props) {
 	const linkClasses = twMerge(
 		'no-underline text-blue-700 hover:text-blue-800 active:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline transition-colors duration-150',
@@ -50,6 +49,7 @@ export default function Link({
 				aria-disabled={!href}
 				data-testid={testId}
 				style={style}
+				{...props}
 			>
 				{children}
 			</NextLink>
@@ -68,6 +68,7 @@ export default function Link({
 			role={!href ? 'link' : undefined}
 			data-testid={testId}
 			style={style}
+			{...props}
 		>
 			{children}
 		</a>

@@ -1,16 +1,15 @@
 'use client';
+import { GeneralProps } from '@/types/shared';
 import Link from 'next/link';
 import { FocusEventHandler, MouseEventHandler, ReactNode } from 'react';
 
 type Props = {
 	children: ReactNode,
 	type: 'author' | 'time',
-	className?: string,
 	href?: string,
 	onClick?: MouseEventHandler<HTMLSpanElement>,
 	onFocus?: FocusEventHandler<HTMLSpanElement>,
-	testId?: string,
-}
+} & GeneralProps;
 
 export default function CommentInfoItem({
 	type,
@@ -20,6 +19,7 @@ export default function CommentInfoItem({
 	onFocus,
 	href,
 	testId,
+	...props
 }: Props) {
 	const classes = [
 		'text-neutral-800 dark:text-dark-neutral-800 enabled:hover:text-neutral-700 dark:enabled:hover:text-dark-neutral-900 enabled:active:text-neutral-600 dark:enabled:active:text-dark-neutral-1000',
@@ -36,6 +36,7 @@ export default function CommentInfoItem({
 				href={href}
 				data-testid={testId}
 				prefetch
+				{...props}
 			>
 				{children}
 			</Link>
@@ -48,6 +49,7 @@ export default function CommentInfoItem({
 			onClick={onClick}
 			onFocus={onFocus}
 			data-testid={testId}
+			{...props}
 		>
 			{children}
 		</button>

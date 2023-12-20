@@ -4,9 +4,9 @@ import { MouseEventHandler } from 'react';
 import Approved from '../../assets/icons/approved.svg?url';
 import Declined from '../../assets/icons/declined.svg?url';
 import Locked from '../../assets/icons/locked.svg?url';
+import { GeneralProps } from '@/types/shared';
 
 export type Props = {
-	className?: string,
 	appearance?: 'circle' | 'square',
 	isDisabled?: boolean,
 	label: string,
@@ -14,11 +14,10 @@ export type Props = {
 	size?: 'small' | 'xsmall' | 'medium' | 'large' | 'xlarge' | 'xxlarge',
 	initials?: string,
 	src?: string,
-	testId?: string,
 	presence?: 'offline' | 'online',
 	status?: 'approved' | 'declined' | 'locked',
 	imgProps?: Omit<ImageProps, 'src' | 'alt'>,
-};
+} & GeneralProps;
 
 const statusIcons = {
 	approved: (
@@ -116,6 +115,7 @@ export default function Avatar({
 	status,
 	testId,
 	imgProps,
+	...props
 }: Props) {
 	const classes = [
 		'flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250',
@@ -155,12 +155,14 @@ export default function Avatar({
 	const labelText = `${label} ${status ?? ''} ${presence ?? ''}`;
 
 	return (
+		// eslint-disable-next-line jsx-a11y/click-events-have-key-events
 		<span
 			className={classes}
 			role={!src ? 'img' : undefined}
 			aria-label={!src ? labelText : undefined}
 			onClick={onClick}
 			data-testid={testId}
+			{...props}
 		>
 			{(size !== 'xsmall' && size !== 'small' && status) && (
 				<span

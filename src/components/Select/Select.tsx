@@ -2,6 +2,7 @@
 import { FocusEventHandler, KeyboardEventHandler, MouseEventHandler, useCallback, useEffect, useId, useRef, useState } from 'react';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import SelectOption from '@/components/SelectOption/SelectOption';
+import { GeneralProps } from '@/types/shared';
 
 export type SelectOption = {
 	label: string,
@@ -18,8 +19,6 @@ type Props = {
 	onChange: (optionValue: string) => void,
 	onFocus?: FocusEventHandler<HTMLButtonElement>,
 	onBlur?: FocusEventHandler<HTMLButtonElement>,
-	className?: string,
-	testId?: string,
 	labelHidden?: boolean,
 	isRequired?: boolean,
 	isDisabled?: boolean,
@@ -33,7 +32,7 @@ type Props = {
 	onMenuClose?: () => void,
 	maxMenuHeight?: number,
 	minMenuHeight?: number,
-};
+} & GeneralProps;
 
 export default function Select({
 	id,
@@ -59,6 +58,7 @@ export default function Select({
 	maxMenuHeight = 300,
 	minMenuHeight = 130,
 	testId,
+	...props
 }: Props) {
 	const uniqueId = useId();
 	const listRef = useRef<HTMLUListElement>(null);
@@ -230,6 +230,7 @@ export default function Select({
 			id={id}
 			className={selectWrapperClasses}
 			data-testid={testId}
+			{...props}
 		>
 			<label
 				id={`${uniqueId}label`}

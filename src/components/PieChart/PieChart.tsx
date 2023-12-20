@@ -2,16 +2,15 @@
 import { CSSProperties } from 'react';
 import classes from './PieChart.module.css';
 import { useTheme } from '@/context/ThemeProvider/ThemeProvider';
+import { GeneralProps } from '@/types/shared';
 
 type Props = {
 	size: number,
 	value: number,
-	className?: string,
 	barColor?: Record<'light' | 'dark', string>,
 	trackColor?: Record<'light' | 'dark', string>,
 	thickness?: number,
-	testId?: string,
-};
+} & GeneralProps;
 
 export default function PieChart({
 	size,
@@ -21,6 +20,7 @@ export default function PieChart({
 	trackColor,
 	thickness = 5,
 	testId,
+	...props
 }: Props) {
 	const theme = useTheme();
 	const themeBarColor = theme === 'dark' ? '#85B8FF' : '#0055CC';
@@ -44,6 +44,7 @@ export default function PieChart({
 			style={styles}
 			className={chartClasses}
 			data-testid={testId}
+			{...props}
 		>
 			<div
 				className={`${classes.mask}`}

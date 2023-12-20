@@ -1,4 +1,5 @@
 'use client';
+import { GeneralProps } from '@/types/shared';
 import { ChangeEventHandler, FocusEventHandler, ReactNode } from 'react';
 
 export type Props = {
@@ -17,9 +18,7 @@ export type Props = {
 	labelHidden?: boolean,
 	isDisabled?: boolean,
 	defaultChecked?: boolean,
-	className?: string,
-	testId?: string,
-};
+} & GeneralProps;
 
 const appearances = {
 	primary: 'bg-blue-700 dark:bg-blue-300',
@@ -47,6 +46,7 @@ export default function Toggle({
 	defaultChecked,
 	className,
 	testId,
+	...props
 }: Props) {
 	const inputWrapperClasses = [
 		'text-neutral-100 dark:text-dark-neutral-100  relative',
@@ -75,6 +75,7 @@ export default function Toggle({
 		<div
 			className={`flex items-center ${className}`}
 			data-testid={testId}
+			{...props}
 		>
 			<label
 				className={labelClasses}

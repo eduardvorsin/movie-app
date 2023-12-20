@@ -1,10 +1,9 @@
+import { GeneralProps } from "@/types/shared";
 import { twMerge } from "tailwind.config";
 
 export type Props = {
-	className?: string,
 	size?: 'small' | 'medium' | 'large' | 'xlarge' | 'custom',
-	testId?: string,
-};
+} & GeneralProps;
 
 const sizesTypes = {
 	small: 'w-4, h-4',
@@ -18,6 +17,7 @@ export default function Spinner({
 	className,
 	size = 'medium',
 	testId,
+	...props
 }: Props) {
 	const classes = twMerge(
 		'inline-flex align-middle dark:text-blue-300 text-blue-800',
@@ -29,6 +29,7 @@ export default function Spinner({
 		<span
 			className={classes}
 			data-testid={testId}
+			{...props}
 		>
 			<svg
 				className='animate-spin stroke-[0.75] fill-none stroke-current'

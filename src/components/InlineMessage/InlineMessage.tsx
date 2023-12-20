@@ -3,15 +3,14 @@ import Error from '../../assets/icons/error.svg?url';
 import Confirmation from '../../assets/icons/confirmation.svg?url';
 import Info from '../../assets/icons/info.svg?url';
 import Connectivity from '../../assets/icons/connectivity.svg?url';
+import { GeneralProps } from '@/types/shared';
 
 export type Props = {
-	className?: string,
 	appearance?: 'connectivity' | 'confirmation' | 'info' | 'warning' | 'error',
 	iconPosition?: 'left' | 'right',
 	message: string,
 	fieldId: string,
-	testId?: string,
-};
+} & GeneralProps;
 
 const appearanceTypes = {
 	connectivity: 'text-blue-700 dark:text-blue-400',
@@ -56,6 +55,7 @@ export default function InlineMessage({
 	iconPosition = 'left',
 	fieldId,
 	testId,
+	...props
 }: Props) {
 	const classes = [
 		'flex items-center text-75',
@@ -81,6 +81,7 @@ export default function InlineMessage({
 			id={fieldId}
 			className={classes}
 			data-testid={testId}
+			{...props}
 		>
 			{children}
 		</p>

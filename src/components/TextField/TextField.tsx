@@ -2,9 +2,9 @@
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import Cancel from '../../assets/icons/cancel.svg?url';
+import { GeneralProps } from '@/types/shared';
 
 export type Props = {
-	className?: string,
 	isDisabled?: boolean,
 	isInvalid?: boolean,
 	isReadOnly?: boolean,
@@ -12,7 +12,6 @@ export type Props = {
 	name: string,
 	placeholder?: string,
 	onChange: ChangeEventHandler<HTMLInputElement>,
-	testId?: string,
 	value: string,
 	label: string,
 	labelHidden?: boolean,
@@ -28,7 +27,7 @@ export type Props = {
 	onBlur?: FocusEventHandler<HTMLInputElement>,
 	inputMode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'
 	type?: 'text' | 'email' | 'password' | 'search' | 'tel' | 'url'
-};
+} & GeneralProps;
 
 export default function TextField({
 	className,
@@ -55,6 +54,7 @@ export default function TextField({
 	onBlur,
 	inputMode,
 	type,
+	...props
 }: Props) {
 
 	const labelClasses = [
@@ -72,6 +72,7 @@ export default function TextField({
 		<div
 			className={isDisabled ? 'opacity-disabled cursor-not-allowed' : ''}
 			data-testid={testId}
+			{...props}
 		>
 			<label
 				className={labelClasses}

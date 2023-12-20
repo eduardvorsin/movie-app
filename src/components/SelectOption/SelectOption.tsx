@@ -1,4 +1,5 @@
 'use client';
+import { GeneralProps } from '@/types/shared';
 import { KeyboardEventHandler, MouseEventHandler } from 'react';
 
 type Props = {
@@ -9,9 +10,7 @@ type Props = {
 	isSelected: boolean,
 	onKeyDown: KeyboardEventHandler<HTMLLIElement>,
 	onClick: MouseEventHandler<HTMLLIElement>,
-	className?: string,
-	testId?: string,
-};
+} & GeneralProps;
 
 export default function SelectOption({
 	id,
@@ -22,6 +21,7 @@ export default function SelectOption({
 	onKeyDown,
 	onClick,
 	className,
+	...props
 }: Props) {
 	const classes = [
 		'outline-none break-words px-[0.625rem] py-[0.375rem] text-100 leading-2 transition-colors duration-150 select-none relative before:w-[0.125rem] before:h-full before:absolute before:left-0 before:top-0 before:bg-transparent before:transition-colors before:duration-150',
@@ -42,6 +42,7 @@ export default function SelectOption({
 			aria-selected={isSelected}
 			data-value={value}
 			data-label={label}
+			{...props}
 		>
 			{label}
 		</li>

@@ -5,6 +5,7 @@ import { MouseEventHandler, ReactNode, forwardRef, useCallback, useEffect, useId
 import CarouselPagination from './CarouselPagination/CarouselPagination';
 import CarouselArrow from './CarouselArrow/CarouselArrow';
 import { useScreenWidth } from '@/hooks/useScreenWidth/useScreenWidth';
+import { GeneralProps } from '@/types/shared';
 
 const arrowVerticalPostion = {
 	dots: 'top-[calc(50%-35px)] sm:top-[calc(50%-30px)]',
@@ -26,8 +27,6 @@ type Props = {
 	slidesPerGroup?: number,
 	onSlideChange?: (activeIndex: number) => void,
 	spaceBetween?: number,
-	className?: string,
-	testId?: string,
 	pauseOnHover?: boolean,
 	autoplay?: boolean,
 	autoplayInterval?: number,
@@ -38,7 +37,7 @@ type Props = {
 	paginationType?: 'dots' | 'progress' | 'fraction',
 	showScrollShadow?: boolean,
 	breakpoints?: Breakpoints,
-};
+} & GeneralProps;
 
 export default forwardRef<HTMLDivElement, Props>(function Carousel({
 	children,
@@ -59,6 +58,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 	paginationType = 'fraction',
 	showScrollShadow,
 	breakpoints,
+	...props
 }, ref) {
 	const [activeIndex, setActiveIndex] = useState<number>(0);
 	const [isSliderHovered, setIsSliderHovered] = useState<boolean>(false);
@@ -200,6 +200,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 			aria-roledescription='carousel'
 			aria-label={label}
 			aria-live={autoplay ? 'off' : 'polite'}
+			{...props}
 		>
 			<div
 				id={`${id}-container`}

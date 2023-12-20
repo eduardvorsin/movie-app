@@ -6,18 +6,17 @@ import { AnchorHTMLAttributes, MouseEventHandler, useState } from 'react';
 import BreadcrumbsItem from './BreadcrumbsItem/BreadcrumbsItem';
 import { navigationRoutes } from 'src/constants';
 import { toCapitalizeCase } from '@/helpers/toCapitalizeCase/toCapitalizeCase';
+import { GeneralProps } from '@/types/shared';
 
 type Props = {
 	label: string,
-	className?: string,
 	isNavigation?: boolean,
 	maxItems?: number,
-	testId?: string,
 	separator?: string,
 	truncationWidth?: number,
 	target?: AnchorHTMLAttributes<HTMLButtonElement>['target'],
 	lastItemLabel?: string,
-};
+} & GeneralProps;
 
 export default function Breadcrumbs({
 	label,
@@ -29,6 +28,7 @@ export default function Breadcrumbs({
 	truncationWidth,
 	target,
 	lastItemLabel,
+	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
 	const { t } = useTranslation(lang);
@@ -99,6 +99,7 @@ export default function Breadcrumbs({
 			className={className}
 			data-testid={testId}
 			aria-label={label}
+			{...props}
 		>
 			<ol className='flex items-center flex-wrap gap-y-1'>
 				{visibleItems.map((child, index) => (

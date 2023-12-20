@@ -2,10 +2,10 @@
 import { FocusEventHandler, MouseEventHandler, ReactNode } from 'react';
 import Spinner from '@/components/Spinner/Spinner';
 import Link from 'next/link';
+import { GeneralProps } from '@/types/shared';
 
 export type Props = {
 	appearance?: 'primary' | 'secondary' | 'warning' | 'danger' | 'success' | 'discovery' | 'ghost',
-	className?: string,
 	iconAfter?: ReactNode,
 	iconBefore?: ReactNode,
 	isDisabled?: boolean,
@@ -16,10 +16,9 @@ export type Props = {
 	onFocus?: FocusEventHandler<HTMLElement>,
 	size?: 'micro' | 'slim' | 'medium' | 'large' | 'custom',
 	children: ReactNode,
-	testId?: string,
 	href?: string,
 	iconButton?: boolean,
-};
+} & GeneralProps;
 
 const appearanceTypes = {
 	primary: 'bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200',
@@ -73,6 +72,7 @@ export default function Button({
 	href,
 	iconButton,
 	testId,
+	...props
 }: Props) {
 	const currentFontSize = size === 'large' ? 'text-200' : 'text-100';
 	const classes = [
@@ -126,6 +126,7 @@ export default function Button({
 				onBlur={onBlur}
 				onFocus={onFocus}
 				data-testid={testId}
+				{...props}
 			>
 				{Children}
 			</Link>
@@ -140,6 +141,7 @@ export default function Button({
 			onFocus={onFocus}
 			disabled={isDisabled}
 			data-testid={testId}
+			{...props}
 		>
 			{Children}
 		</button>

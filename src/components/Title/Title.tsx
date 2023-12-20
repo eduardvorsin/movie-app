@@ -1,4 +1,4 @@
-import { HeadingElement, HeadingLevel } from '@/types/shared';
+import { GeneralProps, HeadingElement, HeadingLevel } from '@/types/shared';
 import React from 'react';
 import { twMerge } from '../../../tailwind.config';
 
@@ -6,10 +6,9 @@ export type Props = {
 	children: React.ReactNode,
 	level: HeadingLevel,
 	as?: HeadingElement,
-	className?: string,
 	weight?: 400 | 500 | 600 | 700,
 	testId?: string,
-}
+} & GeneralProps;
 
 const levelTypes = {
 	1: 'text-400 sm:text-500 md:text-600 lg:text-700',
@@ -31,8 +30,10 @@ export default function Title({
 	level,
 	children,
 	className,
+	testId,
 	weight = 700,
 	as = 'h6',
+	...props
 }: Props) {
 	const classes = twMerge(
 		'leading-[1.25] -tracking-[0.01em]',
@@ -45,7 +46,9 @@ export default function Title({
 
 	return (
 		<Heading
+			data-testid={testId}
 			className={classes}
+			{...props}
 		>
 			{children}
 		</Heading>

@@ -2,6 +2,7 @@
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import Accept from '../../assets/icons/accept.svg?url';
+import { GeneralProps } from '@/types/shared';
 
 export type Props = {
 	id: string,
@@ -10,8 +11,6 @@ export type Props = {
 	label: string,
 	isChecked: boolean,
 	onChange: ChangeEventHandler<HTMLInputElement>,
-	className?: string,
-	testId?: string,
 	size?: 'small' | 'medium' | 'large' | 'xlarge',
 	error?: string,
 	isDisabled?: boolean,
@@ -19,7 +18,7 @@ export type Props = {
 	isInvalid?: boolean,
 	onFocus?: FocusEventHandler<HTMLInputElement>,
 	onBlur?: FocusEventHandler<HTMLInputElement>,
-};
+} & GeneralProps;
 
 const sizeTypes = {
 	small: 'w-3 h-3',
@@ -44,6 +43,7 @@ export default function Checkbox({
 	onChange,
 	onFocus,
 	onBlur,
+	...props
 }: Props) {
 	const labelClasses = [
 		'inline-flex py-1 pl-5 items-center',
@@ -53,6 +53,7 @@ export default function Checkbox({
 	return (
 		<div
 			className={className}
+			{...props}
 		>
 			<label
 				className={labelClasses}

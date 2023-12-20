@@ -7,13 +7,7 @@ import { useParams } from 'next/navigation';
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { MouseEventHandler } from 'react';
 import { routes } from 'src/constants';
-
-type Props = {
-	className?: string,
-	testId?: string,
-	onClick?: MouseEventHandler<HTMLAnchorElement>,
-	size: 'small' | 'medium' | 'large',
-}
+import { GeneralProps } from '@/types/shared';
 
 const sizes = {
 	small: {
@@ -30,11 +24,17 @@ const sizes = {
 	},
 } as const;
 
+type Props = {
+	onClick?: MouseEventHandler<HTMLAnchorElement>,
+	size: 'small' | 'medium' | 'large',
+} & GeneralProps;
+
 export default function Logo({
 	size,
 	className,
 	testId,
 	onClick,
+	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
 	const { t } = useTranslation(lang);
@@ -48,6 +48,7 @@ export default function Logo({
 			style={{
 				maxWidth: `${sizes[size].width}px`
 			}}
+			{...props}
 		>
 			<ThemedImage
 				width={sizes[size].width}

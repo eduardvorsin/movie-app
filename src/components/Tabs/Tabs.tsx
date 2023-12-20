@@ -3,6 +3,7 @@
 import { KeyboardEventHandler, MouseEventHandler, ReactElement, ReactNode, useLayoutEffect, useRef, useState } from 'react';
 import TabButton from './TabButton/TabButton';
 import { throttle } from '@/helpers/throttle/throttle';
+import { GeneralProps } from '@/types/shared';
 
 type TabPanelElement =
 	{
@@ -19,11 +20,9 @@ type Props = {
 	id: string,
 	onSelect?: (index: number) => void,
 	defaultSelected?: number,
-	className?: string,
-	testId?: string,
 	isDisabled?: boolean,
 	fitted?: boolean,
-};
+} & GeneralProps;
 
 export default function Tabs({
 	children,
@@ -34,6 +33,7 @@ export default function Tabs({
 	testId,
 	isDisabled,
 	fitted,
+	...props
 }: Props) {
 	const tabsGroupRef = useRef<HTMLDivElement>(null);
 	const [selectedTabIndex, setSelectedTabIndex] = useState<number>(defaultSelected);
@@ -98,6 +98,7 @@ export default function Tabs({
 			className={classes}
 			id={id}
 			data-testid={testId}
+			{...props}
 		>
 			<div
 				className={`${isScrollable ? 'relative after:w-16 after:h-full after:absolute after:top-0 after:right-0 after:bg-gradient-to-r after:from-transparent after:to-neutral-200 dark:after:to-dark-neutral-100 after:pointer-events-none' : ''}`}
