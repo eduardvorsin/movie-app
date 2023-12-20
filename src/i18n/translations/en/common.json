@@ -1,6 +1,16 @@
 {
 	"ratingLabel": "Rating",
 	"genresLabel": "Genres",
+	"breadcrumbs": {
+		"elipsisLabel": "expand all links",
+		"home": "home page",
+		"movies": "$t(navigation.movies)",
+		"persons": "$t(navigation.persons)",
+		"collections": "$t(navigation.collections)",
+		"tv": "$t(navigation.tv)",
+		"trailers": "$t(navigation.trailers)",
+		"new": "$t(navigation.new)"
+	},
 	"expandableText": {
 		"collapseButton": "Collapse",
 		"expandButton": "Expand"
@@ -68,7 +78,7 @@
 		"movies": "movies",
 		"persons": "persons",
 		"collections": "collections",
-		"series": "series and shows",
+		"tv": "series and shows",
 		"trailers": "trailers",
 		"new": "new releases"
 	},

@@ -1,6 +1,16 @@
 {
 	"ratingLabel": "Рейтинг",
 	"genresLabel": "Жанры",
+	"breadcrumbs": {
+		"elipsisLabel": "развернуть все ссылки",
+		"home": "главная страница",
+		"movies": "$t(navigation.movies)",
+		"persons": "$t(navigation.persons)",
+		"collections": "$t(navigation.collections)",
+		"tv": "$t(navigation.tv)",
+		"trailers": "$t(navigation.trailers)",
+		"new": "$t(navigation.new)"
+	},
 	"expandableText": {
 		"collapseButton": "Свернуть",
 		"expandButton": "Развернуть"
@@ -68,7 +78,7 @@
 		"movies": "фильмы",
 		"persons": "люди",
 		"collections": "коллекции",
-		"series": "сериалы и шоу",
+		"tv": "сериалы и шоу",
 		"trailers": "трейлеры",
 		"new": "новинки"
 	},
