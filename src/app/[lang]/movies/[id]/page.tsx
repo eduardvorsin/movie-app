@@ -92,6 +92,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		similar,
 		recommendations,
 		reviews,
+		title,
 	} = movie;
 
 	const backdropUrl = `${imgPath['backdrop']}${backdrop_path}`;
@@ -165,14 +166,14 @@ export default async function Page({ params: { id, lang } }: Props) {
 			>
 				<Container className='flex flex-col sm:flex-row'>
 					<ThemedImage
-						className='self-center sm:self-start mb-8 sm:mb-0 sm:mr-6 md:mr-8 lg:mr-10 object-cover rounded-2 max-w-[14.375rem] sm:max-w-[16.25rem] md:max-w-[17.5rem] lg:max-w-[18.75rem] w-full shrink-0 grow-0 bg-neutral-300 dark:bg-dark-neutral-300 border-1 border-neutral-300 dark:border-dark-neutral-300'
+						className='self-center sm:self-start mb-8 sm:mb-0 sm:mr-6 md:mr-8 lg:mr-10 object-cover rounded-2 max-w-[14.375rem] sm:max-w-[15.625rem] md:max-w-[16.875rem] lg:max-w-[18.75rem] w-full shrink-0 grow-0 bg-neutral-300 dark:bg-dark-neutral-300 border-1 border-neutral-300 dark:border-dark-neutral-300'
 						width={300}
 						height={450}
 						alt='poster'
 						placeholder='blur'
 						blurDataURL={poster_path ? 'blur' : 'empty'}
 						priority
-						sizes='(min-width: 1024px) 300px, (min-width: 768px) 280px, (min-width: 640px) 260px, 230px'
+						sizes='(min-width: 1024px) 300px, (min-width: 768px) 270px, (min-width: 640px) 250px, 230px'
 						src={{
 							light: posterData?.img.src ?? '',
 							dark: posterData?.img.src ?? '',
@@ -195,7 +196,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									isExternal
 									target='_blank'
 								>
-									{movie.title}
+									{title}
 								</Link>
 								<span
 									className='text-neutral-900 dark:text-dark-neutral-800'
@@ -204,15 +205,15 @@ export default async function Page({ params: { id, lang } }: Props) {
 								</span>
 							</Title>
 							<ul
-								className='flex flex-wrap md:flex-nowrap text-neutral-900 dark:text-dark-neutral-900'
+								className='flex flex-wrap gap-y-1 text-neutral-900 dark:text-dark-neutral-900'
 							>
 								<li
-									className='mr-2 md:mr-0 after:hidden md:after:inline-block md:after:content-["/"] after:ml-2 after:mr-2'
+									className='after:content-["/"] after:ml-2 after:mr-2'
 								>
-									{movie.release_date || '-'}
+									{release_date}
 								</li>
 								<li
-									className='mr-2 md:mr-0 after:hidden md:after:inline-block md:after:content-["/"] after:ml-2 after:mr-2'
+									className='after:content-["/"] after:ml-2 after:mr-2'
 								>
 									{currentGenres}
 								</li>
