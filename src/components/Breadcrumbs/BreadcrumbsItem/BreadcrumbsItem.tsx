@@ -25,7 +25,7 @@ export default function BreadcrumbsItem({
 	return (
 		<Link
 			style={truncationWidth ? { 'maxWidth': `${truncationWidth}px` } : undefined}
-			className={`inline-flex ${className}`}
+			className={`inline-flex text-200 ${className}`}
 			href={href}
 			onClick={onClick}
 			target={target}
