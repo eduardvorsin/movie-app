@@ -2,6 +2,9 @@ import { APICreditsResponse, Department, ExternalIDS } from '@/types/shared';
 import { Locales, fallbackLng } from '@/i18n/settings';
 
 export type PersonCredit = {
+	adult: boolean,
+	poster_path: string | null,
+	genre_ids: number[],
 	id: number,
 	title?: string,
 	name?: string,
@@ -10,9 +13,18 @@ export type PersonCredit = {
 	vote_average: number,
 	vote_count: number,
 	character?: string,
-	department?: Department,
+	department: Department,
 	job?: string,
-};
+} & ({
+	media_type: 'movie',
+	release_date: string,
+	title: string,
+} | {
+	media_type: 'tv',
+	first_air_date: string,
+	name: string,
+});
+
 
 export type PersonCredits = APICreditsResponse<PersonCredit, PersonCredit & { department: Department }>;
 
