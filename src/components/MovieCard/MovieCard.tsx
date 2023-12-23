@@ -25,6 +25,7 @@ type Props = {
 	titleElement?: HeadingElement,
 	titleLevel?: HeadingLevel,
 	variant?: 'vertical' | 'horizontal',
+	mediaType: 'movie' | 'tv',
 } & GeneralProps;
 
 export default function MovieCard({
@@ -43,6 +44,7 @@ export default function MovieCard({
 	titleLevel = 6,
 	variant = 'horizontal',
 	testId,
+	mediaType,
 	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
@@ -75,6 +77,8 @@ export default function MovieCard({
 		{ name: 'country', value: country },
 	].filter((detail) => detail.value !== undefined && detail.value.length > 0);
 
+	const url = `${mediaType === 'movie' ? routes.movies : routes.tv}${movieId}`;
+
 	const CardTitle = (
 		<Title
 			className={`text-200 leading-[1.25] ${variant === 'vertical' ? 'mt-2' : 'mb-1 sm:text-[1.125rem]'}`}
@@ -83,7 +87,7 @@ export default function MovieCard({
 		>
 			<Link
 				className={`break-all text-neutral-1000 dark:text-dark-neutral-1100 hover:text-neutral-800 active:text-neutral-700 dark:hover:text-dark-neutral-900 dark:active:text-dark-neutral-800 transition-colors duration-150 ${variant === 'vertical' ? 'line-clamp-2' : 'line-clamp-1'}`}
-				href={`${routes.movies}${movieId}`}
+				href={url}
 				title={title}
 			>
 				{title}
@@ -118,7 +122,7 @@ export default function MovieCard({
 			{...props}
 		>
 			<Link
-				href={`${routes.movies}${movieId}`}
+				href={url}
 				className='block relative group'
 				title={title}
 			>

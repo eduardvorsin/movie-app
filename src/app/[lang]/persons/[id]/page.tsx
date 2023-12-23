@@ -258,6 +258,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 									}) => (
 										<MovieCard
+											mediaType='movie'
 											variant='vertical'
 											className='mx-auto md:mx-0 mb-2'
 											movieId={id}

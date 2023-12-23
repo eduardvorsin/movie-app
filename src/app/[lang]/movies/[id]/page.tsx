@@ -556,6 +556,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
+									mediaType='movie'
 									className='mx-auto md:mx-0'
 									movieId={id}
 									key={id}
@@ -615,6 +616,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
+									mediaType='movie'
 									className='mx-auto xs:mx-0'
 									movieId={id}
 									key={id}
