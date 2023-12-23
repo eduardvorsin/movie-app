@@ -179,7 +179,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 
 	const wrapperClases = [
 		'overflow-hidden relative',
-		showScrollShadow ? 'z-100 after:w-10 md:after:w-16 after:h-full after:absolute after:top-0 after:right-0 after:bg-gradient-to-r after:from-neutral-200/0 after:to-neutral-200/100 dark:after:from-dark-neutral-100/0 dark:after:to-dark-neutral-100 after:pointer-events-none' : '',
+		showScrollShadow ? 'z-100 after:w-10 md:after:w-16 after:h-full after:absolute after:top-0 after:right-0 after:bg-gradient-to-r after:from-neutral-200/0 after:to-neutral-200/100 dark:after:from-dark-neutral-100/0 dark:after:to-dark-neutral-100/100 after:pointer-events-none' : '',
 		className
 	].join(' ');
 
