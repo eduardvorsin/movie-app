@@ -83,7 +83,7 @@ export default function PersonCard({
 			)}
 			{children && (
 				<p
-					className='text-100 text-neutral-900 dark:text-dark-neutral-800 line-clamp-3'
+					className='text-100 text-neutral-900 dark:text-dark-neutral-800 truncate'
 				>
 					{children}
 				</p>
