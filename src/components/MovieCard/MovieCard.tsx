@@ -82,7 +82,7 @@ export default function MovieCard({
 			as={titleElement}
 		>
 			<Link
-				className={`break-words text-neutral-1000 dark:text-dark-neutral-1100 hover:text-neutral-800 active:text-neutral-700 dark:hover:text-dark-neutral-900 dark:active:text-dark-neutral-800 transition-colors duration-150 ${variant === 'vertical' ? 'line-clamp-2' : 'line-clamp-1'}`}
+				className={`break-all text-neutral-1000 dark:text-dark-neutral-1100 hover:text-neutral-800 active:text-neutral-700 dark:hover:text-dark-neutral-900 dark:active:text-dark-neutral-800 transition-colors duration-150 ${variant === 'vertical' ? 'line-clamp-2' : 'line-clamp-1'}`}
 				href={`${routes.movies}${movieId}`}
 				title={title}
 			>
@@ -123,7 +123,7 @@ export default function MovieCard({
 				title={title}
 			>
 				<ThemedImage
-					className='rounded-3'
+					className='rounded-3 aspect-[2/3] object-cover'
 					alt={alt}
 					width={variant === 'horizontal' ? 300 : 185}
 					height={variant === 'horizontal' ? 169 : 278}
