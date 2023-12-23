@@ -141,7 +141,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								Links to social networks
 							</Title>
 							{homepage && (
-								<p className='flex items-center flex-wrap mb-2'>
+								<p className='flex items-center flex-wrap mb-3'>
 									<span className='text-dark-neutral-250 dark:text-neutral-300 mr-2'>
 										{t('personalWebsite', { ns: 'personsPage' })}
 									</span>
