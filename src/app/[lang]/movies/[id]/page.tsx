@@ -30,6 +30,7 @@ import TabPanel from '@/components/Tabs/TabPanel/TabPanel';
 import Comment from '@/components/Comment/Comment';
 import Avatar from '@/components/Avatar/Avatar';
 import { nameToInitials } from '@/helpers/nameToInitials/nameToInitials';
+import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
 
 const characteristicFields = new Set([
 	'production_countries',
@@ -164,9 +165,15 @@ export default async function Page({ params: { id, lang } }: Props) {
 				className='py-5 md:py-8 bg-blend-overlay bg-cover bg-no-repeat bg-neutral-100/80 dark:bg-dark-neutral-0'
 				style={{ backgroundImage: `url(${backdropUrl})` }}
 			>
-				<Container className='flex flex-col sm:flex-row'>
+				<Container className='grid grid-cols-1 sm:grid-cols-[15.625rem_1fr] md:grid-cols-[16.875rem_1fr] lg:grid-cols-[18.75rem_1fr] sm:gap-x-6 md:gap-x-8 lg:gap-x-10'>
+					<Breadcrumbs
+						className='col-span-full mb-5 md:mb-8'
+						label='breadcrumbs navigation'
+						lastItemLabel={title}
+					/>
+
 					<ThemedImage
-						className='self-center sm:self-start mb-8 sm:mb-0 sm:mr-6 md:mr-8 lg:mr-10 object-cover rounded-2 max-w-[14.375rem] sm:max-w-[15.625rem] md:max-w-[16.875rem] lg:max-w-[18.75rem] w-full shrink-0 grow-0 bg-neutral-300 dark:bg-dark-neutral-300 border-1 border-neutral-300 dark:border-dark-neutral-300'
+						className='mb-8 sm:mb-0 justify-self-center sm:justify-self-start object-cover rounded-2 max-w-[14.375rem] sm:max-w-full bg-neutral-300 dark:bg-dark-neutral-300 border-1 border-neutral-300 dark:border-dark-neutral-300'
 						width={300}
 						height={450}
 						alt='poster'
@@ -183,6 +190,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							dark: '/assets/images/movie-placeholder-d.svg',
 						}}
 					/>
+
 					<div>
 						<div className='mb-5 lg:mb-6'>
 							<Title
@@ -204,13 +212,14 @@ export default async function Page({ params: { id, lang } }: Props) {
 									({releaseYear})
 								</span>
 							</Title>
+
 							<ul
 								className='flex flex-wrap gap-y-1 text-neutral-900 dark:text-dark-neutral-900'
 							>
 								<li
 									className='after:content-["/"] after:ml-2 after:mr-2'
 								>
-									{release_date}
+									{release_date || '-'}
 								</li>
 								<li
 									className='after:content-["/"] after:ml-2 after:mr-2'
@@ -222,6 +231,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								</li>
 							</ul>
 						</div>
+
 						<div className='flex flex-wrap'>
 							<div className='mr-4 mb-3 md:mb-4 lg:mb-5'>
 								<span
@@ -241,6 +251,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								data={socialNetworks}
 							/>
 						</div>
+
 						<div>
 							{tagline && (
 								<p
