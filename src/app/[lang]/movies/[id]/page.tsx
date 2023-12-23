@@ -358,68 +358,70 @@ export default async function Page({ params: { id, lang } }: Props) {
 				</Container>
 			</section>
 
-			<section className='py-5 md:py-8'>
-				<Container className='flex flex-col'>
-					<Title
-						className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
-						as='h2'
-						level={3}
-					>
-						{t('starring', { ns: 'moviesPage' })}
-					</Title>
+			{credits.cast.length > 0 && (
+				<section className='py-5 md:py-8'>
+					<Container className='flex flex-col'>
+						<Title
+							className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+							as='h2'
+							level={3}
+						>
+							{t('starring', { ns: 'moviesPage' })}
+						</Title>
 
-					<Carousel
-						mousewheel
-						spaceBetween={20}
-						showScrollShadow
-						showPagination
-						paginationType='fraction'
-						breakpoints={{
-							0: {
-								slidesPerView: 1,
-							},
-							375: {
-								slidesPerView: 2,
-							},
-							480: {
-								slidesPerView: 3,
-							},
-							640: {
-								slidesPerView: 4,
-							},
-							768: {
-								slidesPerView: 5,
-							},
-							1024: {
-								slidesPerView: 6,
-							}
-						}}
-					>
-						{credits.cast.slice(0, 40).map(({
-							id,
-							profile_path,
-							name,
-							popularity,
-							character
-						}) => (
-							<PersonCard
-								className='mb-2 mx-auto xs:mx-0'
-								personId={id}
-								key={id}
-								src={profile_path ? `${imgPath['profileCard']}${profile_path}` : ''}
-								alt={name}
-								title={name}
-								titleElement='h4'
-								titleLevel={6}
-								showRating
-								rating={popularity}
-							>
-								{character}
-							</PersonCard>
-						))}
-					</Carousel>
-				</Container>
-			</section>
+						<Carousel
+							mousewheel
+							spaceBetween={20}
+							showScrollShadow
+							showPagination
+							paginationType='fraction'
+							breakpoints={{
+								0: {
+									slidesPerView: 1,
+								},
+								375: {
+									slidesPerView: 2,
+								},
+								480: {
+									slidesPerView: 3,
+								},
+								640: {
+									slidesPerView: 4,
+								},
+								768: {
+									slidesPerView: 5,
+								},
+								1024: {
+									slidesPerView: 6,
+								}
+							}}
+						>
+							{credits.cast.slice(0, 40).map(({
+								id,
+								profile_path,
+								name,
+								popularity,
+								character
+							}) => (
+								<PersonCard
+									className='mb-2 mx-auto xs:mx-0'
+									personId={id}
+									key={id}
+									src={profile_path ? `${imgPath['profileCard']}${profile_path}` : ''}
+									alt={name}
+									title={name}
+									titleElement='h4'
+									titleLevel={6}
+									showRating
+									rating={popularity}
+								>
+									{character}
+								</PersonCard>
+							))}
+						</Carousel>
+					</Container>
+				</section>
+			)}
 
 			{availableTrailers && availableTrailers.length > 0 && (
 				<section className='py-5 md:py-8'>
