@@ -23,6 +23,7 @@ import { fetchPopularPersons } from '@/services/fetchPopularPersons/fetchPopular
 import PersonCard from '@/components/PersonCard/PersonCard';
 import Carousel from '@/components/Carousel/Carousel';
 import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
+import MovieCard from '@/components/MovieCard/MovieCard';
 
 const characteristicFields = new Set([
 	'known_for_department',
@@ -43,6 +44,7 @@ type Props = {
 export default async function Page({ params: { id, lang } }: Props) {
 	const { t } = await fetchTranslation(lang, ['personsPage', 'common']);
 	const person = await fetchPerson(id, { lang });
+	const popularPersons = await fetchPopularPersons(1, { lang });
 
 	if (!person) {
 		return notFound();
@@ -55,6 +57,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		combined_credits,
 		name,
 		homepage,
+		known_for_department,
 	} = person;
 
 	let imageData: PlaceholderData | null = null;
@@ -91,7 +94,11 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 	const filmography = createFilmographyData(combined_credits);
 
-	const popularPersons = await fetchPopularPersons(1, { lang });
+	const credits = known_for_department === 'Acting' ? combined_credits.cast : combined_credits.crew;
+	const knownFor = credits
+		.filter(({ vote_average }) => vote_average > 6)
+		.sort((a, b) => b.vote_average - a.vote_average)
+		.slice(0, 40);
 
 	return (
 		<main className='mt-[5rem]'>
@@ -195,6 +202,78 @@ export default async function Page({ params: { id, lang } }: Props) {
 								>
 									{currentBiography}
 								</ExpandableText>
+							</section>
+						)}
+
+						{knownFor && knownFor.length > 0 && (
+							<section className='mb-4 md:mb-5 lg:mb-6'>
+								<Title
+									className='text-neutral-1000 dark:text-dark-neutral-1000 mb-2 sm:mb-3 md:mb-4'
+									as='h2'
+									level={4}
+									weight={500}
+								>
+									{t('famousProjectsTitle')}
+								</Title>
+								<Carousel
+									mousewheel
+									spaceBetween={20}
+									showPagination
+									paginationType='fraction'
+									showArrows
+									breakpoints={{
+										0: {
+											slidesPerView: 1,
+										},
+										375: {
+											slidesPerView: 2,
+										},
+										480: {
+											slidesPerView: 3
+										},
+										640: {
+											slidesPerView: 4
+										},
+										768: {
+											slidesPerView: 3
+										},
+										1024: {
+											slidesPerView: 4,
+										},
+										1280: {
+											slidesPerView: 5,
+										}
+									}}
+								>
+									{knownFor.map(({
+										id,
+										poster_path,
+										title,
+										vote_average,
+										release_date,
+										first_air_date,
+										genre_ids,
+										media_type,
+										name,
+
+									}) => (
+										<MovieCard
+											variant='vertical'
+											className='mx-auto md:mx-0 mb-2'
+											movieId={id}
+											key={id}
+											src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+											alt={media_type === 'tv' ? name : title}
+											title={media_type === 'tv' ? name : title}
+											titleElement='h4'
+											genres={genre_ids}
+											releaseDate={getLocalizedDate(media_type === 'tv' ? first_air_date : release_date, lang)}
+											titleLevel={5}
+											showRating
+											rating={vote_average * 10}
+										/>
+									))}
+								</Carousel>
 							</section>
 						)}
 
