@@ -127,7 +127,7 @@ export default function MovieCard({
 				title={title}
 			>
 				<ThemedImage
-					className='rounded-3 aspect-[2/3] object-cover'
+					className={`rounded-3 object-cover ${variant === 'vertical' ? 'aspect-[2/3]' : 'aspect-[16/9]'}`}
 					alt={alt}
 					width={variant === 'horizontal' ? 300 : 185}
 					height={variant === 'horizontal' ? 169 : 278}
