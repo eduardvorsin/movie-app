@@ -109,12 +109,12 @@ export default async function Page({ params: { id, lang } }: Props) {
 					lastItemLabel={name}
 				/>
 
-				<div className='bg-neutral-0 dark:bg-dark-neutral-250 px-4 py-4 sm:py-6 md:py-8 lg:py-10 min-h-[calc(100vh-80px)] h-full grid grid-cols-[1fr] md:grid-cols-[18.75rem_1fr] lg:grid-cols-[21.375rem_1fr] gap-x-0 md:gap-x-8 lg:gap-x-12 gap-y-5 md:gap-y-6 lg:gap-y-8'>
+				<div className='bg-neutral-0 dark:bg-dark-neutral-250 px-4 py-4 sm:py-6 md:py-8 lg:py-10 min-h-[calc(100vh-80px)] h-full grid grid-cols-[1fr] md:grid-cols-[16.875rem_1fr] lg:grid-cols-[21.375rem_1fr] gap-x-0 md:gap-x-6 lg:gap-x-12 gap-y-5 md:gap-y-6 lg:gap-y-8'>
 					<div
 						className='self-center md:self-start flex flex-col'
 					>
 						<ThemedImage
-							className='self-center object-cover rounded-2 max-w-[14.375rem] mb-6 sm:mb-8 bg-neutral-300 dark:bg-dark-neutral-350 sm:max-w-[16.25rem] md:max-w-[18.75rem] lg:max-w-[21.375rem] border-1 border-neutral-300 dark:border-dark-neutral-300'
+							className='self-center object-cover rounded-2 max-w-[14.375rem] mb-6 sm:mb-8 bg-neutral-300 dark:bg-dark-neutral-350 sm:max-w-[15.625rem] md:max-w-[16.875rem] lg:max-w-[21.375rem] border-1 border-neutral-300 dark:border-dark-neutral-300'
 							width={342}
 							height={513}
 							alt={name}
@@ -162,7 +162,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						</section>
 					</div>
 
-					<div className='flex flex-col'>
+					<div className='flex flex-col overflow-hidden'>
 						<Title
 							className='mb-2 text-neutral-1000 dark:text-dark-neutral-1000 sm:mb-3 md:mb-4 lg:mb-6'
 							weight={500}
@@ -354,7 +354,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 							<Carousel
 								mousewheel
 								spaceBetween={20}
-								showScrollShadow
 								paginationType='fraction'
 								breakpoints={{
 									0: {
