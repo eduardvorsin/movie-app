@@ -297,15 +297,25 @@ export default async function Page({ params: { id, lang } }: Props) {
 										label={t(`filmography.tabs.${key}`, { ns: 'personsPage' })}
 									>
 										<ul>
-											{filmography[key].map((item, index) => (
+											{filmography[key].map(({
+												id,
+												media_type,
+												name,
+												first_air_date,
+												release_date,
+												character,
+												vote_average,
+												vote_count,
+												title
+											}, index) => (
 												<li
 													className='border-neutral-300 dark:border-dark-neutral-350 border-b-2 last:border-b-[0px]'
-													key={`${item.id}-${index}`}
+													key={`${id}-${index}`}
 												>
 													<NextLink
 														className='flex px-2 py-3 justify-between items-center
 														hover:bg-neutral-200 active:bg-neutral-300 dark:hover:bg-dark-neutral-250 dark:active:bg-dark-neutral-300 transition-colors duration-150'
-														href={typeof item.first_air_date === 'string' ? `${routes.tv}${item.id}` : `${routes.movies}${item.id}`}
+														href={media_type === 'tv' ? `${routes.tv}${id}` : `${routes.movies}${id}`}
 													>
 														<div>
 															<Title
@@ -314,21 +324,21 @@ export default async function Page({ params: { id, lang } }: Props) {
 																level={6}
 																as='h3'
 															>
-																{item.title ?? item.name}
-																({item.release_date || item.first_air_date || '-'})
+																{media_type === 'tv' ? name : title}
+																({media_type === 'tv' ? first_air_date : release_date})
 															</Title>
-															{item.character && (
+															{character && (
 																<p className='block mt-1 text-100 text-neutral-900 dark:text-dark-neutral-800'>
-																	{item.character}
+																	{character}
 																</p>
 															)}
 														</div>
 														<p className='flex flex-col flex-shrink-0 flex-grow-0 basis-16 text-center leading-none'>
 															<span className='text-200 font-bold text-blue-700 dark:text-blue-400'>
-																{item.vote_average}
+																{vote_average}
 															</span>
 															<span className='text-100 mt-1 text-neutral-900 dark:text-dark-neutral-800'>
-																{item.vote_count}
+																{vote_count}
 															</span>
 														</p>
 													</NextLink>
