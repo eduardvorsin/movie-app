@@ -14,7 +14,7 @@ export const navigationRoutes = {
 	movies: '/movies/',
 	persons: '/persons/',
 	collections: '/collections',
-	series: '/tv',
+	tv: '/tv',
 	trailers: '/trailers',
 	new: '/new',
 };
