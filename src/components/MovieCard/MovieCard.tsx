@@ -26,6 +26,7 @@ type Props = {
 	titleLevel?: HeadingLevel,
 	variant?: 'vertical' | 'horizontal',
 	mediaType: 'movie' | 'tv',
+	appearance?: 'primary' | 'secondary',
 } & GeneralProps;
 
 export default function MovieCard({
@@ -45,6 +46,7 @@ export default function MovieCard({
 	variant = 'horizontal',
 	testId,
 	mediaType,
+	appearance = 'primary',
 	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
@@ -79,9 +81,21 @@ export default function MovieCard({
 
 	const url = `${mediaType === 'movie' ? routes.movies : routes.tv}${movieId}`;
 
+	const cardContentClasses = [
+		'absolute left-0 w-full flex flex-col p-2 bg-gradient-to-t z-100',
+		appearance === 'secondary' ? 'sr-only' : '',
+		variant === 'horizontal' ? 'bottom-0 from-neutral-100/95 to-neutral-100/40 dark:from-dark-neutral-100/95 dark:to-dark-neutral-100/40' : 'invisible opacity-0 fine-pointer:group-hover:visible fine-pointer:group-hover:opacity-100 top-0 pt-[3.125rem] justify-end h-full bg-neutral-100/80 dark:bg-dark-neutral-100/80 transition-[visibility,opacity] duration-150'
+	].join(' ');
+
+	const cardTitleClasses = [
+		'text-200 leading-[1.25]',
+		appearance === 'secondary' ? 'sr-only' : '',
+		variant === 'vertical' ? 'mt-2' : 'mb-1 sm:text-[1.125rem]',
+	].join(' ');
+
 	const CardTitle = (
 		<Title
-			className={`text-200 leading-[1.25] ${variant === 'vertical' ? 'mt-2' : 'mb-1 sm:text-[1.125rem]'}`}
+			className={cardTitleClasses}
 			level={titleLevel}
 			as={titleElement}
 		>
@@ -96,7 +110,7 @@ export default function MovieCard({
 	);
 
 	const CardContent = (
-		<div className={`absolute left-0 w-full flex flex-col p-2 bg-gradient-to-t z-100 ${variant === 'horizontal' ? 'bottom-0 from-neutral-100/95 to-neutral-100/40 dark:from-dark-neutral-100/95 dark:to-dark-neutral-100/40' : 'invisible opacity-0 fine-pointer:group-hover:visible fine-pointer:group-hover:opacity-100 top-0 pt-[3.125rem] justify-end h-full bg-neutral-100/80 dark:bg-dark-neutral-100/80 transition-[visibility,opacity] duration-150'}`}>
+		<div className={cardContentClasses}>
 			{title && variant === 'horizontal' && (CardTitle)}
 
 			{details.map((detail) => (
@@ -131,6 +145,7 @@ export default function MovieCard({
 					alt={alt}
 					width={variant === 'horizontal' ? 300 : 185}
 					height={variant === 'horizontal' ? 169 : 278}
+					quality={variant === 'vertical' ? 85 : 75}
 					src={{
 						light: src,
 						dark: src,
