@@ -14,7 +14,8 @@
 		"statusValue": {
 			"released": "Выпущено",
 			"planned": "Планируется",
-			"post production": "Пост-продакшн"
+			"post production": "Пост-продакшн",
+			"in production": "В производстве"
 		}
 	},
 	"review": "Обзор",

@@ -14,7 +14,8 @@
 		"statusValue": {
 			"released": "Released",
 			"planned": "Planned",
-			"post production": "Post Production"
+			"post production": "Post Production",
+			"in production": "In Production"
 		}
 	},
 	"review": "Review",
