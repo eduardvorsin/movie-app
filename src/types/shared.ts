@@ -73,21 +73,31 @@ export type APIListsResponse<T> = {
 	total_results: number,
 }
 
-export type APIMovieResponse = {
-	adult: boolean,
+type MovieAndSeriesResponse = {
 	backdrop_path: string | null,
 	genre_ids: number[],
 	id: number,
 	original_language: string,
-	original_title: string,
-	title: string,
-	video: boolean,
 	overview: string,
 	popularity: number,
 	poster_path: string | null,
-	release_date: string,
 	vote_average: number,
 	vote_count: number,
+}
+
+export type APIMovieResponse = MovieAndSeriesResponse & {
+	adult: boolean,
+	original_title: string,
+	title: string,
+	video: boolean,
+	release_date: string,
+}
+
+export type TVSeriesResponse = MovieAndSeriesResponse & {
+	first_air_date?: string,
+	name: string,
+	origin_country: string[],
+	original_name: string,
 }
 
 export type APICreditsResponse<T, U> = {
