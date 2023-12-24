@@ -72,5 +72,5 @@ export const fetchPerson = async (id: string, options?: { lang: Locales }): Prom
 		}
 	}
 
-	return person as Promise<PersonDetails>;
+	return person as PersonDetails;
 };

@@ -73,5 +73,5 @@ export const fetchMovie = async (id: string, options?: { lang: Locales }): Promi
 		}
 	}
 
-	return movie as Promise<MovieDetails>;
+	return movie as MovieDetails;
 };

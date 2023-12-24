@@ -41,7 +41,7 @@ const fetchTrailersByLocale = async (id: string, locale: Locales): Promise<Trail
 		}
 	}
 
-	return trailers as Promise<TrailersData>;
+	return trailers as TrailersData;
 };
 
 export const fetchTrailers = async (id: string, options?: {
