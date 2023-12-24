@@ -8,6 +8,7 @@ import { fetchTranslation } from '@/i18n/server';
 import { Locales } from '@/i18n/settings';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
 import { fetchNowPlayingMovies } from '@/services/fetchNowPlayingMovies/fetchNowPlayingMovies';
+import { fetchPopularTVSeries } from '@/services/fetchPopularTVSeries/fetchPopularTVSeries';
 import { fetchTrendingMovies } from '@/services/fetchTrendingMovies/fetchTrendingMovies';
 import { fetchUpcomingMovies } from '@/services/fetchUpcomingMovies/fetchUpcomingMovies';
 import Link from 'next/link';
@@ -24,6 +25,8 @@ export default async function Home({ params: { lang } }: Props) {
   const nowPlayingMovies = await fetchNowPlayingMovies(lang);
   const trendingMovies = await fetchTrendingMovies(lang);
   const upcomingReleases = await fetchUpcomingMovies(1, { lang });
+  const popularTVSeries = await fetchPopularTVSeries(1, { lang });
+
   const avaliableOngoingMovies = nowPlayingMovies?.results
     .filter((movie) => movie.backdrop_path !== null)
     .map((movie) => {
@@ -273,6 +276,73 @@ export default async function Home({ params: { lang } }: Props) {
                 </li>
               ))}
             </ul>
+          </Container>
+        </section>
+      )}
+
+      {popularTVSeries && popularTVSeries.results.length > 0 && (
+        <section className='py-5 md:py-8'>
+          <Container className='flex flex-col'>
+            <Title
+              className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+              as='h2'
+              level={3}
+            >
+              Popular TV series
+            </Title>
+            <Carousel
+              mousewheel
+              spaceBetween={20}
+              showPagination
+              paginationType='progress'
+              showArrows
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                375: {
+                  slidesPerView: 2,
+                },
+                640: {
+                  slidesPerView: 3,
+                },
+                768: {
+                  slidesPerView: 4,
+                },
+                1024: {
+                  slidesPerView: 5,
+                },
+                1280: {
+                  slidesPerView: 6,
+                }
+              }}
+            >
+              {popularTVSeries.results.map(({
+                id,
+                poster_path,
+                name,
+                vote_average,
+                first_air_date,
+                genre_ids,
+              }) => (
+                <MovieCard
+                  mediaType='tv'
+                  variant='vertical'
+                  className='mx-auto sm:mx-0 mb-2'
+                  movieId={id}
+                  key={id}
+                  src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+                  alt={name}
+                  title={name}
+                  titleElement='h4'
+                  genres={genre_ids}
+                  releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+                  titleLevel={5}
+                  showRating
+                  rating={vote_average * 10}
+                />
+              ))}
+            </Carousel>
           </Container>
         </section>
       )}
