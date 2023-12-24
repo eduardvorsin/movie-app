@@ -104,7 +104,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 			true,
 		);
 	}
-	const releaseYear = release_date.slice(0, 4) || '-';
+	const releaseYear = release_date.slice(0, 4);
 	const currentGenres = genres.slice(0, 3).map((genre) => genre.name.toLowerCase()).join(', ');
 	const movieDuration = `${t('duration', { ns: 'moviesPage', time: runtime })} | ${convertToTime(runtime)}`;
 	const rating = Math.floor(vote_average * 10);
@@ -209,26 +209,32 @@ export default async function Page({ params: { id, lang } }: Props) {
 								<span
 									className='text-neutral-900 dark:text-dark-neutral-800'
 								>
-									({releaseYear})
+									{releaseYear.length > 0 && (`(${releaseYear})`)}
 								</span>
 							</Title>
 
 							<ul
 								className='flex flex-wrap gap-y-1 text-neutral-900 dark:text-dark-neutral-900'
 							>
-								<li
-									className='after:content-["/"] after:ml-2 after:mr-2'
-								>
-									{release_date || '-'}
-								</li>
-								<li
-									className='after:content-["/"] after:ml-2 after:mr-2'
-								>
-									{currentGenres}
-								</li>
-								<li>
-									{movieDuration}
-								</li>
+								{release_date.length > 0 && (
+									<li
+										className='after:content-["/"] after:mx-2 last:after:hidden last:after:mx-0'
+									>
+										{getLocalizedDate(release_date, lang)}
+									</li>
+								)}
+								{currentGenres.length > 0 && (
+									<li
+										className='after:content-["/"] after:mx-2 last:after:hidden last:after:mx-0'
+									>
+										{currentGenres}
+									</li>
+								)}
+								{movieDuration.length > 0 && (
+									<li>
+										{movieDuration}
+									</li>
+								)}
 							</ul>
 						</div>
 
