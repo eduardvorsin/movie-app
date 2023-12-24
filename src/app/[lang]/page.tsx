@@ -9,6 +9,7 @@ import { Locales } from '@/i18n/settings';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
 import { fetchNowPlayingMovies } from '@/services/fetchNowPlayingMovies/fetchNowPlayingMovies';
 import { fetchTrendingMovies } from '@/services/fetchTrendingMovies/fetchTrendingMovies';
+import { fetchUpcomingMovies } from '@/services/fetchUpcomingMovies/fetchUpcomingMovies';
 import Link from 'next/link';
 import { imgPath, routes } from 'src/constants';
 
@@ -22,6 +23,7 @@ export default async function Home({ params: { lang } }: Props) {
   const { t } = await fetchTranslation(lang, ['homePage', 'common']);
   const nowPlayingMovies = await fetchNowPlayingMovies(lang);
   const trendingMovies = await fetchTrendingMovies(lang);
+  const upcomingReleases = await fetchUpcomingMovies(1, { lang });
   const avaliableOngoingMovies = nowPlayingMovies?.results
     .filter((movie) => movie.backdrop_path !== null)
     .map((movie) => {
@@ -201,6 +203,76 @@ export default async function Home({ params: { lang } }: Props) {
                 />
               ))}
             </Carousel>
+          </Container>
+        </section>
+      )}
+
+      {upcomingReleases && upcomingReleases?.results.length > 0 && (
+        <section className='py-5 md:py-8'>
+          <Container className='flex flex-col'>
+            <Title
+              className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+              as='h2'
+              level={3}
+            >
+              Upcoming Releases
+            </Title>
+
+            <ul className='grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-5 gap-x-4 lg:gap-x-8 md:[counter-reset:example]'>
+              {upcomingReleases.results.slice(0, 10).map(({
+                id,
+                poster_path,
+                title,
+                release_date
+              }) => (
+                <li
+                  key={id}
+                  className='flex items-center gap-4 relative py-2 lg:p-3 [&:nth-child(-n+8)]:border-b-1 [&:nth-child(-n+8)]:border-neutral-300 dark:[&:nth-child(-n+8)]:border-dark-neutral-350 md:[counter-increment:example_1] before:hidden md:before:inline-block before:content-[counter(example,decimal-leading-zero)] before:text-500 lg:before:text-700 before:font-bold before:text-neutral-1000 dark:before:text-dark-neutral-900 before:leading-none transition-colors duration-150 hover:bg-neutral-100 active:bg-neutral-0 dark:hover:bg-dark-neutral-200 dark:active:bg-dark-neutral-250'
+                >
+                  <Link
+                    className='grow flex items-center gap-3 before:absolute before:w-full before:h-full before:top-0 before:left-0'
+                    href={`${routes.movies}${id}`}
+                    title={title}
+                  >
+                    <ThemedImage
+                      className='w-[50px] h-[75px] lg:w-[60px] lg:h-[90px] aspect-[2/3]'
+                      width={60}
+                      height={90}
+                      alt={title}
+                      src={{
+                        light: poster_path ? `${imgPath.poster}${poster_path}` : '',
+                        dark: poster_path ? `${imgPath.poster}${poster_path}` : '',
+                      }}
+                      fallback={{
+                        light: '/assets/images/movie-placeholder-l.svg',
+                        dark: '/assets/images/movie-placeholder-d.svg',
+                      }}
+                    />
+
+                    <Title
+                      className='text-neutral-1000 dark:text-dark-neutral-900 grow text-200 md:text-[1.125rem] line-clamp-3'
+                      level={5}
+                      as='h3'
+                    >
+                      {title}
+                    </Title>
+
+                    <p className='text-center text-neutral-900 dark:text-dark-neutral-800'>
+                      <span className='block font-bold text-300 lg:text-400 leading-none'>
+                        {getLocalizedDate(release_date, lang, {
+                          day: '2-digit',
+                        })}
+                      </span>
+                      <span className='block text-100 lg:text-200'>
+                        {getLocalizedDate(release_date, lang, {
+                          month: 'long',
+                        })}
+                      </span>
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </Container>
         </section>
       )}
