@@ -1,7 +1,7 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { APIListsResponse, APIMovieResponse } from '@/types/shared';
+import { ListsResponse, MovieResponse } from '@/types/shared';
 
-export const fetchNowPlayingMovies = async (lang?: Locales): Promise<APIListsResponse<APIMovieResponse> | null> => {
+export const fetchNowPlayingMovies = async (lang?: Locales): Promise<ListsResponse<MovieResponse> | null> => {
 	const currentLang = lang ?? fallbackLng;
 
 	let nowPlayingMovies;
@@ -26,5 +26,5 @@ export const fetchNowPlayingMovies = async (lang?: Locales): Promise<APIListsRes
 		}
 	}
 
-	return nowPlayingMovies as APIListsResponse<APIMovieResponse>;
+	return nowPlayingMovies as ListsResponse<MovieResponse>;
 }

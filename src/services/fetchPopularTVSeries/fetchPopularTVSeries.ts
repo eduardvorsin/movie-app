@@ -1,7 +1,7 @@
 import { Locales, fallbackLng } from "@/i18n/settings";
-import { APIListsResponse, TVSeriesResponse } from "@/types/shared";
+import { ListsResponse, TVSeriesResponse } from "@/types/shared";
 
-export const fetchPopularTVSeries = async (page: number, options?: { lang: Locales }): Promise<APIListsResponse<TVSeriesResponse> | null> => {
+export const fetchPopularTVSeries = async (page: number, options?: { lang: Locales }): Promise<ListsResponse<TVSeriesResponse> | null> => {
 	const currentLang = options?.lang ?? fallbackLng;
 
 	const currentDate = new Date();
@@ -44,6 +44,5 @@ export const fetchPopularTVSeries = async (page: number, options?: { lang: Local
 		}
 	}
 
-	return popularTVSeries as APIListsResponse<TVSeriesResponse>;
+	return popularTVSeries as ListsResponse<TVSeriesResponse>;
 }
-

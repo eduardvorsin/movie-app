@@ -1,4 +1,4 @@
-import { APICreditsResponse, Department, ExternalIDS } from '@/types/shared';
+import { CreditsResponse, Department, ExternalIDS } from '@/types/shared';
 import { Locales, fallbackLng } from '@/i18n/settings';
 
 export type PersonCredit = {
@@ -26,7 +26,7 @@ export type PersonCredit = {
 });
 
 
-export type PersonCredits = APICreditsResponse<PersonCredit, PersonCredit & { department: Department }>;
+export type PersonCredits = CreditsResponse<PersonCredit, PersonCredit & { department: Department }>;
 
 export type PersonDetails = {
 	adult: boolean,

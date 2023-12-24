@@ -66,7 +66,7 @@ export type PlaceholderData = {
 	base64: string;
 };
 
-export type APIListsResponse<T> = {
+export type ListsResponse<T> = {
 	page: number,
 	results: T[],
 	total_page: number,
@@ -85,7 +85,7 @@ type MovieAndSeriesResponse = {
 	vote_count: number,
 }
 
-export type APIMovieResponse = MovieAndSeriesResponse & {
+export type MovieResponse = MovieAndSeriesResponse & {
 	adult: boolean,
 	original_title: string,
 	title: string,
@@ -100,7 +100,7 @@ export type TVSeriesResponse = MovieAndSeriesResponse & {
 	original_name: string,
 }
 
-export type APICreditsResponse<T, U> = {
+export type CreditsResponse<T, U> = {
 	cast: T[],
 	crew: U[],
 }

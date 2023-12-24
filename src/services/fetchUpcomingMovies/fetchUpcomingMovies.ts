@@ -1,7 +1,7 @@
 import { Locales, fallbackLng } from "@/i18n/settings";
-import { APIListsResponse, APIMovieResponse } from "@/types/shared";
+import { ListsResponse, MovieResponse } from "@/types/shared";
 
-export const fetchUpcomingMovies = async (page: number, options?: { lang: Locales }): Promise<APIListsResponse<APIMovieResponse> | null> => {
+export const fetchUpcomingMovies = async (page: number, options?: { lang: Locales }): Promise<ListsResponse<MovieResponse> | null> => {
 	const currentLang = options?.lang ?? fallbackLng;
 	const region = currentLang === 'ru' ? 'RU' : 'US';
 
@@ -47,5 +47,5 @@ export const fetchUpcomingMovies = async (page: number, options?: { lang: Locale
 		}
 	}
 
-	return upcomingMovies as APIListsResponse<APIMovieResponse>;
+	return upcomingMovies as ListsResponse<MovieResponse>;
 };

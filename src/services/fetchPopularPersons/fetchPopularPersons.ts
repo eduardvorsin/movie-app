@@ -1,5 +1,5 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { APIListsResponse, Department } from '@/types/shared';
+import { ListsResponse, Department } from '@/types/shared';
 
 type PopularPerson = {
 	adult: boolean,
@@ -11,7 +11,7 @@ type PopularPerson = {
 	profile_path: string | null,
 }
 
-export const fetchPopularPersons = async (page: number, options?: { lang: Locales }): Promise<APIListsResponse<PopularPerson> | null> => {
+export const fetchPopularPersons = async (page: number, options?: { lang: Locales }): Promise<ListsResponse<PopularPerson> | null> => {
 	const currentLang = options?.lang ?? fallbackLng;
 
 	let popularPersons;
@@ -36,5 +36,5 @@ export const fetchPopularPersons = async (page: number, options?: { lang: Locale
 		}
 	}
 
-	return popularPersons as APIListsResponse<PopularPerson>;
+	return popularPersons as ListsResponse<PopularPerson>;
 };
