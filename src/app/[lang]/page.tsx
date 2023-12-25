@@ -8,6 +8,7 @@ import { getGenreById } from '@/helpers/getGenreById/getGenreById';
 import { fetchTranslation } from '@/i18n/server';
 import { Locales } from '@/i18n/settings';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
+import { fetchMoviesBoxOffice } from '@/services/fetchMoviesBoxOffice/fetchMoviesBoxOffice';
 import { fetchNowPlayingMovies } from '@/services/fetchNowPlayingMovies/fetchNowPlayingMovies';
 import { fetchPopularTVSeries } from '@/services/fetchPopularTVSeries/fetchPopularTVSeries';
 import { fetchTrendingMovies } from '@/services/fetchTrendingMovies/fetchTrendingMovies';
@@ -27,6 +28,7 @@ export default async function Home({ params: { lang } }: Props) {
   const trendingMovies = await fetchTrendingMovies(lang);
   const upcomingReleases = await fetchUpcomingMovies(1, { lang });
   const popularTVSeries = await fetchPopularTVSeries(1, { lang });
+  const boxOffice = await fetchMoviesBoxOffice(1, { lang });
 
   const avaliableOngoingMovies = nowPlayingMovies?.results
     .filter((movie) => movie.backdrop_path !== null)
@@ -321,7 +323,48 @@ export default async function Home({ params: { lang } }: Props) {
           </Container>
         </section>
       )}
+
+      {boxOffice && boxOffice.length > 0 && (
+        <section className='py-5 md:py-8'>
+          <Container className='flex flex-col'>
+            <Title
+              className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+              as='h2'
+              level={3}
+            >
+              {t('boxOfficeTitle')}
+            </Title>
+
+            <ul className='grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-5 gap-x-4 lg:gap-x-8'>
+              {boxOffice.slice(0, 10).map(({
+                id,
+                poster_path,
+                title,
+                revenue,
+              }) => (
+                <RatingItem
+                  key={id}
+                  id={id}
+                  title={title}
+                  src={poster_path ? `${imgPath.poster}${poster_path}` : ''}
+                  element='li'
+                >
+                  <p className='shrink-0 text-center text-neutral-900 dark:text-dark-neutral-800 leading-[1.25] max-w-[75px] lg:max-w-[90px] flex flex-col overflow-hidden'>
+                    <span className='font-bold text-300 lg:text-400 truncate'>
+                      {(revenue / 10 ** 6).toLocaleString(lang, {
+                        maximumFractionDigits: 1,
+                      })}
+                    </span>
+                    <span className='text-100 lg:text-200 truncate'>
+                      {t('boxOfficeValueUnit')}
+                    </span>
+                  </p>
+                </RatingItem>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      )}
     </main>
   )
 }
-
