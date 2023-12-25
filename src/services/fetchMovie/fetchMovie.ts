@@ -1,5 +1,6 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { CreditsResponse, ListsResponse, MovieResponse, Department, ExternalIDS, Genre, ProductionCompany, ProductionCountry } from '@/types/shared';
+import { CreditsResponse, ListsResponse, MovieResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry } from '@/services/types';
+import { Department } from '@/types/shared';
 
 type Review = {
 	author: string,

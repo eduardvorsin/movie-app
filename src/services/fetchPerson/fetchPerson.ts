@@ -1,5 +1,6 @@
-import { CreditsResponse, Department, ExternalIDS } from '@/types/shared';
+import { Department } from '@/types/shared';
 import { Locales, fallbackLng } from '@/i18n/settings';
+import { CreditsResponse, ExternalIDS } from '../types';
 
 export type PersonCredit = {
 	adult: boolean,

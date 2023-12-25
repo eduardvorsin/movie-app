@@ -1,5 +1,6 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { ListsResponse, Department } from '@/types/shared';
+import { Department } from '@/types/shared';
+import { ListsResponse } from '../types';
 
 type PopularPerson = {
 	adult: boolean,

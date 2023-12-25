@@ -1,5 +1,5 @@
 import { Locales, fallbackLng } from "@/i18n/settings";
-import { ListsResponse, MovieResponse } from "@/types/shared";
+import { ListsResponse, MovieResponse } from "@/services/types";
 import { MovieDetails, fetchMovie } from "../fetchMovie/fetchMovie";
 
 const fetchYearBoxOfficeMovies = async (page: number, options: { lang: Locales }): Promise<ListsResponse<MovieResponse> | null> => {

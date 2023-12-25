@@ -1,4 +1,5 @@
-import { ExternalIDS, KeyWithoutId, SocialNetworksItem } from '@/types/shared';
+import { ExternalIDS } from '@/services/types';
+import { KeyWithoutId, SocialNetworksItem } from '@/types/shared';
 
 const socialNetworkUrls = {
 	imdb_id: 'https://www.imdb.com/',

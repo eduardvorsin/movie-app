@@ -1,5 +1,5 @@
 import { Locales, fallbackLng } from "@/i18n/settings";
-import { ListsResponse, MovieResponse } from "@/types/shared";
+import { ListsResponse, MovieResponse } from "@/services/types";
 
 type TrendingMovie = MovieResponse & { media_type: string };
 

@@ -1,5 +1,5 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { ListsResponse, MovieResponse } from '@/types/shared';
+import { ListsResponse, MovieResponse } from '@/services/types';
 
 export const fetchNowPlayingMovies = async (lang?: Locales): Promise<ListsResponse<MovieResponse> | null> => {
 	const currentLang = lang ?? fallbackLng;
