@@ -44,7 +44,7 @@ const fetchTrailersByLocale = async (id: string, locale: Locales): Promise<Trail
 	return trailers as TrailersData;
 };
 
-export const fetchTrailers = async (id: string, options?: {
+export const fetchTrailersForMovie = async (id: string, options?: {
 	lang: Locales,
 }): Promise<TrailersData | null> => {
 	const preferredTrailers = await fetchTrailersByLocale(id, options?.lang ?? fallbackLng);

@@ -23,7 +23,7 @@ import { imgPath, routes } from 'src/constants';
 import Carousel from '@/components/Carousel/Carousel';
 import MovieCard from '@/components/MovieCard/MovieCard';
 import { convertToTime } from '@/helpers/convertToTime/convertToTime';
-import { fetchTrailers } from '@/services/fetchTrailers/fetchTrailers';
+import { fetchTrailersForMovie } from '@/services/fetchTrailersForMovie/fetchTrailersForMovie';
 import YouTubeVideo from '@/components/YouTubeVideo/YouTubeVideo';
 import Tabs from '@/components/Tabs/Tabs';
 import TabPanel from '@/components/Tabs/TabPanel/TabPanel';
@@ -70,7 +70,7 @@ type Props = {
 export default async function Page({ params: { id, lang } }: Props) {
 	const { t } = await fetchTranslation(lang, ['moviesPage', 'common']);
 	const movie = await fetchMovie(id, { lang });
-	const trailers = await fetchTrailers(id, { lang });
+	const trailers = await fetchTrailersForMovie(id, { lang });
 
 	if (!movie) {
 		notFound();
