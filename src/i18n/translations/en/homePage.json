@@ -1,5 +1,9 @@
 {
 	"mainTitle": "Welcome to the website dedicated to projects in the exciting film industry",
 	"theathers": "In Theaters Now",
-	"trending": "Popular projects"
+	"trending": "Popular projects",
+	"upcomingReleasesTitle": "Upcoming Releases",
+	"popularTVSeriesTitle": "Popular TV series",
+	"boxOfficeTitle": "Movies box office",
+	"boxOfficeValueUnit": "mln.\u00a0$"
 }

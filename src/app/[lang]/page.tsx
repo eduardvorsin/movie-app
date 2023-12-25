@@ -221,7 +221,7 @@ export default async function Home({ params: { lang } }: Props) {
               as='h2'
               level={3}
             >
-              Upcoming Releases
+              {t('upcomingReleasesTitle')}
             </Title>
 
             <ul className='grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-5 gap-x-4 lg:gap-x-8'>
@@ -265,7 +265,7 @@ export default async function Home({ params: { lang } }: Props) {
               as='h2'
               level={3}
             >
-              Popular TV series
+              {t('popularTVSeriesTitle')}
             </Title>
             <Carousel
               mousewheel

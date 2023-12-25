@@ -1,5 +1,9 @@
 {
 	"mainTitle": "Добро пожаловать на сайт посвященный проектам в захватывающей индустрии кино",
 	"theathers": "Сейчас в кино",
-	"trending": "Популярные проекты"
+	"trending": "Популярные проекты",
+	"upcomingReleasesTitle": "Предстоящие релизы",
+	"popularTVSeriesTitle": "Популярные сериалы",
+	"boxOfficeTitle": "Кассовые сборы",
+	"boxOfficeValueUnit": "млн.\u00a0$"
 }
