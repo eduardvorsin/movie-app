@@ -266,7 +266,7 @@ export const Highlited: Story = {
 
 export const NestedComments: Story = {
 	args: {
-		id: 'highlited',
+		id: 'nested',
 		author: 'Devin Nigel',
 		content: 'Nested comment with Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ipsa recusandae ratione, inventore eveniet magni earum consequatur labore hic harum facilis asperiores maxime! Cum, itaque!',
 		type: 'author',

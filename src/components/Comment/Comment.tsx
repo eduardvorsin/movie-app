@@ -38,7 +38,7 @@ export default function Comment({
 	time,
 	isEdited,
 	restrictedTo,
-	actions,
+	actions = [],
 	type,
 	afterContent,
 	isError,
@@ -55,7 +55,8 @@ export default function Comment({
 	...props
 }: Props) {
 	const classes = [
-		'grid grid-cols-[auto_1fr] gap-x-2 gap-y-4 p-2 relative',
+		'grid grid-cols-1 xs:grid-cols-[auto_1fr] gap-x-2 gap-y-2 md:gap-y-4 p-2 relative',
+		highlighted ? 'gap-y-4' : 'gap-y-2 md:gap-y-4',
 		className
 	].join(' ');
 	const actionItemClasses = 'before:content-["·"] before:ml-1 before:mr-1 first:before:hidden';
@@ -148,7 +149,7 @@ export default function Comment({
 
 				<ExpandableText
 					visibleRowsCount={6}
-					className='mb-2 text-neutral-1000 dark:text-dark-neutral-900'
+					className='text-neutral-1000 dark:text-dark-neutral-900'
 				>
 					{content}
 				</ExpandableText>
@@ -156,7 +157,7 @@ export default function Comment({
 				{(isError && !isSaving) && (
 					<>
 						<InlineMessage
-							className='mb-1 text-100 -ml-1'
+							className='mt-1 text-100 -ml-1'
 							appearance='warning'
 							message={error ?? 'unexpected error'}
 							fieldId={`${id}-error-message`}
@@ -174,8 +175,8 @@ export default function Comment({
 						</div>
 					</>
 				)}
-				{(!isError && !isSaving) && (
-					<div>
+				{(!isError && !isSaving && actions.length > 0) && (
+					<div className='mt-1'>
 						{actions?.map((action, index) => (
 							<span
 								key={index}
@@ -190,14 +191,14 @@ export default function Comment({
 			</div>
 			{children && (
 				<div
-					className={shouldRenderNestedCommentsInline ? 'col-span-full' : 'col-start-2 col-end-3'}
+					className={shouldRenderNestedCommentsInline ? 'col-span-full' : 'xs:col-start-2 xs:col-end-3'}
 				>
 					{children}
 				</div>
 			)}
 			{highlighted && (
 				<div
-					className='absolute -top-2 -left-2 w-[calc(100%+16px)] h-[calc(100%+16px)] bg-neutral-100 dark:bg-dark-neutral-200 -z-100 pointer-events-none col-span-full row-start-1 row-end-1'
+					className='absolute -top-2 -left-2 w-[calc(100%+16px)] h-[calc(100%+16px)] bg-neutral-100 dark:bg-dark-neutral-200 -z-100 pointer-events-none col-span-full row-start-1 row-end-3 xs:row-end-1'
 					data-testid={testId ? 'highlighting' : undefined}
 					aria-hidden
 				/>
@@ -205,4 +206,3 @@ export default function Comment({
 		</div>
 	);
 };
-
