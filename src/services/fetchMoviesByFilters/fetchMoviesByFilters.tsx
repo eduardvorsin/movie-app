@@ -16,6 +16,7 @@ type Options = {
 	'vote_average.lte'?: number,
 	'vote_count.gte'?: number,
 	'vote_count.lte'?: number,
+	with_release_type?: string,
 }
 
 export const fetchMoviesByFilters = async (page: number, options: Options) => {

@@ -1,5 +1,6 @@
 import { Locales, fallbackLng } from "@/i18n/settings";
 import { ListsResponse, MovieResponse } from "@/services/types";
+import { fetchMoviesByFilters } from "../fetchMoviesByFilters/fetchMoviesByFilters";
 
 export const fetchUpcomingMovies = async (page: number, options?: { lang: Locales }): Promise<ListsResponse<MovieResponse> | null> => {
 	const currentLang = options?.lang ?? fallbackLng;
@@ -8,44 +9,15 @@ export const fetchUpcomingMovies = async (page: number, options?: { lang: Locale
 	const startingDate = new Date().toISOString().slice(0, 10);
 	const endDate = new Date(new Date().getTime() + 31 * 24 * 3600 * 1000).toISOString().slice(0, 10);
 
-	const url = new URL('discover/movie', 'https://api.themoviedb.org/3/');
-	const queryParams = {
+	const upcomingMovies = await fetchMoviesByFilters(page, {
 		language: currentLang,
-		page: page.toString(),
 		region: region,
 		sort_by: 'primary_release_date.asc',
 		'primary_release_date.gte': startingDate,
 		'primary_release_date.lte': endDate,
 		'release_date.gte': startingDate,
 		'release_date.lte': endDate,
-	};
+	});
 
-	(Object.keys(queryParams) as Array<keyof typeof queryParams>)
-		.forEach((query) => {
-			url.searchParams.append(query, queryParams[query]);
-		});
-
-	let upcomingMovies;
-	try {
-		const res = await fetch(url.href, {
-			method: 'Get',
-			headers: {
-				accept: 'application/json',
-				Authorization: `Bearer ${process.env.TMDB_SECRET}`,
-			}
-		});
-
-		if (!res.ok) {
-			throw new Error(`${res.status} ${res.statusText}`);
-		}
-
-		upcomingMovies = await res.json();
-	} catch (error) {
-		if (error instanceof Error) {
-			console.error(error);
-			return null;
-		}
-	}
-
-	return upcomingMovies as ListsResponse<MovieResponse>;
+	return upcomingMovies;
 };
