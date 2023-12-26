@@ -5,7 +5,7 @@ import { fetchMoviesByFilters } from '../fetchMoviesByFilters/fetchMoviesByFilte
 export const fetchNowPlayingMovies = async (lang?: Locales): Promise<ListsResponse<MovieResponse> | null> => {
 	const currentLang = lang ?? fallbackLng;
 
-	const startingDate = new Date(new Date().getTime() - 31 * 24 * 3600 * 1000).toISOString().slice(0, 10);
+	const startingDate = new Date(new Date().getTime() - 2 * 31 * 24 * 3600 * 1000).toISOString().slice(0, 10);
 	const endDate = new Date().toISOString().slice(0, 10);
 
 	const nowPlayingMovies = await fetchMoviesByFilters(1, {
@@ -16,6 +16,7 @@ export const fetchNowPlayingMovies = async (lang?: Locales): Promise<ListsRespon
 		'primary_release_date.gte': startingDate,
 		'primary_release_date.lte': endDate,
 		with_release_type: '2|3',
+		'vote_count.gte': 25,
 	});
 
 	return nowPlayingMovies;
