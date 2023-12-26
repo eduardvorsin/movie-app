@@ -8,7 +8,7 @@ export const fetchTrendingMovies = async (lang?: Locales): Promise<ListsResponse
 
 	let trendingMovies;
 	try {
-		const res = await fetch(`https://api.themoviedb.org/3/trending/movie/day?language=${currentLang}`, {
+		const res = await fetch(`https://api.themoviedb.org/3/trending/movie/week?language=${currentLang}`, {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',
@@ -30,3 +30,4 @@ export const fetchTrendingMovies = async (lang?: Locales): Promise<ListsResponse
 
 	return trendingMovies as ListsResponse<TrendingMovie>;
 }
+

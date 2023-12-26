@@ -57,4 +57,3 @@ export const fetchMoviesByFilters = async (page: number, options: Options) => {
 
 	return movies as ListsResponse<MovieResponse>;
 };
-
