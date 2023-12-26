@@ -43,7 +43,9 @@ export default function SocialLinks({
 					<svg viewBox='0 0 32 32'>
 						<use href={socialNetworkIcons[item.name]}></use>
 					</svg>
-					{`${item.name[0].toUpperCase()}${item.name.slice(1)}`}
+					<span className='sr-only'>
+						{`${item.name[0].toUpperCase()}${item.name.slice(1)}`}
+					</span>
 				</Link>
 			))}
 		</div>
