@@ -137,7 +137,7 @@ export default function MovieCard({
 		>
 			<Link
 				href={url}
-				className='block relative group'
+				className={`block relative group ${appearance === 'secondary' ? 'transition-transform duration-150 hover:scale-[1.025]' : ''}`}
 				title={title}
 			>
 				<ThemedImage
