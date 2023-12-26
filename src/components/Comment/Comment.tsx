@@ -78,22 +78,21 @@ export default function Comment({
 				<Title
 					level={6}
 					as={titleElement}
-					className='flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800'
-				>
+					className='flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1'>
 					<CommentInfoItem
-						className='mr-2 last:mr-0 mb-1 text-100'
+						className='text-100'
 						type='author'
 					>
 						{author}
 					</CommentInfoItem>
 					<span
-						className='px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate mr-2 last:mr-0 mb-1'
+						className='px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate'
 					>
 						{type}
 					</span>
 					{isSaving && (
 						<span
-							className='mr-2 last:mr-0 mb-1 text-100 font-regular max-w-[120px] truncate'
+							className=' text-100 font-regular max-w-[120px] truncate'
 						>
 							{savingText ?? 'Sending...'}
 						</span>
@@ -101,7 +100,7 @@ export default function Comment({
 					{!isError && !isSaving && time ?
 						(
 							<CommentInfoItem
-								className='mr-2 last:mr-0 mb-1 text-100 font-regular'
+								className=' text-100 font-regular'
 								type='time'
 							>
 								{time}
@@ -110,14 +109,14 @@ export default function Comment({
 					}
 					{isEdited && (
 						<span
-							className='text-neutral-700 dark:text-dark-neutral-700 mr-2 last:mr-0 mb-1 font-regular text-100'
+							className='text-neutral-700 dark:text-dark-neutral-700  font-regular text-100'
 						>
 							Edited
 						</span>
 					)}
 					{restrictedTo && (
 						<span
-							className='mr-2 last:mr-0 mb-1 text-100 font-medium inline-flex items-center text-neutral-700 dark:text-dark-neutral-700'
+							className=' text-100 font-medium inline-flex items-center text-neutral-700 dark:text-dark-neutral-700'
 						>
 							<svg className='w-4 h-4 mr-1 fill-current' viewBox='0 0 20 20'>
 								<use href={`${Locked.src}#locked`}></use>
@@ -129,23 +128,25 @@ export default function Comment({
 					)}
 				</Title>
 
-				{rating && (
-					<span className='flex items-end mb-1'>
-						<svg
-							className='w-4 h-4 text-neutral-700 dark:text-dark-neutral-700 mr-2'
-							viewBox='0 0 20 20'
-						>
-							<use href={'/assets/icons/star.svg#star'}></use>
-						</svg>
+				{
+					rating && (
+						<span className='flex items-end mb-1'>
+							<svg
+								className='w-4 h-4 text-neutral-700 dark:text-dark-neutral-700 mr-2'
+								viewBox='0 0 20 20'
+							>
+								<use href={'/assets/icons/star.svg#star'}></use>
+							</svg>
 
-						<span
-							className='text-neutral-800 dark:text-dark-neutral-800 font-bold leading-none'
-							aria-label='rating'
-						>
-							{rating}
+							<span
+								className='text-neutral-800 dark:text-dark-neutral-800 font-bold leading-none'
+								aria-label='rating'
+							>
+								{rating}
+							</span>
 						</span>
-					</span>
-				)}
+					)
+				}
 
 				<ExpandableText
 					visibleRowsCount={6}
@@ -154,17 +155,33 @@ export default function Comment({
 					{content}
 				</ExpandableText>
 
-				{(isError && !isSaving) && (
-					<>
-						<InlineMessage
-							className='mt-1 text-100 -ml-1'
-							appearance='warning'
-							message={error ?? 'unexpected error'}
-							fieldId={`${id}-error-message`}
-						/>
+				{
+					(isError && !isSaving) && (
+						<>
+							<InlineMessage
+								className='mt-1 text-100 -ml-1'
+								appearance='warning'
+								message={error ?? 'unexpected error'}
+								fieldId={`${id}-error-message`}
+							/>
 
-						<div>
-							{errorActions?.map((action, index) => (
+							<div>
+								{errorActions?.map((action, index) => (
+									<span
+										key={index}
+										className={actionItemClasses}
+									>
+										{action}
+									</span>
+								))}
+							</div>
+						</>
+					)
+				}
+				{
+					(!isError && !isSaving && actions.length > 0) && (
+						<div className='mt-1'>
+							{actions?.map((action, index) => (
 								<span
 									key={index}
 									className={actionItemClasses}
@@ -173,36 +190,27 @@ export default function Comment({
 								</span>
 							))}
 						</div>
-					</>
-				)}
-				{(!isError && !isSaving && actions.length > 0) && (
-					<div className='mt-1'>
-						{actions?.map((action, index) => (
-							<span
-								key={index}
-								className={actionItemClasses}
-							>
-								{action}
-							</span>
-						))}
-					</div>
-				)}
+					)
+				}
 				{afterContent}
-			</div>
+			</div >
 			{children && (
 				<div
 					className={shouldRenderNestedCommentsInline ? 'col-span-full' : 'xs:col-start-2 xs:col-end-3'}
 				>
 					{children}
 				</div>
-			)}
-			{highlighted && (
-				<div
-					className='absolute -top-2 -left-2 w-[calc(100%+16px)] h-[calc(100%+16px)] bg-neutral-100 dark:bg-dark-neutral-200 -z-100 pointer-events-none col-span-full row-start-1 row-end-3 xs:row-end-1'
-					data-testid={testId ? 'highlighting' : undefined}
-					aria-hidden
-				/>
-			)}
-		</div>
+			)
+			}
+			{
+				highlighted && (
+					<div
+						className='absolute -top-2 -left-2 w-[calc(100%+16px)] h-[calc(100%+16px)] bg-neutral-100 dark:bg-dark-neutral-200 -z-100 pointer-events-none col-span-full row-start-1 row-end-3 xs:row-end-1'
+						data-testid={testId ? 'highlighting' : undefined}
+						aria-hidden
+					/>
+				)
+			}
+		</div >
 	);
 };
