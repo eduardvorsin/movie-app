@@ -81,7 +81,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 			if (name === 'gender') {
 				currentValue = t(`genderValues.${value}`, { ns: 'common' });
 			} else if (name === 'known_for_department' && lang !== 'en') {
-				currentValue = t(`department.${value.toLowerCase()}`, { ns: 'personsPage' });
+				currentValue = t(`department.${value.toLowerCase()}`, { ns: 'personsPage', context: person.gender });
 			} else if (name === 'birthday' || name === 'deathday') {
 				currentValue = getLocalizedDate(value, lang);
 			}
@@ -295,7 +295,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									<TabPanel
 										className='w-full'
 										key={key}
-										label={t(`filmography.tabs.${key}`, { ns: 'personsPage' })}
+										label={t(`filmography.tabs.${key}`, { ns: 'personsPage', context: person.gender })}
 									>
 										<ul>
 											{filmography[key].map(({
@@ -393,6 +393,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									name,
 									popularity,
 									known_for_department,
+									gender,
 								}) => (
 									<PersonCard
 										className='mb-2 mx-auto xs:mx-0'
@@ -406,7 +407,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 										showRating
 										rating={popularity}
 									>
-										{t(`department.${known_for_department.toLowerCase()}`, { ns: 'personsPage' })}
+										{t(`department.${known_for_department.toLowerCase()}`, { ns: 'personsPage', context: gender })}
 									</PersonCard>
 								))}
 							</Carousel>
