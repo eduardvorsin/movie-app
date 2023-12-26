@@ -8,7 +8,7 @@ export const fetchNowPlayingMovies = async (lang?: Locales): Promise<ListsRespon
 	const startingDate = new Date(new Date().getTime() - 31 * 24 * 3600 * 1000).toISOString().slice(0, 10);
 	const endDate = new Date().toISOString().slice(0, 10);
 
-	const nowPlayingMovies = await fetchMoviesByFilters(0, {
+	const nowPlayingMovies = await fetchMoviesByFilters(1, {
 		language: currentLang,
 		sort_by: 'popularity.desc',
 		'release_date.gte': startingDate,
