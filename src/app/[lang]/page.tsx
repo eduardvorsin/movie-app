@@ -81,7 +81,7 @@ export default async function Home({ params: { lang } }: Props) {
             autoplay
             autoplayInterval={5000}
           >
-            {avaliableOngoingMovies.map(({
+            {avaliableOngoingMovies.slice(0, 10).map(({
               id,
               backdrop_path,
               title,
@@ -99,9 +99,10 @@ export default async function Home({ params: { lang } }: Props) {
                   className='object-cover object-top z-0 bg-neutral-200 dark:bg-dark-neutral-250'
                   fill
                   alt={title}
-                  priority={index < 3}
-                  loading={index >= 3 ? 'lazy' : undefined}
+                  priority={index < 1}
+                  loading={index >= 1 ? 'lazy' : undefined}
                   sizes='100vw'
+                  quality={70}
                   src={{
                     light: `${imgPath['backdrop']}${backdrop_path}`,
                     dark: `${imgPath['backdrop']}${backdrop_path}`,
@@ -110,19 +111,20 @@ export default async function Home({ params: { lang } }: Props) {
 
                 <div className='relative z-100 p-4 sm:p-6 md:p-8 max-w-[620px]'>
                   <p className='flex flex-wrap xs:flex-nowrap gap-2 xs:gap-0 md:gap-x-0 leading-[1.25] text-neutral-1100 dark:text-dark-neutral-1100 font-medium mb-1'>
-                    <span className='flex items-center after:hidden xs:after:inline-block after:content-["/"] after:ml-2 after:mr-2'>
-                      <span className='sr-only'>{t('ratingLabel')}:</span>
+                    <span
+                      className='flex items-center after:hidden xs:after:inline-block after:content-["/"] after:ml-2 after:mr-2'
+                      aria-label={t('ratingLabel')}
+                    >
                       <svg
                         className='w-4 h-4 text-neutral-700 dark:text-dark-neutral-700 mr-2'
                         viewBox='0 0 20 20'
                       >
                         <use href={'/assets/icons/star.svg#star'}></use>
                       </svg>
-                      <span>{vote_average}</span>
+                      {vote_average}
                     </span>
 
-                    <span>
-                      <span className='sr-only'>{t('genresLabel')}:</span>
+                    <span aria-label={t('genresLabel')}>
                       {genres}
                     </span>
                   </p>
@@ -134,6 +136,7 @@ export default async function Home({ params: { lang } }: Props) {
                   >
                     {title}
                   </Title>
+
                   {overview.length > 0 && (
                     <p className='text-100 xs:text-200 md:text-[1.125rem] line-clamp-3 dark:text-dark-neutral-1000 text-neutral-1000'>
                       {overview}
@@ -183,7 +186,7 @@ export default async function Home({ params: { lang } }: Props) {
                 }
               }}
             >
-              {trendingMovies.results.map(({
+              {trendingMovies.results.slice(0, 14).map(({
                 id,
                 poster_path,
                 title,
@@ -294,7 +297,7 @@ export default async function Home({ params: { lang } }: Props) {
                 }
               }}
             >
-              {popularTVSeries.results.map(({
+              {popularTVSeries.results.slice(0, 14).map(({
                 id,
                 poster_path,
                 name,
