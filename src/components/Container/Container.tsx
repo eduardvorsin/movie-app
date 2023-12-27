@@ -1,6 +1,5 @@
 import { GeneralProps } from '@/types/shared';
 import { ElementType, ReactNode } from 'react';
-import { twMerge } from 'tailwind.config';
 
 type Props = {
 	children: ReactNode,
@@ -15,10 +14,10 @@ export default function Container({
 	...props
 }: Props) {
 	const Container = component ?? 'div';
-	const classes = twMerge(
+	const classes = [
 		'max-w-[77rem] mx-auto px-4',
 		className,
-	);
+	].join(' ');
 
 	return (
 		<Container

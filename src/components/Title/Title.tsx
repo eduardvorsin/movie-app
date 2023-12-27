@@ -1,6 +1,5 @@
 import { GeneralProps, HeadingElement, HeadingLevel } from '@/types/shared';
 import React from 'react';
-import { twMerge } from '../../../tailwind.config';
 
 export type Props = {
 	children: React.ReactNode,
@@ -35,12 +34,12 @@ export default function Title({
 	as = 'h6',
 	...props
 }: Props) {
-	const classes = twMerge(
+	const classes = [
 		'leading-[1.25] -tracking-[0.01em]',
 		levelTypes[level],
 		fontWeights[weight],
 		className,
-	);
+	].join(' ');
 
 	const Heading: HeadingElement = as;
 

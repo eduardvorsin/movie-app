@@ -91,7 +91,7 @@ export default function Button({
 			<>
 				{!iconButton && isLoading && (
 					<Spinner
-						className={`w-auto h-[80%] stroke-1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${appearance === 'secondary' ? 'text-dark-neutral-0' : 'text-neutral-0'}`}
+						className={`[&]:w-auto [&]:h-[80%] stroke-1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${appearance === 'secondary' ? 'text-dark-neutral-0' : 'text-neutral-0'}`}
 						size='custom'
 						testId='spinner'
 					/>

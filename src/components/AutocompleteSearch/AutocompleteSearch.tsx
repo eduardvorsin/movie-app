@@ -116,7 +116,7 @@ export default function AutocompleteSearch({
 									className='border-b-2 last:border-none border-neutral-300 dark:border-dark-neutral-350'
 								>
 									<Link
-										className='no-underline w-full h-full block px-[0.625rem] py-[0.375rem] bg-neutral-0 hover:bg-neutral-100 active:bg-neutral-200 dark:bg-dark-neutral-200 dark:hover:bg-dark-neutral-250 dark:active:bg-dark-neutral-300'
+										className='w-full h-full block px-[0.625rem] py-[0.375rem] [&]:bg-neutral-0 hover:[&]:bg-neutral-100 active:[&]:bg-neutral-200 dark:[&]:bg-dark-neutral-200 dark:hover:[&]:bg-dark-neutral-250 dark:active:[&]:bg-dark-neutral-300'
 										href={option.href}
 									>
 										{option.label}

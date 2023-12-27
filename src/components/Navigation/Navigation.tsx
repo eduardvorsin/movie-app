@@ -37,7 +37,7 @@ export default function Navigation({
 					{(Object.keys(navigationRoutes) as Array<keyof NavigationRoutes>).map((route) => (
 						<li key={route}>
 							<Link
-								className={`inline-flex no-underline text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 ${activeSegment === route ? 'before:opacity-100' : 'before:opacity-0'}`}
+								className={`inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 ${activeSegment === route ? 'before:opacity-100' : 'before:opacity-0'}`}
 								href={navigationRoutes[route]}
 								onClick={onClick}
 							>

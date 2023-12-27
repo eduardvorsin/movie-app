@@ -1,5 +1,4 @@
 import { GeneralProps } from "@/types/shared";
-import { twMerge } from "tailwind.config";
 
 export type Props = {
 	size?: 'small' | 'medium' | 'large' | 'xlarge' | 'custom',
@@ -19,11 +18,11 @@ export default function Spinner({
 	testId,
 	...props
 }: Props) {
-	const classes = twMerge(
+	const classes = [
 		'inline-flex align-middle dark:text-blue-300 text-blue-800',
 		sizesTypes[size],
 		className,
-	);
+	].join(' ');
 
 	return (
 		<span

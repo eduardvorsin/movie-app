@@ -61,7 +61,7 @@ export default function RatingItem({
 				/>
 
 				<Title
-					className='text-neutral-1000 dark:text-dark-neutral-900 grow text-200 md:text-[1.125rem] line-clamp-3'
+					className='text-neutral-1000 dark:text-dark-neutral-900 grow [&]:text-200 md:[&]:text-[1.125rem] line-clamp-3'
 					level={5}
 					as='h3'
 				>

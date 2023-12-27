@@ -199,7 +199,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 								as='h1'
 							>
 								<Link
-									className='no-underline'
 									href={homepage}
 									isExternal
 									target='_blank'
@@ -298,7 +297,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 										className='mb-1'
 									>
 										<Link
-											className='no-underline font-bold'
+											className='font-bold'
 											href={`${routes.persons}${id}`}
 										>
 											{name}

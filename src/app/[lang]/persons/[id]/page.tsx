@@ -102,7 +102,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 	return (
 		<main className='mt-[5rem]'>
-			<Container className='px-0'>
+			<Container className='[&]:px-0'>
 				<Breadcrumbs
 					className='px-4 xl:px-0 mb-[1.25rem]'
 					label='breadcrumbs navigation'

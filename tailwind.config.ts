@@ -1,4 +1,3 @@
-import { extendTailwindMerge } from 'tailwind-merge';
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -347,17 +346,3 @@ const config: Config = {
 }
 
 export default config;
-
-export const twMerge = extendTailwindMerge({
-  override: {},
-  extend: {
-    classGroups: {
-      'text-color': ['text-lime', 'text-red', 'text-orange', 'text-yellow', 'text-green', 'text-teal', 'text-blue', 'text-purple', 'text-magenta', 'text-neutral'],
-      'font-size': ['text-0', 'text-75', 'text-100', 'text-200', 'text-300', 'text-400', 'text-500', 'text-600', 'text-700'],
-      leading: [
-        'leading-1', 'leading-2', 'leading-3', 'leading-4', 'leading-5', 'leading-6', 'leading-7', 'leading-none'],
-    },
-    conflictingClassGroups: {},
-    conflictingClassGroupModifiers: {},
-  },
-})

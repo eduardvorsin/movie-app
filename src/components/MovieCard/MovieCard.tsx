@@ -88,7 +88,7 @@ export default function MovieCard({
 	].join(' ');
 
 	const cardTitleClasses = [
-		'text-200 leading-[1.25]',
+		'[&]:text-200 leading-[1.25]',
 		appearance === 'secondary' ? 'sr-only' : '',
 		variant === 'vertical' ? 'mt-2' : 'mb-1 sm:text-[1.125rem]',
 	].join(' ');
@@ -100,7 +100,7 @@ export default function MovieCard({
 			as={titleElement}
 		>
 			<Link
-				className={`break-all text-neutral-1000 dark:text-dark-neutral-1100 hover:text-neutral-800 active:text-neutral-700 dark:hover:text-dark-neutral-900 dark:active:text-dark-neutral-800 transition-colors duration-150 ${variant === 'vertical' ? 'line-clamp-2' : 'line-clamp-1'}`}
+				className={`break-all [&]:text-neutral-1000 dark:[&]:text-dark-neutral-1100 hover:[&]:text-neutral-800 active:[&]:text-neutral-700 dark:hover:[&]:text-dark-neutral-900 dark:active:[&]:text-dark-neutral-800 transition-colors duration-150 ${variant === 'vertical' ? 'line-clamp-2' : 'line-clamp-1'}`}
 				href={url}
 				title={title}
 			>
@@ -137,7 +137,7 @@ export default function MovieCard({
 		>
 			<Link
 				href={url}
-				className={`block relative group ${appearance === 'secondary' ? 'transition-transform duration-150 hover:scale-[1.025]' : ''}`}
+				className={`block relative group ${appearance === 'secondary' ? 'transition-transform duration-150 scale-100 hover:scale-[1.025]' : ''}`}
 				title={title}
 			>
 				<ThemedImage

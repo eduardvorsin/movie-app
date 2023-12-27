@@ -1,6 +1,5 @@
 import { AnchorHTMLAttributes, FocusEventHandler, MouseEventHandler, ReactNode } from 'react';
 import NextLink from 'next/link';
-import { twMerge } from 'tailwind.config';
 import { GeneralProps } from '@/types/shared';
 
 type Props = {
@@ -30,11 +29,11 @@ export default function Link({
 	target,
 	...props
 }: Props) {
-	const linkClasses = twMerge(
+	const linkClasses = [
 		'no-underline text-blue-700 hover:text-blue-800 active:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline transition-colors duration-150',
 		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
 		className,
-	);
+	].join(' ');
 
 	if (!isExternal) {
 		return (

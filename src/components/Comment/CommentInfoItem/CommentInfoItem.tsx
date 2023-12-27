@@ -22,7 +22,7 @@ export default function CommentInfoItem({
 	...props
 }: Props) {
 	const classes = [
-		'text-neutral-800 dark:text-dark-neutral-800 enabled:hover:text-neutral-700 dark:enabled:hover:text-dark-neutral-900 enabled:active:text-neutral-600 dark:enabled:active:text-dark-neutral-1000',
+		'[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000',
 		type === 'author' ? 'font-medium' : '',
 		className
 	].join(' ');
