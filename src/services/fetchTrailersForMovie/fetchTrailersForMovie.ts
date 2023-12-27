@@ -1,22 +1,7 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
+import { TrailersResponseList } from '../types';
 
-type Trailer = {
-	name: string,
-	key: string,
-	site: 'YouTube' | 'Vimeo',
-	size: number,
-	type: 'Trailer' | 'Teaser' | 'Behind the Scenes' | 'Clip' | 'Featurette',
-	official: boolean,
-	published_at: string,
-	id: string
-}
-
-type TrailersData = {
-	id: number,
-	results: Trailer[],
-}
-
-const fetchTrailersByLocale = async (id: string, locale: Locales): Promise<TrailersData | null> => {
+const fetchTrailersByLocale = async (id: number, locale: Locales): Promise<TrailersResponseList | null> => {
 	let trailers;
 
 	try {
@@ -41,12 +26,12 @@ const fetchTrailersByLocale = async (id: string, locale: Locales): Promise<Trail
 		}
 	}
 
-	return trailers as TrailersData;
+	return trailers as TrailersResponseList;
 };
 
-export const fetchTrailersForMovie = async (id: string, options?: {
+export const fetchTrailersForMovie = async (id: number, options?: {
 	lang: Locales,
-}): Promise<TrailersData | null> => {
+}): Promise<TrailersResponseList | null> => {
 	const preferredTrailers = await fetchTrailersByLocale(id, options?.lang ?? fallbackLng);
 
 	if (preferredTrailers && preferredTrailers.results.length === 0) {

@@ -62,3 +62,19 @@ export type ExternalIDS = {
 	twitter_id: string | null,
 	youtube_id: string | null,
 }
+
+export type TrailerResponse = {
+	name: string,
+	key: string,
+	site: 'YouTube' | 'Vimeo',
+	size: number,
+	type: 'Trailer' | 'Teaser' | 'Behind the Scenes' | 'Clip' | 'Featurette',
+	official: boolean,
+	published_at: string,
+	id: string
+}
+
+export type TrailersResponseList = {
+	id: number,
+	results: TrailerResponse[],
+}
