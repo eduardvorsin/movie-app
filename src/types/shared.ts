@@ -11,7 +11,7 @@ export type KeyWithoutId<T> = T extends `${infer Name}_id` ? Name : never;
 export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-export type Department = 'Acting' | 'Production' | 'Crew' | 'Writing' | 'Directing' | 'Costume & Make-Up' | 'Visual Effects' | 'Editing' | 'Art' | 'Lighting' | 'Camera' | 'Creator' | 'Sound';
+export type Department = 'Acting' | 'Production' | 'Crew' | 'Writing' | 'Directing' | 'Costume & Make-Up' | 'Visual Effects' | 'Editing' | 'Art' | 'Lighting' | 'Camera' | 'Creator' | 'Sound' | 'Actors';
 
 type CommonGenres = 'animation' | 'comedy' | 'crime' | 'documentary' | 'drama' | 'family' | 'mystery' | 'western';
 
