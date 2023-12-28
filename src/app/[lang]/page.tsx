@@ -24,11 +24,19 @@ type Props = {
 
 export default async function Home({ params: { lang } }: Props) {
   const { t } = await fetchTranslation(lang, ['homePage', 'common']);
-  const nowPlayingMovies = await fetchNowPlayingMovies(lang);
-  const trendingMovies = await fetchTrendingMovies(lang);
-  const upcomingReleases = await fetchUpcomingMovies(1, { lang });
-  const popularTVSeries = await fetchPopularTVSeries(1, { lang });
-  const boxOffice = await fetchMoviesBoxOffice(1, { lang });
+  const [
+    nowPlayingMovies,
+    trendingMovies,
+    upcomingReleases,
+    popularTVSeries,
+    boxOffice,
+  ] = await Promise.all([
+    fetchNowPlayingMovies(lang),
+    fetchTrendingMovies(lang),
+    fetchUpcomingMovies(1, { lang }),
+    fetchPopularTVSeries(1, { lang }),
+    fetchMoviesBoxOffice(1, { lang }),
+  ]);
 
   const avaliableOngoingMovies = nowPlayingMovies?.results
     .filter((movie) => movie.backdrop_path !== null)
