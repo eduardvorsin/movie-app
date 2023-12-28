@@ -45,7 +45,7 @@ export const Sizes: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'Allows you to set the size of the spinner. The default is medium. There are 5 spinner sizes in total, of which 4 have specific width and height dimensions and the 5th is custom, allowing you to set your sizes through classes',
+				story: 'Allows you to set the size of the spinner. The default is medium. There are 4 spinner sizes in total, with specific width and height dimensions, allowing you to set your sizes through classes',
 			},
 		},
 	},

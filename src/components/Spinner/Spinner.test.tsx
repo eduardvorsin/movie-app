@@ -43,10 +43,4 @@ describe('Spinner tests', () => {
 
 		expect(screen.getByTestId<HTMLSpanElement>('spinner')).toMatchSnapshot();
 	});
-
-	it('is a snapshot with a size of type "custom"', () => {
-		render(<Spinner testId='spinner' size='custom' />);
-
-		expect(screen.getByTestId<HTMLSpanElement>('spinner')).toMatchSnapshot();
-	});
 });

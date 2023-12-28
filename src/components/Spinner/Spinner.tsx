@@ -1,7 +1,7 @@
 import { GeneralProps } from "@/types/shared";
 
 export type Props = {
-	size?: 'small' | 'medium' | 'large' | 'xlarge' | 'custom',
+	size?: 'small' | 'medium' | 'large' | 'xlarge',
 } & GeneralProps;
 
 const sizesTypes = {
@@ -9,7 +9,6 @@ const sizesTypes = {
 	medium: 'w-6 h-6',
 	large: 'w-12 h-12',
 	xlarge: 'w-24 h-24',
-	custom: '',
 } as const;
 
 export default function Spinner({
