@@ -91,6 +91,7 @@ export default async function Home({ params: { lang } }: Props) {
                 showArrows: true,
               }
             }}
+            pauseOnHover
             autoplay
             autoplayInterval={5000}
           >
