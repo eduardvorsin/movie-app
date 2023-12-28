@@ -201,7 +201,7 @@ export default async function Home({ params: { lang } }: Props) {
                 vote_average,
                 release_date,
                 genre_ids,
-              }) => (
+              }, index) => (
                 <MovieCard
                   mediaType='movie'
                   variant='vertical'
@@ -217,6 +217,7 @@ export default async function Home({ params: { lang } }: Props) {
                   titleLevel={5}
                   showRating
                   rating={vote_average * 10}
+                  loading={index >= 6 ? 'lazy' : undefined}
                 />
               ))}
             </Carousel>
@@ -247,6 +248,7 @@ export default async function Home({ params: { lang } }: Props) {
                   id={id}
                   title={title}
                   src={poster_path ? `${imgPath.poster}${poster_path}` : ''}
+                  loading='lazy'
                   element='li'
                 >
                   <p className='shrink-0 text-center text-neutral-900 dark:text-dark-neutral-800 leading-[1.25] max-w-[45px] flex flex-col overflow-hidden'>
@@ -328,6 +330,7 @@ export default async function Home({ params: { lang } }: Props) {
                   titleLevel={5}
                   showRating
                   rating={vote_average * 10}
+                  loading='lazy'
                 />
               ))}
             </Carousel>
@@ -359,6 +362,7 @@ export default async function Home({ params: { lang } }: Props) {
                   title={title}
                   src={poster_path ? `${imgPath.poster}${poster_path}` : ''}
                   element='li'
+                  loading='lazy'
                 >
                   <p className='shrink-0 text-center text-neutral-900 dark:text-dark-neutral-800 leading-[1.25] max-w-[75px] lg:max-w-[90px] flex flex-col overflow-hidden'>
                     <span className='font-bold text-300 lg:text-400 truncate'>
