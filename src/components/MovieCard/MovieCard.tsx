@@ -157,8 +157,10 @@ export default function MovieCard({
 				/>
 
 				{showRating && rating !== undefined && (
-					<span className='absolute z-200 top-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center rounded-1 border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold'>
-						<span className='sr-only'>{t('movieCard.popularity')}: </span>
+					<span
+						className='absolute z-200 top-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center rounded-1 border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold'
+						aria-label={t('movieCard.popularity')}
+					>
 						{Math.trunc(rating)}
 					</span>
 				)}
