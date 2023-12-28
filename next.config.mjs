@@ -9,6 +9,11 @@ const nextConfig = {
 				hostname: 'image.tmdb.org',
 				pathname: '/t/p/**',
 			},
+			{
+				protocol: 'https',
+				hostname: 'i.ytimg.com',
+				pathname: '/vi_webp/**',
+			},
 		],
 	},
 	webpack(config) {
