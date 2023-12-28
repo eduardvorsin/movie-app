@@ -70,7 +70,7 @@ type Props = {
 export default async function Page({ params: { id, lang } }: Props) {
 	const { t } = await fetchTranslation(lang, ['moviesPage', 'common']);
 	const movie = await fetchMovie(id, { lang });
-	const trailers = await fetchTrailersForMovie(id, { lang });
+	const trailers = await fetchTrailersForMovie(Number(id), { lang });
 
 	if (!movie) {
 		notFound();
