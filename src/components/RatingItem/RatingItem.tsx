@@ -12,6 +12,7 @@ type Props = {
 	children: ReactNode,
 	element: 'div' | 'li',
 	isOrdered?: boolean,
+	loading?: 'eager' | 'lazy',
 } & GeneralProps;
 
 export default function RatingItem({
@@ -23,6 +24,7 @@ export default function RatingItem({
 	className,
 	element,
 	isOrdered = true,
+	loading,
 	...props
 }: Props) {
 	const classes = [
@@ -59,6 +61,7 @@ export default function RatingItem({
 						dark: '/assets/images/movie-placeholder-d.svg',
 					}}
 					sizes='60px'
+					loading={loading}
 				/>
 
 				<Title

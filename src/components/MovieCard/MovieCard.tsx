@@ -27,6 +27,7 @@ type Props = {
 	variant?: 'vertical' | 'horizontal',
 	mediaType: 'movie' | 'tv',
 	appearance?: 'primary' | 'secondary',
+	loading?: 'eager' | 'lazy',
 } & GeneralProps;
 
 export default function MovieCard({
@@ -47,6 +48,7 @@ export default function MovieCard({
 	testId,
 	mediaType,
 	appearance = 'primary',
+	loading,
 	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
@@ -154,6 +156,7 @@ export default function MovieCard({
 						light: '/assets/images/movie-card-placeholder-l-h.svg',
 						dark: '/assets/images/movie-card-placeholder-d-h.svg'
 					}}
+					loading={loading}
 					sizes={variant === 'vertical' ? '185px' : '300px'}
 				/>
 
