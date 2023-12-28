@@ -154,6 +154,7 @@ export default function MovieCard({
 						light: '/assets/images/movie-card-placeholder-l-h.svg',
 						dark: '/assets/images/movie-card-placeholder-d-h.svg'
 					}}
+					sizes={variant === 'vertical' ? '185px' : '300px'}
 				/>
 
 				{showRating && rating !== undefined && (

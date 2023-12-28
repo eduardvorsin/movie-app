@@ -58,6 +58,7 @@ export default function RatingItem({
 						light: '/assets/images/movie-placeholder-l.svg',
 						dark: '/assets/images/movie-placeholder-d.svg',
 					}}
+					sizes='60px'
 				/>
 
 				<Title
