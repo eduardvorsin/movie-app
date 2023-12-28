@@ -203,7 +203,7 @@ export default async function Home({ params: { lang } }: Props) {
                   src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
                   alt={title}
                   title={title}
-                  titleElement='h4'
+                  titleElement='h3'
                   genres={genre_ids}
                   releaseDate={getLocalizedDate(release_date, lang)}
                   titleLevel={5}
@@ -314,7 +314,7 @@ export default async function Home({ params: { lang } }: Props) {
                   src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
                   alt={name}
                   title={name}
-                  titleElement='h4'
+                  titleElement='h3'
                   genres={genre_ids}
                   releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
                   titleLevel={5}
