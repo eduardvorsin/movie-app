@@ -4,6 +4,7 @@ import MovieCard from '@/components/MovieCard/MovieCard';
 import RatingItem from '@/components/RatingItem/RatingItem';
 import ThemedImage from '@/components/ThemedImage/ThemedImage';
 import Title from '@/components/Title/Title';
+import YouTubeVideo from '@/components/YouTubeVideo/YouTubeVideo';
 import { getGenreById } from '@/helpers/getGenreById/getGenreById';
 import { fetchTranslation } from '@/i18n/server';
 import { Locales } from '@/i18n/settings';
@@ -11,6 +12,7 @@ import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate
 import { fetchMoviesBoxOffice } from '@/services/fetchMoviesBoxOffice/fetchMoviesBoxOffice';
 import { fetchNowPlayingMovies } from '@/services/fetchNowPlayingMovies/fetchNowPlayingMovies';
 import { fetchPopularTVSeries } from '@/services/fetchPopularTVSeries/fetchPopularTVSeries';
+import { fetchPopularTrailers } from '@/services/fetchPopularTrailers/fetchPopularTrailers';
 import { fetchTrendingMovies } from '@/services/fetchTrendingMovies/fetchTrendingMovies';
 import { fetchUpcomingMovies } from '@/services/fetchUpcomingMovies/fetchUpcomingMovies';
 import Link from 'next/link';
@@ -24,18 +26,21 @@ type Props = {
 
 export default async function Home({ params: { lang } }: Props) {
   const { t } = await fetchTranslation(lang, ['homePage', 'common']);
+
   const [
     nowPlayingMovies,
     trendingMovies,
     upcomingReleases,
     popularTVSeries,
     boxOffice,
+    popularTrailers
   ] = await Promise.all([
     fetchNowPlayingMovies(lang),
     fetchTrendingMovies(lang),
     fetchUpcomingMovies(1, { lang }),
     fetchPopularTVSeries(1, { lang }),
     fetchMoviesBoxOffice(1, { lang }),
+    fetchPopularTrailers(1),
   ]);
 
   const avaliableOngoingMovies = nowPlayingMovies?.results
@@ -377,6 +382,55 @@ export default async function Home({ params: { lang } }: Props) {
                 </RatingItem>
               ))}
             </ul>
+          </Container>
+        </section>
+      )}
+
+      {popularTrailers.length > 0 && (
+        <section className='py-5 md:py-8'>
+          <Container className='flex flex-col'>
+            <Title
+              className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+              as='h2'
+              level={3}
+            >
+              {t('PopularTrailersTitle')}
+            </Title>
+
+            <Carousel
+              mousewheel
+              spaceBetween={20}
+              showPagination
+              paginationType='progress'
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                640: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3,
+                }
+              }}
+            >
+              {popularTrailers.map(({
+                id,
+                key,
+                name,
+              }) => (
+                <YouTubeVideo
+                  width={386}
+                  height={217}
+                  key={id}
+                  videoId={key}
+                  title={name}
+                  loading='lazy'
+                  posterAlt={name}
+                  posterSizes='(min-width: 1230px) 386px, (min-width: 1230px) vw33, 100vw'
+                />
+              ))}
+            </Carousel>
           </Container>
         </section>
       )}
