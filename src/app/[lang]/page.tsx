@@ -428,7 +428,7 @@ export default async function Home({ params: { lang } }: Props) {
                   title={name}
                   loading='lazy'
                   posterAlt={name}
-                  posterSizes='(min-width: 1230px) 386px, (min-width: 1230px) vw33, 100vw'
+                  posterSizes='(min-width: 1230px) 386px, (min-width: 1024px) vw33, 100vw'
                 />
               ))}
             </Carousel>
