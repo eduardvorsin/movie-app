@@ -645,7 +645,3 @@ export default async function Page({ params: { id, lang } }: Props) {
 		</main>
 	);
 }
-
-//todo нужно сделать компонент модального окна и добавить кнопку для трейлеров - https://developer.themoviedb.org/reference/movie-videos
-//todo добавить адаптивности блоку с отзывами
-//todo фоновую картинку лучше добавить через <ThemedImage> чтобы размер картинки на разных устройствах был подходящий 
