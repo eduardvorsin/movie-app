@@ -448,8 +448,8 @@ export default async function Page({ params: { id, lang } }: Props) {
 								>
 									<YouTubeVideo
 										className='mx-auto'
-										width={960}
-										height={540}
+										width={1156}
+										height={650}
 										videoId={trailer.key}
 										title={trailer.name}
 										loading='lazy'
