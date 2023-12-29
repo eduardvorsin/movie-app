@@ -94,6 +94,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		recommendations,
 		reviews,
 		title,
+		certification,
 	} = movie;
 
 	const backdropUrl = `${imgPath['backdrop']}${backdrop_path}`;
@@ -217,8 +218,15 @@ export default async function Page({ params: { id, lang } }: Props) {
 							>
 								{release_date.length > 0 && (
 									<li
-										className='after:content-["/"] after:mx-2 last:after:hidden last:after:mx-0'
+										className='flex items-center after:content-["/"] after:mx-2 last:after:hidden last:after:mx-0'
 									>
+										{certification && (
+											<span
+												className='text-75 leading-none font-bold p-1 mr-2 uppercase border-1 border-neutral-900 dark:border-dark-neutral-800 text-neutral-900 dark:text-dark-neutral-800'
+											>
+												{certification}
+											</span>
+										)}
 										{getLocalizedDate(release_date, lang)}
 									</li>
 								)}

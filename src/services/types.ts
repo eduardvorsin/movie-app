@@ -17,12 +17,27 @@ type MovieAndSeriesResponse = {
 	vote_count: number,
 }
 
+type ReleaseDate = {
+	iso_3166_1: string,
+	release_dates: [
+		{
+			certification: string,
+			descriptors: string[],
+			iso_639_1: string,
+			note: string,
+			release_date: string,
+			type: 1 | 2 | 3 | 4 | 5 | 6,
+		}
+	],
+};
+
 export type MovieResponse = MovieAndSeriesResponse & {
 	adult: boolean,
 	original_title: string,
 	title: string,
 	video: boolean,
 	release_date: string,
+	release_dates: { results: ReleaseDate[] },
 }
 
 export type TVSeriesResponse = MovieAndSeriesResponse & {

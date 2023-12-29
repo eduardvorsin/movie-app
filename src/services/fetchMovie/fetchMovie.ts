@@ -47,6 +47,7 @@ export type MovieDetails = Omit<MovieResponse, 'genres_id' | 'popularity'> & {
 	similar: ListsResponse<MovieResponse>,
 	recommendations: ListsResponse<MovieResponse>,
 	reviews: ListsResponse<Review>,
+	certification?: string,
 }
 
 export const fetchMovie = async (id: string, options?: { lang: Locales }): Promise<MovieDetails | null> => {
@@ -54,7 +55,7 @@ export const fetchMovie = async (id: string, options?: { lang: Locales }): Promi
 
 	let movie;
 	try {
-		const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=external_ids,credits,similar,recommendations,reviews&language=${currentLang}`, {
+		const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=external_ids,credits,similar,recommendations,release_dates,reviews&language=${currentLang}`, {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',
@@ -74,5 +75,13 @@ export const fetchMovie = async (id: string, options?: { lang: Locales }): Promi
 		}
 	}
 
-	return movie as MovieDetails;
+	const movieData = movie as Omit<MovieResponse, 'genres_id' | 'popularity'>;
+	const release = movieData.release_dates.results
+		.find((release_date) => release_date.iso_3166_1 === 'US');
+	const certification = release?.release_dates[0].certification;
+
+	return {
+		...movieData,
+		certification,
+	} as MovieDetails;
 };
