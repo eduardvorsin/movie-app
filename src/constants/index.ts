@@ -13,9 +13,7 @@ export const imgPath = {
 export const navigationRoutes = {
 	movies: '/movies/',
 	persons: '/persons/',
-	collections: '/collections',
 	tv: '/tv',
-	trailers: '/trailers',
 	new: '/new',
 };
 export type NavigationRoutes = typeof navigationRoutes;

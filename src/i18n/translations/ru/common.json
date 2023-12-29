@@ -6,9 +6,7 @@
 		"home": "главная страница",
 		"movies": "$t(navigation.movies)",
 		"persons": "$t(navigation.persons)",
-		"collections": "$t(navigation.collections)",
 		"tv": "$t(navigation.tv)",
-		"trailers": "$t(navigation.trailers)",
 		"new": "$t(navigation.new)"
 	},
 	"expandableText": {
@@ -77,9 +75,7 @@
 	"navigation": {
 		"movies": "фильмы",
 		"persons": "люди",
-		"collections": "коллекции",
 		"tv": "сериалы и шоу",
-		"trailers": "трейлеры",
 		"new": "новинки"
 	},
 	"navigationMenuButton": {
