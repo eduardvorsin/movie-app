@@ -453,6 +453,8 @@ export default async function Page({ params: { id, lang } }: Props) {
 										videoId={trailer.key}
 										title={trailer.name}
 										loading='lazy'
+										posterAlt={trailer.name}
+										posterSizes='(min-width: 1230px) 1156px, 100vw'
 									/>
 								</TabPanel>
 							))}
