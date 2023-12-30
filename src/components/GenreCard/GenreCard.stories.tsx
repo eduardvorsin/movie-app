@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import GenreCard from './GenreCard';
 import { Genres } from '@/types/shared';
 
-const genres: Genres[] = ['adventure', 'romance', 'fantastic', 'history', 'music', 'war', 'thriller', 'animation', 'crime', 'documentary', 'drama', 'family', 'fantasy', 'horror', 'mystery', 'tv movie', 'western', 'action', 'comedy', 'action & adventure', 'war & politics', 'talk', 'soap', 'news', 'reality', 'kids', 'sci-fi & fantasy', 'science fiction'];
+const genres: Genres[] = ['adventure', 'romance', 'history', 'music', 'war', 'thriller', 'animation', 'crime', 'documentary', 'drama', 'family', 'fantasy', 'horror', 'mystery', 'tv movie', 'western', 'action', 'comedy', 'action & adventure', 'war & politics', 'talk', 'soap', 'news', 'reality', 'kids', 'sci-fi & fantasy', 'science fiction'];
 
 const meta: Meta<typeof GenreCard> = {
 	title: 'components/GenreCard',
