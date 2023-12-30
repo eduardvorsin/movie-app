@@ -1,123 +1,37 @@
 'use client';
 import Link from 'next/link';
-import { Adventure, Romance, Fantastic, History, Music, War, Thriller, Animation, Crime, Documentary, Drama, Family, Fantasy, Horror, Mystery, TVMovie, Western, Action, Comedy, ActionAndAdventure, Politics, Talk, Series, News, Reality, Kids, SciFi, Science } from './GenreIcons';
 import { MouseEventHandler } from 'react';
 import Title from '@/components/Title/Title';
 import { GeneralProps, Genres, HeadingElement } from '@/types/shared';
 
-const iconsByGenre = {
-	adventure: {
-		name: 'adventure',
-		src: Adventure.src,
-	},
-	romance: {
-		name: 'romance',
-		src: Romance.src,
-	},
-	fantastic: {
-		name: 'fantastic',
-		src: Fantastic.src,
-	},
-	history: {
-		name: 'history',
-		src: History.src,
-	},
-	music: {
-		name: 'music',
-		src: Music.src,
-	},
-	war: {
-		name: 'war',
-		src: War.src,
-	},
-	thriller: {
-		name: 'thriller',
-		src: Thriller.src,
-	},
-	animation: {
-		name: 'animation',
-		src: Animation.src,
-	},
-	crime: {
-		name: 'crime',
-		src: Crime.src,
-	},
-	documentary: {
-		name: 'documentary',
-		src: Documentary.src,
-	},
-	drama: {
-		name: 'drama',
-		src: Drama.src,
-	},
-	family: {
-		name: 'family',
-		src: Family.src,
-	},
-	fantasy: {
-		name: 'fantasy',
-		src: Fantasy.src,
-	},
-	horror: {
-		name: 'horror',
-		src: Horror.src,
-	},
-	mystery: {
-		name: 'mystery',
-		src: Mystery.src,
-	},
-	'tv movie': {
-		name: 'tv',
-		src: TVMovie.src,
-	},
-	western: {
-		name: 'western',
-		src: Western.src,
-	},
-	action: {
-		name: 'action',
-		src: Action.src,
-	},
-	comedy: {
-		name: 'comedy',
-		src: Comedy.src,
-	},
-	'action & adventure': {
-		name: 'action_adventure',
-		src: ActionAndAdventure.src,
-	},
-	'war & politics': {
-		name: 'politics',
-		src: Politics.src,
-	},
-	talk: {
-		name: 'talk',
-		src: Talk.src,
-	},
-	soap: {
-		name: 'series',
-		src: Series.src,
-	},
-	news: {
-		name: 'news',
-		src: News.src,
-	},
-	reality: {
-		name: 'reality',
-		src: Reality.src,
-	},
-	kids: {
-		name: 'kids',
-		src: Kids.src,
-	},
-	'sci-fi & fantasy': {
-		name: 'sci-fi',
-		src: SciFi.src,
-	},
-	'science fiction': {
-		name: 'science',
-		src: Science.src,
-	},
+const iconsPathsByGenre = {
+	adventure: 'adventure.svg#adventure',
+	romance: 'romance.svg#romance',
+	history: 'history.svg#history',
+	music: 'music.svg#music',
+	war: 'war.svg#war',
+	thriller: 'thriller.svg#thriller',
+	animation: 'animation.svg#animation',
+	crime: 'crime.svg#crime',
+	documentary: 'documentary.svg#documentary',
+	drama: 'drama.svg#drama',
+	family: 'family.svg#family',
+	fantasy: 'fantasy.svg#fantasy',
+	horror: 'horror.svg#horror',
+	mystery: 'mystery.svg#mystery',
+	'tv movie': 'tv.svg#tv',
+	western: 'western.svg#western',
+	action: 'action.svg#action',
+	comedy: 'comedy.svg#comedy',
+	'war & politics': 'politics.svg#politics',
+	talk: 'talk.svg#talk',
+	soap: 'series.svg#series',
+	news: 'news.svg#news',
+	reality: 'reality.svg#reality',
+	kids: 'kids.svg#kids',
+	'science fiction': 'science_fiction.svg#science_fiction',
+	'action & adventure': 'action_adventure.svg#action_adventure',
+	'sci-fi & fantasy': 'sci-fi_fantasy.svg#sci-fi_fantasy',
 } as const;
 
 export type Props = {
@@ -152,7 +66,7 @@ export default function GenreCard({
 			{...props}
 		>
 			<svg className='w-8 h-8 mb-2 fill-current' viewBox='0 0 32 32'>
-				<use href={`${iconsByGenre[genre].src}#${iconsByGenre[genre].name}`}></use>
+				<use href={`/assets/icons/${iconsPathsByGenre[genre]}`}></use>
 			</svg>
 			<Title
 				level={6}
