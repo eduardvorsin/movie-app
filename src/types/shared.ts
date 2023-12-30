@@ -15,7 +15,7 @@ export type Department = 'Acting' | 'Production' | 'Crew' | 'Writing' | 'Directi
 
 type CommonGenres = 'animation' | 'comedy' | 'crime' | 'documentary' | 'drama' | 'family' | 'mystery' | 'western';
 
-export type MovieGenres = 'adventure' | 'romance' | 'fantastic' | 'history' | 'music' | 'war' | 'thriller' | 'fantasy' | 'horror' | 'tv movie' | 'action' | 'science fiction';
+export type MovieGenres = CommonGenres | 'adventure' | 'romance' | 'history' | 'music' | 'war' | 'thriller' | 'fantasy' | 'horror' | 'tv movie' | 'action' | 'science fiction';
 
 export type TVGenres = CommonGenres | 'action & adventure' | 'kids' | 'news' | 'reality' | 'sci-fi & fantasy' | 'soap' | 'talk' | 'war & politics';
 
