@@ -68,7 +68,7 @@ type Props = {
 }
 
 export default async function Page({ params: { id, lang } }: Props) {
-	const { t } = await fetchTranslation(lang, ['moviesPage', 'common']);
+	const { t } = await fetchTranslation(lang, ['movieDetailsPage', 'common']);
 	const movie = await fetchMovie(id, { lang });
 	const trailers = await fetchTrailersForMovie(Number(id), { lang });
 
@@ -107,7 +107,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 	}
 	const releaseYear = release_date.slice(0, 4);
 	const currentGenres = genres.slice(0, 3).map((genre) => genre.name.toLowerCase()).join(', ');
-	const movieDuration = `${t('duration', { ns: 'moviesPage', time: runtime })} | ${convertToTime(runtime)}`;
+	const movieDuration = `${t('duration', { ns: 'movieDetailsPage', time: runtime })} | ${convertToTime(runtime)}`;
 	const rating = Math.floor(vote_average * 10);
 
 	const socialNetworks = createSocialNetworksArray({
@@ -135,11 +135,11 @@ export default async function Page({ params: { id, lang } }: Props) {
 			} else if (name === 'budget' || name === 'revenue') {
 				currentValue = formatCurrency(+value, lang);
 			} else if (name === 'status') {
-				currentValue = t(`characteristics.statusValue.${value.toLowerCase()}`, { ns: 'moviesPage' });
+				currentValue = t(`characteristics.statusValue.${value.toLowerCase()}`, { ns: 'movieDetailsPage' });
 			}
 
 			return {
-				name: t(`characteristics.${name}`, { ns: 'moviesPage' }),
+				name: t(`characteristics.${name}`, { ns: 'movieDetailsPage' }),
 				value: currentValue,
 			}
 		});
@@ -250,7 +250,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								<span
 									className='text-neutral-1000 dark:text-dark-neutral-900 font-medium mr-2'
 								>
-									{t('ratingLabel', { ns: 'moviesPage' })}
+									{t('ratingLabel', { ns: 'movieDetailsPage' })}
 								</span>
 								<PieChart
 									size={60}
@@ -280,7 +280,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 										level={3}
 										as='h2'
 									>
-										{t('review', { ns: 'moviesPage' })}
+										{t('review', { ns: 'movieDetailsPage' })}
 									</Title>
 									<ExpandableText className='mb-4 lg:mb-5'>
 										{overview}
@@ -293,7 +293,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								level={3}
 								as='h2'
 							>
-								{t('authors.title', { ns: 'moviesPage' })}
+								{t('authors.title', { ns: 'movieDetailsPage' })}
 							</Title>
 
 							<ul
@@ -328,7 +328,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('aboutMovie', { ns: 'moviesPage' })}
+							{t('aboutMovie', { ns: 'movieDetailsPage' })}
 						</Title>
 						<CharacteristicList
 							data={characteristicData}
@@ -341,7 +341,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('sponsors', { ns: 'moviesPage' })}
+							{t('sponsors', { ns: 'movieDetailsPage' })}
 						</Title>
 
 						<div className='flex gap-4 flex-wrap'>
@@ -379,7 +379,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('starring', { ns: 'moviesPage' })}
+							{t('starring', { ns: 'movieDetailsPage' })}
 						</Title>
 
 						<Carousel
@@ -444,7 +444,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('trailers', { ns: 'moviesPage' })}
+							{t('trailers', { ns: 'movieDetailsPage' })}
 						</Title>
 
 						<Tabs id='trailers'>
@@ -479,7 +479,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('reviews', { ns: 'moviesPage' })}
+							{t('reviews', { ns: 'movieDetailsPage' })}
 						</Title>
 
 						<Carousel
@@ -540,7 +540,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('relatedMovies', { ns: 'moviesPage' })}
+							{t('relatedMovies', { ns: 'movieDetailsPage' })}
 						</Title>
 						<Carousel
 							mousewheel
@@ -599,7 +599,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('recommendations', { ns: 'moviesPage' })}
+							{t('recommendations', { ns: 'movieDetailsPage' })}
 						</Title>
 						<Carousel
 							mousewheel
