@@ -1,3 +1,5 @@
+import { Genres, MovieGenres, TVGenres } from "@/types/shared";
+
 const imgURL = 'https://image.tmdb.org/t/p';
 
 export const imgPath = {
@@ -31,3 +33,51 @@ export const routes = {
 	...authenticationRoutes,
 } as const;
 export type Routes = typeof routes;
+
+export const movieGenres: Record<string, MovieGenres> = {
+	28: 'action',
+	12: 'adventure',
+	16: 'animation',
+	35: 'comedy',
+	80: 'crime',
+	99: 'documentary',
+	18: 'drama',
+	10751: 'family',
+	14: 'fantasy',
+	36: 'history',
+	27: 'horror',
+	10402: 'music',
+	9648: 'mystery',
+	10749: 'romance',
+	878: 'science fiction',
+	10770: 'tv movie',
+	53: 'thriller',
+	10752: 'war',
+	37: 'western',
+};
+export const movieGenresList = Object.values(movieGenres);
+
+export const tvGenres: Record<string, TVGenres> = {
+	16: 'animation',
+	35: 'comedy',
+	80: 'crime',
+	99: 'documentary',
+	18: 'drama',
+	10751: 'family',
+	37: 'western',
+	10759: 'action & adventure',
+	10762: 'kids',
+	10763: 'news',
+	10764: 'reality',
+	10765: 'sci-fi & fantasy',
+	10766: 'soap',
+	10767: 'talk',
+	10768: 'war & politics',
+};
+export const tvGenresList = Object.values(tvGenres);
+
+export const genres: Record<string, Genres> = {
+	...movieGenres,
+	...tvGenres,
+};
+
