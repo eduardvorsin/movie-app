@@ -1,7 +1,7 @@
 import { Locales } from "@/i18n/settings";
 import { ListsResponse, MovieResponse } from "../types";
 
-type Options = {
+export type Options = {
 	language: Locales,
 	region?: 'US' | 'RU',
 	include_adult?: boolean,
@@ -17,6 +17,10 @@ type Options = {
 	'vote_count.gte'?: number,
 	'vote_count.lte'?: number,
 	with_release_type?: string,
+	without_genres?: string,
+	with_genres?: string,
+	with_keywords?: string,
+	without_keywords?: string,
 }
 
 export const fetchMoviesByFilters = async (page: number, options: Options) => {
