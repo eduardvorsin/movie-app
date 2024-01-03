@@ -409,7 +409,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								}
 							}}
 						>
-							{credits.cast.slice(0, 40).map(({
+							{credits.cast.slice(0, 20).map(({
 								id,
 								profile_path,
 								name,
@@ -427,6 +427,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									titleLevel={6}
 									showRating
 									rating={popularity}
+									loading='lazy'
 								>
 									{character}
 								</PersonCard>
@@ -584,6 +585,8 @@ export default async function Page({ params: { id, lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									loading='lazy'
+									sizes='(min-width: 1230px) 285px, (min-width: 1024px) 25vw, (min-width: 768px) 33.3vw, (min-width: 480px) 50vw, 100vw'
 								/>
 							))}
 						</Carousel>
@@ -632,7 +635,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							}) => (
 								<MovieCard
 									mediaType='movie'
-									className='mx-auto xs:mx-0'
+									className='mx-auto md:mx-0'
 									movieId={id}
 									key={id}
 									src={backdrop_path ? `${imgPath['backdrop']}${backdrop_path}` : ''}
@@ -644,6 +647,8 @@ export default async function Page({ params: { id, lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									loading='lazy'
+									sizes='(min-width: 1230px) 285px, (min-width: 1024px) 25vw, (min-width: 768px) 33.3vw, (min-width: 480px) 50vw, 100vw'
 								/>
 							))}
 						</Carousel>

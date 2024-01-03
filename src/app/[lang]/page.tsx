@@ -186,16 +186,16 @@ export default async function Home({ params: { lang } }: Props) {
                 375: {
                   slidesPerView: 2,
                 },
-                640: {
+                480: {
                   slidesPerView: 3,
                 },
-                768: {
+                640: {
                   slidesPerView: 4,
                 },
-                1024: {
+                768: {
                   slidesPerView: 5,
                 },
-                1280: {
+                1024: {
                   slidesPerView: 6,
                 }
               }}
@@ -211,7 +211,7 @@ export default async function Home({ params: { lang } }: Props) {
                 <MovieCard
                   mediaType='movie'
                   variant='vertical'
-                  className='mx-auto sm:mx-0 mb-2'
+                  className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
                   movieId={id}
                   key={id}
                   src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -224,6 +224,7 @@ export default async function Home({ params: { lang } }: Props) {
                   showRating
                   rating={vote_average * 10}
                   loading={index >= 6 ? 'lazy' : undefined}
+                  sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
                 />
               ))}
             </Carousel>
@@ -299,16 +300,16 @@ export default async function Home({ params: { lang } }: Props) {
                 375: {
                   slidesPerView: 2,
                 },
-                640: {
+                480: {
                   slidesPerView: 3,
                 },
-                768: {
+                640: {
                   slidesPerView: 4,
                 },
-                1024: {
+                768: {
                   slidesPerView: 5,
                 },
-                1280: {
+                1024: {
                   slidesPerView: 6,
                 }
               }}
@@ -324,7 +325,7 @@ export default async function Home({ params: { lang } }: Props) {
                 <MovieCard
                   mediaType='tv'
                   variant='vertical'
-                  className='mx-auto sm:mx-0 mb-2'
+                  className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
                   movieId={id}
                   key={id}
                   src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -337,6 +338,7 @@ export default async function Home({ params: { lang } }: Props) {
                   showRating
                   rating={vote_average * 10}
                   loading='lazy'
+                  sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
                 />
               ))}
             </Carousel>
@@ -403,6 +405,7 @@ export default async function Home({ params: { lang } }: Props) {
               spaceBetween={20}
               showPagination
               paginationType='progress'
+              showArrows
               breakpoints={{
                 0: {
                   slidesPerView: 1,
@@ -428,7 +431,7 @@ export default async function Home({ params: { lang } }: Props) {
                   title={name}
                   loading='lazy'
                   posterAlt={name}
-                  posterSizes='(min-width: 1230px) 386px, (min-width: 1024px) vw33, 100vw'
+                  posterSizes='(min-width: 1230px) 386px, (min-width: 640px) 50vw, 100vw'
                 />
               ))}
             </Carousel>

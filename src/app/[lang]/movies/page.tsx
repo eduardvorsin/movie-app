@@ -113,16 +113,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -138,7 +138,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -150,6 +150,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 								/>
 							))}
 						</Carousel>
@@ -180,16 +181,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -205,7 +206,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -217,6 +218,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 								/>
 							))}
 						</Carousel>
@@ -247,16 +249,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -272,7 +274,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -284,6 +286,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -315,16 +318,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -340,7 +343,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -352,6 +355,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -383,16 +387,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -408,7 +412,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -420,6 +424,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -451,16 +456,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -476,7 +481,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -488,6 +493,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -519,16 +525,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -544,7 +550,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -556,6 +562,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -587,16 +594,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -612,7 +619,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -624,6 +631,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -655,16 +663,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -680,7 +688,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -692,6 +700,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -723,16 +732,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -748,7 +757,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -760,6 +769,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -791,16 +801,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -816,7 +826,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -828,6 +838,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -859,16 +870,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -884,7 +895,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -896,6 +907,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -927,16 +939,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -952,7 +964,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -964,6 +976,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -995,16 +1008,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -1020,7 +1033,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -1032,6 +1045,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -1063,16 +1077,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -1088,7 +1102,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -1100,6 +1114,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -1131,16 +1146,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -1156,7 +1171,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -1168,6 +1183,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -1199,16 +1215,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -1224,7 +1240,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -1236,6 +1252,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -1267,16 +1284,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -1292,7 +1309,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -1304,6 +1321,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
@@ -1335,16 +1353,16 @@ export default async function Page({ params: { lang } }: Props) {
 								375: {
 									slidesPerView: 2,
 								},
-								640: {
+								480: {
 									slidesPerView: 3,
 								},
-								768: {
+								640: {
 									slidesPerView: 4,
 								},
-								1024: {
+								768: {
 									slidesPerView: 5,
 								},
-								1280: {
+								1024: {
 									slidesPerView: 6,
 								}
 							}}
@@ -1360,7 +1378,7 @@ export default async function Page({ params: { lang } }: Props) {
 								<MovieCard
 									mediaType='movie'
 									variant='vertical'
-									className='mx-auto sm:mx-0 mb-2'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
 									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
@@ -1372,6 +1390,7 @@ export default async function Page({ params: { lang } }: Props) {
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 									loading='lazy'
 								/>
 							))}
