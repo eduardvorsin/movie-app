@@ -20,6 +20,7 @@ type Props = {
 	rating?: number,
 	children?: ReactNode,
 	onClick?: MouseEventHandler<HTMLAnchorElement>,
+	loading?: 'eager' | 'lazy',
 } & GeneralProps;
 
 export default function PersonCard({
@@ -35,6 +36,7 @@ export default function PersonCard({
 	rating,
 	children,
 	onClick,
+	loading,
 	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
@@ -64,6 +66,7 @@ export default function PersonCard({
 						light: '/assets/images/person-card-placeholder-l.svg',
 						dark: '/assets/images/person-card-placeholder-d.svg'
 					}}
+					loading={loading}
 				/>
 				{showRating && (
 					<span className='absolute bottom-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center rounded-[50%] border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold'>
