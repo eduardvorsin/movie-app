@@ -53,7 +53,7 @@ export default function GenreCard({
 	...props
 }: Props) {
 	const classes = [
-		'px-2 py-6 rounded-2 h-[6.75rem] w-[9.75rem] bg-neutral-200 dark:bg-dark-neutral-300 [&]:text-neutral-1000 dark:[&]:text-dark-neutral-900 flex flex-col items-center relative after:absolute after:top-0 after:left-0 after:z-100 after:w-full after:h-full transition-colors duration-150 hover:bg-neutral-300 active:bg-neutral-400 dark:hover:bg-dark-neutral-400 dark:active:bg-dark-neutral-500 ',
+		'px-2 py-4 rounded-2 h-[6.75rem] w-[9.75rem] bg-neutral-200 dark:bg-dark-neutral-300 [&]:text-neutral-1000 dark:[&]:text-dark-neutral-900 flex flex-col items-center justify-center relative after:absolute after:top-0 after:left-0 after:z-100 after:w-full after:h-full transition-colors duration-150 hover:bg-neutral-300 active:bg-neutral-400 dark:hover:bg-dark-neutral-400 dark:active:bg-dark-neutral-500',
 		className,
 	].join(' ');
 
@@ -72,7 +72,7 @@ export default function GenreCard({
 				level={6}
 				weight={700}
 				as={titleElement}
-				className='leading-2 text-center w-full truncate'
+				className='leading-2 text-center w-full line-clamp-2'
 			>
 				{title}
 			</Title>
