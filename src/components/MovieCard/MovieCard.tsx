@@ -191,6 +191,8 @@ export default function MovieCard({
 					{variant === 'vertical' && (CardContent)}
 				</Link>
 
+				{title && variant === 'vertical' && (CardTitle)}
+
 				{variant === 'horizontal' && (CardContent)}
 			</div>
 		);
@@ -203,7 +205,7 @@ export default function MovieCard({
 			>
 				<Link
 					href={url}
-					className={'block relative group mb-2 transition-transform duration-150 scale-100 hover:scale-[1.025]'}
+					className={`block relative group ${variant === 'vertical' ? 'aspect-[5/7]' : 'aspect-[16/9]'} mb-2 transition-transform duration-150 scale-100 hover:scale-[1.025]`}
 					title={title}
 				>
 					{CardImage}
