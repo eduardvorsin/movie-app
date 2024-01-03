@@ -1,0 +1,59 @@
+import { GeneralProps } from '@/types/shared';
+import ThemedImage from '../ThemedImage/ThemedImage';
+import Title from '../Title/Title';
+import Link from 'next/link';
+
+type Props = {
+	title: string,
+	src: string,
+	alt: string,
+	href: string,
+	sizes: string,
+} & GeneralProps;
+
+export default function CollectionCard({
+	className,
+	title,
+	src,
+	href,
+	sizes,
+	testId,
+	alt,
+}: Props) {
+	const classes = [
+		'rounded-3 overflow-hidden p-5 min-h-[108px] min-w-[192px] aspect-video flex flex-col justify-end relative after:absolute after:top-0 after:left-0 after:z-0 after:w-full after:h-full after:bg-neutral-300/50 dark:after:bg-dark-neutral-250/40',
+		className
+	].join(' ');
+
+	return (
+		<div
+			className={classes}
+			data-testid={testId}
+		>
+			<ThemedImage
+				className='-z-100 bg-neutral-200 dark:bg-dark-neutral-300'
+				alt={alt}
+				fill
+				src={{
+					light: src,
+					dark: src,
+				}}
+				sizes={sizes}
+			/>
+
+			<Title
+				className='text-neutral-1100 dark:text-dark-neutral-1000 z-100 leading-2 w-full [&]:text-400 xs:[&]:text-300'
+				level={4}
+				weight={500}
+				as='h3'
+			>
+				<Link
+					className='break-all line-clamp-2 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:z-100'
+					href={href}
+				>
+					{title}
+				</Link>
+			</Title>
+		</div>
+	);
+}
