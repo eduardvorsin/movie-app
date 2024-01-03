@@ -83,21 +83,36 @@ export default function MovieCard({
 
 	const url = `${mediaType === 'movie' ? routes.movies : routes.tv}${movieId}`;
 
-	const cardContentClasses = [
+	const cardClasses = [
+		'flex flex-col relative',
+		variant === 'horizontal' ? 'max-w-[300px]' : 'max-w-[185px]',
+		appearance === 'secondary' ? '' : 'overflow-hidden',
+		className
+	].join(' ');
+
+	const contentClasses = [
 		'absolute left-0 w-full flex flex-col p-2 bg-gradient-to-t z-100',
 		appearance === 'secondary' ? 'sr-only' : '',
 		variant === 'horizontal' ? 'bottom-0 from-neutral-100/95 to-neutral-100/40 dark:from-dark-neutral-100/95 dark:to-dark-neutral-100/40' : 'invisible opacity-0 fine-pointer:group-hover:visible fine-pointer:group-hover:opacity-100 top-0 pt-[3.125rem] justify-end h-full bg-neutral-100/80 dark:bg-dark-neutral-100/80 transition-[visibility,opacity] duration-150'
 	].join(' ');
 
-	const cardTitleClasses = [
+	const titleClasses = [
 		'[&]:text-200 leading-[1.25]',
-		appearance === 'secondary' ? 'sr-only' : '',
 		variant === 'vertical' ? 'mt-2' : 'mb-1 sm:text-[1.125rem]',
+	].join(' ');
+
+	const imageClasses = [
+		'object-cover rounded-3',
+		variant === 'vertical' ? 'aspect-[2/3]' : 'aspect-[16/9]',
+	].join(' ');
+
+	const ratingClasses = [
+		'absolute z-200 top-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center rounded-1 border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold'
 	].join(' ');
 
 	const CardTitle = (
 		<Title
-			className={cardTitleClasses}
+			className={titleClasses}
 			level={titleLevel}
 			as={titleElement}
 		>
@@ -112,7 +127,7 @@ export default function MovieCard({
 	);
 
 	const CardContent = (
-		<div className={cardContentClasses}>
+		<div className={contentClasses}>
 			{title && variant === 'horizontal' && (CardTitle)}
 
 			{details.map((detail) => (
@@ -131,50 +146,81 @@ export default function MovieCard({
 		</div>
 	);
 
-	return (
-		<div
-			className={`flex flex-col relative overflow-hidden ${variant === 'horizontal' ? 'max-w-[300px]' : 'max-w-[185px]'} ${className} `}
-			data-testid={testId}
-			{...props}
-		>
-			<Link
-				href={url}
-				className={`block relative group ${appearance === 'secondary' ? 'transition-transform duration-150 scale-100 hover:scale-[1.025]' : ''}`}
-				title={title}
-			>
-				<ThemedImage
-					className={`rounded-3 object-cover ${variant === 'vertical' ? 'aspect-[2/3]' : 'aspect-[16/9]'}`}
-					alt={alt}
-					width={variant === 'horizontal' ? 300 : 185}
-					height={variant === 'horizontal' ? 169 : 278}
-					quality={variant === 'vertical' ? 85 : 75}
-					src={{
-						light: src,
-						dark: src,
-					}}
-					fallback={{
-						light: '/assets/images/movie-card-placeholder-l-h.svg',
-						dark: '/assets/images/movie-card-placeholder-d-h.svg'
-					}}
-					loading={loading}
-					sizes={variant === 'vertical' ? '185px' : '300px'}
-				/>
-
-				{showRating && rating !== undefined && (
-					<span
-						className='absolute z-200 top-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center rounded-1 border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold'
-						aria-label={t('movieCard.popularity')}
-					>
-						{Math.trunc(rating)}
-					</span>
-				)}
-
-				{variant === 'vertical' && (CardContent)}
-			</Link>
-
-			{variant === 'horizontal' && (CardContent)}
-
-			{title && variant === 'vertical' && (CardTitle)}
-		</div>
+	const CardImage = (
+		<ThemedImage
+			className={imageClasses}
+			alt={alt}
+			width={variant === 'horizontal' ? 300 : 185}
+			height={variant === 'horizontal' ? 169 : 278}
+			quality={variant === 'vertical' ? 85 : 75}
+			src={{
+				light: src,
+				dark: src,
+			}}
+			fallback={{
+				light: '/assets/images/movie-card-placeholder-l-h.svg',
+				dark: '/assets/images/movie-card-placeholder-d-h.svg'
+			}}
+			loading={loading}
+			sizes={variant === 'vertical' ? '185px' : '300px'}
+		/>
 	);
+
+	if (appearance === 'primary') {
+		return (
+			<div
+				className={cardClasses}
+				data-testid={testId}
+				{...props}
+			>
+				<Link
+					href={url}
+					className={'block relative group'}
+					title={title}
+				>
+					{CardImage}
+
+					{showRating && rating !== undefined && (
+						<span
+							className={ratingClasses}
+							aria-label={t('movieCard.popularity')}
+						>
+							{Math.trunc(rating)}
+						</span>
+					)}
+
+					{variant === 'vertical' && (CardContent)}
+				</Link>
+
+				{variant === 'horizontal' && (CardContent)}
+			</div>
+		);
+	} else {
+		return (
+			<div
+				className={cardClasses}
+				data-testid={testId}
+				{...props}
+			>
+				<Link
+					href={url}
+					className={'block relative group mb-2 transition-transform duration-150 scale-100 hover:scale-[1.025]'}
+					title={title}
+				>
+					{CardImage}
+
+					{showRating && rating !== undefined && (
+						<span
+							className={ratingClasses}
+							aria-label={t('movieCard.popularity')}
+						>
+							{Math.trunc(rating)}
+						</span>
+					)}
+				</Link>
+
+				{title && (CardTitle)}
+			</div>
+		);
+	}
 };
