@@ -87,7 +87,6 @@ export default function MovieCard({
 
 	const cardClasses = [
 		'flex flex-col relative',
-		variant === 'horizontal' ? 'max-w-[300px]' : 'max-w-[185px]',
 		appearance === 'secondary' ? '' : 'overflow-hidden',
 		className
 	].join(' ');
@@ -105,7 +104,6 @@ export default function MovieCard({
 
 	const imageClasses = [
 		'object-cover rounded-3',
-		variant === 'vertical' ? 'aspect-[2/3]' : 'aspect-[16/9]',
 	].join(' ');
 
 	const ratingClasses = [
@@ -119,7 +117,7 @@ export default function MovieCard({
 			as={titleElement}
 		>
 			<Link
-				className={`break-all [&]:text-neutral-1000 dark:[&]:text-dark-neutral-1100 hover:[&]:text-neutral-800 active:[&]:text-neutral-700 dark:hover:[&]:text-dark-neutral-900 dark:active:[&]:text-dark-neutral-800 transition-colors duration-150 ${variant === 'vertical' ? 'line-clamp-2' : 'line-clamp-1'}`}
+				className={`break-all [&]:text-neutral-1000 dark:[&]:text-dark-neutral-1100 hover:[&]:text-neutral-800 active:[&]:text-neutral-700 dark:hover:[&]:text-dark-neutral-900 dark:active:[&]:text-dark-neutral-800 transition-colors duration-150 ${(variant === 'horizontal' && appearance === 'primary') ? 'line-clamp-1' : 'line-clamp-2'}`}
 				href={url}
 				title={title}
 			>
@@ -152,9 +150,8 @@ export default function MovieCard({
 		<ThemedImage
 			className={imageClasses}
 			alt={alt}
-			width={variant === 'horizontal' ? 300 : 185}
-			height={variant === 'horizontal' ? 169 : 278}
-			quality={variant === 'vertical' ? 85 : 75}
+			fill
+			quality={75}
 			src={{
 				light: src,
 				dark: src,
@@ -177,7 +174,7 @@ export default function MovieCard({
 			>
 				<Link
 					href={url}
-					className={'block relative group'}
+					className={`block relative group ${variant === 'vertical' ? 'aspect-[5/7]' : 'aspect-[16/9]'}`}
 					title={title}
 				>
 					{CardImage}
