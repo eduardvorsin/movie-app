@@ -130,7 +130,7 @@ export default async function Home({ params: { lang } }: Props) {
                       aria-label={t('ratingLabel')}
                     >
                       <svg
-                        className='w-4 h-4 text-neutral-700 dark:text-dark-neutral-700 mr-2'
+                        className='w-4 h-4 text-neutral-600 dark:text-dark-neutral-600 mr-2'
                         viewBox='0 0 20 20'
                       >
                         <use href={'/assets/icons/star.svg#star'}></use>
