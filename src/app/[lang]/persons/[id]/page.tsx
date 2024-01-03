@@ -97,8 +97,8 @@ export default async function Page({ params: { id, lang } }: Props) {
 	const credits = known_for_department === 'Acting' ? combined_credits.cast : combined_credits.crew;
 	const knownFor = credits
 		.filter(({ vote_average }) => vote_average > 6)
-		.sort((a, b) => b.vote_average - a.vote_average)
-		.slice(0, 40);
+		.sort((a, b) => (b.vote_average - a.vote_average) && (b.vote_count - a.vote_count))
+		.slice(0, 20);
 
 	return (
 		<main className='mt-[5rem]'>
