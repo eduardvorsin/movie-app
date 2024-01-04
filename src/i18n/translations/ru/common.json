@@ -7,7 +7,8 @@
 		"movies": "$t(navigation.movies)",
 		"persons": "$t(navigation.persons)",
 		"tv": "$t(navigation.tv)",
-		"new": "$t(navigation.new)"
+		"new": "$t(navigation.new)",
+		"collections": "$t(navigation.collections)"
 	},
 	"expandableText": {
 		"collapseButton": "Свернуть",
@@ -76,12 +77,36 @@
 		"movies": "фильмы",
 		"persons": "люди",
 		"tv": "сериалы и шоу",
-		"new": "новинки"
+		"new": "новинки",
+		"collections": "коллекции"
 	},
 	"navigationMenuButton": {
 		"active": "Закрыть меню навигации",
 		"inactive": "Открыть меню навигации"
 	},
 	"searchButton": "Найти",
-	"accountButton": "Войти в аккаунт"
+	"accountButton": "Войти в аккаунт",
+	"collections": {
+		"marvel": "Марвел",
+		"dc": "DC",
+		"biography": "Биография",
+		"books": "Основано на книгах",
+		"avantgarde": "Авангард",
+		"cyberpunk": "Киберпанк",
+		"dystopia": "Антиутопия",
+		"espionage": "Шпионаж",
+		"fairytale": "Сказки",
+		"futuristic": "Футуризм",
+		"idealism": "Идеализм",
+		"investigation": "Расследования",
+		"mockumentary": "Мокьюментари",
+		"neonoir": "Неонуар",
+		"neorealism": "Неореализм",
+		"postapocalypse": "Постаппокалипсис",
+		"remakes": "Ремейки",
+		"roadmovie": "Роуд-муви",
+		"timetravel": "Путешествия во времени",
+		"vr": "Виртуальная реальности",
+		"zombie": "Зомби"
+	}
 }

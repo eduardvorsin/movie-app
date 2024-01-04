@@ -7,7 +7,8 @@
 		"movies": "$t(navigation.movies)",
 		"persons": "$t(navigation.persons)",
 		"tv": "$t(navigation.tv)",
-		"new": "$t(navigation.new)"
+		"new": "$t(navigation.new)",
+		"collections": "$t(navigation.collections)"
 	},
 	"expandableText": {
 		"collapseButton": "Collapse",
@@ -76,12 +77,36 @@
 		"movies": "movies",
 		"persons": "persons",
 		"tv": "series and shows",
-		"new": "new releases"
+		"new": "new releases",
+		"collections": "collections"
 	},
 	"navigationMenuButton": {
 		"active": "Close the navigation menu",
 		"inactive": "Open the navigation menu"
 	},
 	"searchButton": "to find",
-	"accountButton": "log in to your account"
+	"accountButton": "log in to your account",
+	"collections": {
+		"marvel": "Marvel",
+		"dc": "DC",
+		"biography": "Biography",
+		"books": "Based on Books",
+		"avantgarde": "Avant-garde",
+		"cyberpunk": "Cyberpunk",
+		"dystopia": "Dystopia",
+		"espionage": "Espionage",
+		"fairytale": "Fairy tale",
+		"futuristic": "Futuristic",
+		"idealism": "Idealism",
+		"investigation": "Investigation",
+		"mockumentary": "Mockumentary",
+		"neonoir": "Neo-noir",
+		"neorealism": "Neo-realism",
+		"postapocalypse": "Post-apocalypse",
+		"remakes": "Remakes",
+		"roadmovie": "Road movie",
+		"timetravel": "Time travel",
+		"vr": "Virtual reality",
+		"zombie": "Zombie"
+	}
 }

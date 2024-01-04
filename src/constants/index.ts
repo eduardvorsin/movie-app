@@ -17,6 +17,7 @@ export const navigationRoutes = {
 	persons: '/persons/',
 	tv: '/tv',
 	new: '/new',
+	collections: '/collections',
 };
 export type NavigationRoutes = typeof navigationRoutes;
 
@@ -81,3 +82,5 @@ export const genres: Record<string, Genres> = {
 	...tvGenres,
 };
 
+export const collections = ['marvel', 'dc', 'biography', 'books', 'avantgarde', 'cyberpunk', 'dystopia', 'espionage', 'fairytale', 'futuristic', 'idealism', 'investigation', 'mockumentary', 'neonoir', 'neorealism', 'postapocalypse', 'remakes', 'roadmovie', 'timetravel', 'vr', 'zombie'] as const;
+export type Collections = typeof collections[number];
