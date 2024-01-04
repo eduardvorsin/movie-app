@@ -9,6 +9,7 @@ type Props = {
 	alt: string,
 	href: string,
 	sizes: string,
+	priority?: boolean,
 } & GeneralProps;
 
 export default function CollectionCard({
@@ -18,6 +19,7 @@ export default function CollectionCard({
 	href,
 	sizes,
 	testId,
+	priority,
 	alt,
 }: Props) {
 	const classes = [
@@ -34,11 +36,12 @@ export default function CollectionCard({
 				className='-z-100 bg-neutral-200 dark:bg-dark-neutral-300'
 				alt={alt}
 				fill
+				priority={priority}
+				sizes={sizes}
 				src={{
 					light: src,
 					dark: src,
 				}}
-				sizes={sizes}
 			/>
 
 			<Title
