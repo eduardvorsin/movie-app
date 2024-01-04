@@ -103,7 +103,7 @@ export default function MovieCard({
 	].join(' ');
 
 	const imageClasses = [
-		'object-cover rounded-3',
+		'bg-neutral-200 dark:bg-dark-neutral-300 object-cover rounded-3',
 	].join(' ');
 
 	const ratingClasses = [
