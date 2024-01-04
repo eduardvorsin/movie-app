@@ -3,6 +3,7 @@ import { Options, fetchMoviesByFilters } from '../fetchMoviesByFilters/fetchMovi
 import { ListsResponse, MovieResponse } from '../types'
 import { MovieGenres } from '@/types/shared';
 import { getGenreIdByName } from '@/helpers/getGenreIdByName/getGenreIdByName';
+import { getKeywordIdByName } from '@/helpers/getKeywordIdByName/getKeywordIdByName';
 
 export const fetchMoviesByGenre = async (genre: MovieGenres | 'anime', page: number, options?: { lang: Locales }): Promise<ListsResponse<MovieResponse> | null> => {
 	const currentLang = options?.lang ?? fallbackLng;
@@ -16,11 +17,11 @@ export const fetchMoviesByGenre = async (genre: MovieGenres | 'anime', page: num
 		'vote_average.gte': 7,
 	};
 	if (genre === 'anime') {
-		config.with_keywords = '210024|287501'
+		config.with_keywords = getKeywordIdByName('anime');
 	} else if (genre === 'horror') {
-		config.without_genres = '10402';
+		config.without_genres = getGenreIdByName('music') ?? '';
 	} else {
-		config.without_keywords = '210024|287501'
+		config.without_keywords = getKeywordIdByName('anime');
 	};
 
 	const movies = await fetchMoviesByFilters(page, config);
