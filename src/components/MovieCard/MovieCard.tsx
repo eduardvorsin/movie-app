@@ -157,8 +157,8 @@ export default function MovieCard({
 				dark: src,
 			}}
 			fallback={{
-				light: '/assets/images/movie-card-placeholder-l-h.svg',
-				dark: '/assets/images/movie-card-placeholder-d-h.svg'
+				light: `/assets/images/movie-card-placeholder-l-${variant === 'horizontal' ? 'h' : 'v'}.svg`,
+				dark: `/assets/images/movie-card-placeholder-d-${variant === 'horizontal' ? 'h' : 'v'}.svg`
 			}}
 			loading={loading}
 			sizes={sizes}

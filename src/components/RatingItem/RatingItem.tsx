@@ -57,8 +57,8 @@ export default function RatingItem({
 						dark: src,
 					}}
 					fallback={{
-						light: '/assets/images/movie-placeholder-l.svg',
-						dark: '/assets/images/movie-placeholder-d.svg',
+						light: '/assets/images/movie-placeholder-l-v.svg',
+						dark: '/assets/images/movie-placeholder-d-v.svg',
 					}}
 					sizes='60px'
 					loading={loading}
