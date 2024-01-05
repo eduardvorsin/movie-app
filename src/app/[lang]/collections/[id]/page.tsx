@@ -3,10 +3,12 @@ import Container from '@/components/Container/Container';
 import MovieCard from '@/components/MovieCard/MovieCard';
 import ThemedImage from '@/components/ThemedImage/ThemedImage';
 import Title from '@/components/Title/Title';
+import { fetchImageWithPlaceholder } from '@/helpers/fetchImageWithPlaceholder/fetchImageWithPlaceholder';
 import { fetchTranslation } from '@/i18n/server';
 import { Locales } from '@/i18n/settings';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
 import { fetchMoviesByCollection } from '@/services/fetchMovieByCollection/fetchMovieByCollection';
+import { PlaceholderData } from '@/types/shared';
 import { notFound } from 'next/navigation';
 import { Collections, imgPath } from 'src/constants';
 
@@ -25,22 +27,26 @@ export default async function Page({ params: { id, lang } }: Props) {
 		notFound();
 	}
 
+	const imageData: PlaceholderData | null = await fetchImageWithPlaceholder(
+		`/assets/images/collection-${id}.webp`);
+
 	return (
 		<main className='mt-[3.75rem]'>
-			<section className='relative pt-3 sm:pt-[25%] pb-3 md:pb-5'>
+			<section className='overflow-hidden relative pt-3 sm:pt-[25%] pb-3 md:pb-5'>
 				<ThemedImage
-					className='aspect-[5/4] lg:aspect-video absolute top-0 left-0 -z-100 opacity-[0.25] dark:brightness-[0.25] dark:opacity-100 object-cover'
+					className='absolute top-0 left-0 aspect-[5/4] lg:aspect-video -z-100 opacity-[0.25] dark:brightness-[0.25] dark:opacity-100 object-cover'
 					src={{
-						light: `/assets/images/collection-${id}.webp`,
-						dark: `/assets/images/collection-${id}.webp`,
+						light: imageData.img.src,
+						dark: imageData.img.src,
 					}}
+					placeholder='blur'
+					blurDataURL={imageData.base64}
 					width={1920}
 					height={960}
 					sizes='100vw'
 					priority
 					alt={t(`collections.${id}`)}
 				/>
-
 
 				<Container>
 					<Breadcrumbs
