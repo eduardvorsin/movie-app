@@ -278,7 +278,7 @@ const config: Config = {
     },
     boxShadow: {
       none: 'none',
-      xs: '0rem 0rem 0.125rem rgbargb(29, 33, 37, 0.24)',
+      xs: '0rem 0rem 0.125rem rgba(29, 33, 37, 0.24)',
       sm: '0rem 0.0625rem 0.0625rem rgba(29, 33, 37, 0.1)',
       md: '0rem 0.125rem 0.25rem rgba(29, 33, 37, 0.1), 0rem 0.0625rem 0.375rem rgba(29, 33, 37, 0.05)',
       lg: '0rem 0.25rem 0.75rem rgba(29, 33, 37, 0.2), 0rem 0.125rem 0.375rem rgba(29, 33, 37, 0.05)',
