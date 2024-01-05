@@ -44,14 +44,14 @@ export default function PersonCard({
 
 	return (
 		<Link
-			className={`flex flex-col max-w-[10.625rem] group/card ${className}`}
+			className={`flex flex-col max-w-[9.625rem] min-w-[7.5rem] group/card ${className}`}
 			href={`${routes.persons}${personId}`}
 			onClick={onClick}
 			title={title}
 			data-testid={testId}
 			{...props}
 		>
-			<div className='w-full max-w-[9.625rem] min-w[7.5rem] aspect-square relative self-center mb-3'>
+			<div className='w-full aspect-square relative self-center mb-3'>
 				<ThemedImage
 					className='rounded-[50%] object-cover bg-neutral-300 dark:bg-dark-neutral-250'
 					fill
