@@ -4,6 +4,7 @@ import { useScreenWidth } from '@/hooks/useScreenWidth/useScreenWidth';
 import { GeneralProps } from '@/types/shared';
 import Image from 'next/image';
 import { useState } from 'react';
+import ThemedImage from '../ThemedImage/ThemedImage';
 
 const youtubeVideoBasePath = 'https://www.youtube-nocookie.com/embed/';
 const youtubePosterBasePath = 'https://i.ytimg.com/vi_webp/';
@@ -69,11 +70,19 @@ export default function YouTubeVideo({
 		>
 			{!isIframeloading && (
 				<>
-					<Image
+					<ThemedImage
 						className='w-full object-cover'
 						width={width}
 						height={height}
-						src={posterSrc.href}
+						showSkeleton
+						src={{
+							light: posterSrc.href,
+							dark: posterSrc.href,
+						}}
+						fallback={{
+							light: '/assets/images/movie-card-placeholder-l-h.svg',
+							dark: '/assets/images/movie-card-placeholder-d-h.svg'
+						}}
 						alt={posterAlt}
 						loading={loading}
 						sizes={posterSizes}
