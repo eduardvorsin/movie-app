@@ -53,8 +53,8 @@ export default function PersonCard({
 		>
 			<div className='w-full aspect-square relative self-center mb-3'>
 				<ThemedImage
-					className='rounded-[50%] object-cover bg-neutral-300 dark:bg-dark-neutral-250'
-					fill
+					className='rounded-[50%] h-full overflow-hidden bg-neutral-300 dark:bg-dark-neutral-250'
+					showSkeleton
 					quality={85}
 					sizes='154px'
 					alt={alt}
@@ -67,6 +67,7 @@ export default function PersonCard({
 						dark: '/assets/images/person-card-placeholder-d.svg'
 					}}
 					loading={loading}
+					style={{ objectFit: 'cover' }}
 				/>
 				{showRating && (
 					<span className='absolute bottom-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center rounded-[50%] border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold'>

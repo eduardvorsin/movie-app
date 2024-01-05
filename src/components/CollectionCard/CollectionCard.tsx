@@ -33,9 +33,9 @@ export default function CollectionCard({
 			data-testid={testId}
 		>
 			<ThemedImage
-				className='-z-100 bg-neutral-200 dark:bg-dark-neutral-300'
+				className='[&]:absolute top-0 left-0 w-full h-full -z-100 bg-neutral-200 dark:bg-dark-neutral-300'
 				alt={alt}
-				fill
+				showSkeleton
 				priority={priority}
 				sizes={sizes}
 				src={{

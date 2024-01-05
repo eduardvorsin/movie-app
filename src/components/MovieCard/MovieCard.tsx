@@ -103,7 +103,7 @@ export default function MovieCard({
 	].join(' ');
 
 	const imageClasses = [
-		'bg-neutral-200 dark:bg-dark-neutral-300 object-cover rounded-3',
+		'h-full overflow-hidden bg-neutral-200 dark:bg-dark-neutral-300 object-cover rounded-3',
 	].join(' ');
 
 	const ratingClasses = [
@@ -148,9 +148,9 @@ export default function MovieCard({
 
 	const CardImage = (
 		<ThemedImage
+			showSkeleton
 			className={imageClasses}
 			alt={alt}
-			fill
 			quality={75}
 			src={{
 				light: src,
