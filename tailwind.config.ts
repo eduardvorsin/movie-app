@@ -292,26 +292,27 @@ const config: Config = {
       none: 'none',
       spin: 'spin 0.85s cubic-bezier(0.4, 0.15, 0.6, 0.85) infinite normal',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      skeleton: 'shimmer ease 2s infinite',
       bounce: 'bounce 1s infinite',
       'fade-in': 'fade-in 1s ease',
       'appear-above': 'appear-above 1s ease',
       'appear-below': 'appear-below 1s ease',
     },
     keyframes: ({ theme }) => ({
+      shimmer: {
+        '100%': {
+          'transform': 'translateX(100%)',
+        },
+      },
       bounce: {
         '65%, 85%': { transform: `scale(${theme('scale.100')})` },
         '75%': { transform: `scale(${theme('scale.85')})` },
         '82.5%': { transform: `scale(${theme('scale.105')})` }
       },
       pulse: {
-        '0%, 75%': {
-          transform: `scale(${theme('scale.85')})`,
-          opacity: theme('opacity.100'),
-        },
-        '100%': {
-          transform: `scale(${theme('scale.250')})`,
-          opacity: theme('opacity.0'),
-        }
+        '0%': { opacity: theme('opacity.100') },
+        '50%': { opacity: theme('opacity.50') },
+        '100%': { opacity: theme('opacity.100') },
       },
       spin: {
         '100%': { transform: 'rotate(1turn)' },
