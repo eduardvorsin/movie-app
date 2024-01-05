@@ -215,7 +215,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 						key={index}
 						role='group'
 						aria-roledescription='slide'
-						className='flex-shrink-0 flex-grow-0'
+						className='overflow-hidden flex-shrink-0 flex-grow-0'
 						style={{
 							marginRight: `${slides.length - 1 === index ? 0 : slideGap}px`,
 							flexBasis: `calc(${100 / visibleSlides}% - ${slideGap * ((visibleSlides - 1) / visibleSlides)}px)`,
