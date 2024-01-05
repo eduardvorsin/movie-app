@@ -97,7 +97,14 @@ export default async function Page({ params: { id, lang } }: Props) {
 		certification,
 	} = movie;
 
-	const backdropUrl = `${imgPath['backdrop']}${backdrop_path}`;
+	let backgroundData: PlaceholderData | null = null
+	if (backdrop_path) {
+		backgroundData = await fetchImageWithPlaceholder(
+			`${imgPath['backdrop']}${backdrop_path}`,
+			true
+		);
+	}
+
 	let posterData: PlaceholderData | null = null;
 	if (poster_path) {
 		posterData = await fetchImageWithPlaceholder(
@@ -105,6 +112,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 			true,
 		);
 	}
+
 	const releaseYear = release_date.slice(0, 4);
 	const currentGenres = genres.slice(0, 3).map((genre) => genre.name.toLowerCase()).join(', ');
 	const movieDuration = `${t('duration', { ns: 'movieDetailsPage', time: runtime })} | ${convertToTime(runtime)}`;
@@ -163,9 +171,25 @@ export default async function Page({ params: { id, lang } }: Props) {
 	return (
 		<main className='mt-[3.75rem]'>
 			<section
-				className='py-5 md:py-8 bg-blend-overlay bg-cover bg-no-repeat bg-neutral-100/80 dark:bg-dark-neutral-0'
-				style={{ backgroundImage: `url(${backdropUrl})` }}
+				className='overflow-hidden relative py-5 md:py-8'
 			>
+				{backdrop_path && (
+					<ThemedImage
+						className='aspect-[5/4] xs:aspect-video sm:w-full sm:h-full absolute top-0 left-0 -z-100 opacity-[0.25] dark:brightness-[0.25] dark:opacity-100 object-cover object-top'
+						src={{
+							light: backgroundData?.img.src ?? '',
+							dark: backgroundData?.img.src ?? '',
+						}}
+						placeholder={backdrop_path ? 'blur' : 'empty'}
+						blurDataURL={backgroundData?.base64}
+						width={1920}
+						height={720}
+						sizes='100vw'
+						priority
+						alt={title}
+					/>
+				)}
+
 				<Container className='grid grid-cols-1 sm:grid-cols-[15.625rem_1fr] md:grid-cols-[16.875rem_1fr] lg:grid-cols-[18.75rem_1fr] sm:gap-x-6 md:gap-x-8 lg:gap-x-10'>
 					<Breadcrumbs
 						className='col-span-full mb-5 md:mb-8'
@@ -174,12 +198,12 @@ export default async function Page({ params: { id, lang } }: Props) {
 					/>
 
 					<ThemedImage
-						className='mb-8 sm:mb-0 justify-self-center sm:justify-self-start object-cover rounded-2 max-w-[14.375rem] sm:max-w-full bg-neutral-300 dark:bg-dark-neutral-300 border-1 border-neutral-300 dark:border-dark-neutral-300'
+						className='mb-8 sm:mb-0 justify-self-center  overflow-hidden sm:justify-self-start object-cover rounded-2 max-w-[14.375rem] sm:max-w-full bg-neutral-300 dark:bg-dark-neutral-300 border-1 border-neutral-300 dark:border-dark-neutral-300'
 						width={300}
 						height={450}
-						alt='poster'
-						placeholder='blur'
-						blurDataURL={poster_path ? 'blur' : 'empty'}
+						alt={`${title} poster`}
+						placeholder={poster_path ? 'blur' : 'empty'}
+						blurDataURL={posterData?.base64}
 						priority
 						sizes='(min-width: 1024px) 300px, (min-width: 768px) 270px, (min-width: 640px) 250px, 230px'
 						src={{
