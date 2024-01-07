@@ -4,11 +4,13 @@ import Add from '../../assets/icons/add.svg';
 import Minus from '../../assets/icons/minus.svg';
 
 type Sizes = Exclude<Props['size'], 'custom' | undefined>;
+type Apperances = Exclude<Props['appearance'], 'custom' | undefined>;
 
 const sizes: Sizes[] = ['micro', 'slim', 'medium', 'large'];
+const apperances: Apperances[] = ['primary', 'secondary', 'warning', 'danger', 'success', 'discovery', 'ghost'];
 
 type Variant = {
-	appearance: Exclude<Props['appearance'], undefined>,
+	appearance: Apperances,
 	children: string,
 	isLoading?: Exclude<Props['isLoading'], undefined>,
 	isDisabled?: Exclude<Props['isDisabled'], undefined>,
@@ -307,102 +309,40 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+export const Default: Story = {
 	args: {
-		appearance: 'primary',
-		children: 'Primary'
+		children: 'Default'
 	},
 	parameters: {
 		docs: {
 			description: {
-				story: 'Applies to buttons with the primary importance of the action',
+				story: 'The default state of the component',
 			},
 		},
 	},
 };
 
-export const Secondary: Story = {
-	args: {
-		appearance: 'secondary',
-		children: 'Secondary'
-	},
+export const Apperances: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'Used for buttons that perform a secondary action',
+				story: 'You can set one of 7 appearance types: primary, secondary, warning, danger, success, discovery, ghost. Primary - indicates the most important action. Secondary - used for less important actions. Warning - informs about potential risks. Danger - warns about the irreversibility of actions. Success - reports a positive result. Discovery - indicates changes in the interface. Ghost - a button without a background color, used to perform additional actions',
 			},
 		},
 	},
-};
-
-export const Warning: Story = {
-	args: {
-		appearance: 'warning',
-		children: 'Warning'
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'It is used to warn about the potential risk of interaction',
-			},
-		},
-	},
-};
-
-export const Danger: Story = {
-	args: {
-		appearance: 'danger',
-		children: 'Danger'
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'It is used to warn the user about the irrevocability of actions when clicking',
-			},
-		},
-	},
-};
-
-export const Success: Story = {
-	args: {
-		appearance: 'success',
-		children: 'Success'
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'It is usually used to indicate the successful completion of an action or operation.',
-			},
-		},
-	},
-};
-
-export const Discovery: Story = {
-	args: {
-		appearance: 'discovery',
-		children: 'Discovery'
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'It is employed to notify users about changes in the user interface or to offer details about newly introduced features and their execution.',
-			},
-		},
-	},
-};
-
-export const Ghost: Story = {
-	args: {
-		appearance: 'ghost',
-		children: 'Ghost'
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'Button view without background color. It can be used to indicate additional actions, menus or navigation, cancel or clear, etc.',
-			},
-		},
-	},
+	render: () => (
+		<div className='flex items-start gap-3 flex-wrap'>
+			{apperances.map((appearance) => (
+				<Button
+					key={appearance}
+					appearance={appearance}
+					size='medium'
+				>
+					{`${appearance[0].toUpperCase()}${appearance.slice(1)}`}
+				</Button>
+			))}
+		</div>
+	),
 };
 
 export const Loading: Story = {
@@ -535,6 +475,13 @@ export const WithIcons: Story = {
 };
 
 export const Sizes: Story = {
+	parameters: {
+		docs: {
+			description: {
+				story: 'Allows you to set the size of the button. The default size is medium. There are 5 sizes: micro, slim, medium, large, custom. The first 4 sizes have an explicit size and custom allows you to set your own sizes through css classes',
+			},
+		},
+	},
 	render: () => (
 		<div className='flex items-start'>
 			{sizes.map((size) => (
@@ -548,16 +495,16 @@ export const Sizes: Story = {
 			))}
 		</div>
 	),
-	parameters: {
-		docs: {
-			description: {
-				story: 'Allows you to set the size of the button. The default size is medium. There are 5 sizes: micro, slim, medium, large, custom. The first 4 sizes have an explicit size and custom allows you to set your own sizes through css classes',
-			},
-		},
-	},
 };
 
 export const All: Story = {
+	parameters: {
+		docs: {
+			description: {
+				story: 'Here are all possible button options, in size, appearance and condition',
+			},
+		},
+	},
 	render: () => {
 		return (
 			<div className='flex flex-col items-start'>
@@ -585,13 +532,6 @@ export const All: Story = {
 				))}
 			</div>
 		)
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'Here are all possible button options, in size, appearance and condition',
-			},
-		},
 	},
 };
 

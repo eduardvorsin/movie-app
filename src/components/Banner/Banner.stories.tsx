@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Banner from './Banner';
+import Banner, { Props } from './Banner';
 import Button from '@/components/Button/Button';
+
+type Appearances = Exclude<Props['appearance'], undefined>;
+const appearances: Appearances[] = ['success', 'info', 'warning', 'danger', 'discovery'];
 
 const meta: Meta<typeof Banner> = {
 	title: 'components/Banner',
@@ -52,79 +55,43 @@ const meta: Meta<typeof Banner> = {
 export default meta;
 type Story = StoryObj<typeof Banner>;
 
-export const Info: Story = {
+export const Default: Story = {
 	args: {
-		appearance: 'info',
-		title: 'Info',
-		children: 'Info banner Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt non repellendus ullam quam dolore inventore deleniti reiciendis esse dolor sed.'
+		title: 'Default banner',
+		children: 'Default banner Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt non repellendus ullam quam dolore inventore deleniti reiciendis esse dolor sed.'
 	},
 	parameters: {
 		docs: {
 			description: {
-				story: 'The banner is the default presentation utilized to indicate a shift in status or convey vital information.',
+				story: 'The default state of the component',
 			},
 		},
 	},
 };
 
-export const Success: Story = {
-	args: {
-		appearance: 'success',
-		title: 'Success',
-		children: 'Success banner Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt non repellendus ullam quam dolore inventore deleniti reiciendis esse dolor sed.'
-	},
+export const Appearances: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'Utilize a success banner message to inform the user that an action or event has been successfully completed.',
+				story: 'The appearance property can take 5 values: success, info, warning, danger, discovery. Info - indicates a status change or the transmission of important information. Success - a message about the completed action or event. Warning - warning users about potential errors or dangerous actions. Danger - a message about errors and dangerous actions. Discovery - a message about updates and the introduction of new features',
 			},
 		},
 	},
-};
-
-export const Warning: Story = {
-	args: {
-		appearance: 'warning',
-		title: 'Warning',
-		children: 'Warning banner Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt non repellendus ullam quam dolore inventore deleniti reiciendis esse dolor sed.'
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'Use a warning banner message to help users avoid errors, manage authentication issues, take actions to prevent potentially dangerous actions, and feel confident in their decision-making, such as in confirmation modals.',
-			},
-		},
-	},
-};
-
-export const Danger: Story = {
-	args: {
-		appearance: 'danger',
-		title: 'Danger',
-		children: 'Danger banner Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt non repellendus ullam quam dolore inventore deleniti reiciendis esse dolor sed.'
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'Use an error banner message to communicate when something destructive or critical has occurred, access has been denied, or connectivity issues are present. It\'s worth noting that employing section messages for these scenarios is not a common practice.',
-			},
-		},
-	},
-};
-
-export const Discovery: Story = {
-	args: {
-		appearance: 'discovery',
-		title: 'Discovery',
-		children: 'Discovery banner Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt non repellendus ullam quam dolore inventore deleniti reiciendis esse dolor sed.'
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'Utilize a discovery banner message to indicate a UI update or deliver information regarding new features and the onboarding process.',
-			},
-		},
-	},
+	render: () => (
+		<div
+			className='flex flex-col gap-3'
+		>
+			{appearances.map((appearance) => (
+				<Banner
+					key={appearance}
+					title={appearance}
+					appearance={appearance}
+				>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt non repellendus ullam quam dolore.
+				</Banner>
+			))}
+		</div>
+	),
 };
 
 export const CloseButton: Story = {

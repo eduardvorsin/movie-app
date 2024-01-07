@@ -6,7 +6,9 @@ import MoonIcon from '../../assets/icons/moon.svg';
 import SunIcon from '../../assets/icons/sun.svg';
 
 type Sizes = Exclude<Props['size'], undefined>;
+type Appearances = Exclude<Props['appearance'], undefined>;
 const sizes: Sizes[] = ['regular', 'large'];
+const appearances: Appearances[] = ['primary', 'secondary', 'warning', 'danger', 'success'];
 
 type Variant = {
 	appearance: Exclude<Props['appearance'], undefined>,
@@ -182,80 +184,45 @@ const ToggleWithHooks = (props: Omit<Props, 'isChecked' | 'onChange'>) => {
 		/>
 	);
 }
-
-export const Primary: Story = {
+export const Default: Story = {
 	args: {
-		label: 'primary'
+		label: 'default',
+		id: 'default',
 	},
 	parameters: {
 		docs: {
 			description: {
-				story: 'The primary appearance of the Toggle component',
+				story: 'The default state of the component',
 			},
 		},
 	},
 	render: (args) => (<ToggleWithHooks {...args} />),
 };
 
-export const Secondary: Story = {
-	args: {
-		label: 'secondary',
-		appearance: 'secondary',
-	},
+
+export const Appearances: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'The secondary appearance of the Toggle component',
+				story: 'There are 5 values for the appearance property: primary, secondary, warning, success. Primary - for important actions. Secondary - for less important actions. Warning - to warn about potential risks. Danger - for reporting serious errors or irreversible actions. Success - to indicate successful actions',
 			},
 		},
 	},
-	render: (args) => (<ToggleWithHooks {...args} />),
+	render: () => (
+		<div className='flex items-center gap-3 flex-wrap'>
+			{appearances.map((appearance) => (
+				<ToggleWithHooks
+					key={appearance}
+					id={appearance}
+					label={appearance}
+					value={appearance}
+					name={appearance}
+				/>
+			))}
+		</div>
+	),
 };
 
-export const Success: Story = {
-	args: {
-		label: 'success',
-		appearance: 'success',
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'The success appearance of the Toggle component',
-			},
-		},
-	},
-	render: (args) => (<ToggleWithHooks {...args} />),
-};
-
-export const Warning: Story = {
-	args: {
-		label: 'warning',
-		appearance: 'warning',
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'The warning appearance of the Toggle component',
-			},
-		},
-	},
-	render: (args) => (<ToggleWithHooks {...args} />),
-};
-
-export const Danger: Story = {
-	args: {
-		label: 'danger',
-		appearance: 'danger',
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'The danger appearance of the Toggle component',
-			},
-		},
-	},
-	render: (args) => (<ToggleWithHooks {...args} />),
-};
 
 export const Sizes: Story = {
 	parameters: {
@@ -365,7 +332,10 @@ export const All: Story = {
 	render: () => (
 		<div className='flex items-start flex-wrap'>
 			{(Object.keys(all) as Array<keyof typeof all>).map((size) => (
-				<div className='flex flex-col items-end justify-start mr-6 last:mr-0'>
+				<div
+					key={size}
+					className='flex flex-col items-end justify-start mr-6 last:mr-0'
+				>
 					{all[size].map((variant) => (
 						<ToggleWithHooks
 							className='mb-4 last:mb-0'

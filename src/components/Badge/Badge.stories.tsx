@@ -36,75 +36,18 @@ type Story = StoryObj<typeof Badge>;
 
 export const Default: Story = {
 	args: {
-		appearance: 'default',
-		children: 'Default'
+		children: 'default'
 	},
 	parameters: {
 		docs: {
 			description: {
-				story: 'It is used to display objects, actions, or states that do not require special attention or do not have an explicit status',
+				story: 'The default state of the component',
 			},
 		},
 	},
 };
 
-export const Info: Story = {
-	args: {
-		appearance: 'info',
-		children: 'Info'
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'Used to send important or contextual messages to the user',
-			},
-		},
-	},
-};
-
-export const Success: Story = {
-	args: {
-		appearance: 'success',
-		children: 'Success'
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'it is used to explicitly indicate successfully completed actions, completed tasks, or positive results',
-			},
-		},
-	},
-};
-
-export const Warning: Story = {
-	args: {
-		appearance: 'warning',
-		children: 'Warning'
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'It is used to highlight an object, action, or situation that requires special attention or may cause some risks',
-			},
-		},
-	},
-};
-
-export const Danger: Story = {
-	args: {
-		appearance: 'danger',
-		children: 'Danger'
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'It is used to explicitly designate situations, objects, or actions that pose a significant risk or negative consequences',
-			},
-		},
-	},
-};
-
-export const All: Story = {
+export const Appearances: Story = {
 	render: () => {
 		return (
 			<div
@@ -125,7 +68,7 @@ export const All: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'Here are all possible variants of badges by color',
+				story: 'Here are all possible variants of badges by color. Type "danger" used for highlighting situations with significant risks or negative. Type "warning" indicates objects or actions requiring special attention or posing potential risks. Type "success" explicitly communicates the successful completion of actions, tasks, or positive results. Type "info" sends important or contextual messages to the user. Type "default" displays objects, actions, or states that don\'t need special attention or lack explicit status.',
 			},
 		},
 	},

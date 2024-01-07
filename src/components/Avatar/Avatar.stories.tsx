@@ -5,9 +5,11 @@ import AvatarPicture from '../../assets/avatar-example.jpg';
 type Statuses = Exclude<Props['status'], undefined>;
 type Sizes = Exclude<Props['size'], undefined>;
 type Presences = Exclude<Props['presence'], undefined>;
+type Appearances = Exclude<Props['appearance'], undefined>;
+
 type Variant = {
 	id: number,
-	appearance?: Props['appearance'],
+	appearance?: Appearances,
 	isDisabled?: Props['isDisabled'],
 	initials?: Props['initials'],
 	presence?: Presences,
@@ -15,6 +17,7 @@ type Variant = {
 	src?: Props['src'],
 };
 
+const appearances: Appearances[] = ['circle', 'square'];
 const statuses: Statuses[] = ['approved', 'declined', 'locked'];
 const sizes: Sizes[] = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
 const presences: Presences[] = ['offline', 'online'];
@@ -129,30 +132,28 @@ export const Default: Story = {
 	},
 };
 
-export const Circle: Story = {
-	args: {
-		appearance: 'circle',
-	},
+export const Appearances: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'Allows you to set a round shape for the avatar',
+				story: 'The appearance property allows you to set the shape for the avatar. The avatar can be of 2 shapes: round or square',
 			},
 		},
 	},
-};
-
-export const Square: Story = {
-	args: {
-		appearance: 'square',
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'Allows you to set a square shape for the avatar',
-			},
-		},
-	},
+	render: () => (
+		<div
+			className='flex items-start gap-3 flex-wrap'
+		>
+			{appearances.map((appearance) => (
+				<Avatar
+					key={appearance}
+					label={`avatar appearance ${appearance} variant`}
+					size='xlarge'
+					appearance={appearance}
+				/>
+			))}
+		</div>
+	),
 };
 
 export const Disabled: Story = {
