@@ -2,7 +2,6 @@
 import { ChangeEventHandler, FocusEventHandler, FormEventHandler } from 'react';
 import Button from '@/components/Button/Button';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
-import Loupe from '../../assets/icons/loupe.svg?url';
 import { GeneralProps } from '@/types/shared';
 
 export type Props = {
@@ -97,7 +96,7 @@ export default function Search({
 								className='w-6 h-6 p-0.5 fill-current'
 								viewBox='0 0 32 32'
 							>
-								<use href={`${Loupe.src}#loupe`}></use>
+								<use href={'/assets/icons/loupe.svg#loupe'}></use>
 							</svg>
 							Search
 						</Button>

@@ -4,7 +4,6 @@ import Search, { Props as SearchProps } from '@/components/Search/Search';
 import Link from "@/components/Link/Link";
 import Spinner from '@/components/Spinner/Spinner';
 import Title from '@/components/Title/Title';
-import BrokenLoupe from '../../assets/icons/broken-loupe.svg?url';
 import { FocusEventHandler, useState } from 'react';
 
 export type AutocompleteOption = {
@@ -90,7 +89,7 @@ export default function AutocompleteSearch({
 								className='w-[5rem] h-[5rem] mb-5 fill-current'
 								viewBox='0 0 32 32'
 							>
-								<use href={`${BrokenLoupe.src}#broken-loupe`}></use>
+								<use href={'/assets/icons/broken-loupe.svg#broken-loupe'}></use>
 							</svg>
 
 							<Title

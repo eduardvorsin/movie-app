@@ -1,16 +1,10 @@
 'use client';
 import { ReactNode } from 'react';
-import Warning from '../../assets/icons/warning.svg?url';
-import Error from '../../assets/icons/error.svg?url';
-import Confirmation from '../../assets/icons/confirmation.svg?url';
-import Info from '../../assets/icons/info.svg?url';
-import Question from '../../assets/icons/question.svg?url';
-import Cancel from '../../assets/icons/cancel.svg?url';
 import Button from '../Button/Button';
 import Title from '../Title/Title';
 import { GeneralProps, HeadingElement } from '@/types/shared';
 
-type Props = {
+export type Props = {
 	title?: string,
 	hideIcon?: boolean,
 	children: ReactNode,
@@ -32,27 +26,27 @@ const appearances = {
 const apperanceIcons = {
 	discovery: (
 		<svg className='fill-purple-700 dark:fill-purple-400 ' viewBox='0 0 20 20'>
-			<use href={`${Question.src}#question`}></use>
+			<use href={'/assets/icons/question.svg#question'}></use>
 		</svg>
 	),
 	success: (
 		<svg className='fill-green-800 dark:fill-green-400' viewBox='0 0 20 20'>
-			<use href={`${Confirmation.src}#confirmation`}></use>
+			<use href={'/assets/icons/confirmation.svg#confirmation'}></use>
 		</svg>
 	),
 	info: (
 		<svg className='fill-blue-700 dark:fill-blue-400' viewBox='0 0 20 20'>
-			<use href={`${Info.src}#info`}></use>
+			<use href={'/assets/icons/info.svg#info'}></use>
 		</svg>
 	),
 	warning: (
 		<svg className='fill-yellow-600 dark:fill-yellow-500' viewBox='0 0 20 20'>
-			<use href={`${Warning.src}#warning`}></use>
+			<use href={'/assets/icons/warning.svg#warning'}></use>
 		</svg>
 	),
 	danger: (
 		<svg className='fill-red-700 dark:fill-red-400' viewBox='0 0 20 20'>
-			<use href={`${Error.src}#error`}></use>
+			<use href={'/assets/icons/error.svg#error'}></use>
 		</svg>
 	),
 } as const;
@@ -125,7 +119,7 @@ export default function Banner({
 				>
 					close
 					<svg className='fill-current w-6 h-6' viewBox='0 0 20 20' aria-hidden>
-						<use href={`${Cancel.src}#cancel`}></use>
+						<use href={'/assets/icons/cancel.svg#cancel'}></use>
 					</svg>
 				</Button>
 			)}

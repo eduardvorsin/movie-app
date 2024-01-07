@@ -1,8 +1,3 @@
-import Warning from '../../assets/icons/warning.svg?url';
-import Error from '../../assets/icons/error.svg?url';
-import Confirmation from '../../assets/icons/confirmation.svg?url';
-import Info from '../../assets/icons/info.svg?url';
-import Connectivity from '../../assets/icons/connectivity.svg?url';
 import { GeneralProps } from '@/types/shared';
 
 export type Props = {
@@ -23,27 +18,27 @@ const appearanceTypes = {
 const apperanceIcons = {
 	connectivity: (
 		<svg className='fill-current' viewBox='0 0 20 20'>
-			<use href={`${Connectivity.src}#connectivity`}></use>
+			<use href={'/assets/icons/connectivity.svg#connectivity'}></use>
 		</svg>
 	),
 	confirmation: (
 		<svg className='fill-current' viewBox='0 0 20 20'>
-			<use href={`${Confirmation.src}#confirmation`}></use>
+			<use href={'/assets/icons/confirmation.svg#confirmation'}></use>
 		</svg>
 	),
 	info: (
 		<svg className='fill-current' viewBox='0 0 20 20'>
-			<use href={`${Info.src}#info`}></use>
+			<use href={'/assets/icons/info.svg#info'}></use>
 		</svg>
 	),
 	warning: (
 		<svg className='fill-current' viewBox='0 0 20 20'>
-			<use href={`${Warning.src}#warning`}></use>
+			<use href={'/assets/icons/warning.svg#warning'}></use>
 		</svg>
 	),
 	error: (
 		<svg className='fill-current' viewBox='0 0 20 20'>
-			<use href={`${Error.src}#error`}></use>
+			<use href={'/assets/icons/error.svg#error'}></use>
 		</svg>
 	),
 } as const;

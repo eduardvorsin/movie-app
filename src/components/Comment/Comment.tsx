@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import CommentInfoItem from './CommentInfoItem/CommentInfoItem';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
-import Locked from '../../assets/icons/locked.svg?url';
 import Title from '@/components/Title/Title';
 import { GeneralProps, HeadingElement } from '@/types/shared';
 import ExpandableText from '../ExpandableText/ExpandableText';
@@ -119,7 +118,7 @@ export default function Comment({
 							className=' text-100 font-medium inline-flex items-center text-neutral-700 dark:text-dark-neutral-700'
 						>
 							<svg className='w-4 h-4 mr-1 fill-current' viewBox='0 0 20 20'>
-								<use href={`${Locked.src}#locked`}></use>
+								<use href={'/assets/icons/locked.svg#locked'}></use>
 							</svg>
 							<span className='max-w-[200px] truncate'>
 								{restrictedTo}

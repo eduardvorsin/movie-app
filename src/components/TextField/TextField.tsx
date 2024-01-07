@@ -1,7 +1,6 @@
 'use client';
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
-import Cancel from '../../assets/icons/cancel.svg?url';
 import { GeneralProps } from '@/types/shared';
 
 export type Props = {
@@ -121,7 +120,7 @@ export default function TextField({
 					>
 						clear
 						<svg className='fill-current' viewBox='0 0 20 20'>
-							<use href={`${Cancel.src}#cancel`}></use>
+							<use href={'/assets/icons/cancel.svg#cancel'}></use>
 						</svg>
 					</button>
 				)}
