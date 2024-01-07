@@ -17,7 +17,6 @@ import { formatCurrency } from '@/i18n/utils/formatCurrency/formatCurrency';
 import { getLanguageNameFromLocale } from '@/i18n/utils/getLanguageNameFromLocale/getLanguageNameFromLocale';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
 import { fetchMovie } from '@/services/fetchMovie/fetchMovie';
-import { PlaceholderData } from '@/types/shared';
 import { notFound } from 'next/navigation';
 import { imgPath, routes } from 'src/constants';
 import Carousel from '@/components/Carousel/Carousel';
