@@ -3,13 +3,16 @@ import fs from 'node:fs/promises';
 import { getPlaiceholder } from 'plaiceholder';
 import { PlaceholderData } from '@/types/shared';
 
-export const fetchImageWithPlaceholder = async (src: string, isRemote?: boolean): Promise<PlaceholderData> => {
+const imageFormatRegexp = /\.(jpg|jpeg|png|gif|bmp|svg|webp|avif)$/;
+
+export const fetchImageWithPlaceholder = async (src: string, isRemote?: boolean): Promise<PlaceholderData | null> => {
+	if (!src.match(imageFormatRegexp)) return null;
 
 	let buffer;
 	if (isRemote) {
 		buffer = await fetch(src).then(async (res) => {
 			return Buffer.from(await res.arrayBuffer());
-		})
+		});
 	} else {
 		buffer = await fs.readFile(path.join('./public', src));
 	}
