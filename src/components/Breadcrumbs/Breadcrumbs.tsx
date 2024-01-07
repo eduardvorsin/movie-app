@@ -105,7 +105,7 @@ export default function Breadcrumbs({
 				{visibleItems.map((child, index) => (
 					<li
 						key={index}
-						className='text-100 after:content-[attr(data-separator)] last:after:content-none after:w-2 after:mx-2 after:text-center after:text-100 dark:after:text-dark-neutral-1000 after:text-neutral-1000'
+						className='text-100 after:content-[attr(data-separator)] last:after:content-none after:mx-2 after:text-center after:text-100 dark:after:text-dark-neutral-1000 after:text-neutral-1000'
 						data-separator={separator}
 					>
 						{child}

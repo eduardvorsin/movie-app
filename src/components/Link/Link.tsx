@@ -30,7 +30,7 @@ export default function Link({
 	...props
 }: Props) {
 	const linkClasses = [
-		'no-underline text-blue-700 hover:text-blue-800 active:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline transition-colors duration-150',
+		'no-underline text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline transition-colors duration-150',
 		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
 		className,
 	].join(' ');

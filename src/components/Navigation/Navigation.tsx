@@ -26,7 +26,7 @@ export default function Navigation({
 
 	return (
 		<div
-			className={`fixed inset-0 bg-neutral-100/90 dark:bg-dark-neutral-100/90 z-0 md:static md:bg-transparent dark:md:bg-transparent mt-[3.75rem] md:mt-0 ${className}`}
+			className={`fixed inset-0 bg-neutral-100/90 dark:bg-dark-neutral-100/90 z-0 md:static md:inset-auto md:bg-transparent dark:md:bg-transparent mt-[3.75rem] md:mt-0 ${className}`}
 			{...props}
 		>
 			<nav
