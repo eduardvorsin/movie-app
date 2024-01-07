@@ -101,7 +101,7 @@ export default function YouTubeVideo({
 							src='/assets/icons/youtube_default.svg'
 							alt=''
 							width={64}
-							height={48}
+							height={64}
 						/>
 					</button>
 				</>
