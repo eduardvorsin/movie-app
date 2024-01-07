@@ -24,13 +24,13 @@ const sizes = {
 	},
 } as const;
 
-type Props = {
+export type Props = {
 	onClick?: MouseEventHandler<HTMLAnchorElement>,
 	size: 'small' | 'medium' | 'large',
 } & GeneralProps;
 
 export default function Logo({
-	size,
+	size = 'medium',
 	className,
 	testId,
 	onClick,
