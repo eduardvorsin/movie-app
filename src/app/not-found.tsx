@@ -1,7 +1,6 @@
 import { headers } from "next/headers";
 import { fallbackLng, Locales } from "@/i18n/settings";
 import Button from '@/components/Button/Button';
-import NotFoundIcon from '../assets/icons/404.svg?url';
 import Title from '@/components/Title/Title';
 import { fetchTranslation } from '@/i18n/server';
 import { getLocalesFromString } from "@/i18n/utils/getLocalesFromString/getLocalesFromString";
@@ -17,7 +16,7 @@ export default async function NotFound() {
 		>
 			<div className='max-w-[28.25rem] flex flex-col items-center'>
 				<svg className='w-[9.375rem] h-[9.375rem] mb-2 sm:mb-4 md:mb-6 lg:mb10 shrink-0 fill-dark-neutral-300 dark:fill-neutral-300 lg:w-[12.5rem] lg:h-[12.5rem]' viewBox='0 0 32 32'>
-					<use href={`${NotFoundIcon.src}#404`}></use>
+					<use href={'/assets/icons/404.svg#404'}></use>
 				</svg>
 				<Title
 					className='font-regular text-center text-dark-neutral-300 dark:text-neutral-300 mb-1 md:mb-2'
