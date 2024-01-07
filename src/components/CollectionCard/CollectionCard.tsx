@@ -8,7 +8,7 @@ type Props = {
 	src: string,
 	alt: string,
 	href: string,
-	sizes: string,
+	sizes?: string,
 	priority?: boolean,
 } & GeneralProps;
 
