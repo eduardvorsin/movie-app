@@ -69,8 +69,10 @@ type Props = {
 
 export default async function Page({ params: { id, lang } }: Props) {
 	const { t } = await fetchTranslation(lang, ['movieDetailsPage', 'common']);
-	const movie = await fetchMovie(id, { lang });
-	const trailers = await fetchTrailersForMovie(Number(id), { lang });
+	const [movie, trailers] = await Promise.all([
+		await fetchMovie(id, { lang }),
+		await fetchTrailersForMovie(Number(id), { lang }),
+	]);
 
 	if (!movie) {
 		notFound();
@@ -97,21 +99,16 @@ export default async function Page({ params: { id, lang } }: Props) {
 		certification,
 	} = movie;
 
-	let backgroundData: PlaceholderData | null = null
-	if (backdrop_path) {
-		backgroundData = await fetchImageWithPlaceholder(
+	const [backgroundData, posterData] = await Promise.all([
+		await fetchImageWithPlaceholder(
 			`${imgPath['backdrop']}${backdrop_path}`,
 			true
-		);
-	}
-
-	let posterData: PlaceholderData | null = null;
-	if (poster_path) {
-		posterData = await fetchImageWithPlaceholder(
+		),
+		await fetchImageWithPlaceholder(
 			`${imgPath['poster']}${poster_path}`,
 			true,
-		);
-	}
+		),
+	]);
 
 	const releaseYear = release_date.slice(0, 4);
 	const currentGenres = genres.slice(0, 3).map((genre) => genre.name.toLowerCase()).join(', ');
