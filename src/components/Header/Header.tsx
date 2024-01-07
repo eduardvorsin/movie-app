@@ -93,6 +93,7 @@ export default function Header({
 					)}
 
 					<NavigationMenuButton
+						className='md:hidden'
 						onClick={menuOpenHandler}
 						isActive={isMenuOpen}
 					/>

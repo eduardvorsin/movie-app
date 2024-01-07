@@ -5,7 +5,7 @@ import { Locales, fallbackLng } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
 import { GeneralProps } from '@/types/shared';
 
-type Props = {
+export type Props = {
 	isActive: boolean,
 	onClick: MouseEventHandler<HTMLButtonElement>,
 } & GeneralProps;
@@ -28,7 +28,7 @@ export default function NavigationMenuButton({
 
 	return (
 		<Button
-			className={`relative md:hidden z-100 ${className}`}
+			className={`relative z-100 ${className}`}
 			appearance='secondary'
 			iconButton
 			onClick={onClick}
