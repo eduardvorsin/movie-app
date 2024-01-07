@@ -1,7 +1,7 @@
 'use client';
 import { FocusEventHandler, KeyboardEventHandler, MouseEventHandler, useCallback, useEffect, useId, useRef, useState } from 'react';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
-import SelectOption from '@/components/SelectOption/SelectOption';
+import SelectOption from '@/components/Select/SelectOption/SelectOption';
 import { GeneralProps } from '@/types/shared';
 
 export type SelectOption = {
