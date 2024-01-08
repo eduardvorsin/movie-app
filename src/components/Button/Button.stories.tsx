@@ -1,10 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button, { Props } from './Button';
-import Add from '../../assets/icons/add.svg';
-import Minus from '../../assets/icons/minus.svg';
 
-type Sizes = Exclude<Props['size'], 'custom' | undefined>;
-type Apperances = Exclude<Props['appearance'], 'custom' | undefined>;
+type Sizes = Exclude<Props['size'], undefined>;
+type Apperances = Exclude<Props['appearance'], undefined>;
 
 const sizes: Sizes[] = ['micro', 'slim', 'medium', 'large'];
 const apperances: Apperances[] = ['primary', 'secondary', 'warning', 'danger', 'success', 'discovery', 'ghost'];
@@ -17,7 +15,7 @@ type Variant = {
 	hasIcon?: boolean,
 };
 
-type AllVariants = Record<Sizes | 'fullWidth', Variant[]>;
+type AllVariants = Record<Sizes, Variant[]>;
 
 const all: AllVariants = {
 	micro: [
@@ -198,50 +196,6 @@ const all: AllVariants = {
 			hasIcon: true,
 		}
 	],
-	fullWidth: [
-		{
-			appearance: 'primary',
-			children: 'full width primary',
-		}, {
-			appearance: 'secondary',
-			children: 'full width secondary',
-		},
-		{
-			appearance: 'warning',
-			children: 'full width warning',
-		},
-		{
-			appearance: 'danger',
-			children: 'full width danger',
-		},
-		{
-			appearance: 'success',
-			children: 'full success',
-		},
-		{
-			appearance: 'discovery',
-			children: 'full discovery',
-		},
-		{
-			appearance: 'ghost',
-			children: 'full ghost',
-		},
-		{
-			appearance: 'primary',
-			children: 'full width loading',
-			isLoading: true,
-		},
-		{
-			appearance: 'secondary',
-			children: 'full width disabled',
-			isDisabled: true,
-		},
-		{
-			appearance: 'warning',
-			children: 'full width icon',
-			hasIcon: true,
-		}
-	],
 };
 
 const meta: Meta<typeof Button> = {
@@ -260,22 +214,11 @@ const meta: Meta<typeof Button> = {
 		isLoading: {
 			description: 'Substitutes the button text with a loading indicator and deactivates the button',
 		},
-		fullWidth: {
-			description: 'The button spans the entire width of its parent container',
-		},
 		children: {
 			description: 'The button\'s contents',
 		},
 		size: {
-			description: 'Sets the size of the button. You can choose a ready-made or choose a custom option and set your own styles for the sizes.',
-		},
-		iconBefore: {
-			control: false,
-			description: 'The icon that will be placed before the content of the button',
-		},
-		iconAfter: {
-			control: false,
-			description: 'The icon that will be placed after the content of the button',
+			description: 'Sets the size of the button. You can choose 1 of 4 ready-made options',
 		},
 		iconButton: {
 			description: 'Allows you to show a button without text, consisting only of an icon',
@@ -373,24 +316,14 @@ export const Disabled: Story = {
 	},
 };
 
-export const FullWidth: Story = {
-	args: {
-		fullWidth: true,
-		children: 'Full Width'
-	},
-	parameters: {
-		docs: {
-			description: {
-				story: 'Use the fullWidth property to allow the button to expand to the full width of its container',
-			},
-		},
-	},
-};
-
 export const IconButton: Story = {
 	args: {
 		iconButton: true,
-		children: 'Icon Button'
+		children: (
+			<svg className='w-5 h-5 fill-current' viewBox='0 0 32 32'>
+				<use href={'/assets/icons/external-link.svg#external-link'}></use>
+			</svg>
+		)
 	},
 	parameters: {
 		docs: {
@@ -428,7 +361,6 @@ export const EventCallbacks: Story = {
 		}
 	},
 	args: {
-		fullWidth: true,
 		children: 'click, focus, blur events'
 	},
 	parameters: {
@@ -444,31 +376,36 @@ export const WithIcons: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'Through the iconBefore and IconAfter properties, you can add icons to the button',
+				story: 'Using the children prop, you can add icons to the component',
 			},
 		},
 	},
 	render: () => (
 		<div
-			className='flex items-start'
+			className='flex gap-3 flex-wrap'
 		>
-			<Button
-				className='mr-3'
-				iconBefore={<Add />}
-			>
-				Left side icon
+			<Button>
+				<svg className='w-3 h-3 mr-2 fill-current' viewBox='0 0 32 32'>
+					<use href={'/assets/icons/external-link.svg#external-link'}></use>
+				</svg>
+				<span>Left side icon</span>
 			</Button>
-			<Button
-				className='mr-3'
-				iconAfter={<Minus />}
-			>
-				Right side icon
+
+			<Button>
+				<span>Right side icon</span>
+				<svg className='w-3 h-3 ml-2 fill-current' viewBox='0 0 32 32'>
+					<use href={'/assets/icons/external-link.svg#external-link'}></use>
+				</svg>
 			</Button>
-			<Button
-				iconBefore={<Add />}
-				iconAfter={<Minus />}
-			>
-				Both side icons
+
+			<Button>
+				<svg className='w-3 h-3 mr-2 fill-current' viewBox='0 0 32 32'>
+					<use href={'/assets/icons/external-link.svg#external-link'}></use>
+				</svg>
+				<span>Both side icons</span>
+				<svg className='w-3 h-3 ml-2 fill-current' viewBox='0 0 32 32'>
+					<use href={'/assets/icons/external-link.svg#external-link'}></use>
+				</svg>
 			</Button>
 		</div>
 	)
@@ -478,7 +415,7 @@ export const Sizes: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'Allows you to set the size of the button. The default size is medium. There are 5 sizes: micro, slim, medium, large, custom. The first 4 sizes have an explicit size and custom allows you to set your own sizes through css classes',
+				story: 'Allows you to set the size of the button. The default size is medium. There are 4 sizes: micro, slim, medium, large.',
 			},
 		},
 	},
@@ -517,14 +454,16 @@ export const All: Story = {
 							<Button
 								className='mr-3 last:mr-0 mb-3 last:mb-0'
 								key={variant.children}
-								size={size === 'fullWidth' ? 'medium' : size}
+								size={size}
 								appearance={variant.appearance}
 								isDisabled={variant.isDisabled}
 								isLoading={variant.isLoading}
-								fullWidth={size === 'fullWidth'}
-								iconBefore={variant.hasIcon ? <Add /> : undefined}
-								iconAfter={variant.hasIcon ? <Minus /> : undefined}
 							>
+								{variant.hasIcon && (
+									<svg className='w-3 h-3 mr-2 fill-current' viewBox='0 0 32 32'>
+										<use href={'/assets/icons/external-link.svg#external-link'}></use>
+									</svg>
+								)}
 								{variant.children}
 							</Button>
 						))}

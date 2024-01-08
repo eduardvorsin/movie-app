@@ -6,15 +6,12 @@ import { GeneralProps } from '@/types/shared';
 
 export type Props = {
 	appearance?: 'primary' | 'secondary' | 'warning' | 'danger' | 'success' | 'discovery' | 'ghost',
-	iconAfter?: ReactNode,
-	iconBefore?: ReactNode,
 	isDisabled?: boolean,
 	isLoading?: boolean,
-	fullWidth?: boolean,
 	onBlur?: FocusEventHandler<HTMLElement>,
 	onClick?: MouseEventHandler<HTMLElement>,
 	onFocus?: FocusEventHandler<HTMLElement>,
-	size?: 'micro' | 'slim' | 'medium' | 'large' | 'custom',
+	size?: 'micro' | 'slim' | 'medium' | 'large',
 	children: ReactNode,
 	href?: string,
 	iconButton?: boolean,
@@ -45,25 +42,14 @@ const sizeTypes = {
 	slim: 'py-1 px-3',
 	medium: 'py-2 px-4',
 	large: 'py-3 px-6',
-	custom: '',
 } as const;
 
-const iconSizes = {
-	micro: 'w-3 h-3',
-	slim: 'w-4 h-4',
-	medium: 'w-5 h-5',
-	large: 'w-5 h-5',
-	custom: '',
-} as const;
 
 export default function Button({
 	className,
 	appearance = 'primary',
-	iconAfter,
-	iconBefore,
 	isLoading,
 	isDisabled,
-	fullWidth,
 	onBlur,
 	onClick,
 	onFocus,
@@ -81,40 +67,25 @@ export default function Button({
 		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
 		iconButton ? iconButtonAppearances[appearance] : appearanceTypes[appearance],
 		iconButton ? '' : `${sizeTypes[size]} relative`,
-		fullWidth ? 'w-full justify-center' : '',
 		isLoading ? 'pointer-events-none text-transparent dark:text-transparent select-none' : '',
 		className,
 	].join(' ');
 
 	const Children =
-		(
-			<>
-				{!iconButton && isLoading && (
-					<Spinner
-						className={`[&]:w-auto [&]:h-[80%] stroke-1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${appearance === 'secondary' ? 'text-dark-neutral-0' : 'text-neutral-0'}`}
-						testId='spinner'
-					/>
-				)}
+		(<>
+			{!iconButton && isLoading && (
+				<Spinner
+					className={`[&]:w-auto [&]:h-[80%] stroke-1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${appearance === 'secondary' ? 'text-dark-neutral-0' : 'text-neutral-0'}`}
+					testId='spinner'
+				/>
+			)}
 
-				{!iconButton && iconBefore && (
-					<span className={`${iconSizes[size]} ${size === 'micro' ? 'mr-1' : 'mr-2'}`}>
-						{iconBefore}
-					</span>
-				)}
-
-				<span
-					className={iconButton ? 'inline-flex' : undefined}
-				>
-					{children}
-				</span>
-
-				{!iconButton && iconAfter && (
-					<span className={`${iconSizes[size]} ${size === 'micro' ? 'ml-1' : 'ml-2'}`}>
-						{iconAfter}
-					</span>
-				)}
-			</>
-		);
+			<span
+				className={'inline-flex items-center'}
+			>
+				{children}
+			</span>
+		</>);
 
 	if (href) {
 		return (

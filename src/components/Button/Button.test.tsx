@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react';
 import Button from './Button';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import AddIcon from '../../assets/icons/add.svg';
 
 describe('Button tests', () => {
    it('renders correctly', () => {
@@ -120,30 +119,6 @@ describe('Button tests', () => {
 
    it('is a snapshot with the "large" size type', () => {
       render(<Button size='large'>Button</Button>);
-
-      expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
-   });
-
-   it('is a snapshot with the "custom" size type', () => {
-      render(<Button size='custom'>Button</Button>);
-
-      expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
-   });
-
-   it('is a snapshot with a full-width button', () => {
-      render(<Button fullWidth>Button</Button>);
-
-      expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
-   });
-
-   it('is a snapshot with the icon on the left', () => {
-      render(<Button iconBefore={<AddIcon />}>Button</Button>);
-
-      expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
-   });
-
-   it('is a snapshot with the icon on the right', () => {
-      render(<Button iconAfter={<AddIcon />}>Button</Button>);
 
       expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
    });
