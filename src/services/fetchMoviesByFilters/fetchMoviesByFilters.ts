@@ -23,7 +23,7 @@ export type Options = {
 	without_keywords?: string,
 }
 
-export const fetchMoviesByFilters = async (page: number, options: Options) => {
+export const fetchMoviesByFilters = async (page: number, options: Options): Promise<ListsResponse<MovieResponse> | null> => {
 	if (page < 1) throw new Error('The page number cannot be less than 1');
 
 	const url = new URL('discover/movie', 'https://api.themoviedb.org/3/');
