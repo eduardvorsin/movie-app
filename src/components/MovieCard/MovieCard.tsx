@@ -58,11 +58,11 @@ export default function MovieCard({
 
 	let allGenres: string[] | string = [];
 	if (typeof genres === 'number') {
-		allGenres = [getGenreById(genres) ?? ''];
+		allGenres = [getGenreById(genres)];
 	} else if (typeof genres === 'string') {
 		allGenres = [genres];
 	} else if (Array.isArray(genres) && isArrayOfNumbers(genres)) {
-		allGenres = genres.map((genreId) => getGenreById(genreId) ?? '');
+		allGenres = genres.map((genreId) => getGenreById(genreId));
 	} else if (genres === undefined) {
 		allGenres = [];
 	} else {

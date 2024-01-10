@@ -6,12 +6,11 @@ import { getGenreIdByName } from '@/helpers/getGenreIdByName/getGenreIdByName';
 import { getKeywordIdByName } from '@/helpers/getKeywordIdByName/getKeywordIdByName';
 
 export const fetchMoviesByGenre = async (genre: MovieGenres | 'anime', page: number, options?: { lang: Locales }): Promise<ListsResponse<MovieResponse> | null> => {
-	const currentLang = options?.lang ?? fallbackLng;
-	const genreId = genre === 'anime' ? '16' : getGenreIdByName(genre) ?? '';
+	const genreId = genre === 'anime' ? '16' : getGenreIdByName(genre);
 
 	const config: Options = {
 		sort_by: 'vote_average.desc',
-		language: currentLang,
+		language: options?.lang ?? fallbackLng,
 		with_genres: genreId,
 		'vote_count.gte': 200,
 		'vote_average.gte': 7,
@@ -19,7 +18,7 @@ export const fetchMoviesByGenre = async (genre: MovieGenres | 'anime', page: num
 	if (genre === 'anime') {
 		config.with_keywords = getKeywordIdByName('anime');
 	} else if (genre === 'horror') {
-		config.without_genres = getGenreIdByName('music') ?? '';
+		config.without_genres = getGenreIdByName('music');
 	} else {
 		config.without_keywords = getKeywordIdByName('anime');
 	};
