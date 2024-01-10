@@ -29,9 +29,9 @@ export default async function NotFound() {
 					{t('notFound.description')}
 				</p>
 				<Button
+					className='w-full justify-center'
 					href={routes.home}
 					size='large'
-					fullWidth
 				>
 					{t('notFound.linkText')}
 				</Button>
