@@ -17,9 +17,9 @@ type CommonGenres = 'animation' | 'comedy' | 'crime' | 'documentary' | 'drama' |
 
 export type MovieGenres = CommonGenres | 'adventure' | 'romance' | 'history' | 'music' | 'war' | 'thriller' | 'fantasy' | 'horror' | 'tv movie' | 'action' | 'science fiction';
 
-export type TVGenres = CommonGenres | 'action & adventure' | 'kids' | 'news' | 'reality' | 'sci-fi & fantasy' | 'soap' | 'talk' | 'war & politics';
+export type TVSeriesGenres = CommonGenres | 'action & adventure' | 'kids' | 'news' | 'reality' | 'sci-fi & fantasy' | 'soap' | 'talk' | 'war & politics';
 
-export type Genres = MovieGenres | TVGenres;
+export type Genres = MovieGenres | TVSeriesGenres;
 
 export type SocialNetworksItem = {
 	name: KeyWithoutId<keyof ExternalIDS>,
