@@ -40,3 +40,32 @@ export type PlaceholderData = {
 	};
 	base64: string;
 };
+
+export type Review = {
+	author: string,
+	author_details: {
+		name: string,
+		username: string,
+		avatar_path: string | null,
+		rating: number,
+	},
+	content: string,
+	created_at: string,
+	id: string,
+	updated_at: string,
+	url: string,
+};
+
+export type Credit = {
+	id: number,
+	known_for_department: Department,
+	name: string,
+	profile_path: string | null,
+	popularity: number,
+}
+
+export type ActorCredit = Credit & { character: string };
+export type CrewCredit = Credit & {
+	department: Department,
+	job: string,
+};

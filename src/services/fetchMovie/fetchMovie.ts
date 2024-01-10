@@ -1,35 +1,6 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { CreditsResponse, ListsResponse, MovieResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry } from '@/services/types';
-import { Department } from '@/types/shared';
-
-type Review = {
-	author: string,
-	author_details: {
-		name: string,
-		username: string,
-		avatar_path: string | null,
-		rating: number,
-	},
-	content: string,
-	created_at: string,
-	id: string,
-	updated_at: string,
-	url: string,
-};
-
-type Credit = {
-	id: number,
-	known_for_department: Department,
-	name: string,
-	profile_path: string | null,
-	popularity: number,
-}
-
-export type ActorCredit = Credit & { character: string };
-export type CrewCredit = Credit & {
-	department: Department,
-	job: string,
-};
+import { ActorCredit, CrewCredit, Review } from '@/types/shared';
 
 export type MovieDetails = Omit<MovieResponse, 'genres_id' | 'popularity'> & {
 	genres: Genre[],
