@@ -21,6 +21,12 @@ const keywords = {
 	vr: '4563',
 	zombie: '12377',
 	anime: '210024|287501',
+	sports: '280150|6075|159290',
+	teen: '193400',
+	military: '2504|1956',
+	historical: '192772',
+	medical: '1279|11612|13005',
+	love: '9673',
 };
 export type Keywords = keyof typeof keywords;
 
