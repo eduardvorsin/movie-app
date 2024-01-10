@@ -1,4 +1,4 @@
-import { Genres, MovieGenres, TVGenres } from "@/types/shared";
+import { Genres, MovieGenres, TVSeriesGenres } from "@/types/shared";
 
 const imgURL = 'https://image.tmdb.org/t/p';
 
@@ -58,7 +58,7 @@ export const movieGenres: Record<string, MovieGenres> = {
 };
 export const movieGenresList = Object.values(movieGenres);
 
-export const tvGenres: Record<string, TVGenres> = {
+export const tvGenres: Record<string, TVSeriesGenres> = {
 	16: 'animation',
 	35: 'comedy',
 	80: 'crime',
