@@ -45,7 +45,7 @@ export default function CarouselPagination({
 			<>
 				<span>{activeIndex + 1}</span>
 				<span className='mx-1'>/</span>
-				<span>{totalCount}</span>
+				<span>{totalCount < 1 ? 1 : totalCount}</span>
 			</>
 		);
 	} else if (paginationType === 'dots') {
