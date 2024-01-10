@@ -9,6 +9,7 @@ import { Locales } from '@/i18n/settings';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
 import { fetchTVSeriesByGenre } from '@/services/fetchTVSeriesByGenre/fetchTVSeriesByGenre';
 import { fetchTopRatedTVSeries } from '@/services/fetchTopRatedTVSeries/fetchTopRatedTVSeries';
+import { fetchUpcomingTVSeries } from '@/services/fetchUpcomingTVSeries/fetchUpcomingTVSeries';
 import { countryCodesBySubgenre, imgPath } from 'src/constants';
 
 type Props = {
@@ -22,6 +23,7 @@ export default async function Page({ params: { lang } }: Props) {
 
 	const [
 		topRatedTVSeries,
+		upcomingTVSeries,
 		turkishTVSeries,
 		russianTVSeries,
 		foreignTVSeries,
@@ -40,6 +42,7 @@ export default async function Page({ params: { lang } }: Props) {
 		militaryTVSeries,
 	] = await Promise.all([
 		fetchTopRatedTVSeries(1, { lang }),
+		fetchUpcomingTVSeries(1, { lang }),
 		fetchTVSeriesByGenre('any', 1, {
 			lang,
 			withCountry: countryCodesBySubgenre.turkish,
@@ -136,6 +139,74 @@ export default async function Page({ params: { lang } }: Props) {
 							}}
 						>
 							{topRatedTVSeries.results.slice(0, 14).map(({
+								id,
+								poster_path,
+								name,
+								vote_average,
+								first_air_date,
+								genre_ids,
+							}) => (
+								<MovieCard
+									mediaType='movie'
+									variant='vertical'
+									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
+									movieId={id}
+									key={id}
+									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									alt={name}
+									title={name}
+									titleElement='h3'
+									genres={genre_ids}
+									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									titleLevel={5}
+									showRating
+									rating={vote_average * 10}
+									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
+								/>
+							))}
+						</Carousel>
+					</Container>
+				</section>
+			)}
+
+			{upcomingTVSeries && upcomingTVSeries.results.length > 0 && (
+				<section className='py-3 md:py-5'>
+					<Container className='flex flex-col'>
+						<Title
+							className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+							as='h2'
+							level={3}
+						>
+							{t('upcomingTVSeriesTitle', { ns: 'tvSeriesPage' })}
+						</Title>
+						<Carousel
+							mousewheel
+							spaceBetween={20}
+							showPagination
+							paginationType='fraction'
+							showArrows
+							breakpoints={{
+								0: {
+									slidesPerView: 1,
+								},
+								375: {
+									slidesPerView: 2,
+								},
+								480: {
+									slidesPerView: 3,
+								},
+								640: {
+									slidesPerView: 4,
+								},
+								768: {
+									slidesPerView: 5,
+								},
+								1024: {
+									slidesPerView: 6,
+								}
+							}}
+						>
+							{upcomingTVSeries.results.slice(0, 14).map(({
 								id,
 								poster_path,
 								name,
