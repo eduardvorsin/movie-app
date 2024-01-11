@@ -1,33 +1,7 @@
 import { Department } from '@/types/shared';
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { CreditsResponse, ExternalIDS } from '../types';
+import { CreditsResponse, ExternalIDS, PersonCredit } from '../types';
 
-export type PersonCredit = {
-	adult: boolean,
-	poster_path: string | null,
-	genre_ids: number[],
-	id: number,
-	title?: string,
-	name?: string,
-	release_date?: string,
-	first_air_date?: string,
-	vote_average: number,
-	vote_count: number,
-	character?: string,
-	department: Department,
-	job?: string,
-} & ({
-	media_type: 'movie',
-	release_date: string,
-	title: string,
-} | {
-	media_type: 'tv',
-	first_air_date: string,
-	name: string,
-});
-
-
-export type PersonCredits = CreditsResponse<PersonCredit, PersonCredit & { department: Department }>;
 
 export type PersonDetails = {
 	adult: boolean,
@@ -45,7 +19,7 @@ export type PersonDetails = {
 	popularity: number,
 	profile_path: string | null,
 	external_ids: ExternalIDS
-	combined_credits: PersonCredits,
+	combined_credits: CreditsResponse<PersonCredit, PersonCredit & { department: Department }>,
 };
 
 export const fetchPerson = async (id: string, options?: { lang: Locales }): Promise<PersonDetails | null> => {

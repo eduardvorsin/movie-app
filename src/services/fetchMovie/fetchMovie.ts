@@ -1,6 +1,5 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { CreditsResponse, ListsResponse, MovieResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry } from '@/services/types';
-import { ActorCredit, CrewCredit, Review } from '@/types/shared';
+import { CreditsResponse, ListsResponse, MovieResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry, ActorCredit, CrewCredit, Review } from '@/services/types';
 
 export type MovieDetails = Omit<MovieResponse, 'genres_id' | 'popularity'> & {
 	genres: Genre[],
