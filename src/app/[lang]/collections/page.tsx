@@ -41,6 +41,14 @@ export default async function Page({ params: { lang } }: Props) {
 
 			<section className='py-3 md:py-5'>
 				<Container>
+					<Title
+						className='sr-only mb-2 lg:mb-3 text-neutral-1000 dark:text-dark-neutral-900'
+						level={3}
+						as='h2'
+					>
+						{t('collectionsTitle', { ns: 'collectionsPage' })}
+					</Title>
+
 					<div className='mx-auto xs:mx-0 max-w-[320px] xs:max-w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 grid-rows-[repeat(7,1fr)] gap-5'>
 						{collections.map((collection, index) => (
 							<CollectionCard
