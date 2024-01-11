@@ -1,0 +1,54 @@
+{
+	"aboutPerson": "О персоне",
+	"personCharacteristics": {
+		"birthday": "День рождения",
+		"deathday": "День смерти",
+		"gender": "Пол",
+		"place_of_birth": "Место рождения",
+		"popularity": "Популярность",
+		"known_for_department": "Деятельность"
+	},
+	"department": {
+		"acting_0": "Актер",
+		"acting_1": "Актриса",
+		"acting_2": "Актер",
+		"acting_3": "Актер",
+		"directing": "Режиссер",
+		"writing": "Сценарист",
+		"production": "Продюсер",
+		"camera": "Оператор",
+		"sound": "Композитор",
+		"editing": "Редактор",
+		"crew": "Участник съемочной группы",
+		"lighting": "Светотехник",
+		"art": "Художник",
+		"visual effects": "Специалист по спецэффектам",
+		"costume & make-up": "Костюмер или гример"
+	},
+	"personalWebsite": "Личный сайт:",
+	"biography": "Биография",
+	"filmography": {
+		"title": "Фильмография",
+		"tabs": {
+			"acting": "Актер",
+			"actors_0": "Актер",
+			"actors_1": "Актриса",
+			"actors_2": "Актер",
+			"actors_3": "Актер",
+			"production": "Продюсер",
+			"writing": "Сценарист",
+			"directing": "Режиссер",
+			"sound": "Звукорежиссер",
+			"creator": "Создатель",
+			"camera": "Оператор",
+			"editing": "Монтажер",
+			"crew": "Участник съемочной группы",
+			"lighting": "Светотехник",
+			"art": "Художник",
+			"visual effects": "Специалист по спецэффектам",
+			"costume & make-up": "Костюмер или гример"
+		}
+	},
+	"personsTitle": "Популярные персоны",
+	"famousProjectsTitle": "Известные работы"
+}

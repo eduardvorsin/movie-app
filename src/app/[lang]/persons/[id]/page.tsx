@@ -42,7 +42,7 @@ type Props = {
 };
 
 export default async function Page({ params: { id, lang } }: Props) {
-	const { t } = await fetchTranslation(lang, ['personsPage', 'common']);
+	const { t } = await fetchTranslation(lang, ['personDetailsPage', 'common']);
 	const person = await fetchPerson(id, { lang });
 	const popularPersons = await fetchPopularPersons(1, { lang });
 
@@ -81,13 +81,13 @@ export default async function Page({ params: { id, lang } }: Props) {
 			if (name === 'gender') {
 				currentValue = t(`genderValues.${value}`, { ns: 'common' });
 			} else if (name === 'known_for_department' && lang !== 'en') {
-				currentValue = t(`department.${value.toLowerCase()}`, { ns: 'personsPage', context: person.gender });
+				currentValue = t(`department.${value.toLowerCase()}`, { ns: 'personDetailsPage', context: person.gender });
 			} else if (name === 'birthday' || name === 'deathday') {
 				currentValue = getLocalizedDate(value, lang);
 			}
 
 			return {
-				name: t(`personCharacteristics.${name}`, { ns: 'personsPage' }),
+				name: t(`personCharacteristics.${name}`, { ns: 'personDetailsPage' }),
 				value: currentValue,
 			}
 		});
@@ -143,7 +143,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							{homepage && (
 								<p className='flex items-center flex-wrap mb-3'>
 									<span className='text-dark-neutral-250 dark:text-neutral-300 mr-2'>
-										{t('personalWebsite', { ns: 'personsPage' })}
+										{t('personalWebsite', { ns: 'personDetailsPage' })}
 									</span>
 									<Link
 										className='flex items-center'
@@ -178,7 +178,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								weight={500}
 								as='h2'
 							>
-								{t('aboutPerson', { ns: 'personsPage' })}
+								{t('aboutPerson', { ns: 'personDetailsPage' })}
 							</Title>
 							<CharacteristicList
 								className='max-w-[36.25rem]'
@@ -194,7 +194,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									weight={500}
 									as='h2'
 								>
-									{t('biography', { ns: 'personsPage' })}
+									{t('biography', { ns: 'personDetailsPage' })}
 								</Title>
 								<ExpandableText
 									className='text-neutral-900 dark:text-dark-neutral-900'
@@ -286,7 +286,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								weight={500}
 								as='h2'
 							>
-								{t('filmography.title', { ns: 'personsPage' })}
+								{t('filmography.title', { ns: 'personDetailsPage' })}
 							</Title>
 							<Tabs
 								className='col-start-2 col-end-3 overflow-hidden'
@@ -296,7 +296,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									<TabPanel
 										className='w-full'
 										key={key}
-										label={t(`filmography.tabs.${key}`, { ns: 'personsPage', context: person.gender })}
+										label={t(`filmography.tabs.${key}`, { ns: 'personDetailsPage', context: person.gender })}
 									>
 										<ul>
 											{filmography[key].map(({
@@ -361,7 +361,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								weight={500}
 								as='h2'
 							>
-								{t('personsTitle', { ns: 'personsPage' })}
+								{t('personsTitle', { ns: 'personDetailsPage' })}
 							</Title>
 							<Carousel
 								mousewheel
@@ -408,7 +408,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 										showRating
 										rating={popularity}
 									>
-										{t(`department.${known_for_department.toLowerCase()}`, { ns: 'personsPage', context: gender })}
+										{t(`department.${known_for_department.toLowerCase()}`, { ns: 'personDetailsPage', context: gender })}
 									</PersonCard>
 								))}
 							</Carousel>
