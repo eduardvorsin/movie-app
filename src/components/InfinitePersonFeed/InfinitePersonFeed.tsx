@@ -54,7 +54,7 @@ export default function InfinitePersonFeed({
 
 	const containerClasses = [
 		'mx-auto sm:mx-0 max-w-[480px] sm:max-w-full justify-items-center sm:justify-stretch grid grid-cols-1 2xs:grid-cols-2 sm:grid-cols-[repeat(auto-fill,minmax(150px,1fr))] grid-rows-[repeat(1,1fr)] gap-5 duration-150 transition-opacity',
-		loading ? 'opacity-50' : 'opacity-100'
+		loading ? 'opacity-50 pointer-events-none' : 'opacity-100'
 	].join(' ');
 
 	return (
