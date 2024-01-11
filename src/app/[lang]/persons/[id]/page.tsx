@@ -367,6 +367,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								mousewheel
 								spaceBetween={20}
 								paginationType='fraction'
+								showPagination
 								breakpoints={{
 									0: {
 										slidesPerView: 1,
