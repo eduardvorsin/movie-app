@@ -63,8 +63,8 @@ export default function PersonCard({
 						dark: src,
 					}}
 					fallback={{
-						light: '/assets/images/person-card-placeholder-l.svg',
-						dark: '/assets/images/person-card-placeholder-d.svg'
+						light: '/assets/images/person-placeholder-l.svg',
+						dark: '/assets/images/person-placeholder-d.svg'
 					}}
 					loading={loading}
 					style={{ objectFit: 'cover' }}
