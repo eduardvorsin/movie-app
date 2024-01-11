@@ -11,6 +11,7 @@ import { routes } from 'src/constants';
 
 type Props = {
 	personId: number,
+	appearance?: 'primary' | 'secondary',
 	title?: string,
 	titleElement?: HeadingElement,
 	titleLevel?: HeadingLevel,
@@ -37,14 +38,36 @@ export default function PersonCard({
 	children,
 	onClick,
 	loading,
+	appearance = 'primary',
 	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
 	const { t } = useTranslation(lang);
 
+	const cardClasses = [
+		'flex flex-col group/card w-full',
+		appearance === 'primary' ? 'max-w-[9.625rem] min-w-[7.5rem]' : 'max-w-[11.4375rem] min-w-[8.125rem]',
+		className,
+	].join(' ');
+
+	const imageClasses = [
+		'h-full overflow-hidden bg-neutral-300 dark:bg-dark-neutral-250',
+		appearance === 'primary' ? 'rounded-[50%] ' : '',
+	].join(' ');
+
+	const ratingClasses = [
+		'z-200 absolute bottom-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold',
+		appearance === 'primary' ? 'rounded-[50%]' : '',
+	].join(' ');
+
+	const contentClasses = [
+		'break-word text-100 text-neutral-900 dark:text-dark-neutral-800',
+		appearance === 'primary' ? 'truncate' : 'line-clamp-2'
+	].join(' ');
+
 	return (
 		<Link
-			className={`flex flex-col max-w-[9.625rem] min-w-[7.5rem] group/card ${className}`}
+			className={cardClasses}
 			href={`${routes.persons}${personId}`}
 			onClick={onClick}
 			title={title}
@@ -53,7 +76,7 @@ export default function PersonCard({
 		>
 			<div className='w-full aspect-square relative self-center mb-3'>
 				<ThemedImage
-					className='rounded-[50%] h-full overflow-hidden bg-neutral-300 dark:bg-dark-neutral-250'
+					className={imageClasses}
 					showSkeleton
 					quality={85}
 					sizes='154px'
@@ -69,13 +92,15 @@ export default function PersonCard({
 					loading={loading}
 					style={{ objectFit: 'cover' }}
 				/>
+
 				{showRating && (
-					<span className='z-200 absolute bottom-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center rounded-[50%] border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold'>
+					<span className={ratingClasses}>
 						<span className='sr-only'>{t('personCard.rating')}</span>
 						{Math.trunc(rating ?? 0)}
 					</span>
 				)}
 			</div>
+
 			{title && (
 				<Title
 					className='mb-1 line-clamp-2 text-neutral-1000 dark:text-dark-neutral-900 group-hover/card:text-neutral-800 group-active/card:text-neutral-700 dark:group-hover/card:text-dark-neutral-700 dark:group-active/card:text-dark-neutral-600 transition-colors duration-150'
@@ -85,13 +110,8 @@ export default function PersonCard({
 					{title}
 				</Title>
 			)}
-			{children && (
-				<p
-					className='text-100 text-neutral-900 dark:text-dark-neutral-800 truncate'
-				>
-					{children}
-				</p>
-			)}
+
+			{children && (<p className={contentClasses}>{children}</p>)}
 		</Link>
 	);
 }
