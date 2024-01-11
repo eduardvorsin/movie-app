@@ -10,9 +10,6 @@ export type Options = {
 	'first_air_date.gte'?: string,
 	'first_air_date.lte'?: string,
 	first_air_date_year?: number,
-	include_null_first_air_dates?: boolean,
-	screened_theatrically?: boolean,
-	timezone?: 'string,'
 	'vote_average.gte'?: number,
 	'vote_average.lte'?: number,
 	'vote_count.gte'?: number,
@@ -22,7 +19,7 @@ export type Options = {
 	without_genres?: string,
 	without_keywords?: string,
 	with_origin_country?: string,
-}
+};
 
 export const fetchTVSeriesByFilters = async (page: number, options: Options): Promise<ListsResponse<TVSeriesResponse> | null> => {
 	if (page < 1) throw new Error('The page number cannot be less than 1');
