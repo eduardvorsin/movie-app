@@ -1,7 +1,9 @@
+import { Department } from "@/types/shared";
+
 export type ListsResponse<T> = {
 	page: number,
 	results: T[],
-	total_page: number,
+	total_pages: number,
 	total_results: number,
 }
 
@@ -122,3 +124,38 @@ export type CrewCredit = Credit & {
 	department: Department,
 	job: string,
 };
+
+export type PersonCredit = {
+	adult: boolean,
+	poster_path: string | null,
+	genre_ids: number[],
+	id: number,
+	title?: string,
+	name?: string,
+	release_date?: string,
+	first_air_date?: string,
+	vote_average: number,
+	vote_count: number,
+	character?: string,
+	department: Department,
+	job?: string,
+} & ({
+	media_type: 'movie',
+	release_date: string,
+	title: string,
+} | {
+	media_type: 'tv',
+	first_air_date: string,
+	name: string,
+});
+
+export type PopularPerson = {
+	adult: boolean,
+	gender: number,
+	id: number,
+	known_for_department: Department,
+	name: string,
+	popularity: number,
+	profile_path: string | null,
+	known_for: PersonCredit[],
+}
