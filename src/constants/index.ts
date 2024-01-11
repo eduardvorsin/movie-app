@@ -6,7 +6,7 @@ export const imgPath = {
 	poster: `${imgURL}/w300`,
 	backdrop: `${imgURL}/original`,
 	profile: `${imgURL}/w342`,
-	profileCard: `${imgURL}/w154`,
+	profileCard: `${imgURL}/w185`,
 	logo: `${imgURL}/w185`,
 	avatar: `${imgURL}/w45_and_h45_face`,
 	movieCard: `${imgURL}/w300`,
