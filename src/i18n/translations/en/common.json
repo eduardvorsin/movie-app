@@ -108,5 +108,10 @@
 		"timetravel": "Time travel",
 		"vr": "Virtual reality",
 		"zombie": "Zombie"
+	},
+	"infinitePersonFeed": {
+		"errorTitle": "Error",
+		"error": "Something went wrong, try to come back here later.",
+		"button": "Watch more"
 	}
 }
