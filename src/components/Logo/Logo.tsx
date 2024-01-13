@@ -45,9 +45,6 @@ export default function Logo({
 			href={routes.home}
 			data-testid={testId}
 			onClick={onClick}
-			style={{
-				maxWidth: `${sizes[size].width}px`
-			}}
 			{...props}
 		>
 			<ThemedImage
