@@ -11,6 +11,7 @@ const socialNetworkIcons = {
 } as const;
 
 type Props = {
+	isRounded?: boolean,
 	data: SocialNetworksItem[],
 } & GeneralProps;
 
@@ -18,6 +19,7 @@ export default function SocialLinks({
 	className,
 	testId,
 	data,
+	isRounded,
 	...props
 }: Props) {
 	const classes = [
@@ -34,12 +36,12 @@ export default function SocialLinks({
 				<Link
 					key={item.name}
 					data-testid={testId}
-					className='text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-400 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-500 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-600 dark:active:[&]:text-neutral-100 transition-colors duration-150'
+					className='text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100 transition-colors duration-150'
 					href={item.url}
 					isExternal
 					target='_blank'
 				>
-					<svg viewBox='0 0 32 32'>
+					<svg viewBox='0 0 32 32' className={`${isRounded ? 'rounded-full' : ''}`}>
 						<use href={socialNetworkIcons[item.name]}></use>
 					</svg>
 					<span className='sr-only'>
