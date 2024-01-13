@@ -113,5 +113,11 @@
 		"errorTitle": "Error",
 		"error": "Something went wrong, try to come back here later.",
 		"button": "Watch more"
+	},
+	"footer": {
+		"aboutTitle": "About us",
+		"description": "Discover the world of cinema with our website!",
+		"sectionsTitle": "Sections",
+		"basedOnTitle": "Created based on"
 	}
 }

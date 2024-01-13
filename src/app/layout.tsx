@@ -5,6 +5,7 @@ import { dir } from 'i18next';
 import { fallbackLng } from '@/i18n/settings';
 import ThemeProvider from '@/context/ThemeProvider/ThemeProvider';
 import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -29,6 +30,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
