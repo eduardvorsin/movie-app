@@ -3,6 +3,7 @@ import NextLink from 'next/link';
 import { GeneralProps } from '@/types/shared';
 
 type Props = {
+	appearance?: 'primary' | 'secondary',
 	children: ReactNode,
 	href: string,
 	id?: string,
@@ -27,10 +28,12 @@ export default function Link({
 	isDisabled = false,
 	style,
 	target,
+	appearance = 'primary',
 	...props
 }: Props) {
 	const linkClasses = [
-		'no-underline text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline transition-colors duration-150',
+		'no-underline  hover:underline transition-colors duration-150',
+		appearance === 'primary' ? 'text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200' : 'text-neutral-800 hover:text-neutral-900 active:text-neutral-1000 dark:text-dark-neutral-1000 dark:hover:text-dark-neutral-900 dark:active:text-dark-neutral-800',
 		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
 		className,
 	].join(' ');
