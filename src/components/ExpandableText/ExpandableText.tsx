@@ -85,7 +85,6 @@ export default function ExpandableText({
 			{shouldShowButton && (
 				<Button
 					appearance='ghost'
-					size='custom'
 					className='mt-1 py-2'
 					onClick={clickHandler}
 				>
