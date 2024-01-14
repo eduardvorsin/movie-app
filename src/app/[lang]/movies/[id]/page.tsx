@@ -43,21 +43,6 @@ const characteristicFields = new Set([
 	'status'
 ]);
 
-const chartBarColors = {
-	'low': {
-		dark: '#FF9C8F',
-		light: '#AE2A19',
-	},
-	'medium': {
-		dark: '#F5CD47',
-		light: '#946F00',
-	},
-	'high': {
-		dark: '#7EE2B8',
-		light: '#216E4E',
-	},
-};
-
 type Props = {
 	params: {
 		id: string,
@@ -263,9 +248,9 @@ export default async function Page({ params: { id, lang } }: Props) {
 									{t('ratingLabel', { ns: 'movieDetailsPage' })}
 								</span>
 								<PieChart
+									appearance='rating'
 									size={60}
 									value={rating}
-									barColor={chartBarColors[ratingType]}
 								/>
 							</div>
 

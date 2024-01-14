@@ -4,12 +4,34 @@ import classes from './PieChart.module.css';
 import { useTheme } from '@/context/ThemeProvider/ThemeProvider';
 import { GeneralProps } from '@/types/shared';
 
+const variants = {
+	primary: {
+		dark: '#85B8FF',
+		light: '#0055CC',
+	},
+	rating: {
+		'low': {
+			dark: '#FF9C8F',
+			light: '#AE2A19',
+		},
+		'medium': {
+			dark: '#F5CD47',
+			light: '#946F00',
+		},
+		'high': {
+			dark: '#7EE2B8',
+			light: '#216E4E',
+		},
+	},
+}
+
 type Props = {
 	size: number,
 	value: number,
 	barColor?: Record<'light' | 'dark', string>,
 	trackColor?: Record<'light' | 'dark', string>,
 	thickness?: number,
+	appearance?: 'primary' | 'rating',
 } & GeneralProps;
 
 export default function PieChart({
@@ -20,11 +42,22 @@ export default function PieChart({
 	trackColor,
 	thickness = 5,
 	testId,
+	appearance = 'primary',
 	...props
 }: Props) {
 	const theme = useTheme();
-	const themeBarColor = theme === 'dark' ? '#85B8FF' : '#0055CC';
 	const themeTrackColor = theme === 'dark' ? '#38414A' : '#DCDFE4';
+
+	let ratingType: keyof typeof variants['rating'];
+	if (value >= 0 && value <= 40) {
+		ratingType = 'low';
+	} else if (value >= 40 && value <= 70) {
+		ratingType = 'medium';
+	} else {
+		ratingType = 'high';
+	}
+
+	const themeBarColor = appearance === 'primary' ? variants['primary'][theme] : variants['rating'][ratingType][theme];
 
 	const styles = {
 		'--width': `${size}px`,
