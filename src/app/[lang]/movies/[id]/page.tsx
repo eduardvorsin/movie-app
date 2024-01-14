@@ -7,7 +7,6 @@ import PieChart from '@/components/PieChart/PieChart';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
 import ThemedImage from '@/components/ThemedImage/ThemedImage';
 import Title from '@/components/Title/Title';
-import { createAuthorsArray } from '@/helpers/createAuthorsArray/createAuthorsArray';
 import { createCharacteristicsArray } from '@/helpers/createCharacteristicsArray/createCharacteristicsArray';
 import { createSocialNetworksArray } from '@/helpers/createSocialNetworksArray/createSocialNetworksArray';
 import { fetchImageWithPlaceholder } from '@/helpers/fetchImageWithPlaceholder/fetchImageWithPlaceholder';
@@ -148,19 +147,10 @@ export default async function Page({ params: { id, lang } }: Props) {
 			}
 		});
 
-	let ratingType: keyof typeof chartBarColors;
-	if (rating >= 0 && rating <= 40) {
-		ratingType = 'low';
-	} else if (rating >= 40 && rating <= 70) {
-		ratingType = 'medium';
-	} else {
-		ratingType = 'high';
-	}
-
-	const authors = createAuthorsArray(credits.crew).slice(0, 4);
-
+	const authors = credits.crew.filter(({ known_for_department, job }) => {
+		return authorsDepartments.includes(known_for_department) && authorsProfessions.includes(job);
+	});
 	const availableTrailers = trailers?.results.filter(({ site }) => site === 'YouTube');
-
 	const productionCompanies = production_companies
 		.filter(({ logo_path }) => logo_path !== null && logo_path !== '');
 
@@ -319,7 +309,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							<ul
 								className='text-neutral-1000 dark:text-dark-neutral-900'
 							>
-								{authors.map(({ job, name, id }) => (
+								{authors.slice(0, 4).map(({ job, name, id }) => (
 									<li
 										key={id}
 										className='mb-1'

@@ -91,3 +91,6 @@ export const countryCodesBySubgenre = {
 	foreign: 'FR|IT|GB|DE|ES|NL|EL|CZ|AT|SE|US',
 	korean: 'KR',
 } as const;
+
+export const authorsDepartments = ['Production', 'Writing', 'Directing'];
+export const authorsProfessions = ['Director', 'Producer', 'Screenplay', 'Novel', 'Characters', 'Story', 'Writer'];
