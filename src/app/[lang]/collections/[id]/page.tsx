@@ -31,7 +31,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		`/assets/images/collection-${id}.webp`);
 
 	return (
-		<main className='mt-[3.75rem]'>
+		<main className='mt-[3.75rem] flex-grow'>
 			<section className='overflow-hidden relative pt-3 sm:pt-[25%] pb-3 md:pb-5'>
 				{imageData && (
 					<ThemedImage

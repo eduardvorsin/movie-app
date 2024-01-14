@@ -58,7 +58,7 @@ export default async function Home({ params: { lang } }: Props) {
     });
 
   return (
-    <main className='mt-[3.75rem]'>
+    <main className='mt-[3.75rem] flex-grow'>
       <Title
         level={1}
         as='h1'

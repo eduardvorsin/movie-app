@@ -101,7 +101,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		.slice(0, 20);
 
 	return (
-		<main className='mt-[5rem]'>
+		<main className='mt-[5rem] flex-grow'>
 			<Container className='[&]:px-0'>
 				<Breadcrumbs
 					className='px-4 xl:px-0 mb-[1.25rem]'

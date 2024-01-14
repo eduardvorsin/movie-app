@@ -23,10 +23,10 @@ export default function RootLayout({
     <html
       lang={fallbackLng}
       dir={dir(fallbackLng)}
-      className={`${inter.variable}`}
+      className={`${inter.variable} h-full`}
       suppressHydrationWarning
     >
-      <body className='bg-neutral-200 dark:bg-dark-neutral-100'>
+      <body className='bg-neutral-200 dark:bg-dark-neutral-100 h-full flex flex-col'>
         <ThemeProvider>
           <Header />
           {children}

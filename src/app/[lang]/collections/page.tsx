@@ -17,7 +17,7 @@ export default async function Page({ params: { lang } }: Props) {
 	const { t } = await fetchTranslation(lang, ['common', 'collectionsPage']);
 
 	return (
-		<main className='mt-[3.75rem]'>
+		<main className='mt-[3.75rem] flex-grow'>
 			<section className='py-3 md:py-5'>
 				<Container>
 					<Breadcrumbs

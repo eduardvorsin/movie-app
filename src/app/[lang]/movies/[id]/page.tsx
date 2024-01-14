@@ -143,7 +143,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		.filter(({ logo_path }) => logo_path !== null && logo_path !== '');
 
 	return (
-		<main className='mt-[3.75rem]'>
+		<main className='mt-[3.75rem] flex-grow'>
 			<section
 				className='overflow-hidden relative py-5 md:py-8'
 			>

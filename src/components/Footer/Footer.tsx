@@ -31,7 +31,7 @@ export default function Footer({
 	const { t } = useTranslation(lang);
 
 	const classes = [
-		'bg-neutral-300 dark:bg-dark-neutral-300 py-5 lg:py-8',
+		'flex-shrink relative z-100 bg-neutral-300 dark:bg-dark-neutral-300 py-5 lg:py-8',
 		className,
 	].join(' ');
 
