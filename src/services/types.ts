@@ -43,7 +43,7 @@ export type MovieResponse = MovieAndSeriesResponse & {
 }
 
 export type TVSeriesResponse = MovieAndSeriesResponse & {
-	first_air_date?: string,
+	first_air_date: string,
 	name: string,
 	origin_country: string[],
 	original_name: string,
@@ -118,12 +118,6 @@ export type Credit = {
 	profile_path: string | null,
 	popularity: number,
 }
-
-export type ActorCredit = Credit & { character: string };
-export type CrewCredit = Credit & {
-	department: Department,
-	job: string,
-};
 
 export type PersonCredit = {
 	adult: boolean,

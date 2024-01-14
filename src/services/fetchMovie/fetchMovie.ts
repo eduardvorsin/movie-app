@@ -1,5 +1,12 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { CreditsResponse, ListsResponse, MovieResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry, ActorCredit, CrewCredit, Review } from '@/services/types';
+import { CreditsResponse, ListsResponse, MovieResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry, Review, Credit } from '@/services/types';
+import { Department } from '@/types/shared';
+
+export type MovieActorCredit = Credit & { character: string };
+export type MovieCrewCredit = Credit & {
+	department: Department,
+	job: string,
+};
 
 export type MovieDetails = Omit<MovieResponse, 'genres_id' | 'popularity'> & {
 	genres: Genre[],
@@ -13,7 +20,7 @@ export type MovieDetails = Omit<MovieResponse, 'genres_id' | 'popularity'> & {
 	status: string,
 	tagline: string,
 	external_ids: ExternalIDS,
-	credits: CreditsResponse<ActorCredit, CrewCredit>,
+	credits: CreditsResponse<MovieActorCredit, MovieCrewCredit>,
 	similar: ListsResponse<MovieResponse>,
 	recommendations: ListsResponse<MovieResponse>,
 	reviews: ListsResponse<Review>,
@@ -45,7 +52,7 @@ export const fetchMovie = async (id: string, options?: { lang: Locales }): Promi
 		}
 	}
 
-	const movieData = movie as Omit<MovieResponse, 'genres_id' | 'popularity'>;
+	const movieData = movie as MovieDetails;
 	const release = movieData.release_dates.results
 		.find((release_date) => release_date.iso_3166_1 === 'US');
 	const certification = release?.release_dates[0].certification;
