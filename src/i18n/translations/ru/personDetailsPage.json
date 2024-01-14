@@ -1,13 +1,5 @@
 {
 	"aboutPerson": "О персоне",
-	"personCharacteristics": {
-		"birthday": "День рождения",
-		"deathday": "День смерти",
-		"gender": "Пол",
-		"place_of_birth": "Место рождения",
-		"popularity": "Популярность",
-		"known_for_department": "Деятельность"
-	},
 	"department": {
 		"acting_0": "Актер",
 		"acting_1": "Актриса",

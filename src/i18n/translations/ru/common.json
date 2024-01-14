@@ -1,6 +1,36 @@
 {
 	"ratingLabel": "Рейтинг",
 	"genresLabel": "Жанры",
+	"characteristics": {
+		"birthday": "День рождения",
+		"deathday": "День смерти",
+		"gender": "Пол",
+		"place_of_birth": "Место рождения",
+		"popularity": "Популярность",
+		"known_for_department": "Деятельность",
+		"production_countries": "Страна",
+		"genres": "Жанры",
+		"original_title": "Оригинальное название",
+		"original_name": "$t(characteristics.original_title)",
+		"release_date": "Дата выхода",
+		"first_air_date": "Дата первого выхода в эфир",
+		"last_air_date": "Дата последнего выхода в эфир",
+		"number_of_seasons": "Количество сезонов",
+		"number_of_episodes": "Количество эпизодов",
+		"runtime": "Длительность",
+		"vote_average": "$t(ratingLabel)",
+		"original_language": "Язык оригинала",
+		"budget": "Бюджет",
+		"revenue": "Сборы",
+		"status": "Статус",
+		"statusValue": {
+			"released": "Выпущено",
+			"planned": "Планируется",
+			"post production": "Пост-продакшн",
+			"in production": "В производстве",
+			"returning series": "Продлен на сезон"
+		}
+	},
 	"breadcrumbs": {
 		"elipsisLabel": "развернуть все ссылки",
 		"home": "главная страница",

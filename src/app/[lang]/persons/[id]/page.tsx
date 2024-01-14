@@ -79,7 +79,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		.map(({ name, value }) => {
 			let currentValue = value;
 			if (name === 'gender') {
-				currentValue = t(`genderValues.${value}`, { ns: 'common' });
+				currentValue = t(`genderValues.${value}`);
 			} else if (name === 'known_for_department' && lang !== 'en') {
 				currentValue = t(`department.${value.toLowerCase()}`, { ns: 'personDetailsPage', context: person.gender });
 			} else if (name === 'birthday' || name === 'deathday') {
@@ -87,7 +87,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 			}
 
 			return {
-				name: t(`personCharacteristics.${name}`, { ns: 'personDetailsPage' }),
+				name: t(`characteristics.${name}`),
 				value: currentValue,
 			}
 		});

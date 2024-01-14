@@ -1,23 +1,5 @@
 {
 	"duration": "{{time}}m",
-	"characteristics": {
-		"production_countries": "Country",
-		"genres": "Genres",
-		"original_title": "Original Title",
-		"release_date": "Release Date",
-		"runtime": "Duration",
-		"vote_average": "$t(common:ratingLabel)",
-		"original_language": "Original Language",
-		"budget": "Budget",
-		"revenue": "Revenue",
-		"status": "Status",
-		"statusValue": {
-			"released": "Released",
-			"planned": "Planned",
-			"post production": "Post Production",
-			"in production": "In Production"
-		}
-	},
 	"review": "Review",
 	"starring": "Starring",
 	"aboutMovie": "Information about the film",

@@ -1,6 +1,35 @@
 {
 	"ratingLabel": "Rating",
 	"genresLabel": "Genres",
+	"characteristics": {
+		"birthday": "Birthday",
+		"deathday": "Deathday",
+		"gender": "Gender",
+		"place_of_birth": "Place of birth",
+		"popularity": "Popularity",
+		"known_for_department": "Activity",
+		"production_countries": "Country",
+		"genres": "Genres",
+		"original_title": "Original Title",
+		"release_date": "Release Date",
+		"first_air_date": "First air date",
+		"last_air_date": "Last air date",
+		"number_of_seasons": "Number of seasons",
+		"number_of_episodes": "Number of episodes",
+		"runtime": "Duration",
+		"vote_average": "$t(ratingLabel)",
+		"original_language": "Original Language",
+		"budget": "Budget",
+		"revenue": "Revenue",
+		"status": "Status",
+		"statusValue": {
+			"released": "Released",
+			"planned": "Planned",
+			"post production": "Post Production",
+			"in production": "In Production",
+			"returning series": "Extended for the season"
+		}
+	},
 	"breadcrumbs": {
 		"elipsisLabel": "expand all links",
 		"home": "home page",

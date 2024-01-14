@@ -1,23 +1,5 @@
 {
 	"duration": "{{time}} мин.",
-	"characteristics": {
-		"production_countries": "Страна",
-		"genres": "Жанры",
-		"original_title": "Оригинальное название",
-		"release_date": "Дата выхода",
-		"runtime": "Длительность",
-		"vote_average": "$t(common:ratingLabel)",
-		"original_language": "Язык оригинала",
-		"budget": "Бюджет",
-		"revenue": "Сборы",
-		"status": "Статус",
-		"statusValue": {
-			"released": "Выпущено",
-			"planned": "Планируется",
-			"post production": "Пост-продакшн",
-			"in production": "В производстве"
-		}
-	},
 	"review": "Обзор",
 	"starring": "В главных ролях",
 	"aboutMovie": "Информация о фильме",

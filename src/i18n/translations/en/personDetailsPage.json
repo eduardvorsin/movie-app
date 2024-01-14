@@ -1,13 +1,5 @@
 {
 	"aboutPerson": "About the person",
-	"personCharacteristics": {
-		"birthday": "Birthday",
-		"deathday": "Deathday",
-		"gender": "Gender",
-		"place_of_birth": "Place of birth",
-		"popularity": "Popularity",
-		"known_for_department": "Activity"
-	},
 	"department": {
 		"acting_0": "Actor",
 		"acting_1": "Actress",

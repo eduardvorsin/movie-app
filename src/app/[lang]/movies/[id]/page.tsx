@@ -17,7 +17,7 @@ import { getLanguageNameFromLocale } from '@/i18n/utils/getLanguageNameFromLocal
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
 import { fetchMovie } from '@/services/fetchMovie/fetchMovie';
 import { notFound } from 'next/navigation';
-import { imgPath, routes } from 'src/constants';
+import { authorsDepartments, authorsProfessions, imgPath, routes } from 'src/constants';
 import Carousel from '@/components/Carousel/Carousel';
 import MovieCard from '@/components/MovieCard/MovieCard';
 import { convertToTime } from '@/helpers/convertToTime/convertToTime';
@@ -115,7 +115,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 			} else if (name === 'release_date') {
 				currentValue = getLocalizedDate(value, lang);
 			} else if (name === 'original_language') {
-				currentValue = getLanguageNameFromLocale(value, lang) ?? t('unknown', { ns: 'common' });
+				currentValue = getLanguageNameFromLocale(value, lang) ?? t('unknown');
 			} else if (name === 'vote_average') {
 				currentValue = `${rating.toString()}%`;
 			} else if (name === 'runtime') {
@@ -123,11 +123,11 @@ export default async function Page({ params: { id, lang } }: Props) {
 			} else if (name === 'budget' || name === 'revenue') {
 				currentValue = formatCurrency(+value, lang);
 			} else if (name === 'status') {
-				currentValue = t(`characteristics.statusValue.${value.toLowerCase()}`, { ns: 'movieDetailsPage' });
+				currentValue = t(`characteristics.statusValue.${value.toLowerCase()}`);
 			}
 
 			return {
-				name: t(`characteristics.${name}`, { ns: 'movieDetailsPage' }),
+				name: t(`characteristics.${name}`),
 				value: currentValue,
 			}
 		});
