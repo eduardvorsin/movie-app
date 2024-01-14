@@ -147,7 +147,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -215,7 +215,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -283,7 +283,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -352,7 +352,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -420,7 +420,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -489,7 +489,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -558,7 +558,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -627,7 +627,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -696,7 +696,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -765,7 +765,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -834,7 +834,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -903,7 +903,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -972,7 +972,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -1041,7 +1041,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -1110,7 +1110,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -1179,7 +1179,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -1248,7 +1248,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
@@ -1317,7 +1317,7 @@ export default async function Page({ params: { lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									variant='vertical'
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}

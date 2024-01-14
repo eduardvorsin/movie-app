@@ -15,7 +15,7 @@ export const imgPath = {
 export const navigationRoutes = {
 	movies: '/movies/',
 	persons: '/persons/',
-	tv: '/tv',
+	tv: '/tv/',
 	new: '/new',
 	collections: '/collections',
 };
