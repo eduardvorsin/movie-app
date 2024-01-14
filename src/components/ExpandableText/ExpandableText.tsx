@@ -85,7 +85,7 @@ export default function ExpandableText({
 			{shouldShowButton && (
 				<Button
 					appearance='ghost'
-					className='mt-1 py-2 px-0'
+					className='mt-1 py-2 [&]:px-0'
 					onClick={clickHandler}
 				>
 					{isExpanded ?
