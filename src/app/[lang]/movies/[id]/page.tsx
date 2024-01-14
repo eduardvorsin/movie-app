@@ -21,7 +21,7 @@ import { authorsDepartments, authorsProfessions, imgPath, routes } from 'src/con
 import Carousel from '@/components/Carousel/Carousel';
 import MovieCard from '@/components/MovieCard/MovieCard';
 import { convertToTime } from '@/helpers/convertToTime/convertToTime';
-import { fetchTrailersForMovie } from '@/services/fetchTrailersForMovie/fetchTrailersForMovie';
+import { fetchTrailersForMediaProject } from '@/services/fetchTrailersForMediaProject/fetchTrailersForMediaProject';
 import YouTubeVideo from '@/components/YouTubeVideo/YouTubeVideo';
 import Tabs from '@/components/Tabs/Tabs';
 import TabPanel from '@/components/Tabs/TabPanel/TabPanel';
@@ -54,7 +54,10 @@ export default async function Page({ params: { id, lang } }: Props) {
 	const { t } = await fetchTranslation(lang, ['movieDetailsPage', 'common']);
 	const [movie, trailers] = await Promise.all([
 		await fetchMovie(id, { lang }),
-		await fetchTrailersForMovie(Number(id), { lang }),
+		await fetchTrailersForMediaProject(Number(id), {
+			type: 'movie',
+			lang,
+		}),
 	]);
 
 	if (!movie) {

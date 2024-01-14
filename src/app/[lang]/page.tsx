@@ -40,7 +40,7 @@ export default async function Home({ params: { lang } }: Props) {
     fetchUpcomingMovies(1, { lang }),
     fetchPopularTVSeries(1, { lang }),
     fetchMoviesBoxOffice(1, { lang }),
-    fetchPopularTrailers(1),
+    fetchPopularTrailers(1, { lang }),
   ]);
 
   const avaliableOngoingMovies = nowPlayingMovies?.results

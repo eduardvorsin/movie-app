@@ -1,16 +1,15 @@
-import { Locales, fallbackLng } from '@/i18n/settings';
+import { Locales } from '@/i18n/settings';
 import { fetchMoviesByFilters } from '../fetchMoviesByFilters/fetchMoviesByFilters';
-import { fetchTrailersForMovie } from '../fetchTrailersForMovie/fetchTrailersForMovie';
+import { fetchTrailersForMediaProject } from '../fetchTrailersForMediaProject/fetchTrailersForMediaProject';
 import { TrailerResponse, TrailersResponseList } from '../types';
 
-export const fetchPopularTrailers = async (page: number, options?: { lang: Locales }): Promise<TrailerResponse[]> => {
-	const currentLang = options?.lang ?? fallbackLng;
+export const fetchPopularTrailers = async (page: number, options: { lang: Locales }): Promise<TrailerResponse[]> => {
 
 	const startingDate = new Date().toISOString().slice(0, 10);
 	const endDate = new Date(new Date().getTime() + 365 * 31 * 24 * 3600 * 1000).toISOString().slice(0, 10);
 
 	const popularMovies = await fetchMoviesByFilters(page, {
-		language: currentLang,
+		language: options.lang,
 		sort_by: 'popularity.desc',
 		'primary_release_date.gte': startingDate,
 		'primary_release_date.lte': endDate,
@@ -21,7 +20,10 @@ export const fetchPopularTrailers = async (page: number, options?: { lang: Local
 	if (!popularMovies) return [];
 
 	const requests = [...popularMovies.results].map(({ id }) => {
-		return fetchTrailersForMovie(id);
+		return fetchTrailersForMediaProject(id, {
+			lang: options.lang,
+			type: 'movie'
+		});
 	});
 	const responses = await Promise.all(requests);
 	const popularTrailers = responses
