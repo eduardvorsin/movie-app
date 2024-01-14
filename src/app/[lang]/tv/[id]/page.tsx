@@ -19,7 +19,7 @@ import { authorsDepartments, authorsProfessions, imgPath, routes } from 'src/con
 import Carousel from '@/components/Carousel/Carousel';
 import MovieCard from '@/components/MovieCard/MovieCard';
 import { convertToTime } from '@/helpers/convertToTime/convertToTime';
-import { fetchTrailersForMovie } from '@/services/fetchTrailersForMovie/fetchTrailersForMovie';
+import { fetchTrailersForMediaProject } from '@/services/fetchTrailersForMediaProject/fetchTrailersForMediaProject';
 import YouTubeVideo from '@/components/YouTubeVideo/YouTubeVideo';
 import Tabs from '@/components/Tabs/Tabs';
 import TabPanel from '@/components/Tabs/TabPanel/TabPanel';
@@ -51,8 +51,12 @@ type Props = {
 
 export default async function Page({ params: { id, lang } }: Props) {
 	const { t } = await fetchTranslation(lang, ['movieDetailsPage', 'common']);
-	const [tvSeries] = await Promise.all([
+	const [tvSeries, trailers] = await Promise.all([
 		await fetchTVSeries(id, { lang }),
+		await fetchTrailersForMediaProject(Number(id), {
+			type: 'tv',
+			lang,
+		}),
 	]);
 
 	if (!tvSeries) {
@@ -133,6 +137,8 @@ export default async function Page({ params: { id, lang } }: Props) {
 	}) => {
 		return authorsDepartments.includes(known_for_department) && authorsProfessions.includes(jobs[0].job);
 	});
+
+	const availableTrailers = trailers?.results.filter(({ site }) => site === 'YouTube');
 
 	const productionCompanies = production_companies
 		.filter(({ logo_path }) => logo_path !== null && logo_path !== '');
@@ -419,6 +425,41 @@ export default async function Page({ params: { id, lang } }: Props) {
 								</PersonCard>
 							))}
 						</Carousel>
+					</Container>
+				</section>
+			)}
+
+			{availableTrailers && availableTrailers.length > 0 && (
+				<section className='py-5 md:py-8'>
+					<Container className='flex flex-col'>
+						<Title
+							className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+							as='h2'
+							level={3}
+						>
+							{t('trailers', { ns: 'movieDetailsPage' })}
+						</Title>
+
+						<Tabs id='trailers'>
+							{availableTrailers.map((trailer) => (
+								<TabPanel
+									className='md:p-5'
+									key={trailer.id}
+									label={trailer.name}
+								>
+									<YouTubeVideo
+										className='mx-auto'
+										width={1156}
+										height={650}
+										videoId={trailer.key}
+										title={trailer.name}
+										loading='lazy'
+										posterAlt={trailer.name}
+										posterSizes='(min-width: 1230px) 1156px, 100vw'
+									/>
+								</TabPanel>
+							))}
+						</Tabs>
 					</Container>
 				</section>
 			)}
