@@ -627,7 +627,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								genre_ids,
 							}) => (
 								<MovieCard
-									mediaType='movie'
+									mediaType='tv'
 									className='mx-auto md:mx-0'
 									movieId={id}
 									key={id}
