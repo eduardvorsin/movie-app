@@ -526,6 +526,128 @@ export default async function Page({ params: { id, lang } }: Props) {
 				</section>
 			)}
 
+			{similar.results.length > 0 && (
+				<section className='py-5 md:py-8'>
+					<Container className='flex flex-col'>
+						<Title
+							className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+							as='h2'
+							level={3}
+						>
+							{t('relatedMovies', { ns: 'movieDetailsPage' })}
+						</Title>
+						<Carousel
+							mousewheel
+							spaceBetween={20}
+							showPagination
+							paginationType='progress'
+							breakpoints={{
+								0: {
+									slidesPerView: 1,
+								},
+								480: {
+									slidesPerView: 2,
+								},
+								768: {
+									slidesPerView: 3,
+								},
+								1024: {
+									slidesPerView: 4,
+								}
+							}}
+						>
+							{similar.results.map(({
+								id,
+								backdrop_path,
+								name,
+								vote_average,
+								first_air_date,
+								genre_ids,
+							}) => (
+								<MovieCard
+									mediaType='tv'
+									className='mx-auto md:mx-0'
+									movieId={id}
+									key={id}
+									src={backdrop_path ? `${imgPath['backdrop']}${backdrop_path}` : ''}
+									alt={name}
+									title={name}
+									titleElement='h4'
+									genres={genre_ids}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
+									titleLevel={5}
+									showRating
+									rating={vote_average * 10}
+									loading='lazy'
+									sizes='(min-width: 1230px) 285px, (min-width: 1024px) 25vw, (min-width: 768px) 33.3vw, (min-width: 480px) 50vw, 100vw'
+								/>
+							))}
+						</Carousel>
+					</Container>
+				</section>
+			)}
+
+			{recommendations.results.length > 0 && (
+				<section className='py-5 md:py-8'>
+					<Container className='flex flex-col'>
+						<Title
+							className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
+							as='h2'
+							level={3}
+						>
+							{t('recommendations', { ns: 'movieDetailsPage' })}
+						</Title>
+						<Carousel
+							mousewheel
+							slidesPerView={4}
+							spaceBetween={20}
+							showPagination
+							paginationType='progress'
+							breakpoints={{
+								0: {
+									slidesPerView: 1,
+								},
+								480: {
+									slidesPerView: 2,
+								},
+								768: {
+									slidesPerView: 3,
+								},
+								1024: {
+									slidesPerView: 4,
+								}
+							}}
+						>
+							{recommendations.results.map(({
+								id,
+								backdrop_path,
+								name,
+								vote_average,
+								first_air_date,
+								genre_ids,
+							}) => (
+								<MovieCard
+									mediaType='movie'
+									className='mx-auto md:mx-0'
+									movieId={id}
+									key={id}
+									src={backdrop_path ? `${imgPath['backdrop']}${backdrop_path}` : ''}
+									alt={name}
+									title={name}
+									titleElement='h4'
+									genres={genre_ids}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
+									titleLevel={5}
+									showRating
+									rating={vote_average * 10}
+									loading='lazy'
+									sizes='(min-width: 1230px) 285px, (min-width: 1024px) 25vw, (min-width: 768px) 33.3vw, (min-width: 480px) 50vw, 100vw'
+								/>
+							))}
+						</Carousel>
+					</Container>
+				</section>
+			)}
 		</main>
 	);
 }
