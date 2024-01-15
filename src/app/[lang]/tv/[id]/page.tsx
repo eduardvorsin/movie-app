@@ -50,7 +50,7 @@ type Props = {
 }
 
 export default async function Page({ params: { id, lang } }: Props) {
-	const { t } = await fetchTranslation(lang, ['movieDetailsPage', 'common']);
+	const { t } = await fetchTranslation(lang, ['tvSeriesDetailsPage', 'common']);
 	const [tvSeries, trailers] = await Promise.all([
 		await fetchTVSeries(id, { lang }),
 		await fetchTrailersForMediaProject(Number(id), {
@@ -97,7 +97,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 	const releaseYear = first_air_date.slice(0, 4);
 	const currentGenres = genres.slice(0, 3).map((genre) => genre.name.toLowerCase()).join(', ');
 	const tvSeriesDuration = `${t('duration', {
-		ns: 'movieDetailsPage',
 		time: last_episode_to_air.runtime
 	})} | ${convertToTime(last_episode_to_air.runtime)}`;
 	const rating = Math.floor(vote_average * 10);
@@ -242,7 +241,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								<span
 									className='text-neutral-1000 dark:text-dark-neutral-900 font-medium mr-2'
 								>
-									{t('ratingLabel', { ns: 'movieDetailsPage' })}
+									{t('ratingLabel')}
 								</span>
 								<PieChart
 									size={60}
@@ -272,7 +271,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 										level={3}
 										as='h2'
 									>
-										{t('review', { ns: 'movieDetailsPage' })}
+										{t('reviewTitle')}
 									</Title>
 									<ExpandableText className='mb-4 lg:mb-5'>
 										{overview}
@@ -285,7 +284,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								level={3}
 								as='h2'
 							>
-								{t('authors.title', { ns: 'movieDetailsPage' })}
+								{t('authors.title')}
 							</Title>
 
 							<ul
@@ -320,7 +319,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('aboutMovie', { ns: 'movieDetailsPage' })}
+							{t('aboutMovieTitle')}
 						</Title>
 						<CharacteristicList
 							data={characteristicData}
@@ -333,7 +332,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('sponsors', { ns: 'movieDetailsPage' })}
+							{t('sponsorsTitle')}
 						</Title>
 
 						<div className='flex gap-4 flex-wrap'>
@@ -348,7 +347,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								>
 									<ThemedImage
 										className='object-contain'
-										alt={t('logo', { ns: 'common', company_name: name })}
+										alt={t('logo', { company_name: name })}
 										sizes='185px'
 										fill
 										src={{
@@ -371,7 +370,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('starring', { ns: 'movieDetailsPage' })}
+							{t('starringTitle')}
 						</Title>
 
 						<Carousel
@@ -437,7 +436,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('trailers', { ns: 'movieDetailsPage' })}
+							{t('trailersTitle')}
 						</Title>
 
 						<Tabs id='trailers'>
@@ -472,7 +471,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('reviews', { ns: 'movieDetailsPage' })}
+							{t('reviewsTitle')}
 						</Title>
 
 						<Carousel
@@ -534,7 +533,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('relatedMovies', { ns: 'movieDetailsPage' })}
+							{t('relatedMoviesTitle')}
 						</Title>
 						<Carousel
 							mousewheel
@@ -595,7 +594,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							as='h2'
 							level={3}
 						>
-							{t('recommendations', { ns: 'movieDetailsPage' })}
+							{t('recommendationsTitle')}
 						</Title>
 						<Carousel
 							mousewheel

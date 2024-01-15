@@ -28,7 +28,8 @@
 			"planned": "Планируется",
 			"post production": "Пост-продакшн",
 			"in production": "В производстве",
-			"returning series": "Продлен на сезон"
+			"returning series": "Продлен на сезон",
+			"ended": "Завершен"
 		}
 	},
 	"breadcrumbs": {
@@ -149,5 +150,26 @@
 		"description": "Открывайте для себя мир кино вместе с нашим сайтом!",
 		"sectionsTitle": "Разделы",
 		"basedOnTitle": "Создано на основе"
+	},
+	"duration": "{{time}} мин.",
+	"reviewTitle": "Обзор",
+	"starringTitle": "В главных ролях",
+	"aboutMovieTitle": "Информация о фильме",
+	"recommendationsTitle": "Рекомендации",
+	"relatedMoviesTitle": "Похожие фильмы",
+	"sponsorsTitle": "Спонсоры",
+	"reviewsTitle": "Отзывы",
+	"trailersTitle": "Трейлеры фильма",
+	"authors": {
+		"title": "Авторы",
+		"jobs": {
+			"director": "Режиссер",
+			"producer": "Продюсер",
+			"screenplay": "Сценарист",
+			"novel": "Роман",
+			"characters": "Персонажи",
+			"story": "$t(authors.jobs.screenplay)",
+			"writer": "$t(authors.jobs.screenplay)"
+		}
 	}
 }

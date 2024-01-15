@@ -10,15 +10,16 @@
 		"known_for_department": "Activity",
 		"production_countries": "Country",
 		"genres": "Genres",
-		"original_title": "Original Title",
-		"release_date": "Release Date",
+		"original_title": "Original title",
+		"original_name": "Original name",
+		"release_date": "Release date",
 		"first_air_date": "First air date",
 		"last_air_date": "Last air date",
 		"number_of_seasons": "Number of seasons",
 		"number_of_episodes": "Number of episodes",
 		"runtime": "Duration",
 		"vote_average": "$t(ratingLabel)",
-		"original_language": "Original Language",
+		"original_language": "Original language",
 		"budget": "Budget",
 		"revenue": "Revenue",
 		"status": "Status",
@@ -27,7 +28,8 @@
 			"planned": "Planned",
 			"post production": "Post Production",
 			"in production": "In Production",
-			"returning series": "Extended for the season"
+			"returning series": "Extended for the season",
+			"ended": "Ended"
 		}
 	},
 	"breadcrumbs": {
@@ -148,5 +150,26 @@
 		"description": "Discover the world of cinema with our website!",
 		"sectionsTitle": "Sections",
 		"basedOnTitle": "Created based on"
+	},
+	"duration": "{{time}}m",
+	"reviewTitle": "Review",
+	"starringTitle": "Starring",
+	"aboutMovieTitle": "Information about the film",
+	"recommendationsTitle": "Recommendations",
+	"relatedMoviesTitle": "Related Movies",
+	"sponsorsTitle": "Sponsors",
+	"reviewsTitle": "Reviews",
+	"trailersTitle": "Movie trailers",
+	"authors": {
+		"title": "Authors",
+		"jobs": {
+			"director": "Director",
+			"producer": "Producer",
+			"screenplay": "Screenplay",
+			"novel": "Novel",
+			"characters": "Characters",
+			"story": "Story",
+			"writer": "Writer"
+		}
 	}
 }
