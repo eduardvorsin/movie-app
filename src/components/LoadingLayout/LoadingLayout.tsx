@@ -8,7 +8,7 @@ export default function LoadingLayout({
 }: GeneralProps) {
 	return (
 		<div
-			className={`w-full h-full relative ${className}`}
+			className={`w-full min-h-[100vh] relative ${className}`}
 			data-testid={testId}
 			{...props}
 		>
