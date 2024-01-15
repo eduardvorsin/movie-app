@@ -1,5 +1,5 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { CreditsResponse, ListsResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry, Review, TVSeriesResponse, Credit } from '@/services/types';
+import { CreditsResponse, ListsResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry, Review, TVSeriesResponse, Credit, TVSeriesEpisode } from '@/services/types';
 import { Department } from '@/types/shared';
 
 export type TVSeriesActorCredit = Credit & {
@@ -18,7 +18,7 @@ export type TVSeriesCrewCredit = Credit & {
 	}[],
 };
 
-export type TVSeriesDetails = Omit<TVSeriesResponse, 'genres_id' | 'popularity'> & {
+type TVSeriesData = Omit<TVSeriesResponse, 'genres_id' | 'popularity'> & {
 	episode_run_time: number[],
 	genres: Genre[],
 	homepage: string,
@@ -38,25 +38,15 @@ export type TVSeriesDetails = Omit<TVSeriesResponse, 'genres_id' | 'popularity'>
 		episode_count: number,
 		id: number,
 		name: string,
-		overview?: string,
-		poster_path: string,
+		overview: string,
+		poster_path: string | null,
 		season_number: number,
 		vote_average: number,
 	}[],
-	last_episode_to_air: {
-		id: number,
-		name: string,
-		overview: string,
-		vote_average: number,
-		vote_count: number,
-		air_date: string,
-		episode_number: number,
-		production_code: string,
-		runtime: number,
-		season_number: number,
-		show_id: number,
-		still_path: string,
-	},
+	last_episode_to_air: TVSeriesEpisode,
+};
+
+type TVSeriesAdditionalData = {
 	external_ids: ExternalIDS,
 	aggregate_credits: CreditsResponse<TVSeriesActorCredit, TVSeriesCrewCredit>,
 	similar: ListsResponse<TVSeriesResponse>,
@@ -72,12 +62,27 @@ export type TVSeriesDetails = Omit<TVSeriesResponse, 'genres_id' | 'popularity'>
 	}
 }
 
-export const fetchTVSeries = async (id: string, options?: { lang: Locales }): Promise<TVSeriesDetails | null> => {
+export type TVSeriesDetails = TVSeriesData & TVSeriesAdditionalData;
+
+export const fetchTVSeries = async <
+	T extends boolean,
+	R = T extends true ? TVSeriesDetails : TVSeriesData,
+>(id: string, options: {
+	lang: Locales,
+	includeAdditionalData: T,
+}): Promise<R | null> => {
 	const currentLang = options?.lang ?? fallbackLng;
 
 	let tvSeries;
+
+	const url = new URL(`tv/${id}`, 'https://api.themoviedb.org/3/');
+	if (options.includeAdditionalData) {
+		url.searchParams.append('append_to_response', 'external_ids,aggregate_credits,similar,recommendations,reviews,content_ratings');
+	}
+	url.searchParams.append('language', currentLang);
+
 	try {
-		const res = await fetch(`https://api.themoviedb.org/3/tv/${id}?append_to_response=external_ids,aggregate_credits,similar,recommendations,reviews,content_ratings&language=${currentLang}`, {
+		const res = await fetch(url.href, {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',
@@ -97,5 +102,5 @@ export const fetchTVSeries = async (id: string, options?: { lang: Locales }): Pr
 		}
 	}
 
-	return tvSeries as TVSeriesDetails;
+	return tvSeries as R;
 };

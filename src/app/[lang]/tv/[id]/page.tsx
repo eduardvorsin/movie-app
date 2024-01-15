@@ -52,7 +52,10 @@ type Props = {
 export default async function Page({ params: { id, lang } }: Props) {
 	const { t } = await fetchTranslation(lang, ['tvSeriesDetailsPage', 'common']);
 	const [tvSeries, trailers] = await Promise.all([
-		await fetchTVSeries(id, { lang }),
+		await fetchTVSeries(id, {
+			lang,
+			includeAdditionalData: true,
+		}),
 		await fetchTrailersForMediaProject(Number(id), {
 			type: 'tv',
 			lang,
@@ -100,7 +103,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 	const currentGenres = genres.slice(0, 3).map((genre) => genre.name.toLowerCase()).join(', ');
 	const tvSeriesDuration = `${t('duration', {
 		time: last_episode_to_air.runtime
-	})} | ${convertToTime(last_episode_to_air.runtime)}`;
+	})} | ${convertToTime(last_episode_to_air?.runtime ?? 0)}`;
 	const rating = Math.floor(vote_average * 10);
 
 	const socialNetworks = createSocialNetworksArray({
@@ -557,14 +560,16 @@ export default async function Page({ params: { id, lang } }: Props) {
 											</span>
 
 											<span className='font-regular'>
-												{air_date}
+												{getLocalizedDate(air_date ?? '', lang)}
 											</span>
 										</p>
 									</Title>
 
-									{overview && overview.length > 0 && (<ExpandableText>
-										{overview}
-									</ExpandableText>)}
+									{overview.length > 0 && (
+										<ExpandableText className='mt-3'>
+											{overview}
+										</ExpandableText>
+									)}
 								</div>
 							</li>
 						))}
