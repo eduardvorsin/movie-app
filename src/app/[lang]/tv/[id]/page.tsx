@@ -11,7 +11,7 @@ import { createCharacteristicsArray } from '@/helpers/createCharacteristicsArray
 import { createSocialNetworksArray } from '@/helpers/createSocialNetworksArray/createSocialNetworksArray';
 import { fetchImageWithPlaceholder } from '@/helpers/fetchImageWithPlaceholder/fetchImageWithPlaceholder';
 import { fetchTranslation } from '@/i18n/server';
-import { Locales } from '@/i18n/settings';
+import { Locales, regionsByLocales } from '@/i18n/settings';
 import { getLanguageNameFromLocale } from '@/i18n/utils/getLanguageNameFromLocale/getLanguageNameFromLocale';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
 import { notFound } from 'next/navigation';
@@ -76,6 +76,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		homepage,
 		last_episode_to_air,
 		name,
+		seasons,
 		reviews,
 		aggregate_credits,
 		external_ids,
@@ -474,6 +475,102 @@ export default async function Page({ params: { id, lang } }: Props) {
 					</Container>
 				</section>
 			)}
+
+			<section className='py-5 md:py-8'>
+				<Container>
+					<Title
+						className='mb-4 lg:mb-5'
+						as='h2'
+						level={3}
+					>
+						<Link
+							className='flex items-center gap-3 text-neutral-900 dark:text-dark-neutral-800 [&]:hover:no-underline [&]:hover:text-neutral-1000 [&]:active:text-neutral-1100 dark:[&]:hover:text-dark-neutral-900 dark:[&]:active:text-dark-neutral-1000'
+							href={`/tv/${id}/seasons`}
+						>
+							{t('seasonAndEpisodesTitle', { ns: 'tvSeriesDetailsPage' })}
+							<svg
+								className='w-6 h-6 sm:w-[1.75rem] sm:h-[1.75rem]'
+								viewBox='0 0 20 20'
+							>
+								<use href={'/assets/icons/forward-arrow.svg#forward-arrow'}></use>
+							</svg>
+						</Link>
+					</Title>
+					<ul>
+						{seasons.map(({
+							air_date,
+							id,
+							episode_count,
+							name,
+							overview,
+							poster_path,
+							season_number,
+							vote_average,
+						}) => (
+							<li
+								className='flex flex-col xs:flex-row gap-6 md:gap-8 pb-4 last:pb-0 pt-4 first:pt-0 border-b-1 :border-neutral-300 dark:border-dark-neutral-350 last:border-none'
+								key={id}
+							>
+								<ThemedImage
+									className='basis-[195px] xs:basis-[100px] md:basis-[130px] aspect-[2/3] grow-0 shrink-0 self-center xs:self-start'
+									width={130}
+									height={195}
+									src={{
+										light: `${imgPath['poster_2']}${poster_path}`,
+										dark: `${imgPath['poster_2']}${poster_path}`,
+									}}
+									fallback={{
+										light: `/assets/images/movie-card-placeholder-l-v.svg`,
+										dark: `/assets/images/movie-card-placeholder-d-v.svg`
+									}}
+									alt={`${name} poster`}
+								/>
+
+								<div className='text-neutral-1000 dark:text-dark-neutral-900 flex-grow'>
+									<Title
+										className='mb-3'
+										level={4}
+										as='h3'
+									>
+										{name}
+
+										<p className='mt-1 flex flex-wrap gap-y-2 text-200'>
+											<span
+												className='flex items-center font-medium after:content-["/"] after:ml-2 after:mr-2'
+												aria-label={t('ratingLabel')}
+											>
+												<svg
+													className='w-4 h-4 text-neutral-600 dark:text-dark-neutral-600 mr-2'
+													viewBox='0 0 20 20'
+												>
+													<use href={'/assets/icons/star.svg#star'}></use>
+												</svg>
+												{vote_average}
+											</span>
+
+											<span className='font-regular after:content-["/"] after:ml-2 after:mr-2'>
+												{t('seasonAndEpisodes', {
+													ns: 'tvSeriesDetailsPage',
+													season_number,
+													episode_count,
+												})}
+											</span>
+
+											<span className='font-regular'>
+												{air_date}
+											</span>
+										</p>
+									</Title>
+
+									{overview && overview.length > 0 && (<ExpandableText>
+										{overview}
+									</ExpandableText>)}
+								</div>
+							</li>
+						))}
+					</ul>
+				</Container>
+			</section>
 
 			{reviews.results.length > 0 && (
 				<section className='py-5 md:py-8'>

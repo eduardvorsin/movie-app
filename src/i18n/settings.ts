@@ -5,7 +5,10 @@ export const fallbackLng = 'en';
 export const locales = [fallbackLng, 'ru'] as const;
 export const defaultNS = 'common';
 export type Locales = typeof locales[number];
-
+export const regionsByLocales = {
+	'en': 'us',
+	'ru': 'ru',
+};
 export const runsOnServerSide = typeof window === 'undefined';
 
 export const getOptions = (lng: string = fallbackLng, ns: string | string[] = defaultNS):InitOptions => ({
