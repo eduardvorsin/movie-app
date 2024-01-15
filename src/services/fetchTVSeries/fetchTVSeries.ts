@@ -38,7 +38,7 @@ export type TVSeriesDetails = Omit<TVSeriesResponse, 'genres_id' | 'popularity'>
 		episode_count: number,
 		id: number,
 		name: string,
-		overview: string,
+		overview?: string,
 		poster_path: string,
 		season_number: number,
 		vote_average: number,
@@ -62,6 +62,14 @@ export type TVSeriesDetails = Omit<TVSeriesResponse, 'genres_id' | 'popularity'>
 	similar: ListsResponse<TVSeriesResponse>,
 	recommendations: ListsResponse<TVSeriesResponse>,
 	reviews: ListsResponse<Review>,
+	content_ratings: {
+		id: number,
+		results: {
+			descriptors: string[],
+			iso_3166_1: string,
+			rating: string,
+		}[],
+	}
 }
 
 export const fetchTVSeries = async (id: string, options?: { lang: Locales }): Promise<TVSeriesDetails | null> => {
@@ -69,7 +77,7 @@ export const fetchTVSeries = async (id: string, options?: { lang: Locales }): Pr
 
 	let tvSeries;
 	try {
-		const res = await fetch(`https://api.themoviedb.org/3/tv/${id}?append_to_response=external_ids,aggregate_credits,similar,recommendations,reviews&language=${currentLang}`, {
+		const res = await fetch(`https://api.themoviedb.org/3/tv/${id}?append_to_response=external_ids,aggregate_credits,similar,recommendations,reviews,content_ratings&language=${currentLang}`, {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',

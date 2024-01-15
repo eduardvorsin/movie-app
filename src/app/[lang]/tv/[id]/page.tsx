@@ -81,6 +81,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		external_ids,
 		similar,
 		recommendations,
+		content_ratings,
 	} = tvSeries;
 
 	const [backgroundData, posterData] = await Promise.all([
@@ -141,6 +142,10 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 	const productionCompanies = production_companies
 		.filter(({ logo_path }) => logo_path !== null && logo_path !== '');
+
+	const contentRating = content_ratings.results.find(({ iso_3166_1 }) => {
+		return iso_3166_1.toLowerCase() === regionsByLocales[lang];
+	});
 
 	return (
 		<main className='mt-[3.75rem] flex-grow'>
@@ -218,6 +223,13 @@ export default async function Page({ params: { id, lang } }: Props) {
 									<li
 										className='flex items-center after:content-["/"] after:mx-2 last:after:hidden last:after:mx-0'
 									>
+										{contentRating && (
+											<span
+												className='text-75 leading-none font-bold p-1 mr-2 uppercase border-1 border-neutral-900 dark:border-dark-neutral-800 text-neutral-900 dark:text-dark-neutral-800'
+											>
+												{contentRating.rating}
+											</span>
+										)}
 										{getLocalizedDate(first_air_date, lang)}
 									</li>
 								)}
