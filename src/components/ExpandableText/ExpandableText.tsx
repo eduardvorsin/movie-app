@@ -51,7 +51,7 @@ export default function ExpandableText({
 	}, [visibleRowsCount]);
 
 	const textClasses = [
-		'text-dark-neutral-250 dark:text-neutral-300',
+		'text-neutral-1000 dark:text-dark-neutral-1000',
 		!isExpanded ? lineClamps[visibleRowsCount] : '',
 	].join(' ');
 
