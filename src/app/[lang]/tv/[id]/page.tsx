@@ -511,7 +511,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							vote_average,
 						}) => (
 							<li
-								className='flex flex-col xs:flex-row gap-6 md:gap-8 pb-4 last:pb-0 pt-4 first:pt-0 border-b-1 :border-neutral-300 dark:border-dark-neutral-350 last:border-none'
+								className='flex flex-col xs:flex-row gap-6 md:gap-8 pb-4 last:pb-0 pt-4 first:pt-0 border-b-1 border-neutral-300 dark:border-dark-neutral-350 last:border-none'
 								key={id}
 							>
 								<ThemedImage
@@ -531,7 +531,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 								<div className='text-neutral-1000 dark:text-dark-neutral-900 flex-grow'>
 									<Title
-										className='mb-3'
 										level={4}
 										as='h3'
 									>
