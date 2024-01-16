@@ -92,12 +92,13 @@ export default function YouTubeVideo({
 					/>
 
 					<button
-						className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
+						className='w-full h-full flex items-center justify-center absolute z-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
 						onClick={addIframe}
 						aria-label='watch'
 						title='watch'
 					>
 						<Image
+							className='w-[4rem] h-[4rem]'
 							src='/assets/icons/youtube_default.svg'
 							alt=''
 							width={64}
