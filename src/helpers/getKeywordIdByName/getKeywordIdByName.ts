@@ -14,7 +14,7 @@ const keywords = {
 	mockumentary: '11800',
 	neonoir: '207268',
 	neorealism: '184345',
-	postapocalypse: '272793',
+	postapocalypse: '272793|4458',
 	remakes: '9714',
 	roadmovie: '167043',
 	timetravel: '4379',
