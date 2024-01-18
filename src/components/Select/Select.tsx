@@ -124,7 +124,8 @@ export default function Select({
 		};
 	};
 
-	const buttonClickHandler: MouseEventHandler<HTMLButtonElement> = () => {
+	const mouseDownHandler: MouseEventHandler<HTMLButtonElement> = (e) => {
+		e.preventDefault();
 		return isOpen ? closeSelect() : openSelect();
 	};
 
@@ -256,7 +257,7 @@ export default function Select({
 					disabled={isDisabled}
 					onFocus={buttonFocusHandler}
 					onBlur={onBlur}
-					onClick={buttonClickHandler}
+					onMouseDown={mouseDownHandler}
 					onKeyDown={buttonKeyDownHandler}
 					role='combobox'
 					aria-expanded={isOpen}
