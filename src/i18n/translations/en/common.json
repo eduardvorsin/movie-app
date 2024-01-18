@@ -171,5 +171,8 @@
 			"story": "Story",
 			"writer": "Writer"
 		}
+	},
+	"languageSelect": {
+		"label": "Language selection"
 	}
 }

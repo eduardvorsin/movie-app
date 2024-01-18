@@ -171,5 +171,7 @@
 			"story": "$t(authors.jobs.screenplay)",
 			"writer": "$t(authors.jobs.screenplay)"
 		}
+	"languageSelect": {
+		"label": "Выбор языка"
 	}
 }
