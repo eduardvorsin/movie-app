@@ -42,7 +42,7 @@ export default function Header({
 
 	return (
 		<header
-			className={`fixed z-500 top-0 left-0 w-full h-[60px] bg-neutral-300 dark:bg-dark-neutral-300 ${className}`}
+			className={`pr-[var(--scrollbar-width)] fixed z-500 top-0 left-0 w-full h-[60px] bg-neutral-300 dark:bg-dark-neutral-300 ${className}`}
 			data-testid={testId}
 			{...props}
 		>

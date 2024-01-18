@@ -23,7 +23,7 @@ export default function RootLayout({
     <html
       lang={fallbackLng}
       dir={dir(fallbackLng)}
-      className={`${inter.variable} h-full`}
+      className={`${inter.variable} h-full pr-[var(--scrollbar-width)]`}
       suppressHydrationWarning
     >
       <body className='bg-neutral-200 dark:bg-dark-neutral-100 h-full flex flex-col'>
