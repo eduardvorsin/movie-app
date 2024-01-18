@@ -10,7 +10,7 @@ export const fetchUpcomingTVSeries = async (page: number, options?: { lang: Loca
 
 	return await fetchTVSeriesByFilters(page, {
 		language: options?.lang ?? fallbackLng,
-		sort_by: 'primary_release_date.asc',
+		sort_by: 'popularity.desc',
 		'first_air_date.gte': startingDate,
 		'first_air_date.lte': endDate,
 		'air_date.gte': startingDate,

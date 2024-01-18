@@ -12,7 +12,7 @@ export const fetchUpcomingMovies = async (page: number, options?: { lang: Locale
 	const upcomingMovies = await fetchMoviesByFilters(page, {
 		language: currentLang,
 		region: region,
-		sort_by: 'primary_release_date.asc',
+		sort_by: 'popularity.desc',
 		'primary_release_date.gte': startingDate,
 		'primary_release_date.lte': endDate,
 		'release_date.gte': startingDate,
