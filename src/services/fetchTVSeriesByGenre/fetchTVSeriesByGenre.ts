@@ -5,15 +5,15 @@ import { Options, fetchTVSeriesByFilters } from '../fetchTVSeriesByFilters/fetch
 import { getGenreIdByName } from '@/helpers/getGenreIdByName/getGenreIdByName';
 import { getKeywordIdByName } from '@/helpers/getKeywordIdByName/getKeywordIdByName';
 
-type Subgenres = 'medical' | 'historical' | 'anime' | 'teen' | 'sports' | 'love';
+export type TVSeriesSubgenres = 'medical' | 'historical' | 'anime' | 'teen' | 'sports' | 'love';
 
-const isSubgenre = (genre: TVSeriesGenres | Subgenres | 'any'): genre is Subgenres => {
-	const subgenres: Subgenres[] = ['medical', 'historical', 'anime', 'teen', 'sports', 'sports', 'love'];
-	return subgenres.includes(genre as Subgenres);
+const isSubgenre = (genre: TVSeriesGenres | TVSeriesSubgenres | 'any'): genre is TVSeriesSubgenres => {
+	const subgenres: TVSeriesSubgenres[] = ['medical', 'historical', 'anime', 'teen', 'sports', 'sports', 'love'];
+	return subgenres.includes(genre as TVSeriesSubgenres);
 };
 
 export const fetchTVSeriesByGenre = async (
-	genre: TVSeriesGenres | Subgenres | 'any',
+	genre: TVSeriesGenres | TVSeriesSubgenres | 'any',
 	page: number,
 	options?: {
 		lang: Locales,

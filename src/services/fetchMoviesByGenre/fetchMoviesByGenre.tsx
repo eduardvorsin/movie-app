@@ -5,7 +5,12 @@ import { MovieGenres } from '@/types/shared';
 import { getGenreIdByName } from '@/helpers/getGenreIdByName/getGenreIdByName';
 import { getKeywordIdByName } from '@/helpers/getKeywordIdByName/getKeywordIdByName';
 
-export const fetchMoviesByGenre = async (genre: MovieGenres | 'anime', page: number, options?: { lang: Locales }): Promise<ListsResponse<MovieResponse> | null> => {
+export type MovieSubgenres = 'anime';
+
+export const fetchMoviesByGenre = async (
+	genre: MovieGenres | MovieSubgenres,
+	page: number,
+	options?: { lang: Locales }): Promise<ListsResponse<MovieResponse> | null> => {
 	const genreId = genre === 'anime' ? '16' : getGenreIdByName(genre);
 
 	const config: Options = {
