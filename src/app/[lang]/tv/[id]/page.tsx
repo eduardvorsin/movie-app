@@ -99,7 +99,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		),
 	]);
 
-	const releaseYear = first_air_date.slice(0, 4);
+	const releaseYear = first_air_date?.slice(0, 4);
 	const currentGenres = genres.slice(0, 3).map((genre) => genre.name.toLowerCase()).join(', ');
 	const tvSeriesDuration = `${t('duration', {
 		time: last_episode_to_air.runtime
@@ -210,14 +210,14 @@ export default async function Page({ params: { id, lang } }: Props) {
 								<span
 									className='text-neutral-900 dark:text-dark-neutral-800'
 								>
-									{releaseYear.length > 0 && (`(${releaseYear})`)}
+									{releaseYear && releaseYear.length > 0 && (`(${releaseYear})`)}
 								</span>
 							</Title>
 
 							<ul
 								className='flex flex-wrap gap-y-1 text-neutral-900 dark:text-dark-neutral-900'
 							>
-								{first_air_date.length > 0 && (
+								{first_air_date && first_air_date.length > 0 && (
 									<li
 										className='flex items-center after:content-["/"] after:mx-2 last:after:hidden last:after:mx-0'
 									>
@@ -547,7 +547,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 											</span>
 
 											<span className='font-regular'>
-												{getLocalizedDate(air_date ?? '', lang)}
+												{getLocalizedDate(air_date, lang)}
 											</span>
 										</p>
 									</Title>

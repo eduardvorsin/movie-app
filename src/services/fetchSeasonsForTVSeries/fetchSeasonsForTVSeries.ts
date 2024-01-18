@@ -4,7 +4,7 @@ import { TVSeriesEpisode } from '../types';
 
 export type TVSeriesSeasonDetails = {
 	_id: string,
-	air_date: string,
+	air_date?: string,
 	name: string,
 	overview: string,
 	id: number,

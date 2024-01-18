@@ -27,7 +27,7 @@ type ReleaseDate = {
 			descriptors: string[],
 			iso_639_1: string,
 			note: string,
-			release_date: string,
+			release_date?: string,
 			type: 1 | 2 | 3 | 4 | 5 | 6,
 		}
 	],
@@ -38,12 +38,12 @@ export type MovieResponse = MovieAndSeriesResponse & {
 	original_title: string,
 	title: string,
 	video: boolean,
-	release_date: string,
+	release_date?: string,
 	release_dates: { results: ReleaseDate[] },
 }
 
 export type TVSeriesResponse = MovieAndSeriesResponse & {
-	first_air_date: string,
+	first_air_date?: string,
 	name: string,
 	origin_country: string[],
 	original_name: string,
@@ -135,11 +135,11 @@ export type PersonCredit = {
 	job?: string,
 } & ({
 	media_type: 'movie',
-	release_date: string,
+	release_date?: string,
 	title: string,
 } | {
 	media_type: 'tv',
-	first_air_date: string,
+	first_air_date?: string,
 	name: string,
 });
 

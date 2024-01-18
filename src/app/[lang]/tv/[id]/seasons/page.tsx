@@ -95,7 +95,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								as='h2'
 								level={3}
 							>
-								{name}({air_date.slice(0, 4)})
+								{name}({air_date?.slice(0, 4)})
 							</Title>
 
 							<ul>
@@ -140,11 +140,9 @@ export default async function Page({ params: { id, lang } }: Props) {
 															{t('duration', { time: runtime })}
 														</span>)}
 
-													{air_date && (
-														<span className='font-regular'>
-															{getLocalizedDate(air_date, lang)}
-														</span>
-													)}
+													<span className='font-regular'>
+														{getLocalizedDate(air_date, lang)}
+													</span>
 												</p>
 											</Title>
 

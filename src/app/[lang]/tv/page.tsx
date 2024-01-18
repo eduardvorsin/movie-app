@@ -157,7 +157,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -225,7 +225,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -293,7 +293,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -362,7 +362,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -430,7 +430,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -499,7 +499,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -568,7 +568,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -637,7 +637,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -706,7 +706,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -775,7 +775,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -844,7 +844,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -913,7 +913,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -982,7 +982,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -1051,7 +1051,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -1120,7 +1120,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -1189,7 +1189,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -1258,7 +1258,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}
@@ -1327,7 +1327,7 @@ export default async function Page({ params: { lang } }: Props) {
 									title={name}
 									titleElement='h3'
 									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date ?? '', lang)}
+									releaseDate={getLocalizedDate(first_air_date, lang)}
 									titleLevel={5}
 									showRating
 									rating={vote_average * 10}

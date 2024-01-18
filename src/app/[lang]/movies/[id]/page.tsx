@@ -96,7 +96,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 		),
 	]);
 
-	const releaseYear = release_date.slice(0, 4);
+	const releaseYear = release_date?.slice(0, 4);
 	const currentGenres = genres.slice(0, 3).map((genre) => genre.name.toLowerCase()).join(', ');
 	const movieDuration = `${t('duration', { time: runtime })} | ${convertToTime(runtime)}`;
 	const rating = Math.floor(vote_average * 10);
@@ -201,14 +201,14 @@ export default async function Page({ params: { id, lang } }: Props) {
 								<span
 									className='text-neutral-900 dark:text-dark-neutral-800'
 								>
-									{releaseYear.length > 0 && (`(${releaseYear})`)}
+									{releaseYear && releaseYear.length > 0 && (`(${releaseYear})`)}
 								</span>
 							</Title>
 
 							<ul
 								className='flex flex-wrap gap-y-1 text-neutral-900 dark:text-dark-neutral-900'
 							>
-								{release_date.length > 0 && (
+								{release_date && release_date.length > 0 && (
 									<li
 										className='flex items-center after:content-["/"] after:mx-2 last:after:hidden last:after:mx-0'
 									>

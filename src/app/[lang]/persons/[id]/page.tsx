@@ -265,7 +265,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 											title={media_type === 'tv' ? name : title}
 											titleElement='h4'
 											genres={genre_ids}
-											releaseDate={getLocalizedDate(media_type === 'tv' ? first_air_date : release_date, lang)}
+											releaseDate={getLocalizedDate(media_type === 'tv' ? (first_air_date ?? '') : (release_date ?? ''), lang)}
 											titleLevel={5}
 											showRating
 											rating={vote_average * 10}
