@@ -10,6 +10,7 @@ import { Locales, fallbackLng } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
 import { useParams } from 'next/navigation';
 import { GeneralProps } from '@/types/shared';
+import UserSettingsButton from '../UserSettingsButton/UserSettingsButton';
 
 type Props = GeneralProps;
 
@@ -77,20 +78,7 @@ export default function Header({
 						</Button>
 					)}
 
-					{!isMenuOpen && (
-						<Button
-							appearance='secondary'
-							iconButton
-						>
-							<svg
-								className='p-2 w-[2.25rem] h-[2.25rem]'
-								viewBox='0 0 32 32'
-							>
-								<use href={'/assets/icons/account.svg#account'} />
-							</svg>
-							{t('accountButton')}
-						</Button>
-					)}
+					{!isMenuOpen && (<UserSettingsButton />)}
 
 					<NavigationMenuButton
 						className='md:hidden'

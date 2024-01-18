@@ -171,6 +171,12 @@
 			"story": "$t(authors.jobs.screenplay)",
 			"writer": "$t(authors.jobs.screenplay)"
 		}
+	},
+	"userSettingsButton": {
+		"button": "Открыть настройки",
+		"themeTitle": "Тема сайта",
+		"languageTitle": "Настройки языка"
+	},
 	"languageSelect": {
 		"label": "Выбор языка"
 	}

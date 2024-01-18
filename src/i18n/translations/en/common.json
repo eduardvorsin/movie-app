@@ -172,6 +172,11 @@
 			"writer": "Writer"
 		}
 	},
+	"userSettingsButton": {
+		"button": "Open settings",
+		"themeTitle": "The theme of the site",
+		"languageTitle": "Language Settings"
+	},
 	"languageSelect": {
 		"label": "Language selection"
 	}
