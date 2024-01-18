@@ -1,6 +1,6 @@
 import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
 import Container from '@/components/Container/Container';
-import InfiniteMovieFeed from '@/components/InfiniteCollectionsMovieFeed/InfiniteMovieFeed';
+import InfiniteMovieFeed from '@/components/InfiniteMovieFeed/InfiniteMovieFeed';
 import ThemedImage from '@/components/ThemedImage/ThemedImage';
 import Title from '@/components/Title/Title';
 import { fetchImageWithPlaceholder } from '@/helpers/fetchImageWithPlaceholder/fetchImageWithPlaceholder';
