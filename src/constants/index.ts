@@ -10,7 +10,8 @@ export const imgPath = {
 	profileCard: `${imgURL}/w185`,
 	logo: `${imgURL}/w185`,
 	avatar: `${imgURL}/w45_and_h45_face`,
-	movieCard: `${imgURL}/w300`,
+	movieCard_v: `${imgURL}/w300`,
+	movieCard_h: `${imgURL}/w500`,
 }
 
 export const navigationRoutes = {

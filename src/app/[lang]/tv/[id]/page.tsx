@@ -669,7 +669,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									className='mx-auto md:mx-0'
 									movieId={id}
 									key={id}
-									src={backdrop_path ? `${imgPath['backdrop']}${backdrop_path}` : ''}
+									src={backdrop_path ? `${imgPath['movieCard_h']}${backdrop_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h4'

@@ -152,7 +152,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -220,7 +220,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -288,7 +288,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -357,7 +357,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -425,7 +425,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -494,7 +494,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -563,7 +563,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -632,7 +632,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -701,7 +701,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -770,7 +770,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -839,7 +839,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -908,7 +908,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -977,7 +977,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -1046,7 +1046,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -1115,7 +1115,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -1184,7 +1184,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -1253,7 +1253,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
@@ -1322,7 +1322,7 @@ export default async function Page({ params: { lang } }: Props) {
 									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 									movieId={id}
 									key={id}
-									src={poster_path ? `${imgPath['movieCard']}${poster_path}` : ''}
+									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
 									alt={name}
 									title={name}
 									titleElement='h3'
