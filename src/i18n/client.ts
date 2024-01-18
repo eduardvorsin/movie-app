@@ -20,7 +20,8 @@ i18next
 		...getOptions(),
 		lng: undefined,
 		detection: {
-			order: ['path', 'htmlTag', 'cookie', 'navigator'],
+			order: ['path', 'cookie', 'navigator', 'htmlTag'],
+			caches: ['cookie', 'localStorage'],
 		},
 		preload: runsOnServerSide ? locales : [],
 	});
@@ -39,7 +40,7 @@ export const useTranslation = (lng: Locales, ns?: string | string[]) => {
 	return translator;
 };
 
-const useCustomTranslation = (i18n:i18n, lng:Locales) =>{
+const useCustomTranslation = (i18n: i18n, lng: Locales) => {
 	const [activeLang, setActiveLang] = useState<string | undefined>(i18n.resolvedLanguage);
 
 	useEffect(() => {

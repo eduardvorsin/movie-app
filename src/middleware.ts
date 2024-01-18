@@ -2,8 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Locales, fallbackLng, locales } from '@/i18n/settings';
 
 export function middleware(request: NextRequest) {
-	const userLang = request.headers.get('accept-language')?.slice(0, 2) ?? fallbackLng;
-
+	const langFromCookie = request.cookies.get('i18next');
+	const langFromHeaders = request.headers.get('accept-language')?.slice(0, 2);
+	const currentLang = langFromCookie ?? langFromHeaders ?? fallbackLng;
 	const { pathname } = request.nextUrl;
 
 	const pathnameIsMissingLocale = locales.every(locale => {
@@ -11,7 +12,7 @@ export function middleware(request: NextRequest) {
 	});
 
 	if (pathnameIsMissingLocale) {
-		const currentLocale = locales.includes(userLang as Locales) ? userLang : fallbackLng;
+		const currentLocale = locales.includes(currentLang as Locales) ? currentLang : fallbackLng;
 		const newUrl = new URL(`/${currentLocale}${pathname}`, request.url);
 
 		return NextResponse.redirect(newUrl);
