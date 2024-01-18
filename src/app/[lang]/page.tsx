@@ -117,10 +117,7 @@ export default async function Home({ params: { lang } }: Props) {
                   loading={index >= 1 ? 'lazy' : undefined}
                   sizes='100vw'
                   quality={70}
-                  src={{
-                    light: `${imgPath['backdrop']}${backdrop_path}`,
-                    dark: `${imgPath['backdrop']}${backdrop_path}`,
-                  }}
+                  src={`${imgPath['backdrop']}${backdrop_path}`}
                 />
 
                 <div className='relative z-100 p-4 sm:p-6 md:p-8 max-w-[620px]'>

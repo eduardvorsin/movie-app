@@ -81,10 +81,7 @@ export default function PersonCard({
 					quality={85}
 					sizes='154px'
 					alt={alt}
-					src={{
-						light: src,
-						dark: src,
-					}}
+					src={src}
 					fallback={{
 						light: '/assets/images/person-placeholder-l.svg',
 						dark: '/assets/images/person-placeholder-d.svg'

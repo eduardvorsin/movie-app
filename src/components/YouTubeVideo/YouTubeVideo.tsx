@@ -75,10 +75,7 @@ export default function YouTubeVideo({
 						width={width}
 						height={height}
 						showSkeleton
-						src={{
-							light: posterSrc.href,
-							dark: posterSrc.href,
-						}}
+						src={posterSrc.href}
 						fallback={{
 							light: '/assets/images/movie-card-placeholder-l-h.svg',
 							dark: '/assets/images/movie-card-placeholder-d-h.svg'

@@ -159,10 +159,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 				{backdrop_path && (
 					<ThemedImage
 						className='aspect-[5/4] xs:aspect-video sm:w-full sm:h-full absolute top-0 left-0 -z-100 opacity-[0.25] dark:brightness-[0.25] dark:opacity-100 object-cover object-top'
-						src={{
-							light: backgroundData?.img.src ?? '',
-							dark: backgroundData?.img.src ?? '',
-						}}
+						src={backgroundData?.img.src ?? ''}
 						placeholder={backdrop_path ? 'blur' : 'empty'}
 						blurDataURL={backgroundData?.base64}
 						width={1920}
@@ -189,10 +186,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						blurDataURL={posterData?.base64}
 						priority
 						sizes='(min-width: 1024px) 300px, (min-width: 768px) 270px, (min-width: 640px) 250px, 230px'
-						src={{
-							light: posterData?.img.src ?? '',
-							dark: posterData?.img.src ?? '',
-						}}
+						src={posterData?.img.src ?? ''}
 						fallback={{
 							light: '/assets/images/movie-card-placeholder-l-v.svg',
 							dark: '/assets/images/movie-card-placeholder-d-v.svg',
@@ -366,10 +360,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 										alt={t('logo', { company_name: name })}
 										sizes='185px'
 										fill
-										src={{
-											light: `${imgPath.logo}${logo_path}`,
-											dark: `${imgPath.logo}${logo_path}`
-										}}
+										src={`${imgPath.logo}${logo_path}`}
 									/>
 								</div>
 							))}
@@ -518,10 +509,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									className='basis-[195px] xs:basis-[100px] md:basis-[130px] aspect-[2/3] grow-0 shrink-0 self-center xs:self-start'
 									width={130}
 									height={195}
-									src={{
-										light: `${imgPath['poster_2']}${poster_path}`,
-										dark: `${imgPath['poster_2']}${poster_path}`,
-									}}
+									src={`${imgPath['poster_2']}${poster_path}`}
 									fallback={{
 										light: `/assets/images/movie-card-placeholder-l-v.svg`,
 										dark: `/assets/images/movie-card-placeholder-d-v.svg`

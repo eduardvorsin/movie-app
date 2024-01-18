@@ -52,10 +52,7 @@ export default function RatingItem({
 					width={60}
 					height={90}
 					alt={title}
-					src={{
-						light: src,
-						dark: src,
-					}}
+					src={src}
 					fallback={{
 						light: '/assets/images/movie-card-placeholder-l-v.svg',
 						dark: '/assets/images/movie-card-placeholder-d-v.svg',

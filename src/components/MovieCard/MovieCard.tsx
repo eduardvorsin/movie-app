@@ -152,10 +152,7 @@ export default function MovieCard({
 			className={imageClasses}
 			alt={alt}
 			quality={75}
-			src={{
-				light: src,
-				dark: src,
-			}}
+			src={src}
 			fallback={{
 				light: `/assets/images/movie-card-placeholder-l-${variant === 'horizontal' ? 'h' : 'v'}.svg`,
 				dark: `/assets/images/movie-card-placeholder-d-${variant === 'horizontal' ? 'h' : 'v'}.svg`

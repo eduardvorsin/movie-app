@@ -31,24 +31,19 @@ export default async function Page({ params: { id, lang } }: Props) {
 		`/assets/images/collection-${id}.webp`);
 
 	return (
-		<main className='mt-[3.75rem] flex-grow'>
-			<section className='overflow-hidden relative pt-3 sm:pt-[25%] pb-3 md:pb-5'>
-				{imageData && (
-					<ThemedImage
-						className='absolute top-0 left-0 aspect-[5/4] lg:aspect-video -z-100 opacity-[0.25] dark:brightness-[0.25] dark:opacity-100 object-cover'
-						src={{
-							light: imageData.img.src,
-							dark: imageData.img.src,
-						}}
-						placeholder='blur'
-						blurDataURL={imageData.base64}
-						width={1920}
-						height={960}
-						sizes='100vw'
-						priority
-						alt={t(`collections.${id}`)}
-					/>
-				)}
+			{imageData && (
+				<ThemedImage
+					className='absolute top-0 left-0 aspect-[5/4] lg:aspect-video -z-100 opacity-[0.25] dark:brightness-[0.25] dark:opacity-100 object-cover'
+					src={imageData.img.src}
+					placeholder='blur'
+					blurDataURL={imageData.base64}
+					width={1920}
+					height={960}
+					sizes='100vw'
+					priority
+					alt={t(`collections.${id}`)}
+				/>
+			)}
 
 				<Container>
 					<Breadcrumbs

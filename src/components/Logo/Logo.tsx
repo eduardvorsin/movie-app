@@ -51,10 +51,7 @@ export default function Logo({
 				width={sizes[size].width}
 				height={sizes[size].height}
 				alt='movie wander logo'
-				src={{
-					light: '/assets/images/logo.svg',
-					dark: '/assets/images/logo.svg',
-				}}
+				src={'/assets/images/logo.svg'}
 			/>
 			<span className='sr-only'>
 				{t('logoLink')}

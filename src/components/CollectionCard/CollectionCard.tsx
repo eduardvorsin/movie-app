@@ -38,10 +38,7 @@ export default function CollectionCard({
 				showSkeleton
 				priority={priority}
 				sizes={sizes}
-				src={{
-					light: src,
-					dark: src,
-				}}
+				src={src}
 			/>
 
 			<Title

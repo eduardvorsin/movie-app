@@ -8,7 +8,8 @@ import { SkeletonImage } from '../Skeleton/Skeleton';
 type Props = {
 	className?: string,
 	testId?: string,
-	src: Record<Theme, string>,
+	src: string,
+	darkSrc?: string,
 	fallback?: Record<Theme, string>,
 	alt: string,
 	placeholder?: PlaceholderValue,
@@ -20,6 +21,7 @@ type Props = {
 export default function ThemedImage({
 	className,
 	src,
+	darkSrc = '',
 	testId,
 	fallback,
 	alt,
@@ -33,10 +35,12 @@ export default function ThemedImage({
 	const theme = useTheme();
 	const [loaded, setLoaded] = useState<boolean>(placeholder === 'empty');
 	const [imgSrc, setImgSrc] = useState<string>(() => {
-		if (src[theme].length === 0 && fallback) {
+		if (src.length > 0) {
+			return src;
+		} else if (src.length === 0 && fallback) {
 			return fallback[theme];
 		} else {
-			return src[theme];
+			return darkSrc;
 		}
 	});
 

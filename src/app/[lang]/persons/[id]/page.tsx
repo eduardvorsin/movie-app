@@ -122,10 +122,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							placeholder={profile_path ? 'blur' : 'empty'}
 							blurDataURL={imageData?.base64}
 							priority
-							src={{
-								light: imageData?.img.src ?? '',
-								dark: imageData?.img.src ?? '',
-							}}
+							src={imageData?.img.src ?? ''}
 							fallback={{
 								light: '/assets/images/person-placeholder-l.svg',
 								dark: '/assets/images/person-placeholder-d.svg'
