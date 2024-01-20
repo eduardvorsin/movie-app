@@ -205,8 +205,8 @@ export default function Select({
 	const optionIndex = options.findIndex(o => o.value === value);
 
 	const selectWrapperClasses = [
-		className,
 		'w-full',
+		className,
 		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
 	].join(' ');
 
@@ -216,8 +216,8 @@ export default function Select({
 	].join(' ');
 
 	const selectListClasses = [
+		'w-full absolute z-300 mt-2 rounded-1 border-2 border-neutral-300 dark:border-dark-neutral-350 shadow-md bg-neutral-0 dark:bg-dark-neutral-250 overflow-y-auto',
 		isOpen ? 'block' : 'hidden',
-		'w-full absolute mt-2 rounded-1 py-2 border-2 border-neutral-300 dark:border-dark-neutral-350 shadow-md bg-neutral-0 dark:bg-dark-neutral-250 overflow-y-auto',
 	].join(' ');
 
 	const selectButtonClasses = [
