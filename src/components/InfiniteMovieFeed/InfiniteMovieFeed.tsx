@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { GeneralProps, MovieGenres, TVSeriesGenres } from '@/types/shared';
+import { CSSProperties, useState } from 'react';
+import { MovieGenres, TVSeriesGenres } from '@/types/shared';
 import Button from '../Button/Button';
 import { useParams } from 'next/navigation';
 import { Locales, fallbackLng } from '@/i18n/settings';
@@ -40,7 +40,10 @@ const imgPathByContentType = {
 type Props<
 	M extends 'movie' | 'tv',
 	I = M extends 'movie' ? MovieResponse : TVSeriesResponse
-> = GeneralProps & {
+> = {
+	className?: string,
+	testId?: string,
+	style?: CSSProperties,
 	mediaType: M,
 	initialData: ListsResponse<I>,
 } & (
@@ -51,7 +54,7 @@ type Props<
 		} | {
 			contentType: 'genre',
 			collectionName?: never,
-			genreName: M extends 'movie' ? MovieGenres | MovieSubgenres : TVSeriesGenres | TVSeriesSubgenres,
+			genreName: 'any' | (M extends 'movie' ? MovieGenres | MovieSubgenres : TVSeriesGenres | TVSeriesSubgenres),
 		}
 	);
 
@@ -63,6 +66,7 @@ export default function InfiniteMovieFeed<
 	mediaType,
 	initialData,
 	testId,
+	style,
 	contentType,
 	...props
 }: Props<M, I>) {
@@ -108,7 +112,7 @@ export default function InfiniteMovieFeed<
 		<div
 			className={classes}
 			data-testid={testId}
-			{...props}
+			style={style}
 		>
 			{!error && (
 				<div className={containerClasses}>
