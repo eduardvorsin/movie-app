@@ -16,6 +16,7 @@ const config: StorybookConfig = {
       name: '@storybook/addon-styling',
       options: {},
     },
+    "@storybook/addon-mdx-gfm"
   ],
   framework: {
     name: '@storybook/nextjs',
