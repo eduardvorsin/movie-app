@@ -3,8 +3,9 @@
 import { useScreenWidth } from '@/hooks/useScreenWidth/useScreenWidth';
 import { GeneralProps } from '@/types/shared';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ThemedImage from '../ThemedImage/ThemedImage';
+import { runsOnServerSide } from '@/i18n/settings';
 
 const youtubeVideoBasePath = 'https://www.youtube-nocookie.com/embed/';
 const youtubePosterBasePath = 'https://i.ytimg.com/vi_webp/';
@@ -42,8 +43,7 @@ export default function YouTubeVideo({
 }: Props) {
 	const [isIframeloading, setIsIframeLoading] = useState<boolean>(false);
 	const screenWidth = useScreenWidth();
-
-	const posterResolution = posterQuality ?? screenWidth <= 768 ? 'hqdefault' : 'maxresdefault';
+	const [posterResolution, setPosterResolution] = useState<Props['posterQuality']>(posterQuality ?? 'maxresdefault');
 
 	const addIframe = () => setIsIframeLoading(true);
 
@@ -61,6 +61,12 @@ export default function YouTubeVideo({
 	}
 
 	const posterSrc = new URL(`${videoId}/${posterResolution}.webp`, youtubePosterBasePath);
+
+	useEffect(() => {
+		if (!runsOnServerSide) {
+			setPosterResolution(posterQuality ?? screenWidth <= 768 ? 'hqdefault' : 'maxresdefault');
+		}
+	}, [posterQuality, screenWidth]);
 
 	return (
 		<div
