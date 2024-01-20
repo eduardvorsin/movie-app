@@ -1,9 +1,10 @@
 import { useLayoutEffect, useState } from 'react';
 
 export const useScreenWidth = (): number => {
-	const [screenWidth, setScreenWidth] = useState<number>(window.screen.width);
+	const [screenWidth, setScreenWidth] = useState<number>(0);
 
 	useLayoutEffect(() => {
+		setScreenWidth(window.screen.width);
 		const resizeHandler = () => {
 			setScreenWidth(window.screen.width);
 		}
