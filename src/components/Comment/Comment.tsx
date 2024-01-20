@@ -54,7 +54,7 @@ export default function Comment({
 	...props
 }: Props) {
 	const classes = [
-		'grid grid-cols-1 xs:grid-cols-[auto_1fr] gap-x-2 gap-y-2 md:gap-y-4 p-2 relative',
+		'grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative',
 		highlighted ? 'gap-y-4' : 'gap-y-2 md:gap-y-4',
 		className
 	].join(' ');
@@ -79,7 +79,7 @@ export default function Comment({
 					as={titleElement}
 					className='flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1'>
 					<CommentInfoItem
-						className='text-100'
+						className='text-100 max-w-[130px] truncate'
 						type='author'
 					>
 						{author}
@@ -149,7 +149,7 @@ export default function Comment({
 
 				<ExpandableText
 					visibleRowsCount={6}
-					className='text-neutral-1000 dark:text-dark-neutral-900'
+					className='break-all text-neutral-1000 dark:text-dark-neutral-900'
 				>
 					{content}
 				</ExpandableText>
