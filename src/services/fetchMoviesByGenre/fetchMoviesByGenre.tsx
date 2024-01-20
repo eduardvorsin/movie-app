@@ -1,6 +1,6 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { Options, fetchMoviesByFilters } from '../fetchMoviesByFilters/fetchMoviesByFilters';
-import { ListsResponse, MovieResponse } from '../types'
+import { fetchMoviesByFilters } from '../fetchMoviesByFilters/fetchMoviesByFilters';
+import { FilterOptions, ListsResponse, MovieResponse, SortOptions } from '../types'
 import { MovieGenres } from '@/types/shared';
 import { getGenreIdByName } from '@/helpers/getGenreIdByName/getGenreIdByName';
 import { getKeywordIdByName } from '@/helpers/getKeywordIdByName/getKeywordIdByName';
@@ -8,13 +8,23 @@ import { getKeywordIdByName } from '@/helpers/getKeywordIdByName/getKeywordIdByN
 export type MovieSubgenres = 'anime';
 
 export const fetchMoviesByGenre = async (
-	genre: MovieGenres | MovieSubgenres,
+	genre: MovieGenres | MovieSubgenres | 'any',
 	page: number,
-	options?: { lang: Locales }): Promise<ListsResponse<MovieResponse> | null> => {
-	const genreId = genre === 'anime' ? '16' : getGenreIdByName(genre);
+	options?: {
+		lang: Locales,
+		country?: string,
+		year?: string,
+		sortBy?: SortOptions,
+	}): Promise<ListsResponse<MovieResponse> | null> => {
+	let genreId = '';
+	if (genre === 'anime') {
+		genreId = '16';
+	} else if (genre !== 'any') {
+		genreId = getGenreIdByName(genre);
+	}
 
-	const config: Options = {
-		sort_by: 'vote_average.desc',
+	const config: FilterOptions<'movie'> = {
+		sort_by: options?.sortBy ?? 'vote_average.desc',
 		language: options?.lang ?? fallbackLng,
 		with_genres: genreId,
 		'vote_count.gte': 200,

@@ -1,13 +1,13 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { Options, fetchMoviesByFilters } from '../fetchMoviesByFilters/fetchMoviesByFilters';
-import { ListsResponse, MovieResponse } from '../types'
+import { fetchMoviesByFilters } from '../fetchMoviesByFilters/fetchMoviesByFilters';
+import { FilterOptions, ListsResponse, MovieResponse } from '../types'
 import { Collections } from 'src/constants';
 import { getKeywordIdByName } from '@/helpers/getKeywordIdByName/getKeywordIdByName';
 import { getGenreIdByName } from '@/helpers/getGenreIdByName/getGenreIdByName';
 
 export const fetchMoviesByCollection = async (id: Collections, page: number, options?: { lang: Locales }): Promise<ListsResponse<MovieResponse> | null> => {
 	const withoutGenres = id === 'investigation' ? getGenreIdByName('documentary') : '';
-	const config: Options = {
+	const config: FilterOptions<'movie'> = {
 		sort_by: 'vote_average.desc',
 		language: options?.lang ?? fallbackLng,
 		'vote_count.gte': 30,

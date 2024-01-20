@@ -1,3 +1,4 @@
+import { Locales } from "@/i18n/settings";
 import { Department } from "@/types/shared";
 
 export type ListsResponse<T> = {
@@ -168,3 +169,34 @@ export type TVSeriesEpisode = {
 	show_id: number,
 	still_path: string | null,
 }
+
+export type SortOptions = 'popularity.asc' | 'popularity.desc' | 'revenue.asc' | 'revenue.desc' | 'primary_release_date.asc' | 'primary_release_date.desc' | 'vote_average.asc' | 'vote_average.desc' | 'vote_count.asc' | 'vote_count.desc';
+
+export type FilterOptions<M extends 'movie' | 'tv'> = {
+	language: Locales,
+	include_adult?: boolean,
+	sort_by: SortOptions,
+	'vote_average.gte'?: number,
+	'vote_average.lte'?: number,
+	'vote_count.gte'?: number,
+	'vote_count.lte'?: number,
+	with_genres?: string,
+	with_keywords?: string,
+	without_genres?: string,
+	without_keywords?: string,
+	with_origin_country?: string,
+} & {
+	first_air_date_year?: M extends 'tv' ? number : never,
+	'air_date.gte'?: M extends 'tv' ? string : never,
+	'air_date.lte'?: M extends 'tv' ? string : never,
+	'first_air_date.gte'?: M extends 'tv' ? string : never,
+	'first_air_date.lte'?: M extends 'tv' ? string : never,
+} & {
+	region?: 'US' | 'RU',
+	primary_release_year?: M extends 'movie' ? number : never,
+	release_year?: M extends 'movie' ? string : never,
+	'primary_release_date.gte'?: M extends 'movie' ? string : never,
+	'primary_release_date.lte'?: M extends 'movie' ? string : never,
+	'release_date.gte'?: M extends 'movie' ? string : never,
+	'release_date.lte'?: M extends 'movie' ? string : never,
+};

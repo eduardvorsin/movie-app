@@ -1,7 +1,7 @@
 import { TVSeriesGenres } from './../../types/shared';
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { ListsResponse, TVSeriesResponse } from '../types'
-import { Options, fetchTVSeriesByFilters } from '../fetchTVSeriesByFilters/fetchTVSeriesByFilters';
+import { FilterOptions, ListsResponse, TVSeriesResponse } from '../types'
+import { fetchTVSeriesByFilters } from '../fetchTVSeriesByFilters/fetchTVSeriesByFilters';
 import { getGenreIdByName } from '@/helpers/getGenreIdByName/getGenreIdByName';
 import { getKeywordIdByName } from '@/helpers/getKeywordIdByName/getKeywordIdByName';
 
@@ -26,7 +26,7 @@ export const fetchTVSeriesByGenre = async (
 		genreId = getGenreIdByName(genre);
 	}
 
-	const config: Options = {
+	const config: FilterOptions<'tv'> = {
 		sort_by: 'vote_average.desc',
 		language: options?.lang ?? fallbackLng,
 		with_genres: genreId,
