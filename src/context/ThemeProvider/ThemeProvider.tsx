@@ -1,7 +1,9 @@
 'use client';
+import { runsOnServerSide } from '@/i18n/settings';
 import { ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 export type Theme = 'light' | 'dark';
+const defaultTheme = 'dark';
 
 const setColorTheme = (value: Theme): void => {
 	if (typeof value !== 'string') return;
@@ -10,25 +12,33 @@ const setColorTheme = (value: Theme): void => {
 	}
 
 	localStorage.setItem('theme', value);
-}
+};
 
 const getColorTheme = (): Theme => {
-	return (localStorage.getItem('theme') as Theme) ?? getSytemColorTheme();
-}
+	let userTheme;
+	if (!runsOnServerSide) {
+		userTheme = localStorage.getItem('theme') as Theme;
+	}
+	return userTheme ?? getSytemColorTheme();
+};
 
 const getSytemColorTheme = (): Theme => {
-	const isDarkTheme = matchMedia('(prefers-color-scheme:dark)').matches;
-	return isDarkTheme ? 'dark' : 'light' as Theme;
-}
+	if (!runsOnServerSide) {
+		const isDarkTheme = matchMedia('(prefers-color-scheme:dark)').matches;
+		return isDarkTheme ? 'dark' : 'light' as Theme;
+	}
+
+	return defaultTheme;
+};
+
+const currentTheme = getColorTheme();
 
 type ThemeContextValue = {
 	value: Theme,
 	toggleTheme: () => void,
 }
-
-const defaultTheme = getColorTheme()
 export const ThemeContext = createContext<ThemeContextValue>({
-	value: defaultTheme,
+	value: currentTheme,
 	toggleTheme: () => { }
 });
 
@@ -38,11 +48,11 @@ type Props = {
 export default function ThemeProvider({
 	children
 }: Props) {
-	const [theme, setTheme] = useState<Theme>(defaultTheme);
+	const [theme, setTheme] = useState<Theme>(currentTheme);
 	const toggleTheme = useCallback((): void => {
-		const currentTheme = theme === 'dark' ? 'light' : 'dark'
-		setTheme(currentTheme);
-		setColorTheme(currentTheme);
+		const nextTheme = theme === 'dark' ? 'light' : 'dark'
+		setTheme(nextTheme);
+		setColorTheme(nextTheme);
 	}, [theme]);
 
 	const themeContextValue = useMemo<ThemeContextValue>(() => ({
