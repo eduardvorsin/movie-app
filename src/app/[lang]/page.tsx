@@ -1,4 +1,4 @@
-import Carousel from '@/components/Carousel/Carousel';
+import { VerticalMovieCardsCarousel, OngoingMoviesCarousel, PopularTrailersCarousel } from '@/components/Carousel/Carousel';
 import Container from '@/components/Container/Container';
 import MovieCard from '@/components/MovieCard/MovieCard';
 import RatingItem from '@/components/RatingItem/RatingItem';
@@ -77,7 +77,7 @@ export default async function Home({ params: { lang } }: Props) {
             {t('theaters')}
           </Title>
 
-          <Carousel
+          <OngoingMoviesCarousel
             spaceBetween={20}
             showPagination
             paginationType='progress'
@@ -156,7 +156,7 @@ export default async function Home({ params: { lang } }: Props) {
                 </div>
               </Link>
             ))}
-          </Carousel>
+          </OngoingMoviesCarousel>
         </section>
       )}
 
@@ -170,7 +170,8 @@ export default async function Home({ params: { lang } }: Props) {
             >
               {t('trending')}
             </Title>
-            <Carousel
+
+            <VerticalMovieCardsCarousel
               mousewheel
               spaceBetween={20}
               showPagination
@@ -224,7 +225,7 @@ export default async function Home({ params: { lang } }: Props) {
                   sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
                 />
               ))}
-            </Carousel>
+            </VerticalMovieCardsCarousel>
           </Container>
         </section>
       )}
@@ -284,7 +285,7 @@ export default async function Home({ params: { lang } }: Props) {
             >
               {t('popularTVSeriesTitle')}
             </Title>
-            <Carousel
+            <VerticalMovieCardsCarousel
               mousewheel
               spaceBetween={20}
               showPagination
@@ -338,7 +339,7 @@ export default async function Home({ params: { lang } }: Props) {
                   sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
                 />
               ))}
-            </Carousel>
+            </VerticalMovieCardsCarousel>
           </Container>
         </section>
       )}
@@ -397,7 +398,7 @@ export default async function Home({ params: { lang } }: Props) {
               {t('PopularTrailersTitle')}
             </Title>
 
-            <Carousel
+            <PopularTrailersCarousel
               mousewheel
               spaceBetween={20}
               showPagination
@@ -431,7 +432,7 @@ export default async function Home({ params: { lang } }: Props) {
                   posterSizes='(min-width: 1230px) 386px, (min-width: 640px) 50vw, 100vw'
                 />
               ))}
-            </Carousel>
+            </PopularTrailersCarousel>
           </Container>
         </section>
       )}

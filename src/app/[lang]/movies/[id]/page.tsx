@@ -18,7 +18,7 @@ import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate
 import { fetchMovie } from '@/services/fetchMovie/fetchMovie';
 import { notFound } from 'next/navigation';
 import { authorsDepartments, authorsProfessions, imgPath, routes } from 'src/constants';
-import Carousel from '@/components/Carousel/Carousel';
+import { HorizontalMovieCardsCarousel, PersonCardsCarousel, ReviewsCarousel } from '@/components/Carousel/Carousel';
 import MovieCard from '@/components/MovieCard/MovieCard';
 import { convertToTime } from '@/helpers/convertToTime/convertToTime';
 import { fetchTrailersForMediaProject } from '@/services/fetchTrailersForMediaProject/fetchTrailersForMediaProject';
@@ -371,7 +371,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							{t('starringTitle')}
 						</Title>
 
-						<Carousel
+						<PersonCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showScrollShadow
@@ -406,7 +406,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								character
 							}) => (
 								<PersonCard
-									className='mb-2 mx-auto xs:mx-0'
+									className='mb-2 mx-auto'
 									personId={id}
 									key={id}
 									src={profile_path ? `${imgPath['profileCard']}${profile_path}` : ''}
@@ -421,7 +421,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									{character}
 								</PersonCard>
 							))}
-						</Carousel>
+						</PersonCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -472,7 +472,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							{t('reviewsTitle')}
 						</Title>
 
-						<Carousel
+						<ReviewsCarousel
 							mousewheel
 							showPagination
 							paginationType='progress'
@@ -498,7 +498,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								author_details,
 							}) => (
 								<Comment
-									className='h-full'
+									className='h-full xs:min-h-[241px]'
 									key={id}
 									id={id}
 									author={author}
@@ -518,7 +518,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									}
 								/>
 							))}
-						</Carousel>
+						</ReviewsCarousel>
 					</Container>
 				</section>
 			)}
@@ -533,7 +533,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						>
 							{t('relatedMoviesTitle')}
 						</Title>
-						<Carousel
+						<HorizontalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -579,7 +579,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									sizes='(min-width: 1230px) 285px, (min-width: 1024px) 25vw, (min-width: 768px) 33.3vw, (min-width: 480px) 50vw, 100vw'
 								/>
 							))}
-						</Carousel>
+						</HorizontalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -594,7 +594,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						>
 							{t('recommendationsTitle')}
 						</Title>
-						<Carousel
+						<HorizontalMovieCardsCarousel
 							mousewheel
 							slidesPerView={4}
 							spaceBetween={20}
@@ -641,7 +641,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									sizes='(min-width: 1230px) 285px, (min-width: 1024px) 25vw, (min-width: 768px) 33.3vw, (min-width: 480px) 50vw, 100vw'
 								/>
 							))}
-						</Carousel>
+						</HorizontalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}

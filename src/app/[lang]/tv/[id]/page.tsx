@@ -415,7 +415,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								roles
 							}) => (
 								<PersonCard
-									className='mb-2 mx-auto xs:mx-0'
+									className='mb-2 mx-auto'
 									personId={id}
 									key={id}
 									src={profile_path ? `${imgPath['profileCard']}${profile_path}` : ''}

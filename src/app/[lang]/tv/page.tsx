@@ -1,5 +1,5 @@
 import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
-import Carousel from '@/components/Carousel/Carousel';
+import { VerticalMovieCardsCarousel } from '@/components/Carousel/Carousel';
 import Container from '@/components/Container/Container';
 import ExpandableText from '@/components/ExpandableText/ExpandableText';
 import MovieCard from '@/components/MovieCard/MovieCard';
@@ -111,7 +111,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('topRatedTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -164,7 +164,7 @@ export default async function Page({ params: { lang } }: Props) {
 									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -179,7 +179,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('upcomingTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -232,7 +232,7 @@ export default async function Page({ params: { lang } }: Props) {
 									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -247,7 +247,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('turkishTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -301,7 +301,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -316,7 +316,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('russianTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -369,7 +369,7 @@ export default async function Page({ params: { lang } }: Props) {
 									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -384,7 +384,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('foreignTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -438,7 +438,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -453,7 +453,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('koreanTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -507,7 +507,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -522,7 +522,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('medicalTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -576,7 +576,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -591,7 +591,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('historicalTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -645,7 +645,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -660,7 +660,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('animeTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -714,7 +714,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -729,7 +729,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('teenTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -783,7 +783,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -798,7 +798,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('sportsTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -852,7 +852,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -867,7 +867,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('familyTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -921,7 +921,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -936,7 +936,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('crimeTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -990,7 +990,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -1005,7 +1005,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('loveTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -1059,7 +1059,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -1074,7 +1074,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('loveTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -1128,7 +1128,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -1143,7 +1143,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('comedyTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -1197,7 +1197,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -1212,7 +1212,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('mysteryTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -1266,7 +1266,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}
@@ -1281,7 +1281,7 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('militaryTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<Carousel
+						<VerticalMovieCardsCarousel
 							mousewheel
 							spaceBetween={20}
 							showPagination
@@ -1335,7 +1335,7 @@ export default async function Page({ params: { lang } }: Props) {
 									loading='lazy'
 								/>
 							))}
-						</Carousel>
+						</VerticalMovieCardsCarousel>
 					</Container>
 				</section>
 			)}

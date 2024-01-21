@@ -21,7 +21,7 @@ import { imgPath, routes } from 'src/constants';
 import ThemedImage from '@/components/ThemedImage/ThemedImage';
 import { fetchPopularPersons } from '@/services/fetchPopularPersons/fetchPopularPersons';
 import PersonCard from '@/components/PersonCard/PersonCard';
-import Carousel from '@/components/Carousel/Carousel';
+import { FamousPersonProjectsCarousel, PersonCardsCarousel } from '@/components/Carousel/Carousel';
 import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
 import MovieCard from '@/components/MovieCard/MovieCard';
 
@@ -212,7 +212,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								>
 									{t('famousProjectsTitle')}
 								</Title>
-								<Carousel
+								<FamousPersonProjectsCarousel
 									mousewheel
 									spaceBetween={20}
 									showPagination
@@ -237,7 +237,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 										1024: {
 											slidesPerView: 4,
 										},
-										1230: {
+										1232: {
 											slidesPerView: 5,
 										}
 									}}
@@ -272,7 +272,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 											sizes='(min-width: 1230px) 146px, (min-width: 1024px) 16.4vw, (min-width: 768px) 22.7vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
 										/>
 									))}
-								</Carousel>
+								</FamousPersonProjectsCarousel>
 							</section>
 						)}
 
@@ -360,7 +360,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							>
 								{t('personsTitle', { ns: 'personDetailsPage' })}
 							</Title>
-							<Carousel
+							<PersonCardsCarousel
 								mousewheel
 								spaceBetween={20}
 								paginationType='fraction'
@@ -395,7 +395,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									gender,
 								}) => (
 									<PersonCard
-										className='mb-2 mx-auto xs:mx-0'
+										className='mb-2 mx-auto'
 										personId={id}
 										key={id}
 										src={profile_path ? `${imgPath['profileCard']}${profile_path}` : ''}
@@ -409,7 +409,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 										{t(`department.${known_for_department.toLowerCase()}`, { ns: 'personDetailsPage', context: gender })}
 									</PersonCard>
 								))}
-							</Carousel>
+							</PersonCardsCarousel>
 						</section>
 					</div>
 				</div>

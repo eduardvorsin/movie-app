@@ -6,6 +6,8 @@ import CarouselPagination from './CarouselPagination/CarouselPagination';
 import CarouselArrow from './CarouselArrow/CarouselArrow';
 import { useScreenWidth } from '@/hooks/useScreenWidth/useScreenWidth';
 import { GeneralProps } from '@/types/shared';
+import dynamic from 'next/dynamic';
+import { SkeletonImage } from '../Skeleton/Skeleton';
 
 const arrowVerticalPostion = {
 	dots: 'top-[calc(50%-35px)] sm:top-[calc(50%-30px)]',
@@ -277,3 +279,38 @@ function getBreakpointFromValue(value: number, breakpoints?: Breakpoints): Break
 
 	return result;
 }
+
+export const OngoingMoviesCarousel = dynamic(() => import('../../components/Carousel/Carousel'), {
+	ssr: false,
+	loading: () => <SkeletonImage className='h-[324px] sm:h-[364px] md:h-[436px] lg:h-[580px] xl:h-[724px]' />,
+});
+
+export const VerticalMovieCardsCarousel = dynamic(() => import('../../components/Carousel/Carousel'), {
+	ssr: false,
+	loading: () => <SkeletonImage className=' h-[358px] [@media(min-width:375px)]:h-[clamp(20.75rem,25vw_+_14.891rem,22.375rem))] xs:h-[clamp(15.625rem,47.17vw_+_1.474rem,20.313rem)] sm:h-[clamp(15.75rem,34.646vw_+_1.892rem,18.5rem)] md:h-[clamp(15.188rem,28.235vw_+_1.635rem,_19.688rem)] lg:h-[clamp(16.75rem,23.558vw_+_1.673rem,19.813rem)] [@media(min-width:1232px)]:h-[317px]' />,
+});
+
+export const HorizontalMovieCardsCarousel = dynamic(() => import('../../components/Carousel/Carousel'), {
+	ssr: false,
+	loading: () => <SkeletonImage className='h-[166px] 2xs:h-[clamp(10.375rem,55.975vw_-_0.82rem,15.938rem)] xs:h-[clamp(7.75rem,28.125vw_-_0.688rem,12.813rem)] md:h-[clamp(8.375rem,18.824vw_-_0.66rem,11.375rem)] lg:h-[clamp(8.438rem,13.942vw_-_0.486rem,10.25rem)]  [@media(min-width:1232px)]:h-[164px]' />,
+});
+
+export const PopularTrailersCarousel = dynamic(() => import('../../components/Carousel/Carousel'), {
+	ssr: false,
+	loading: () => <SkeletonImage className=' h-[166px] 2xs:h-[clamp(10.375rem,55.938vw_-_0.813rem,_21.563rem)] sm:h-[clamp(10.563rem,27.937vw_-_0.612rem,17.25rem)] lg:h-[clamp(11.375rem,18.269vw_-_0.317rem,13.75rem)] [@media(min-width:1232px)]:h-[220px]' />,
+});
+
+export const PersonCardsCarousel = dynamic(() => import('../../components/Carousel/Carousel'), {
+	ssr: false,
+	loading: () => <SkeletonImage className=' h-[263px] xs:h-[clamp(15.313rem,18.947vw_+_9.628rem,_16.438rem)] [@media(min-width:576px) and @media(max-width:640px)]:h-[263px] sm:h-[clamp(15.375rem,13.386vw_+_10.021rem,16.438rem)] md:h-[clamp(15rem,10.268vw_+_10.071rem,16.438rem)] [@media(min-width:992px)]:h-[263px]' />,
+});
+
+export const ReviewsCarousel = dynamic(() => import('../../components/Carousel/Carousel'), {
+	ssr: false,
+	loading: () => <SkeletonImage className=' h-[281px] xs:h-[245px]' />,
+});
+
+export const FamousPersonProjectsCarousel = dynamic(() => import('../../components/Carousel/Carousel'), {
+	ssr: false,
+	loading: () => <SkeletonImage className=' h-[375px] [@media(min-width:375px) and @media(max-width:480px)]:h-[clamp(19.125rem,50vw_+_7.406rem,22.375rem)] xs:h-[clamp(16.875rem,46.541vw_+_2.913rem,21.5rem)] sm:h-[clamp(16.938rem,35.433vw_+_2.764rem,19.75rem)] md:h-[clamp(16.688rem,38.824vw_-_1.948rem,22.875rem)] lg:h-[clamp(16.875rem,34.615vw_-_5.279rem,21.375rem)] [@media(min-width:1232px)]:h-[284px]' />,
+});
