@@ -87,12 +87,5 @@ export const genres: Record<string, Genres> = {
 export const collections = ['marvel', 'dc', 'biography', 'books', 'avantgarde', 'cyberpunk', 'dystopia', 'espionage', 'fairytale', 'futuristic', 'idealism', 'investigation', 'mockumentary', 'neonoir', 'neorealism', 'postapocalypse', 'remakes', 'roadmovie', 'timetravel', 'vr', 'zombie'] as const;
 export type Collections = typeof collections[number];
 
-export const countryCodesBySubgenre = {
-	turkish: 'TR',
-	russian: 'RU',
-	foreign: 'FR|IT|GB|DE|ES|NL|EL|CZ|AT|SE|US',
-	korean: 'KR',
-} as const;
-
 export const authorsDepartments = ['Production', 'Writing', 'Directing'];
 export const authorsProfessions = ['Director', 'Producer', 'Screenplay', 'Novel', 'Characters', 'Story', 'Writer'];

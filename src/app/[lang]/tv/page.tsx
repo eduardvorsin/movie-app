@@ -10,7 +10,7 @@ import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate
 import { fetchTVSeriesByGenre } from '@/services/fetchTVSeriesByGenre/fetchTVSeriesByGenre';
 import { fetchTopRatedTVSeries } from '@/services/fetchTopRatedTVSeries/fetchTopRatedTVSeries';
 import { fetchUpcomingTVSeries } from '@/services/fetchUpcomingTVSeries/fetchUpcomingTVSeries';
-import { countryCodesBySubgenre, imgPath } from 'src/constants';
+import { imgPath } from 'src/constants';
 
 type Props = {
 	params: {
@@ -26,7 +26,6 @@ export default async function Page({ params: { lang } }: Props) {
 		upcomingTVSeries,
 		turkishTVSeries,
 		russianTVSeries,
-		foreignTVSeries,
 		koreanTVSeries,
 		medicalTVSeries,
 		historicalTVSeries,
@@ -45,19 +44,15 @@ export default async function Page({ params: { lang } }: Props) {
 		fetchUpcomingTVSeries(1, { lang }),
 		fetchTVSeriesByGenre('any', 1, {
 			lang,
-			withCountry: countryCodesBySubgenre.turkish,
+			withCountry: 'TR',
 		}),
 		fetchTVSeriesByGenre('any', 1, {
 			lang,
-			withCountry: countryCodesBySubgenre.russian,
+			withCountry: 'RU',
 		}),
 		fetchTVSeriesByGenre('any', 1, {
 			lang,
-			withCountry: countryCodesBySubgenre.foreign,
-		}),
-		fetchTVSeriesByGenre('any', 1, {
-			lang,
-			withCountry: countryCodesBySubgenre.korean,
+			withCountry: 'KR',
 		}),
 		fetchTVSeriesByGenre('medical', 1, { lang }),
 		fetchTVSeriesByGenre('historical', 1, { lang }),
@@ -367,75 +362,6 @@ export default async function Page({ params: { lang } }: Props) {
 									showRating
 									rating={vote_average * 10}
 									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
-					</Container>
-				</section>
-			)}
-
-			{foreignTVSeries && foreignTVSeries.results.length > 0 && (
-				<section className='py-3 md:py-5'>
-					<Container className='flex flex-col'>
-						<Title
-							className='mb-4 lg:mb-5 text-neutral-900 dark:text-dark-neutral-800'
-							as='h2'
-							level={3}
-						>
-							{t('foreignTVSeriesTitle', { ns: 'tvSeriesPage' })}
-						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{foreignTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
 								/>
 							))}
 						</VerticalMovieCardsCarousel>
