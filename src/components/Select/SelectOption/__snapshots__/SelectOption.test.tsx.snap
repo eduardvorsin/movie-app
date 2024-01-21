@@ -3,7 +3,7 @@
 exports[`SelectOption tests is a basic snapshot 1`] = `
 <li
   aria-selected="false"
-  class="outline-none break-words px-[0.625rem] py-[0.375rem] text-100 leading-2 transition-colors duration-150 select-none relative before:w-[0.125rem] before:h-full before:absolute before:left-0 before:top-0 before:bg-transparent before:transition-colors before:duration-150   bg-neutral-0 dark:bg-dark-neutral-250 text-neutral-700 dark:text-dark-neutral-700 "
+  class="outline-none break-words px-[0.625rem] py-[0.375rem] text-100 leading-2 transition-colors duration-150 select-none relative before:w-[0.125rem] before:h-full before:absolute before:left-0 before:top-0 before:transition-colors before:duration-150   bg-neutral-0 dark:bg-dark-neutral-250 text-neutral-800 dark:text-dark-neutral-800 "
   data-label="test"
   data-value="test"
   id="test"

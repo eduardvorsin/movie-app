@@ -2,29 +2,11 @@
 
 exports[`Button tests is a basic snapshot 1`] = `
 <button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative   "
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative  "
 >
-  <span>
-    Button
-  </span>
-</button>
-`;
-
-exports[`Button tests is a snapshot with a full-width button 1`] = `
-<button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative w-full justify-center  "
->
-  <span>
-    Button
-  </span>
-</button>
-`;
-
-exports[`Button tests is a snapshot with the "custom" size type 1`] = `
-<button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200  relative   "
->
-  <span>
+  <span
+    class="inline-flex items-center"
+  >
     Button
   </span>
 </button>
@@ -32,9 +14,11 @@ exports[`Button tests is a snapshot with the "custom" size type 1`] = `
 
 exports[`Button tests is a snapshot with the "danger" appearance type 1`] = `
 <button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-red-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-red-800 enabled:active:bg-red-900 dark:bg-red-400 dark:enabled:hover:bg-red-300 dark:enabled:active:bg-red-200 py-2 px-4 relative   "
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-red-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-red-800 enabled:active:bg-red-900 dark:bg-red-400 dark:enabled:hover:bg-red-300 dark:enabled:active:bg-red-200 py-2 px-4 relative  "
 >
-  <span>
+  <span
+    class="inline-flex items-center"
+  >
     Button
   </span>
 </button>
@@ -42,9 +26,11 @@ exports[`Button tests is a snapshot with the "danger" appearance type 1`] = `
 
 exports[`Button tests is a snapshot with the "discovery" appearance type 1`] = `
 <button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-purple-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-purple-800 enabled:active:bg-purple-900 dark:bg-purple-400 dark:enabled:hover:bg-purple-300 dark:enabled:active:bg-purple-200 py-2 px-4 relative   "
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-purple-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-purple-800 enabled:active:bg-purple-900 dark:bg-purple-400 dark:enabled:hover:bg-purple-300 dark:enabled:active:bg-purple-200 py-2 px-4 relative  "
 >
-  <span>
+  <span
+    class="inline-flex items-center"
+  >
     Button
   </span>
 </button>
@@ -52,9 +38,11 @@ exports[`Button tests is a snapshot with the "discovery" appearance type 1`] = `
 
 exports[`Button tests is a snapshot with the "large" size type 1`] = `
 <button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-200  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-3 px-6 relative   "
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-200  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-3 px-6 relative  "
 >
-  <span>
+  <span
+    class="inline-flex items-center"
+  >
     Button
   </span>
 </button>
@@ -62,9 +50,11 @@ exports[`Button tests is a snapshot with the "large" size type 1`] = `
 
 exports[`Button tests is a snapshot with the "medium" size type 1`] = `
 <button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative   "
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative  "
 >
-  <span>
+  <span
+    class="inline-flex items-center"
+  >
     Button
   </span>
 </button>
@@ -72,9 +62,11 @@ exports[`Button tests is a snapshot with the "medium" size type 1`] = `
 
 exports[`Button tests is a snapshot with the "micro" size type 1`] = `
 <button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-0.5 px-2 relative   "
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-0.5 px-2 relative  "
 >
-  <span>
+  <span
+    class="inline-flex items-center"
+  >
     Button
   </span>
 </button>
@@ -82,9 +74,11 @@ exports[`Button tests is a snapshot with the "micro" size type 1`] = `
 
 exports[`Button tests is a snapshot with the "primary" appearance type 1`] = `
 <button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative   "
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative  "
 >
-  <span>
+  <span
+    class="inline-flex items-center"
+  >
     Button
   </span>
 </button>
@@ -92,9 +86,11 @@ exports[`Button tests is a snapshot with the "primary" appearance type 1`] = `
 
 exports[`Button tests is a snapshot with the "secondary" appearance type 1`] = `
 <button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-neutral-300 text-dark-neutral-0 enabled:hover:bg-neutral-400 enabled:active:bg-neutral-500 dark:enabled:hover:bg-neutral-200 dark:enabled:active:bg-neutral-100 py-2 px-4 relative   "
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-neutral-300 text-dark-neutral-0 enabled:hover:bg-neutral-400 enabled:active:bg-neutral-500 dark:enabled:hover:bg-neutral-200 dark:enabled:active:bg-neutral-100 py-2 px-4 relative  "
 >
-  <span>
+  <span
+    class="inline-flex items-center"
+  >
     Button
   </span>
 </button>
@@ -102,9 +98,11 @@ exports[`Button tests is a snapshot with the "secondary" appearance type 1`] = `
 
 exports[`Button tests is a snapshot with the "slim" size type 1`] = `
 <button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-1 px-3 relative   "
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-1 px-3 relative  "
 >
-  <span>
+  <span
+    class="inline-flex items-center"
+  >
     Button
   </span>
 </button>
@@ -112,9 +110,11 @@ exports[`Button tests is a snapshot with the "slim" size type 1`] = `
 
 exports[`Button tests is a snapshot with the "success" appearance type 1`] = `
 <button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-green-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-green-800 enabled:active:bg-green-900 dark:bg-green-400 dark:enabled:hover:bg-green-300 dark:enabled:active:bg-green-200 py-2 px-4 relative   "
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-green-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-green-800 enabled:active:bg-green-900 dark:bg-green-400 dark:enabled:hover:bg-green-300 dark:enabled:active:bg-green-200 py-2 px-4 relative  "
 >
-  <span>
+  <span
+    class="inline-flex items-center"
+  >
     Button
   </span>
 </button>
@@ -122,40 +122,12 @@ exports[`Button tests is a snapshot with the "success" appearance type 1`] = `
 
 exports[`Button tests is a snapshot with the "warning" appearance type 1`] = `
 <button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-yellow-500 text-neutral-1000 enabled:hover:bg-yellow-600 enabled:active:bg-yellow-700 dark:enabled:hover:bg-yellow-300 dark:enabled:active:bg-yellow-200 py-2 px-4 relative   "
->
-  <span>
-    Button
-  </span>
-</button>
-`;
-
-exports[`Button tests is a snapshot with the icon on the left 1`] = `
-<button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative   "
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-yellow-500 text-neutral-1000 enabled:hover:bg-yellow-600 enabled:active:bg-yellow-700 dark:enabled:hover:bg-yellow-300 dark:enabled:active:bg-yellow-200 py-2 px-4 relative  "
 >
   <span
-    class="w-5 h-5 mr-2"
+    class="inline-flex items-center"
   >
-    <test-assets-stub />
-  </span>
-  <span>
     Button
-  </span>
-</button>
-`;
-
-exports[`Button tests is a snapshot with the icon on the right 1`] = `
-<button
-  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative   "
->
-  <span>
-    Button
-  </span>
-  <span
-    class="w-5 h-5 ml-2"
-  >
-    <test-assets-stub />
   </span>
 </button>
 `;

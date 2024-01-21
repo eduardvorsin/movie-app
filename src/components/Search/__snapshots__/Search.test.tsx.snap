@@ -25,17 +25,17 @@ exports[`Search tests is a basic snapshot 1`] = `
           value=""
         />
         <button
-          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-0 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600    absolute top-1/2 right-[0.375rem] -translate-y-1/2"
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-0 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600   absolute top-1/2 right-[0.375rem] -translate-y-1/2"
         >
           <span
-            class="inline-flex"
+            class="inline-flex items-center"
           >
             <svg
               class="w-6 h-6 p-0.5 fill-current"
               viewBox="0 0 32 32"
             >
               <use
-                href="undefined#loupe"
+                href="/assets/icons/loupe.svg#loupe"
               />
             </svg>
             Search
@@ -73,17 +73,17 @@ exports[`Search tests is a snapshot with IsReadOnly equal to true 1`] = `
           value=""
         />
         <button
-          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-0 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600    absolute top-1/2 right-[0.375rem] -translate-y-1/2"
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-0 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600   absolute top-1/2 right-[0.375rem] -translate-y-1/2"
         >
           <span
-            class="inline-flex"
+            class="inline-flex items-center"
           >
             <svg
               class="w-6 h-6 p-0.5 fill-current"
               viewBox="0 0 32 32"
             >
               <use
-                href="undefined#loupe"
+                href="/assets/icons/loupe.svg#loupe"
               />
             </svg>
             Search
@@ -121,18 +121,18 @@ exports[`Search tests is a snapshot with isDisabled set to true 1`] = `
           value=""
         />
         <button
-          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0 opacity-disabled cursor-not-allowed text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-0 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600    absolute top-1/2 right-[0.375rem] -translate-y-1/2"
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0 opacity-disabled cursor-not-allowed text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-0 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600   absolute top-1/2 right-[0.375rem] -translate-y-1/2"
           disabled=""
         >
           <span
-            class="inline-flex"
+            class="inline-flex items-center"
           >
             <svg
               class="w-6 h-6 p-0.5 fill-current"
               viewBox="0 0 32 32"
             >
               <use
-                href="undefined#loupe"
+                href="/assets/icons/loupe.svg#loupe"
               />
             </svg>
             Search
@@ -169,17 +169,17 @@ exports[`Search tests is a snapshot with labelHidden set to true 1`] = `
           value=""
         />
         <button
-          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-0 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600    absolute top-1/2 right-[0.375rem] -translate-y-1/2"
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-0 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600   absolute top-1/2 right-[0.375rem] -translate-y-1/2"
         >
           <span
-            class="inline-flex"
+            class="inline-flex items-center"
           >
             <svg
               class="w-6 h-6 p-0.5 fill-current"
               viewBox="0 0 32 32"
             >
               <use
-                href="undefined#loupe"
+                href="/assets/icons/loupe.svg#loupe"
               />
             </svg>
             Search
@@ -217,17 +217,17 @@ exports[`Search tests is snapshot with IsInvalid equal to true 1`] = `
           value=""
         />
         <button
-          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-0 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600    absolute top-1/2 right-[0.375rem] -translate-y-1/2"
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-0 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600   absolute top-1/2 right-[0.375rem] -translate-y-1/2"
         >
           <span
-            class="inline-flex"
+            class="inline-flex items-center"
           >
             <svg
               class="w-6 h-6 p-0.5 fill-current"
               viewBox="0 0 32 32"
             >
               <use
-                href="undefined#loupe"
+                href="/assets/icons/loupe.svg#loupe"
               />
             </svg>
             Search

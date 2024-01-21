@@ -2,6 +2,7 @@
 
 exports[`TabPanel tests is a basic snapshot 1`] = `
 <div
+  class="w-full undefined"
   data-label="test-label"
   data-testid="test-tab-panel"
 >

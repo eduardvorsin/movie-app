@@ -15,7 +15,7 @@ exports[`InlineMessage tests is a basic snapshot 1`] = `
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#connectivity"
+        href="/assets/icons/connectivity.svg#connectivity"
       />
     </svg>
   </span>
@@ -38,7 +38,7 @@ exports[`InlineMessage tests is a snapshot with a "confirmation" type appearance
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#confirmation"
+        href="/assets/icons/confirmation.svg#confirmation"
       />
     </svg>
   </span>
@@ -61,7 +61,7 @@ exports[`InlineMessage tests is a snapshot with a "connectivity" type appearance
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#connectivity"
+        href="/assets/icons/connectivity.svg#connectivity"
       />
     </svg>
   </span>
@@ -84,7 +84,7 @@ exports[`InlineMessage tests is a snapshot with a "error" type appearance 1`] = 
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#error"
+        href="/assets/icons/error.svg#error"
       />
     </svg>
   </span>
@@ -107,7 +107,7 @@ exports[`InlineMessage tests is a snapshot with a "info" type appearance 1`] = `
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#info"
+        href="/assets/icons/info.svg#info"
       />
     </svg>
   </span>
@@ -130,7 +130,7 @@ exports[`InlineMessage tests is a snapshot with a "warning" type appearance 1`] 
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#warning"
+        href="/assets/icons/warning.svg#warning"
       />
     </svg>
   </span>
@@ -153,7 +153,7 @@ exports[`InlineMessage tests is a snapshot with the icon on the left 1`] = `
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#connectivity"
+        href="/assets/icons/connectivity.svg#connectivity"
       />
     </svg>
   </span>
@@ -177,7 +177,7 @@ exports[`InlineMessage tests is a snapshot with the icon on the right 1`] = `
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#connectivity"
+        href="/assets/icons/connectivity.svg#connectivity"
       />
     </svg>
   </span>

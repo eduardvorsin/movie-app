@@ -62,7 +62,7 @@ exports[`TextField tests is a snapshot with an error message 1`] = `
         viewBox="0 0 20 20"
       >
         <use
-          href="undefined#connectivity"
+          href="/assets/icons/connectivity.svg#connectivity"
         />
       </svg>
     </span>
@@ -101,7 +101,7 @@ exports[`TextField tests is a snapshot with clear button 1`] = `
         viewBox="0 0 20 20"
       >
         <use
-          href="undefined#cancel"
+          href="/assets/icons/cancel.svg#cancel"
         />
       </svg>
     </button>

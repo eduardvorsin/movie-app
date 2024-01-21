@@ -14,7 +14,7 @@ exports[`Banner tests is a basic snapshot 1`] = `
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#info"
+        href="/assets/icons/info.svg#info"
       />
     </svg>
   </span>
@@ -42,7 +42,7 @@ exports[`Banner tests is a snapshot with a "danger" type appearance 1`] = `
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#error"
+        href="/assets/icons/error.svg#error"
       />
     </svg>
   </span>
@@ -70,7 +70,7 @@ exports[`Banner tests is a snapshot with a "discovery" type appearance 1`] = `
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#question"
+        href="/assets/icons/question.svg#question"
       />
     </svg>
   </span>
@@ -98,7 +98,7 @@ exports[`Banner tests is a snapshot with a "info" type appearance 1`] = `
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#info"
+        href="/assets/icons/info.svg#info"
       />
     </svg>
   </span>
@@ -126,7 +126,7 @@ exports[`Banner tests is a snapshot with a "success" type appearance 1`] = `
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#confirmation"
+        href="/assets/icons/confirmation.svg#confirmation"
       />
     </svg>
   </span>
@@ -154,7 +154,7 @@ exports[`Banner tests is a snapshot with a "warning" type appearance 1`] = `
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#warning"
+        href="/assets/icons/warning.svg#warning"
       />
     </svg>
   </span>
@@ -182,7 +182,7 @@ exports[`Banner tests is a snapshot with action buttons 1`] = `
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#info"
+        href="/assets/icons/info.svg#info"
       />
     </svg>
   </span>
@@ -199,9 +199,11 @@ exports[`Banner tests is a snapshot with action buttons 1`] = `
         class="mr-2 last:mr-0"
       >
         <button
-          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative   "
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative  "
         >
-          <span>
+          <span
+            class="inline-flex items-center"
+          >
             action
           </span>
         </button>
@@ -210,9 +212,11 @@ exports[`Banner tests is a snapshot with action buttons 1`] = `
         class="mr-2 last:mr-0"
       >
         <button
-          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative   "
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative  "
         >
-          <span>
+          <span
+            class="inline-flex items-center"
+          >
             action
           </span>
         </button>
@@ -221,9 +225,11 @@ exports[`Banner tests is a snapshot with action buttons 1`] = `
         class="mr-2 last:mr-0"
       >
         <button
-          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative   "
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-2 px-4 relative  "
         >
-          <span>
+          <span
+            class="inline-flex items-center"
+          >
              action
           </span>
         </button>
@@ -247,7 +253,7 @@ exports[`Banner tests is a snapshot with closeButton equal to true 1`] = `
       viewBox="0 0 20 20"
     >
       <use
-        href="undefined#info"
+        href="/assets/icons/info.svg#info"
       />
     </svg>
   </span>
@@ -259,10 +265,10 @@ exports[`Banner tests is a snapshot with closeButton equal to true 1`] = `
     </p>
   </div>
   <button
-    class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-blue-700 enabled:hover:text-blue-800 enabled:active:text-blue-900 dark:text-blue-400 dark:enabled:hover:text-blue-300 dark:enabled:active:text-blue-200    text-0 p-2 w-10 h-10 absolute top-2 right-0"
+    class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-blue-700 enabled:hover:text-blue-800 enabled:active:text-blue-900 dark:text-blue-400 dark:enabled:hover:text-blue-300 dark:enabled:active:text-blue-200   text-0 p-2 w-10 h-10 absolute top-2 right-0"
   >
     <span
-      class="inline-flex"
+      class="inline-flex items-center"
     >
       close
       <svg
@@ -271,7 +277,7 @@ exports[`Banner tests is a snapshot with closeButton equal to true 1`] = `
         viewBox="0 0 20 20"
       >
         <use
-          href="undefined#cancel"
+          href="/assets/icons/cancel.svg#cancel"
         />
       </svg>
     </span>
