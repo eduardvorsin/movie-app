@@ -7,7 +7,7 @@ import { useParams } from 'next/navigation';
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
 import ThemedImage from '../ThemedImage/ThemedImage';
-import { routes } from 'src/constants';
+import { routes } from '@/constants';
 
 type Props = {
 	personId: number,
