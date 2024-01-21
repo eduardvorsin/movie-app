@@ -44,15 +44,15 @@ export default async function Page({ params: { lang } }: Props) {
 		fetchUpcomingTVSeries(1, { lang }),
 		fetchTVSeriesByGenre('any', 1, {
 			lang,
-			withCountry: 'TR',
+			country: 'turkey',
 		}),
 		fetchTVSeriesByGenre('any', 1, {
 			lang,
-			withCountry: 'RU',
+			country: 'russia',
 		}),
 		fetchTVSeriesByGenre('any', 1, {
 			lang,
-			withCountry: 'KR',
+			country: 'south korea',
 		}),
 		fetchTVSeriesByGenre('medical', 1, { lang }),
 		fetchTVSeriesByGenre('historical', 1, { lang }),

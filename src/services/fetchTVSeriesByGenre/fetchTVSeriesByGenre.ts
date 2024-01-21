@@ -1,9 +1,10 @@
 import { TVSeriesGenres } from './../../types/shared';
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { FilterOptions, ListsResponse, TVSeriesResponse } from '../types'
+import { FilterOptions, ListsResponse, SortOptions, TVSeriesResponse } from '../types'
 import { fetchTVSeriesByFilters } from '../fetchTVSeriesByFilters/fetchTVSeriesByFilters';
 import { getGenreIdByName } from '@/helpers/getGenreIdByName/getGenreIdByName';
 import { getKeywordIdByName } from '@/helpers/getKeywordIdByName/getKeywordIdByName';
+import { Countries, getCountryCodeFromName } from '@/helpers/getCountryCodeFromName/getCountryCodeFromName';
 
 export type TVSeriesSubgenres = 'medical' | 'historical' | 'anime' | 'teen' | 'sports' | 'love';
 
@@ -17,7 +18,9 @@ export const fetchTVSeriesByGenre = async (
 	page: number,
 	options?: {
 		lang: Locales,
-		withCountry?: string,
+		country?: Countries,
+		timePeriod?: string,
+		sortBy?: SortOptions,
 	}): Promise<ListsResponse<TVSeriesResponse> | null> => {
 	let genreId = '';
 	if (genre === 'anime') {
@@ -26,13 +29,23 @@ export const fetchTVSeriesByGenre = async (
 		genreId = getGenreIdByName(genre);
 	}
 
+	let firstAirDateGTE = '';
+	let firstAirDateLTE = '';
+	if (options && options.timePeriod) {
+		const timePeriods = options.timePeriod.split('-');
+		firstAirDateGTE = `${timePeriods.at(0)}-01-01`;
+		firstAirDateLTE = `${timePeriods.at(-1)}-12-31`
+	}
+
 	const config: FilterOptions<'tv'> = {
-		sort_by: 'vote_average.desc',
+		sort_by: options?.sortBy ?? 'vote_average.desc',
 		language: options?.lang ?? fallbackLng,
 		with_genres: genreId,
-		'vote_count.gte': 50,
+		'vote_count.gte': 100,
 		'vote_average.gte': 7,
-		with_origin_country: options?.withCountry ?? '',
+		'first_air_date.gte': firstAirDateGTE,
+		'first_air_date.lte': firstAirDateLTE,
+		with_origin_country: getCountryCodeFromName(options?.country ?? ''),
 		with_keywords: isSubgenre(genre) ? getKeywordIdByName(genre) : '',
 		without_keywords: (genre === 'sports' || genre === 'war & politics') ? getKeywordIdByName('anime') : '',
 		without_genres: genre === 'war & politics' ? getGenreIdByName('documentary') : '',

@@ -13,6 +13,8 @@ import MovieCard from '../MovieCard/MovieCard';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
 import { MovieSubgenres } from '@/services/fetchMoviesByGenre/fetchMoviesByGenre';
 import { TVSeriesSubgenres } from '@/services/fetchTVSeriesByGenre/fetchTVSeriesByGenre';
+import { Countries } from '@/helpers/getCountryCodeFromName/getCountryCodeFromName';
+import { CatalogSortOptions } from '../CatalogFilters/CatalogFilters';
 
 const isMovieItem = (
 	item: MovieResponse | TVSeriesResponse,
@@ -46,6 +48,11 @@ type Props<
 	style?: CSSProperties,
 	mediaType: M,
 	initialData: ListsResponse<I>,
+	searchOptions?: {
+		country?: Countries,
+		timePeriod?: string,
+		sortBy?: CatalogSortOptions,
+	}
 } & (
 		{
 			contentType: 'collection',
@@ -68,6 +75,7 @@ export default function InfiniteMovieFeed<
 	testId,
 	style,
 	contentType,
+	searchOptions,
 	...props
 }: Props<M, I>) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
@@ -79,7 +87,16 @@ export default function InfiniteMovieFeed<
 
 	const loadMore = async (page: number) => {
 		const id = contentType === 'collection' ? props.collectionName : props.genreName;
-		const url = `/api/${apiRoutes[mediaType][contentType]}/${id}?page=${page}&lang=${lang}`;
+		const baseURL = `/api/${apiRoutes[mediaType][contentType]}/${id}`;
+		const searchParams = new URLSearchParams();
+		searchParams.set('page', page.toString());
+		searchParams.set('lang', lang);
+		searchParams.set('country', searchOptions?.country ?? '');
+		searchParams.set('timePeriod', searchOptions?.timePeriod ?? '');
+		searchParams.set('sortBy', searchOptions?.sortBy ?? '');
+
+		const url = `${baseURL}?${searchParams.toString()}`;
+
 		const res = await fetch(url);
 		const data = (await res.json()) as ListsResponse<I> | null;
 		if (data?.results) {
