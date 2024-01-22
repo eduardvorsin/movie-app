@@ -11,7 +11,7 @@ export const regionsByLocales = {
 };
 export const runsOnServerSide = typeof window === 'undefined';
 
-export const getOptions = (lng: string = fallbackLng, ns: string | string[] = defaultNS):InitOptions => ({
+export const getOptions = (lng: string = fallbackLng, ns: string | string[] = defaultNS): InitOptions => ({
 	debug: process.env.NODE_ENV === 'development',
 	supportedLngs: locales,
 	preload: runsOnServerSide ? locales : [],
