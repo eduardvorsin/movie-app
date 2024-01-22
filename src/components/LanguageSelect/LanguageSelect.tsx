@@ -57,8 +57,8 @@ export default function LanguageSelect({
 			closeMenuOnScroll
 			openMenuOnFocus
 			onChange={changeHandler}
-			minMenuHeight={84}
-			maxMenuHeight={84}
+			minMenuHeight={68}
+			maxMenuHeight={68}
 		/>
 	);
 }
