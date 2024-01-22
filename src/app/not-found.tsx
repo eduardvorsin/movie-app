@@ -1,15 +1,27 @@
-import { headers } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { fallbackLng, Locales } from "@/i18n/settings";
 import Button from '@/components/Button/Button';
 import Title from '@/components/Title/Title';
 import { fetchTranslation } from '@/i18n/server';
-import { getLocalesFromString } from "@/i18n/utils/getLocalesFromString/getLocalesFromString";
 import { routes } from "src/constants";
 import Container from "@/components/Container/Container";
+import { Metadata } from "next";
+
+export async function generateMetadata(
+	{ params }: { params: { lang: Locales } },
+): Promise<Metadata> {
+	const { t } = await fetchTranslation(params.lang, 'notFoundPage');
+	return {
+		title: t('metaPageName'),
+		description: t('metaPageDescription'),
+	}
+}
 
 export default async function NotFound() {
-	const lang = getLocalesFromString(headers().get('accept-language') ?? fallbackLng)[0] as Locales;
-	const { t } = await fetchTranslation(lang);
+	const langFromCookie = cookies().get('i18next')?.value;
+	const langFromHeaders = headers().get('accept-language')?.slice(0, 2);
+	const currentLang = langFromCookie ?? langFromHeaders ?? fallbackLng;
+	const { t } = await fetchTranslation(currentLang as Locales, 'notFoundPage');
 
 	return (
 		<Container
@@ -25,17 +37,17 @@ export default async function NotFound() {
 					level={1}
 					as='h1'
 				>
-					{t('notFound.title')}
+					{t('mainTitle')}
 				</Title>
 				<p className='text-center text-dark-neutral-400 dark:text-neutral-400 mb-4 sm:mb-5 md:mb-6 lg:mb-8'>
-					{t('notFound.description')}
+					{t('description')}
 				</p>
 				<Button
 					className='w-full justify-center'
 					href={routes.home}
 					size='large'
 				>
-					{t('notFound.linkText')}
+					{t('linkText')}
 				</Button>
 			</div>
 		</Container>

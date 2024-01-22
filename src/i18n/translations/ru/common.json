@@ -48,11 +48,6 @@
 	"personCard": {
 		"rating": "Популярность"
 	},
-	"notFound": {
-		"title": "Страница не найдена",
-		"description": "Попробуйте вернуться сюда позднее",
-		"linkText": "Перейти на главную"
-	},
 	"genderValues": {
 		"0": "Неизвестно",
 		"1": "Женский",
@@ -229,7 +224,7 @@
 			"mexico": "Мексика",
 			"latvia": "Латвия",
 			"netherlands": "Нидерланды",
-			"newzealand": "Новая Зеландия",
+			"new zealand": "Новая Зеландия",
 			"norway": "Норвегия",
 			"poland": "Польша",
 			"russia": "Россия",
@@ -241,8 +236,8 @@
 			"france": "Франция",
 			"switzerland": "Швейцария",
 			"sweden": "Швеция",
-			"southafrica": "Южная Африка",
-			"southkorea": "Южная Корея",
+			"south africa": "Южная Африка",
+			"south korea": "Южная Корея",
 			"japan": "Япония"
 		},
 		"sortBySelect": {

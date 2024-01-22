@@ -29,6 +29,20 @@ import Comment from '@/components/Comment/Comment';
 import Avatar from '@/components/Avatar/Avatar';
 import { nameToInitials } from '@/helpers/nameToInitials/nameToInitials';
 import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
+import { Metadata } from 'next';
+
+export async function generateMetadata(
+	{ params }: { params: { lang: Locales, id: string } },
+): Promise<Metadata> {
+	const movie = await fetchMovie(params.id, { lang: params.lang });
+
+	if (!movie) notFound();
+
+	return {
+		title: movie.title,
+		description: movie.overview,
+	}
+}
 
 const characteristicFields = new Set([
 	'production_countries',

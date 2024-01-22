@@ -15,8 +15,19 @@ import { fetchPopularTVSeries } from '@/services/fetchPopularTVSeries/fetchPopul
 import { fetchPopularTrailers } from '@/services/fetchPopularTrailers/fetchPopularTrailers';
 import { fetchTrendingMovies } from '@/services/fetchTrendingMovies/fetchTrendingMovies';
 import { fetchUpcomingMovies } from '@/services/fetchUpcomingMovies/fetchUpcomingMovies';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { imgPath, routes } from 'src/constants';
+
+export async function generateMetadata(
+  { params }: { params: { lang: Locales } },
+): Promise<Metadata> {
+  const { t } = await fetchTranslation(params.lang, 'homePage');
+  return {
+    title: t('metaPageName'),
+    description: t('metaPageDescription'),
+  }
+}
 
 type Props = {
   params: {

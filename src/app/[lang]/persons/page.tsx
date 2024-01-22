@@ -6,7 +6,18 @@ import Title from '@/components/Title/Title';
 import { fetchTranslation } from '@/i18n/server';
 import { Locales } from '@/i18n/settings';
 import { fetchPopularPersons } from '@/services/fetchPopularPersons/fetchPopularPersons';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+
+export async function generateMetadata(
+	{ params }: { params: { lang: Locales } },
+): Promise<Metadata> {
+	const { t } = await fetchTranslation(params.lang, 'personsPage');
+	return {
+		title: t('metaPageName'),
+		description: t('metaPageDescription'),
+	}
+}
 
 type Props = {
 	params: {

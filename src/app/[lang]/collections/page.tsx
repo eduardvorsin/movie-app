@@ -5,7 +5,18 @@ import ExpandableText from '@/components/ExpandableText/ExpandableText';
 import Title from '@/components/Title/Title';
 import { fetchTranslation } from '@/i18n/server';
 import { Locales } from '@/i18n/settings';
+import { Metadata } from 'next';
 import { collections, navigationRoutes } from 'src/constants';
+
+export async function generateMetadata(
+	{ params }: { params: { lang: Locales } },
+): Promise<Metadata> {
+	const { t } = await fetchTranslation(params.lang, 'collectionsPage');
+	return {
+		title: t('metaPageName'),
+		description: t('metaPageDescription'),
+	}
+}
 
 type Props = {
 	params: {

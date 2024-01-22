@@ -10,6 +10,18 @@ import { fetchTranslation } from '@/i18n/server';
 import { Locales } from '@/i18n/settings';
 import { fetchMoviesByGenre } from '@/services/fetchMoviesByGenre/fetchMoviesByGenre';
 import { MovieGenres } from '@/types/shared';
+import { Metadata } from 'next';
+
+export async function generateMetadata(
+	{ params }: { params: { lang: Locales } },
+): Promise<Metadata> {
+	const { t } = await fetchTranslation(params.lang, 'moviesPage');
+	return {
+		title: t('metaPageName'),
+		description: t('metaPageDescription'),
+	}
+}
+
 
 type Props = {
 	params: {

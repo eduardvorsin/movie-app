@@ -28,6 +28,23 @@ import Avatar from '@/components/Avatar/Avatar';
 import { nameToInitials } from '@/helpers/nameToInitials/nameToInitials';
 import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
 import { fetchTVSeries } from '@/services/fetchTVSeries/fetchTVSeries';
+import { Metadata } from 'next';
+
+export async function generateMetadata(
+	{ params }: { params: { lang: Locales, id: string } },
+): Promise<Metadata> {
+	const tvSeries = await fetchTVSeries(params.id, {
+		lang: params.lang,
+		includeAdditionalData: false,
+	});
+
+	if (!tvSeries) notFound();
+
+	return {
+		title: tvSeries.name,
+		description: tvSeries.overview,
+	}
+}
 
 const characteristicFields = new Set([
 	'production_countries',

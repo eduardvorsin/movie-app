@@ -24,6 +24,20 @@ import PersonCard from '@/components/PersonCard/PersonCard';
 import { FamousPersonProjectsCarousel, PersonCardsCarousel } from '@/components/Carousel/Carousel';
 import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
 import MovieCard from '@/components/MovieCard/MovieCard';
+import { Metadata } from 'next';
+
+export async function generateMetadata(
+	{ params }: { params: { lang: Locales, id: string } },
+): Promise<Metadata> {
+	const person = await fetchPerson(params.id, { lang: params.lang });
+
+	if (!person) notFound();
+
+	return {
+		title: person.name,
+		description: person.biography,
+	}
+}
 
 const characteristicFields = new Set([
 	'known_for_department',
@@ -255,7 +269,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 									}) => (
 										<MovieCard
-											mediaType='movie'
+											mediaType={media_type}
 											variant='vertical'
 											className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
 											movieId={id}

@@ -1,0 +1,7 @@
+{
+	"mainTitle": "Seasons",
+	"metaPageName": "'{{name}}' $t(mainTitle)",
+	"metaPageDescription": "List of seasons of the series '{{name}}'",
+	"seasonAndEpisodesTitle": "Seasons and episodes",
+	"seasonAndEpisodes": "{{season_number}} season {{episode_count}} episodes"
+}

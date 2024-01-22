@@ -9,8 +9,23 @@ import { Locales } from '@/i18n/settings';
 import { fetchMoviesByCollection } from '@/services/fetchMovieByCollection/fetchMovieByCollection';
 import { fetchTVSeriesByCollection } from '@/services/fetchTVSeriesByCollection/fetchTVSeriesByCollection';
 import { PlaceholderData } from '@/types/shared';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Collections } from 'src/constants';
+
+export async function generateMetadata(
+	{ params }: { params: { lang: Locales, id: Collections } },
+): Promise<Metadata> {
+	const { t } = await fetchTranslation(params.lang, ['common', 'collectionDetailsPage']);
+	return {
+		title: t(`metaPageName.${params.id}`, {
+			ns: ['common', 'collectionDetailsPage']
+		}),
+		description: t(`metaPageDescription.${params.id}`, {
+			ns: ['common', 'collectionDetailsPage']
+		}),
+	}
+}
 
 type Props = {
 	params: {
@@ -20,7 +35,7 @@ type Props = {
 };
 
 export default async function Page({ params: { id, lang } }: Props) {
-	const { t } = await fetchTranslation(lang, ['common', 'collectionsPage']);
+	const { t } = await fetchTranslation(lang, ['common', 'collectionDetailsPage']);
 	const movies = await fetchMoviesByCollection(id, 1, { lang });
 	const tvSeries = await fetchTVSeriesByCollection(id, 1, { lang });
 
@@ -69,7 +84,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							level={3}
 							as='h2'
 						>
-							{t('moviesTitle', { ns: 'collectionsPage' })}
+							{t('moviesTitle', { ns: 'collectionDetailsPage' })}
 						</Title>
 
 						<InfiniteMovieFeed
@@ -90,7 +105,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							level={3}
 							as='h2'
 						>
-							{t('tvSeriesTitle', { ns: 'collectionsPage' })}
+							{t('tvSeriesTitle', { ns: 'collectionDetailsPage' })}
 						</Title>
 
 						<InfiniteMovieFeed

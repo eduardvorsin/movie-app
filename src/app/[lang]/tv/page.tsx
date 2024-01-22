@@ -10,7 +10,18 @@ import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate
 import { fetchTVSeriesByGenre } from '@/services/fetchTVSeriesByGenre/fetchTVSeriesByGenre';
 import { fetchTopRatedTVSeries } from '@/services/fetchTopRatedTVSeries/fetchTopRatedTVSeries';
 import { fetchUpcomingTVSeries } from '@/services/fetchUpcomingTVSeries/fetchUpcomingTVSeries';
+import { Metadata } from 'next';
 import { imgPath } from 'src/constants';
+
+export async function generateMetadata(
+	{ params }: { params: { lang: Locales } },
+): Promise<Metadata> {
+	const { t } = await fetchTranslation(params.lang, 'tvSeriesPage');
+	return {
+		title: t('metaPageName'),
+		description: t('metaPageDescription'),
+	}
+}
 
 type Props = {
 	params: {

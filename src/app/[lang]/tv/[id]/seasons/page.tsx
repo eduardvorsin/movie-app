@@ -9,6 +9,24 @@ import { TVSeriesSeasonDetails, fetchSeasonsForTVSeries } from '@/services/fetch
 import { createCharacteristicsArray } from '@/helpers/createCharacteristicsArray/createCharacteristicsArray';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
 import CharacteristicList from '@/components/CharacteristicList/CharacteristicList';
+import { Metadata } from 'next';
+
+export async function generateMetadata(
+	{ params }: { params: { lang: Locales, id: string } },
+): Promise<Metadata> {
+	const { t } = await fetchTranslation(params.lang, 'tvSeriesSeasonsPage');
+	const tvSeries = await fetchTVSeries(params.id, {
+		lang: params.lang,
+		includeAdditionalData: false,
+	});
+
+	if (!tvSeries) notFound();
+
+	return {
+		title: t('metaPageName', { name: tvSeries.name }),
+		description: t('metaPageDescription', { name: tvSeries.name }),
+	}
+}
 
 const characteristicFields = new Set([
 	'last_air_date',
@@ -25,7 +43,7 @@ type Props = {
 }
 
 export default async function Page({ params: { id, lang } }: Props) {
-	const { t } = await fetchTranslation(lang, ['tvSeriesDetailsPage', 'common']);
+	const { t } = await fetchTranslation(lang, ['tvSeriesSeasonsPage', 'common']);
 	const tvSeries = await fetchTVSeries(id, {
 		lang,
 		includeAdditionalData: false,
@@ -72,7 +90,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						as='h1'
 						level={2}
 					>
-						{t('seasonsTitle', { ns: 'tvSeriesSeasonsPage' })} / {name}
+						{t('mainTitle', { ns: 'tvSeriesSeasonsPage' })} / {name}
 					</Title>
 
 					<CharacteristicList

@@ -48,11 +48,6 @@
 	"PersonCard": {
 		"rating": "Popularity"
 	},
-	"notFound": {
-		"title": "Page not found",
-		"description": "Try to come back here later",
-		"linkText": "Go to the main page"
-	},
 	"genderValues": {
 		"0": "Unknown",
 		"1": "Female",
@@ -229,7 +224,7 @@
 			"mexico": "Mexico",
 			"latvia": "Latvia",
 			"netherlands": "Netherlands",
-			"newzealand": "New Zealand",
+			"new zealand": "New Zealand",
 			"norway": "Norway",
 			"poland": "Poland",
 			"russia": "Russia",
@@ -241,8 +236,8 @@
 			"france": "France",
 			"switzerland": "Switzerland",
 			"sweden": "Sweden",
-			"southafrica": "South Africa",
-			"southkorea": "South Korea",
+			"south africa": "South Africa",
+			"south korea": "South Korea",
 			"japan": "Japan"
 		},
 		"sortBySelect": {
