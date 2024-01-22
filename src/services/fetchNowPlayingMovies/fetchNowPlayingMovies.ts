@@ -15,7 +15,6 @@ export const fetchNowPlayingMovies = async (lang?: Locales): Promise<ListsRespon
 		'release_date.lte': endDate,
 		'primary_release_date.gte': startingDate,
 		'primary_release_date.lte': endDate,
-		with_release_type: '2|3',
 		'vote_count.gte': 25,
 	});
 
