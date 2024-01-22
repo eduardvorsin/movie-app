@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 import Search, { Props } from './Search';
 import { ChangeEventHandler, FormEventHandler, useState } from 'react';

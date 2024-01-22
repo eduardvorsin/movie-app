@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Toggle, { Props } from './Toggle';
 import { ChangeEventHandler, useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 import MoonIcon from '../../assets/icons/moon.svg';
 import SunIcon from '../../assets/icons/sun.svg';
