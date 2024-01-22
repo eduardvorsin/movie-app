@@ -2,9 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Locales, fallbackLng, locales } from '@/i18n/settings';
 
 export function middleware(request: NextRequest) {
-	const langFromCookie = request.cookies.get('i18next');
+	const langFromCookie = request.cookies.get('i18next')?.value;
 	const langFromHeaders = request.headers.get('accept-language')?.slice(0, 2);
 	const currentLang = langFromCookie ?? langFromHeaders ?? fallbackLng;
+
 	const { pathname } = request.nextUrl;
 
 	const pathnameIsMissingLocale = locales.every(locale => {
