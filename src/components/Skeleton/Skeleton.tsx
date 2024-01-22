@@ -1,7 +1,6 @@
 type SkeletonImageProps = {
 	width?: number | string;
 	height?: number | string;
-	fill?: boolean,
 	isRounded?: boolean,
 	className?: string,
 	testId?: string,
