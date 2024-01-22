@@ -14,7 +14,7 @@ export const fetchImageWithPlaceholder = async (src: string, isRemote?: boolean)
 			return Buffer.from(await res.arrayBuffer());
 		});
 	} else {
-		buffer = await fs.readFile(path.join(process.cwd(), './public', src));
+		buffer = await fs.readFile(path.join(process.cwd(), '/public', src));
 	}
 
 	const {
