@@ -34,7 +34,7 @@ module.exports = {
 
 	rules: {
     'linebreak-style': [
-      'error',
+      'warn',
       process.platform === 'win32' ? 'windows' : 'unix',
     ],
     'import/extensions': [
