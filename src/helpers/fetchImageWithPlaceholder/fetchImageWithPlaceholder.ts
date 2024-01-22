@@ -1,5 +1,5 @@
 import path from 'node:path';
-import fs from 'node:fs/promises';
+import { promises as fs } from 'fs';
 import { getPlaiceholder } from 'plaiceholder';
 import { PlaceholderData } from '@/types/shared';
 
@@ -14,7 +14,7 @@ export const fetchImageWithPlaceholder = async (src: string, isRemote?: boolean)
 			return Buffer.from(await res.arrayBuffer());
 		});
 	} else {
-		buffer = await fs.readFile(path.join('./public', src));
+		buffer = await fs.readFile(path.join(process.cwd(), './public', src));
 	}
 
 	const {
