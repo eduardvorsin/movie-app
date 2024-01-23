@@ -1,0 +1,27 @@
+import { Meta, IconGallery, IconItem } from '@storybook/blocks';
+import config from '../../../tailwind.config.ts';
+
+<Meta title="Desing System/Iconography" />
+
+export const iconNames = ['404','accept','account','action_adventure','action','adventure','animation','approved','back-arrow','broken-loupe','cancel','comedy','confirmation','connectivity','crime','declined','documentary','drama','error','external-link','facebook','family','fantasy','forward-arrow','history','horror','imdb','info','instagram','kids','locked','loupe','music','mystery','news','politics','question','reality','romance','sci-fi_fantasy','science_fiction','search','series','settings','star','talk','thriller','tiktok','tv','twitter','user','war','warning','western','youtube_default','youtube'];
+
+export const socialIconNames = ['twitter','tiktok','youtube','imdb','facebook','instagram'];
+
+# Iconography
+
+<IconGallery>
+	{iconNames.map((name)=>(
+		<IconItem name={name}>
+    	<svg
+				className={`w-5 h-5 text-neutral-1000 dark:text-dark-neutral-1000 ${socialIconNames.includes(name)?'fill-neutral-300 dark:fill-dark-neutral-300':''}`}
+				viewBox='0 0 32 32'
+			>
+				<use href={`/assets/icons/${name}.svg#${name}`}></use>
+			</svg>
+  	</IconItem>
+	))}
+
+  
+</IconGallery>
+
+

@@ -1,0 +1,55 @@
+import { Meta,Typeset } from '@storybook/blocks';
+import config from '../../../tailwind.config.ts';
+
+<Meta title="Desing System/Typography" />
+
+export const typography = {
+  type: {
+    primary: 'Inter, -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", "Helvetica Neue", sans-serif',
+  },
+  weight: {
+    regular: config.theme.fontWeight.regular,
+    medium: config.theme.fontWeight.medium,
+    semibold: config.theme.fontWeight.semibold,
+    bold: config.theme.fontWeight.bold,
+  },
+  size: {
+    s1: parseFloat(config.theme.fontSize['0']),
+    s2: parseFloat(config.theme.fontSize['75']),
+    s3: parseFloat(config.theme.fontSize['100']),
+    m1: parseFloat(config.theme.fontSize['200']),
+    m2: parseFloat(config.theme.fontSize['300']),
+    m3: parseFloat(config.theme.fontSize['400']),
+    l1: parseFloat(config.theme.fontSize['500']),
+    l2: parseFloat(config.theme.fontSize['600']),
+    l3: parseFloat(config.theme.fontSize['700']),
+  },
+};
+
+export const SampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+
+# Typography
+
+**Font:** Inter
+
+**Weights:** 400(regular), 500(medium), 600(semibold), 700(bold)
+
+<Typeset
+fontSizes={[
+    Number(typography.size.s1) * 16,
+    Number(typography.size.s2) * 16,
+    Number(typography.size.s3) * 16,
+    Number(typography.size.m1) * 16,
+    Number(typography.size.m2) * 16,
+    Number(typography.size.m3) * 16,
+    Number(typography.size.l1) * 16,
+    Number(typography.size.l2) * 16,
+    Number(typography.size.l3) * 16,
+  ]}
+  fontWeight={typography.weight.medium}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+
+
+
