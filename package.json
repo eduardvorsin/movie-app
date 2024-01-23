@@ -13,7 +13,7 @@
     "build:tailwind": "tailwindcss -i ./src/app/globals.css -o ./src/styles/tailwind.css",
     "watch:storybook": "storybook dev -p 6006",
     "test-storybook": "test-storybook",
-    "build-storybook": "npm build:tailwind && storybook build"
+    "build-storybook": "npm run build:tailwind && storybook build"
   },
   "dependencies": {
     "@plaiceholder/next": "^3.0.0",
