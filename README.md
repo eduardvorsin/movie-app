@@ -1,5 +1,6 @@
 # 🎥 Кино портал
 [Cсылка на демо](https://movie-app-eosin-gamma.vercel.app/)
+[Cсылка на storybook](https://65af701b4d0186f164c25ab4-kgcmtxwoga.chromatic.com/)
 
 ![Главная страница 1](./docs/assets/images/movie-app1.png)
 
