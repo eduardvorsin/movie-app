@@ -27,6 +27,8 @@ i18next
 		preload: runsOnServerSide ? locales : [],
 	});
 
+export default i18next;
+
 export const useTranslation = (lng: Locales, ns?: string | string[]) => {
 	const translator = useTranslationOrg(ns ?? defaultNS);
 	const { i18n } = translator;
