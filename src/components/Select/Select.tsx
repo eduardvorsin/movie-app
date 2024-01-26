@@ -234,7 +234,7 @@ export default function Select({
 			{...props}
 		>
 			<label
-				id={`${uniqueId}label`}
+				id={`${uniqueId}-label`}
 				className={labelClasses}
 			>
 				{label}
@@ -261,10 +261,10 @@ export default function Select({
 					onKeyDown={buttonKeyDownHandler}
 					role='combobox'
 					aria-expanded={isOpen}
-					aria-labelledby={`${uniqueId}label`}
-					aria-controls={`${uniqueId}listbox`}
+					aria-labelledby={`${uniqueId}-label`}
+					aria-controls={`${uniqueId}-listbox`}
 					aria-haspopup='listbox'
-					aria-activedescendant={focusedOption ? `${uniqueId}list-option-${focusedOption?.label}` : undefined}
+					aria-activedescendant={focusedOption ? `${uniqueId}-list-option-${focusedOption?.label}` : undefined}
 					aria-invalid={isInvalid}
 				>
 					{optionIndex === -1 ? placeholder : options[optionIndex].label}
@@ -273,8 +273,8 @@ export default function Select({
 				<ul
 					className={selectListClasses}
 					role='listbox'
-					id={`${uniqueId}listbox`}
-					aria-labelledby={`${uniqueId}label`}
+					id={`${uniqueId}-listbox`}
+					aria-labelledby={`${uniqueId}-label`}
 					ref={listRef}
 					onMouseMove={listMouseMoveHandler}
 					style={{
@@ -285,7 +285,7 @@ export default function Select({
 					{options.map((option) => (
 						<SelectOption
 							key={option.label}
-							id={`${uniqueId}list-option-${option.label}`}
+							id={`${uniqueId}-list-option-${option.label}`}
 							onKeyDown={optionKeyDownHandler}
 							onClick={optionClickHandler}
 							value={option.value}
