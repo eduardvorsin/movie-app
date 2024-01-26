@@ -85,7 +85,7 @@ export default function Comment({
 						{author}
 					</CommentInfoItem>
 					<span
-						className='px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate'
+						className='px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150'
 					>
 						{type}
 					</span>
@@ -108,14 +108,14 @@ export default function Comment({
 					}
 					{isEdited && (
 						<span
-							className='text-neutral-700 dark:text-dark-neutral-700  font-regular text-100'
+							className='text-neutral-700 dark:text-dark-neutral-700  font-regular text-100 transition-colors duration-150'
 						>
 							Edited
 						</span>
 					)}
 					{restrictedTo && (
 						<span
-							className=' text-100 font-medium inline-flex items-center text-neutral-700 dark:text-dark-neutral-700'
+							className=' text-100 font-medium inline-flex items-center text-neutral-700 dark:text-dark-neutral-700 transition-colors duration-150'
 						>
 							<svg className='w-4 h-4 mr-1 fill-current' viewBox='0 0 20 20'>
 								<use href={'/assets/icons/locked.svg#locked'}></use>
@@ -131,14 +131,14 @@ export default function Comment({
 					rating && (
 						<span className='flex items-end mb-1'>
 							<svg
-								className='w-4 h-4 text-neutral-700 dark:text-dark-neutral-700 mr-2'
+								className='w-4 h-4 text-neutral-700 dark:text-dark-neutral-700 mr-2 transition-colors duration-150'
 								viewBox='0 0 20 20'
 							>
 								<use href={'/assets/icons/star.svg#star'}></use>
 							</svg>
 
 							<span
-								className='text-neutral-800 dark:text-dark-neutral-800 font-bold leading-none'
+								className='text-neutral-800 dark:text-dark-neutral-800 font-bold leading-none transition-colors duration-150'
 								aria-label='rating'
 							>
 								{rating}
@@ -149,7 +149,7 @@ export default function Comment({
 
 				<ExpandableText
 					visibleRowsCount={6}
-					className='break-all text-neutral-1000 dark:text-dark-neutral-900'
+					className='break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150'
 				>
 					{content}
 				</ExpandableText>
@@ -204,7 +204,7 @@ export default function Comment({
 			{
 				highlighted && (
 					<div
-						className='absolute -top-2 -left-2 w-[calc(100%+16px)] h-[calc(100%+16px)] bg-neutral-100 dark:bg-dark-neutral-200 -z-100 pointer-events-none col-span-full row-start-1 row-end-3 xs:row-end-1'
+						className='absolute -top-2 -left-2 w-[calc(100%+16px)] h-[calc(100%+16px)] bg-neutral-100 dark:bg-dark-neutral-200 -z-100 pointer-events-none col-span-full row-start-1 row-end-3 xs:row-end-1 transition-colors duration-150'
 						data-testid={testId ? 'highlighting' : undefined}
 						aria-hidden
 					/>

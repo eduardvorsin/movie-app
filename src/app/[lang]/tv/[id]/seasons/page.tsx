@@ -126,7 +126,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									vote_average,
 								}, index) => (
 									<li
-										className='pb-4 last:pb-0 pt-4 first:pt-0 text-neutral-1000 dark:text-dark-neutral-900 border-b-1 border-neutral-300 dark:border-dark-neutral-350 last:border-none'
+										className='pb-4 last:pb-0 pt-4 first:pt-0 text-neutral-1000 dark:text-dark-neutral-900 border-b-1 border-neutral-300 dark:border-dark-neutral-350 last:border-none transition-[border-color] duration-150'
 										key={id}
 									>
 										<div>
@@ -136,7 +136,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 											>
 												{index < 9 ? `0${index + 1}` : index + 1}. {name}
 
-												<p className='mt-1 flex flex-wrap gap-y-2 text-200'>
+												<p className='mt-1 flex flex-wrap gap-y-2 text-200 transition-colors'>
 													<span
 														className='flex items-center font-medium after:content-["/"] after:font-regular after:ml-2 after:mr-2 last:after:hidden'
 														aria-label={t('ratingLabel')}

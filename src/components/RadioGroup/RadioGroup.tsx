@@ -47,7 +47,7 @@ export default function RadioGroup({
 		className,
 	].join(' ');
 	const titleClasses = [
-		'mb-2 text-dark-neutral-0 dark:text-neutral-0',
+		'mb-2 text-dark-neutral-0 dark:text-neutral-0 transition-colors duration-150',
 		titleHidden ? 'sr-only' : '',
 	].join(' ');
 
@@ -65,7 +65,7 @@ export default function RadioGroup({
 				{title}
 				{isRequired && (
 					<span
-						className='pl-0.5 text-red-800 dark:text-red-300'
+						className='pl-0.5 text-red-800 dark:text-red-300 transition-colors duration-150'
 						aria-hidden='true'
 					>
 						*

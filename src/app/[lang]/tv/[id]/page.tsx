@@ -175,7 +175,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 			>
 				{backdrop_path && (
 					<ThemedImage
-						className='aspect-[5/4] xs:aspect-video sm:w-full sm:h-full absolute top-0 left-0 -z-100 opacity-[0.25] dark:brightness-[0.25] dark:opacity-100 object-cover object-top'
+						className='aspect-[5/4] xs:aspect-video sm:w-full sm:h-full absolute top-0 left-0 -z-100 opacity-[0.25] dark:brightness-[0.25] dark:opacity-100 object-cover object-top transition-[filter,opacity] duration-150'
 						src={backgroundData?.img.src ?? ''}
 						placeholder={backdrop_path ? 'blur' : 'empty'}
 						blurDataURL={backgroundData?.base64}
@@ -195,7 +195,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 					/>
 
 					<ThemedImage
-						className='mb-8 sm:mb-0 justify-self-center  overflow-hidden sm:justify-self-start object-cover rounded-2 max-w-[14.375rem] sm:max-w-full bg-neutral-300 dark:bg-dark-neutral-300 border-1 border-neutral-300 dark:border-dark-neutral-300'
+						className='mb-8 sm:mb-0 justify-self-center  overflow-hidden sm:justify-self-start object-cover rounded-2 max-w-[14.375rem] sm:max-w-full bg-neutral-300 dark:bg-dark-neutral-300 border-1 border-neutral-300 dark:border-dark-neutral-300 transition-colors duration-150'
 						width={300}
 						height={450}
 						alt={`${name} poster`}
@@ -225,14 +225,14 @@ export default async function Page({ params: { id, lang } }: Props) {
 									{name}
 								</Link>
 								<span
-									className='text-neutral-900 dark:text-dark-neutral-800'
+									className='text-neutral-900 dark:text-dark-neutral-800 transition-colors duration-150'
 								>
 									{releaseYear && releaseYear.length > 0 && (`(${releaseYear})`)}
 								</span>
 							</Title>
 
 							<ul
-								className='flex flex-wrap gap-y-1 text-neutral-900 dark:text-dark-neutral-900'
+								className='flex flex-wrap gap-y-1 text-neutral-900 dark:text-dark-neutral-900 transition-colors duration-150'
 							>
 								{first_air_date && first_air_date.length > 0 && (
 									<li
@@ -240,7 +240,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									>
 										{contentRating && (
 											<span
-												className='text-75 leading-none font-bold p-1 mr-2 uppercase border-1 border-neutral-900 dark:border-dark-neutral-800 text-neutral-900 dark:text-dark-neutral-800'
+												className='text-75 leading-none font-bold p-1 mr-2 uppercase border-1 border-neutral-900 dark:border-dark-neutral-800 text-neutral-900 dark:text-dark-neutral-800 transition-colors duration-150'
 											>
 												{contentRating.rating}
 											</span>
@@ -266,7 +266,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						<div className='flex flex-wrap'>
 							<div className='mr-4 mb-3 md:mb-4 lg:mb-5'>
 								<span
-									className='text-neutral-1000 dark:text-dark-neutral-900 font-medium mr-2'
+									className='text-neutral-1000 dark:text-dark-neutral-900 font-medium mr-2 transition-colors duration-150'
 								>
 									{t('ratingLabel')}
 								</span>
@@ -286,7 +286,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						<div>
 							{tagline && (
 								<p
-									className='text-neutral-900 dark:text-dark-neutral-700 italic mb-[0.625rem]'
+									className='text-neutral-900 dark:text-dark-neutral-700 italic mb-[0.625rem] transition-colors duration-150'
 								>
 									{tagline}
 								</p>
@@ -315,7 +315,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							</Title>
 
 							<ul
-								className='text-neutral-1000 dark:text-dark-neutral-900'
+								className='text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150'
 							>
 								{authors.slice(0, 4).map(({ jobs, name, id }) => (
 									<li
@@ -519,7 +519,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							vote_average,
 						}) => (
 							<li
-								className='flex flex-col xs:flex-row gap-6 md:gap-8 pb-4 last:pb-0 pt-4 first:pt-0 border-b-1 border-neutral-300 dark:border-dark-neutral-350 last:border-none'
+								className='flex flex-col xs:flex-row gap-6 md:gap-8 pb-4 last:pb-0 pt-4 first:pt-0 border-b-1 border-neutral-300 dark:border-dark-neutral-350 last:border-none transition-[border-color] duration-150'
 								key={id}
 							>
 								<ThemedImage

@@ -82,7 +82,7 @@ export default function Popup({
 	].join(' ');
 
 	const popupClasses = [
-		'w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350',
+		'w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150',
 		placementVariants[placement],
 	].join(' ');
 

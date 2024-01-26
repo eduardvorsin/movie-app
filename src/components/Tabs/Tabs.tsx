@@ -67,7 +67,7 @@ export default function Tabs({
 	}
 
 	const classes = [
-		'w-full bg-neutral-100 dark:bg-dark-neutral-200 rounded-[0.1875rem] border-2 border-neutral-300 dark:border-dark-neutral-350',
+		'w-full bg-neutral-100 dark:bg-dark-neutral-200 rounded-[0.1875rem] border-2 border-neutral-300 dark:border-dark-neutral-350 transition-colors duration-150',
 		className,
 	].join(' ');
 
@@ -101,7 +101,7 @@ export default function Tabs({
 			{...props}
 		>
 			<div
-				className={`${isScrollable ? 'relative after:w-16 after:h-full after:absolute after:top-0 after:right-0 after:bg-gradient-to-r after:from-transparent after:to-neutral-200 dark:after:to-dark-neutral-100 after:pointer-events-none' : ''}`}
+				className={`transition-colors duration-150 ${isScrollable ? 'relative after:w-16 after:h-full after:absolute after:top-0 after:right-0 after:bg-gradient-to-r after:from-transparent after:to-neutral-200 dark:after:to-dark-neutral-100 after:pointer-events-none' : ''}`}
 			>
 				<div
 					role='tablist'
@@ -127,7 +127,7 @@ export default function Tabs({
 			</div>
 
 			<div
-				className='flex min-h-[4rem] text-neutral-1000 dark:text-dark-neutral-900 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350'
+				className='flex min-h-[4rem] text-neutral-1000 dark:text-dark-neutral-900 rounded-b-[0.1875rem] border-t-2 border-neutral-300 dark:border-dark-neutral-350 transition-colors duration-150'
 				id={`${id}-tabpanel-${selectedTabIndex}`}
 				role='tabpanel'
 				aria-labelledby={`${id}-tab-${selectedTabIndex}`}

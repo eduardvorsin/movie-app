@@ -36,7 +36,7 @@ export default function RootLayout({
       className={`${inter.variable} h-full pr-[var(--scrollbar-width)]`}
       suppressHydrationWarning
     >
-      <body className='bg-neutral-200 dark:bg-dark-neutral-100 h-full flex flex-col'>
+      <body className='bg-neutral-200 dark:bg-dark-neutral-100 h-full flex flex-col transition-colors duration-150'>
         <ThemeProvider>
           <Header />
           {children}

@@ -92,9 +92,9 @@ export default function MovieCard({
 	].join(' ');
 
 	const contentClasses = [
-		'absolute left-0 w-full flex flex-col p-2 bg-gradient-to-t z-100',
+		'absolute left-0 w-full flex flex-col p-2 bg-gradient-to-t z-100 transition-colors duration-150',
 		appearance === 'secondary' ? 'sr-only' : '',
-		variant === 'horizontal' ? 'bottom-0 from-neutral-100/95 to-neutral-100/50 dark:from-dark-neutral-100/95 dark:to-dark-neutral-100/40' : 'invisible opacity-0 fine-pointer:group-hover:visible fine-pointer:group-hover:opacity-100 top-0 pt-[3.125rem] justify-end h-full bg-neutral-100/80 dark:bg-dark-neutral-100/80 transition-[visibility,opacity] duration-150'
+		variant === 'horizontal' ? 'bottom-0 from-neutral-100/95 to-neutral-100/50 dark:from-dark-neutral-100/95 dark:to-dark-neutral-100/40' : 'invisible opacity-0 fine-pointer:group-hover:visible fine-pointer:group-hover:opacity-100 top-0 pt-[3.125rem] justify-end h-full bg-neutral-100/80 dark:bg-dark-neutral-100/80 transition-[visibility,opacity]'
 	].join(' ');
 
 	const titleClasses = [
@@ -103,11 +103,11 @@ export default function MovieCard({
 	].join(' ');
 
 	const imageClasses = [
-		'h-full overflow-hidden bg-neutral-200 dark:bg-dark-neutral-300 object-cover rounded-3',
+		'h-full overflow-hidden bg-neutral-200 dark:bg-dark-neutral-300 object-cover rounded-3 transition-colors duration-150',
 	].join(' ');
 
 	const ratingClasses = [
-		'absolute z-200 top-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center rounded-1 border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold'
+		'absolute z-200 top-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center rounded-1 border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold transition-colors duration-150 transition-colors duration-150'
 	].join(' ');
 
 	const CardTitle = (
@@ -133,11 +133,11 @@ export default function MovieCard({
 			{details.map((detail) => (
 				<p
 					key={detail.name}
-					className={`text-100 leading-[1.25] text-neutral-1000 dark:text-dark-neutral-1000 font-medium break-words ${variant === 'vertical' ? 'line-clamp-2 mb-1 last:mb-0' : 'truncate'}`}
+					className={`text-100 leading-[1.25] text-neutral-1000 dark:text-dark-neutral-1000 font-medium break-words transition-colors duration-150 ${variant === 'vertical' ? 'line-clamp-2 mb-1 last:mb-0' : 'truncate'}`}
 				>
 					{t(`movieCard.${detail.name}`)}:
 					<span
-						className={'ml-1 text-neutral-900 dark:text-dark-neutral-900 font-regular'}
+						className={'ml-1 text-neutral-900 dark:text-dark-neutral-900 font-regular transition-colors duration-150'}
 					>
 						{detail.value}
 					</span>

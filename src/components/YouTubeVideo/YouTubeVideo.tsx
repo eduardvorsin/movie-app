@@ -70,7 +70,7 @@ export default function YouTubeVideo({
 
 	return (
 		<div
-			className={`relative dark:bg-dark-neutral-250 bg-neutral-300 ${className}`}
+			className={`relative dark:bg-dark-neutral-250 bg-neutral-300 transition-colors duration-150 ${className}`}
 			data-testid={testId}
 			{...props}
 		>

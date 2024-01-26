@@ -216,7 +216,7 @@ export default function Select({
 	].join(' ');
 
 	const selectListClasses = [
-		'w-full absolute z-300 mt-2 rounded-1 border-2 border-neutral-300 dark:border-dark-neutral-350 shadow-md bg-neutral-0 dark:bg-dark-neutral-250 overflow-y-auto',
+		'w-full absolute z-300 mt-2 rounded-1 border-2 border-neutral-300 dark:border-dark-neutral-350 shadow-md bg-neutral-0 dark:bg-dark-neutral-250 overflow-y-auto transition-colors duration-150',
 		isOpen ? 'block' : 'hidden',
 	].join(' ');
 
@@ -240,7 +240,7 @@ export default function Select({
 				{label}
 				{isRequired && (
 					<span
-						className='pl-0.5 text-red-800 dark:text-red-300'
+						className='pl-0.5 text-red-800 dark:text-red-300 transition-colors duration-150'
 						aria-hidden='true'
 					>
 						*

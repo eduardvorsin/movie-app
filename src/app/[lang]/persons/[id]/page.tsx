@@ -123,12 +123,12 @@ export default async function Page({ params: { id, lang } }: Props) {
 					lastItemLabel={name}
 				/>
 
-				<div className='bg-neutral-0 dark:bg-dark-neutral-250 px-4 py-4 sm:py-6 md:py-8 lg:py-10 min-h-[calc(100vh-80px)] h-full grid grid-cols-[1fr] md:grid-cols-[16.875rem_1fr] lg:grid-cols-[21.375rem_1fr] gap-x-0 md:gap-x-6 lg:gap-x-12 gap-y-5 md:gap-y-6 lg:gap-y-8'>
+				<div className='bg-neutral-0 dark:bg-dark-neutral-250 px-4 py-4 sm:py-6 md:py-8 lg:py-10 min-h-[calc(100vh-80px)] h-full grid grid-cols-[1fr] md:grid-cols-[16.875rem_1fr] lg:grid-cols-[21.375rem_1fr] gap-x-0 md:gap-x-6 lg:gap-x-12 gap-y-5 md:gap-y-6 lg:gap-y-8 transition-colors duration-150'>
 					<div
 						className='self-center md:self-start flex flex-col'
 					>
 						<ThemedImage
-							className='self-center object-cover rounded-2 max-w-[14.375rem] mb-6 sm:mb-8 bg-neutral-300 dark:bg-dark-neutral-350 sm:max-w-[15.625rem] md:max-w-[16.875rem] lg:max-w-[21.375rem] border-1 border-neutral-300 dark:border-dark-neutral-300'
+							className='self-center object-cover rounded-2 max-w-[14.375rem] mb-6 sm:mb-8 bg-neutral-300 dark:bg-dark-neutral-350 sm:max-w-[15.625rem] md:max-w-[16.875rem] lg:max-w-[21.375rem] border-1 border-neutral-300 dark:border-dark-neutral-300 transition-colors duration-150'
 							width={342}
 							height={513}
 							alt={name}
@@ -153,7 +153,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							</Title>
 							{homepage && (
 								<p className='flex items-center flex-wrap mb-3'>
-									<span className='text-dark-neutral-250 dark:text-neutral-300 mr-2'>
+									<span className='text-dark-neutral-250 dark:text-neutral-300 mr-2 transition-colors duration-150'>
 										{t('personalWebsite', { ns: 'personDetailsPage' })}
 									</span>
 									<Link
@@ -322,12 +322,12 @@ export default async function Page({ params: { id, lang } }: Props) {
 												title
 											}, index) => (
 												<li
-													className='border-neutral-300 dark:border-dark-neutral-350 border-b-2 last:border-b-[0px]'
+													className='border-neutral-300 dark:border-dark-neutral-350 border-b-2 last:border-b-[0px] transition-[border-color] duration-150'
 													key={`${id}-${index}`}
 												>
 													<NextLink
 														className='flex px-2 py-3 justify-between items-center
-														hover:bg-neutral-200 active:bg-neutral-300 dark:hover:bg-dark-neutral-250 dark:active:bg-dark-neutral-300 transition-colors duration-150'
+														hover:bg-neutral-200 active:bg-neutral-300 dark:hover:bg-dark-neutral-250 dark:active:bg-dark-neutral-300 transition-[background-color] duration-150'
 														href={media_type === 'tv' ? `${routes.tv}${id}` : `${routes.movies}${id}`}
 													>
 														<div>
@@ -347,10 +347,10 @@ export default async function Page({ params: { id, lang } }: Props) {
 															)}
 														</div>
 														<p className='flex flex-col flex-shrink-0 flex-grow-0 basis-16 text-center leading-none'>
-															<span className='text-200 font-bold text-blue-700 dark:text-blue-400'>
+															<span className='text-200 font-bold text-blue-700 dark:text-blue-400 transition-colors duration-150'>
 																{vote_average}
 															</span>
-															<span className='text-100 mt-1 text-neutral-900 dark:text-dark-neutral-800'>
+															<span className='text-100 mt-1 text-neutral-900 dark:text-dark-neutral-800 transition-colors duration-150'>
 																{vote_count}
 															</span>
 														</p>

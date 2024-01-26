@@ -115,13 +115,13 @@ export default async function Home({ params: { lang } }: Props) {
               genres,
             }, index) => (
               <Link
-                className='flex items-end relative w-full h-[320px] sm:h-[360px] md:h-[432px] lg:h-[576px] xl:h-[720px] after:w-full after:h-[80%] md:after:h-[60%] after:pointer-events-none after:absolute after:bottom-0 after:left-0 after:bg-gradient-to-b after:from-neutral-300/0 after:to-neutral-300/80 dark:after:from-dark-neutral-200/0 dark:after:to-dark-neutral-200/80'
+                className='flex items-end relative w-full h-[320px] sm:h-[360px] md:h-[432px] lg:h-[576px] xl:h-[720px] after:w-full after:h-[80%] md:after:h-[60%] after:pointer-events-none after:absolute after:bottom-0 after:left-0 after:bg-gradient-to-b after:from-neutral-300/0 after:to-neutral-300/80 dark:after:from-dark-neutral-200/0 dark:after:to-dark-neutral-200/80 transition-colors duration-150'
                 key={id}
                 href={`${routes.movies}${id}`}
                 title={title}
               >
                 <ThemedImage
-                  className='object-cover object-top z-0 bg-neutral-200 dark:bg-dark-neutral-250'
+                  className='object-cover object-top z-0 bg-neutral-200 dark:bg-dark-neutral-250 transition-colors duration-150'
                   fill
                   alt={title}
                   priority={index < 1}
@@ -132,7 +132,7 @@ export default async function Home({ params: { lang } }: Props) {
                 />
 
                 <div className='relative z-100 p-4 sm:p-6 md:p-8 max-w-[620px]'>
-                  <p className='flex flex-wrap xs:flex-nowrap gap-2 xs:gap-0 md:gap-x-0 leading-[1.25] text-neutral-1100 dark:text-dark-neutral-1100 font-medium mb-1'>
+                  <p className='flex flex-wrap xs:flex-nowrap gap-2 xs:gap-0 md:gap-x-0 leading-[1.25] text-neutral-1100 dark:text-dark-neutral-1100 font-medium mb-1 transition-colors duration-150'>
                     <span
                       className='flex items-center after:hidden xs:after:inline-block after:content-["/"] after:ml-2 after:mr-2'
                       aria-label={t('ratingLabel')}
@@ -160,7 +160,7 @@ export default async function Home({ params: { lang } }: Props) {
                   </Title>
 
                   {overview.length > 0 && (
-                    <p className='text-100 xs:text-200 md:text-[1.125rem] line-clamp-3 dark:text-dark-neutral-1000 text-neutral-1000'>
+                    <p className='text-100 xs:text-200 md:text-[1.125rem] line-clamp-3 dark:text-dark-neutral-1000 text-neutral-1000 transition-colors duration-150'>
                       {overview}
                     </p>
                   )}
@@ -267,7 +267,7 @@ export default async function Home({ params: { lang } }: Props) {
                   loading='lazy'
                   element='li'
                 >
-                  <p className='shrink-0 text-center text-neutral-900 dark:text-dark-neutral-800 leading-[1.25] max-w-[45px] flex flex-col overflow-hidden'>
+                  <p className='shrink-0 text-center text-neutral-900 dark:text-dark-neutral-800 leading-[1.25] max-w-[45px] flex flex-col overflow-hidden transition-colors duration-150'>
                     <span className='font-bold text-300 lg:text-400 truncate'>
                       {getLocalizedDate(release_date, lang, {
                         day: '2-digit',
@@ -381,7 +381,7 @@ export default async function Home({ params: { lang } }: Props) {
                   element='li'
                   loading='lazy'
                 >
-                  <p className='shrink-0 text-center text-neutral-900 dark:text-dark-neutral-800 leading-[1.25] max-w-[75px] lg:max-w-[90px] flex flex-col overflow-hidden'>
+                  <p className='shrink-0 text-center text-neutral-900 dark:text-dark-neutral-800 leading-[1.25] max-w-[75px] lg:max-w-[90px] flex flex-col overflow-hidden transition-colors duration-150'>
                     <span className='font-bold text-300 lg:text-400 truncate'>
                       {(revenue / 10 ** 6).toLocaleString(lang, {
                         maximumFractionDigits: 1,

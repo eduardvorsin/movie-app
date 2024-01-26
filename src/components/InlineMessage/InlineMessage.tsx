@@ -17,27 +17,27 @@ const appearanceTypes = {
 
 const apperanceIcons = {
 	connectivity: (
-		<svg className='fill-current' viewBox='0 0 20 20'>
+		<svg className='fill-current transition-colors duration-150' viewBox='0 0 20 20'>
 			<use href={'/assets/icons/connectivity.svg#connectivity'}></use>
 		</svg>
 	),
 	confirmation: (
-		<svg className='fill-current' viewBox='0 0 20 20'>
+		<svg className='fill-current transition-colors duration-150' viewBox='0 0 20 20'>
 			<use href={'/assets/icons/confirmation.svg#confirmation'}></use>
 		</svg>
 	),
 	info: (
-		<svg className='fill-current' viewBox='0 0 20 20'>
+		<svg className='fill-current transition-colors duration-150' viewBox='0 0 20 20'>
 			<use href={'/assets/icons/info.svg#info'}></use>
 		</svg>
 	),
 	warning: (
-		<svg className='fill-current' viewBox='0 0 20 20'>
+		<svg className='fill-current transition-colors duration-150' viewBox='0 0 20 20'>
 			<use href={'/assets/icons/warning.svg#warning'}></use>
 		</svg>
 	),
 	error: (
-		<svg className='fill-current' viewBox='0 0 20 20'>
+		<svg className='fill-current transition-colors duration-150' viewBox='0 0 20 20'>
 			<use href={'/assets/icons/error.svg#error'}></use>
 		</svg>
 	),
@@ -53,13 +53,13 @@ export default function InlineMessage({
 	...props
 }: Props) {
 	const classes = [
-		'flex items-center text-75',
+		'flex items-center text-75 transition-colors duration-150',
 		appearanceTypes[appearance],
 		className,
 	].join(' ');
 
 	const Icon: JSX.Element = (
-		<span className='mr-1 w-6 h-6' aria-hidden>{apperanceIcons[appearance]}</span>
+		<span className='mr-1 w-6 h-6 transition-colors duration-150' aria-hidden>{apperanceIcons[appearance]}</span>
 	);
 
 	const children: JSX.Element = (

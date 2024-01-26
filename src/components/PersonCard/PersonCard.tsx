@@ -51,17 +51,17 @@ export default function PersonCard({
 	].join(' ');
 
 	const imageClasses = [
-		'h-full overflow-hidden bg-neutral-300 dark:bg-dark-neutral-250',
+		'h-full overflow-hidden bg-neutral-300 dark:bg-dark-neutral-250 transition-colors duration-150',
 		appearance === 'primary' ? 'rounded-[50%] ' : '',
 	].join(' ');
 
 	const ratingClasses = [
-		'z-200 absolute bottom-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold',
+		'z-200 absolute bottom-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold transition-colors duration-150',
 		appearance === 'primary' ? 'rounded-[50%]' : '',
 	].join(' ');
 
 	const contentClasses = [
-		'break-word text-100 text-neutral-900 dark:text-dark-neutral-800',
+		'break-word text-100 text-neutral-900 dark:text-dark-neutral-800 transition-colors duration-150',
 		appearance === 'primary' ? 'truncate' : 'line-clamp-2'
 	].join(' ');
 
@@ -100,7 +100,7 @@ export default function PersonCard({
 
 			{title && (
 				<Title
-					className='mb-1 line-clamp-2 text-neutral-1000 dark:text-dark-neutral-900 group-hover/card:text-neutral-800 group-active/card:text-neutral-700 dark:group-hover/card:text-dark-neutral-700 dark:group-active/card:text-dark-neutral-600 transition-colors duration-150'
+					className='mb-1 line-clamp-2 text-neutral-1000 dark:text-dark-neutral-900 group-hover/card:text-neutral-800 group-active/card:text-neutral-700 dark:group-hover/card:text-dark-neutral-700 dark:group-active/card:text-dark-neutral-600'
 					as={titleElement}
 					level={titleLevel}
 				>

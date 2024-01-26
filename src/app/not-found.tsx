@@ -29,7 +29,7 @@ export default async function NotFound() {
 			className='mt-[5rem] mb-[1.25rem] h-[calc(100%-100px)] min-h-[25.625rem] flex items-center justify-center'
 		>
 			<div className='max-w-[28.25rem] flex flex-col items-center'>
-				<svg className='w-[9.375rem] h-[9.375rem] mb-2 sm:mb-4 md:mb-6 lg:mb10 shrink-0 fill-dark-neutral-300 dark:fill-neutral-300 lg:w-[12.5rem] lg:h-[12.5rem]' viewBox='0 0 32 32'>
+				<svg className='w-[9.375rem] h-[9.375rem] mb-2 sm:mb-4 md:mb-6 lg:mb10 shrink-0 fill-dark-neutral-300 dark:fill-neutral-300 lg:w-[12.5rem] lg:h-[12.5rem] transition-colors duration-150' viewBox='0 0 32 32'>
 					<use href={'/assets/icons/404.svg#404'}></use>
 				</svg>
 				<Title
@@ -39,7 +39,7 @@ export default async function NotFound() {
 				>
 					{t('mainTitle')}
 				</Title>
-				<p className='text-center text-dark-neutral-400 dark:text-neutral-400 mb-4 sm:mb-5 md:mb-6 lg:mb-8'>
+				<p className='text-center text-dark-neutral-400 dark:text-neutral-400 mb-4 sm:mb-5 md:mb-6 lg:mb-8 transition-colors duration-150'>
 					{t('description')}
 				</p>
 				<Button

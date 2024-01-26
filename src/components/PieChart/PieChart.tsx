@@ -69,7 +69,7 @@ export default function PieChart({
 
 	const chartClasses = [
 		className,
-		'bg-neutral-0 dark:bg-dark-neutral-200 w-[--width] h-[--height] inline-flex items-center justify-center rounded-[50%] relative font-medium dark:text-dark-neutral-900'
+		'bg-neutral-0 dark:bg-dark-neutral-200 w-[--width] h-[--height] inline-flex items-center justify-center rounded-[50%] relative font-medium dark:text-dark-neutral-900 transition-colors duration-150'
 	].join(' ');
 
 	return (

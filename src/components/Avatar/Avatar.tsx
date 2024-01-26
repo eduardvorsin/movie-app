@@ -18,17 +18,17 @@ export type Props = {
 
 const statusIcons = {
 	approved: (
-		<svg className='fill-green-400 dark:fill-green-300' viewBox='0 0 20 20'>
+		<svg className='fill-green-400 dark:fill-green-300 transition-colors duration-150' viewBox='0 0 20 20'>
 			<use href={'/assets/icons/approved.svg#approved'}></use>
 		</svg>
 	),
 	declined: (
-		<svg className='fill-red-400 dark:fill-red-500' viewBox='0 0 20 20'>
+		<svg className='fill-red-400 dark:fill-red-500 transition-colors duration-150' viewBox='0 0 20 20'>
 			<use href={'/assets/icons/declined.svg#declined'}></use>
 		</svg>
 	),
 	locked: (
-		<svg className='fill-neutral-0 dark:fill-dark-neutral-0' viewBox='0 0 20 20'>
+		<svg className='fill-neutral-0 dark:fill-dark-neutral-0 transition-colors duration-150' viewBox='0 0 20 20'>
 			<use href={'/assets/icons/locked.svg#locked'}></use>
 		</svg>
 	),
@@ -115,7 +115,7 @@ export default function Avatar({
 	...props
 }: Props) {
 	const classes = [
-		'flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250',
+		'flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150',
 		appearance === 'circle' ? 'rounded-full' : borderRadiusTypes[size],
 		sizeTypes[size],
 		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
@@ -132,7 +132,7 @@ export default function Avatar({
 	].join(' ');
 
 	const statusWrapperClasses = [
-		'w-5 h-5 absolute z-100',
+		'w-5 h-5 absolute z-100 transition-colors duration-150',
 		appearance === 'circle' ? 'bg-neutral-700 dark:bg-dark-neutral-700 rounded-full' : '',
 		statusPositions[appearance][size],
 		statusSizesTypes[size],

@@ -59,10 +59,10 @@ export default function Radio({
 				data-invalid={isInvalid}
 			/>
 			<span
-				className='relative w-5 h-5 -ml-5 rounded-full border-2 border-neutral-500 peer-checked:border-blue-500 peer-focus:border-blue-500 peer-data-[invalid]:border-red-600 transition-colors duration-100 ease-linear dark:peer-data-[invalid]:border-red-500  dark:peer-focus:border-blue-300 dark:peer-checked:border-blue-300 dark:border-dark-neutral-800 after:w-2 after:h-2 after:rounded-full after:absolute peer-checked:after:bg-blue-700 dark:peer-checked:after:bg-blue-400 after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2'
+				className='relative w-5 h-5 -ml-5 rounded-full border-2 border-neutral-500 peer-checked:border-blue-500 peer-focus:border-blue-500 peer-data-[invalid]:border-red-600 transition-colors duration-150 ease-linear dark:peer-data-[invalid]:border-red-500  dark:peer-focus:border-blue-300 dark:peer-checked:border-blue-300 dark:border-dark-neutral-800 after:w-2 after:h-2 after:rounded-full after:absolute peer-checked:after:bg-blue-700 dark:peer-checked:after:bg-blue-400 after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2'
 			/>
 			<span
-				className='ml-2 text-100 text-dark-neutral-0 dark:text-neutral-0'
+				className='ml-2 text-100 text-dark-neutral-0 dark:text-neutral-0 transition-colors duration-150'
 			>
 				{label}
 			</span>

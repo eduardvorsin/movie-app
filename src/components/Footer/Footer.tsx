@@ -31,7 +31,7 @@ export default function Footer({
 	const { t } = useTranslation(lang);
 
 	const classes = [
-		'flex-shrink relative z-100 bg-neutral-300 dark:bg-dark-neutral-300 py-5 lg:py-8',
+		'flex-shrink relative z-100 bg-neutral-300 dark:bg-dark-neutral-300 py-5 lg:py-8 transition-colors duration-150',
 		className,
 	].join(' ');
 
@@ -55,7 +55,7 @@ export default function Footer({
 						className='max-w-[80px] lg:max-w-[110px] h-auto mb-3'
 					/>
 
-					<p className='text-neutral-1000 dark:text-dark-neutral-900 mb-5'>
+					<p className='text-neutral-1000 dark:text-dark-neutral-900 mb-5 transition-colors duration-150'>
 						{t('footer.description')}
 					</p>
 

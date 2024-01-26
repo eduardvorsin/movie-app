@@ -52,7 +52,7 @@ export default function AutocompleteSearch({
 	};
 
 	const autocompleteClasses = [
-		'mt-2 rounded-[0.1875rem] border-2 shadow-sm absolute w-full bg-neutral-0 dark:bg-dark-neutral-200 border-neutral-300 dark:border-dark-neutral-350',
+		'mt-2 rounded-[0.1875rem] border-2 shadow-sm absolute w-full bg-neutral-0 dark:bg-dark-neutral-200 border-neutral-300 dark:border-dark-neutral-350 transition-colors duration-150',
 		isLoading ? 'relative min-h-[12.5rem]' : '',
 	].join(' ');
 
@@ -83,7 +83,7 @@ export default function AutocompleteSearch({
 				>
 					{!isLoading && currentOptions.length === 0 && (
 						<div
-							className='p-[0.625rem] flex items-center justify-center flex-col text-neutral-1000 dark:text-dark-neutral-800'
+							className='p-[0.625rem] flex items-center justify-center flex-col text-neutral-1000 dark:text-dark-neutral-800 transition-colors duration-150'
 						>
 							<svg
 								className='w-[5rem] h-[5rem] mb-5 fill-current'
@@ -101,7 +101,7 @@ export default function AutocompleteSearch({
 								We can&apos;t find anything for {`"${value}"`}
 							</Title>
 
-							<p className='text-neutral-900 dark:text-dark-neutral-700'>
+							<p className='text-neutral-900 dark:text-dark-neutral-700 transition-colors duration-150'>
 								Try a different term or name.
 							</p>
 						</div>
@@ -112,7 +112,7 @@ export default function AutocompleteSearch({
 							{currentOptions.map((option) => (
 								<li
 									key={option.label}
-									className='border-b-2 last:border-none border-neutral-300 dark:border-dark-neutral-350'
+									className='border-b-2 last:border-none border-neutral-300 dark:border-dark-neutral-350 transition-colors duration-150'
 								>
 									<Link
 										className='w-full h-full block px-[0.625rem] py-[0.375rem] [&]:bg-neutral-0 hover:[&]:bg-neutral-100 active:[&]:bg-neutral-200 dark:[&]:bg-dark-neutral-200 dark:hover:[&]:bg-dark-neutral-250 dark:active:[&]:bg-dark-neutral-300'

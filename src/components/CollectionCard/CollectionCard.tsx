@@ -23,7 +23,7 @@ export default function CollectionCard({
 	alt,
 }: Props) {
 	const classes = [
-		'rounded-3 overflow-hidden p-5 min-h-[108px] min-w-[192px] aspect-video flex flex-col justify-end relative after:absolute after:top-0 after:left-0 after:z-0 after:w-full after:h-full after:bg-neutral-300/60 dark:after:bg-dark-neutral-250/40',
+		'rounded-3 overflow-hidden p-5 min-h-[108px] min-w-[192px] aspect-video flex flex-col justify-end relative after:absolute after:top-0 after:left-0 after:z-0 after:w-full after:h-full after:bg-neutral-300/60 dark:after:bg-dark-neutral-250/40 after:transition-colors after:duration-150',
 		className
 	].join(' ');
 
@@ -33,7 +33,7 @@ export default function CollectionCard({
 			data-testid={testId}
 		>
 			<ThemedImage
-				className='[&]:absolute top-0 left-0 w-full h-full -z-100 bg-neutral-200 dark:bg-dark-neutral-300'
+				className='[&]:absolute top-0 left-0 w-full h-full -z-100 bg-neutral-200 dark:bg-dark-neutral-300 transition-colors duration-150'
 				alt={alt}
 				showSkeleton
 				priority={priority}

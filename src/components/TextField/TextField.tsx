@@ -57,7 +57,7 @@ export default function TextField({
 }: Props) {
 
 	const labelClasses = [
-		'block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit]',
+		'block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] transition-colors duration-150',
 		labelHidden ? 'sr-only' : ''
 	].join(' ');
 	const inputClasses = [
@@ -81,7 +81,7 @@ export default function TextField({
 				{label}
 				{isRequired && (
 					<span
-						className='pl-0.5 text-red-800 dark:text-red-300'
+						className='pl-0.5 text-red-800 dark:text-red-300 transition-colors duration-150'
 						aria-hidden='true'
 					>
 						*
@@ -115,7 +115,7 @@ export default function TextField({
 				/>
 				{clearButton && (
 					<button
-						className='text-dark-neutral-0 dark:text-neutral-400 w-5 h-5 absolute top-1/2 right-[0.5rem] -translate-y-1/2 text-0'
+						className='text-dark-neutral-0 dark:text-neutral-400 w-5 h-5 absolute top-1/2 right-[0.5rem] -translate-y-1/2 text-0 transition-colors duration-150'
 						onClick={onClear}
 					>
 						clear

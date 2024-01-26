@@ -18,7 +18,7 @@ export default function Spinner({
 	...props
 }: Props) {
 	const classes = [
-		'inline-flex align-middle dark:text-blue-300 text-blue-800',
+		'inline-flex align-middle dark:text-blue-300 text-blue-800 transition-colors duration-150',
 		sizesTypes[size],
 		className,
 	].join(' ');

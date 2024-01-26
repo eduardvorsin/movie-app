@@ -112,7 +112,7 @@ export default function CatalogFilters({
 	};
 
 	const classes = [
-		'p-2 xs:p-3 md:p-4 bg-neutral-300 dark:bg-dark-neutral-250',
+		'p-2 xs:p-3 md:p-4 bg-neutral-300 dark:bg-dark-neutral-250 transition-colors duration-150',
 		className
 	].join(' ');
 

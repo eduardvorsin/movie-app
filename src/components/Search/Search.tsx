@@ -41,7 +41,7 @@ export default function Search({
 	...props
 }: Props) {
 	const labelClasses = [
-		'block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000',
+		'block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150',
 		labelHidden ? 'sr-only' : '',
 	].join(' ');
 

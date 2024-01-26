@@ -35,7 +35,7 @@ export default function Title({
 	...props
 }: Props) {
 	const classes = [
-		'leading-[1.25] -tracking-[0.01em]',
+		'leading-[1.25] -tracking-[0.01em] transition-colors duration-150',
 		levelTypes[level],
 		fontWeights[weight],
 		className,

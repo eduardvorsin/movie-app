@@ -163,7 +163,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 			>
 				{backdrop_path && (
 					<ThemedImage
-						className='aspect-[5/4] xs:aspect-video sm:w-full sm:h-full absolute top-0 left-0 -z-100 opacity-[0.25] dark:brightness-[0.25] dark:opacity-100 object-cover object-top'
+						className='aspect-[5/4] xs:aspect-video sm:w-full sm:h-full absolute top-0 left-0 -z-100 opacity-[0.25] dark:brightness-[0.25] dark:opacity-100 object-cover object-top transition-[filter,opacity] duration-150'
 						src={backgroundData?.img.src ?? ''}
 						placeholder={backdrop_path ? 'blur' : 'empty'}
 						blurDataURL={backgroundData?.base64}
@@ -183,7 +183,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 					/>
 
 					<ThemedImage
-						className='mb-8 sm:mb-0 justify-self-center  overflow-hidden sm:justify-self-start object-cover rounded-2 max-w-[14.375rem] sm:max-w-full bg-neutral-300 dark:bg-dark-neutral-300 border-1 border-neutral-300 dark:border-dark-neutral-300'
+						className='mb-8 sm:mb-0 justify-self-center  overflow-hidden sm:justify-self-start object-cover rounded-2 max-w-[14.375rem] sm:max-w-full bg-neutral-300 dark:bg-dark-neutral-300 border-1 border-neutral-300 dark:border-dark-neutral-300 transition-colors duration-150'
 						width={300}
 						height={450}
 						alt={`${title} poster`}
@@ -220,7 +220,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							</Title>
 
 							<ul
-								className='flex flex-wrap gap-y-1 text-neutral-900 dark:text-dark-neutral-900'
+								className='flex flex-wrap gap-y-1 text-neutral-900 dark:text-dark-neutral-900 transition-colors duration-150'
 							>
 								{release_date && release_date.length > 0 && (
 									<li
@@ -254,7 +254,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						<div className='flex flex-wrap'>
 							<div className='mr-4 mb-3 md:mb-4 lg:mb-5'>
 								<span
-									className='text-neutral-1000 dark:text-dark-neutral-900 font-medium mr-2'
+									className='text-neutral-1000 dark:text-dark-neutral-900 font-medium mr-2 transition-colors duration-150'
 								>
 									{t('ratingLabel')}
 								</span>
@@ -274,7 +274,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 						<div>
 							{tagline && (
 								<p
-									className='text-neutral-900 dark:text-dark-neutral-700 italic mb-[0.625rem]'
+									className='text-neutral-900 dark:text-dark-neutral-700 italic mb-[0.625rem] transition-colors duration-150'
 								>
 									{tagline}
 								</p>

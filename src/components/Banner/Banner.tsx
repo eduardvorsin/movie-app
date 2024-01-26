@@ -25,27 +25,27 @@ const appearances = {
 
 const apperanceIcons = {
 	discovery: (
-		<svg className='fill-purple-700 dark:fill-purple-400 ' viewBox='0 0 20 20'>
+		<svg className='fill-purple-700 dark:fill-purple-400 transition-colors duration-150' viewBox='0 0 20 20'>
 			<use href={'/assets/icons/question.svg#question'}></use>
 		</svg>
 	),
 	success: (
-		<svg className='fill-green-800 dark:fill-green-400' viewBox='0 0 20 20'>
+		<svg className='fill-green-800 dark:fill-green-400 transition-colors duration-150' viewBox='0 0 20 20'>
 			<use href={'/assets/icons/confirmation.svg#confirmation'}></use>
 		</svg>
 	),
 	info: (
-		<svg className='fill-blue-700 dark:fill-blue-400' viewBox='0 0 20 20'>
+		<svg className='fill-blue-700 dark:fill-blue-400 transition-colors duration-150' viewBox='0 0 20 20'>
 			<use href={'/assets/icons/info.svg#info'}></use>
 		</svg>
 	),
 	warning: (
-		<svg className='fill-yellow-600 dark:fill-yellow-500' viewBox='0 0 20 20'>
+		<svg className='fill-yellow-600 dark:fill-yellow-500 transition-colors duration-150' viewBox='0 0 20 20'>
 			<use href={'/assets/icons/warning.svg#warning'}></use>
 		</svg>
 	),
 	danger: (
-		<svg className='fill-red-700 dark:fill-red-400' viewBox='0 0 20 20'>
+		<svg className='fill-red-700 dark:fill-red-400 transition-colors duration-150' viewBox='0 0 20 20'>
 			<use href={'/assets/icons/error.svg#error'}></use>
 		</svg>
 	),
@@ -96,7 +96,7 @@ export default function Banner({
 					</Title>
 				)}
 				<p
-					className={'text-100 text-neutral-1000 dark:text-dark-neutral-900'}
+					className={'text-100 text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150'}
 				>
 					{children}
 				</p>

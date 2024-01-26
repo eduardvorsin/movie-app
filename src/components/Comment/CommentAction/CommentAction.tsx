@@ -19,7 +19,7 @@ export default function CommentAction({
 	...props
 }: Props) {
 	const classes = [
-		'inline-flex font-medium text-100 text-neutral-800 dark:text-dark-neutral-800 enabled:hover:text-neutral-700 dark:enabled:hover:text-dark-neutral-900 enabled:hover:underline enabled:active:text-neutral-600 dark:enabled:active:text-dark-neutral-1000 disabled:opacity-disabled disabled:cursor-not-allowed',
+		'inline-flex font-medium text-100 text-neutral-800 dark:text-dark-neutral-800 enabled:hover:text-neutral-700 dark:enabled:hover:text-dark-neutral-900 enabled:hover:underline enabled:active:text-neutral-600 dark:enabled:active:text-dark-neutral-1000 disabled:opacity-disabled disabled:cursor-not-allowed transition-colors duration-150',
 		className,
 	].join(' ');
 	return (

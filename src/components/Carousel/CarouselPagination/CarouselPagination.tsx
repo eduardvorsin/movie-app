@@ -33,7 +33,7 @@ export default function CarouselPagination({
 	};
 
 	const classes = [
-		'w-full flex justify-center items-center text-center text-200 text-neutral-1000 dark:text-dark-neutral-1000',
+		'w-full flex justify-center items-center text-center text-200 text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150',
 		paginationType === 'progress' ? 'h-1 bg-neutral-300 dark:bg-dark-neutral-300' : '',
 		className,
 	].join(' ');
@@ -75,7 +75,7 @@ export default function CarouselPagination({
 	} else {
 		Pagination = (
 			<span
-				className='bg-blue-700 dark:bg-blue-300 w-full h-full scale-y-100 origin-top-left transition-transform duration-150'
+				className='bg-blue-700 dark:bg-blue-300 w-full h-full scale-y-100 origin-top-left transition-[transform,background-color] duration-150'
 				style={{
 					transform: `scaleX(${(activeIndex + 1) / totalCount})`
 				}}

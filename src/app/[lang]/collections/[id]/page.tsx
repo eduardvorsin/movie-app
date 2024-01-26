@@ -58,7 +58,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 
 			{imageData && (
 				<ThemedImage
-					className='absolute top-0 left-0 aspect-[5/4] lg:aspect-video -z-100 opacity-[0.25] dark:brightness-[0.25] dark:opacity-100 object-cover'
+					className='absolute top-0 left-0 aspect-[5/4] lg:aspect-video -z-100 opacity-[0.25] dark:brightness-[0.25] dark:opacity-100 object-cover transition-[filter,opacity] duration-150'
 					src={imageData.img.src}
 					placeholder='blur'
 					blurDataURL={imageData.base64}

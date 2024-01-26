@@ -49,19 +49,19 @@ export default function Toggle({
 	...props
 }: Props) {
 	const inputWrapperClasses = [
-		'text-neutral-100 dark:text-dark-neutral-100  relative',
+		'text-neutral-100 dark:text-dark-neutral-100  relative transition-colors duration-150',
 		appearances[appearance],
 		size === 'large' ? 'w-[4.375rem] h-[2.1875rem] rounded-[2.1875rem]' : 'w-[3.75rem] h-[1.875rem] rounded-[1.875rem]',
 		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
 	].join(' ');
 
 	const inputClasses = [
-		'w-full h-full appearance-none cursor-pointer inline-flex p-1 relative disabled:cursor-not-allowed before:bg-neutral-100 dark:before:bg-dark-neutral-100 before:absolute before:rounded-[50%] before:z-100 before:transition-transform before:duration-150 before:translate-x-0',
+		'w-full h-full appearance-none cursor-pointer inline-flex p-1 relative disabled:cursor-not-allowed before:bg-neutral-100 dark:before:bg-dark-neutral-100 before:absolute before:rounded-[50%] before:z-100 before:transition-transform before:transition-colors before:duration-150 before:translate-x-0',
 		size === 'large' ? 'rounded-[2.1875rem] before:w-[1.6875rem] before:h-[1.6875rem] checked:before:translate-x-[2.1875rem]' : 'rounded-[1.875rem] before:w-[1.375rem] before:h-[1.375rem] checked:before:translate-x-[1.875rem]',
 	].join(' ');
 
 	const labelClasses = [
-		'text-neutral-800 dark:text-dark-neutral-800 mr-2',
+		'text-neutral-800 dark:text-dark-neutral-800 mr-2 transition-colors duration-150',
 		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
 		labelHidden ? 'sr-only' : '',
 	].join(' ');
