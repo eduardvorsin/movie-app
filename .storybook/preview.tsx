@@ -2,10 +2,9 @@ import type { Preview } from '@storybook/react';
 import { withThemeByClassName } from '@storybook/addon-styling';
 import '../src/app/globals.css';
 import i18next from '../src/i18n/client';
-import { Suspense, useContext, useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
-import ThemeProvider, { ThemeContext } from '../src/context/ThemeProvider/ThemeProvider';
 
 const withI18next = (Story, context) => {
   const { locale } = context.globals;
