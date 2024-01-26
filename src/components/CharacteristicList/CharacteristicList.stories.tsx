@@ -51,7 +51,6 @@ const data: Record<'en' | 'ru', Record<'name' | 'value', string>[]> = {
 export const Default: Story = {
 	render: (_, context) => {
 		const { locale } = context.globals;
-		console.log('locale', locale);
 		return (
 			<CharacteristicList
 				data={locale === 'en' ? data.en : data.ru}
