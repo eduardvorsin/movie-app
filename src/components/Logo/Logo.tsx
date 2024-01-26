@@ -50,11 +50,11 @@ export default function Logo({
 			<ThemedImage
 				width={sizes[size].width}
 				height={sizes[size].height}
-				alt='movie wander logo'
+				alt={t('logo.altText')}
 				src={'/assets/images/logo.svg'}
 			/>
 			<span className='sr-only'>
-				{t('logoLink')}
+				{t('logo.linkText')}
 			</span>
 		</Link>
 	);

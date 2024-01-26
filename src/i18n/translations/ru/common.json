@@ -97,8 +97,11 @@
 		"war & politics": "Политика"
 	},
 	"unknown": "Неизвестно",
-	"logo": "логотип {{company_name}}",
-	"logoLink": "на главную страницу",
+	"companyLogo": "логотип {{company_name}}",
+	"logo": {
+		"linkText": "На главную страницу",
+		"altText": "MovieWander логотип"
+	},
 	"navigation": {
 		"movies": "фильмы",
 		"persons": "люди",
@@ -246,5 +249,33 @@
 			"vote_average.desc": "По рейтингу",
 			"revenue.desc": "По сборам"
 		}
+	},
+	"search": {
+		"button": "Найти"
+	},
+	"autocompleteSearch": {
+		"title": "Мы ничего не смогли найти по значению '{{value}}'",
+		"text": "Попробуйте другое понятие или название."
+	},
+	"banner": {
+		"button": "Закрыть"
+	},
+	"carouselArrow": {
+		"direction_left": "Предыдущий слайд",
+		"direction_right": "Следующий слайд"
+	},
+	"carouselPagination": {
+		"label": "Пагинация слайдера"
+	},
+	"comment": {
+		"savingText": "Отправка...",
+		"edited": "Редактировано",
+		"ratingLabel": "Рейтинг"
+	},
+	"textField": {
+		"button": "Очистить"
+	},
+	"youTubeVideo": {
+		"button": "Смотреть"
 	}
 }

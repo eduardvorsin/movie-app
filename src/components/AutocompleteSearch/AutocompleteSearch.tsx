@@ -5,6 +5,9 @@ import Link from "@/components/Link/Link";
 import Spinner from '@/components/Spinner/Spinner';
 import Title from '@/components/Title/Title';
 import { FocusEventHandler, useState } from 'react';
+import { useParams } from 'next/navigation';
+import { Locales, fallbackLng } from '@/i18n/settings';
+import { useTranslation } from '@/i18n/client';
 
 export type AutocompleteOption = {
 	href: string,
@@ -38,6 +41,8 @@ export default function AutocompleteSearch({
 	onBlur,
 	onSubmit,
 }: Props) {
+	const lang = useParams()?.lang as Locales ?? fallbackLng;
+	const { t } = useTranslation(lang);
 	const [isFocused, setIsFocused] = useState<boolean>(false);
 	const currentOptions = value.length === 0 ? initialOptions : options;
 
@@ -98,11 +103,11 @@ export default function AutocompleteSearch({
 								as='h4'
 								weight={400}
 							>
-								We can&apos;t find anything for {`"${value}"`}
+								{t('autocompleteSearch.title', { value })}
 							</Title>
 
 							<p className='text-neutral-900 dark:text-dark-neutral-700 transition-colors duration-150'>
-								Try a different term or name.
+								{t('autocompleteSearch.text')}
 							</p>
 						</div>
 					)}

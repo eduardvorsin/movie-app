@@ -2,6 +2,9 @@
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import { GeneralProps } from '@/types/shared';
+import { useParams } from 'next/navigation';
+import { Locales, fallbackLng } from '@/i18n/settings';
+import { useTranslation } from '@/i18n/client';
 
 export type Props = {
 	isDisabled?: boolean,
@@ -55,6 +58,8 @@ export default function TextField({
 	type,
 	...props
 }: Props) {
+	const lang = useParams()?.lang as Locales ?? fallbackLng;
+	const { t } = useTranslation(lang);
 
 	const labelClasses = [
 		'block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] transition-colors duration-150',
@@ -118,7 +123,7 @@ export default function TextField({
 						className='text-dark-neutral-0 dark:text-neutral-400 w-5 h-5 absolute top-1/2 right-[0.5rem] -translate-y-1/2 text-0 transition-colors duration-150'
 						onClick={onClear}
 					>
-						clear
+						{t('textField.button')}
 						<svg className='fill-current' viewBox='0 0 20 20'>
 							<use href={'/assets/icons/cancel.svg#cancel'}></use>
 						</svg>

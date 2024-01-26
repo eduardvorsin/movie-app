@@ -9,9 +9,9 @@ import { NavigationRoutes, navigationRoutes } from 'src/constants';
 import Link from '../Link/Link';
 import { useParams } from 'next/navigation';
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { useTranslation } from 'react-i18next';
 import Title from '../Title/Title';
 import ThemedImage from '../ThemedImage/ThemedImage';
+import { useTranslation } from '@/i18n/client';
 
 const socialNetworks = createSocialNetworksArray({
 	imdb_id: null,

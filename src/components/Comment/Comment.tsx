@@ -4,6 +4,9 @@ import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import Title from '@/components/Title/Title';
 import { GeneralProps, HeadingElement } from '@/types/shared';
 import ExpandableText from '../ExpandableText/ExpandableText';
+import { useParams } from 'next/navigation';
+import { Locales, fallbackLng } from '@/i18n/settings';
+import { useTranslation } from '@/i18n/client';
 
 type Props = {
 	id: string,
@@ -53,6 +56,9 @@ export default function Comment({
 	rating,
 	...props
 }: Props) {
+	const lang = useParams()?.lang as Locales ?? fallbackLng;
+	const { t } = useTranslation(lang);
+
 	const classes = [
 		'grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative',
 		highlighted ? 'gap-y-4' : 'gap-y-2 md:gap-y-4',
@@ -93,7 +99,7 @@ export default function Comment({
 						<span
 							className=' text-100 font-regular max-w-[120px] truncate'
 						>
-							{savingText ?? 'Sending...'}
+							{savingText ?? t('comment.savingText')}
 						</span>
 					)}
 					{!isError && !isSaving && time ?
@@ -110,7 +116,7 @@ export default function Comment({
 						<span
 							className='text-neutral-700 dark:text-dark-neutral-700  font-regular text-100 transition-colors duration-150'
 						>
-							Edited
+							{t('comment.edited')}
 						</span>
 					)}
 					{restrictedTo && (
@@ -139,7 +145,7 @@ export default function Comment({
 
 							<span
 								className='text-neutral-800 dark:text-dark-neutral-800 font-bold leading-none transition-colors duration-150'
-								aria-label='rating'
+								aria-label={t('comment.ratingLabel')}
 							>
 								{rating}
 							</span>

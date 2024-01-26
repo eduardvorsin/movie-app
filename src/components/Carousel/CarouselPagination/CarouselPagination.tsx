@@ -1,5 +1,8 @@
 'use client';
+import { useTranslation } from '@/i18n/client';
+import { Locales, fallbackLng } from '@/i18n/settings';
 import { GeneralProps } from '@/types/shared';
+import { useParams } from 'next/navigation';
 import { MouseEventHandler, useRef } from 'react';
 
 type Props = {
@@ -18,6 +21,8 @@ export default function CarouselPagination({
 	totalCount,
 	...props
 }: Props) {
+	const lang = useParams()?.lang as Locales ?? fallbackLng;
+	const { t } = useTranslation(lang);
 
 	const dotsContainerRef = useRef<HTMLDivElement>(null);
 
@@ -61,7 +66,7 @@ export default function CarouselPagination({
 				ref={dotsContainerRef}
 				onClick={clickHandler}
 				role='group'
-				aria-label='carousel pagination'
+				aria-label={t('carouselPagination.label')}
 			>
 				{dots.map((_, index) => (
 					<button

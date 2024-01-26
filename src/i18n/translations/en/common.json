@@ -97,8 +97,11 @@
 		"war & politics": "Politics"
 	},
 	"unknown": "Unknown",
-	"logo": "{{company_name}} logo",
-	"logoLink": "to home page",
+	"companyLogo": "{{company_name}} logo",
+	"logo": {
+		"linkText": "To home page",
+		"altText": "MovieWander logo"
+	},
 	"navigation": {
 		"movies": "movies",
 		"persons": "persons",
@@ -246,5 +249,33 @@
 			"vote_average.desc": "By vote average",
 			"revenue.desc": "By revenue"
 		}
+	},
+	"search": {
+		"button": "To find"
+	},
+	"autocompleteSearch": {
+		"title": "We can't find anything for '{{value}}'",
+		"text": "Try a different term or name."
+	},
+	"banner": {
+		"button": "To close"
+	},
+	"carouselArrow": {
+		"direction_left": "Previous slide",
+		"direction_right": "Next slide"
+	},
+	"carouselPagination": {
+		"label": "Carousel pagination"
+	},
+	"comment": {
+		"savingText": "Sending...",
+		"edited": "Edited",
+		"ratingLabel": "rating"
+	},
+	"textField": {
+		"button": "To clear"
+	},
+	"youTubeVideo": {
+		"button": "To watch"
 	}
 }

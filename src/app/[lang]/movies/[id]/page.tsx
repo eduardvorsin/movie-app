@@ -362,7 +362,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								>
 									<ThemedImage
 										className='object-contain'
-										alt={t('logo', { company_name: name })}
+										alt={t('companyLogo', { company_name: name })}
 										sizes='185px'
 										fill
 										src={`${imgPath.logo}${logo_path}`}

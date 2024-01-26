@@ -149,7 +149,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								level={4}
 								as='h2'
 							>
-								Links to social networks
+								{t('socialLinksTitle', { ns: 'personDetailsPage' })}
 							</Title>
 							{homepage && (
 								<p className='flex items-center flex-wrap mb-3'>
