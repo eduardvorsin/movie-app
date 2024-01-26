@@ -13,8 +13,6 @@ const withI18next = (Story, context) => {
     i18next.changeLanguage(locale);
   }, [locale]);
 
-  console.log('i18next.language', i18next.language);
-
   return (
     <Suspense fallback={<div> Loading....</div>}>
       <I18nextProvider i18n={i18next}>
