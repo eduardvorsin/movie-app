@@ -1,5 +1,5 @@
 import { inter } from '@/fonts';
-import '../globals.css';
+import './globals.css';
 import type { Metadata } from 'next';
 import { dir } from 'i18next';
 import { Locales, locales } from '@/i18n/settings';
