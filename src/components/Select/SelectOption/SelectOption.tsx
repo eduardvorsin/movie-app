@@ -24,7 +24,7 @@ export default function SelectOption({
 	...props
 }: Props) {
 	const classes = [
-		'outline-none break-words px-[0.625rem] py-[0.375rem] text-100 leading-2 border-neutral-300 dark:border-dark-neutral-400 border-b-1 transition-colors duration-150 select-none relative before:w-[0.125rem] before:h-full before:absolute before:left-0 before:top-0 before:transition-colors before:duration-150',
+		'outline-none break-words px-[0.625rem] py-[0.375rem] text-100 leading-2 border-neutral-300 dark:border-dark-neutral-400 border-b-1 last:border-none transition-colors duration-150 select-none relative before:w-[0.125rem] before:h-full before:absolute before:left-0 before:top-0 before:transition-colors before:duration-150',
 		(!isFocused && isSelected) || (isFocused && isSelected) ? 'bg-blue-200 text-blue-900 dark:text-blue-300 dark:bg-blue-900' : '',
 		isFocused && !isSelected ? 'bg-neutral-300 dark:bg-dark-neutral-350 before:bg-blue-700 dark:before:bg-blue-400 text-neutral-800 dark:text-dark-neutral-800' : '',
 		!isFocused && !isSelected ? 'bg-neutral-0 dark:bg-dark-neutral-250 text-neutral-800 dark:text-dark-neutral-800' : '',
