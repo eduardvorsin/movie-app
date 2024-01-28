@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactNode } from 'react';
 import CommentInfoItem from './CommentInfoItem/CommentInfoItem';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';

@@ -1,3 +1,5 @@
+'use client';
+
 import { MouseEventHandler } from 'react';
 import { GeneralProps } from '@/types/shared';
 import { useParams } from 'next/navigation';
