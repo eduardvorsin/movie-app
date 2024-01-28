@@ -11,7 +11,7 @@ import { fetchTVSeriesByCollection } from '@/services/fetchTVSeriesByCollection/
 import { PlaceholderData } from '@/types/shared';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Collections } from 'src/constants';
+import { Collections, collections } from 'src/constants';
 
 export async function generateMetadata(
 	{ params }: { params: { lang: Locales, id: Collections } },
@@ -25,6 +25,10 @@ export async function generateMetadata(
 			ns: ['common', 'collectionDetailsPage']
 		}),
 	}
+}
+
+export function generateStaticParams() {
+	return collections.map((collection) => ({ id: collection }));
 }
 
 type Props = {
