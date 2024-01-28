@@ -45,7 +45,7 @@
 		"collapseButton": "Collapse",
 		"expandButton": "Expand"
 	},
-	"PersonCard": {
+	"personCard": {
 		"rating": "Popularity"
 	},
 	"genderValues": {
