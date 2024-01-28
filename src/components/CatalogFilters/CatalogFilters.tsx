@@ -8,7 +8,7 @@ import Button from '../Button/Button';
 import { useParams, usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Countries } from '@/helpers/getCountryCodeFromName/getCountryCodeFromName';
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@/i18n/client';
 
 const movieGenres: MovieGenres[] = ['animation', 'comedy', 'crime', 'documentary', 'family', 'mystery', 'western', 'adventure', 'romance', 'history', 'music', 'war', 'thriller', 'fantasy', 'horror', 'tv movie', 'action', 'science fiction'];
 
