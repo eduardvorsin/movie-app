@@ -92,7 +92,7 @@ export default function MovieCard({
 	].join(' ');
 
 	const contentClasses = [
-		'absolute left-0 w-full flex flex-col p-2 bg-gradient-to-t z-100 transition-colors duration-150',
+		'absolute left-0 w-full flex flex-col p-2 bg-gradient-to-t z-100 duration-150',
 		appearance === 'secondary' ? 'sr-only' : '',
 		variant === 'horizontal' ? 'bottom-0 from-neutral-100/95 to-neutral-100/50 dark:from-dark-neutral-100/95 dark:to-dark-neutral-100/40' : 'invisible opacity-0 fine-pointer:group-hover:visible fine-pointer:group-hover:opacity-100 top-0 pt-[3.125rem] justify-end h-full bg-neutral-100/80 dark:bg-dark-neutral-100/80 transition-[visibility,opacity]'
 	].join(' ');
