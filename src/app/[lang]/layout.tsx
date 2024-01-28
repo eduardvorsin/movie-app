@@ -1,12 +1,11 @@
 import { inter } from '@/fonts';
-import './globals.css';
+import '../globals.css';
 import type { Metadata } from 'next';
 import { dir } from 'i18next';
-import { fallbackLng } from '@/i18n/settings';
+import { Locales, locales } from '@/i18n/settings';
 import ThemeProvider from '@/context/ThemeProvider/ThemeProvider';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
-import { cookies, headers } from 'next/headers';
 
 export const metadata: Metadata = {
   title: {
@@ -19,20 +18,22 @@ export const metadata: Metadata = {
 }
 
 type Props = {
-  children: React.ReactNode
+  children: React.ReactNode,
+  params: { lang: Locales },
+}
+
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
 }
 
 export default function RootLayout({
   children,
+  params: { lang },
 }: Props) {
-  const langFromCookie = cookies().get('i18next')?.value;
-  const langFromHeaders = headers().get('accept-language')?.slice(0, 2);
-  const currentLang = langFromCookie ?? langFromHeaders ?? fallbackLng;
-
   return (
     <html
-      lang={currentLang}
-      dir={dir(currentLang)}
+      lang={lang}
+      dir={dir(lang)}
       className={`${inter.variable} h-full pr-[var(--scrollbar-width)]`}
       suppressHydrationWarning
     >
