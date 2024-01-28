@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
 import { withThemeByClassName } from '@storybook/addon-styling';
-import '../src/app/globals.css';
+import '../src/app/[lang]/globals.css';
 import i18next from '../src/i18n/client';
 import { Suspense, useEffect } from 'react';
 import React from 'react';

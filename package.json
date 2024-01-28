@@ -9,8 +9,8 @@
     "lint": "next lint",
     "test": "jest --watchAll",
     "storybook": "concurrently 'npm:watch:*'",
-    "watch:tailwind": "tailwindcss -i ./src/app/globals.css -o ./src/styles/tailwind.css --watch",
-    "build:tailwind": "tailwindcss -i ./src/app/globals.css -o ./src/styles/tailwind.css",
+    "watch:tailwind": "tailwindcss -i ./src/app/[lang]/globals.css -o ./src/styles/tailwind.css --watch",
+    "build:tailwind": "tailwindcss -i ./src/app/[lang]/globals.css -o ./src/styles/tailwind.css",
     "watch:storybook": "storybook dev -p 6006",
     "test-storybook": "test-storybook",
     "build-storybook": "npm run build:tailwind && storybook build"
