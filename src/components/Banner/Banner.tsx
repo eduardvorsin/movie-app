@@ -3,9 +3,6 @@ import { ReactNode } from 'react';
 import Button from '../Button/Button';
 import Title from '../Title/Title';
 import { GeneralProps, HeadingElement } from '@/types/shared';
-import { useParams } from 'next/navigation';
-import { Locales, fallbackLng } from '@/i18n/settings';
-import { useTranslation } from '@/i18n/client';
 
 export type Props = {
 	title?: string,
@@ -13,10 +10,17 @@ export type Props = {
 	children: ReactNode,
 	appearance?: 'success' | 'info' | 'warning' | 'danger' | 'discovery',
 	onClose?: () => void,
-	closeButton?: boolean,
 	titleElement?: HeadingElement,
 	actions?: ReactNode[],
-} & GeneralProps;
+} & (
+		{
+			closeButton: false,
+			dictionary?: never,
+		} | {
+			closeButton: true,
+			dictionary: { closeButton: string },
+		}
+	) & GeneralProps;
 
 const appearances = {
 	success: 'bg-green-100 dark:bg-green-1000',
@@ -65,11 +69,9 @@ export default function Banner({
 	closeButton,
 	titleElement,
 	testId,
+	dictionary,
 	...props
 }: Props) {
-	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang);
-
 	const classes = [
 		'py-4 pl-4 rounded-[0.1875rem] flex relative',
 		appearances[appearance],
@@ -123,7 +125,7 @@ export default function Banner({
 					iconButton
 					onClick={onClose}
 				>
-					{t('banner.button')}
+					{dictionary.closeButton}
 					<svg className='fill-current w-6 h-6' viewBox='0 0 20 20' aria-hidden>
 						<use href={'/assets/icons/cancel.svg#cancel'}></use>
 					</svg>

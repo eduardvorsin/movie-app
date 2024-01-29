@@ -258,7 +258,7 @@
 		"text": "Try a different term or name."
 	},
 	"banner": {
-		"button": "To close"
+		"closeButton": "To close"
 	},
 	"carouselArrow": {
 		"direction_left": "Previous slide",

@@ -6,7 +6,10 @@ import Button from "@/components/Button/Button";
 describe('Banner tests', () => {
 	it('This is rendered correctly', () => {
 		render(
-			<Banner testId='test-banner'>
+			<Banner
+				closeButton={false}
+				testId='test-banner'
+			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
 		);
@@ -16,7 +19,10 @@ describe('Banner tests', () => {
 
 	it('if the title prop is empty then the title will not be rendered', () => {
 		render(
-			<Banner testId='test-banner'>
+			<Banner
+				closeButton={false}
+				testId='test-banner'
+			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
 		);
@@ -27,7 +33,11 @@ describe('Banner tests', () => {
 
 	it('if hideIcon is true, the icon to the left of the text is hidden', () => {
 		render(
-			<Banner hideIcon testId='test-banner'>
+			<Banner
+				closeButton={false}
+				hideIcon
+				testId='test-banner'
+			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
 		);
@@ -37,7 +47,11 @@ describe('Banner tests', () => {
 
 	it('if the close Button is set to true, the close button of the banner is displayed.', () => {
 		render(
-			<Banner closeButton testId='test-banner'>
+			<Banner
+				closeButton
+				testId='test-banner'
+				dictionary={{ closeButton: 'To close' }}
+			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
 		);
@@ -49,7 +63,12 @@ describe('Banner tests', () => {
 		const user = userEvent.setup();
 		const mockFn = jest.fn();
 		render(
-			<Banner closeButton onClose={mockFn} testId='test-banner'>
+			<Banner
+				closeButton
+				onClose={mockFn}
+				testId='test-banner'
+				dictionary={{ closeButton: 'To close' }}
+			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
 		);
@@ -62,7 +81,10 @@ describe('Banner tests', () => {
 
 	it('is a basic snapshot', () => {
 		render(
-			<Banner testId='test-banner'>
+			<Banner
+				closeButton={false}
+				testId='test-banner'
+			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
 		);
@@ -72,7 +94,11 @@ describe('Banner tests', () => {
 
 	it('is a snapshot with closeButton equal to true', () => {
 		render(
-			<Banner testId='test-banner' closeButton>
+			<Banner
+				testId='test-banner'
+				closeButton
+				dictionary={{ closeButton: 'To close' }}
+			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
 		);
@@ -82,7 +108,11 @@ describe('Banner tests', () => {
 
 	it('is a snapshot with a "success" type appearance', () => {
 		render(
-			<Banner testId='test-banner' appearance='success'>
+			<Banner
+				testId='test-banner'
+				appearance='success'
+				closeButton={false}
+			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
 		);
@@ -92,7 +122,11 @@ describe('Banner tests', () => {
 
 	it('is a snapshot with a "info" type appearance', () => {
 		render(
-			<Banner testId='test-banner' appearance='info'>
+			<Banner
+				testId='test-banner'
+				appearance='info'
+				closeButton={false}
+			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
 		);
@@ -102,7 +136,11 @@ describe('Banner tests', () => {
 
 	it('is a snapshot with a "warning" type appearance', () => {
 		render(
-			<Banner testId='test-banner' appearance='warning'>
+			<Banner
+				testId='test-banner'
+				appearance='warning'
+				closeButton={false}
+			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
 		);
@@ -112,7 +150,11 @@ describe('Banner tests', () => {
 
 	it('is a snapshot with a "danger" type appearance', () => {
 		render(
-			<Banner testId='test-banner' appearance='danger'>
+			<Banner
+				testId='test-banner'
+				appearance='danger'
+				closeButton={false}
+			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
 		);
@@ -122,7 +164,11 @@ describe('Banner tests', () => {
 
 	it('is a snapshot with a "discovery" type appearance', () => {
 		render(
-			<Banner testId='test-banner' appearance='discovery'>
+			<Banner
+				testId='test-banner'
+				appearance='discovery'
+				closeButton={false}
+			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
 		);
@@ -132,7 +178,11 @@ describe('Banner tests', () => {
 
 	it('is a snapshot with hideIcon equal to true', () => {
 		render(
-			<Banner testId='test-banner' hideIcon>
+			<Banner
+				testId='test-banner'
+				hideIcon
+				closeButton={false}
+			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
 		);
@@ -144,6 +194,7 @@ describe('Banner tests', () => {
 		render(
 			<Banner
 				testId='test-banner'
+				closeButton={false}
 				actions={[
 					<Button key={0}>action</Button>,
 					<Button key={1}>action</Button>,

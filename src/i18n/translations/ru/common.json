@@ -258,7 +258,7 @@
 		"text": "Попробуйте другое понятие или название."
 	},
 	"banner": {
-		"button": "Закрыть"
+		"closeButton": "Закрыть"
 	},
 	"carouselArrow": {
 		"direction_left": "Предыдущий слайд",

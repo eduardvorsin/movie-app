@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Banner, { Props } from './Banner';
 import Button from '@/components/Button/Button';
+import { useTranslation } from 'react-i18next';
 
 type Appearances = Exclude<Props['appearance'], undefined>;
 const appearances: Appearances[] = ['success', 'info', 'warning', 'danger', 'discovery'];
@@ -40,7 +41,11 @@ const meta: Meta<typeof Banner> = {
 		actions: {
 			control: false,
 			description: 'Array of action buttons for the banner',
-		}
+		},
+		dictionary: {
+			control: false,
+			description: 'An object with keys for localization of the component',
+		},
 	},
 	component: Banner,
 	parameters: {
@@ -55,6 +60,28 @@ const meta: Meta<typeof Banner> = {
 export default meta;
 type Story = StoryObj<typeof Banner>;
 
+const BannerWithHooks = (props: Omit<Props, 'dictionary'>) => {
+	const { t } = useTranslation('common');
+	const dictionary = { closeButton: t('banner.closeButton') };
+
+	if (props.closeButton === true) {
+		return (
+			<Banner
+				{...props}
+				closeButton={true}
+				dictionary={dictionary}
+			/>
+		);
+	}
+
+	return (
+		<Banner
+			{...props}
+			closeButton={false}
+		/>
+	);
+}
+
 export const Default: Story = {
 	args: {
 		title: 'Default banner',
@@ -67,6 +94,7 @@ export const Default: Story = {
 			},
 		},
 	},
+	render: (args) => (<BannerWithHooks {...args} />),
 };
 
 export const Appearances: Story = {
@@ -82,13 +110,14 @@ export const Appearances: Story = {
 			className='flex flex-col gap-3'
 		>
 			{appearances.map((appearance) => (
-				<Banner
+				<BannerWithHooks
+					closeButton={false}
 					key={appearance}
 					title={appearance}
 					appearance={appearance}
 				>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt non repellendus ullam quam dolore.
-				</Banner>
+				</BannerWithHooks>
 			))}
 		</div>
 	),
@@ -113,6 +142,7 @@ export const CloseButton: Story = {
 			},
 		},
 	},
+	render: (args) => (<BannerWithHooks {...args} />),
 };
 
 export const HideIcon: Story = {
@@ -129,6 +159,7 @@ export const HideIcon: Story = {
 			},
 		},
 	},
+	render: (args) => (<BannerWithHooks {...args} />),
 };
 
 export const WithoutTitle: Story = {
@@ -142,6 +173,7 @@ export const WithoutTitle: Story = {
 			},
 		},
 	},
+	render: (args) => (<BannerWithHooks {...args} />),
 };
 
 export const WithActions: Story = {
@@ -161,4 +193,5 @@ export const WithActions: Story = {
 			},
 		},
 	},
+	render: (args) => (<BannerWithHooks {...args} />),
 };

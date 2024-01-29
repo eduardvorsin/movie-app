@@ -94,6 +94,7 @@ export default function InfinitePersonFeed({
 				<Banner
 					title={t('infinitePersonFeed.errorTitle')}
 					appearance='danger'
+					closeButton={false}
 				>
 					{t('infinitePersonFeed.error')}
 				</Banner>

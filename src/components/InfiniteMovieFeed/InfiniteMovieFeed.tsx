@@ -185,6 +185,7 @@ export default function InfiniteMovieFeed<
 
 			{error && (
 				<Banner
+					closeButton={false}
 					title={t('infinitePersonFeed.errorTitle')}
 					appearance='danger'
 				>
