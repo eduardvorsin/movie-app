@@ -107,6 +107,7 @@ export default async function Page({ params: { lang }, searchParams }: Props) {
 						<Banner
 							title={t('infinitePersonFeed.errorTitle')}
 							appearance='danger'
+							closeButton={false}
 						>
 							{t('catalogError', { ns: 'moviesPage' })}
 						</Banner>
