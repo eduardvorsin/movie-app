@@ -1,4 +1,3 @@
-'use client';
 import { GeneralProps } from '@/types/shared';
 import { KeyboardEventHandler, MouseEventHandler } from 'react';
 

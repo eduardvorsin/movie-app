@@ -1,4 +1,3 @@
-'use client';
 import { ChangeEventHandler, FocusEventHandler } from 'react';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import { GeneralProps } from '@/types/shared';

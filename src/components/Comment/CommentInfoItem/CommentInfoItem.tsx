@@ -1,4 +1,3 @@
-'use client';
 import { GeneralProps } from '@/types/shared';
 import Link from 'next/link';
 import { FocusEventHandler, MouseEventHandler, ReactNode } from 'react';

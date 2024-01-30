@@ -1,4 +1,3 @@
-'use client';
 import { GeneralProps } from '@/types/shared';
 import { ChangeEventHandler, FocusEventHandler, ReactNode } from 'react';
 

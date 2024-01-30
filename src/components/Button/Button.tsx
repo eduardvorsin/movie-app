@@ -1,4 +1,3 @@
-'use client';
 import { FocusEventHandler, MouseEventHandler, ReactNode } from 'react';
 import Spinner from '@/components/Spinner/Spinner';
 import Link from 'next/link';

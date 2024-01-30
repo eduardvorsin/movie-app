@@ -1,4 +1,3 @@
-'use client';
 import Image, { ImageProps } from 'next/image';
 import { MouseEventHandler } from 'react';
 import { GeneralProps } from '@/types/shared';

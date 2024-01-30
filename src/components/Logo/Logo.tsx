@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import ThemedImage from '../ThemedImage/ThemedImage';
 import { MouseEventHandler } from 'react';

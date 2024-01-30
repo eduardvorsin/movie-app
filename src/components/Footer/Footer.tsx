@@ -1,5 +1,3 @@
-'use client';
-
 import { GeneralProps } from '@/types/shared';
 import Logo from '../Logo/Logo';
 import Container from '../Container/Container';

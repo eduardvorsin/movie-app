@@ -1,4 +1,3 @@
-'use client';
 import { ChangeEventHandler, FocusEventHandler, FormEventHandler } from 'react';
 import Button from '@/components/Button/Button';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';

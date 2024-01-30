@@ -1,4 +1,3 @@
-'use client';
 import Link from 'next/link';
 import { MouseEventHandler } from 'react';
 import Title from '@/components/Title/Title';
