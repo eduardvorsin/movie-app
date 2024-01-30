@@ -9,7 +9,7 @@ import Navigation from '../Navigation/Navigation';
 import { GeneralProps } from '@/types/shared';
 import UserSettingsButton from '../UserSettingsButton/UserSettingsButton';
 
-type Props = {
+export type Props = {
 	dictionary: {
 		searchButton: string,
 		logo: Record<'altText' | 'linkText', string>,

@@ -17,7 +17,7 @@ const socialNetworks = createSocialNetworksArray({
 	youtube_id: ' ',
 });
 
-type Props = {
+export type Props = {
 	dictionary: {
 		aboutTitle: string,
 		description: string,
@@ -36,6 +36,7 @@ type Props = {
 		},
 	},
 } & GeneralProps;
+
 export default function Footer({
 	className,
 	testId,

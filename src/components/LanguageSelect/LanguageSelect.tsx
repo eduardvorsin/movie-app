@@ -23,7 +23,7 @@ const languageOptions: LanguageOption[] = [
 	},
 ]
 
-type Props = {
+export type Props = {
 	dictionary: Record<'label', string>,
 } & GeneralProps;
 

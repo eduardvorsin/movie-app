@@ -6,7 +6,7 @@ import { useSelectedLayoutSegments } from 'next/navigation';
 import { MouseEventHandler } from 'react';
 import { GeneralProps } from '@/types/shared';
 
-type Props = {
+export type Props = {
 	onClick: MouseEventHandler<HTMLAnchorElement>,
 	dictionary: Record<'movies' | 'persons' | 'tv' | 'new' | 'collections', string>,
 } & GeneralProps;
