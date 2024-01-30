@@ -122,7 +122,6 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 	}, 300);
 
 	const keyDownHandler = throttle((e: React.KeyboardEvent<HTMLDivElement>) => {
-		e.preventDefault();
 		if (e.code === 'ArrowLeft') {
 			slidePrev();
 		} else if (e.code === 'ArrowRight') {
