@@ -15,6 +15,7 @@ describe('Search tests', () => {
 				testId='test-search'
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -34,6 +35,7 @@ describe('Search tests', () => {
 				testId='test-search'
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -55,6 +57,7 @@ describe('Search tests', () => {
 				testId='test-search'
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -78,6 +81,7 @@ describe('Search tests', () => {
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
 				onFocus={focusMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -101,6 +105,7 @@ describe('Search tests', () => {
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
 				onFocus={blurMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -124,6 +129,7 @@ describe('Search tests', () => {
 				testId='test-search'
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -150,6 +156,7 @@ describe('Search tests', () => {
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
 				onFocus={focusMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -173,6 +180,7 @@ describe('Search tests', () => {
 				isInvalid
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -192,6 +200,7 @@ describe('Search tests', () => {
 				labelHidden
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -211,6 +220,7 @@ describe('Search tests', () => {
 				error='mock error'
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -229,6 +239,7 @@ describe('Search tests', () => {
 				testId='test-search'
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -248,6 +259,7 @@ describe('Search tests', () => {
 				labelHidden
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -268,6 +280,7 @@ describe('Search tests', () => {
 				isDisabled
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -288,6 +301,7 @@ describe('Search tests', () => {
 				isInvalid
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 
@@ -308,6 +322,7 @@ describe('Search tests', () => {
 				isReadOnly
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
+				dictionary={{ button: 'To find' }}
 			/>
 		);
 

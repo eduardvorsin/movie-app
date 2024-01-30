@@ -3,9 +3,6 @@ import { ChangeEventHandler, FocusEventHandler, FormEventHandler } from 'react';
 import Button from '@/components/Button/Button';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import { GeneralProps } from '@/types/shared';
-import { useParams } from 'next/navigation';
-import { Locales, fallbackLng } from '@/i18n/settings';
-import { useTranslation } from '@/i18n/client';
 
 export type Props = {
 	value: string,
@@ -22,6 +19,7 @@ export type Props = {
 	isInvalid?: boolean,
 	placeholder?: string,
 	error?: string,
+	dictionary: Record<'button', string>,
 } & GeneralProps;
 
 export default function Search({
@@ -41,11 +39,9 @@ export default function Search({
 	onFocus,
 	onBlur,
 	onSubmit,
+	dictionary,
 	...props
 }: Props) {
-	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang);
-
 	const labelClasses = [
 		'block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150',
 		labelHidden ? 'sr-only' : '',
@@ -104,7 +100,7 @@ export default function Search({
 							>
 								<use href={'/assets/icons/loupe.svg#loupe'}></use>
 							</svg>
-							{t('search.button')}
+							{dictionary.button}
 						</Button>
 					</div>
 				</div>
@@ -118,6 +114,5 @@ export default function Search({
 				/>
 			)}
 		</div>
-
 	);
 }

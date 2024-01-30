@@ -441,6 +441,9 @@ export default async function Home({ params: { lang } }: Props) {
                   loading='lazy'
                   posterAlt={name}
                   posterSizes='(min-width: 1230px) 386px, (min-width: 640px) 50vw, 100vw'
+                  dictionary={{
+                    playButton: t('youTubeVideo.playButton'),
+                  }}
                 />
               ))}
             </PopularTrailersCarousel>

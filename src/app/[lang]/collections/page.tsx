@@ -44,7 +44,12 @@ export default async function Page({ params: { lang } }: Props) {
 						{t('mainTitle', { ns: 'collectionsPage' })}
 					</Title>
 
-					<ExpandableText>
+					<ExpandableText
+						dictionary={{
+							collapseButton: t('expandableText.collapseButton'),
+							expandButton: t('expandableText.expandButton'),
+						}}
+					>
 						{t('pageDescription', { ns: 'collectionsPage' })}
 					</ExpandableText>
 				</Container>

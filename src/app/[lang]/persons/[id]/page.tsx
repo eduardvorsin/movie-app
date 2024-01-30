@@ -210,6 +210,10 @@ export default async function Page({ params: { id, lang } }: Props) {
 								<ExpandableText
 									className='text-neutral-900 dark:text-dark-neutral-900'
 									visibleRowsCount={2}
+									dictionary={{
+										collapseButton: t('expandableText.collapseButton'),
+										expandButton: t('expandableText.expandButton'),
+									}}
 								>
 									{currentBiography}
 								</ExpandableText>
@@ -419,6 +423,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 										titleLevel={6}
 										showRating
 										rating={popularity}
+										dictionary={{ rating: t('personCard.rating') }}
 									>
 										{t(`department.${known_for_department.toLowerCase()}`, { ns: 'personDetailsPage', context: gender })}
 									</PersonCard>

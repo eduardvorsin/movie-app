@@ -2,14 +2,12 @@
 
 import { MouseEventHandler } from 'react';
 import Button from '@/components/Button/Button';
-import { useParams } from 'next/navigation';
-import { Locales, fallbackLng } from '@/i18n/settings';
-import { useTranslation } from '@/i18n/client';
 import { GeneralProps } from '@/types/shared';
 
 export type Props = {
 	isActive: boolean,
 	onClick: MouseEventHandler<HTMLButtonElement>,
+	dictionary: Record<'active' | 'inactive', string>,
 } & GeneralProps;
 
 export default function NavigationMenuButton({
@@ -17,11 +15,9 @@ export default function NavigationMenuButton({
 	onClick,
 	className,
 	testId,
+	dictionary,
 	...props
 }: Props) {
-	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang);
-
 	const topLineClasses = `origin-center transition-transform duration-150 ${isActive ? 'translate-y-[5.5px] translate-x-[5.8px] -rotate-45 scale-90' : ' translate-x-0 translate-y-0 rotate-0 scale-100'}`;
 
 	const middleLineClasses = `origin-center transition-opacity duration-150 ${isActive ? 'opacity-0' : ' opacity-100'}`;
@@ -55,7 +51,7 @@ export default function NavigationMenuButton({
 					d="M2 24.3333H30" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
 			</svg>
 
-			{t(`navigationMenuButton.${isActive ? 'active' : 'inactive'}`)}
+			{dictionary[isActive ? 'active' : 'inactive']}
 		</Button>
 	);
 }

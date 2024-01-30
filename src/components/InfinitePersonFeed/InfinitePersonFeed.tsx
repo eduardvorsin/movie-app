@@ -9,21 +9,27 @@ import { Locales, fallbackLng } from '@/i18n/settings';
 import { imgPath } from 'src/constants';
 import { ListsResponse, PopularPerson } from '@/services/types';
 import Banner from '../Banner/Banner';
-import { useTranslation } from '@/i18n/client';
-
 
 type Props = {
 	initialData: ListsResponse<PopularPerson>,
+	dictionary: {
+		errorTitle: string,
+		errorText: string,
+		loadMoreButton: string,
+		personCard: {
+			rating: string,
+		},
+	}
 } & GeneralProps;
 
 export default function InfinitePersonFeed({
 	className,
 	initialData,
 	testId,
+	dictionary,
 	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang)
 	const [page, setPage] = useState<number>(1);
 	const [items, setItems] = useState<PopularPerson[]>(initialData.results);
 	const [loading, setLoading] = useState<boolean>(false);
@@ -83,6 +89,7 @@ export default function InfinitePersonFeed({
 							showRating
 							appearance='secondary'
 							rating={popularity}
+							dictionary={dictionary.personCard}
 						>
 							{known_for.map(credit => credit.title).filter(Boolean).join(', ')}
 						</PersonCard>
@@ -92,11 +99,11 @@ export default function InfinitePersonFeed({
 
 			{error && (
 				<Banner
-					title={t('infinitePersonFeed.errorTitle')}
+					title={dictionary.errorTitle}
 					appearance='danger'
 					closeButton={false}
 				>
-					{t('infinitePersonFeed.error')}
+					{dictionary.errorText}
 				</Banner>
 			)}
 
@@ -106,7 +113,7 @@ export default function InfinitePersonFeed({
 					isLoading={loading}
 					onClick={clickHandler}
 				>
-					{t('infinitePersonFeed.button')}
+					{dictionary.loadMoreButton}
 				</Button>
 			)}
 		</div>

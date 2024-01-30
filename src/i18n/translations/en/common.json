@@ -46,7 +46,7 @@
 		"expandButton": "Expand"
 	},
 	"personCard": {
-		"rating": "Popularity"
+		"rating": "$t(movieCard.rating)"
 	},
 	"genderValues": {
 		"0": "Unknown",
@@ -61,7 +61,7 @@
 		"label": "Light and dark theme switch"
 	},
 	"movieCard": {
-		"popularity": "Popularity",
+		"rating": "Popularity",
 		"genres": "Genres",
 		"releaseDate": "Release date",
 		"country": "Country",
@@ -140,8 +140,13 @@
 	},
 	"infinitePersonFeed": {
 		"errorTitle": "Error",
-		"error": "Something went wrong, try to come back here later.",
-		"button": "Watch more"
+		"errorText": "Something went wrong, try to come back here later.",
+		"loadMoreButton": "Watch more"
+	},
+	"infiniteMovieFeed": {
+		"errorTitle": "$t(infinitePersonFeed.errorTitle)",
+		"errorText": "$t(infinitePersonFeed.errorText)",
+		"loadMoreButton": "$t(infinitePersonFeed.loadMoreButton)"
 	},
 	"footer": {
 		"aboutTitle": "About us",
@@ -273,9 +278,9 @@
 		"ratingLabel": "rating"
 	},
 	"textField": {
-		"button": "To clear"
+		"clearButton": "To clear"
 	},
 	"youTubeVideo": {
-		"button": "To watch"
+		"playButton": "To watch"
 	}
 }

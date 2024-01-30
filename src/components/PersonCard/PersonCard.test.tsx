@@ -10,6 +10,7 @@ describe('PersonCard tests', () => {
 				src='/'
 				alt='alternative text'
 				testId='test card'
+				dictionary={{ rating: 'Popularity' }}
 			>
 				test text
 			</PersonCard>
@@ -29,6 +30,7 @@ describe('PersonCard tests', () => {
 				alt='alternative text'
 				onClick={mockFn}
 				testId='test card'
+				dictionary={{ rating: 'Popularity' }}
 			>
 				test text
 			</PersonCard>
@@ -48,6 +50,7 @@ describe('PersonCard tests', () => {
 				title='test title'
 				alt='alternative text'
 				testId='test card'
+				dictionary={{ rating: 'Popularity' }}
 			>
 				test text
 			</PersonCard>
@@ -67,6 +70,7 @@ describe('PersonCard tests', () => {
 				showRating
 				rating={30}
 				testId='test card'
+				dictionary={{ rating: 'Popularity' }}
 			>
 				test text
 			</PersonCard>
@@ -83,6 +87,7 @@ describe('PersonCard tests', () => {
 				src='/'
 				alt='alternative text'
 				testId='test card'
+				dictionary={{ rating: 'Popularity' }}
 			>
 				test text
 			</PersonCard>
@@ -100,6 +105,7 @@ describe('PersonCard tests', () => {
 				alt='alternative text'
 				title='test title'
 				testId='test card'
+				dictionary={{ rating: 'Popularity' }}
 			>
 				test text
 			</PersonCard>
@@ -118,6 +124,7 @@ describe('PersonCard tests', () => {
 				rating={30}
 				showRating
 				testId='test card'
+				dictionary={{ rating: 'Popularity' }}
 			>
 				test text
 			</PersonCard>

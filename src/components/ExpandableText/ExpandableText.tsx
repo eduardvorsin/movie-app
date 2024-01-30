@@ -1,15 +1,13 @@
 'use client';
 import { MouseEventHandler, useLayoutEffect, useRef, useState } from 'react';
 import Button from '@/components/Button/Button';
-import { useTranslation } from '@/i18n/client';
-import { useParams } from 'next/navigation';
-import { Locales, fallbackLng } from '@/i18n/settings';
 import { GeneralProps } from '@/types/shared';
 
-type Props = {
+export type Props = {
 	defaultExpanded?: boolean,
 	children: string | string[],
 	visibleRowsCount?: 1 | 2 | 3 | 4 | 5 | 6,
+	dictionary: Record<'collapseButton' | 'expandButton', string>,
 } & GeneralProps;
 
 const lineClamps = {
@@ -27,10 +25,9 @@ export default function ExpandableText({
 	testId,
 	defaultExpanded,
 	visibleRowsCount = 2,
+	dictionary,
 	...props
 }: Props) {
-	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang);
 	const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded ?? false);
 
 	const textRef = useRef<HTMLParagraphElement | null>(null);
@@ -69,9 +66,7 @@ export default function ExpandableText({
 					>
 						{children}
 					</p>
-				)
-				:
-				(
+				) : (
 					<div
 						ref={textRef}
 						className={textClasses}
@@ -88,10 +83,7 @@ export default function ExpandableText({
 					className='mt-1 py-2 [&]:px-0'
 					onClick={clickHandler}
 				>
-					{isExpanded ?
-						t('expandableText.collapseButton') :
-						t('expandableText.expandButton')
-					}
+					{isExpanded ? dictionary.collapseButton : dictionary.expandButton}
 				</Button>
 			)}
 		</div>

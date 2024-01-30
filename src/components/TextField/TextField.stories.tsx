@@ -3,6 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { action } from '@storybook/addon-actions';
 import TextField, { Props } from "./TextField";
 import { ChangeEventHandler, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const meta: Meta<typeof TextField> = {
 	title: 'components/TextField',
@@ -98,8 +99,10 @@ const meta: Meta<typeof TextField> = {
 export default meta;
 type Story = StoryObj<typeof TextField>;
 
-const TextFieldWithHooks = (props: Omit<Props, 'onChange' | 'value'>) => {
+const TextFieldWithHooks = (props: Omit<Props, 'onChange' | 'value' | 'dictionary'>) => {
 	const [value, setValue] = useState<string>('');
+	const { t } = useTranslation('common');
+	const dictionary = { clearButton: t('textField.clearButton') };
 
 	const changeHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
 		setValue(e.currentTarget.value);
@@ -111,9 +114,23 @@ const TextFieldWithHooks = (props: Omit<Props, 'onChange' | 'value'>) => {
 		setValue('');
 	}
 
+	if (props.clearButton) {
+		return (
+			<TextField
+				{...props}
+				dictionary={dictionary}
+				value={value}
+				clearButton={true}
+				onClear={clearHandler}
+				onChange={changeHandler}
+			/>
+		);
+	}
+
 	return (
 		<TextField
 			{...props}
+			clearButton={false}
 			value={value}
 			onClear={clearHandler}
 			onChange={changeHandler}
@@ -355,7 +372,7 @@ export const All: Story = {
 					isReadOnly={variant.isReadOnly}
 					isRequired={variant.isRequired}
 					labelHidden={variant.labelHidden}
-					clearButton={variant.clearButton}
+					clearButton={variant.clearButton ? true : false}
 					error={variant.error}
 					placeholder={variant.placeholder}
 				/>

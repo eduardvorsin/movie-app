@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Logo, { Props } from './Logo';
+import { useTranslation } from 'react-i18next';
 
 const sizes: Exclude<Props['size'], undefined>[] = ['small', 'medium', 'large'];
 
@@ -20,6 +21,10 @@ const meta: Meta<typeof Logo> = {
 			control: false,
 			description: 'A callback that is triggered when a component is clicked on',
 		},
+		dictionary: {
+			control: false,
+			description: 'An object with keys for localization of the component',
+		},
 	},
 	component: Logo,
 	parameters: {
@@ -34,6 +39,22 @@ const meta: Meta<typeof Logo> = {
 export default meta;
 type Story = StoryObj<typeof Logo>;
 
+const LogoWithHooks = (props: Omit<Props, 'dictionary'>) => {
+	const { t } = useTranslation('common');
+	const dictionary = {
+		altText: t('logo.altText'),
+		linkText: t('logo.linkText'),
+	};
+
+	return (
+		<Logo
+			{...props}
+			dictionary={dictionary}
+		/>
+	);
+}
+
+
 export const Default: Story = {
 	parameters: {
 		docs: {
@@ -42,6 +63,7 @@ export const Default: Story = {
 			},
 		},
 	},
+	render: (args) => (<LogoWithHooks {...args} />),
 };
 
 export const EventCallbacks: Story = {
@@ -57,6 +79,7 @@ export const EventCallbacks: Story = {
 			},
 		},
 	},
+	render: (args) => (<LogoWithHooks {...args} />),
 };
 
 export const Sizes: Story = {
@@ -72,7 +95,7 @@ export const Sizes: Story = {
 			className='flex flex-col gap-5'
 		>
 			{sizes.map((size) => (
-				<Logo
+				<LogoWithHooks
 					key={size}
 					size={size}
 				/>

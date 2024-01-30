@@ -13,6 +13,7 @@ describe('TextField tests', () => {
 				id='test-field'
 				value='mock'
 				testId='test-field'
+				clearButton={false}
 			/>
 		);
 
@@ -30,6 +31,7 @@ describe('TextField tests', () => {
 				id='test-field'
 				value='mock'
 				testId='test-field'
+				clearButton={false}
 			/>
 		);
 
@@ -49,6 +51,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				isRequired
+				clearButton={false}
 			/>
 		);
 
@@ -66,6 +69,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				isInvalid
+				clearButton={false}
 			/>
 		);
 
@@ -84,6 +88,7 @@ describe('TextField tests', () => {
 				value='mock'
 				onFocus={mockFn}
 				testId='test-field'
+				clearButton={false}
 			/>
 		);
 
@@ -104,6 +109,7 @@ describe('TextField tests', () => {
 				value='mock'
 				onBlur={mockFn}
 				testId='test-field'
+				clearButton={false}
 			/>
 		);
 
@@ -126,6 +132,7 @@ describe('TextField tests', () => {
 				testId='test-field'
 				onClear={mockFn}
 				clearButton
+				dictionary={{ clearButton: 'To clear' }}
 			/>
 		);
 
@@ -145,6 +152,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				clearButton
+				dictionary={{ clearButton: 'To clear' }}
 			/>
 		);
 
@@ -162,6 +170,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				labelHidden
+				clearButton={false}
 			/>
 		);
 
@@ -179,6 +188,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				error='mock error'
+				clearButton={false}
 			/>
 		);
 
@@ -195,6 +205,7 @@ describe('TextField tests', () => {
 				id='test-field'
 				value='mock'
 				testId='test-field'
+				clearButton={false}
 			/>
 		);
 
@@ -212,6 +223,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				isDisabled
+				clearButton={false}
 			/>
 		);
 
@@ -229,6 +241,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				isReadOnly
+				clearButton={false}
 			/>
 		);
 
@@ -246,6 +259,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				isInvalid
+				clearButton={false}
 			/>
 		);
 
@@ -263,6 +277,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				isRequired
+				clearButton={false}
 			/>
 		);
 
@@ -280,6 +295,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				clearButton
+				dictionary={{ clearButton: 'To clear' }}
 			/>
 		);
 
@@ -297,6 +313,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				error='mock error'
+				clearButton={false}
 			/>
 		);
 
@@ -314,6 +331,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				labelHidden
+				clearButton={false}
 			/>
 		);
 

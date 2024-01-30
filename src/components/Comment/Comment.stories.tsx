@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Comment from './Comment';
+import Comment, { Props } from './Comment';
 import Avatar from '@/components/Avatar/Avatar';
 import AvatarPicture from '../../assets/avatar-example.jpg';
 import CommentAction from './CommentAction/CommentAction';
+import { useTranslation } from 'react-i18next';
 
 const meta: Meta<typeof Comment> = {
 	title: 'components/Comment',
@@ -90,6 +91,26 @@ const meta: Meta<typeof Comment> = {
 export default meta;
 type Story = StoryObj<typeof Comment>;
 
+const CommentWithHooks = (props: Omit<Props, 'dictionary'>) => {
+	const { t } = useTranslation('common');
+	const dictionary = {
+		ratingLabel: t('comment.ratingLabel'),
+		edited: t('comment.edited'),
+		savingText: t('comment.savingText'),
+		expandableText: {
+			expandButton: t('comment.expandButton'),
+			collapseButton: t('comment.collapseButton'),
+		}
+	};
+
+	return (
+		<Comment
+			{...props}
+			dictionary={dictionary}
+		/>
+	);
+}
+
 export const Default: Story = {
 	args: {
 		id: 'default',
@@ -112,6 +133,7 @@ export const Default: Story = {
 			},
 		},
 	},
+	render: (args) => (<CommentWithHooks {...args} />),
 };
 
 export const AfterContent: Story = {
@@ -137,6 +159,7 @@ export const AfterContent: Story = {
 			},
 		},
 	},
+	render: (args) => (<CommentWithHooks {...args} />),
 };
 
 export const Edited: Story = {
@@ -162,6 +185,7 @@ export const Edited: Story = {
 			},
 		},
 	},
+	render: (args) => (<CommentWithHooks {...args} />),
 };
 
 export const RestrictedTo: Story = {
@@ -187,6 +211,7 @@ export const RestrictedTo: Story = {
 			},
 		},
 	},
+	render: (args) => (<CommentWithHooks {...args} />),
 };
 
 export const Saving: Story = {
@@ -212,6 +237,7 @@ export const Saving: Story = {
 			},
 		},
 	},
+	render: (args) => (<CommentWithHooks {...args} />),
 };
 
 export const Time: Story = {
@@ -237,6 +263,7 @@ export const Time: Story = {
 			},
 		},
 	},
+	render: (args) => (<CommentWithHooks {...args} />),
 };
 
 export const Highlited: Story = {
@@ -262,6 +289,7 @@ export const Highlited: Story = {
 			},
 		},
 	},
+	render: (args) => (<CommentWithHooks {...args} />),
 };
 
 export const NestedComments: Story = {
@@ -280,7 +308,7 @@ export const NestedComments: Story = {
 			/>
 		),
 		children: (
-			<Comment
+			<CommentWithHooks
 				titleElement='h3'
 				id='nested-comment'
 				author='Lorraine Braelyn'
@@ -298,6 +326,7 @@ export const NestedComments: Story = {
 			},
 		},
 	},
+	render: (args) => (<CommentWithHooks {...args} />),
 };
 
 export const Error: Story = {
@@ -328,6 +357,7 @@ export const Error: Story = {
 			},
 		},
 	},
+	render: (args) => (<CommentWithHooks {...args} />),
 };
 
 export const Actions: Story = {
@@ -356,6 +386,7 @@ export const Actions: Story = {
 			},
 		},
 	},
+	render: (args) => (<CommentWithHooks {...args} />),
 };
 
 export const WithRating: Story = {
@@ -382,6 +413,7 @@ export const WithRating: Story = {
 			},
 		},
 	},
+	render: (args) => (<CommentWithHooks {...args} />),
 };
 
 export const WithLongText: Story = {

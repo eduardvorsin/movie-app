@@ -22,7 +22,6 @@ export async function generateMetadata(
 	}
 }
 
-
 type Props = {
 	params: {
 		lang: Locales,
@@ -69,7 +68,13 @@ export default async function Page({ params: { lang }, searchParams }: Props) {
 						{t('mainTitle', { ns: 'moviesPage' })}
 					</Title>
 
-					<ExpandableText className='mb-5'>
+					<ExpandableText
+						className='mb-5'
+						dictionary={{
+							collapseButton: t('expandableText.collapseButton'),
+							expandButton: t('expandableText.expandButton'),
+						}}
+					>
 						{[
 							t('pageDescription_1', { ns: 'moviesPage' }),
 							t('pageDescription_2', { ns: 'moviesPage' }),
@@ -102,10 +107,18 @@ export default async function Page({ params: { lang }, searchParams }: Props) {
 								timePeriod: currentTimePeriod,
 								country: searchParams?.country,
 							}}
+							dictionary={{
+								errorTitle: t('infiniteMovieFeed.errorTitle'),
+								errorText: t('infiniteMovieFeed.errorText'),
+								loadMoreButton: t('infiniteMovieFeed.loadMoreButton'),
+								movieCard: {
+									rating: t('movieCard.rating'),
+								}
+							}}
 						/>
 					) : (
 						<Banner
-							title={t('infinitePersonFeed.errorTitle')}
+							title={t('infiniteMovieFeed.errorTitle')}
 							appearance='danger'
 							closeButton={false}
 						>

@@ -1,16 +1,19 @@
 'use client';
-import { useTranslation } from '@/i18n/client';
-import { Locales, fallbackLng } from '@/i18n/settings';
 import { GeneralProps } from '@/types/shared';
-import { useParams } from 'next/navigation';
 import { MouseEventHandler, useRef } from 'react';
 
 type Props = {
 	activeIndex: number,
 	totalCount: number,
+} & ({
+	paginationType: 'progress' | 'fraction',
+	onDotClick?: never,
+	dictionary?: never,
+} | {
+	paginationType: 'dots',
 	onDotClick: (index: number) => void,
-	paginationType: 'dots' | 'progress' | 'fraction',
-} & GeneralProps;
+	dictionary: Record<'label', string>,
+}) & GeneralProps;
 
 export default function CarouselPagination({
 	className,
@@ -19,11 +22,9 @@ export default function CarouselPagination({
 	paginationType,
 	activeIndex,
 	totalCount,
+	dictionary,
 	...props
 }: Props) {
-	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang);
-
 	const dotsContainerRef = useRef<HTMLDivElement>(null);
 
 	const clickHandler: MouseEventHandler<HTMLButtonElement | HTMLDivElement> = (e) => {
@@ -66,7 +67,7 @@ export default function CarouselPagination({
 				ref={dotsContainerRef}
 				onClick={clickHandler}
 				role='group'
-				aria-label={t('carouselPagination.label')}
+				aria-label={dictionary.label}
 			>
 				{dots.map((_, index) => (
 					<button

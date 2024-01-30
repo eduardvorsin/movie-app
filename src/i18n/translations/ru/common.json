@@ -46,7 +46,7 @@
 		"expandButton": "Развернуть"
 	},
 	"personCard": {
-		"rating": "Популярность"
+		"rating": "$t(movieCard.rating)"
 	},
 	"genderValues": {
 		"0": "Неизвестно",
@@ -61,7 +61,7 @@
 		"label": "Переключатель светлой и темной тем"
 	},
 	"movieCard": {
-		"popularity": "Популярность",
+		"rating": "Популярность",
 		"genres": "Жанры",
 		"releaseDate": "Дата релиза",
 		"country": "Страна",
@@ -140,8 +140,13 @@
 	},
 	"infinitePersonFeed": {
 		"errorTitle": "Ошибка",
-		"error": "Что то пошло не так, попробуйте вернуться сюда позже.",
-		"button": "Смотреть еще"
+		"errorText": "Что то пошло не так, попробуйте вернуться сюда позже.",
+		"loadMoreButton": "Смотреть еще"
+	},
+	"infiniteMovieFeed": {
+		"errorTitle": "$t(infinitePersonFeed.errorTitle)",
+		"errorText": "$t(infinitePersonFeed.errorText)",
+		"loadMoreButton": "$t(infinitePersonFeed.loadMoreButton)"
 	},
 	"footer": {
 		"aboutTitle": "О нас",
@@ -273,9 +278,9 @@
 		"ratingLabel": "Рейтинг"
 	},
 	"textField": {
-		"button": "Очистить"
+		"clearButton": "Очистить"
 	},
 	"youTubeVideo": {
-		"button": "Смотреть"
+		"playButton": "Смотреть"
 	}
 }

@@ -179,7 +179,7 @@ export default function MovieCard({
 					{showRating && rating !== undefined && (
 						<span
 							className={ratingClasses}
-							aria-label={t('movieCard.popularity')}
+							aria-label={t('movieCard.rating')}
 						>
 							{Math.trunc(rating)}
 						</span>
@@ -210,7 +210,7 @@ export default function MovieCard({
 					{showRating && rating !== undefined && (
 						<span
 							className={ratingClasses}
-							aria-label={t('movieCard.popularity')}
+							aria-label={t('movieCard.rating')}
 						>
 							{Math.trunc(rating)}
 						</span>

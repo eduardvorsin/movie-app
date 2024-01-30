@@ -288,7 +288,13 @@ export default async function Page({ params: { id, lang } }: Props) {
 									>
 										{t('reviewTitle')}
 									</Title>
-									<ExpandableText className='mb-4 lg:mb-5'>
+									<ExpandableText
+										className='mb-4 lg:mb-5'
+										dictionary={{
+											collapseButton: t('expandableText.collapseButton'),
+											expandButton: t('expandableText.expandButton'),
+										}}
+									>
 										{overview}
 									</ExpandableText>
 								</>
@@ -431,6 +437,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									showRating
 									rating={popularity}
 									loading='lazy'
+									dictionary={{ rating: t('personCard.rating') }}
 								>
 									{character}
 								</PersonCard>
@@ -467,6 +474,9 @@ export default async function Page({ params: { id, lang } }: Props) {
 										loading='lazy'
 										posterAlt={trailer.name}
 										posterSizes='(min-width: 1230px) 1156px, 100vw'
+										dictionary={{
+											playButton: t('youTubeVideo.playButton'),
+										}}
 									/>
 								</TabPanel>
 							))}
@@ -522,6 +532,15 @@ export default async function Page({ params: { id, lang } }: Props) {
 									highlighted
 									time={getLocalizedDate(created_at, lang)}
 									rating={author_details.rating}
+									dictionary={{
+										ratingLabel: t('comment.ratingLabel'),
+										edited: t('comment.edited'),
+										savingText: t('comment.savingText'),
+										expandableText: {
+											expandButton: t('comment.expandButton'),
+											collapseButton: t('comment.collapseButton'),
+										}
+									}}
 									avatar={
 										<Avatar
 											size='large'

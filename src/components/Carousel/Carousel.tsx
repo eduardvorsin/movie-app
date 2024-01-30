@@ -8,6 +8,9 @@ import { useScreenWidth } from '@/hooks/useScreenWidth/useScreenWidth';
 import { GeneralProps } from '@/types/shared';
 import dynamic from 'next/dynamic';
 import { SkeletonImage } from '../Skeleton/Skeleton';
+import { useParams } from 'next/navigation';
+import { Locales, fallbackLng } from '@/i18n/settings';
+import { useTranslation } from '@/i18n/client';
 
 const arrowVerticalPostion = {
 	dots: 'top-[calc(50%-35px)] sm:top-[calc(50%-30px)]',
@@ -62,6 +65,8 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 	breakpoints,
 	...props
 }, ref) {
+	const lang = useParams()?.lang as Locales ?? fallbackLng;
+	const { t } = useTranslation(lang);
 	const [activeIndex, setActiveIndex] = useState<number>(0);
 	const [isSliderHovered, setIsSliderHovered] = useState<boolean>(false);
 	const containerRef = useRef<HTMLDivElement>(null);
@@ -190,6 +195,16 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 		noSwiping ? 'touch-none' : '',
 	].join(' ');
 
+	const arrowLeftDictionary = useMemo(() => ({
+		direction: t('carouselArrow.direction', { context: 'left' }),
+	}), [t]);
+	const arrowRightDictionary = useMemo(() => ({
+		direction: t('carouselArrow.direction', { context: 'right' }),
+	}), [t]);
+	const paginationDictionary = useMemo(() => ({
+		label: t('carouselPagination.label'),
+	}), [t]);
+
 	return (
 		//event bubbling 
 		// eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
@@ -238,6 +253,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 						onClick={slidePrev}
 						isDisabled={activeIndex === 0}
 						aria-controls={`${id}-container`}
+						dictionary={arrowLeftDictionary}
 
 					/>
 					<CarouselArrow
@@ -246,18 +262,28 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 						onClick={slideNext}
 						isDisabled={activeIndex === lastIndex}
 						aria-controls={`${id}-container`}
+						dictionary={arrowRightDictionary}
 					/>
 				</>
 			)}
 
 			{showPagination && (
 				<>
-					<CarouselPagination
-						activeIndex={activeIndex}
-						totalCount={lastIndex + 1}
-						paginationType={paginationType}
-						onDotClick={dotClickHandler}
-					/>
+					{paginationType === 'dots' ? (
+						<CarouselPagination
+							activeIndex={activeIndex}
+							totalCount={lastIndex + 1}
+							paginationType={'dots'}
+							onDotClick={dotClickHandler}
+							dictionary={paginationDictionary}
+						/>
+					) : (
+						<CarouselPagination
+							activeIndex={activeIndex}
+							totalCount={lastIndex + 1}
+							paginationType={paginationType}
+						/>
+					)}
 				</>
 			)}
 		</div>

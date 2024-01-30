@@ -2,25 +2,22 @@
 
 import { NavigationRoutes, navigationRoutes } from 'src/constants';
 import Link from '@/components/Link/Link';
-import { Locales, fallbackLng } from '@/i18n/settings';
-import { useTranslation } from '@/i18n/client';
-import { useParams, useSelectedLayoutSegments } from 'next/navigation';
+import { useSelectedLayoutSegments } from 'next/navigation';
 import { MouseEventHandler } from 'react';
 import { GeneralProps } from '@/types/shared';
 
 type Props = {
 	onClick: MouseEventHandler<HTMLAnchorElement>,
+	dictionary: Record<'movies' | 'persons' | 'tv' | 'new' | 'collections', string>,
 } & GeneralProps;
 
 export default function Navigation({
 	className,
 	testId,
 	onClick,
+	dictionary,
 	...props
 }: Props) {
-	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang);
-
 	const routes = Object.keys(navigationRoutes);
 	const activeSegment = useSelectedLayoutSegments().find((segment) => routes.includes(segment));
 
@@ -41,7 +38,7 @@ export default function Navigation({
 								href={navigationRoutes[route]}
 								onClick={onClick}
 							>
-								{t(`navigation.${route}`)}
+								{dictionary[route]}
 							</Link>
 						</li>
 					))}

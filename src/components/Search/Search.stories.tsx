@@ -3,6 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Search, { Props } from './Search';
 import { ChangeEventHandler, FormEventHandler, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const meta: Meta<typeof Search> = {
 	title: 'components/Search',
@@ -74,8 +75,10 @@ const meta: Meta<typeof Search> = {
 export default meta;
 type Story = StoryObj<typeof Search>;
 
-const SearchWithHooks = (props: Omit<Props, 'onChange' | 'value'>) => {
+const SearchWithHooks = (props: Omit<Props, 'onChange' | 'value' | 'dictionary'>) => {
 	const [value, setValue] = useState<string>('');
+	const { t } = useTranslation('common');
+	const dictionary = { button: t('search.button') };
 
 	const changeHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
 		setValue(e.currentTarget.value);
@@ -90,6 +93,7 @@ const SearchWithHooks = (props: Omit<Props, 'onChange' | 'value'>) => {
 	return (
 		<Search
 			{...props}
+			dictionary={dictionary}
 			className={`max-w-[13rem] ${props.className}`}
 			value={value}
 			onChange={changeHandler}

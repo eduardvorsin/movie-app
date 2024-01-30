@@ -12,6 +12,7 @@ import { Locales, fallbackLng } from '@/i18n/settings';
 import Title from '../Title/Title';
 import ThemedImage from '../ThemedImage/ThemedImage';
 import { useTranslation } from '@/i18n/client';
+import { useMemo } from 'react';
 
 const socialNetworks = createSocialNetworksArray({
 	imdb_id: null,
@@ -35,6 +36,11 @@ export default function Footer({
 		className,
 	].join(' ');
 
+	const logoDictionary = useMemo(() => ({
+		altText: t('logo.altText'),
+		linkText: t('logo.linkText'),
+	}), [t]);
+
 	return (
 		<footer
 			className={classes}
@@ -53,6 +59,7 @@ export default function Footer({
 					<Logo
 						size='large'
 						className='max-w-[80px] lg:max-w-[110px] h-auto mb-3'
+						dictionary={logoDictionary}
 					/>
 
 					<p className='text-neutral-1000 dark:text-dark-neutral-900 mb-5 transition-colors duration-150'>

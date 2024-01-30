@@ -6,11 +6,8 @@ import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import Title from '@/components/Title/Title';
 import { GeneralProps, HeadingElement } from '@/types/shared';
 import ExpandableText from '../ExpandableText/ExpandableText';
-import { useParams } from 'next/navigation';
-import { Locales, fallbackLng } from '@/i18n/settings';
-import { useTranslation } from '@/i18n/client';
 
-type Props = {
+export type Props = {
 	id: string,
 	author: string,
 	avatar: ReactNode,
@@ -31,6 +28,15 @@ type Props = {
 	highlighted?: boolean,
 	shouldRenderNestedCommentsInline?: boolean,
 	rating?: number,
+	dictionary: {
+		edited: string,
+		savingText: string,
+		ratingLabel: string,
+		expandableText: {
+			collapseButton: string,
+			expandButton: string,
+		},
+	}
 } & GeneralProps;
 
 export default function Comment({
@@ -56,11 +62,9 @@ export default function Comment({
 	shouldRenderNestedCommentsInline,
 	titleElement,
 	rating,
+	dictionary,
 	...props
 }: Props) {
-	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang);
-
 	const classes = [
 		'grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative',
 		highlighted ? 'gap-y-4' : 'gap-y-2 md:gap-y-4',
@@ -101,7 +105,7 @@ export default function Comment({
 						<span
 							className=' text-100 font-regular max-w-[120px] truncate'
 						>
-							{savingText ?? t('comment.savingText')}
+							{savingText ?? dictionary.savingText}
 						</span>
 					)}
 					{!isError && !isSaving && time ?
@@ -118,7 +122,7 @@ export default function Comment({
 						<span
 							className='text-neutral-700 dark:text-dark-neutral-700  font-regular text-100 transition-colors duration-150'
 						>
-							{t('comment.edited')}
+							{dictionary.edited}
 						</span>
 					)}
 					{restrictedTo && (
@@ -147,7 +151,7 @@ export default function Comment({
 
 							<span
 								className='text-neutral-800 dark:text-dark-neutral-800 font-bold leading-none transition-colors duration-150'
-								aria-label={t('comment.ratingLabel')}
+								aria-label={dictionary.ratingLabel}
 							>
 								{rating}
 							</span>
@@ -158,6 +162,7 @@ export default function Comment({
 				<ExpandableText
 					visibleRowsCount={6}
 					className='break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150'
+					dictionary={dictionary.expandableText}
 				>
 					{content}
 				</ExpandableText>
@@ -218,6 +223,6 @@ export default function Comment({
 					/>
 				)
 			}
-		</div >
+		</div>
 	);
 };

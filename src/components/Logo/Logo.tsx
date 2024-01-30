@@ -2,9 +2,6 @@
 
 import Link from 'next/link';
 import ThemedImage from '../ThemedImage/ThemedImage';
-import { useTranslation } from '@/i18n/client';
-import { useParams } from 'next/navigation';
-import { Locales, fallbackLng } from '@/i18n/settings';
 import { MouseEventHandler } from 'react';
 import { routes } from 'src/constants';
 import { GeneralProps } from '@/types/shared';
@@ -27,6 +24,7 @@ const sizes = {
 export type Props = {
 	onClick?: MouseEventHandler<HTMLAnchorElement>,
 	size: 'small' | 'medium' | 'large',
+	dictionary: Record<'altText' | 'linkText', string>,
 } & GeneralProps;
 
 export default function Logo({
@@ -34,11 +32,9 @@ export default function Logo({
 	className,
 	testId,
 	onClick,
+	dictionary,
 	...props
 }: Props) {
-	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang);
-
 	return (
 		<Link
 			className={`inline-flex ${className}`}
@@ -50,11 +46,11 @@ export default function Logo({
 			<ThemedImage
 				width={sizes[size].width}
 				height={sizes[size].height}
-				alt={t('logo.altText')}
+				alt={dictionary.altText}
 				src={'/assets/images/logo.svg'}
 			/>
 			<span className='sr-only'>
-				{t('logo.linkText')}
+				{dictionary.linkText}
 			</span>
 		</Link>
 	);

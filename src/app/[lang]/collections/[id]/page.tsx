@@ -50,6 +50,15 @@ export default async function Page({ params: { id, lang } }: Props) {
 	const imageData: PlaceholderData | null = await fetchImageWithPlaceholder(
 		`/assets/images/collection-${id}.webp`);
 
+	const InfiniteMovieFeedDictionary = {
+		errorTitle: t('infiniteMovieFeed.errorTitle'),
+		errorText: t('infiniteMovieFeed.errorText'),
+		loadMoreButton: t('infiniteMovieFeed.loadMoreButton'),
+		movieCard: {
+			rating: t('movieCard.rating'),
+		},
+	}
+
 	return (
 		<main className='mt-[3.75rem] flex-grow relative'>
 			<Title
@@ -96,6 +105,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							initialData={movies}
 							contentType='collection'
 							collectionName={id}
+							dictionary={InfiniteMovieFeedDictionary}
 						/>
 					</Container>
 				</section>
@@ -117,6 +127,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							contentType='collection'
 							initialData={tvSeries}
 							collectionName={id}
+							dictionary={InfiniteMovieFeedDictionary}
 						/>
 
 					</Container>

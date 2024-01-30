@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ExpandableText from './ExpandableText';
+import ExpandableText, { Props } from './ExpandableText';
+import { useTranslation } from 'react-i18next';
 
 const meta: Meta<typeof ExpandableText> = {
 	title: 'components/ExpandableText',
@@ -19,7 +20,11 @@ const meta: Meta<typeof ExpandableText> = {
 		},
 		testId: {
 			description: 'Id for testing the component',
-		}
+		},
+		dictionary: {
+			control: false,
+			description: 'An object with keys for localization of the component',
+		},
 	},
 	component: ExpandableText,
 	parameters: {
@@ -34,6 +39,21 @@ const meta: Meta<typeof ExpandableText> = {
 export default meta;
 type Story = StoryObj<typeof ExpandableText>;
 
+const ExpandableTextWithHooks = (props: Omit<Props, 'dictionary'>) => {
+	const { t } = useTranslation('common');
+	const dictionary = {
+		expandButton: t('expandableText.expandButton'),
+		collapseButton: t('expandableText.collapseButton'),
+	};
+
+	return (
+		<ExpandableText
+			{...props}
+			dictionary={dictionary}
+		/>
+	);
+}
+
 export const Default: Story = {
 	args: {
 		className: 'max-w-[15rem]',
@@ -46,6 +66,7 @@ export const Default: Story = {
 			},
 		},
 	},
+	render: (args) => (<ExpandableTextWithHooks {...args} />),
 };
 
 export const DefaultExpanded: Story = {
@@ -61,4 +82,5 @@ export const DefaultExpanded: Story = {
 			},
 		},
 	},
+	render: (args) => (<ExpandableTextWithHooks {...args} />),
 };

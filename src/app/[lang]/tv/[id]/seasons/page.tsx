@@ -165,7 +165,13 @@ export default async function Page({ params: { id, lang } }: Props) {
 											</Title>
 
 											{overview.length > 0 && (
-												<ExpandableText className='mt-3'>
+												<ExpandableText
+													className='mt-3'
+													dictionary={{
+														collapseButton: t('expandableText.collapseButton'),
+														expandButton: t('expandableText.expandButton'),
+													}}
+												>
 													{overview}
 												</ExpandableText>
 											)}

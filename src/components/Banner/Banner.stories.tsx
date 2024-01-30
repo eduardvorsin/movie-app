@@ -64,7 +64,7 @@ const BannerWithHooks = (props: Omit<Props, 'dictionary'>) => {
 	const { t } = useTranslation('common');
 	const dictionary = { closeButton: t('banner.closeButton') };
 
-	if (props.closeButton === true) {
+	if (props.closeButton) {
 		return (
 			<Banner
 				{...props}

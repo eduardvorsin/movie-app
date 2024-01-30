@@ -5,9 +5,6 @@ import Link from "@/components/Link/Link";
 import Spinner from '@/components/Spinner/Spinner';
 import Title from '@/components/Title/Title';
 import { FocusEventHandler, useState } from 'react';
-import { useParams } from 'next/navigation';
-import { Locales, fallbackLng } from '@/i18n/settings';
-import { useTranslation } from '@/i18n/client';
 
 export type AutocompleteOption = {
 	href: string,
@@ -18,7 +15,14 @@ type Props = {
 	isLoading?: boolean,
 	options: AutocompleteOption[],
 	initialOptions: AutocompleteOption[],
-} & SearchProps;
+	dictionary: {
+		title: string,
+		text: string,
+		search: {
+			button: string,
+		},
+	}
+} & Omit<SearchProps, 'dictionary'>;
 
 export default function AutocompleteSearch({
 	id,
@@ -40,9 +44,8 @@ export default function AutocompleteSearch({
 	onFocus,
 	onBlur,
 	onSubmit,
+	dictionary,
 }: Props) {
-	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang);
 	const [isFocused, setIsFocused] = useState<boolean>(false);
 	const currentOptions = value.length === 0 ? initialOptions : options;
 
@@ -81,6 +84,7 @@ export default function AutocompleteSearch({
 				onBlur={blurHandler}
 				onSubmit={onSubmit}
 				error={error}
+				dictionary={dictionary.search}
 			/>
 			{isFocused && (
 				<div
@@ -103,11 +107,11 @@ export default function AutocompleteSearch({
 								as='h4'
 								weight={400}
 							>
-								{t('autocompleteSearch.title', { value })}
+								{dictionary.title}
 							</Title>
 
 							<p className='text-neutral-900 dark:text-dark-neutral-700 transition-colors duration-150'>
-								{t('autocompleteSearch.text')}
+								{dictionary.text}
 							</p>
 						</div>
 					)}

@@ -5,9 +5,7 @@ import { GeneralProps } from '@/types/shared';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import ThemedImage from '../ThemedImage/ThemedImage';
-import { Locales, fallbackLng, runsOnServerSide } from '@/i18n/settings';
-import { useParams } from 'next/navigation';
-import { useTranslation } from '@/i18n/client';
+import { runsOnServerSide } from '@/i18n/settings';
 
 const youtubeVideoBasePath = 'https://www.youtube-nocookie.com/embed/';
 const youtubePosterBasePath = 'https://i.ytimg.com/vi_webp/';
@@ -25,6 +23,7 @@ type Props = {
 	posterAlt: string,
 	posterSizes?: string,
 	testId?: string,
+	dictionary: Record<'playButton', string>,
 } & GeneralProps;
 
 export default function YouTubeVideo({
@@ -41,11 +40,9 @@ export default function YouTubeVideo({
 	muted,
 	posterAlt,
 	posterSizes,
+	dictionary,
 	...props
 }: Props) {
-	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang);
-
 	const [isIframeloading, setIsIframeLoading] = useState<boolean>(false);
 	const screenWidth = useScreenWidth();
 	const [posterResolution, setPosterResolution] = useState<Props['posterQuality']>(posterQuality ?? 'maxresdefault');
@@ -102,8 +99,8 @@ export default function YouTubeVideo({
 					<button
 						className='w-full h-full flex items-center justify-center absolute z-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
 						onClick={addIframe}
-						aria-label={t('youTubeVideo.button')}
-						title={t('youTubeVideo.button')}
+						aria-label={dictionary.playButton}
+						title={dictionary.playButton}
 					>
 						<Image
 							className='w-[4rem] h-[4rem]'

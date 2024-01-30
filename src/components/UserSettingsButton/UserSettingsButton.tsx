@@ -6,17 +6,23 @@ import { MouseEventHandler, useId, useState } from 'react';
 import Popup from '../Popup/Popup';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import Title from '../Title/Title';
-import { useParams } from 'next/navigation';
-import { Locales, fallbackLng } from '@/i18n/settings';
-import { useTranslation } from '@/i18n/client';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
+
+type Props = {
+	dictionary: {
+		button: string,
+		themeTitle: string,
+		languageTitle: string,
+		languageSelect: { label: string },
+		themeToggle: { label: string },
+	},
+} & GeneralProps;
 
 export default function UserSettingsButton({
 	className,
 	testId,
-}: GeneralProps) {
-	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang);
+	dictionary,
+}: Props) {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const id = useId();
 	const clickHandler: MouseEventHandler<HTMLButtonElement> = () => {
@@ -47,7 +53,7 @@ export default function UserSettingsButton({
 					<svg className='p-2 w-[2.25rem] h-[2.25rem] fill-current' viewBox='0 0 32 32'>
 						<use href={'/assets/icons/settings.svg#settings'}></use>
 					</svg>
-					{t('userSettingsButton.button')}
+					{dictionary.button}
 				</Button>
 			}
 		>
@@ -58,9 +64,9 @@ export default function UserSettingsButton({
 					as='h2'
 					level={6}
 				>
-					{t('userSettingsButton.themeTitle')}
+					{dictionary.themeTitle}
 				</Title>
-				<ThemeToggle />
+				<ThemeToggle dictionary={dictionary.themeToggle} />
 			</section>
 
 			<section>
@@ -70,9 +76,9 @@ export default function UserSettingsButton({
 					as='h2'
 					level={6}
 				>
-					{t('userSettingsButton.languageTitle')}
+					{dictionary.languageTitle}
 				</Title>
-				<LanguageSelect />
+				<LanguageSelect dictionary={dictionary.languageSelect} />
 			</section>
 		</Popup>
 	);

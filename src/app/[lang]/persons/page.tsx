@@ -26,7 +26,7 @@ type Props = {
 };
 
 export default async function Page({ params: { lang } }: Props) {
-	const { t } = await fetchTranslation(lang, 'personsPage');
+	const { t } = await fetchTranslation(lang, ['common', 'personsPage']);
 	const popularPersons = await fetchPopularPersons(1, { lang });
 
 	if (!popularPersons || popularPersons.results.length === 0) {
@@ -47,13 +47,18 @@ export default async function Page({ params: { lang } }: Props) {
 						level={2}
 						as='h1'
 					>
-						{t('mainTitle')}
+						{t('mainTitle', { ns: 'personsPage' })}
 					</Title>
 
-					<ExpandableText>
+					<ExpandableText
+						dictionary={{
+							collapseButton: t('expandableText.collapseButton'),
+							expandButton: t('expandableText.expandButton'),
+						}}
+					>
 						{[
-							t('pageDescription_1'),
-							t('pageDescription_2'),
+							t('pageDescription_1', { ns: 'personsPage' }),
+							t('pageDescription_2', { ns: 'personsPage' }),
 						]}
 					</ExpandableText>
 				</Container>
@@ -66,10 +71,20 @@ export default async function Page({ params: { lang } }: Props) {
 						level={3}
 						as='h2'
 					>
-						{t('personsTitle')}
+						{t('personsTitle', { ns: 'personsPage' })}
 					</Title>
 
-					<InfinitePersonFeed initialData={popularPersons} />
+					<InfinitePersonFeed
+						initialData={popularPersons}
+						dictionary={{
+							errorTitle: t('infinitePersonFeed.errorTitle'),
+							errorText: t('infinitePersonFeed.errorText'),
+							loadMoreButton: t('infinitePersonFeed.loadMoreButton'),
+							personCard: {
+								rating: t('personCard.rating'),
+							}
+						}}
+					/>
 				</Container>
 			</section>
 		</main>

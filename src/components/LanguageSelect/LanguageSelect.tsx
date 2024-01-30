@@ -23,15 +23,18 @@ const languageOptions: LanguageOption[] = [
 	},
 ]
 
-type Props = GeneralProps;
+type Props = {
+	dictionary: Record<'label', string>,
+} & GeneralProps;
 
 export default function LanguageSelect({
 	className,
 	testId,
+	dictionary,
 }: Props) {
 	const id = useId();
 	const currentLang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t, i18n } = useTranslation(currentLang);
+	const { i18n } = useTranslation(currentLang);
 	const [lang, setLang] = useState<Locales>(currentLang);
 	const pathname = usePathname();
 	const router = useRouter();
@@ -49,7 +52,7 @@ export default function LanguageSelect({
 			testId={testId}
 			id={id}
 			labelHidden
-			label={t('languageSelect.label')}
+			label={dictionary.label}
 			name='language select'
 			options={languageOptions}
 			value={lang}

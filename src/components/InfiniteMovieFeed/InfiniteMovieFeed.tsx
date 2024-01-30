@@ -8,7 +8,6 @@ import { Locales, fallbackLng } from '@/i18n/settings';
 import { Collections, imgPath } from 'src/constants';
 import { ListsResponse, MovieResponse, TVSeriesResponse } from '@/services/types';
 import Banner from '../Banner/Banner';
-import { useTranslation } from '@/i18n/client';
 import MovieCard from '../MovieCard/MovieCard';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
 import { MovieSubgenres } from '@/services/fetchMoviesByGenre/fetchMoviesByGenre';
@@ -52,7 +51,15 @@ type Props<
 		country?: Countries,
 		timePeriod?: string,
 		sortBy?: CatalogSortOptions,
-	}
+	},
+	dictionary: {
+		errorTitle: string,
+		errorText: string,
+		loadMoreButton: string,
+		movieCard: {
+			rating: string,
+		},
+	},
 } & (
 		{
 			contentType: 'collection',
@@ -76,10 +83,10 @@ export default function InfiniteMovieFeed<
 	style,
 	contentType,
 	searchOptions,
+	dictionary,
 	...props
 }: Props<M, I>) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang)
 	const [page, setPage] = useState<number>(1);
 	const [items, setItems] = useState<I[]>(initialData.results);
 	const [loading, setLoading] = useState<boolean>(false);
@@ -186,10 +193,10 @@ export default function InfiniteMovieFeed<
 			{error && (
 				<Banner
 					closeButton={false}
-					title={t('infinitePersonFeed.errorTitle')}
+					title={dictionary.errorTitle}
 					appearance='danger'
 				>
-					{t('infinitePersonFeed.error')}
+					{dictionary.errorText}
 				</Banner>
 			)}
 
@@ -199,7 +206,7 @@ export default function InfiniteMovieFeed<
 					isLoading={loading}
 					onClick={clickHandler}
 				>
-					{t('infinitePersonFeed.button')}
+					{dictionary.loadMoreButton}
 				</Button>
 			)}
 		</div>
