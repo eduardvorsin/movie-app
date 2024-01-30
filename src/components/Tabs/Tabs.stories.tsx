@@ -3,7 +3,7 @@ import Tabs from './Tabs';
 import TabPanel from './TabPanel/TabPanel';
 
 const meta: Meta<typeof Tabs> = {
-	title: 'components/Tabs',
+	title: 'UI/Tabs',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import CommentAction from './CommentAction';
 
 const meta: Meta<typeof CommentAction> = {
-	title: 'components/Comment/CommentAction',
+	title: 'UI/Comment/CommentAction',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

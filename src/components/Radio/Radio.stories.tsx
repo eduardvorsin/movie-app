@@ -6,7 +6,7 @@ import { ChangeEvent, useState } from 'react';
 import Button from '@/components/Button/Button';
 
 const meta: Meta<typeof Radio> = {
-	title: 'components/Radio',
+	title: 'UI/Radio',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

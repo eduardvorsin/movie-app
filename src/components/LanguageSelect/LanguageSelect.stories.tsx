@@ -3,7 +3,7 @@ import LanguageSelect, { Props } from './LanguageSelect';
 import { useTranslation } from 'react-i18next';
 
 const meta: Meta<typeof LanguageSelect> = {
-	title: 'components/LanguageSelect',
+	title: 'UI/LanguageSelect',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

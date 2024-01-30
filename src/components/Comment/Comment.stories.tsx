@@ -6,7 +6,7 @@ import CommentAction from './CommentAction/CommentAction';
 import { useTranslation } from 'react-i18next';
 
 const meta: Meta<typeof Comment> = {
-	title: 'components/Comment',
+	title: 'UI/Comment',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

@@ -5,7 +5,7 @@ type Appearance = Exclude<Props['appearance'], undefined>;
 const appearances: Appearance[] = ['default', 'info', 'success', 'warning', 'danger'];
 
 const meta: Meta<typeof Badge> = {
-	title: 'components/Badge',
+	title: 'UI/Badge',
 	tags: ['autodocs'],
 	argTypes: {
 		appearance: {

@@ -199,7 +199,7 @@ const all: AllVariants = {
 };
 
 const meta: Meta<typeof Button> = {
-	title: 'components/Button',
+	title: 'UI/Button',
 	tags: ['autodocs'],
 	argTypes: {
 		appearance: {

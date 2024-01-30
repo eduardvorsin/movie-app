@@ -6,7 +6,7 @@ import { ChangeEventHandler, FormEventHandler, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const meta: Meta<typeof Search> = {
-	title: 'components/Search',
+	title: 'UI/Search',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

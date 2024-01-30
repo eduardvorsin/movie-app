@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import CharacteristicList from './CharacteristicList';
 
 const meta: Meta<typeof CharacteristicList> = {
-	title: 'components/CharacteristicList',
+	title: 'UI/CharacteristicList',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

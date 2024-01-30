@@ -34,7 +34,7 @@ const variants: Variant[] = [
 ];
 
 const meta: Meta<typeof Checkbox> = {
-	title: 'components/Checkbox',
+	title: 'UI/Checkbox',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

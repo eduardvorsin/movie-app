@@ -65,7 +65,7 @@ const variants: Variant[] = [
 ];
 
 const meta: Meta<typeof Avatar> = {
-	title: 'components/Avatar',
+	title: 'UI/Avatar',
 	tags: ['autodocs'],
 	argTypes: {
 		appearance: {

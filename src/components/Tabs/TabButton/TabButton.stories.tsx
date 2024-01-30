@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import TabButton from './TabButton';
 
 const meta: Meta<typeof TabButton> = {
-	title: 'components/Tabs/TabButton',
+	title: 'UI/Tabs/TabButton',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

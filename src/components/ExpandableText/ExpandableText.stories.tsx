@@ -3,7 +3,7 @@ import ExpandableText, { Props } from './ExpandableText';
 import { useTranslation } from 'react-i18next';
 
 const meta: Meta<typeof ExpandableText> = {
-	title: 'components/ExpandableText',
+	title: 'UI/ExpandableText',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

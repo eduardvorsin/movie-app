@@ -5,7 +5,7 @@ const levels: Exclude<Props['level'], undefined>[] = [1, 2, 3, 4, 5, 6];
 const weights: Exclude<Props['weight'], undefined>[] = [400, 500, 600, 700];
 
 const meta: Meta<typeof Title> = {
-	title: 'components/Title',
+	title: 'UI/Title',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

@@ -3,7 +3,7 @@ import Link from './Link';
 
 
 const meta: Meta<typeof Link> = {
-	title: 'components/Link',
+	title: 'UI/Link',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

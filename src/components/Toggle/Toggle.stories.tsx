@@ -96,7 +96,7 @@ const all: Record<Sizes, Variant[]> = {
 };
 
 const meta: Meta<typeof Toggle> = {
-	title: 'components/Toggle',
+	title: 'UI/Toggle',
 	tags: ['autodocs'],
 	argTypes: {
 		appearance: {

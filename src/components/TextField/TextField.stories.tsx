@@ -6,7 +6,7 @@ import { ChangeEventHandler, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const meta: Meta<typeof TextField> = {
-	title: 'components/TextField',
+	title: 'UI/TextField',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

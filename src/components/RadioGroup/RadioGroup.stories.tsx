@@ -26,7 +26,7 @@ const choices: Choice[] = [
 ];
 
 const meta: Meta<typeof RadioGroup> = {
-	title: 'components/RadioGroup',
+	title: 'UI/RadioGroup',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

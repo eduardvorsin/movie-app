@@ -14,7 +14,7 @@ const variants: Variants = {
 }
 
 const meta: Meta<typeof InlineMessage> = {
-	title: 'components/InlineMessage',
+	title: 'UI/InlineMessage',
 	tags: ['autodocs'],
 	argTypes: {
 		appearance: {

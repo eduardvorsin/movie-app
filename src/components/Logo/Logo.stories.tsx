@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 const sizes: Exclude<Props['size'], undefined>[] = ['small', 'medium', 'large'];
 
 const meta: Meta<typeof Logo> = {
-	title: 'components/Logo',
+	title: 'UI/Logo',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

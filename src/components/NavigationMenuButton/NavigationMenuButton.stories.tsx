@@ -5,7 +5,7 @@ import NavigationMenuButton, { Props } from './NavigationMenuButton';
 import { MouseEventHandler, useState } from 'react';
 
 const meta: Meta<typeof NavigationMenuButton> = {
-	title: 'components/NavigationMenuButton',
+	title: 'UI/NavigationMenuButton',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {

@@ -5,7 +5,7 @@ type Sizes = Exclude<Props['size'], undefined>;
 const sizes: Sizes[] = ['small', 'medium', 'large', 'xlarge'];
 
 const meta: Meta<typeof Spinner> = {
-	title: 'components/Spinner',
+	title: 'UI/Spinner',
 	tags: ['autodocs'],
 	argTypes: {
 		size: {
