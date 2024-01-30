@@ -7,7 +7,7 @@ type Appearances = Exclude<Props['appearance'], undefined>;
 const appearances: Appearances[] = ['success', 'info', 'warning', 'danger', 'discovery'];
 
 const meta: Meta<typeof Banner> = {
-	title: 'components/Banner',
+	title: 'Layout/Banner',
 	tags: ['autodocs'],
 	argTypes: {
 		appearance: {

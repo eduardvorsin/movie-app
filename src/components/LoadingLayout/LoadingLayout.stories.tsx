@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import LoadingLayout from './LoadingLayout';
 
 const meta: Meta<typeof LoadingLayout> = {
-	title: 'components/LoadingLayout',
+	title: 'Layout/LoadingLayout',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {
