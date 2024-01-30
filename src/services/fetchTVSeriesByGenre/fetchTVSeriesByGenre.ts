@@ -36,16 +36,18 @@ export const fetchTVSeriesByGenre = async (
 		firstAirDateGTE = `${timePeriods.at(0)}-01-01`;
 		firstAirDateLTE = `${timePeriods.at(-1)}-12-31`
 	}
+	const countryCode = getCountryCodeFromName(options?.country ?? '');
+
 
 	const config: FilterOptions<'tv'> = {
 		sort_by: options?.sortBy ?? 'vote_average.desc',
 		language: options?.lang ?? fallbackLng,
 		with_genres: genreId,
-		'vote_count.gte': 100,
+		'vote_count.gte': countryCode === 'RU' ? 50 : 100,
 		'vote_average.gte': 7,
 		'first_air_date.gte': firstAirDateGTE,
 		'first_air_date.lte': firstAirDateLTE,
-		with_origin_country: getCountryCodeFromName(options?.country ?? ''),
+		with_origin_country: countryCode,
 		with_keywords: isSubgenre(genre) ? getKeywordIdByName(genre) : '',
 		without_keywords: (genre === 'sports' || genre === 'war & politics') ? getKeywordIdByName('anime') : '',
 		without_genres: genre === 'war & politics' ? getGenreIdByName('documentary') : '',
