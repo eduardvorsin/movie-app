@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import CollectionCard from './CollectionCard';
 
 const meta: Meta<typeof CollectionCard> = {
-	title: 'components/CollectionCard',
+	title: 'Layout/CollectionCard',
 	tags: ['autodocs'],
 	argTypes: {
 		className: {
