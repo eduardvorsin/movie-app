@@ -148,6 +148,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								className='sr-only'
 								level={4}
 								as='h2'
+								weight={600}
 							>
 								{t('socialLinksTitle', { ns: 'personDetailsPage' })}
 							</Title>
@@ -176,7 +177,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 					<div className='flex flex-col overflow-hidden'>
 						<Title
 							className='mb-2 text-neutral-1000 dark:text-dark-neutral-1000 sm:mb-3 md:mb-4 lg:mb-6'
-							weight={500}
+							weight={700}
 							level={1}
 						>
 							{name}
@@ -186,7 +187,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							<Title
 								className='text-neutral-1000 dark:text-dark-neutral-1000 mb-1 xs:mb-2'
 								level={4}
-								weight={500}
+								weight={600}
 								as='h2'
 							>
 								{t('aboutPerson', { ns: 'personDetailsPage' })}
@@ -202,7 +203,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								<Title
 									className='text-neutral-1000 dark:text-dark-neutral-1000 mb-2 sm:mb-3 md:mb-4'
 									level={4}
-									weight={500}
+									weight={600}
 									as='h2'
 								>
 									{t('biography', { ns: 'personDetailsPage' })}
@@ -226,7 +227,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 									className='text-neutral-1000 dark:text-dark-neutral-1000 mb-2 sm:mb-3 md:mb-4'
 									as='h2'
 									level={4}
-									weight={500}
+									weight={600}
 								>
 									{t('famousProjectsTitle')}
 								</Title>
@@ -298,7 +299,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							<Title
 								className='text-neutral-1000 dark:text-dark-neutral-1000 mb-2 sm:mb-3 md:mb-4'
 								level={4}
-								weight={500}
+								weight={600}
 								as='h2'
 							>
 								{t('filmography.title', { ns: 'personDetailsPage' })}
@@ -337,7 +338,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 														<div>
 															<Title
 																className='line-clamp-2'
-																weight={500}
+																weight={600}
 																level={6}
 																as='h3'
 															>
@@ -373,7 +374,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 							<Title
 								className='text-neutral-1000 dark:text-dark-neutral-1000 mb-2 sm:mb-3 md:mb-4'
 								level={4}
-								weight={500}
+								weight={600}
 								as='h2'
 							>
 								{t('personsTitle', { ns: 'personDetailsPage' })}
