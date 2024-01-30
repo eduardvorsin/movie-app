@@ -7,12 +7,8 @@ import SocialLinks from '../SocialLinks/SocialLinks';
 import { createSocialNetworksArray } from '@/helpers/createSocialNetworksArray/createSocialNetworksArray';
 import { NavigationRoutes, navigationRoutes } from 'src/constants';
 import Link from '../Link/Link';
-import { useParams } from 'next/navigation';
-import { Locales, fallbackLng } from '@/i18n/settings';
 import Title from '../Title/Title';
 import ThemedImage from '../ThemedImage/ThemedImage';
-import { useTranslation } from '@/i18n/client';
-import { useMemo } from 'react';
 
 const socialNetworks = createSocialNetworksArray({
 	imdb_id: null,
@@ -23,23 +19,34 @@ const socialNetworks = createSocialNetworksArray({
 	youtube_id: ' ',
 });
 
-type Props = GeneralProps;
+type Props = {
+	dictionary: {
+		aboutTitle: string,
+		description: string,
+		sectionsTitle: string,
+		basedOnTitle: string,
+		logo: {
+			linkText: string,
+			altText: string,
+		},
+		navigation: {
+			movies: string,
+			persons: string,
+			tv: string,
+			new: string,
+			collections: string,
+		},
+	},
+} & GeneralProps;
 export default function Footer({
 	className,
 	testId,
+	dictionary,
 }: Props) {
-	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang);
-
 	const classes = [
 		'flex-shrink relative z-100 bg-neutral-300 dark:bg-dark-neutral-300 py-5 lg:py-8 transition-colors duration-150',
 		className,
 	].join(' ');
-
-	const logoDictionary = useMemo(() => ({
-		altText: t('logo.altText'),
-		linkText: t('logo.linkText'),
-	}), [t]);
 
 	return (
 		<footer
@@ -53,17 +60,17 @@ export default function Footer({
 						level={3}
 						as='h2'
 					>
-						{t('footer.aboutTitle')}
+						{dictionary.aboutTitle}
 					</Title>
 
 					<Logo
 						size='large'
 						className='max-w-[80px] lg:max-w-[110px] h-auto mb-3'
-						dictionary={logoDictionary}
+						dictionary={dictionary.logo}
 					/>
 
 					<p className='text-neutral-1000 dark:text-dark-neutral-900 mb-5 transition-colors duration-150'>
-						{t('footer.description')}
+						{dictionary.description}
 					</p>
 
 					<SocialLinks
@@ -78,7 +85,7 @@ export default function Footer({
 						level={3}
 						as='h2'
 					>
-						{t('footer.sectionsTitle')}
+						{dictionary.sectionsTitle}
 					</Title>
 
 					<nav>
@@ -90,7 +97,7 @@ export default function Footer({
 										className={'inline-flex text-200 font-medium lowercase break-all'}
 										href={navigationRoutes[route]}
 									>
-										{t(`navigation.${route}`)}
+										{dictionary.navigation[route]}
 									</Link>
 								</li>
 							))}
@@ -104,7 +111,7 @@ export default function Footer({
 						level={3}
 						as='h2'
 					>
-						{t('footer.basedOnTitle')}
+						{dictionary.basedOnTitle}
 					</Title>
 
 					<Link

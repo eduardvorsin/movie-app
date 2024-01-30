@@ -6,6 +6,7 @@ import { Locales, locales } from '@/i18n/settings';
 import ThemeProvider from '@/context/ThemeProvider/ThemeProvider';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
+import { fetchTranslation } from '@/i18n/server';
 
 export const metadata: Metadata = {
   title: {
@@ -26,10 +27,25 @@ export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { lang },
 }: Props) {
+  const { t } = await fetchTranslation(lang);
+
+  const logoDictionary = {
+    altText: t('logo.altText'),
+    linkText: t('logo.linkText'),
+  };
+
+  const navigationDictionary = {
+    movies: t('navigation.movies'),
+    persons: t('navigation.persons'),
+    tv: t('navigation.tv'),
+    new: t('navigation.new'),
+    collections: t('navigation.collections'),
+  };
+
   return (
     <html
       lang={lang}
@@ -39,9 +55,35 @@ export default function RootLayout({
     >
       <body className='bg-neutral-200 dark:bg-dark-neutral-100 h-full flex flex-col transition-colors duration-150'>
         <ThemeProvider>
-          <Header />
+          <Header
+            dictionary={{
+              searchButton: t('header.searchButton'),
+              logo: logoDictionary,
+              navigation: navigationDictionary,
+              userSettingsButton: {
+                button: t('userSettingsButton.button'),
+                themeTitle: t('userSettingsButton.themeTitle'),
+                languageTitle: t('userSettingsButton.languageTitle'),
+                languageSelect: { label: t('languageSelect.label') },
+                themeToggle: { label: t('themeToggle.label') },
+              },
+              navigationMenuButton: {
+                active: t('navigationMenuButton.active'),
+                inactive: t('navigationMenuButton.inactive'),
+              }
+            }}
+          />
           {children}
-          <Footer />
+          <Footer
+            dictionary={{
+              aboutTitle: t('footer.aboutTitle'),
+              description: t('footer.description'),
+              sectionsTitle: t('footer.sectionsTitle'),
+              basedOnTitle: t('footer.basedOnTitle'),
+              logo: logoDictionary,
+              navigation: navigationDictionary,
+            }}
+          />
         </ThemeProvider>
       </body>
     </html>

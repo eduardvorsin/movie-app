@@ -3,24 +3,37 @@
 import Container from '@/components/Container/Container';
 import Logo from '@/components/Logo/Logo';
 import Button from '../Button/Button';
-import { useLayoutEffect, useMemo, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import NavigationMenuButton from '../NavigationMenuButton/NavigationMenuButton';
 import Navigation from '../Navigation/Navigation';
-import { Locales, fallbackLng } from '@/i18n/settings';
-import { useTranslation } from '@/i18n/client';
-import { useParams } from 'next/navigation';
 import { GeneralProps } from '@/types/shared';
 import UserSettingsButton from '../UserSettingsButton/UserSettingsButton';
 
-type Props = GeneralProps;
+type Props = {
+	dictionary: {
+		searchButton: string,
+		logo: Record<'altText' | 'linkText', string>,
+		navigation: Record<'movies' | 'persons' | 'tv' | 'new' | 'collections', string>,
+		userSettingsButton: {
+			button: string,
+			themeTitle: string,
+			languageTitle: string,
+			languageSelect: { label: string },
+			themeToggle: { label: string },
+		},
+		navigationMenuButton: {
+			active: string,
+			inactive: string,
+		},
+	}
+} & GeneralProps;
 
 export default function Header({
 	className,
 	testId,
+	dictionary,
 	...props
 }: Props) {
-	const lang = useParams()?.lang as Locales ?? fallbackLng;
-	const { t } = useTranslation(lang);
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
 	const menuOpenHandler = (): void => {
@@ -41,32 +54,6 @@ export default function Header({
 		}
 	}, [isMenuOpen])
 
-	const logoDictionary = useMemo(() => ({
-		altText: t('logo.altText'),
-		linkText: t('logo.linkText'),
-	}), [t]);
-
-	const navigationDictionary = useMemo(() => ({
-		movies: t('navigation.movies'),
-		persons: t('navigation.persons'),
-		tv: t('navigation.tv'),
-		new: t('navigation.new'),
-		collections: t('navigation.collections'),
-	}), [t]);
-
-	const userSettingsButtonDictionary = useMemo(() => ({
-		button: t('userSettingsButton.button'),
-		themeTitle: t('userSettingsButton.themeTitle'),
-		languageTitle: t('userSettingsButton.languageTitle'),
-		languageSelect: { label: t('languageSelect.label') },
-		themeToggle: { label: t('themeToggle.label') },
-	}), [t]);
-
-	const navigationMenuButtonDictionary = useMemo(() => ({
-		active: t('navigationMenuButton.active'),
-		inactive: t('navigationMenuButton.inactive'),
-	}), [t]);
-
 	return (
 		<header
 			className={`pr-[var(--scrollbar-width)] fixed z-500 top-0 left-0 w-full h-[60px] bg-neutral-300 dark:bg-dark-neutral-300 transition-colors duration-150 ${className}`}
@@ -80,12 +67,12 @@ export default function Header({
 					className={`z-100 ${!isMenuOpen ? 'mr-10' : ''}`}
 					onClick={closeMenu}
 					size={'medium'}
-					dictionary={logoDictionary}
+					dictionary={dictionary.logo}
 				/>
 
 				<Navigation
 					className={`transition-transform duration-300 md:translate-x-0 ${isMenuOpen ? '' : '-translate-x-full'}`}
-					dictionary={navigationDictionary}
+					dictionary={dictionary.navigation}
 					onClick={closeMenu}
 				/>
 
@@ -102,13 +89,13 @@ export default function Header({
 							>
 								<use href={'/assets/icons/search.svg#search'} />
 							</svg>
-							{t('searchButton')}
+							{dictionary.searchButton}
 						</Button>
 					)}
 
 					{!isMenuOpen && (
 						<UserSettingsButton
-							dictionary={userSettingsButtonDictionary}
+							dictionary={dictionary.userSettingsButton}
 						/>
 					)}
 
@@ -116,7 +103,7 @@ export default function Header({
 						className='md:hidden'
 						onClick={menuOpenHandler}
 						isActive={isMenuOpen}
-						dictionary={navigationMenuButtonDictionary}
+						dictionary={dictionary.navigationMenuButton}
 					/>
 				</div>
 			</Container>
