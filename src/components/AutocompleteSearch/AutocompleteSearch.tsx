@@ -11,7 +11,7 @@ export type AutocompleteOption = {
 	label: string,
 }
 
-type Props = {
+export type Props = {
 	isLoading?: boolean,
 	options: AutocompleteOption[],
 	initialOptions: AutocompleteOption[],

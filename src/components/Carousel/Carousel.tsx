@@ -25,7 +25,7 @@ type Breakpoints = {
 	>
 };
 
-type Props = {
+export type Props = {
 	children: ReactNode,
 	label?: string,
 	slidesPerView?: number,

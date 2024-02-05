@@ -8,7 +8,7 @@ import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import Title from '../Title/Title';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 
-type Props = {
+export type Props = {
 	dictionary: {
 		button: string,
 		themeTitle: string,

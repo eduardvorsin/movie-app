@@ -38,7 +38,7 @@ const imgPathByContentType = {
 	genre: imgPath['movieCard_v'],
 }
 
-type Props<
+export type Props<
 	M extends 'movie' | 'tv',
 	I = M extends 'movie' ? MovieResponse : TVSeriesResponse
 > = {

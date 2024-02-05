@@ -2,7 +2,7 @@
 import { GeneralProps } from '@/types/shared';
 import { MouseEventHandler, useRef } from 'react';
 
-type Props = {
+export type Props = {
 	activeIndex: number,
 	totalCount: number,
 } & ({

@@ -10,7 +10,7 @@ import { runsOnServerSide } from '@/i18n/settings';
 const youtubeVideoBasePath = 'https://www.youtube-nocookie.com/embed/';
 const youtubePosterBasePath = 'https://i.ytimg.com/vi_webp/';
 
-type Props = {
+export type Props = {
 	width: number,
 	height: number,
 	videoId: string,

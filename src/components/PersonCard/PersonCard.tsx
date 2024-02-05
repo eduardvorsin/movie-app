@@ -5,7 +5,7 @@ import { GeneralProps, HeadingElement, HeadingLevel } from '@/types/shared';
 import ThemedImage from '../ThemedImage/ThemedImage';
 import { routes } from '@/constants';
 
-type Props = {
+export type Props = {
 	personId: number,
 	appearance?: 'primary' | 'secondary',
 	title?: string,

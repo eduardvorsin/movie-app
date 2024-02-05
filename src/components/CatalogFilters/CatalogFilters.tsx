@@ -25,7 +25,7 @@ export type CatalogSortOptions = Extract<
 
 const sortValues: CatalogSortOptions[] = ['popularity.desc', 'primary_release_date.desc', 'vote_average.desc', 'revenue.desc'];
 
-type Props = {
+export type Props = {
 	onSearchButtonClick?: () => void,
 } & GeneralProps;
 

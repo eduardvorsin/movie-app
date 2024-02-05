@@ -25,7 +25,7 @@ const variants = {
 	},
 }
 
-type Props = {
+export type Props = {
 	size: number,
 	value: number,
 	barColor?: Record<'light' | 'dark', string>,

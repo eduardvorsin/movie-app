@@ -3,7 +3,7 @@
 import { GeneralProps } from '@/types/shared';
 import { CSSProperties, ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
 
-type Props = {
+export type Props = {
 	children?: ReactNode,
 	placement?: 'left-start' | 'left' | 'left-end' | 'top-start' | 'top' | 'top-end' | 'right-start' | 'right' | 'right-end' | 'bottom-start' | 'bottom' | 'bottom-end',
 	trigger: ReactElement,

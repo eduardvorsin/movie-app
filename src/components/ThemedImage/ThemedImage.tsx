@@ -5,7 +5,7 @@ import Image, { ImageProps } from 'next/image';
 import { useState } from 'react';
 import { SkeletonImage } from '../Skeleton/Skeleton';
 
-type Props = {
+export type Props = {
 	className?: string,
 	testId?: string,
 	src: string,

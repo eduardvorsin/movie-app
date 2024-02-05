@@ -6,7 +6,7 @@ import MoonIcon from '../../assets/icons/moon.svg';
 import SunIcon from '../../assets/icons/sun.svg';
 import { GeneralProps } from '@/types/shared';
 
-type Props = {
+export type Props = {
 	dictionary: Record<'label', string>,
 } & GeneralProps;
 

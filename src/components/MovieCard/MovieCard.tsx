@@ -11,7 +11,7 @@ import { useParams } from 'next/navigation';
 import { useTranslation } from '@/i18n/client';
 import { routes } from 'src/constants';
 
-type Props = {
+export type Props = {
 	movieId: number,
 	src: string,
 	alt: string,
@@ -159,6 +159,7 @@ export default function MovieCard({
 			}}
 			loading={loading}
 			sizes={sizes}
+			style={{ objectFit: 'cover' }}
 		/>
 	);
 

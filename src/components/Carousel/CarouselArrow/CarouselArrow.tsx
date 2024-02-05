@@ -1,7 +1,7 @@
 import { MouseEventHandler } from 'react';
 import { GeneralProps } from '@/types/shared';
 
-type Props = {
+export type Props = {
 	direction: 'left' | 'right',
 	isDisabled?: boolean,
 	onClick: MouseEventHandler<HTMLButtonElement>,
