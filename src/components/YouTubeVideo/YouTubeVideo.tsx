@@ -52,7 +52,7 @@ export default function YouTubeVideo({
 	const iframeSrc = new URL(videoId, youtubeVideoBasePath);
 	iframeSrc.searchParams.append('rel', '0');
 	iframeSrc.searchParams.append('autoplay', '1');
-	iframeSrc.searchParams.append('muted', muted ? '1' : '0');
+	iframeSrc.searchParams.append('mute', muted ? '1' : '0');
 
 	if (startTime) {
 		iframeSrc.searchParams.append('start', startTime.toString());
