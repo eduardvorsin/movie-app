@@ -44,7 +44,7 @@ type Props = {
 	breakpoints?: Breakpoints,
 } & GeneralProps;
 
-export default forwardRef<HTMLDivElement, Props>(function Carousel({
+const Carousel = forwardRef<HTMLDivElement, Props>(function Carousel({
 	children,
 	label,
 	slidesPerView = 1,
@@ -288,6 +288,8 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 		</div>
 	);
 });
+
+export default Carousel;
 
 function getBreakpointFromValue(value: number, breakpoints?: Breakpoints): Breakpoints[number] | null {
 	if (!breakpoints) return null;
