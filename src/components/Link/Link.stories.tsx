@@ -7,7 +7,7 @@ const meta: Meta<typeof Link> = {
 	tags: ['autodocs'],
 	argTypes: {
 		className: {
-			description: 'Additional classes for the Link componentz'
+			description: 'Additional classes for the Link component'
 		},
 		id: {
 			description: 'Unique identifier',

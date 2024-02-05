@@ -7,7 +7,7 @@ const meta: Meta<typeof Header> = {
 	tags: ['autodocs'],
 	argTypes: {
 		className: {
-			description: 'Additional classes for the button'
+			description: 'Additional classes for the component'
 		},
 		testId: {
 			description: 'Id for testing the component',
