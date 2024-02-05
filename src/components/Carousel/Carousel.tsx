@@ -247,7 +247,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 			{isArrowsVisible && (
 				<>
 					<CarouselArrow
-						className={arrowVerticalPostion[paginationType]}
+						className={showPagination ? arrowVerticalPostion[paginationType] : 'top-1/2'}
 						direction='left'
 						onClick={slidePrev}
 						isDisabled={activeIndex === 0}
@@ -256,7 +256,7 @@ export default forwardRef<HTMLDivElement, Props>(function Carousel({
 
 					/>
 					<CarouselArrow
-						className={arrowVerticalPostion[paginationType]}
+						className={showPagination ? arrowVerticalPostion[paginationType] : 'top-1/2'}
 						direction='right'
 						onClick={slideNext}
 						isDisabled={activeIndex === lastIndex}
