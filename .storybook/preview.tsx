@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react';
+import type { Preview, ReactRenderer } from '@storybook/react';
 import { withThemeByClassName } from '@storybook/addon-styling';
 import '../src/app/[lang]/globals.css';
 import i18next from '../src/i18n/client';
@@ -68,7 +68,7 @@ const preview: Preview = {
   },
   decorators: [
     withI18next,
-    withThemeByClassName({
+    withThemeByClassName<ReactRenderer>({
       themes: {
         light: 'light',
         dark: 'dark',

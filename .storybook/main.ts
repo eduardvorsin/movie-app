@@ -11,10 +11,7 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
-    {
-      name: '@storybook/addon-styling',
-      options: {},
-    },
+    '@storybook/addon-styling',
     "@storybook/addon-mdx-gfm"
   ],
   framework: {
