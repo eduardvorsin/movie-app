@@ -2,7 +2,7 @@
 
 exports[`Spinner tests is a basic snapshot 1`] = `
 <span
-  class="inline-flex align-middle dark:text-blue-300 text-blue-800 w-6 h-6 "
+  class="inline-flex align-middle dark:text-blue-300 text-blue-800 transition-colors duration-150 w-6 h-6 "
   data-testid="spinner"
 >
   <svg
@@ -23,7 +23,7 @@ exports[`Spinner tests is a basic snapshot 1`] = `
 
 exports[`Spinner tests is a snapshot with a size of type "large" 1`] = `
 <span
-  class="inline-flex align-middle dark:text-blue-300 text-blue-800 w-12 h-12 "
+  class="inline-flex align-middle dark:text-blue-300 text-blue-800 transition-colors duration-150 w-12 h-12 "
   data-testid="spinner"
 >
   <svg
@@ -44,7 +44,7 @@ exports[`Spinner tests is a snapshot with a size of type "large" 1`] = `
 
 exports[`Spinner tests is a snapshot with a size of type "medium" 1`] = `
 <span
-  class="inline-flex align-middle dark:text-blue-300 text-blue-800 w-6 h-6 "
+  class="inline-flex align-middle dark:text-blue-300 text-blue-800 transition-colors duration-150 w-6 h-6 "
   data-testid="spinner"
 >
   <svg
@@ -65,7 +65,7 @@ exports[`Spinner tests is a snapshot with a size of type "medium" 1`] = `
 
 exports[`Spinner tests is a snapshot with a size of type "small" 1`] = `
 <span
-  class="inline-flex align-middle dark:text-blue-300 text-blue-800 w-4, h-4 "
+  class="inline-flex align-middle dark:text-blue-300 text-blue-800 transition-colors duration-150 w-4, h-4 "
   data-testid="spinner"
 >
   <svg
@@ -86,7 +86,7 @@ exports[`Spinner tests is a snapshot with a size of type "small" 1`] = `
 
 exports[`Spinner tests is a snapshot with a size of type "xlarge" 1`] = `
 <span
-  class="inline-flex align-middle dark:text-blue-300 text-blue-800 w-24 h-24 "
+  class="inline-flex align-middle dark:text-blue-300 text-blue-800 transition-colors duration-150 w-24 h-24 "
   data-testid="spinner"
 >
   <svg

@@ -6,7 +6,7 @@ exports[`TextField tests is a basic snapshot 1`] = `
   data-testid="test-field"
 >
   <label
-    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] transition-colors duration-150 "
     for="test-field"
     id="label-test-field"
   >
@@ -31,7 +31,7 @@ exports[`TextField tests is a snapshot with an error message 1`] = `
   data-testid="test-field"
 >
   <label
-    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] transition-colors duration-150 "
     for="test-field"
     id="label-test-field"
   >
@@ -49,16 +49,16 @@ exports[`TextField tests is a snapshot with an error message 1`] = `
     />
   </div>
   <p
-    class="flex items-center text-75 text-blue-700 dark:text-blue-400 mt-1"
+    class="flex items-center text-75 transition-colors duration-150 text-blue-700 dark:text-blue-400 mt-1"
     id="test-field-error-message"
     role="alert"
   >
     <span
       aria-hidden="true"
-      class="mr-1 w-6 h-6"
+      class="mr-1 w-6 h-6 transition-colors duration-150"
     >
       <svg
-        class="fill-current"
+        class="fill-current transition-colors duration-150"
         viewBox="0 0 20 20"
       >
         <use
@@ -77,7 +77,7 @@ exports[`TextField tests is a snapshot with clear button 1`] = `
   data-testid="test-field"
 >
   <label
-    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] transition-colors duration-150 "
     for="test-field"
     id="label-test-field"
   >
@@ -93,9 +93,9 @@ exports[`TextField tests is a snapshot with clear button 1`] = `
       value="mock"
     />
     <button
-      class="text-dark-neutral-0 dark:text-neutral-400 w-5 h-5 absolute top-1/2 right-[0.5rem] -translate-y-1/2 text-0"
+      class="text-dark-neutral-0 dark:text-neutral-400 w-5 h-5 absolute top-1/2 right-[0.5rem] -translate-y-1/2 text-0 transition-colors duration-150"
     >
-      clear
+      To clear
       <svg
         class="fill-current"
         viewBox="0 0 20 20"
@@ -115,7 +115,7 @@ exports[`TextField tests is a snapshot with isDisabled set to true 1`] = `
   data-testid="test-field"
 >
   <label
-    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] transition-colors duration-150 "
     for="test-field"
     id="label-test-field"
   >
@@ -141,7 +141,7 @@ exports[`TextField tests is a snapshot with isInvalid set to true 1`] = `
   data-testid="test-field"
 >
   <label
-    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] transition-colors duration-150 "
     for="test-field"
     id="label-test-field"
   >
@@ -167,7 +167,7 @@ exports[`TextField tests is a snapshot with isReadonly set to true 1`] = `
   data-testid="test-field"
 >
   <label
-    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] transition-colors duration-150 "
     for="test-field"
     id="label-test-field"
   >
@@ -193,14 +193,14 @@ exports[`TextField tests is a snapshot with isRequired set to true 1`] = `
   data-testid="test-field"
 >
   <label
-    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] "
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] transition-colors duration-150 "
     for="test-field"
     id="label-test-field"
   >
     test-field
     <span
       aria-hidden="true"
-      class="pl-0.5 text-red-800 dark:text-red-300"
+      class="pl-0.5 text-red-800 dark:text-red-300 transition-colors duration-150"
     >
       *
     </span>
@@ -225,7 +225,7 @@ exports[`TextField tests is a snapshot with labelHidden set to true 1`] = `
   data-testid="test-field"
 >
   <label
-    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] sr-only"
+    class="block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] transition-colors duration-150 sr-only"
     for="test-field"
     id="label-test-field"
   >

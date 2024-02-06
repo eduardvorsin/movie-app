@@ -10,7 +10,7 @@ exports[`Banner tests is a basic snapshot 1`] = `
     role="presentation"
   >
     <svg
-      class="fill-blue-700 dark:fill-blue-400"
+      class="fill-blue-700 dark:fill-blue-400 transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -20,7 +20,7 @@ exports[`Banner tests is a basic snapshot 1`] = `
   </span>
   <div>
     <p
-      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
     </p>
@@ -38,7 +38,7 @@ exports[`Banner tests is a snapshot with a "danger" type appearance 1`] = `
     role="presentation"
   >
     <svg
-      class="fill-red-700 dark:fill-red-400"
+      class="fill-red-700 dark:fill-red-400 transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -48,7 +48,7 @@ exports[`Banner tests is a snapshot with a "danger" type appearance 1`] = `
   </span>
   <div>
     <p
-      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
     </p>
@@ -66,7 +66,7 @@ exports[`Banner tests is a snapshot with a "discovery" type appearance 1`] = `
     role="presentation"
   >
     <svg
-      class="fill-purple-700 dark:fill-purple-400 "
+      class="fill-purple-700 dark:fill-purple-400 transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -76,7 +76,7 @@ exports[`Banner tests is a snapshot with a "discovery" type appearance 1`] = `
   </span>
   <div>
     <p
-      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
     </p>
@@ -94,7 +94,7 @@ exports[`Banner tests is a snapshot with a "info" type appearance 1`] = `
     role="presentation"
   >
     <svg
-      class="fill-blue-700 dark:fill-blue-400"
+      class="fill-blue-700 dark:fill-blue-400 transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -104,7 +104,7 @@ exports[`Banner tests is a snapshot with a "info" type appearance 1`] = `
   </span>
   <div>
     <p
-      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
     </p>
@@ -122,7 +122,7 @@ exports[`Banner tests is a snapshot with a "success" type appearance 1`] = `
     role="presentation"
   >
     <svg
-      class="fill-green-800 dark:fill-green-400"
+      class="fill-green-800 dark:fill-green-400 transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -132,7 +132,7 @@ exports[`Banner tests is a snapshot with a "success" type appearance 1`] = `
   </span>
   <div>
     <p
-      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
     </p>
@@ -150,7 +150,7 @@ exports[`Banner tests is a snapshot with a "warning" type appearance 1`] = `
     role="presentation"
   >
     <svg
-      class="fill-yellow-600 dark:fill-yellow-500"
+      class="fill-yellow-600 dark:fill-yellow-500 transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -160,7 +160,7 @@ exports[`Banner tests is a snapshot with a "warning" type appearance 1`] = `
   </span>
   <div>
     <p
-      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
     </p>
@@ -178,7 +178,7 @@ exports[`Banner tests is a snapshot with action buttons 1`] = `
     role="presentation"
   >
     <svg
-      class="fill-blue-700 dark:fill-blue-400"
+      class="fill-blue-700 dark:fill-blue-400 transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -188,7 +188,7 @@ exports[`Banner tests is a snapshot with action buttons 1`] = `
   </span>
   <div>
     <p
-      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
     </p>
@@ -249,7 +249,7 @@ exports[`Banner tests is a snapshot with closeButton equal to true 1`] = `
     role="presentation"
   >
     <svg
-      class="fill-blue-700 dark:fill-blue-400"
+      class="fill-blue-700 dark:fill-blue-400 transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -259,7 +259,7 @@ exports[`Banner tests is a snapshot with closeButton equal to true 1`] = `
   </span>
   <div>
     <p
-      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
     </p>
@@ -270,7 +270,7 @@ exports[`Banner tests is a snapshot with closeButton equal to true 1`] = `
     <span
       class="inline-flex items-center"
     >
-      close
+      To close
       <svg
         aria-hidden="true"
         class="fill-current w-6 h-6"
@@ -292,7 +292,7 @@ exports[`Banner tests is a snapshot with hideIcon equal to true 1`] = `
 >
   <div>
     <p
-      class="text-100 text-neutral-1000 dark:text-dark-neutral-900"
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
     </p>

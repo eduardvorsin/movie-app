@@ -10,11 +10,11 @@ exports[`PersonCard tests is a basic snapshot 1`] = `
     class="w-full aspect-square relative self-center mb-3"
   >
     <div
-      class="relative h-full overflow-hidden bg-neutral-300 dark:bg-dark-neutral-250 rounded-[50%] "
+      class="relative h-full overflow-hidden bg-neutral-300 dark:bg-dark-neutral-250 transition-colors duration-150 rounded-[50%] "
     >
       <div
         aria-hidden="true"
-        class="bg-neutral-400 dark:bg-dark-neutral-300 max-w-full  [&]:absolute top-0 left-0 z-100 relative overflow-hidden isolate before:absolute before:inset-0 before:-translate-x-full before:animate-skeleton before:bg-gradient-to-r before:from-transparent before:via-neutral-0/50 dark:before:via-neutral-0/25 before:to-transparent"
+        class="bg-neutral-400 dark:bg-dark-neutral-300 max-w-full transition-colors duration-150  [&]:absolute top-0 left-0 z-100 relative overflow-hidden isolate before:absolute before:inset-0 before:-translate-x-full before:animate-skeleton before:bg-gradient-to-r before:from-transparent before:via-neutral-0/50 dark:before:via-neutral-0/25 before:to-transparent before:transition-colors before:duration-150"
         style="width: 100%; height: 100%;"
       />
       <img
@@ -30,7 +30,7 @@ exports[`PersonCard tests is a basic snapshot 1`] = `
     </div>
   </div>
   <p
-    class="break-word text-100 text-neutral-900 dark:text-dark-neutral-800 truncate"
+    class="break-word text-100 text-neutral-900 dark:text-dark-neutral-800 transition-colors duration-150 truncate"
   >
     test text
   </p>
@@ -47,11 +47,11 @@ exports[`PersonCard tests is a snapshot with showRating 1`] = `
     class="w-full aspect-square relative self-center mb-3"
   >
     <div
-      class="relative h-full overflow-hidden bg-neutral-300 dark:bg-dark-neutral-250 rounded-[50%] "
+      class="relative h-full overflow-hidden bg-neutral-300 dark:bg-dark-neutral-250 transition-colors duration-150 rounded-[50%] "
     >
       <div
         aria-hidden="true"
-        class="bg-neutral-400 dark:bg-dark-neutral-300 max-w-full  [&]:absolute top-0 left-0 z-100 relative overflow-hidden isolate before:absolute before:inset-0 before:-translate-x-full before:animate-skeleton before:bg-gradient-to-r before:from-transparent before:via-neutral-0/50 dark:before:via-neutral-0/25 before:to-transparent"
+        class="bg-neutral-400 dark:bg-dark-neutral-300 max-w-full transition-colors duration-150  [&]:absolute top-0 left-0 z-100 relative overflow-hidden isolate before:absolute before:inset-0 before:-translate-x-full before:animate-skeleton before:bg-gradient-to-r before:from-transparent before:via-neutral-0/50 dark:before:via-neutral-0/25 before:to-transparent before:transition-colors before:duration-150"
         style="width: 100%; height: 100%;"
       />
       <img
@@ -66,18 +66,18 @@ exports[`PersonCard tests is a snapshot with showRating 1`] = `
       />
     </div>
     <span
-      class="z-200 absolute bottom-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold rounded-[50%]"
+      class="z-200 absolute bottom-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold transition-colors duration-150 rounded-[50%]"
     >
       <span
         class="sr-only"
       >
-        personCard.rating
+        Popularity
       </span>
       30
     </span>
   </div>
   <p
-    class="break-word text-100 text-neutral-900 dark:text-dark-neutral-800 truncate"
+    class="break-word text-100 text-neutral-900 dark:text-dark-neutral-800 transition-colors duration-150 truncate"
   >
     test text
   </p>
@@ -95,11 +95,11 @@ exports[`PersonCard tests is a snapshot with title 1`] = `
     class="w-full aspect-square relative self-center mb-3"
   >
     <div
-      class="relative h-full overflow-hidden bg-neutral-300 dark:bg-dark-neutral-250 rounded-[50%] "
+      class="relative h-full overflow-hidden bg-neutral-300 dark:bg-dark-neutral-250 transition-colors duration-150 rounded-[50%] "
     >
       <div
         aria-hidden="true"
-        class="bg-neutral-400 dark:bg-dark-neutral-300 max-w-full  [&]:absolute top-0 left-0 z-100 relative overflow-hidden isolate before:absolute before:inset-0 before:-translate-x-full before:animate-skeleton before:bg-gradient-to-r before:from-transparent before:via-neutral-0/50 dark:before:via-neutral-0/25 before:to-transparent"
+        class="bg-neutral-400 dark:bg-dark-neutral-300 max-w-full transition-colors duration-150  [&]:absolute top-0 left-0 z-100 relative overflow-hidden isolate before:absolute before:inset-0 before:-translate-x-full before:animate-skeleton before:bg-gradient-to-r before:from-transparent before:via-neutral-0/50 dark:before:via-neutral-0/25 before:to-transparent before:transition-colors before:duration-150"
         style="width: 100%; height: 100%;"
       />
       <img
@@ -115,12 +115,12 @@ exports[`PersonCard tests is a snapshot with title 1`] = `
     </div>
   </div>
   <h6
-    class="leading-[1.25] -tracking-[0.01em] text-300 sm:text-400 font-bold mb-1 line-clamp-2 text-neutral-1000 dark:text-dark-neutral-900 group-hover/card:text-neutral-800 group-active/card:text-neutral-700 dark:group-hover/card:text-dark-neutral-700 dark:group-active/card:text-dark-neutral-600 transition-colors duration-150"
+    class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-300 sm:text-400 font-bold mb-1 line-clamp-2 text-neutral-1000 dark:text-dark-neutral-900 group-hover/card:text-neutral-800 group-active/card:text-neutral-700 dark:group-hover/card:text-dark-neutral-700 dark:group-active/card:text-dark-neutral-600"
   >
     test title
   </h6>
   <p
-    class="break-word text-100 text-neutral-900 dark:text-dark-neutral-800 truncate"
+    class="break-word text-100 text-neutral-900 dark:text-dark-neutral-800 transition-colors duration-150 truncate"
   >
     test text
   </p>

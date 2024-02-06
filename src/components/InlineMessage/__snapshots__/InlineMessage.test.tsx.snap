@@ -2,16 +2,16 @@
 
 exports[`InlineMessage tests is a basic snapshot 1`] = `
 <p
-  class="flex items-center text-75 text-blue-700 dark:text-blue-400 "
+  class="flex items-center text-75 transition-colors duration-150 text-blue-700 dark:text-blue-400 "
   id="test-inline-message"
   role="alert"
 >
   <span
     aria-hidden="true"
-    class="mr-1 w-6 h-6"
+    class="mr-1 w-6 h-6 transition-colors duration-150"
   >
     <svg
-      class="fill-current"
+      class="fill-current transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -25,16 +25,16 @@ exports[`InlineMessage tests is a basic snapshot 1`] = `
 
 exports[`InlineMessage tests is a snapshot with a "confirmation" type appearance 1`] = `
 <p
-  class="flex items-center text-75 text-green-800 dark:text-green-400 "
+  class="flex items-center text-75 transition-colors duration-150 text-green-800 dark:text-green-400 "
   id="test-inline-message"
   role="alert"
 >
   <span
     aria-hidden="true"
-    class="mr-1 w-6 h-6"
+    class="mr-1 w-6 h-6 transition-colors duration-150"
   >
     <svg
-      class="fill-current"
+      class="fill-current transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -48,16 +48,16 @@ exports[`InlineMessage tests is a snapshot with a "confirmation" type appearance
 
 exports[`InlineMessage tests is a snapshot with a "connectivity" type appearance 1`] = `
 <p
-  class="flex items-center text-75 text-blue-700 dark:text-blue-400 "
+  class="flex items-center text-75 transition-colors duration-150 text-blue-700 dark:text-blue-400 "
   id="test-inline-message"
   role="alert"
 >
   <span
     aria-hidden="true"
-    class="mr-1 w-6 h-6"
+    class="mr-1 w-6 h-6 transition-colors duration-150"
   >
     <svg
-      class="fill-current"
+      class="fill-current transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -71,16 +71,16 @@ exports[`InlineMessage tests is a snapshot with a "connectivity" type appearance
 
 exports[`InlineMessage tests is a snapshot with a "error" type appearance 1`] = `
 <p
-  class="flex items-center text-75 text-red-700 dark:text-red-400 "
+  class="flex items-center text-75 transition-colors duration-150 text-red-700 dark:text-red-400 "
   id="test-inline-message"
   role="alert"
 >
   <span
     aria-hidden="true"
-    class="mr-1 w-6 h-6"
+    class="mr-1 w-6 h-6 transition-colors duration-150"
   >
     <svg
-      class="fill-current"
+      class="fill-current transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -94,16 +94,16 @@ exports[`InlineMessage tests is a snapshot with a "error" type appearance 1`] = 
 
 exports[`InlineMessage tests is a snapshot with a "info" type appearance 1`] = `
 <p
-  class="flex items-center text-75 text-purple-700 dark:text-purple-400 "
+  class="flex items-center text-75 transition-colors duration-150 text-purple-700 dark:text-purple-400 "
   id="test-inline-message"
   role="alert"
 >
   <span
     aria-hidden="true"
-    class="mr-1 w-6 h-6"
+    class="mr-1 w-6 h-6 transition-colors duration-150"
   >
     <svg
-      class="fill-current"
+      class="fill-current transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -117,16 +117,16 @@ exports[`InlineMessage tests is a snapshot with a "info" type appearance 1`] = `
 
 exports[`InlineMessage tests is a snapshot with a "warning" type appearance 1`] = `
 <p
-  class="flex items-center text-75 text-orange-800 dark:text-yellow-300 "
+  class="flex items-center text-75 transition-colors duration-150 text-orange-800 dark:text-yellow-300 "
   id="test-inline-message"
   role="alert"
 >
   <span
     aria-hidden="true"
-    class="mr-1 w-6 h-6"
+    class="mr-1 w-6 h-6 transition-colors duration-150"
   >
     <svg
-      class="fill-current"
+      class="fill-current transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -140,16 +140,16 @@ exports[`InlineMessage tests is a snapshot with a "warning" type appearance 1`] 
 
 exports[`InlineMessage tests is a snapshot with the icon on the left 1`] = `
 <p
-  class="flex items-center text-75 text-blue-700 dark:text-blue-400 "
+  class="flex items-center text-75 transition-colors duration-150 text-blue-700 dark:text-blue-400 "
   id="test-inline-message"
   role="alert"
 >
   <span
     aria-hidden="true"
-    class="mr-1 w-6 h-6"
+    class="mr-1 w-6 h-6 transition-colors duration-150"
   >
     <svg
-      class="fill-current"
+      class="fill-current transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use
@@ -163,17 +163,17 @@ exports[`InlineMessage tests is a snapshot with the icon on the left 1`] = `
 
 exports[`InlineMessage tests is a snapshot with the icon on the right 1`] = `
 <p
-  class="flex items-center text-75 text-blue-700 dark:text-blue-400 "
+  class="flex items-center text-75 transition-colors duration-150 text-blue-700 dark:text-blue-400 "
   id="test-inline-message"
   role="alert"
 >
   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt asperiores cupiditate, voluptas non ab soluta. Non odit facere quae tempora.
   <span
     aria-hidden="true"
-    class="mr-1 w-6 h-6"
+    class="mr-1 w-6 h-6 transition-colors duration-150"
   >
     <svg
-      class="fill-current"
+      class="fill-current transition-colors duration-150"
       viewBox="0 0 20 20"
     >
       <use

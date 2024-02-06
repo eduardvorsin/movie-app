@@ -9,7 +9,7 @@ exports[`Search tests is a basic snapshot 1`] = `
       role="search"
     >
       <label
-        class="block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000 "
+        class="block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 "
         for="test-search"
       >
         test-search
@@ -38,7 +38,7 @@ exports[`Search tests is a basic snapshot 1`] = `
                 href="/assets/icons/loupe.svg#loupe"
               />
             </svg>
-            Search
+            To find
           </span>
         </button>
       </div>
@@ -56,7 +56,7 @@ exports[`Search tests is a snapshot with IsReadOnly equal to true 1`] = `
       role="search"
     >
       <label
-        class="block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000 sr-only"
+        class="block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 sr-only"
         for="test-search"
       >
         test-search
@@ -86,7 +86,7 @@ exports[`Search tests is a snapshot with IsReadOnly equal to true 1`] = `
                 href="/assets/icons/loupe.svg#loupe"
               />
             </svg>
-            Search
+            To find
           </span>
         </button>
       </div>
@@ -104,7 +104,7 @@ exports[`Search tests is a snapshot with isDisabled set to true 1`] = `
       role="search"
     >
       <label
-        class="block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000 sr-only"
+        class="block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 sr-only"
         for="test-search"
       >
         test-search
@@ -135,7 +135,7 @@ exports[`Search tests is a snapshot with isDisabled set to true 1`] = `
                 href="/assets/icons/loupe.svg#loupe"
               />
             </svg>
-            Search
+            To find
           </span>
         </button>
       </div>
@@ -153,7 +153,7 @@ exports[`Search tests is a snapshot with labelHidden set to true 1`] = `
       role="search"
     >
       <label
-        class="block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000 sr-only"
+        class="block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 sr-only"
         for="test-search"
       >
         test-search
@@ -182,7 +182,7 @@ exports[`Search tests is a snapshot with labelHidden set to true 1`] = `
                 href="/assets/icons/loupe.svg#loupe"
               />
             </svg>
-            Search
+            To find
           </span>
         </button>
       </div>
@@ -200,7 +200,7 @@ exports[`Search tests is snapshot with IsInvalid equal to true 1`] = `
       role="search"
     >
       <label
-        class="block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000 sr-only"
+        class="block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 sr-only"
         for="test-search"
       >
         test-search
@@ -230,7 +230,7 @@ exports[`Search tests is snapshot with IsInvalid equal to true 1`] = `
                 href="/assets/icons/loupe.svg#loupe"
               />
             </svg>
-            Search
+            To find
           </span>
         </button>
       </div>
