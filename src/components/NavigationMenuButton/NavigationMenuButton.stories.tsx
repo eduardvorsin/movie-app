@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 import NavigationMenuButton, { Props } from './NavigationMenuButton';
 import { MouseEventHandler, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const meta: Meta<typeof NavigationMenuButton> = {
 	title: 'UI/NavigationMenuButton',
@@ -34,7 +35,7 @@ const meta: Meta<typeof NavigationMenuButton> = {
 export default meta;
 type Story = StoryObj<typeof NavigationMenuButton>;
 
-const NavigationMenuButtonWithHooks = (props: Omit<Props, 'isActive' | 'onClick'>) => {
+const NavigationMenuButtonWithHooks = (props: Omit<Props, 'isActive' | 'onClick' | 'dictionary'>) => {
 	const [isActive, setIsActive] = useState<boolean>(false);
 
 	const clickHandler: MouseEventHandler<HTMLButtonElement> = (e) => {
@@ -42,9 +43,16 @@ const NavigationMenuButtonWithHooks = (props: Omit<Props, 'isActive' | 'onClick'
 		action('Clicked')(e);
 	};
 
+	const { t } = useTranslation('common');
+	const dictionary = {
+		active: t('navigationMenuButton.active'),
+		inactive: t('navigationMenuButton.inactive'),
+	};
+
 	return (
 		<NavigationMenuButton
 			{...props}
+			dictionary={dictionary}
 			isActive={isActive}
 			onClick={clickHandler}
 		/>
@@ -77,6 +85,7 @@ export const Active: Story = {
 			},
 		},
 	},
+	render: (args) => <NavigationMenuButtonWithHooks {...args} />
 };
 
 export const EventCallbacks: Story = {

@@ -441,4 +441,5 @@ export const WithLongText: Story = {
 			},
 		},
 	},
+	render: (args) => (<CommentWithHooks {...args} />),
 };
