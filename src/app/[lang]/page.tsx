@@ -17,7 +17,7 @@ import { fetchTrendingMovies } from '@/services/fetchTrendingMovies/fetchTrendin
 import { fetchUpcomingMovies } from '@/services/fetchUpcomingMovies/fetchUpcomingMovies';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { imgPath, routes } from 'src/constants';
+import { imgPath, routes } from '@/constants';
 
 export async function generateMetadata(
   { params }: { params: { lang: Locales } },

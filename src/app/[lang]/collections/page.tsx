@@ -6,7 +6,7 @@ import Title from '@/components/Title/Title';
 import { fetchTranslation } from '@/i18n/server';
 import { Locales } from '@/i18n/settings';
 import { Metadata } from 'next';
-import { collections, navigationRoutes } from 'src/constants';
+import { collections, navigationRoutes } from '@/constants';
 
 export async function generateMetadata(
 	{ params }: { params: { lang: Locales } },

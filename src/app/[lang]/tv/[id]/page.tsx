@@ -15,7 +15,7 @@ import { Locales, regionsByLocales } from '@/i18n/settings';
 import { getLanguageNameFromLocale } from '@/i18n/utils/getLanguageNameFromLocale/getLanguageNameFromLocale';
 import { getLocalizedDate } from '@/i18n/utils/getLocalizedDate/getLocalizedDate';
 import { notFound } from 'next/navigation';
-import { authorsDepartments, authorsProfessions, imgPath, routes } from 'src/constants';
+import { authorsDepartments, authorsProfessions, imgPath, routes } from '@/constants';
 import Carousel from '@/components/Carousel/Carousel';
 import MovieCard from '@/components/MovieCard/MovieCard';
 import { convertToTime } from '@/helpers/convertToTime/convertToTime';

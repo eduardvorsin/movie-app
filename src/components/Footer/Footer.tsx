@@ -3,7 +3,7 @@ import Logo from '../Logo/Logo';
 import Container from '../Container/Container';
 import SocialLinks from '../SocialLinks/SocialLinks';
 import { createSocialNetworksArray } from '@/helpers/createSocialNetworksArray/createSocialNetworksArray';
-import { NavigationRoutes, navigationRoutes } from 'src/constants';
+import { NavigationRoutes, navigationRoutes } from '@/constants';
 import Link from '../Link/Link';
 import Title from '../Title/Title';
 import ThemedImage from '../ThemedImage/ThemedImage';

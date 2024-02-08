@@ -3,7 +3,7 @@ import { fallbackLng, Locales } from "@/i18n/settings";
 import Button from '@/components/Button/Button';
 import Title from '@/components/Title/Title';
 import { fetchTranslation } from '@/i18n/server';
-import { routes } from "src/constants";
+import { routes } from "@/constants";
 import Container from "@/components/Container/Container";
 import { Metadata } from "next";
 

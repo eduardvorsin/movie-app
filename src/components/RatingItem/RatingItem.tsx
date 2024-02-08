@@ -3,7 +3,7 @@ import Title from "@/components/Title/Title";
 import { GeneralProps } from "@/types/shared";
 import Link from "next/link";
 import { ReactNode } from "react";
-import { routes } from "src/constants";
+import { routes } from "@/constants";
 
 type Props = {
 	id: number,

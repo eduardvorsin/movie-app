@@ -2,7 +2,7 @@ import { Locales, fallbackLng } from '@/i18n/settings';
 import { fetchMoviesByCollection } from '@/services/fetchMovieByCollection/fetchMovieByCollection';
 import { ListsResponse, MovieResponse } from '@/services/types';
 import { NextRequest, NextResponse } from 'next/server';
-import { Collections } from 'src/constants';
+import { Collections } from '@/constants';
 
 type Context = {
 	params: {

@@ -5,7 +5,7 @@ import { MovieGenres, TVSeriesGenres } from '@/types/shared';
 import Button from '../Button/Button';
 import { useParams } from 'next/navigation';
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { Collections, imgPath } from 'src/constants';
+import { Collections, imgPath } from '@/constants';
 import { ListsResponse, MovieResponse, TVSeriesResponse } from '@/services/types';
 import Banner from '../Banner/Banner';
 import MovieCard from '../MovieCard/MovieCard';

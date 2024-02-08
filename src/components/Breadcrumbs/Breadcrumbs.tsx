@@ -4,7 +4,7 @@ import { Locales, fallbackLng, locales } from '@/i18n/settings';
 import { useParams, usePathname } from 'next/navigation';
 import { AnchorHTMLAttributes, MouseEventHandler, useState } from 'react';
 import BreadcrumbsItem from './BreadcrumbsItem/BreadcrumbsItem';
-import { navigationRoutes } from 'src/constants';
+import { navigationRoutes } from '@/constants';
 import { toCapitalizeCase } from '@/helpers/toCapitalizeCase/toCapitalizeCase';
 import { GeneralProps } from '@/types/shared';
 

@@ -11,7 +11,7 @@ import { fetchTVSeriesByGenre } from '@/services/fetchTVSeriesByGenre/fetchTVSer
 import { fetchTopRatedTVSeries } from '@/services/fetchTopRatedTVSeries/fetchTopRatedTVSeries';
 import { fetchUpcomingTVSeries } from '@/services/fetchUpcomingTVSeries/fetchUpcomingTVSeries';
 import { Metadata } from 'next';
-import { imgPath } from 'src/constants';
+import { imgPath } from '@/constants';
 
 export async function generateMetadata(
 	{ params }: { params: { lang: Locales } },

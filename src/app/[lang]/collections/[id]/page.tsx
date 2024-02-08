@@ -11,7 +11,7 @@ import { fetchTVSeriesByCollection } from '@/services/fetchTVSeriesByCollection/
 import { PlaceholderData } from '@/types/shared';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Collections, collections } from 'src/constants';
+import { Collections, collections } from '@/constants';
 
 export async function generateMetadata(
 	{ params }: { params: { lang: Locales, id: Collections } },

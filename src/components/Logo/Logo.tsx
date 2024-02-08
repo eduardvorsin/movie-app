@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import ThemedImage from '../ThemedImage/ThemedImage';
 import { MouseEventHandler } from 'react';
-import { routes } from 'src/constants';
+import { routes } from '@/constants';
 import { GeneralProps } from '@/types/shared';
 
 const sizes = {

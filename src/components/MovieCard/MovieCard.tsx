@@ -9,7 +9,7 @@ import { isArrayOfNumbers } from '@/helpers/isArrayOfNumbers/isArrayOfNumbers';
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { useParams } from 'next/navigation';
 import { useTranslation } from '@/i18n/client';
-import { routes } from 'src/constants';
+import { routes } from '@/constants';
 
 export type Props = {
 	movieId: number,

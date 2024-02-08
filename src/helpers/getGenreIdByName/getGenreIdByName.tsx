@@ -1,5 +1,5 @@
 import { Genres } from '@/types/shared'
-import { genres } from 'src/constants';
+import { genres } from '@/constants';
 
 export const getGenreIdByName = (name: Genres): string => {
 	const genrePair = Object.entries(genres).find(([key, value]) => {

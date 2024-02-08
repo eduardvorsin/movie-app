@@ -1,6 +1,6 @@
 'use client';
 
-import { NavigationRoutes, navigationRoutes } from 'src/constants';
+import { NavigationRoutes, navigationRoutes } from '@/constants';
 import Link from '@/components/Link/Link';
 import { useSelectedLayoutSegments } from 'next/navigation';
 import { MouseEventHandler } from 'react';

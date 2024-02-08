@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 import PersonCard from '../PersonCard/PersonCard';
 import { useParams } from 'next/navigation';
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { imgPath } from 'src/constants';
+import { imgPath } from '@/constants';
 import { ListsResponse, PopularPerson } from '@/services/types';
 import Banner from '../Banner/Banner';
 
