@@ -262,7 +262,10 @@
 	},
 	"autocompleteSearch": {
 		"title": "We can't find anything for '{{value}}'",
-		"text": "Try a different term or name."
+		"text": "Try a different term or name.",
+		"search": {
+			"button": "$t(search.button)"
+		}
 	},
 	"banner": {
 		"closeButton": "To close"
