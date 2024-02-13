@@ -110,7 +110,8 @@ describe('Checkbox tests', () => {
 				name='test-checkbox'
 				label='test-checkbox'
 				value=''
-				onChange={() => { }}
+				isDisabled
+				onChange={mockFn}
 				isChecked={true}
 			/>
 		);

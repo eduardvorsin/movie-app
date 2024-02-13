@@ -45,7 +45,7 @@ export default function Checkbox({
 }: Props) {
 	const labelClasses = [
 		'inline-flex py-1 pl-5 items-center',
-		isDisabled ? 'opacity-disabled cursor-not-allowed' : 'cursor-pointer',
+		isDisabled ? 'opacity-disabled cursor-not-allowed pointer-events-none' : 'cursor-pointer',
 	].join(' ');
 
 	return (
