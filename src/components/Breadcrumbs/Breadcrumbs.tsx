@@ -83,7 +83,7 @@ export default function Breadcrumbs({
 				onClick={clickHandler}
 			>
 				<span>...</span>
-				<span className='sr-only'>{t('elipsisLabel')}</span>
+				<span className='sr-only'>{t('breadcrumbs.elipsisLabel')}</span>
 			</button>
 		);
 
