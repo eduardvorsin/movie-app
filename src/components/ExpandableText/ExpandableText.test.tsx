@@ -32,8 +32,7 @@ describe('ExpandableText tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		await screen.findByTestId<HTMLDivElement>('test-expandable-text');
-		expect(screen.getByTestId<HTMLDivElement>('test-expandable-text')).toBeInTheDocument();
+		expect(await screen.findByTestId<HTMLDivElement>('test-expandable-text')).toBeInTheDocument();
 	});
 
 	it('is a basic snapshot', async () => {
@@ -51,8 +50,7 @@ describe('ExpandableText tests', () => {
 			</ExpandableText>
 		);
 
-		await screen.findByTestId<HTMLDivElement>('test-expandable-text');
-		expect(screen.getByTestId<HTMLDivElement>('test-expandable-text')).toMatchSnapshot();
+		expect(await screen.findByTestId<HTMLDivElement>('test-expandable-text')).toMatchSnapshot();
 	});
 
 	it('is a snapshot with defaultExpanded set to true', async () => {
@@ -71,8 +69,7 @@ describe('ExpandableText tests', () => {
 			</ExpandableText>
 		);
 
-		await screen.findByTestId<HTMLDivElement>('test-expandable-text');
-		expect(screen.getByTestId<HTMLDivElement>('test-expandable-text')).toMatchSnapshot();
+		expect(await screen.findByTestId<HTMLDivElement>('test-expandable-text')).toMatchSnapshot();
 	});
 });
 
@@ -151,8 +148,7 @@ describe('ExpandableText integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		await screen.findByTestId<HTMLDivElement>('test-expandable-text');
-		expect(screen.getByTestId<HTMLDivElement>('test-expandable-text')).toMatchSnapshot();
+		expect(await screen.findByTestId<HTMLDivElement>('test-expandable-text')).toMatchSnapshot();
 	});
 
 	it('is a snapshot with Russian localization', async () => {
@@ -173,7 +169,6 @@ describe('ExpandableText integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		await screen.findByTestId<HTMLDivElement>('test-expandable-text');
-		expect(screen.getByTestId<HTMLDivElement>('test-expandable-text')).toMatchSnapshot();
+		expect(await screen.findByTestId<HTMLDivElement>('test-expandable-text')).toMatchSnapshot();
 	});
 });

@@ -19,9 +19,8 @@ describe('PersonCard tests', () => {
 				test text
 			</PersonCard>
 		);
-		await screen.findByTestId<HTMLAnchorElement>('test card');
 
-		expect(screen.getByTestId<HTMLAnchorElement>('test card')).toBeInTheDocument();
+		expect(await screen.findByTestId<HTMLAnchorElement>('test card')).toBeInTheDocument();
 	});
 
 	it('when click on the card, the mock function should work', async () => {
@@ -216,8 +215,7 @@ describe('PersonCard integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		await screen.findByTestId<HTMLAnchorElement>('test card');
-		expect(screen.getByTestId<HTMLAnchorElement>('test card')).toMatchSnapshot();
+		expect(await screen.findByTestId<HTMLAnchorElement>('test card')).toMatchSnapshot();
 	});
 
 	it('is a snapshot with Russian localization', async () => {
@@ -239,7 +237,6 @@ describe('PersonCard integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		await screen.findByTestId<HTMLAnchorElement>('test card');
-		expect(screen.getByTestId<HTMLAnchorElement>('test card')).toMatchSnapshot();
+		expect(await screen.findByTestId<HTMLAnchorElement>('test card')).toMatchSnapshot();
 	});
 });
