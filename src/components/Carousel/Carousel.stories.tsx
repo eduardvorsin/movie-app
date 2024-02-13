@@ -507,7 +507,7 @@ export const Mousewheel: Story = {
 	),
 };
 
-const paginationTypes: Exclude<Props['paginationType'], undefined>[] = ['dots', 'progress', 'fraction'];
+const paginationTypes: NonNullable<Props['paginationType']>[] = ['dots', 'progress', 'fraction'];
 
 export const PaginationType: Story = {
 	args: {

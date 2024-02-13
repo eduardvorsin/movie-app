@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Title, { Props } from './Title';
 
-const levels: Exclude<Props['level'], undefined>[] = [1, 2, 3, 4, 5, 6];
-const weights: Exclude<Props['weight'], undefined>[] = [400, 500, 600, 700];
+const levels: NonNullable<Props['level']>[] = [1, 2, 3, 4, 5, 6];
+const weights: NonNullable<Props['weight']>[] = [400, 500, 600, 700];
 
 const meta: Meta<typeof Title> = {
 	title: 'UI/Title',

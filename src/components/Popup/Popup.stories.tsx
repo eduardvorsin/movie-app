@@ -87,7 +87,7 @@ export const Default: Story = {
 	render: (args) => (<PopupWithHooks {...args} />),
 };
 
-const placements: Exclude<Props['placement'], undefined>[] = ['left-start', 'left', 'left-end', 'top-start', 'top', 'top-end', 'right-start', 'right', 'right-end', 'bottom-start', 'bottom', 'bottom-end'];
+const placements: NonNullable<Props['placement']>[] = ['left-start', 'left', 'left-end', 'top-start', 'top', 'top-end', 'right-start', 'right', 'right-end', 'bottom-start', 'bottom', 'bottom-end'];
 export const Placement: Story = {
 	args: {
 		id: 'popup',

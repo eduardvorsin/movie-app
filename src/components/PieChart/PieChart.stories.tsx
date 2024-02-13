@@ -111,7 +111,7 @@ export const Thickness: Story = {
 	},
 };
 
-const appearances: Exclude<Props['appearance'], undefined>[] = ['primary', 'rating'];
+const appearances: NonNullable<Props['appearance']>[] = ['primary', 'rating'];
 export const Appearance: Story = {
 	parameters: {
 		docs: {

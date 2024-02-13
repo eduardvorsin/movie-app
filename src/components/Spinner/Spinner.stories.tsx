@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Spinner, { Props } from './Spinner';
 
-type Sizes = Exclude<Props['size'], undefined>;
-const sizes: Sizes[] = ['small', 'medium', 'large', 'xlarge'];
+const sizes: NonNullable<Props['size']>[] = ['small', 'medium', 'large', 'xlarge'];
 
 const meta: Meta<typeof Spinner> = {
 	title: 'UI/Spinner',

@@ -6,16 +6,16 @@ import { action } from '@storybook/addon-actions';
 import MoonIcon from '../../assets/icons/moon.svg';
 import SunIcon from '../../assets/icons/sun.svg';
 
-type Sizes = Exclude<Props['size'], undefined>;
-type Appearances = Exclude<Props['appearance'], undefined>;
+type Sizes = NonNullable<Props['size']>;
+type Appearances = NonNullable<Props['appearance']>;
 const sizes: Sizes[] = ['regular', 'large'];
 const appearances: Appearances[] = ['primary', 'secondary', 'warning', 'danger', 'success'];
 
 type Variant = {
-	appearance: Exclude<Props['appearance'], undefined>,
+	appearance: NonNullable<Props['appearance']>,
 	label: string,
-	labelHidden?: Exclude<Props['labelHidden'], undefined>,
-	isDisabled?: Exclude<Props['isDisabled'], undefined>,
+	labelHidden?: NonNullable<Props['labelHidden']>,
+	isDisabled?: NonNullable<Props['isDisabled']>,
 	hasIcons?: boolean,
 }
 const all: Record<Sizes, Variant[]> = {

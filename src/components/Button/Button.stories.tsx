@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button, { Props } from './Button';
 
-type Sizes = Exclude<Props['size'], undefined>;
-type Apperances = Exclude<Props['appearance'], undefined>;
+type Sizes = NonNullable<Props['size']>;
+type Apperances = NonNullable<Props['appearance']>;
 
 const sizes: Sizes[] = ['micro', 'slim', 'medium', 'large'];
 const apperances: Apperances[] = ['primary', 'secondary', 'warning', 'danger', 'success', 'discovery', 'ghost'];
@@ -10,8 +10,8 @@ const apperances: Apperances[] = ['primary', 'secondary', 'warning', 'danger', '
 type Variant = {
 	appearance: Apperances,
 	children: string,
-	isLoading?: Exclude<Props['isLoading'], undefined>,
-	isDisabled?: Exclude<Props['isDisabled'], undefined>,
+	isLoading?: NonNullable<Props['isLoading']>,
+	isDisabled?: NonNullable<Props['isDisabled']>,
 	hasIcon?: boolean,
 };
 

@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Badge, { Props } from './Badge';
 
-type Appearance = Exclude<Props['appearance'], undefined>;
-const appearances: Appearance[] = ['default', 'info', 'success', 'warning', 'danger'];
+const appearances: NonNullable<Props['appearance']>[] = ['default', 'info', 'success', 'warning', 'danger'];
 
 const meta: Meta<typeof Badge> = {
 	title: 'UI/Badge',

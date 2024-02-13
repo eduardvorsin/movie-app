@@ -3,8 +3,7 @@ import Banner, { Props } from './Banner';
 import Button from '@/components/Button/Button';
 import { useTranslation } from 'react-i18next';
 
-type Appearances = Exclude<Props['appearance'], undefined>;
-const appearances: Appearances[] = ['success', 'info', 'warning', 'danger', 'discovery'];
+const appearances: NonNullable<Props['appearance']>[] = ['success', 'info', 'warning', 'danger', 'discovery'];
 
 const meta: Meta<typeof Banner> = {
 	title: 'Layout/Banner',

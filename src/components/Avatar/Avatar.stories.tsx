@@ -2,25 +2,20 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Avatar, { Props } from './Avatar';
 import AvatarPicture from '../../assets/avatar-example.jpg';
 
-type Statuses = Exclude<Props['status'], undefined>;
-type Sizes = Exclude<Props['size'], undefined>;
-type Presences = Exclude<Props['presence'], undefined>;
-type Appearances = Exclude<Props['appearance'], undefined>;
-
 type Variant = {
 	id: number,
-	appearance?: Appearances,
+	appearance?: Props['appearance'],
 	isDisabled?: Props['isDisabled'],
 	initials?: Props['initials'],
-	presence?: Presences,
-	status?: Statuses,
+	presence?: Props['presence'],
+	status?: Props['status'],
 	src?: Props['src'],
 };
 
-const appearances: Appearances[] = ['circle', 'square'];
-const statuses: Statuses[] = ['approved', 'declined', 'locked'];
-const sizes: Sizes[] = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
-const presences: Presences[] = ['offline', 'online'];
+const appearances: NonNullable<Props['appearance']>[] = ['circle', 'square'];
+const statuses: NonNullable<Props['status']>[] = ['approved', 'declined', 'locked'];
+const sizes: NonNullable<Props['size']>[] = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
+const presences: NonNullable<Props['presence']>[] = ['offline', 'online'];
 const variants: Variant[] = [
 	{
 		id: 0,

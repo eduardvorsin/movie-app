@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Logo, { Props } from './Logo';
 import { useTranslation } from 'react-i18next';
 
-const sizes: Exclude<Props['size'], undefined>[] = ['small', 'medium', 'large'];
+const sizes: NonNullable<Props['size']>[] = ['small', 'medium', 'large'];
 
 const meta: Meta<typeof Logo> = {
 	title: 'UI/Logo',

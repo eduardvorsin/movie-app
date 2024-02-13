@@ -4,7 +4,6 @@ import { action } from '@storybook/addon-actions';
 import Checkbox, { Props } from './Checkbox';
 import { ChangeEventHandler, useState } from 'react';
 
-type Sizes = Exclude<Props['size'], undefined>;
 type Variant = {
 	id: string,
 	isDisabled?: Props['isDisabled'],
@@ -13,7 +12,7 @@ type Variant = {
 	error?: Props['error'],
 };
 
-const sizes: Sizes[] = ['small', 'medium', 'large', 'xlarge'];
+const sizes: NonNullable<Props['size']>[] = ['small', 'medium', 'large', 'xlarge'];
 const variants: Variant[] = [
 	{
 		id: '0',

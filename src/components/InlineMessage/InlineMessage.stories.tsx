@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import InlineMessage, { Props } from './InlineMessage';
 
-type Appearance = Exclude<Props['appearance'], undefined>;
+type Appearance = NonNullable<Props['appearance']>;
 const appearance: Appearance[] = ['connectivity', 'confirmation', 'info', 'warning', 'error'];
 
 type Variants = {
