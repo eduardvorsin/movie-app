@@ -1,7 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import Button from './Button';
+import Button, { Props } from './Button';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
+
+const appearances: NonNullable<Props['appearance']>[] = ['primary', 'secondary', 'warning', 'danger', 'success', 'discovery', 'ghost'];
+const sizes: NonNullable<Props['size']>[] = ['micro', 'slim', 'medium', 'large'];
 
 describe('Button tests', () => {
    it('renders correctly', () => {
@@ -63,62 +66,14 @@ describe('Button tests', () => {
       expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
    });
 
-   it('is a snapshot with the "primary" appearance type', () => {
-      render(<Button appearance='primary'>Button</Button>);
+   it.each(appearances)('is a snapshot with the "%s" appearance type', (appearance) => {
+      render(<Button appearance={appearance}>Button</Button>);
 
       expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
    });
 
-   it('is a snapshot with the "secondary" appearance type', () => {
-      render(<Button appearance='secondary'>Button</Button>);
-
-      expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
-   });
-
-   it('is a snapshot with the "warning" appearance type', () => {
-      render(<Button appearance='warning'>Button</Button>);
-
-      expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
-   });
-
-   it('is a snapshot with the "danger" appearance type', () => {
-      render(<Button appearance='danger'>Button</Button>);
-
-      expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
-   });
-
-   it('is a snapshot with the "success" appearance type', () => {
-      render(<Button appearance='success'>Button</Button>);
-
-      expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
-   });
-
-   it('is a snapshot with the "discovery" appearance type', () => {
-      render(<Button appearance='discovery'>Button</Button>);
-
-      expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
-   });
-
-   it('is a snapshot with the "micro" size type', () => {
-      render(<Button size='micro'>Button</Button>);
-
-      expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
-   });
-
-   it('is a snapshot with the "slim" size type', () => {
-      render(<Button size='slim'>Button</Button>);
-
-      expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
-   });
-
-   it('is a snapshot with the "medium" size type', () => {
-      render(<Button size='medium'>Button</Button>);
-
-      expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
-   });
-
-   it('is a snapshot with the "large" size type', () => {
-      render(<Button size='large'>Button</Button>);
+   it.each(sizes)('is a snapshot with the "%s" size type', (size) => {
+      render(<Button size={size}>Button</Button>);
 
       expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
    });

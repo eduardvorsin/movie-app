@@ -36,6 +36,18 @@ exports[`Button tests is a snapshot with the "discovery" appearance type 1`] = `
 </button>
 `;
 
+exports[`Button tests is a snapshot with the "ghost" appearance type 1`] = `
+<button
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-100  text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-200 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600 py-2 px-4 relative  "
+>
+  <span
+    class="inline-flex items-center"
+  >
+    Button
+  </span>
+</button>
+`;
+
 exports[`Button tests is a snapshot with the "large" size type 1`] = `
 <button
   class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-200  bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200 py-3 px-6 relative  "

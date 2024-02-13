@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import Spinner from './Spinner';
+import Spinner, { Props } from './Spinner';
+
+const sizes: NonNullable<Props['size']>[] = ['small', 'medium', 'large', 'xlarge'];
 
 describe('Spinner tests', () => {
 	it('is rendered correctly', () => {
@@ -20,26 +22,8 @@ describe('Spinner tests', () => {
 		expect(screen.getByTestId<HTMLSpanElement>('spinner')).toMatchSnapshot();
 	});
 
-	it('is a snapshot with a size of type "small"', () => {
-		render(<Spinner testId='spinner' size='small' />);
-
-		expect(screen.getByTestId<HTMLSpanElement>('spinner')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with a size of type "medium"', () => {
-		render(<Spinner testId='spinner' size='medium' />);
-
-		expect(screen.getByTestId<HTMLSpanElement>('spinner')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with a size of type "large"', () => {
-		render(<Spinner testId='spinner' size='large' />);
-
-		expect(screen.getByTestId<HTMLSpanElement>('spinner')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with a size of type "xlarge"', () => {
-		render(<Spinner testId='spinner' size='xlarge' />);
+	it.each(sizes)('is a snapshot with a size of type "%s"', (size) => {
+		render(<Spinner testId='spinner' size={size} />);
 
 		expect(screen.getByTestId<HTMLSpanElement>('spinner')).toMatchSnapshot();
 	});

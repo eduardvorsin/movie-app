@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import Toggle from './Toggle';
+import Toggle, { Props } from './Toggle';
 import userEvent from '@testing-library/user-event';
 import AddIcon from '../../assets/icons/add.svg';
 import MinusIcon from '../../assets/icons/minus.svg';
+
+const appearances: NonNullable<Props['appearance']>[] = ['primary', 'secondary', 'warning', 'danger', 'success'];
+const sizes: NonNullable<Props['size']>[] = ['regular', 'large'];
 
 describe('Toggle tests', () => {
 	it('is rendered correctly', () => {
@@ -129,11 +132,11 @@ describe('Toggle tests', () => {
 		expect(screen.getByTestId<HTMLDivElement>('toggle')).toMatchSnapshot();
 	});
 
-	it('snapshot with size equal to "regular"', () => {
+	it.each(sizes)('is a snapshot with size equal to "%s"', (size) => {
 		const mockChangeHandler = jest.fn();
 		render(<Toggle
 			id='toggle'
-			size='regular'
+			size={size}
 			name='toggle'
 			label='toggle'
 			value='value'
@@ -145,11 +148,11 @@ describe('Toggle tests', () => {
 		expect(screen.getByTestId<HTMLDivElement>('toggle')).toMatchSnapshot();
 	});
 
-	it('snapshot with size equal to "large"', () => {
+	it.each(appearances)('is a snapshot with appearance equal to "%s"', (appearance) => {
 		const mockChangeHandler = jest.fn();
 		render(<Toggle
 			id='toggle'
-			size='large'
+			appearance={appearance}
 			name='toggle'
 			label='toggle'
 			value='value'
@@ -161,87 +164,7 @@ describe('Toggle tests', () => {
 		expect(screen.getByTestId<HTMLDivElement>('toggle')).toMatchSnapshot();
 	});
 
-	it('snapshot with appearance equal to "primary"', () => {
-		const mockChangeHandler = jest.fn();
-		render(<Toggle
-			id='toggle'
-			appearance='primary'
-			name='toggle'
-			label='toggle'
-			value='value'
-			testId='toggle'
-			isChecked={false}
-			onChange={mockChangeHandler}
-		/>);
-
-		expect(screen.getByTestId<HTMLDivElement>('toggle')).toMatchSnapshot();
-	});
-
-	it('snapshot with appearance equal to "secondary"', () => {
-		const mockChangeHandler = jest.fn();
-		render(<Toggle
-			id='toggle'
-			appearance='secondary'
-			name='toggle'
-			label='toggle'
-			value='value'
-			testId='toggle'
-			isChecked={false}
-			onChange={mockChangeHandler}
-		/>);
-
-		expect(screen.getByTestId<HTMLDivElement>('toggle')).toMatchSnapshot();
-	});
-
-	it('snapshot with appearance equal to "warning"', () => {
-		const mockChangeHandler = jest.fn();
-		render(<Toggle
-			id='toggle'
-			appearance='warning'
-			name='toggle'
-			label='toggle'
-			value='value'
-			testId='toggle'
-			isChecked={false}
-			onChange={mockChangeHandler}
-		/>);
-
-		expect(screen.getByTestId<HTMLDivElement>('toggle')).toMatchSnapshot();
-	});
-
-	it('snapshot with appearance equal to "danger"', () => {
-		const mockChangeHandler = jest.fn();
-		render(<Toggle
-			id='toggle'
-			appearance='danger'
-			name='toggle'
-			label='toggle'
-			value='value'
-			testId='toggle'
-			isChecked={false}
-			onChange={mockChangeHandler}
-		/>);
-
-		expect(screen.getByTestId<HTMLDivElement>('toggle')).toMatchSnapshot();
-	});
-
-	it('snapshot with appearance equal to "success"', () => {
-		const mockChangeHandler = jest.fn();
-		render(<Toggle
-			id='toggle'
-			appearance='success'
-			name='toggle'
-			label='toggle'
-			value='value'
-			testId='toggle'
-			isChecked={false}
-			onChange={mockChangeHandler}
-		/>);
-
-		expect(screen.getByTestId<HTMLDivElement>('toggle')).toMatchSnapshot();
-	});
-
-	it('snapshot with labelHidden set to true', () => {
+	it('is a snapshot with labelHidden set to true', () => {
 		const mockChangeHandler = jest.fn();
 		render(<Toggle
 			id='toggle'
@@ -257,7 +180,7 @@ describe('Toggle tests', () => {
 		expect(screen.getByTestId<HTMLDivElement>('toggle')).toMatchSnapshot();
 	});
 
-	it('snapshot with isDisabled set to true', () => {
+	it('is a snapshot with isDisabled set to true', () => {
 		const mockChangeHandler = jest.fn();
 		render(<Toggle
 			id='toggle'
@@ -273,7 +196,7 @@ describe('Toggle tests', () => {
 		expect(screen.getByTestId<HTMLDivElement>('toggle')).toMatchSnapshot();
 	});
 
-	it('snapshot with icons', () => {
+	it('is a snapshot with icons', () => {
 		const mockChangeHandler = jest.fn();
 		render(<Toggle
 			id='toggle'

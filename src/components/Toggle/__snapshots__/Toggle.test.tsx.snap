@@ -26,7 +26,7 @@ exports[`Toggle tests is a basic snapshot 1`] = `
 </div>
 `;
 
-exports[`Toggle tests snapshot with appearance equal to "danger" 1`] = `
+exports[`Toggle tests is a snapshot with appearance equal to "danger" 1`] = `
 <div
   class="flex items-center undefined"
   data-testid="toggle"
@@ -52,7 +52,7 @@ exports[`Toggle tests snapshot with appearance equal to "danger" 1`] = `
 </div>
 `;
 
-exports[`Toggle tests snapshot with appearance equal to "primary" 1`] = `
+exports[`Toggle tests is a snapshot with appearance equal to "primary" 1`] = `
 <div
   class="flex items-center undefined"
   data-testid="toggle"
@@ -78,7 +78,7 @@ exports[`Toggle tests snapshot with appearance equal to "primary" 1`] = `
 </div>
 `;
 
-exports[`Toggle tests snapshot with appearance equal to "secondary" 1`] = `
+exports[`Toggle tests is a snapshot with appearance equal to "secondary" 1`] = `
 <div
   class="flex items-center undefined"
   data-testid="toggle"
@@ -104,7 +104,7 @@ exports[`Toggle tests snapshot with appearance equal to "secondary" 1`] = `
 </div>
 `;
 
-exports[`Toggle tests snapshot with appearance equal to "success" 1`] = `
+exports[`Toggle tests is a snapshot with appearance equal to "success" 1`] = `
 <div
   class="flex items-center undefined"
   data-testid="toggle"
@@ -130,7 +130,7 @@ exports[`Toggle tests snapshot with appearance equal to "success" 1`] = `
 </div>
 `;
 
-exports[`Toggle tests snapshot with appearance equal to "warning" 1`] = `
+exports[`Toggle tests is a snapshot with appearance equal to "warning" 1`] = `
 <div
   class="flex items-center undefined"
   data-testid="toggle"
@@ -156,7 +156,7 @@ exports[`Toggle tests snapshot with appearance equal to "warning" 1`] = `
 </div>
 `;
 
-exports[`Toggle tests snapshot with icons 1`] = `
+exports[`Toggle tests is a snapshot with icons 1`] = `
 <div
   class="flex items-center undefined"
   data-testid="toggle"
@@ -192,7 +192,7 @@ exports[`Toggle tests snapshot with icons 1`] = `
 </div>
 `;
 
-exports[`Toggle tests snapshot with isDisabled set to true 1`] = `
+exports[`Toggle tests is a snapshot with isDisabled set to true 1`] = `
 <div
   class="flex items-center undefined"
   data-testid="toggle"
@@ -219,7 +219,7 @@ exports[`Toggle tests snapshot with isDisabled set to true 1`] = `
 </div>
 `;
 
-exports[`Toggle tests snapshot with labelHidden set to true 1`] = `
+exports[`Toggle tests is a snapshot with labelHidden set to true 1`] = `
 <div
   class="flex items-center undefined"
   data-testid="toggle"
@@ -245,7 +245,7 @@ exports[`Toggle tests snapshot with labelHidden set to true 1`] = `
 </div>
 `;
 
-exports[`Toggle tests snapshot with size equal to "large" 1`] = `
+exports[`Toggle tests is a snapshot with size equal to "large" 1`] = `
 <div
   class="flex items-center undefined"
   data-testid="toggle"
@@ -271,7 +271,7 @@ exports[`Toggle tests snapshot with size equal to "large" 1`] = `
 </div>
 `;
 
-exports[`Toggle tests snapshot with size equal to "regular" 1`] = `
+exports[`Toggle tests is a snapshot with size equal to "regular" 1`] = `
 <div
   class="flex items-center undefined"
   data-testid="toggle"

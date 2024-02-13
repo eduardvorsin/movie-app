@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import Badge from './Badge';
+import Badge, { Props } from './Badge';
+
+const appearances: NonNullable<Props['appearance']>[] = ['default', 'info', 'success', 'warning', 'danger']
 
 describe('Badge tests', () => {
 	it('is rendered correctly', () => {
@@ -14,32 +16,8 @@ describe('Badge tests', () => {
 		expect(screen.getByText<HTMLSpanElement>(/badge/i)).toMatchSnapshot();
 	});
 
-	it('is a snapshot with the appearance type "default"', () => {
-		render(<Badge appearance='default'>Badge</Badge>);
-
-		expect(screen.getByText<HTMLSpanElement>(/badge/i)).toMatchSnapshot();
-	});
-
-	it('is a snapshot with the appearance type "info"', () => {
-		render(<Badge appearance='info'>Badge</Badge>);
-
-		expect(screen.getByText<HTMLSpanElement>(/badge/i)).toMatchSnapshot();
-	});
-
-	it('is a snapshot with the appearance type "success"', () => {
-		render(<Badge appearance='success'>Badge</Badge>);
-
-		expect(screen.getByText<HTMLSpanElement>(/badge/i)).toMatchSnapshot();
-	});
-
-	it('is a snapshot with the appearance type "warning"', () => {
-		render(<Badge appearance='warning'>Badge</Badge>);
-
-		expect(screen.getByText<HTMLSpanElement>(/badge/i)).toMatchSnapshot();
-	});
-
-	it('is a snapshot with the appearance type "danger"', () => {
-		render(<Badge appearance='danger'>Badge</Badge>);
+	it.each(appearances)('is a snapshot with the appearance type "%s"', (appearance) => {
+		render(<Badge appearance={appearance}>Badge</Badge>);
 
 		expect(screen.getByText<HTMLSpanElement>(/badge/i)).toMatchSnapshot();
 	});

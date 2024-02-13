@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import Checkbox from "./Checkbox";
+import Checkbox, { Props } from "./Checkbox";
 import userEvent from "@testing-library/user-event";
+
+const sizes: NonNullable<Props['size']>[] = ['small', 'medium', 'large', 'xlarge'];
 
 describe('Checkbox tests', () => {
 	it('is rendered correctly', () => {
@@ -150,62 +152,14 @@ describe('Checkbox tests', () => {
 		expect(screen.getByRole<HTMLInputElement>('checkbox')).toMatchSnapshot();
 	});
 
-	it('is a snapshot with the "small" size type', () => {
+	it.each(sizes)('is a snapshot with the "%s" size type', (size) => {
 		render(
 			<Checkbox
 				id='test-checkbox'
 				name='test-checkbox'
 				label='test-checkbox'
 				value=''
-				size='small'
-				onChange={() => { }}
-				isChecked={true}
-			/>
-		);
-
-		expect(screen.getByRole<HTMLInputElement>('checkbox')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with the "medium" size type', () => {
-		render(
-			<Checkbox
-				id='test-checkbox'
-				name='test-checkbox'
-				label='test-checkbox'
-				value=''
-				size='medium'
-				onChange={() => { }}
-				isChecked={true}
-			/>
-		);
-
-		expect(screen.getByRole<HTMLInputElement>('checkbox')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with the "large" size type', () => {
-		render(
-			<Checkbox
-				id='test-checkbox'
-				name='test-checkbox'
-				label='test-checkbox'
-				value=''
-				size='large'
-				onChange={() => { }}
-				isChecked={true}
-			/>
-		);
-
-		expect(screen.getByRole<HTMLInputElement>('checkbox')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with the "xlarge" size type', () => {
-		render(
-			<Checkbox
-				id='test-checkbox'
-				name='test-checkbox'
-				label='test-checkbox'
-				value=''
-				size='xlarge'
+				size={size}
 				onChange={() => { }}
 				isChecked={true}
 			/>

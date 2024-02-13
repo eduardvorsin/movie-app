@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import Link from "./Link";
+import Link, { Props } from "./Link";
 import userEvent from "@testing-library/user-event";
+
+const appearances: NonNullable<Props['appearance']>[] = ['primary', 'secondary'];
 
 describe('Link tests', () => {
 	it('is rendered correctly', () => {
@@ -71,6 +73,12 @@ describe('Link tests', () => {
 
 	it('is a snapshot with isExternal equal to true', () => {
 		render(<Link href='/' isExternal>test link</Link>);
+
+		expect(screen.getByRole<HTMLAnchorElement>('link')).toMatchSnapshot();
+	});
+
+	it.each(appearances)('is a snapshot with the "%s" appearance type', (appearance) => {
+		render(<Link href='/' appearance={appearance} >test link</Link>);
 
 		expect(screen.getByRole<HTMLAnchorElement>('link')).toMatchSnapshot();
 	});

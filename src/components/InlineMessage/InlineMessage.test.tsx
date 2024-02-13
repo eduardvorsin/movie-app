@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import InlineMessage from "./InlineMessage";
+import InlineMessage, { Props } from "./InlineMessage";
+const appearances: NonNullable<Props['appearance']>[] = ['connectivity', 'confirmation', 'info', 'warning', 'error'];
+const iconPositions: NonNullable<Props['iconPosition']>[] = ['left', 'right'];
 
 describe('InlineMessage tests', () => {
 	it('is rendered correctly', () => {
@@ -24,11 +26,11 @@ describe('InlineMessage tests', () => {
 		expect(screen.getByRole<HTMLParagraphElement>('alert')).toMatchSnapshot();
 	});
 
-	it('is a snapshot with the icon on the right', () => {
+	it.each(iconPositions)('is a snapshot with the icon on the %s', (iconPosition) => {
 		render(
 			<InlineMessage
 				fieldId='test-inline-message'
-				iconPosition='right'
+				iconPosition={iconPosition}
 				message='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt asperiores cupiditate, voluptas non ab soluta. Non odit facere quae tempora.'
 			/>
 		);
@@ -36,71 +38,11 @@ describe('InlineMessage tests', () => {
 		expect(screen.getByRole<HTMLParagraphElement>('alert')).toMatchSnapshot();
 	});
 
-	it('is a snapshot with the icon on the left', () => {
+	it.each(appearances)('is a snapshot with a "%s" type appearance', (appearance) => {
 		render(
 			<InlineMessage
 				fieldId='test-inline-message'
-				iconPosition='left'
-				message='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt asperiores cupiditate, voluptas non ab soluta. Non odit facere quae tempora.'
-			/>
-		);
-
-		expect(screen.getByRole<HTMLParagraphElement>('alert')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with a "connectivity" type appearance', () => {
-		render(
-			<InlineMessage
-				fieldId='test-inline-message'
-				appearance='connectivity'
-				message='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt asperiores cupiditate, voluptas non ab soluta. Non odit facere quae tempora.'
-			/>
-		);
-
-		expect(screen.getByRole<HTMLParagraphElement>('alert')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with a "confirmation" type appearance', () => {
-		render(
-			<InlineMessage
-				fieldId='test-inline-message'
-				appearance='confirmation'
-				message='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt asperiores cupiditate, voluptas non ab soluta. Non odit facere quae tempora.'
-			/>
-		);
-
-		expect(screen.getByRole<HTMLParagraphElement>('alert')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with a "info" type appearance', () => {
-		render(
-			<InlineMessage
-				fieldId='test-inline-message'
-				appearance='info'
-				message='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt asperiores cupiditate, voluptas non ab soluta. Non odit facere quae tempora.'
-			/>
-		);
-
-		expect(screen.getByRole<HTMLParagraphElement>('alert')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with a "warning" type appearance', () => {
-		render(
-			<InlineMessage
-				fieldId='test-inline-message'
-				appearance='warning'
-				message='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt asperiores cupiditate, voluptas non ab soluta. Non odit facere quae tempora.'
-			/>
-		);
-
-		expect(screen.getByRole<HTMLParagraphElement>('alert')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with a "error" type appearance', () => {
-		render(
-			<InlineMessage
-				fieldId='test-inline-message'
-				appearance='error'
+				appearance={appearance}
 				message='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt asperiores cupiditate, voluptas non ab soluta. Non odit facere quae tempora.'
 			/>
 		);

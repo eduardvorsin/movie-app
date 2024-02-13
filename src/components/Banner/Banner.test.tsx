@@ -1,10 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import Banner from "./Banner";
+import Banner, { Props } from "./Banner";
 import userEvent from "@testing-library/user-event";
 import Button from "@/components/Button/Button";
+const appearances: NonNullable<Props['appearance']>[] = ['success', 'info', 'warning', 'danger', 'discovery'];
 
 describe('Banner tests', () => {
-	it('This is rendered correctly', () => {
+	it('is rendered correctly', () => {
 		render(
 			<Banner
 				closeButton={false}
@@ -106,67 +107,11 @@ describe('Banner tests', () => {
 		expect(screen.getByTestId<HTMLDivElement>('test-banner')).toMatchSnapshot();
 	});
 
-	it('is a snapshot with a "success" type appearance', () => {
+	it.each(appearances)('is a snapshot with a "%s" type appearance', (appearance) => {
 		render(
 			<Banner
 				testId='test-banner'
-				appearance='success'
-				closeButton={false}
-			>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
-			</Banner>
-		);
-
-		expect(screen.getByTestId<HTMLDivElement>('test-banner')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with a "info" type appearance', () => {
-		render(
-			<Banner
-				testId='test-banner'
-				appearance='info'
-				closeButton={false}
-			>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
-			</Banner>
-		);
-
-		expect(screen.getByTestId<HTMLDivElement>('test-banner')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with a "warning" type appearance', () => {
-		render(
-			<Banner
-				testId='test-banner'
-				appearance='warning'
-				closeButton={false}
-			>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
-			</Banner>
-		);
-
-		expect(screen.getByTestId<HTMLDivElement>('test-banner')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with a "danger" type appearance', () => {
-		render(
-			<Banner
-				testId='test-banner'
-				appearance='danger'
-				closeButton={false}
-			>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
-			</Banner>
-		);
-
-		expect(screen.getByTestId<HTMLDivElement>('test-banner')).toMatchSnapshot();
-	});
-
-	it('is a snapshot with a "discovery" type appearance', () => {
-		render(
-			<Banner
-				testId='test-banner'
-				appearance='discovery'
+				appearance={appearance}
 				closeButton={false}
 			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
