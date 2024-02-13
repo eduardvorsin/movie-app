@@ -1,5 +1,97 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Banner integration tests is a snapshot with English localization 1`] = `
+<div
+  class="py-4 pl-4 rounded-[0.1875rem] flex relative bg-blue-100 dark:bg-blue-1000 pr-12 "
+  data-testid="test-banner"
+>
+  <span
+    class="w-6 h-6 mr-4"
+    role="presentation"
+  >
+    <svg
+      class="fill-blue-700 dark:fill-blue-400 transition-colors duration-150"
+      viewBox="0 0 20 20"
+    >
+      <use
+        href="/assets/icons/info.svg#info"
+      />
+    </svg>
+  </span>
+  <div>
+    <p
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+    </p>
+  </div>
+  <button
+    class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-blue-700 enabled:hover:text-blue-800 enabled:active:text-blue-900 dark:text-blue-400 dark:enabled:hover:text-blue-300 dark:enabled:active:text-blue-200   text-0 p-2 w-10 h-10 absolute top-2 right-0"
+  >
+    <span
+      class="inline-flex items-center"
+    >
+      To close
+      <svg
+        aria-hidden="true"
+        class="fill-current w-6 h-6"
+        viewBox="0 0 20 20"
+      >
+        <use
+          href="/assets/icons/cancel.svg#cancel"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Banner integration tests is a snapshot with Russian localization 1`] = `
+<div
+  class="py-4 pl-4 rounded-[0.1875rem] flex relative bg-blue-100 dark:bg-blue-1000 pr-12 "
+  data-testid="test-banner"
+>
+  <span
+    class="w-6 h-6 mr-4"
+    role="presentation"
+  >
+    <svg
+      class="fill-blue-700 dark:fill-blue-400 transition-colors duration-150"
+      viewBox="0 0 20 20"
+    >
+      <use
+        href="/assets/icons/info.svg#info"
+      />
+    </svg>
+  </span>
+  <div>
+    <p
+      class="text-100 text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+    </p>
+  </div>
+  <button
+    class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-blue-700 enabled:hover:text-blue-800 enabled:active:text-blue-900 dark:text-blue-400 dark:enabled:hover:text-blue-300 dark:enabled:active:text-blue-200   text-0 p-2 w-10 h-10 absolute top-2 right-0"
+  >
+    <span
+      class="inline-flex items-center"
+    >
+      Закрыть
+      <svg
+        aria-hidden="true"
+        class="fill-current w-6 h-6"
+        viewBox="0 0 20 20"
+      >
+        <use
+          href="/assets/icons/cancel.svg#cancel"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
 exports[`Banner tests is a basic snapshot 1`] = `
 <div
   class="py-4 pl-4 rounded-[0.1875rem] flex relative bg-blue-100 dark:bg-blue-1000 pr-4 "

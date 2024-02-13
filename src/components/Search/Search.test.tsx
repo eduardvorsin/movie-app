@@ -1,9 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import Search from './Search';
 import userEvent from '@testing-library/user-event';
+import i18next from "@/i18n/client";
+import I18nextWrapper from "@/test-utils/I18nextWrapper";
 
 describe('Search tests', () => {
 	it('is rendered correctly', () => {
+		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -15,7 +18,7 @@ describe('Search tests', () => {
 				testId='test-search'
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -23,6 +26,7 @@ describe('Search tests', () => {
 	});
 
 	it('when submitting the form, the mock function is triggered', async () => {
+		const dictionary = { button: 'To find' };
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
@@ -35,7 +39,7 @@ describe('Search tests', () => {
 				testId='test-search'
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -45,6 +49,7 @@ describe('Search tests', () => {
 	});
 
 	it('when entering text into the input, the mock function is triggered', async () => {
+		const dictionary = { button: 'To find' };
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
@@ -57,7 +62,7 @@ describe('Search tests', () => {
 				testId='test-search'
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -67,6 +72,7 @@ describe('Search tests', () => {
 	});
 
 	it('when the input receives the focus, the mock function is triggered', async () => {
+		const dictionary = { button: 'To find' };
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
@@ -81,7 +87,7 @@ describe('Search tests', () => {
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
 				onFocus={focusMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -91,6 +97,7 @@ describe('Search tests', () => {
 	});
 
 	it('when the input loses focus, the mock function is triggered', async () => {
+		const dictionary = { button: 'To find' };
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
@@ -105,7 +112,7 @@ describe('Search tests', () => {
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
 				onFocus={blurMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -116,6 +123,7 @@ describe('Search tests', () => {
 	});
 
 	it('when isDisabled is true, the input and the button become inactive', async () => {
+		const dictionary = { button: 'To find' };
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
@@ -129,7 +137,7 @@ describe('Search tests', () => {
 				testId='test-search'
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -141,6 +149,7 @@ describe('Search tests', () => {
 	});
 
 	it('with IsReadOnly set to true, the mock function is triggered when the focus is on, but not when the value is changed', async () => {
+		const dictionary = { button: 'To find' };
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
@@ -156,7 +165,7 @@ describe('Search tests', () => {
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
 				onFocus={focusMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -168,6 +177,7 @@ describe('Search tests', () => {
 	});
 
 	it('if IsInvalid is true, the input\'s border color turns red', () => {
+		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -180,7 +190,7 @@ describe('Search tests', () => {
 				isInvalid
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -188,6 +198,7 @@ describe('Search tests', () => {
 	});
 
 	it('when labelHidden is set to true, the label should be visible only to screen readers', () => {
+		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -200,7 +211,7 @@ describe('Search tests', () => {
 				labelHidden
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -208,6 +219,7 @@ describe('Search tests', () => {
 	});
 
 	it('when the error prop is not empty, an error message is displayed next to the input', () => {
+		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -220,7 +232,7 @@ describe('Search tests', () => {
 				error='mock error'
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -228,6 +240,7 @@ describe('Search tests', () => {
 	});
 
 	it('is a basic snapshot', () => {
+		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -239,7 +252,7 @@ describe('Search tests', () => {
 				testId='test-search'
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -247,6 +260,7 @@ describe('Search tests', () => {
 	});
 
 	it('is a snapshot with labelHidden set to true', () => {
+		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -259,7 +273,7 @@ describe('Search tests', () => {
 				labelHidden
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -267,6 +281,7 @@ describe('Search tests', () => {
 	});
 
 	it('is a snapshot with isDisabled set to true', () => {
+		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -280,7 +295,7 @@ describe('Search tests', () => {
 				isDisabled
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -288,6 +303,7 @@ describe('Search tests', () => {
 	});
 
 	it('is snapshot with IsInvalid equal to true', () => {
+		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -301,7 +317,7 @@ describe('Search tests', () => {
 				isInvalid
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -309,6 +325,7 @@ describe('Search tests', () => {
 	});
 
 	it('is a snapshot with IsReadOnly equal to true', () => {
+		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -322,10 +339,114 @@ describe('Search tests', () => {
 				isReadOnly
 				onChange={changeMockFn}
 				onSubmit={submitMockFn}
-				dictionary={{ button: 'To find' }}
+				dictionary={dictionary}
 			/>
 		);
 
 		expect(screen.getByTestId<HTMLDivElement>('test-search')).toMatchSnapshot();
+	});
+});
+
+describe('Search integration tests', () => {
+	it('localization into English works correctly', async () => {
+		await i18next.changeLanguage('en');
+		const translation = new RegExp(i18next.t('search.button'));
+
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn((e) => e.preventDefault());
+		const dictionary = { button: i18next.t('search.button') };
+		render(
+			<Search
+				name='test-search'
+				id='test-search'
+				label='test-search'
+				value=''
+				testId='test-search'
+				labelHidden
+				isReadOnly
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				dictionary={dictionary}
+			/>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		expect(screen.getByText<HTMLSpanElement>(translation)).toBeInTheDocument();
+	});
+
+	it('localization into Russian works correctly', async () => {
+		await i18next.changeLanguage('ru');
+		const translation = new RegExp(i18next.t('search.button'));
+
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn((e) => e.preventDefault());
+		const dictionary = { button: i18next.t('search.button') };
+		render(
+			<Search
+				name='test-search'
+				id='test-search'
+				label='test-search'
+				value=''
+				testId='test-search'
+				labelHidden
+				isReadOnly
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				dictionary={dictionary}
+			/>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		expect(screen.getByText<HTMLSpanElement>(translation)).toBeInTheDocument();
+	});
+
+	it('is a snapshot with English localization', async () => {
+		await i18next.changeLanguage('en');
+
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn((e) => e.preventDefault());
+		const dictionary = { button: i18next.t('search.button') };
+		render(
+			<Search
+				name='test-search'
+				id='test-search'
+				label='test-search'
+				value=''
+				testId='test-search'
+				labelHidden
+				isReadOnly
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				dictionary={dictionary}
+			/>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		expect(screen.getByTestId<HTMLAnchorElement>('test-search')).toMatchSnapshot();
+	});
+
+	it('is a snapshot with Russian localization', async () => {
+		await i18next.changeLanguage('ru');
+
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn((e) => e.preventDefault());
+		const dictionary = { button: i18next.t('search.button') };
+		render(
+			<Search
+				name='test-search'
+				id='test-search'
+				label='test-search'
+				value=''
+				testId='test-search'
+				labelHidden
+				isReadOnly
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				dictionary={dictionary}
+			/>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		expect(screen.getByTestId<HTMLAnchorElement>('test-search')).toMatchSnapshot();
 	});
 });

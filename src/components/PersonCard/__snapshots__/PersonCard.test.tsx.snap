@@ -1,5 +1,99 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`PersonCard integration tests is a snapshot with English localization 1`] = `
+<a
+  class="flex flex-col group/card w-full max-w-[9.625rem] min-w-[7.5rem] "
+  data-testid="test card"
+  href="/persons/1"
+>
+  <div
+    class="w-full aspect-square relative self-center mb-3"
+  >
+    <div
+      class="relative h-full overflow-hidden bg-neutral-300 dark:bg-dark-neutral-250 transition-colors duration-150 rounded-[50%] "
+    >
+      <div
+        aria-hidden="true"
+        class="bg-neutral-400 dark:bg-dark-neutral-300 max-w-full transition-colors duration-150  [&]:absolute top-0 left-0 z-100 relative overflow-hidden isolate before:absolute before:inset-0 before:-translate-x-full before:animate-skeleton before:bg-gradient-to-r before:from-transparent before:via-neutral-0/50 dark:before:via-neutral-0/25 before:to-transparent before:transition-colors before:duration-150"
+        style="width: 100%; height: 100%;"
+      />
+      <img
+        alt="alternative text"
+        data-nimg="fill"
+        decoding="async"
+        loading="lazy"
+        sizes="154px"
+        src="http://localhost/_next/image?url=%2F&w=3840&q=85"
+        srcset="/_next/image?url=%2F&w=16&q=85 16w, /_next/image?url=%2F&w=32&q=85 32w, /_next/image?url=%2F&w=48&q=85 48w, /_next/image?url=%2F&w=64&q=85 64w, /_next/image?url=%2F&w=96&q=85 96w, /_next/image?url=%2F&w=128&q=85 128w, /_next/image?url=%2F&w=256&q=85 256w, /_next/image?url=%2F&w=384&q=85 384w, /_next/image?url=%2F&w=640&q=85 640w, /_next/image?url=%2F&w=750&q=85 750w, /_next/image?url=%2F&w=828&q=85 828w, /_next/image?url=%2F&w=1080&q=85 1080w, /_next/image?url=%2F&w=1200&q=85 1200w, /_next/image?url=%2F&w=1920&q=85 1920w, /_next/image?url=%2F&w=2048&q=85 2048w, /_next/image?url=%2F&w=3840&q=85 3840w"
+        style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
+      />
+    </div>
+    <span
+      class="z-200 absolute bottom-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold transition-colors duration-150 rounded-[50%]"
+    >
+      <span
+        class="sr-only"
+      >
+        Popularity
+      </span>
+      90
+    </span>
+  </div>
+  <p
+    class="break-word text-100 text-neutral-900 dark:text-dark-neutral-800 transition-colors duration-150 truncate"
+  >
+    test text
+  </p>
+</a>
+`;
+
+exports[`PersonCard integration tests is a snapshot with Russian localization 1`] = `
+<a
+  class="flex flex-col group/card w-full max-w-[9.625rem] min-w-[7.5rem] "
+  data-testid="test card"
+  href="/persons/1"
+>
+  <div
+    class="w-full aspect-square relative self-center mb-3"
+  >
+    <div
+      class="relative h-full overflow-hidden bg-neutral-300 dark:bg-dark-neutral-250 transition-colors duration-150 rounded-[50%] "
+    >
+      <div
+        aria-hidden="true"
+        class="bg-neutral-400 dark:bg-dark-neutral-300 max-w-full transition-colors duration-150  [&]:absolute top-0 left-0 z-100 relative overflow-hidden isolate before:absolute before:inset-0 before:-translate-x-full before:animate-skeleton before:bg-gradient-to-r before:from-transparent before:via-neutral-0/50 dark:before:via-neutral-0/25 before:to-transparent before:transition-colors before:duration-150"
+        style="width: 100%; height: 100%;"
+      />
+      <img
+        alt="alternative text"
+        data-nimg="fill"
+        decoding="async"
+        loading="lazy"
+        sizes="154px"
+        src="http://localhost/_next/image?url=%2F&w=3840&q=85"
+        srcset="/_next/image?url=%2F&w=16&q=85 16w, /_next/image?url=%2F&w=32&q=85 32w, /_next/image?url=%2F&w=48&q=85 48w, /_next/image?url=%2F&w=64&q=85 64w, /_next/image?url=%2F&w=96&q=85 96w, /_next/image?url=%2F&w=128&q=85 128w, /_next/image?url=%2F&w=256&q=85 256w, /_next/image?url=%2F&w=384&q=85 384w, /_next/image?url=%2F&w=640&q=85 640w, /_next/image?url=%2F&w=750&q=85 750w, /_next/image?url=%2F&w=828&q=85 828w, /_next/image?url=%2F&w=1080&q=85 1080w, /_next/image?url=%2F&w=1200&q=85 1200w, /_next/image?url=%2F&w=1920&q=85 1920w, /_next/image?url=%2F&w=2048&q=85 2048w, /_next/image?url=%2F&w=3840&q=85 3840w"
+        style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
+      />
+    </div>
+    <span
+      class="z-200 absolute bottom-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold transition-colors duration-150 rounded-[50%]"
+    >
+      <span
+        class="sr-only"
+      >
+        Популярность
+      </span>
+      90
+    </span>
+  </div>
+  <p
+    class="break-word text-100 text-neutral-900 dark:text-dark-neutral-800 transition-colors duration-150 truncate"
+  >
+    test text
+  </p>
+</a>
+`;
+
 exports[`PersonCard tests is a basic snapshot 1`] = `
 <a
   class="flex flex-col group/card w-full max-w-[9.625rem] min-w-[7.5rem] "
@@ -65,16 +159,6 @@ exports[`PersonCard tests is a snapshot with showRating 1`] = `
         style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
       />
     </div>
-    <span
-      class="z-200 absolute bottom-0 left-0 w-10 h-10 overflow-hidden flex items-center justify-center border-2 border-blue-700 dark:border-blue-400 bg-neutral-200 dark:bg-dark-neutral-300 text-blue-700 dark:text-blue-300 font-bold transition-colors duration-150 rounded-[50%]"
-    >
-      <span
-        class="sr-only"
-      >
-        Popularity
-      </span>
-      30
-    </span>
   </div>
   <p
     class="break-word text-100 text-neutral-900 dark:text-dark-neutral-800 transition-colors duration-150 truncate"
@@ -89,7 +173,6 @@ exports[`PersonCard tests is a snapshot with title 1`] = `
   class="flex flex-col group/card w-full max-w-[9.625rem] min-w-[7.5rem] "
   data-testid="test card"
   href="/persons/1"
-  title="test title"
 >
   <div
     class="w-full aspect-square relative self-center mb-3"
@@ -114,11 +197,6 @@ exports[`PersonCard tests is a snapshot with title 1`] = `
       />
     </div>
   </div>
-  <h6
-    class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-300 sm:text-400 font-bold mb-1 line-clamp-2 text-neutral-1000 dark:text-dark-neutral-900 group-hover/card:text-neutral-800 group-active/card:text-neutral-700 dark:group-hover/card:text-dark-neutral-700 dark:group-active/card:text-dark-neutral-600"
-  >
-    test title
-  </h6>
   <p
     class="break-word text-100 text-neutral-900 dark:text-dark-neutral-800 transition-colors duration-150 truncate"
   >

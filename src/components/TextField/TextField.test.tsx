@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import TextField from './TextField';
 import userEvent from '@testing-library/user-event';
+import i18next from '@/i18n/client';
+import I18nextWrapper from '@/test-utils/I18nextWrapper';
 
 describe('TextField tests', () => {
 	it('is rendered correctly', () => {
@@ -120,6 +122,7 @@ describe('TextField tests', () => {
 	});
 
 	it('the mock function is triggered when the clear button is clicked', async () => {
+		const dictionary = { clearButton: 'To clear' };
 		const user = userEvent.setup();
 		const mockFn = jest.fn();
 		render(
@@ -132,7 +135,7 @@ describe('TextField tests', () => {
 				testId='test-field'
 				onClear={mockFn}
 				clearButton
-				dictionary={{ clearButton: 'To clear' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -142,6 +145,7 @@ describe('TextField tests', () => {
 	});
 
 	it('when the clearButton prop is true, the input clearing button appears', () => {
+		const dictionary = { clearButton: 'To clear' };
 		const mockFn = jest.fn();
 		render(
 			<TextField
@@ -152,7 +156,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				clearButton
-				dictionary={{ clearButton: 'To clear' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -285,6 +289,7 @@ describe('TextField tests', () => {
 	});
 
 	it('is a snapshot with clear button', () => {
+		const dictionary = { clearButton: 'To clear' };
 		const mockFn = jest.fn();
 		render(
 			<TextField
@@ -295,7 +300,7 @@ describe('TextField tests', () => {
 				value='mock'
 				testId='test-field'
 				clearButton
-				dictionary={{ clearButton: 'To clear' }}
+				dictionary={dictionary}
 			/>
 		);
 
@@ -336,5 +341,101 @@ describe('TextField tests', () => {
 		);
 
 		expect(screen.getByTestId<HTMLDivElement>('test-field')).toMatchSnapshot();
+	});
+});
+
+describe('TextField integration tests', () => {
+	it('localization into English works correctly', async () => {
+		await i18next.changeLanguage('en');
+		const translation = new RegExp(i18next.t('textField.clearButton'));
+
+		const dictionary = { clearButton: i18next.t('textField.clearButton') };
+		const mockFn = jest.fn();
+		render(
+			<TextField
+				onChange={mockFn}
+				name='test-field'
+				label='test-field'
+				id='test-field'
+				value='mock'
+				testId='test-field'
+				labelHidden
+				clearButton
+				dictionary={dictionary}
+			/>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		expect(screen.getByText<HTMLSpanElement>(translation)).toBeInTheDocument();
+	});
+
+	it('localization into Russian works correctly', async () => {
+		await i18next.changeLanguage('ru');
+		const translation = new RegExp(i18next.t('textField.clearButton'));
+
+		const dictionary = { clearButton: i18next.t('textField.clearButton') };
+		const mockFn = jest.fn();
+		render(
+			<TextField
+				onChange={mockFn}
+				name='test-field'
+				label='test-field'
+				id='test-field'
+				value='mock'
+				testId='test-field'
+				labelHidden
+				clearButton
+				dictionary={dictionary}
+			/>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		expect(screen.getByText<HTMLSpanElement>(translation)).toBeInTheDocument();
+	});
+
+	it('is a snapshot with English localization', async () => {
+		await i18next.changeLanguage('en');
+
+		const dictionary = { clearButton: i18next.t('textField.clearButton') };
+		const mockFn = jest.fn();
+		render(
+			<TextField
+				onChange={mockFn}
+				name='test-field'
+				label='test-field'
+				id='test-field'
+				value='mock'
+				testId='test-field'
+				labelHidden
+				clearButton
+				dictionary={dictionary}
+			/>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		expect(screen.getByText<HTMLDivElement>('test-field')).toBeInTheDocument();
+	});
+
+	it('is a snapshot with Russian localization', async () => {
+		await i18next.changeLanguage('ru');
+
+		const dictionary = { clearButton: i18next.t('textField.clearButton') };
+		const mockFn = jest.fn();
+		render(
+			<TextField
+				onChange={mockFn}
+				name='test-field'
+				label='test-field'
+				id='test-field'
+				value='mock'
+				testId='test-field'
+				labelHidden
+				clearButton
+				dictionary={dictionary}
+			/>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		expect(screen.getByText<HTMLDivElement>('test-field')).toBeInTheDocument();
 	});
 });

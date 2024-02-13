@@ -2,6 +2,9 @@ import { render, screen } from "@testing-library/react";
 import Banner, { Props } from "./Banner";
 import userEvent from "@testing-library/user-event";
 import Button from "@/components/Button/Button";
+import i18next from "@/i18n/client";
+import I18nextWrapper from "@/test-utils/I18nextWrapper";
+
 const appearances: NonNullable<Props['appearance']>[] = ['success', 'info', 'warning', 'danger', 'discovery'];
 
 describe('Banner tests', () => {
@@ -148,6 +151,82 @@ describe('Banner tests', () => {
 			>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
 			</Banner>
+		);
+
+		expect(screen.getByTestId<HTMLDivElement>('test-banner')).toMatchSnapshot();
+	});
+});
+
+describe('Banner integration tests', () => {
+	it('localization into English works correctly', async () => {
+		await i18next.changeLanguage('en');
+		const translation = new RegExp(i18next.t('banner.closeButton'));
+
+		const dictionary = { closeButton: i18next.t('banner.closeButton') };
+		render(
+			<Banner
+				testId='test-banner'
+				closeButton
+				dictionary={dictionary}
+			>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+			</Banner>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		expect(screen.getByText<HTMLSpanElement>(translation)).toBeInTheDocument();
+	});
+
+	it('localization into Russian works correctly', async () => {
+		await i18next.changeLanguage('ru');
+		const translation = new RegExp(i18next.t('banner.closeButton'));
+
+		const dictionary = { closeButton: i18next.t('banner.closeButton') };
+		render(
+			<Banner
+				testId='test-banner'
+				closeButton
+				dictionary={dictionary}
+			>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+			</Banner>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		expect(screen.getByText<HTMLSpanElement>(translation)).toBeInTheDocument();
+	});
+
+	it('is a snapshot with English localization', async () => {
+		await i18next.changeLanguage('en');
+
+		const dictionary = { closeButton: i18next.t('banner.closeButton') };
+		render(
+			<Banner
+				testId='test-banner'
+				closeButton
+				dictionary={dictionary}
+			>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+			</Banner>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		expect(screen.getByTestId<HTMLDivElement>('test-banner')).toMatchSnapshot();
+	});
+
+	it('is a snapshot with Russian localization', async () => {
+		await i18next.changeLanguage('ru');
+
+		const dictionary = { closeButton: i18next.t('banner.closeButton') };
+		render(
+			<Banner
+				testId='test-banner'
+				closeButton
+				dictionary={dictionary}
+			>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus tempora provident accusamus quaerat iure atque labore odit voluptatem quisquam, maiores voluptas veritatis voluptate sed magni quod enim nobis tempore corrupti.
+			</Banner>,
+			{ wrapper: I18nextWrapper }
 		);
 
 		expect(screen.getByTestId<HTMLDivElement>('test-banner')).toMatchSnapshot();
