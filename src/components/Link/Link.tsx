@@ -2,7 +2,7 @@ import { AnchorHTMLAttributes, FocusEventHandler, MouseEventHandler, ReactNode }
 import NextLink from 'next/link';
 import { GeneralProps } from '@/types/shared';
 
-type Props = {
+export type Props = {
 	appearance?: 'primary' | 'secondary',
 	children: ReactNode,
 	href: string,

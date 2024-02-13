@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container tests is a basic snapshot 1`] = `
+<div
+  class="max-w-[77rem] mx-auto px-4 "
+  data-testid="test-container"
+>
+  test content
+</div>
+`;

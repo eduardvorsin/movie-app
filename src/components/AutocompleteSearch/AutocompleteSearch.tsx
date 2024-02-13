@@ -138,6 +138,7 @@ export default function AutocompleteSearch({
 						<Spinner
 							className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
 							size='xlarge'
+							testId={process.env.NODE_ENV === 'test' ? 'test-spinner' : undefined}
 						/>
 					)}
 				</div>

@@ -1,0 +1,349 @@
+import { render, screen } from "@testing-library/react";
+import AutocompleteSearch from "./AutocompleteSearch";
+import i18next from "@/i18n/client";
+import I18nextWrapper from "@/test-utils/I18nextWrapper";
+import userEvent from "@testing-library/user-event";
+
+const options = [
+	{
+		href: '/',
+		label: 'first option',
+	}, {
+		href: '/',
+		label: 'second option',
+	}, {
+		href: '/',
+		label: 'third option',
+	}
+];
+
+describe('AutocompleteSearch tests', () => {
+	it('is rendered correctly', async () => {
+		const user = userEvent.setup();
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn();
+		const dictionary = {
+			title: 'We can\'t find anything for \'value\'',
+			text: 'Try a different term or name.',
+			search: {
+				button: 'To find',
+			},
+		};
+		render(
+			<AutocompleteSearch
+				id='test-autocomplete-search'
+				label='autocomplete-search'
+				name='autocomplete-search'
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				value=''
+				options={options}
+				initialOptions={[]}
+				testId='test-autocomplete-search'
+				dictionary={dictionary}
+			/>
+		);
+
+		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+
+		expect(screen.getByTestId<HTMLDivElement>('test-autocomplete-search')).toBeInTheDocument();
+	});
+
+	it('if isLoading is true, the spinner should be displayed', async () => {
+		const user = userEvent.setup();
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn();
+		const dictionary = {
+			title: 'We can\'t find anything for \'value\'',
+			text: 'Try a different term or name.',
+			search: {
+				button: 'To find',
+			},
+		};
+		render(
+			<AutocompleteSearch
+				id='test-autocomplete-search'
+				label='autocomplete search'
+				name='autocomplete-search'
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				value=''
+				options={[]}
+				initialOptions={[]}
+				testId='test-autocomplete-search'
+				dictionary={dictionary}
+				isLoading
+			/>
+		);
+
+		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+
+		expect(screen.getByTestId<HTMLSpanElement>('test-spinner')).toBeInTheDocument();
+	});
+
+	it('if the initial Options and options are empty, a message should show that the data for the query was not found.', async () => {
+		const user = userEvent.setup();
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn();
+		const dictionary = {
+			title: 'We can\'t find anything for \'value\'',
+			text: 'Try a different term or name.',
+			search: {
+				button: 'To find',
+			},
+		};
+		render(
+			<AutocompleteSearch
+				id='test-autocomplete-search'
+				label='autocomplete-search'
+				name='autocomplete-search'
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				value=''
+				options={[]}
+				initialOptions={[]}
+				testId='test-autocomplete-search'
+				dictionary={dictionary}
+			/>
+		);
+
+		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+
+		expect(screen.getByText<HTMLParagraphElement>(dictionary.text)).toBeInTheDocument();
+		expect(screen.getByRole<HTMLHeadingElement>('heading', { name: dictionary.title })).toBeInTheDocument();
+	});
+
+	it('is a basic snapshot', async () => {
+		const user = userEvent.setup();
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn();
+		const dictionary = {
+			title: 'We can\'t find anything for \'value\'',
+			text: 'Try a different term or name.',
+			search: {
+				button: 'To find',
+			},
+		};
+		render(
+			<AutocompleteSearch
+				id='test-autocomplete-search'
+				label='autocomplete-search'
+				name='autocomplete-search'
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				value=''
+				options={options}
+				initialOptions={[]}
+				testId='test-autocomplete-search'
+				dictionary={dictionary}
+			/>
+		);
+
+		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+
+		expect(screen.getByTestId<HTMLDivElement>('test-autocomplete-search')).toMatchSnapshot();
+	});
+
+	it('is a snapshot with isLoading is true', async () => {
+		const user = userEvent.setup();
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn();
+		const dictionary = {
+			title: 'We can\'t find anything for \'value\'',
+			text: 'Try a different term or name.',
+			search: {
+				button: 'To find',
+			},
+		};
+		render(
+			<AutocompleteSearch
+				id='test-autocomplete-search'
+				label='autocomplete-search'
+				name='autocomplete-search'
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				value=''
+				options={[]}
+				initialOptions={[]}
+				testId='test-autocomplete-search'
+				dictionary={dictionary}
+				isLoading
+			/>
+		);
+
+		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+
+		expect(screen.getByTestId<HTMLDivElement>('test-autocomplete-search')).toMatchSnapshot();
+	});
+
+	it('is a snapshot when initialOptions and options are empty', async () => {
+		const user = userEvent.setup();
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn();
+		const dictionary = {
+			title: 'We can\'t find anything for \'value\'',
+			text: 'Try a different term or name.',
+			search: {
+				button: 'To find',
+			},
+		};
+		render(
+			<AutocompleteSearch
+				id='test-autocomplete-search'
+				label='autocomplete-search'
+				name='autocomplete-search'
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				value=''
+				options={[]}
+				initialOptions={[]}
+				testId='test-autocomplete-search'
+				dictionary={dictionary}
+			/>
+		);
+
+		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+
+		expect(screen.getByTestId<HTMLDivElement>('test-autocomplete-search')).toMatchSnapshot();
+	});
+});
+
+describe('AutocompleteSearch integration tests', () => {
+	it('localization into English works correctly', async () => {
+		await i18next.changeLanguage('en');
+		const user = userEvent.setup();
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn();
+		const translation = new RegExp(i18next.t('autocompleteSearch.text'));
+
+		const dictionary = {
+			title: i18next.t('autocompleteSearch.title', { value: 'value' }),
+			text: i18next.t('autocompleteSearch.text'),
+			search: {
+				button: i18next.t('autocompleteSearch.search.button'),
+			},
+		};
+		render(
+			<AutocompleteSearch
+				id='test-autocomplete-search'
+				label='autocomplete-search'
+				name='autocomplete-search'
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				value=''
+				options={[]}
+				initialOptions={[]}
+				testId='test-autocomplete-search'
+				dictionary={dictionary}
+			/>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+
+		expect(screen.getByText<HTMLParagraphElement>(translation)).toBeInTheDocument();
+	});
+
+	it('localization into Russian works correctly', async () => {
+		await i18next.changeLanguage('ru');
+		const user = userEvent.setup();
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn();
+		const translation = new RegExp(i18next.t('autocompleteSearch.text'));
+
+		const dictionary = {
+			title: i18next.t('autocompleteSearch.title', { value: 'value' }),
+			text: i18next.t('autocompleteSearch.text'),
+			search: {
+				button: i18next.t('autocompleteSearch.search.button'),
+			},
+		};
+		render(
+			<AutocompleteSearch
+				id='test-autocomplete-search'
+				label='autocomplete-search'
+				name='autocomplete-search'
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				value=''
+				options={[]}
+				initialOptions={[]}
+				testId='test-autocomplete-search'
+				dictionary={dictionary}
+			/>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+
+		expect(screen.getByText<HTMLParagraphElement>(translation)).toBeInTheDocument();
+	});
+
+	it('is a snapshot with English localization', async () => {
+		await i18next.changeLanguage('en');
+		const user = userEvent.setup();
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn();
+
+		const dictionary = {
+			title: i18next.t('autocompleteSearch.title', { value: 'value' }),
+			text: i18next.t('autocompleteSearch.text'),
+			search: {
+				button: i18next.t('autocompleteSearch.search.button'),
+			},
+		};
+		render(
+			<AutocompleteSearch
+				id='test-autocomplete-search'
+				label='autocomplete-search'
+				name='autocomplete-search'
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				value=''
+				options={[]}
+				initialOptions={[]}
+				testId='test-autocomplete-search'
+				dictionary={dictionary}
+			/>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+
+		expect(screen.getByTestId<HTMLDivElement>('test-autocomplete-search')).toMatchSnapshot();
+	});
+
+	it('is a snapshot with Russian localization', async () => {
+		await i18next.changeLanguage('ru');
+		const user = userEvent.setup();
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn();
+
+		const dictionary = {
+			title: i18next.t('autocompleteSearch.title', { value: 'value' }),
+			text: i18next.t('autocompleteSearch.text'),
+			search: {
+				button: i18next.t('autocompleteSearch.search.button'),
+			},
+		};
+		render(
+			<AutocompleteSearch
+				id='test-autocomplete-search'
+				label='autocomplete-search'
+				name='autocomplete-search'
+				onChange={changeMockFn}
+				onSubmit={submitMockFn}
+				value=''
+				options={[]}
+				initialOptions={[]}
+				testId='test-autocomplete-search'
+				dictionary={dictionary}
+			/>,
+			{ wrapper: I18nextWrapper }
+		);
+
+		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+
+		expect(screen.getByTestId<HTMLDivElement>('test-autocomplete-search')).toMatchSnapshot();
+	});
+});

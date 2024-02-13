@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CollectionCard tests is a basic snapshot 1`] = `
+<div
+  class="rounded-3 overflow-hidden p-5 min-h-[108px] min-w-[192px] aspect-video flex flex-col justify-end relative after:absolute after:top-0 after:left-0 after:z-0 after:w-full after:h-full after:bg-neutral-300/60 dark:after:bg-dark-neutral-250/40 after:transition-colors after:duration-150 "
+  data-testid="test-collection-card"
+>
+  <div
+    class="relative [&]:absolute top-0 left-0 w-full h-full -z-100 bg-neutral-200 dark:bg-dark-neutral-300 transition-colors duration-150"
+  >
+    <div
+      aria-hidden="true"
+      class="bg-neutral-400 dark:bg-dark-neutral-300 max-w-full transition-colors duration-150  [&]:absolute top-0 left-0 z-100 relative overflow-hidden isolate before:absolute before:inset-0 before:-translate-x-full before:animate-skeleton before:bg-gradient-to-r before:from-transparent before:via-neutral-0/50 dark:before:via-neutral-0/25 before:to-transparent before:transition-colors before:duration-150"
+      style="width: 100%; height: 100%;"
+    />
+    <img
+      alt="collection image"
+      data-nimg="fill"
+      decoding="async"
+      loading="lazy"
+      sizes="100vw"
+      src="http://localhost/_next/image?url=%2Fassets%2Fimages%2Fcollection-marvel.webp&w=3840&q=75"
+      srcset="/_next/image?url=%2Fassets%2Fimages%2Fcollection-marvel.webp&w=640&q=75 640w, /_next/image?url=%2Fassets%2Fimages%2Fcollection-marvel.webp&w=750&q=75 750w, /_next/image?url=%2Fassets%2Fimages%2Fcollection-marvel.webp&w=828&q=75 828w, /_next/image?url=%2Fassets%2Fimages%2Fcollection-marvel.webp&w=1080&q=75 1080w, /_next/image?url=%2Fassets%2Fimages%2Fcollection-marvel.webp&w=1200&q=75 1200w, /_next/image?url=%2Fassets%2Fimages%2Fcollection-marvel.webp&w=1920&q=75 1920w, /_next/image?url=%2Fassets%2Fimages%2Fcollection-marvel.webp&w=2048&q=75 2048w, /_next/image?url=%2Fassets%2Fimages%2Fcollection-marvel.webp&w=3840&q=75 3840w"
+      style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+    />
+  </div>
+  <h3
+    class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-300 sm:text-400 font-medium text-neutral-1100 dark:text-dark-neutral-1000 z-100 leading-2 w-full [&]:text-400 xs:[&]:text-300"
+  >
+    <a
+      class="break-all line-clamp-2 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:z-100"
+      href="/"
+    >
+      collection title
+    </a>
+  </h3>
+</div>
+`;
