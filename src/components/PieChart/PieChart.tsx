@@ -3,6 +3,8 @@ import { CSSProperties } from 'react';
 import classes from './PieChart.module.css';
 import { useTheme } from '@/context/ThemeProvider/ThemeProvider';
 import { GeneralProps } from '@/types/shared';
+import dynamic from 'next/dynamic';
+import { SkeletonImage } from '../Skeleton/Skeleton';
 
 const variants = {
 	primary: {
@@ -95,3 +97,8 @@ export default function PieChart({
 		</div>
 	);
 };
+
+export const MovieRatingChart = dynamic(() => Promise.resolve(PieChart), {
+	ssr: false,
+	loading: () => <SkeletonImage className='w-[60px] h-[60px]' />,
+});

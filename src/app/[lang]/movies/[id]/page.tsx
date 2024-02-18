@@ -3,7 +3,7 @@ import Container from '@/components/Container/Container';
 import ExpandableText from '@/components/ExpandableText/ExpandableText';
 import Link from '@/components/Link/Link';
 import PersonCard from '@/components/PersonCard/PersonCard';
-import PieChart from '@/components/PieChart/PieChart';
+import { MovieRatingChart } from '@/components/PieChart/PieChart';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
 import ThemedImage from '@/components/ThemedImage/ThemedImage';
 import Title from '@/components/Title/Title';
@@ -258,7 +258,7 @@ export default async function Page({ params: { id, lang } }: Props) {
 								>
 									{t('ratingLabel')}
 								</span>
-								<PieChart
+								<MovieRatingChart
 									appearance='rating'
 									size={60}
 									value={rating}
