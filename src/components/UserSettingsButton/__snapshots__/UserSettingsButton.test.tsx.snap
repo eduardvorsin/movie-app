@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserSettingsButton integration tests is a snapshot with English localization 1`] = `
+<div
+  class="relative w-[2.25rem] h-[2.25rem]"
+  data-testid="test-user-settings-button"
+  id=":r4:"
+>
+  <button
+    aria-controls=":r4:"
+    aria-expanded="false"
+    aria-haspopup="menu"
+    aria-owns=":r4:"
+    class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   "
+  >
+    <span
+      class="inline-flex items-center"
+    >
+      <svg
+        class="p-2 w-[2.25rem] h-[2.25rem] fill-current"
+        viewBox="0 0 32 32"
+      >
+        <use
+          href="/assets/icons/settings.svg#settings"
+        />
+      </svg>
+      Open settings
+    </span>
+  </button>
+</div>
+`;
+
+exports[`UserSettingsButton integration tests is a snapshot with Russian localization 1`] = `
+<div
+  class="relative w-[2.25rem] h-[2.25rem]"
+  data-testid="test-user-settings-button"
+  id=":r5:"
+>
+  <button
+    aria-controls=":r5:"
+    aria-expanded="false"
+    aria-haspopup="menu"
+    aria-owns=":r5:"
+    class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   "
+  >
+    <span
+      class="inline-flex items-center"
+    >
+      <svg
+        class="p-2 w-[2.25rem] h-[2.25rem] fill-current"
+        viewBox="0 0 32 32"
+      >
+        <use
+          href="/assets/icons/settings.svg#settings"
+        />
+      </svg>
+      Открыть настройки
+    </span>
+  </button>
+</div>
+`;
+
+exports[`UserSettingsButton tests is a basic snapshot 1`] = `
+<div
+  class="relative w-[2.25rem] h-[2.25rem]"
+  data-testid="test-user-settings-button"
+  id=":r1:"
+>
+  <button
+    aria-controls=":r1:"
+    aria-expanded="false"
+    aria-haspopup="menu"
+    aria-owns=":r1:"
+    class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   "
+  >
+    <span
+      class="inline-flex items-center"
+    >
+      <svg
+        class="p-2 w-[2.25rem] h-[2.25rem] fill-current"
+        viewBox="0 0 32 32"
+      >
+        <use
+          href="/assets/icons/settings.svg#settings"
+        />
+      </svg>
+      Open settings
+    </span>
+  </button>
+</div>
+`;

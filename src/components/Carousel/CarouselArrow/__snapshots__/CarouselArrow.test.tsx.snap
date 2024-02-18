@@ -7,7 +7,7 @@ exports[`CarouselArrow integration tests is a snapshot with English localization
 >
   <svg
     class="w-6 h-6 md:w-10 md:h-10"
-    viewBox="0 0u 32 32"
+    viewBox="0 0 32 32"
   >
     <use
       href="/assets/icons/back-arrow.svg#back-arrow"
@@ -28,7 +28,7 @@ exports[`CarouselArrow integration tests is a snapshot with Russian localization
 >
   <svg
     class="w-6 h-6 md:w-10 md:h-10"
-    viewBox="0 0u 32 32"
+    viewBox="0 0 32 32"
   >
     <use
       href="/assets/icons/back-arrow.svg#back-arrow"
@@ -50,7 +50,7 @@ exports[`CarouselArrow tests a snapshot with direction equal to left 1`] = `
 >
   <svg
     class="w-6 h-6 md:w-10 md:h-10"
-    viewBox="0 0u 32 32"
+    viewBox="0 0 32 32"
   >
     <use
       href="/assets/icons/back-arrow.svg#back-arrow"
@@ -72,7 +72,7 @@ exports[`CarouselArrow tests a snapshot with direction equal to right 1`] = `
 >
   <svg
     class="w-6 h-6 md:w-10 md:h-10"
-    viewBox="0 0u 32 32"
+    viewBox="0 0 32 32"
   >
     <use
       href="/assets/icons/forward-arrow.svg#forward-arrow"
@@ -93,7 +93,7 @@ exports[`CarouselArrow tests is a basic snapshot 1`] = `
 >
   <svg
     class="w-6 h-6 md:w-10 md:h-10"
-    viewBox="0 0u 32 32"
+    viewBox="0 0 32 32"
   >
     <use
       href="/assets/icons/back-arrow.svg#back-arrow"
@@ -115,7 +115,7 @@ exports[`CarouselArrow tests is a snapshot with isDisabled set to true 1`] = `
 >
   <svg
     class="w-6 h-6 md:w-10 md:h-10"
-    viewBox="0 0u 32 32"
+    viewBox="0 0 32 32"
   >
     <use
       href="/assets/icons/back-arrow.svg#back-arrow"

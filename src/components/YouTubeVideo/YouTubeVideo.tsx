@@ -122,7 +122,6 @@ export default function YouTubeVideo({
 					title={title}
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 					allowFullScreen
-					data-testid={testId}
 					style={{
 						aspectRatio: `${width}/${height}`
 					}}

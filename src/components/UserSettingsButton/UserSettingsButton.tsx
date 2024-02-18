@@ -38,6 +38,7 @@ export default function UserSettingsButton({
 			offsetX={10}
 			offsetY={10}
 			lockScroll
+			testId={testId}
 			trigger={
 				<Button
 					className={className}
@@ -48,7 +49,6 @@ export default function UserSettingsButton({
 					aria-expanded={isOpen}
 					aria-controls={id}
 					aria-owns={id}
-					testId={testId}
 				>
 					<svg className='p-2 w-[2.25rem] h-[2.25rem] fill-current' viewBox='0 0 32 32'>
 						<use href={'/assets/icons/settings.svg#settings'}></use>

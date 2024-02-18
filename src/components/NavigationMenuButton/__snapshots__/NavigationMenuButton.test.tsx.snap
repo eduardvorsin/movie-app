@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationMenuButton integration tests is a snapshot with English localization 1`] = `
+<button
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   relative z-100 undefined"
+  data-testid="test-navigation-menu-button"
+>
+  <span
+    class="inline-flex items-center"
+  >
+    <svg
+      class="p-2 w-[2.25rem] h-[2.25rem]"
+      fill="none"
+      viewBox="0 0 32 32"
+    >
+      <path
+        class="origin-center transition-transform duration-150  translate-x-0 translate-y-0 rotate-0 scale-100"
+        d="M2 7H30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+      <path
+        class="origin-center transition-opacity duration-150  opacity-100"
+        d="M2 15.6667H30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+      <path
+        class="origin-center transition-transform duration-150  translate-x-0 translate-y-0 rotate-0 scale-100"
+        d="M2 24.3333H30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+    </svg>
+    Open the navigation menu
+  </span>
+</button>
+`;
+
+exports[`NavigationMenuButton integration tests is a snapshot with Russian localization 1`] = `
+<button
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   relative z-100 undefined"
+  data-testid="test-navigation-menu-button"
+>
+  <span
+    class="inline-flex items-center"
+  >
+    <svg
+      class="p-2 w-[2.25rem] h-[2.25rem]"
+      fill="none"
+      viewBox="0 0 32 32"
+    >
+      <path
+        class="origin-center transition-transform duration-150  translate-x-0 translate-y-0 rotate-0 scale-100"
+        d="M2 7H30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+      <path
+        class="origin-center transition-opacity duration-150  opacity-100"
+        d="M2 15.6667H30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+      <path
+        class="origin-center transition-transform duration-150  translate-x-0 translate-y-0 rotate-0 scale-100"
+        d="M2 24.3333H30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+    </svg>
+    Открыть меню навигации
+  </span>
+</button>
+`;
+
+exports[`NavigationMenuButton tests is a basic snapshot 1`] = `
+<button
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   relative z-100 undefined"
+  data-testid="test-navigation-menu-button"
+>
+  <span
+    class="inline-flex items-center"
+  >
+    <svg
+      class="p-2 w-[2.25rem] h-[2.25rem]"
+      fill="none"
+      viewBox="0 0 32 32"
+    >
+      <path
+        class="origin-center transition-transform duration-150  translate-x-0 translate-y-0 rotate-0 scale-100"
+        d="M2 7H30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+      <path
+        class="origin-center transition-opacity duration-150  opacity-100"
+        d="M2 15.6667H30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+      <path
+        class="origin-center transition-transform duration-150  translate-x-0 translate-y-0 rotate-0 scale-100"
+        d="M2 24.3333H30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+    </svg>
+    Open the navigation menu
+  </span>
+</button>
+`;
+
+exports[`NavigationMenuButton tests is a snapshot when isActive is true 1`] = `
+<button
+  class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   relative z-100 undefined"
+  data-testid="test-navigation-menu-button"
+>
+  <span
+    class="inline-flex items-center"
+  >
+    <svg
+      class="p-2 w-[2.25rem] h-[2.25rem]"
+      fill="none"
+      viewBox="0 0 32 32"
+    >
+      <path
+        class="origin-center transition-transform duration-150 translate-y-[5.5px] translate-x-[5.8px] -rotate-45 scale-90"
+        d="M2 7H30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+      <path
+        class="origin-center transition-opacity duration-150 opacity-0"
+        d="M2 15.6667H30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+      <path
+        class="origin-center transition-transform duration-150 -translate-y-[5.5px] translate-x-[5.8px] rotate-45 scale-90"
+        d="M2 24.3333H30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+    </svg>
+    Close the navigation menu
+  </span>
+</button>
+`;

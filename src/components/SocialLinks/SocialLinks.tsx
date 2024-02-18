@@ -30,12 +30,12 @@ export default function SocialLinks({
 	return (
 		<div
 			className={classes}
+			data-testid={testId}
 			{...props}
 		>
 			{data.map((item) => (
 				<Link
 					key={item.name}
-					data-testid={testId}
 					className='text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100'
 					href={item.url}
 					isExternal

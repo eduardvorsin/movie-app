@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RatingItem tests a snapshot with isOrdered set to true 1`] = `
+<div
+  class="flex items-center gap-4 relative py-2 lg:p-3 [&:nth-child(-n+9)]:border-b-1 [&:nth-child(-n+9)]:border-neutral-300 dark:[&:nth-child(-n+9)]:border-dark-neutral-350 sm:[&:nth-last-child(2)]:border-none transition-colors duration-150 hover:bg-neutral-100 active:bg-neutral-0 dark:hover:bg-dark-neutral-200 dark:active:bg-dark-neutral-250  md:[counter-increment:list-item_1] before:hidden md:before:inline-block before:content-[counter(list-item,decimal-leading-zero)] before:text-500 lg:before:text-700 before:font-bold before:text-neutral-1000 dark:before:text-dark-neutral-900 before:leading-none before:transition-colors before:duration-150 "
+  data-testid="test-rating-item"
+>
+  <a
+    class="grow flex items-center gap-3 before:absolute before:w-full before:h-full before:top-0 before:left-0"
+    href="/movies/0"
+    title="test rating item"
+  >
+    <img
+      alt="test rating item"
+      class="w-[50px] h-[75px] lg:w-[60px] lg:h-[90px] aspect-[2/3]"
+      data-nimg="1"
+      decoding="async"
+      height="90"
+      loading="lazy"
+      src="http://localhost/assets/images/movie-card-placeholder-l-v.svg"
+      style="color: transparent;"
+      width="60"
+    />
+    <h3
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-300 font-bold text-neutral-1000 dark:text-dark-neutral-900 grow [&]:text-200 md:[&]:text-[1.125rem] line-clamp-3 "
+    >
+      test rating item
+    </h3>
+    test content
+  </a>
+</div>
+`;
+
+exports[`RatingItem tests is a basic snapshot 1`] = `
+<div
+  class="flex items-center gap-4 relative py-2 lg:p-3 [&:nth-child(-n+9)]:border-b-1 [&:nth-child(-n+9)]:border-neutral-300 dark:[&:nth-child(-n+9)]:border-dark-neutral-350 sm:[&:nth-last-child(2)]:border-none transition-colors duration-150 hover:bg-neutral-100 active:bg-neutral-0 dark:hover:bg-dark-neutral-200 dark:active:bg-dark-neutral-250  md:[counter-increment:list-item_1] before:hidden md:before:inline-block before:content-[counter(list-item,decimal-leading-zero)] before:text-500 lg:before:text-700 before:font-bold before:text-neutral-1000 dark:before:text-dark-neutral-900 before:leading-none before:transition-colors before:duration-150 "
+  data-testid="test-rating-item"
+>
+  <a
+    class="grow flex items-center gap-3 before:absolute before:w-full before:h-full before:top-0 before:left-0"
+    href="/movies/0"
+    title="test rating item"
+  >
+    <img
+      alt="test rating item"
+      class="w-[50px] h-[75px] lg:w-[60px] lg:h-[90px] aspect-[2/3]"
+      data-nimg="1"
+      decoding="async"
+      height="90"
+      loading="lazy"
+      src="http://localhost/assets/images/movie-card-placeholder-l-v.svg"
+      style="color: transparent;"
+      width="60"
+    />
+    <h3
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-300 font-bold text-neutral-1000 dark:text-dark-neutral-900 grow [&]:text-200 md:[&]:text-[1.125rem] line-clamp-3 "
+    >
+      test rating item
+    </h3>
+    test content
+  </a>
+</div>
+`;

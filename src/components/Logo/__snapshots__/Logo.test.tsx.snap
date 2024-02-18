@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner integration tests is a snapshot with English localization 1`] = `
+<a
+  class="inline-flex undefined"
+  data-testid="test-logo"
+  href="/"
+>
+  <img
+    alt="MovieWander logo"
+    data-nimg="1"
+    decoding="async"
+    height="32"
+    loading="lazy"
+    src="http://localhost/assets/images/logo.svg"
+    style="color: transparent;"
+    width="62"
+  />
+  <span
+    class="sr-only"
+  >
+    To home page
+  </span>
+</a>
+`;
+
+exports[`Banner integration tests is a snapshot with Russian localization 1`] = `
+<a
+  class="inline-flex undefined"
+  data-testid="test-logo"
+  href="/"
+>
+  <img
+    alt="MovieWander логотип"
+    data-nimg="1"
+    decoding="async"
+    height="32"
+    loading="lazy"
+    src="http://localhost/assets/images/logo.svg"
+    style="color: transparent;"
+    width="62"
+  />
+  <span
+    class="sr-only"
+  >
+    На главную страницу
+  </span>
+</a>
+`;
+
+exports[`Logo tests is a basic snapshot 1`] = `
+<a
+  class="inline-flex undefined"
+  data-testid="test-logo"
+  href="/"
+>
+  <img
+    alt="MovieWander logo"
+    data-nimg="1"
+    decoding="async"
+    height="32"
+    loading="lazy"
+    src="http://localhost/assets/images/logo.svg"
+    style="color: transparent;"
+    width="62"
+  />
+  <span
+    class="sr-only"
+  >
+    To home page
+  </span>
+</a>
+`;
+
+exports[`Logo tests is a snapshot with a "large" size 1`] = `
+<a
+  class="inline-flex undefined"
+  data-testid="test-logo"
+  href="/"
+>
+  <img
+    alt="MovieWander logo"
+    data-nimg="1"
+    decoding="async"
+    height="56"
+    loading="lazy"
+    src="http://localhost/assets/images/logo.svg"
+    style="color: transparent;"
+    width="110"
+  />
+  <span
+    class="sr-only"
+  >
+    To home page
+  </span>
+</a>
+`;
+
+exports[`Logo tests is a snapshot with a "medium" size 1`] = `
+<a
+  class="inline-flex undefined"
+  data-testid="test-logo"
+  href="/"
+>
+  <img
+    alt="MovieWander logo"
+    data-nimg="1"
+    decoding="async"
+    height="32"
+    loading="lazy"
+    src="http://localhost/assets/images/logo.svg"
+    style="color: transparent;"
+    width="62"
+  />
+  <span
+    class="sr-only"
+  >
+    To home page
+  </span>
+</a>
+`;
+
+exports[`Logo tests is a snapshot with a "small" size 1`] = `
+<a
+  class="inline-flex undefined"
+  data-testid="test-logo"
+  href="/"
+>
+  <img
+    alt="MovieWander logo"
+    data-nimg="1"
+    decoding="async"
+    height="24"
+    loading="lazy"
+    src="http://localhost/assets/images/logo.svg"
+    style="color: transparent;"
+    width="47"
+  />
+  <span
+    class="sr-only"
+  >
+    To home page
+  </span>
+</a>
+`;

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingLayout tests is a basic snapshot 1`] = `
+<div
+  class="w-full min-h-[100vh] relative undefined"
+  data-testid="test-loading-layout"
+>
+  <span
+    class="inline-flex align-middle dark:text-blue-300 text-blue-800 transition-colors duration-150 w-24 h-24 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+  >
+    <svg
+      class="animate-spin stroke-[0.75] fill-none stroke-current"
+      viewBox="0 0 16 16"
+    >
+      <circle
+        cx="8"
+        cy="8"
+        r="7"
+        stroke-dasharray="60"
+        stroke-dashoffset="50"
+        stroke-linecap="round"
+      />
+    </svg>
+  </span>
+</div>
+`;

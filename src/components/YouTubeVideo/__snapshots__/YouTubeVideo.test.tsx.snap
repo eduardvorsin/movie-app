@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`YouTubeVideo integration tests is a snapshot with English localization 1`] = `
+<div
+  class="relative dark:bg-dark-neutral-250 bg-neutral-300 transition-colors duration-150 undefined"
+  data-testid="test-youtube-video"
+>
+  <div
+    class="relative w-full object-cover"
+  >
+    <div
+      aria-hidden="true"
+      class="bg-neutral-400 dark:bg-dark-neutral-300 max-w-full transition-colors duration-150  [&]:absolute top-0 left-0 z-100 relative overflow-hidden isolate before:absolute before:inset-0 before:-translate-x-full before:animate-skeleton before:bg-gradient-to-r before:from-transparent before:via-neutral-0/50 dark:before:via-neutral-0/25 before:to-transparent before:transition-colors before:duration-150"
+      style="width: 100%; height: 100%;"
+    />
+    <img
+      alt="test-youtube-video"
+      data-nimg="fill"
+      decoding="async"
+      loading="lazy"
+      sizes="100vw"
+      src="http://localhost/_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=3840&q=75"
+      srcset="/_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=3840&q=75 3840w"
+      style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+    />
+  </div>
+  <button
+    aria-label="To watch"
+    class="w-full h-full flex items-center justify-center absolute z-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    title="To watch"
+  >
+    <img
+      alt=""
+      class="w-[4rem] h-[4rem]"
+      data-nimg="1"
+      decoding="async"
+      height="64"
+      loading="lazy"
+      src="/assets/icons/youtube_default.svg"
+      style="color: transparent;"
+      width="64"
+    />
+  </button>
+</div>
+`;
+
+exports[`YouTubeVideo integration tests is a snapshot with Russian localization 1`] = `
+<div
+  class="relative dark:bg-dark-neutral-250 bg-neutral-300 transition-colors duration-150 undefined"
+  data-testid="test-youtube-video"
+>
+  <div
+    class="relative w-full object-cover"
+  >
+    <div
+      aria-hidden="true"
+      class="bg-neutral-400 dark:bg-dark-neutral-300 max-w-full transition-colors duration-150  [&]:absolute top-0 left-0 z-100 relative overflow-hidden isolate before:absolute before:inset-0 before:-translate-x-full before:animate-skeleton before:bg-gradient-to-r before:from-transparent before:via-neutral-0/50 dark:before:via-neutral-0/25 before:to-transparent before:transition-colors before:duration-150"
+      style="width: 100%; height: 100%;"
+    />
+    <img
+      alt="test-youtube-video"
+      data-nimg="fill"
+      decoding="async"
+      loading="lazy"
+      sizes="100vw"
+      src="http://localhost/_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=3840&q=75"
+      srcset="/_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=3840&q=75 3840w"
+      style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+    />
+  </div>
+  <button
+    aria-label="Смотреть"
+    class="w-full h-full flex items-center justify-center absolute z-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    title="Смотреть"
+  >
+    <img
+      alt=""
+      class="w-[4rem] h-[4rem]"
+      data-nimg="1"
+      decoding="async"
+      height="64"
+      loading="lazy"
+      src="/assets/icons/youtube_default.svg"
+      style="color: transparent;"
+      width="64"
+    />
+  </button>
+</div>
+`;
+
+exports[`YouTubeVideo tests is a basic snapshot 1`] = `
+<div
+  class="relative dark:bg-dark-neutral-250 bg-neutral-300 transition-colors duration-150 undefined"
+  data-testid="test-youtube-video"
+>
+  <div
+    class="relative w-full object-cover"
+  >
+    <div
+      aria-hidden="true"
+      class="bg-neutral-400 dark:bg-dark-neutral-300 max-w-full transition-colors duration-150  [&]:absolute top-0 left-0 z-100 relative overflow-hidden isolate before:absolute before:inset-0 before:-translate-x-full before:animate-skeleton before:bg-gradient-to-r before:from-transparent before:via-neutral-0/50 dark:before:via-neutral-0/25 before:to-transparent before:transition-colors before:duration-150"
+      style="width: 100%; height: 100%;"
+    />
+    <img
+      alt="test-youtube-video"
+      data-nimg="fill"
+      decoding="async"
+      loading="lazy"
+      sizes="100vw"
+      src="http://localhost/_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=3840&q=75"
+      srcset="/_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi_webp%2FKLuTLF3x9sA%2Fhqdefault.webp&w=3840&q=75 3840w"
+      style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+    />
+  </div>
+  <button
+    aria-label="To watch"
+    class="w-full h-full flex items-center justify-center absolute z-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    title="To watch"
+  >
+    <img
+      alt=""
+      class="w-[4rem] h-[4rem]"
+      data-nimg="1"
+      decoding="async"
+      height="64"
+      loading="lazy"
+      src="/assets/icons/youtube_default.svg"
+      style="color: transparent;"
+      width="64"
+    />
+  </button>
+</div>
+`;
+
+exports[`YouTubeVideo tests is a snapshot of when the video uploaded 1`] = `
+<div
+  class="relative dark:bg-dark-neutral-250 bg-neutral-300 transition-colors duration-150 undefined"
+  data-testid="test-youtube-video"
+>
+  <iframe
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen=""
+    class="w-full max-w-full h-auto"
+    height="217"
+    src="https://www.youtube-nocookie.com/embed/KLuTLF3x9sA?rel=0&autoplay=1&mute=0"
+    title="test title"
+    width="386"
+  />
+</div>
+`;
+
+exports[`YouTubeVideo tests is a snapshot when muted is true 1`] = `
+<div
+  class="relative dark:bg-dark-neutral-250 bg-neutral-300 transition-colors duration-150 undefined"
+  data-testid="test-youtube-video"
+>
+  <iframe
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen=""
+    class="w-full max-w-full h-auto"
+    height="217"
+    src="https://www.youtube-nocookie.com/embed/KLuTLF3x9sA?rel=0&autoplay=1&mute=1"
+    title="test title"
+    width="386"
+  />
+</div>
+`;
+
+exports[`YouTubeVideo tests is a snapshot when showControls is false 1`] = `
+<div
+  class="relative dark:bg-dark-neutral-250 bg-neutral-300 transition-colors duration-150 undefined"
+  data-testid="test-youtube-video"
+>
+  <iframe
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen=""
+    class="w-full max-w-full h-auto"
+    height="217"
+    src="https://www.youtube-nocookie.com/embed/KLuTLF3x9sA?rel=0&autoplay=1&mute=0&controls=0"
+    title="test title"
+    width="386"
+  />
+</div>
+`;
+
+exports[`YouTubeVideo tests is a snapshot when the value for startTime is set 1`] = `
+<div
+  class="relative dark:bg-dark-neutral-250 bg-neutral-300 transition-colors duration-150 undefined"
+  data-testid="test-youtube-video"
+>
+  <iframe
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen=""
+    class="w-full max-w-full h-auto"
+    height="217"
+    src="https://www.youtube-nocookie.com/embed/KLuTLF3x9sA?rel=0&autoplay=1&mute=0&start=50"
+    title="test title"
+    width="386"
+  />
+</div>
+`;
