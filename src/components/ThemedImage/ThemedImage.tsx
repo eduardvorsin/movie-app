@@ -2,7 +2,7 @@
 import { Theme, useTheme } from '@/context/ThemeProvider/ThemeProvider';
 import { PlaceholderValue } from 'next/dist/shared/lib/get-img-props';
 import Image, { ImageProps } from 'next/image';
-import { useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { SkeletonImage } from '../Skeleton/Skeleton';
 
 export type Props = {
@@ -35,13 +35,8 @@ export default function ThemedImage({
 	const theme = useTheme();
 	const [loaded, setLoaded] = useState<boolean>(placeholder === 'empty');
 	const [imgSrc, setImgSrc] = useState<string>(() => {
-		if (src.length > 0) {
-			return src;
-		} else if (src.length === 0 && fallback) {
-			return fallback[theme];
-		} else {
-			return darkSrc;
-		}
+		if (src.length === 0 && fallback) return fallback[theme];
+		return src;
 	});
 
 	const errorHandler = (): void => {
@@ -52,11 +47,23 @@ export default function ThemedImage({
 		if (showSkeleton) setLoaded(false);
 	}
 
+	useLayoutEffect(() => {
+		if (theme === 'dark' && darkSrc.length !== 0) {
+			setImgSrc(darkSrc);
+		} else if (src.length === 0 && fallback) {
+			setImgSrc(fallback[theme]);
+		}
+		else {
+			setImgSrc(src);
+		}
+	}, [src, darkSrc, fallback, theme]);
+
 	if (showSkeleton) {
 		return (
 			<div
 				className={`relative ${className}`}
 				style={{ aspectRatio: `${width}/${height}` }}
+				data-testid={testId}
 			>
 				{loaded && (
 					<SkeletonImage
@@ -67,7 +74,6 @@ export default function ThemedImage({
 				)}
 
 				<Image
-					data-testid={testId}
 					src={imgSrc}
 					alt={alt}
 					fill={true}
