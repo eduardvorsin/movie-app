@@ -161,12 +161,12 @@ export default async function Page({ params: { id, lang } }: Props) {
 			<section
 				className='overflow-hidden relative py-5 md:py-8'
 			>
-				{backdrop_path && (
+				{backgroundData && (
 					<ThemedImage
 						className='aspect-[5/4] xs:aspect-video sm:w-full sm:h-full absolute top-0 left-0 -z-100 opacity-[0.25] dark:brightness-[0.25] dark:opacity-100 object-cover object-top transition-[filter,opacity] duration-150'
-						src={backgroundData?.img.src ?? ''}
-						placeholder={backdrop_path ? 'blur' : 'empty'}
-						blurDataURL={backgroundData?.base64}
+						src={backgroundData.img.src}
+						placeholder={'blur'}
+						blurDataURL={backgroundData.base64}
 						width={1920}
 						height={720}
 						sizes='100vw'
