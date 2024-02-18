@@ -5,17 +5,19 @@ import Toggle from '@/components/Toggle/Toggle';
 import MoonIcon from '../../assets/icons/moon.svg';
 import SunIcon from '../../assets/icons/sun.svg';
 import { GeneralProps } from '@/types/shared';
+import dynamic from 'next/dynamic';
+import { SkeletonImage } from '../Skeleton/Skeleton';
 
 export type Props = {
 	dictionary: Record<'label', string>,
 } & GeneralProps;
 
-export default function ThemeToggle({
+const ThemeToggle = ({
 	className,
 	testId,
 	dictionary,
 	...props
-}: Props) {
+}: Props) => {
 	const theme = useContext(ThemeContext);
 	const [isChecked, setIsChecked] = useState<boolean>(theme.value === 'dark');
 
@@ -42,3 +44,8 @@ export default function ThemeToggle({
 		/>
 	);
 };
+
+export default dynamic(() => Promise.resolve(ThemeToggle), {
+	ssr: false,
+	loading: () => <SkeletonImage className='w-[60px] h-[30px]' />
+});
