@@ -263,8 +263,8 @@ export default async function Page({ params: { id, lang } }: Props) {
 							</ul>
 						</div>
 
-						<div className='flex flex-wrap'>
-							<div className='mr-4 mb-3 md:mb-4 lg:mb-5'>
+						<div className='flex flex-wrap mb-4 gap-x-4 gap-y-3 md:gap-y-4 lg:gap-y-5'>
+							<div className='flex items-center'>
 								<span
 									className='text-neutral-1000 dark:text-dark-neutral-900 font-medium mr-2 transition-colors duration-150'
 								>
@@ -278,7 +278,6 @@ export default async function Page({ params: { id, lang } }: Props) {
 							</div>
 
 							<SocialLinks
-								className='mb-1 md:mb-2 lg:mb-3'
 								data={socialNetworks}
 							/>
 						</div>
