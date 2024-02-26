@@ -1,6 +1,5 @@
 'use client';
 import { CSSProperties } from 'react';
-import classes from './PieChart.module.css';
 import { useTheme } from '@/context/ThemeProvider/ThemeProvider';
 import { GeneralProps } from '@/types/shared';
 import dynamic from 'next/dynamic';
@@ -82,7 +81,7 @@ export default function PieChart({
 			{...props}
 		>
 			<div
-				className={`${classes.mask}`}
+				className={'before:absolute before:inset-0 before:rounded-full before:[background:var(--track-gradient)] before:[mask:var(--mask)] after:absolute after:inset-0 after:rounded-full after:[background:var(--gradient)] after:[mask:var(--mask)]'}
 			>
 				<span
 					className='flex items-center justify-center overflow-hidden'
