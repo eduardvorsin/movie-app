@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeToggle integration tests is a snapshot with English localization 1`] = `
+<div
+  class="flex items-center undefined"
+  data-testid="test-theme-toggle"
+>
+  <label
+    class="text-neutral-800 dark:text-dark-neutral-800 mr-2 transition-colors duration-150  sr-only"
+    for="theme-toggle-switch-1"
+  >
+    Light and dark theme switch
+  </label>
+  <div
+    class="text-neutral-100 dark:text-dark-neutral-100  relative transition-colors duration-150 bg-neutral-800 dark:bg-dark-neutral-800 w-[3.75rem] h-[1.875rem] rounded-[1.875rem] "
+  >
+    <input
+      class="w-full h-full appearance-none cursor-pointer inline-flex p-1 relative disabled:cursor-not-allowed before:bg-neutral-100 dark:before:bg-dark-neutral-100 before:absolute before:rounded-[50%] before:z-100 before:transition-transform before:transition-colors before:duration-150 before:translate-x-0 rounded-[1.875rem] before:w-[1.375rem] before:h-[1.375rem] checked:before:translate-x-[1.875rem]"
+      id="theme-toggle-switch-1"
+      name="theme-toggle"
+      role="switch"
+      type="checkbox"
+      value="light"
+    />
+    <span
+      class="pointer-events-none absolute top-1/2 -translate-y-1/2 z-0 fill-current w-[calc(1.375rem-2px)] h-[calc(1.375rem-2px)] left-[0.3125rem]"
+    >
+      <test-assets-stub />
+    </span>
+    <span
+      class="pointer-events-none absolute top-1/2 -translate-y-1/2 z-0 fill-current w-[calc(1.375rem-2px)] h-[calc(1.375rem-2px)] right-[0.3125rem]"
+    >
+      <test-assets-stub />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ThemeToggle integration tests is a snapshot with Russian localization 1`] = `
+<div
+  class="flex items-center undefined"
+  data-testid="test-theme-toggle"
+>
+  <label
+    class="text-neutral-800 dark:text-dark-neutral-800 mr-2 transition-colors duration-150  sr-only"
+    for="theme-toggle-switch-1"
+  >
+    Переключатель светлой и темной тем
+  </label>
+  <div
+    class="text-neutral-100 dark:text-dark-neutral-100  relative transition-colors duration-150 bg-neutral-800 dark:bg-dark-neutral-800 w-[3.75rem] h-[1.875rem] rounded-[1.875rem] "
+  >
+    <input
+      class="w-full h-full appearance-none cursor-pointer inline-flex p-1 relative disabled:cursor-not-allowed before:bg-neutral-100 dark:before:bg-dark-neutral-100 before:absolute before:rounded-[50%] before:z-100 before:transition-transform before:transition-colors before:duration-150 before:translate-x-0 rounded-[1.875rem] before:w-[1.375rem] before:h-[1.375rem] checked:before:translate-x-[1.875rem]"
+      id="theme-toggle-switch-1"
+      name="theme-toggle"
+      role="switch"
+      type="checkbox"
+      value="light"
+    />
+    <span
+      class="pointer-events-none absolute top-1/2 -translate-y-1/2 z-0 fill-current w-[calc(1.375rem-2px)] h-[calc(1.375rem-2px)] left-[0.3125rem]"
+    >
+      <test-assets-stub />
+    </span>
+    <span
+      class="pointer-events-none absolute top-1/2 -translate-y-1/2 z-0 fill-current w-[calc(1.375rem-2px)] h-[calc(1.375rem-2px)] right-[0.3125rem]"
+    >
+      <test-assets-stub />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`ThemeToggle tests is a basic snapshot 1`] = `
+<div
+  class="flex items-center undefined"
+  data-testid="test-theme-toggle"
+>
+  <label
+    class="text-neutral-800 dark:text-dark-neutral-800 mr-2 transition-colors duration-150  sr-only"
+    for="theme-toggle-switch-1"
+  >
+    Light and dark theme switch
+  </label>
+  <div
+    class="text-neutral-100 dark:text-dark-neutral-100  relative transition-colors duration-150 bg-neutral-800 dark:bg-dark-neutral-800 w-[3.75rem] h-[1.875rem] rounded-[1.875rem] "
+  >
+    <input
+      class="w-full h-full appearance-none cursor-pointer inline-flex p-1 relative disabled:cursor-not-allowed before:bg-neutral-100 dark:before:bg-dark-neutral-100 before:absolute before:rounded-[50%] before:z-100 before:transition-transform before:transition-colors before:duration-150 before:translate-x-0 rounded-[1.875rem] before:w-[1.375rem] before:h-[1.375rem] checked:before:translate-x-[1.875rem]"
+      id="theme-toggle-switch-1"
+      name="theme-toggle"
+      role="switch"
+      type="checkbox"
+      value="light"
+    />
+    <span
+      class="pointer-events-none absolute top-1/2 -translate-y-1/2 z-0 fill-current w-[calc(1.375rem-2px)] h-[calc(1.375rem-2px)] left-[0.3125rem]"
+    >
+      <test-assets-stub />
+    </span>
+    <span
+      class="pointer-events-none absolute top-1/2 -translate-y-1/2 z-0 fill-current w-[calc(1.375rem-2px)] h-[calc(1.375rem-2px)] right-[0.3125rem]"
+    >
+      <test-assets-stub />
+    </span>
+  </div>
+</div>
+`;

@@ -1,0 +1,271 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popup tests a snapshot with placement equal to bottom 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 top-[calc(100%+var(--offset-y))] left-1/2 -translate-x-1/2 before:left-1/2 before:-translate-x-1/2 before:-top-5"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests a snapshot with placement equal to bottom-end 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 top-[calc(100%+var(--offset-y))] right-0 before:right-[var(--triangle-x-offset)] before:translate-x-0.5 before:-top-5"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests a snapshot with placement equal to bottom-start 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 top-[calc(100%+var(--offset-y))] left-0 before:left-[var(--triangle-x-offset)] before:-translate-x-0.5 before:-top-5"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests a snapshot with placement equal to left 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 -left-[var(--offset-x)] -translate-x-full top-1/2 -translate-y-1/2 before:-right-5 before:rotate-90 before:top-1/2 before:-translate-y-1/2"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests a snapshot with placement equal to left-end 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 -left-[var(--offset-x)] -translate-x-full bottom-0 before:-right-5 before:rotate-90 before:bottom-[var(--triangle-y-offset)]"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests a snapshot with placement equal to left-start 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 -left-[var(--offset-x)] -translate-x-full top-0 before:-right-5 before:rotate-90 before:top-[var(--triangle-y-offset)]"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests a snapshot with placement equal to right 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 -right-[var(--offset-x)] translate-x-full before:-left-5 top-1/2 -translate-y-1/2 before:-rotate-90 before:top-1/2 before:-translate-y-1/2"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests a snapshot with placement equal to right-end 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 -right-[var(--offset-x)] translate-x-full before:-left-5 bottom-0 before:-rotate-90 before:bottom-[var(--triangle-y-offset)]"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests a snapshot with placement equal to right-start 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 -right-[var(--offset-x)] translate-x-full before:-left-5 top-0 before:-rotate-90 before:top-[var(--triangle-y-offset)]"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests a snapshot with placement equal to top 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 bottom-[calc(100%+var(--offset-y))] left-1/2 -translate-x-1/2 before:rotate-180 before:-bottom-5 before:left-1/2 before:-translate-x-1/2"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests a snapshot with placement equal to top-end 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 bottom-[calc(100%+var(--offset-y))] right-0 before:rotate-180 before:-bottom-5 before:right-[var(--triangle-x-offset)] before:translate-x-0.5"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests a snapshot with placement equal to top-start 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 bottom-[calc(100%+var(--offset-y))] left-0 before:rotate-180 before:-bottom-5 before:left-[var(--triangle-x-offset)] before:-translate-x-0.5"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests is a basic snapshot 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 top-[calc(100%+var(--offset-y))] left-1/2 -translate-x-1/2 before:left-1/2 before:-translate-x-1/2 before:-top-5"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests is a snapshot with lockScroll set to true 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 top-[calc(100%+var(--offset-y))] left-1/2 -translate-x-1/2 before:left-1/2 before:-translate-x-1/2 before:-top-5"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 20px; --offset-y: 20px;"
+  >
+    test content
+  </div>
+</div>
+`;
+
+exports[`Popup tests is a snapshot with the specified offsetX and offsetY 1`] = `
+<div
+  class="relative "
+  data-testid="test-popup"
+  id="test-popup"
+>
+  <button>
+    test trigger
+  </button>
+  <div
+    class="w-[200px] p-3 rounded-1 border-neutral-400 dark:border-dark-neutral-350 bg-neutral-100 dark:bg-dark-neutral-250 border-2 text-neutral-1000 dark:text-dark-neutral-1000 absolute z-300 before:pointer-events-none before:absolute before:w-5 before:h-5 before:[clip-path:polygon(50%_50%,0%_100%,100%_100%)] before:bg-neutral-400 dark:before:bg-dark-neutral-350 transition-colors duration-150 top-[calc(100%+var(--offset-y))] left-1/2 -translate-x-1/2 before:left-1/2 before:-translate-x-1/2 before:-top-5"
+    style="--triangle-x-offset: -10.00px; --triangle-y-offset: -10.00px; --offset-x: 50px; --offset-y: 100px;"
+  >
+    test content
+  </div>
+</div>
+`;

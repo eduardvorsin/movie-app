@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PieChart tests a snapshot with appearance equal to primary 1`] = `
+<div
+  class=" bg-neutral-0 dark:bg-dark-neutral-200 w-[--width] h-[--height] inline-flex items-center justify-center rounded-[50%] relative font-medium dark:text-dark-neutral-900 transition-colors duration-150"
+  data-testid="test-pie-chart"
+  style="--width: 50px; --height: 50px; --gradient: conic-gradient(#0055CC 50%, #0000 0); --track-gradient: conic-gradient(#DCDFE4 100%, #0000 0); --mask: radial-gradient(farthest-side, #0000 calc(99% - 5px),#000 calc(100% - 5px));"
+>
+  <div
+    class="before:absolute before:inset-0 before:rounded-full before:[background:var(--track-gradient)] before:[mask:var(--mask)] after:absolute after:inset-0 after:rounded-full after:[background:var(--gradient)] after:[mask:var(--mask)]"
+  >
+    <span
+      class="flex items-center justify-center overflow-hidden"
+      style="width: 35px; height: 35px;"
+    >
+      50
+      %
+    </span>
+  </div>
+</div>
+`;
+
+exports[`PieChart tests a snapshot with appearance equal to rating 1`] = `
+<div
+  class=" bg-neutral-0 dark:bg-dark-neutral-200 w-[--width] h-[--height] inline-flex items-center justify-center rounded-[50%] relative font-medium dark:text-dark-neutral-900 transition-colors duration-150"
+  data-testid="test-pie-chart"
+  style="--width: 50px; --height: 50px; --gradient: conic-gradient(#946F00 50%, #0000 0); --track-gradient: conic-gradient(#DCDFE4 100%, #0000 0); --mask: radial-gradient(farthest-side, #0000 calc(99% - 5px),#000 calc(100% - 5px));"
+>
+  <div
+    class="before:absolute before:inset-0 before:rounded-full before:[background:var(--track-gradient)] before:[mask:var(--mask)] after:absolute after:inset-0 after:rounded-full after:[background:var(--gradient)] after:[mask:var(--mask)]"
+  >
+    <span
+      class="flex items-center justify-center overflow-hidden"
+      style="width: 35px; height: 35px;"
+    >
+      50
+      %
+    </span>
+  </div>
+</div>
+`;
+
+exports[`PieChart tests is a basic snapshot 1`] = `
+<div
+  class=" bg-neutral-0 dark:bg-dark-neutral-200 w-[--width] h-[--height] inline-flex items-center justify-center rounded-[50%] relative font-medium dark:text-dark-neutral-900 transition-colors duration-150"
+  data-testid="test-pie-chart"
+  style="--width: 50px; --height: 50px; --gradient: conic-gradient(#0055CC 50%, #0000 0); --track-gradient: conic-gradient(#DCDFE4 100%, #0000 0); --mask: radial-gradient(farthest-side, #0000 calc(99% - 5px),#000 calc(100% - 5px));"
+>
+  <div
+    class="before:absolute before:inset-0 before:rounded-full before:[background:var(--track-gradient)] before:[mask:var(--mask)] after:absolute after:inset-0 after:rounded-full after:[background:var(--gradient)] after:[mask:var(--mask)]"
+  >
+    <span
+      class="flex items-center justify-center overflow-hidden"
+      style="width: 35px; height: 35px;"
+    >
+      50
+      %
+    </span>
+  </div>
+</div>
+`;
