@@ -9,7 +9,7 @@ export type SelectOption = {
 	value: string,
 }
 
-type Props = {
+export type Props = {
 	options: SelectOption[],
 	label: string,
 	id: string,
