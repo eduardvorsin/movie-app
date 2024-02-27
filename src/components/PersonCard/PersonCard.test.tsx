@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import PersonCard from './PersonCard';
+import PersonCard, { Props } from './PersonCard';
 import i18next from '@/i18n/client';
 import I18nextWrapper from '@/test-utils/I18nextWrapper';
 import { MouseEventHandler } from 'react';
@@ -28,6 +28,10 @@ describe('PersonCard tests', () => {
 
 	it('when click on the card, the mock function should work', async () => {
 		const mockFn = jest.fn();
+		const clickHandler: MouseEventHandler<HTMLAnchorElement> = (e): void => {
+			e.preventDefault();
+			mockFn();
+		};
 		const user = userEvent.setup();
 		const dictionary = { rating: i18next.t('personCard.rating') };
 
@@ -38,7 +42,7 @@ describe('PersonCard tests', () => {
 				alt='alternative text'
 				testId='test-person-card'
 				dictionary={dictionary}
-				onClick={mockFn}
+				onClick={clickHandler}
 			>
 				test text
 			</PersonCard>

@@ -3,6 +3,7 @@ import Navigation from "./Navigation";
 import i18next from "@/i18n/client";
 import I18nextWrapper from "@/test-utils/I18nextWrapper";
 import userEvent from "@testing-library/user-event";
+import { MouseEventHandler } from "react";
 
 const mockUseSelectedLayoutSegments = jest.fn();
 jest.mock('next/navigation', () => ({
@@ -35,6 +36,10 @@ describe('Navigation tests', () => {
 		mockUseSelectedLayoutSegments.mockReturnValue(['movies', '9999']);
 		const user = userEvent.setup();
 		const mockFn = jest.fn();
+		const clickHandler: MouseEventHandler<HTMLAnchorElement> = (e): void => {
+			e.preventDefault();
+			mockFn();
+		};
 		const dictionary = {
 			movies: 'movies',
 			persons: 'persons',
@@ -44,7 +49,7 @@ describe('Navigation tests', () => {
 		};
 		render(
 			<Navigation
-				onClick={mockFn}
+				onClick={clickHandler}
 				dictionary={dictionary}
 				testId='test-navigation'
 			/>
