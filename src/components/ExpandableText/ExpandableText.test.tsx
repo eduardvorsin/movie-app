@@ -103,8 +103,7 @@ describe('ExpandableText integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		await screen.findByTestId<HTMLDivElement>('test-expandable-text');
-		expect(screen.getByText<HTMLSpanElement>(translation)).toBeInTheDocument();
+		expect(await screen.findByText<HTMLSpanElement>(translation)).toBeInTheDocument();
 	});
 
 	it('localization into Russian works correctly', async () => {
@@ -126,8 +125,7 @@ describe('ExpandableText integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		await screen.findByTestId<HTMLDivElement>('test-expandable-text');
-		expect(screen.getByText<HTMLSpanElement>(translation)).toBeInTheDocument();
+		expect(await screen.findByText<HTMLSpanElement>(translation)).toBeInTheDocument();
 	});
 
 	it('is a snapshot with English localization', async () => {

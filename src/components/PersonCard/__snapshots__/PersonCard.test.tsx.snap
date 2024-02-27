@@ -3,7 +3,7 @@
 exports[`PersonCard integration tests is a snapshot with English localization 1`] = `
 <a
   class="flex flex-col group/card w-full max-w-[9.625rem] min-w-[7.5rem] "
-  data-testid="test card"
+  data-testid="test-person-card"
   href="/persons/1"
 >
   <div
@@ -50,7 +50,7 @@ exports[`PersonCard integration tests is a snapshot with English localization 1`
 exports[`PersonCard integration tests is a snapshot with Russian localization 1`] = `
 <a
   class="flex flex-col group/card w-full max-w-[9.625rem] min-w-[7.5rem] "
-  data-testid="test card"
+  data-testid="test-person-card"
   href="/persons/1"
 >
   <div
@@ -97,7 +97,7 @@ exports[`PersonCard integration tests is a snapshot with Russian localization 1`
 exports[`PersonCard tests is a basic snapshot 1`] = `
 <a
   class="flex flex-col group/card w-full max-w-[9.625rem] min-w-[7.5rem] "
-  data-testid="test card"
+  data-testid="test-person-card"
   href="/persons/1"
 >
   <div
@@ -134,7 +134,7 @@ exports[`PersonCard tests is a basic snapshot 1`] = `
 exports[`PersonCard tests is a snapshot with showRating 1`] = `
 <a
   class="flex flex-col group/card w-full max-w-[9.625rem] min-w-[7.5rem] "
-  data-testid="test card"
+  data-testid="test-person-card"
   href="/persons/1"
 >
   <div
@@ -171,7 +171,7 @@ exports[`PersonCard tests is a snapshot with showRating 1`] = `
 exports[`PersonCard tests is a snapshot with title 1`] = `
 <a
   class="flex flex-col group/card w-full max-w-[9.625rem] min-w-[7.5rem] "
-  data-testid="test card"
+  data-testid="test-person-card"
   href="/persons/1"
 >
   <div

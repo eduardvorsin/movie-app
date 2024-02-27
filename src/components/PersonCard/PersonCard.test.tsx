@@ -3,6 +3,9 @@ import userEvent from '@testing-library/user-event';
 import PersonCard from './PersonCard';
 import i18next from '@/i18n/client';
 import I18nextWrapper from '@/test-utils/I18nextWrapper';
+import { MouseEventHandler } from 'react';
+
+const appearances: NonNullable<Props['appearance']>[] = ['primary', 'secondary'];
 
 describe('PersonCard tests', () => {
 	it('is rendered correctly', async () => {
@@ -13,14 +16,14 @@ describe('PersonCard tests', () => {
 				personId={1}
 				src='/'
 				alt='alternative text'
-				testId='test card'
+				testId='test-person-card'
 				dictionary={dictionary}
 			>
 				test text
 			</PersonCard>
 		);
 
-		expect(await screen.findByTestId<HTMLAnchorElement>('test card')).toBeInTheDocument();
+		expect(await screen.findByTestId<HTMLAnchorElement>('test-person-card')).toBeInTheDocument();
 	});
 
 	it('when click on the card, the mock function should work', async () => {
@@ -33,7 +36,7 @@ describe('PersonCard tests', () => {
 				personId={1}
 				src='/'
 				alt='alternative text'
-				testId='test card'
+				testId='test-person-card'
 				dictionary={dictionary}
 				onClick={mockFn}
 			>
@@ -41,7 +44,7 @@ describe('PersonCard tests', () => {
 			</PersonCard>
 		);
 
-		await screen.findByTestId<HTMLAnchorElement>('test card');
+		await screen.findByTestId<HTMLAnchorElement>('test-person-card');
 
 		await user.click(screen.getByRole<HTMLAnchorElement>('link'));
 
@@ -56,16 +59,15 @@ describe('PersonCard tests', () => {
 				personId={1}
 				src='/'
 				alt='alternative text'
-				testId='test card'
+				testId='test-person-card'
 				title='test title'
 				dictionary={dictionary}
 			>
 				test text
 			</PersonCard>
 		);
-		await screen.findByTestId<HTMLAnchorElement>('test card');
 
-		expect(screen.getByRole<HTMLHeadingElement>('heading')).toBeInTheDocument();
+		expect(await screen.findByRole<HTMLHeadingElement>('heading')).toBeInTheDocument();
 	});
 
 	it('if showRating is true it should show the rating value', async () => {
@@ -76,7 +78,7 @@ describe('PersonCard tests', () => {
 				personId={1}
 				src='/'
 				alt='alternative text'
-				testId='test card'
+				testId='test-person-card'
 				rating={30}
 				showRating
 				dictionary={dictionary}
@@ -84,9 +86,8 @@ describe('PersonCard tests', () => {
 				test text
 			</PersonCard>
 		);
-		await screen.findByTestId<HTMLAnchorElement>('test card');
 
-		expect(screen.getByText<HTMLSpanElement>('30')).toBeInTheDocument();
+		expect(await screen.findByText<HTMLSpanElement>('30')).toBeInTheDocument();
 	});
 
 	it('is a basic snapshot', async () => {
@@ -97,15 +98,14 @@ describe('PersonCard tests', () => {
 				personId={1}
 				src='/'
 				alt='alternative text'
-				testId='test card'
+				testId='test-person-card'
 				dictionary={dictionary}
 			>
 				test text
 			</PersonCard>
 		);
-		await screen.findByTestId<HTMLAnchorElement>('test card');
 
-		expect(screen.getByRole<HTMLAnchorElement>('link')).toMatchSnapshot();
+		expect(await screen.findByTestId<HTMLAnchorElement>('test-person-card')).toMatchSnapshot();
 	});
 
 	it('is a snapshot with title', async () => {
@@ -116,15 +116,14 @@ describe('PersonCard tests', () => {
 				personId={1}
 				src='/'
 				alt='alternative text'
-				testId='test card'
+				testId='test-person-card'
 				dictionary={dictionary}
 			>
 				test text
 			</PersonCard>
 		);
-		await screen.findByTestId<HTMLAnchorElement>('test card');
 
-		expect(screen.getByRole<HTMLAnchorElement>('link')).toMatchSnapshot();
+		expect(await screen.findByTestId<HTMLAnchorElement>('test-person-card')).toMatchSnapshot();
 	});
 
 	it('is a snapshot with showRating', async () => {
@@ -135,15 +134,33 @@ describe('PersonCard tests', () => {
 				personId={1}
 				src='/'
 				alt='alternative text'
-				testId='test card'
+				testId='test-person-card'
 				dictionary={dictionary}
 			>
 				test text
 			</PersonCard>
 		);
-		await screen.findByTestId<HTMLAnchorElement>('test card');
 
-		expect(screen.getByRole<HTMLAnchorElement>('link')).toMatchSnapshot();
+		expect(await screen.findByTestId<HTMLAnchorElement>('test-person-card')).toMatchSnapshot();
+	});
+
+	it.each(appearances)('is a snapshot with appearance equal to "$s"', async (appearance) => {
+		const dictionary = { rating: 'Popularity' };
+
+		render(
+			<PersonCard
+				personId={1}
+				src='/'
+				alt='alternative text'
+				testId='test-person-card'
+				dictionary={dictionary}
+				appearance={appearance}
+			>
+				test text
+			</PersonCard>
+		);
+
+		expect(await screen.findByTestId<HTMLAnchorElement>('test-person-card')).toBeInTheDocument();
 	});
 });
 
@@ -158,7 +175,7 @@ describe('PersonCard integration tests', () => {
 				personId={1}
 				src='/'
 				alt='alternative text'
-				testId='test card'
+				testId='test-person-card'
 				dictionary={dictionary}
 				rating={90}
 				showRating
@@ -168,8 +185,7 @@ describe('PersonCard integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		await screen.findByTestId<HTMLAnchorElement>('test card');
-		expect(screen.getByText<HTMLSpanElement>(translation)).toBeInTheDocument();
+		expect(await screen.findByText<HTMLSpanElement>(translation)).toBeInTheDocument();
 	});
 
 	it('localization into Russian works correctly', async () => {
@@ -182,7 +198,7 @@ describe('PersonCard integration tests', () => {
 				personId={1}
 				src='/'
 				alt='alternative text'
-				testId='test card'
+				testId='test-person-card'
 				dictionary={dictionary}
 				rating={90}
 				showRating
@@ -192,8 +208,7 @@ describe('PersonCard integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		await screen.findByTestId<HTMLAnchorElement>('test card');
-		expect(screen.getByText<HTMLSpanElement>(translation)).toBeInTheDocument();
+		expect(await screen.findByText<HTMLSpanElement>(translation)).toBeInTheDocument();
 	});
 
 	it('is a snapshot with English localization', async () => {
@@ -205,7 +220,7 @@ describe('PersonCard integration tests', () => {
 				personId={1}
 				src='/'
 				alt='alternative text'
-				testId='test card'
+				testId='test-person-card'
 				dictionary={dictionary}
 				rating={90}
 				showRating
@@ -215,7 +230,7 @@ describe('PersonCard integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		expect(await screen.findByTestId<HTMLAnchorElement>('test card')).toMatchSnapshot();
+		expect(await screen.findByTestId<HTMLAnchorElement>('test-person-card')).toMatchSnapshot();
 	});
 
 	it('is a snapshot with Russian localization', async () => {
@@ -227,7 +242,7 @@ describe('PersonCard integration tests', () => {
 				personId={1}
 				src='/'
 				alt='alternative text'
-				testId='test card'
+				testId='test-person-card'
 				dictionary={dictionary}
 				rating={90}
 				showRating
@@ -237,6 +252,6 @@ describe('PersonCard integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		expect(await screen.findByTestId<HTMLAnchorElement>('test card')).toMatchSnapshot();
+		expect(await screen.findByTestId<HTMLAnchorElement>('test-person-card')).toMatchSnapshot();
 	});
 });

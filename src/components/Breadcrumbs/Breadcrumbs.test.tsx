@@ -36,9 +36,7 @@ describe('Breadcrumbs tests', () => {
 			/>
 		);
 
-		await screen.findByTestId<HTMLDivElement>('test-breadcrumbs');
-
-		expect(screen.getAllByRole<HTMLAnchorElement>('link')).toHaveLength(2);
+		expect(await screen.findAllByRole<HTMLAnchorElement>('link')).toHaveLength(2);
 	});
 
 	it('if maxItems is more than the number of elements, then it should render all the elements', async () => {
@@ -53,9 +51,7 @@ describe('Breadcrumbs tests', () => {
 			/>
 		);
 
-		await screen.findByTestId<HTMLDivElement>('test-breadcrumbs');
-
-		expect(screen.getAllByRole<HTMLAnchorElement>('link')).toHaveLength(3);
+		expect(await screen.findAllByRole<HTMLAnchorElement>('link')).toHaveLength(3);
 	});
 
 	it('if maxItems is less than the number of elements, then the first and last element should be rendered', async () => {
@@ -70,8 +66,7 @@ describe('Breadcrumbs tests', () => {
 			/>
 		);
 
-		await screen.findByTestId<HTMLDivElement>('test-breadcrumbs');
-		expect(screen.getByText<HTMLSpanElement>(/home page/i)).toBeInTheDocument();
+		expect(await screen.findByText<HTMLSpanElement>(/home page/i)).toBeInTheDocument();
 		expect(screen.getByText<HTMLSpanElement>(/seasons/i)).toBeInTheDocument();
 	});
 
