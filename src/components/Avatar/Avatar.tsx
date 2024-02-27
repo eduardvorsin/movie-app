@@ -117,7 +117,7 @@ export default function Avatar({
 		'flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150',
 		appearance === 'circle' ? 'rounded-full' : borderRadiusTypes[size],
 		sizeTypes[size],
-		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
+		isDisabled ? 'opacity-disabled cursor-not-allowed pointer-events-none' : '',
 		!src ? 'bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700' : 'bg-transparent border-transparent',
 		presence ? `after:absolute after:border-light-100 dark:after:border-dark-neutral-250 after:rounded-full ${presencePositions[appearance][size]}` : 'after:hidden',
 		presence === 'online' ? 'after:bg-green-600 dark:after:bg-green-500' : '',
