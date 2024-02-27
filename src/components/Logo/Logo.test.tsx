@@ -55,7 +55,7 @@ describe('Logo tests', () => {
 	});
 });
 
-describe('Banner integration tests', () => {
+describe('Logo integration tests', () => {
 	it('localization into English works correctly', async () => {
 		await i18next.changeLanguage('en');
 		const translation = new RegExp(i18next.t('logo.linkText'));

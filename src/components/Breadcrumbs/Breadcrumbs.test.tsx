@@ -159,7 +159,7 @@ describe('Breadcrumbs tests', () => {
 	});
 });
 
-describe('Banner integration tests', () => {
+describe('Breadcrumbs integration tests', () => {
 	it('localization into English works correctly', async () => {
 		await i18next.changeLanguage('en');
 		const translation = new RegExp(i18next.t('breadcrumbs.elipsisLabel'));

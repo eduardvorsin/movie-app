@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Banner integration tests is a snapshot with English localization 1`] = `
+exports[`Breadcrumbs integration tests is a snapshot with English localization 1`] = `
 <nav
   aria-label="test-breadcrumbs"
   data-testid="test-breadcrumbs"
@@ -63,7 +63,7 @@ exports[`Banner integration tests is a snapshot with English localization 1`] = 
 </nav>
 `;
 
-exports[`Banner integration tests is a snapshot with Russian localization 1`] = `
+exports[`Breadcrumbs integration tests is a snapshot with Russian localization 1`] = `
 <nav
   aria-label="test-breadcrumbs"
   data-testid="test-breadcrumbs"

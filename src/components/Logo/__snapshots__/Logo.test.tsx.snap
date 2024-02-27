@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Banner integration tests is a snapshot with English localization 1`] = `
+exports[`Logo integration tests is a snapshot with English localization 1`] = `
 <a
   class="inline-flex undefined"
   data-testid="test-logo"
@@ -24,7 +24,7 @@ exports[`Banner integration tests is a snapshot with English localization 1`] = 
 </a>
 `;
 
-exports[`Banner integration tests is a snapshot with Russian localization 1`] = `
+exports[`Logo integration tests is a snapshot with Russian localization 1`] = `
 <a
   class="inline-flex undefined"
   data-testid="test-logo"
