@@ -10,6 +10,7 @@ import { Locales, fallbackLng } from '@/i18n/settings';
 import { useParams } from 'next/navigation';
 import { useTranslation } from '@/i18n/client';
 import { routes } from '@/constants';
+import { MouseEventHandler } from 'react';
 
 export type Props = {
 	movieId: number,
@@ -29,6 +30,7 @@ export type Props = {
 	appearance?: 'primary' | 'secondary',
 	loading?: 'eager' | 'lazy',
 	sizes?: string,
+	onClick?: MouseEventHandler<HTMLAnchorElement>,
 } & GeneralProps;
 
 export default function MovieCard({
@@ -51,6 +53,7 @@ export default function MovieCard({
 	appearance = 'primary',
 	loading,
 	sizes,
+	onClick,
 	...props
 }: Props) {
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
@@ -117,6 +120,7 @@ export default function MovieCard({
 			as={titleElement}
 		>
 			<Link
+				onClick={onClick}
 				className={`break-all [&]:text-neutral-1000 dark:[&]:text-dark-neutral-1100 hover:[&]:text-neutral-800 active:[&]:text-neutral-700 dark:hover:[&]:text-dark-neutral-900 dark:active:[&]:text-dark-neutral-800 transition-colors duration-150 ${(variant === 'horizontal' && appearance === 'primary') ? 'line-clamp-1' : 'line-clamp-2'}`}
 				href={url}
 				title={title}
@@ -171,6 +175,7 @@ export default function MovieCard({
 				{...props}
 			>
 				<Link
+					onClick={onClick}
 					href={url}
 					className={`block relative group ${variant === 'vertical' ? 'aspect-[5/7]' : 'aspect-[16/9]'}`}
 					title={title}
@@ -202,6 +207,7 @@ export default function MovieCard({
 				{...props}
 			>
 				<Link
+					onClick={onClick}
 					href={url}
 					className={`block relative group ${variant === 'vertical' ? 'aspect-[5/7]' : 'aspect-[16/9]'} mb-2 transition-transform duration-150 scale-100 hover:scale-[1.025]`}
 					title={title}

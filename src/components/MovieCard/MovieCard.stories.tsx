@@ -63,6 +63,10 @@ const meta: Meta<typeof MovieCard> = {
 		sizes: {
 			description: 'Allows you to set the dimensions for the image',
 		},
+		onClick: {
+			control: false,
+			description: 'Allows you to send a callback that is called when you click on the component',
+		},
 	},
 	component: MovieCard,
 	parameters: {
@@ -210,4 +214,32 @@ export const Appearance: Story = {
 			</div>
 		</div>
 	),
+};
+
+export const EventCallbacks: Story = {
+	argTypes: {
+		onClick: {
+			action: 'Clicked',
+		},
+	},
+	args: {
+		className: 'max-w-[285px]',
+		movieId: 9999,
+		src: '/assets/images/movie-card-placeholder-l-v.svg',
+		showRating: true,
+		rating: 80,
+		alt: '',
+		releaseDate: '2024-02-03',
+		runtime: '1:30',
+		title: 'title',
+		country: 'USA',
+		genres: [37, 18],
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'The callback that will be called when clicking on the component',
+			},
+		},
+	},
 };
