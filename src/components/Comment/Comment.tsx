@@ -101,7 +101,7 @@ export default function Comment({
 					</span>
 					{isSaving && (
 						<span
-							className=' text-100 font-regular max-w-[120px] truncate'
+							className='text-100 font-regular max-w-[120px] truncate'
 						>
 							{savingText ?? dictionary.savingText}
 						</span>
@@ -137,25 +137,23 @@ export default function Comment({
 					)}
 				</Title>
 
-				{
-					rating && (
-						<span className='flex items-end mb-1'>
-							<svg
-								className='w-4 h-4 text-neutral-700 dark:text-dark-neutral-700 mr-2 transition-colors duration-150'
-								viewBox='0 0 20 20'
-							>
-								<use href={'/assets/icons/star.svg#star'}></use>
-							</svg>
+				{rating && (
+					<span className='flex items-end mb-1'>
+						<svg
+							className='w-4 h-4 text-neutral-700 dark:text-dark-neutral-700 mr-2 transition-colors duration-150'
+							viewBox='0 0 20 20'
+						>
+							<use href={'/assets/icons/star.svg#star'}></use>
+						</svg>
 
-							<span
-								className='text-neutral-800 dark:text-dark-neutral-800 font-bold leading-none transition-colors duration-150'
-								aria-label={dictionary.ratingLabel}
-							>
-								{rating}
-							</span>
+						<span
+							className='text-neutral-800 dark:text-dark-neutral-800 font-bold leading-none transition-colors duration-150'
+							aria-label={dictionary.ratingLabel}
+						>
+							{rating}
 						</span>
-					)
-				}
+					</span>
+				)}
 
 				<ExpandableText
 					visibleRowsCount={6}
