@@ -1,0 +1,1036 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comment integration tests is a snapshot with English localization 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+    </h4>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Comment integration tests is a snapshot with Russian localization 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+    </h4>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Comment tests a snapshot with an attached comment 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+    </h4>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+  </div>
+  <div
+    class="xs:col-start-2 xs:col-end-3"
+  >
+    <div
+      aria-describedby="test-comment-2-error-message"
+      class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+      data-testid="test-comment-2"
+      id="test-comment-2"
+    >
+      <div
+        class="mx-auto xs:mx-0"
+      >
+        <span
+          aria-label="avatar label 2  "
+          class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+          data-testid="test-avatar-2"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-full h-full fill-current select-none"
+            viewBox="0 0 40 40"
+          >
+            <use
+              href="/assets/icons/user.svg#user"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="text-100"
+      >
+        <h4
+          class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+        >
+          <button
+            class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+          >
+            test-author-2
+          </button>
+          <span
+            class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+          >
+            test
+          </span>
+        </h4>
+        <div
+          class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+        >
+          <p
+            class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+          >
+            test content 2
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Comment tests is a basic snapshot 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+    </h4>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Comment tests is a snapshot with actions 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+    </h4>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+    <div
+      class="mt-1"
+    >
+      <span
+        class="before:content-["·"] before:ml-1 before:mr-1 first:before:hidden"
+      >
+        <button
+          class="inline-flex font-medium text-100 text-neutral-800 dark:text-dark-neutral-800 enabled:hover:text-neutral-700 dark:enabled:hover:text-dark-neutral-900 enabled:hover:underline enabled:active:text-neutral-600 dark:enabled:active:text-dark-neutral-1000 disabled:opacity-disabled disabled:cursor-not-allowed transition-colors duration-150 "
+        >
+          <span
+            class="max-w-[80px] truncate"
+          >
+            Like
+          </span>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Comment tests is a snapshot with highlited set to true 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+    </h4>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+  </div>
+  <div
+    aria-hidden="true"
+    class="absolute -top-2 -left-2 w-[calc(100%+16px)] h-[calc(100%+16px)] bg-neutral-100 dark:bg-dark-neutral-200 -z-100 pointer-events-none col-span-full row-start-1 row-end-3 xs:row-end-1 transition-colors duration-150"
+    data-testid="highlighting"
+  />
+</div>
+`;
+
+exports[`Comment tests is a snapshot with isError equal to true and errorActions 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+    </h4>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+    <p
+      class="flex items-center text-75 transition-colors duration-150 text-orange-800 dark:text-yellow-300 mt-1 text-100 -ml-1"
+      id="test-comment-error-message"
+      role="alert"
+    >
+      <span
+        aria-hidden="true"
+        class="mr-1 w-6 h-6 transition-colors duration-150"
+      >
+        <svg
+          class="fill-current transition-colors duration-150"
+          viewBox="0 0 20 20"
+        >
+          <use
+            href="/assets/icons/warning.svg#warning"
+          />
+        </svg>
+      </span>
+      unexpected error
+    </p>
+    <div>
+      <span
+        class="before:content-["·"] before:ml-1 before:mr-1 first:before:hidden"
+      >
+        <button
+          class="inline-flex font-medium text-100 text-neutral-800 dark:text-dark-neutral-800 enabled:hover:text-neutral-700 dark:enabled:hover:text-dark-neutral-900 enabled:hover:underline enabled:active:text-neutral-600 dark:enabled:active:text-dark-neutral-1000 disabled:opacity-disabled disabled:cursor-not-allowed transition-colors duration-150 "
+        >
+          <span
+            class="max-w-[80px] truncate"
+          >
+            Resend
+          </span>
+        </button>
+      </span>
+      <span
+        class="before:content-["·"] before:ml-1 before:mr-1 first:before:hidden"
+      >
+        <button
+          class="inline-flex font-medium text-100 text-neutral-800 dark:text-dark-neutral-800 enabled:hover:text-neutral-700 dark:enabled:hover:text-dark-neutral-900 enabled:hover:underline enabled:active:text-neutral-600 dark:enabled:active:text-dark-neutral-1000 disabled:opacity-disabled disabled:cursor-not-allowed transition-colors duration-150 "
+        >
+          <span
+            class="max-w-[80px] truncate"
+          >
+            Remove
+          </span>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Comment tests is a snapshot with rating 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+    </h4>
+    <span
+      class="flex items-end mb-1"
+    >
+      <svg
+        class="w-4 h-4 text-neutral-700 dark:text-dark-neutral-700 mr-2 transition-colors duration-150"
+        viewBox="0 0 20 20"
+      >
+        <use
+          href="/assets/icons/star.svg#star"
+        />
+      </svg>
+      <span
+        aria-label="rating"
+        class="text-neutral-800 dark:text-dark-neutral-800 font-bold leading-none transition-colors duration-150"
+      >
+        80
+      </span>
+    </span>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Comment tests is a snapshot with restrictedTo 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+      <span
+        class=" text-100 font-medium inline-flex items-center text-neutral-700 dark:text-dark-neutral-700 transition-colors duration-150"
+      >
+        <svg
+          class="w-4 h-4 mr-1 fill-current"
+          viewBox="0 0 20 20"
+        >
+          <use
+            href="/assets/icons/locked.svg#locked"
+          />
+        </svg>
+        <span
+          class="max-w-[200px] truncate"
+        >
+          admins
+        </span>
+      </span>
+    </h4>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Comment tests is a snapshot with the afterContent property 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+    </h4>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+    test after content
+  </div>
+</div>
+`;
+
+exports[`Comment tests is a snapshot with the isSaving set to true 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+      <span
+        class="text-100 font-regular max-w-[120px] truncate"
+      >
+        Sending...
+      </span>
+    </h4>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Comment tests is a snapshot with the shouldRenderNestedCommentsInline property 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+    </h4>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+  </div>
+  <div
+    class="col-span-full"
+  >
+    <div
+      aria-describedby="test-comment-2-error-message"
+      class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+      data-testid="test-comment-2"
+      id="test-comment-2"
+    >
+      <div
+        class="mx-auto xs:mx-0"
+      >
+        <span
+          aria-label="avatar label 2  "
+          class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+          data-testid="test-avatar-2"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-full h-full fill-current select-none"
+            viewBox="0 0 40 40"
+          >
+            <use
+              href="/assets/icons/user.svg#user"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="text-100"
+      >
+        <h4
+          class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+        >
+          <button
+            class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+          >
+            test-author-2
+          </button>
+          <span
+            class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+          >
+            test
+          </span>
+        </h4>
+        <div
+          class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+        >
+          <p
+            class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+          >
+            test content 2
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Comment tests is a snapshot with the time property 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150   text-100 font-regular"
+      >
+        10:00
+      </button>
+    </h4>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Comment tests snapshot with isEdited equal to true 1`] = `
+<div
+  aria-describedby="test-comment-error-message"
+  class="grid grid-cols-1 xs:grid-cols-[auto_1fr] grid-rows-[auto_1fr] xs:grid-rows-1 gap-x-2 gap-y-2 md:gap-y-4 p-2 relative gap-y-2 md:gap-y-4 "
+  data-testid="test-comment"
+  id="test-comment"
+>
+  <div
+    class="mx-auto xs:mx-0"
+  >
+    <span
+      aria-label="avatar label  "
+      class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+      data-testid="test-avatar"
+      role="img"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-full h-full fill-current select-none"
+        viewBox="0 0 40 40"
+      >
+        <use
+          href="/assets/icons/user.svg#user"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="text-100"
+  >
+    <h4
+      class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-200 font-bold flex items-center flex-wrap text-neutral-800 dark:text-dark-neutral-800 gap-x-2 gap-y-1"
+    >
+      <button
+        class="[&]:text-neutral-800 dark:[&]:text-dark-neutral-800 enabled:hover:[&]:text-neutral-700 dark:enabled:hover:[&]:text-dark-neutral-900 enabled:active:[&]:text-neutral-600 dark:enabled:active:[&]:text-dark-neutral-1000 transition-colors duration-150 font-medium text-100 max-w-[130px] truncate"
+      >
+        test-author
+      </button>
+      <span
+        class="px-1 text-75 uppercase bg-neutral-300 dark:bg-dark-neutral-300 max-w-[200px] inline-block rounded-[0.1875rem] font-bold align-middle truncate transition-colors duration-150"
+      >
+        test
+      </span>
+      <span
+        class="text-neutral-700 dark:text-dark-neutral-700  font-regular text-100 transition-colors duration-150"
+      >
+        Edited
+      </span>
+    </h4>
+    <div
+      class="break-all text-neutral-1000 dark:text-dark-neutral-900 transition-colors duration-150"
+    >
+      <p
+        class="text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 line-clamp-6"
+      >
+        test content
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,322 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar tests is a basic snapshot 1`] = `
+<span
+  aria-label="avatar label  "
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+  data-testid="test-avatar"
+  role="img"
+>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with a picture instead of initials 1`] = `
+<span
+  aria-label="avatar label  "
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+  data-testid="test-avatar"
+  role="img"
+>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with appearance equal to "circle" 1`] = `
+<span
+  aria-label="avatar label  "
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+  data-testid="test-avatar"
+  role="img"
+>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with appearance equal to "square" 1`] = `
+<span
+  aria-label="avatar label  "
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-[0.375rem] w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+  data-testid="test-avatar"
+  role="img"
+>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with status equal to "approved" 1`] = `
+<span
+  aria-label="avatar label approved "
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+  data-testid="test-avatar"
+  role="img"
+>
+  <span
+    class="w-5 h-5 absolute z-100 transition-colors duration-150 bg-neutral-700 dark:bg-dark-neutral-700 rounded-full top-[4%] right-[4%] w-[1.125rem] h-[1.125rem]"
+  >
+    <svg
+      class="fill-green-400 dark:fill-green-300 transition-colors duration-150"
+      viewBox="0 0 20 20"
+    >
+      <use
+        href="/assets/icons/approved.svg#approved"
+      />
+    </svg>
+  </span>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with status equal to "declined" 1`] = `
+<span
+  aria-label="avatar label declined "
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+  data-testid="test-avatar"
+  role="img"
+>
+  <span
+    class="w-5 h-5 absolute z-100 transition-colors duration-150 bg-neutral-700 dark:bg-dark-neutral-700 rounded-full top-[4%] right-[4%] w-[1.125rem] h-[1.125rem]"
+  >
+    <svg
+      class="fill-red-400 dark:fill-red-500 transition-colors duration-150"
+      viewBox="0 0 20 20"
+    >
+      <use
+        href="/assets/icons/declined.svg#declined"
+      />
+    </svg>
+  </span>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with status equal to "large" 1`] = `
+<span
+  aria-label="avatar label  "
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-10 h-10 text-300 border-2 after:w-[0.9375rem] after:h-[0.9375rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+  data-testid="test-avatar"
+  role="img"
+>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with status equal to "locked" 1`] = `
+<span
+  aria-label="avatar label locked "
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+  data-testid="test-avatar"
+  role="img"
+>
+  <span
+    class="w-5 h-5 absolute z-100 transition-colors duration-150 bg-neutral-700 dark:bg-dark-neutral-700 rounded-full top-[4%] right-[4%] w-[1.125rem] h-[1.125rem]"
+  >
+    <svg
+      class="fill-neutral-0 dark:fill-dark-neutral-0 transition-colors duration-150"
+      viewBox="0 0 20 20"
+    >
+      <use
+        href="/assets/icons/locked.svg#locked"
+      />
+    </svg>
+  </span>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with status equal to "medium" 1`] = `
+<span
+  aria-label="avatar label  "
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-8 h-8 text-200 border-[0.09375rem] after:w-[0.75rem] after:h-[0.75rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+  data-testid="test-avatar"
+  role="img"
+>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with status equal to "offline" 1`] = `
+<span
+  aria-label="avatar label  offline"
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:absolute after:border-light-100 dark:after:border-dark-neutral-250 after:rounded-full after:bottom-[2%] after:right-[2%]  after:bg-red-600 dark:after:bg-red-500 "
+  data-testid="test-avatar"
+  role="img"
+>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with status equal to "online" 1`] = `
+<span
+  aria-label="avatar label  online"
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:absolute after:border-light-100 dark:after:border-dark-neutral-250 after:rounded-full after:bottom-[2%] after:right-[2%] after:bg-green-600 dark:after:bg-green-500  "
+  data-testid="test-avatar"
+  role="img"
+>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with status equal to "small" 1`] = `
+<span
+  aria-label="avatar label  "
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-6 h-6 text-75 border-[0.09375rem] after:w-[0.625rem] after:h-[0.625rem] after:border-[0.09375rem]  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+  data-testid="test-avatar"
+  role="img"
+>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with status equal to "xlarge" 1`] = `
+<span
+  aria-label="avatar label  "
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-24 h-24 text-[3rem] border-2 after:w-[1.125rem] after:h-[1.125rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+  data-testid="test-avatar"
+  role="img"
+>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with status equal to "xsmall" 1`] = `
+<span
+  aria-label="avatar label  "
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-4 h-4 text-[0.5rem] border-[0.0625rem] after:w-[0.375rem] after:h-[0.375rem] after:border-[0.0625rem]  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+  data-testid="test-avatar"
+  role="img"
+>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
+
+exports[`Avatar tests is a snapshot with status equal to "xxlarge" 1`] = `
+<span
+  aria-label="avatar label  "
+  class="flex items-center font-regular justify-center relative text-neutral-0 dark:text-dark-neutral-0 dark:border-dark-neutral-250 transition-colors duration-150 rounded-full w-32 h-32 text-[4rem] border-2 after:w-[1.25rem] after:h-[1.25rem] after:border-2  bg-neutral-700 dark:bg-dark-neutral-700 border-neutral-700 after:hidden   "
+  data-testid="test-avatar"
+  role="img"
+>
+  <svg
+    aria-hidden="true"
+    class="w-full h-full fill-current select-none"
+    viewBox="0 0 40 40"
+  >
+    <use
+      href="/assets/icons/user.svg#user"
+    />
+  </svg>
+</span>
+`;
