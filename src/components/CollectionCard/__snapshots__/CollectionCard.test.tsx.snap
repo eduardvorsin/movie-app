@@ -2,7 +2,7 @@
 
 exports[`CollectionCard tests is a basic snapshot 1`] = `
 <div
-  class="rounded-3 overflow-hidden p-5 min-h-[108px] min-w-[192px] aspect-video flex flex-col justify-end relative after:absolute after:top-0 after:left-0 after:z-0 after:w-full after:h-full after:bg-neutral-300/60 dark:after:bg-dark-neutral-250/40 after:transition-colors after:duration-150 "
+  class="rounded-3 overflow-hidden p-5 min-h-[108px] min-w-[192px] aspect-video flex flex-col justify-end relative after:absolute after:top-0 after:left-0 after:z-0 after:w-full after:h-full after:bg-neutral-300/60 dark:after:bg-dark-neutral-250/40 after:transition-colors after:duration-150 @container/card "
   data-testid="test-collection-card"
 >
   <div
@@ -25,7 +25,7 @@ exports[`CollectionCard tests is a basic snapshot 1`] = `
     />
   </div>
   <h3
-    class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-300 sm:text-400 font-medium text-neutral-1100 dark:text-dark-neutral-1000 z-100 leading-2 w-full [&]:text-400 xs:[&]:text-300"
+    class="leading-[1.25] -tracking-[0.01em] transition-colors duration-150 text-300 sm:text-400 font-medium text-neutral-1100 dark:text-dark-neutral-1000 z-100 leading-2 w-full [&]:text-300 @xs/card:[&]:text-400"
   >
     <a
       class="break-all line-clamp-2 after:absolute after:top-0 after:left-0 after:w-full after:h-full after:z-100"

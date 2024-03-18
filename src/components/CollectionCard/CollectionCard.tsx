@@ -23,7 +23,7 @@ export default function CollectionCard({
 	alt,
 }: Props) {
 	const classes = [
-		'rounded-3 overflow-hidden p-5 min-h-[108px] min-w-[192px] aspect-video flex flex-col justify-end relative after:absolute after:top-0 after:left-0 after:z-0 after:w-full after:h-full after:bg-neutral-300/60 dark:after:bg-dark-neutral-250/40 after:transition-colors after:duration-150',
+		'rounded-3 overflow-hidden p-5 min-h-[108px] min-w-[192px] aspect-video flex flex-col justify-end relative after:absolute after:top-0 after:left-0 after:z-0 after:w-full after:h-full after:bg-neutral-300/60 dark:after:bg-dark-neutral-250/40 after:transition-colors after:duration-150 @container/card',
 		className
 	].join(' ');
 
@@ -42,7 +42,7 @@ export default function CollectionCard({
 			/>
 
 			<Title
-				className='text-neutral-1100 dark:text-dark-neutral-1000 z-100 leading-2 w-full [&]:text-400 xs:[&]:text-300'
+				className='text-neutral-1100 dark:text-dark-neutral-1000 z-100 leading-2 w-full [&]:text-300 @xs/card:[&]:text-400'
 				level={4}
 				weight={500}
 				as='h3'
