@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemedImage tests is a basic snapshot 1`] = `
+<img
+  alt="test-themed-image"
+  data-nimg="1"
+  data-testid="test-themed-image"
+  decoding="async"
+  height="100"
+  loading="lazy"
+  src="http://localhost/assets/images/movie-card-placeholder-l-v.svg"
+  style="color: transparent;"
+  width="100"
+/>
+`;
+
+exports[`ThemedImage tests is a snapshot with a fallback 1`] = `
+<img
+  alt="test-themed-image"
+  data-nimg="1"
+  decoding="async"
+  height="100"
+  loading="lazy"
+  src="http://localhost/assets/images/movie-card-placeholder-d-v.svg"
+  style="color: transparent;"
+  width="100"
+/>
+`;
+
+exports[`ThemedImage tests is a snapshot with darkSrc 1`] = `
+<img
+  alt="test-themed-image"
+  data-nimg="1"
+  data-testid="test-themed-image"
+  decoding="async"
+  height="100"
+  loading="lazy"
+  src="http://localhost/assets/images/movie-card-placeholder-d-v.svg"
+  style="color: transparent;"
+  width="100"
+/>
+`;
+
+exports[`ThemedImage tests is a snapshot with showSkeleton set to true 1`] = `
+<img
+  alt="test-themed-image"
+  data-nimg="fill"
+  decoding="async"
+  loading="lazy"
+  sizes="100vw"
+  src="http://localhost/_next/image?url=%2F&w=3840&q=75"
+  srcset="/_next/image?url=%2F&w=640&q=75 640w, /_next/image?url=%2F&w=750&q=75 750w, /_next/image?url=%2F&w=828&q=75 828w, /_next/image?url=%2F&w=1080&q=75 1080w, /_next/image?url=%2F&w=1200&q=75 1200w, /_next/image?url=%2F&w=1920&q=75 1920w, /_next/image?url=%2F&w=2048&q=75 2048w, /_next/image?url=%2F&w=3840&q=75 3840w"
+  style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+/>
+`;
