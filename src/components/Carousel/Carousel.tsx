@@ -225,6 +225,7 @@ const Carousel = forwardRef<HTMLDivElement, Props>(function Carousel({
 				onWheel={wheelHandler}
 				onMouseEnter={mouseEnterHandler}
 				onMouseLeave={mouseLeaveHandler}
+				data-testid={testId ? 'test-carousel-container' : undefined}
 			>
 				{slides.map((slide, index) => (
 					<div
@@ -291,7 +292,7 @@ const Carousel = forwardRef<HTMLDivElement, Props>(function Carousel({
 
 export default Carousel;
 
-function getBreakpointFromValue(value: number, breakpoints?: Breakpoints): Breakpoints[number] | null {
+export function getBreakpointFromValue(value: number, breakpoints?: Breakpoints): Breakpoints[number] | null {
 	if (!breakpoints) return null;
 
 	const breakpointValues = Object.keys(breakpoints).map(Number);
