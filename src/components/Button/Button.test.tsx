@@ -77,4 +77,37 @@ describe('Button tests', () => {
 
       expect(screen.getByRole<HTMLButtonElement>('button')).toMatchSnapshot();
    });
+
+   it('is a snapshot with href', () => {
+      render(<Button href='/'>Button</Button>);
+
+      expect(screen.getByRole<HTMLLinkElement>('link')).toBeInTheDocument();
+   });
+
+   it('a snapshot with isDisabled set to true', () => {
+      render(<Button isDisabled>Button</Button>);
+
+      expect(screen.getByRole<HTMLButtonElement>('button')).toBeInTheDocument();
+   });
+
+   it('a snapshot with isLoading set to true', () => {
+      render(<Button isLoading>Button</Button>);
+
+      expect(screen.getByRole<HTMLButtonElement>('button')).toBeInTheDocument();
+   });
+
+   it('is a snapshot with IconButton', () => {
+      render(
+         <Button iconButton>
+            Button
+            <svg
+               className='w-6 h-6 p-0.5 fill-current'
+               viewBox='0 0 32 32'
+            >
+               <use href={'/assets/icons/loupe.svg#loupe'}></use>
+            </svg>
+         </Button>);
+
+      expect(screen.getByRole<HTMLButtonElement>('button')).toBeInTheDocument();
+   });
 });
