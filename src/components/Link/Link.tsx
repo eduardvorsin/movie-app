@@ -32,8 +32,9 @@ export default function Link({
 	...props
 }: Props) {
 	const linkClasses = [
-		'no-underline  hover:underline transition-colors duration-150',
-		appearance === 'primary' ? 'text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200' : 'text-neutral-800 hover:text-neutral-900 active:text-neutral-1000 dark:text-dark-neutral-1000 dark:hover:text-dark-neutral-900 dark:active:text-dark-neutral-800',
+		'no-underline transition-colors duration-150',
+		appearance === 'primary' ? 'text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 ' : 'text-neutral-800 hover:text-neutral-900 active:text-neutral-1000 dark:text-dark-neutral-1000 dark:hover:text-dark-neutral-900 dark:active:text-dark-neutral-800',
+		!href ? 'text-blue-1000 hover:text-blue-1000 active:text-blue-1000 dark:text-blue-200 dark:hover:text-blue-200 dark:active:text-blue-200' : 'dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline',
 		isDisabled ? 'opacity-disabled cursor-not-allowed' : '',
 		className,
 	].join(' ');
@@ -61,7 +62,7 @@ export default function Link({
 	return (
 		<a
 			id={id}
-			className={`${linkClasses}`}
+			className={linkClasses}
 			href={href}
 			rel='noopener noreferrer'
 			onClick={onClick}
