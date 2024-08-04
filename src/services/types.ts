@@ -1,5 +1,5 @@
 import { Locales } from "@/i18n/settings";
-import { Department } from "@/types/shared";
+import { Department, MediaTypes } from "@/types/shared";
 
 export type ListsResponse<T> = {
 	page: number,
@@ -134,11 +134,11 @@ export type PersonCredit = {
 	department: Department,
 	job?: string,
 } & ({
-	media_type: 'movie',
+	media_type: Extract<MediaTypes, 'movie'>,
 	release_date?: string,
 	title: string,
 } | {
-	media_type: 'tv',
+	media_type: Extract<MediaTypes, 'tv'>,
 	first_air_date?: string,
 	name: string,
 });

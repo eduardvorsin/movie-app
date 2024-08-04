@@ -40,3 +40,5 @@ export type PlaceholderData = {
 	};
 	base64: string;
 };
+
+export type MediaTypes = 'person' | 'tv' | 'movie';
