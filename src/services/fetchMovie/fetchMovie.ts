@@ -1,5 +1,5 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { CreditsResponse, ListsResponse, MovieResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry, Review, Credit } from '@/services/types';
+import { CreditsResponse, ListsResponse, MovieResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry, Review, Credit, ReleaseDate } from '@/services/types';
 import { Department } from '@/types/shared';
 
 export type MovieActorCredit = Credit & { character: string };
@@ -25,6 +25,7 @@ export type MovieDetails = Omit<MovieResponse, 'genre_ids' | 'popularity'> & {
 	recommendations: ListsResponse<MovieResponse>,
 	reviews: ListsResponse<Review>,
 	certification?: string,
+	release_dates: { results: ReleaseDate[] },
 }
 
 export const fetchMovie = async (id: string, options?: { lang: Locales }): Promise<MovieDetails | null> => {

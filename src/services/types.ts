@@ -20,7 +20,7 @@ type MovieAndSeriesResponse = {
 	vote_count: number,
 }
 
-type ReleaseDate = {
+export type ReleaseDate = {
 	iso_3166_1: string,
 	release_dates: [
 		{
@@ -40,7 +40,6 @@ export type MovieResponse = MovieAndSeriesResponse & {
 	title: string,
 	video: boolean,
 	release_date?: string,
-	release_dates: { results: ReleaseDate[] },
 }
 
 export type TVSeriesResponse = MovieAndSeriesResponse & {
