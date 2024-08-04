@@ -18,7 +18,7 @@ export type TVSeriesCrewCredit = Credit & {
 	}[],
 };
 
-type TVSeriesData = Omit<TVSeriesResponse, 'genres_id' | 'popularity'> & {
+type TVSeriesData = Omit<TVSeriesResponse, 'genre_ids' | 'popularity'> & {
 	episode_run_time: number[],
 	genres: Genre[],
 	homepage: string,

@@ -8,7 +8,7 @@ export type MovieCrewCredit = Credit & {
 	job: string,
 };
 
-export type MovieDetails = Omit<MovieResponse, 'genres_id' | 'popularity'> & {
+export type MovieDetails = Omit<MovieResponse, 'genre_ids' | 'popularity'> & {
 	genres: Genre[],
 	budget: number,
 	imdb_id: string,
