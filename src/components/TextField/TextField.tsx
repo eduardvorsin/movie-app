@@ -2,7 +2,7 @@ import { ChangeEventHandler, FocusEventHandler, KeyboardEventHandler } from 'rea
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import { GeneralProps } from '@/types/shared';
 
-export type Props = {
+export type Props<C extends boolean> = {
 	isDisabled?: boolean,
 	isInvalid?: boolean,
 	isReadOnly?: boolean,
@@ -25,15 +25,11 @@ export type Props = {
 	onKeyDown?: KeyboardEventHandler<HTMLInputElement>,
 	inputMode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'
 	type?: 'text' | 'email' | 'password' | 'search' | 'tel' | 'url'
-} & ({
-	clearButton: false,
-	dictionary?: never,
-} | {
-	clearButton: true,
-	dictionary: Record<'clearButton', string>,
-}) & GeneralProps;
+	clearButton: C,
+	dictionary: C extends true ? Record<'clearButton', string> : never,
+} & GeneralProps;
 
-export default function TextField({
+export default function TextField<C extends boolean>({
 	className,
 	isDisabled,
 	isInvalid,
@@ -56,11 +52,12 @@ export default function TextField({
 	onClear,
 	onFocus,
 	onBlur,
+	onKeyDown,
 	inputMode,
 	type,
 	dictionary,
 	...props
-}: Props) {
+}: Props<C>) {
 	const labelClasses = [
 		'block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] transition-colors duration-150',
 		labelHidden ? 'sr-only' : ''
@@ -115,11 +112,13 @@ export default function TextField({
 					onChange={onChange}
 					onFocus={onFocus}
 					onBlur={onBlur}
+					onKeyDown={onKeyDown}
 					aria-labelledby={error ? `${id}-error-message` : undefined}
 					aria-invalid={isInvalid}
 				/>
 				{clearButton && (
 					<button
+						type='button'
 						className='text-dark-neutral-0 dark:text-neutral-400 w-5 h-5 absolute top-1/2 right-[0.5rem] -translate-y-1/2 text-0 transition-colors duration-150'
 						onClick={onClear}
 					>
