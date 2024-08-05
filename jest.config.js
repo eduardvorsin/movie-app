@@ -20,8 +20,8 @@ module.exports = {
     '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',
     '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg|svg\\?url)$': '<rootDir>/__mocks__/assetsMock.ts',
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
-    '@/fonts': '<rootDir>/src/styles/fonts.ts',
-    '@/helpers/(.*)$': '<rootDir>/src/helpers/$1',
+    '^@/fonts': '<rootDir>/src/styles/fonts.ts',
+    '^@/helpers/(.*)$': '<rootDir>/src/helpers/$1',
     '^@/i18n/(.*)$': '<rootDir>/src/i18n/$1',
     '^@/context/(.*)$': '<rootDir>/src/context/$1',
     '^@/pages/(.*)$': '<rootDir>/src/app/[lang]/$1',
@@ -35,7 +35,6 @@ module.exports = {
   setupFiles: ['<rootDir>/jest.polyfills.js'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
-  testEnvironment: 'jsdom',
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': ['ts-jest', {
       tsconfig: 'tsconfig.jest.json'
