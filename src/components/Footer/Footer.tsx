@@ -23,17 +23,8 @@ export type Props = {
 		description: string,
 		sectionsTitle: string,
 		basedOnTitle: string,
-		logo: {
-			linkText: string,
-			altText: string,
-		},
-		navigation: {
-			movies: string,
-			persons: string,
-			tv: string,
-			new: string,
-			collections: string,
-		},
+		logo: Record<'altText' | 'linkText', string>,
+		navigation: Record<'movies' | 'persons' | 'tv' | 'new' | 'collections', string>,
 	},
 } & GeneralProps;
 

@@ -13,8 +13,8 @@ export type Props = {
 		button: string,
 		themeTitle: string,
 		languageTitle: string,
-		languageSelect: { label: string },
-		themeToggle: { label: string },
+		languageSelect: Record<'label', string>,
+		themeToggle: Record<'label', string>,
 	},
 } & GeneralProps;
 

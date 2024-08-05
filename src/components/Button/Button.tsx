@@ -3,18 +3,27 @@ import Spinner from '@/components/Spinner/Spinner';
 import Link from 'next/link';
 import { GeneralProps } from '@/types/shared';
 
+type ConditionalProps =
+	{
+		href: string,
+		type?: never,
+		isLoading?: never
+	} | {
+		href?: never,
+		type?: HTMLButtonElement['type'],
+		isLoading?: boolean,
+	};
+
 export type Props = {
 	appearance?: 'primary' | 'secondary' | 'warning' | 'danger' | 'success' | 'discovery' | 'ghost',
 	isDisabled?: boolean,
-	isLoading?: boolean,
 	onBlur?: FocusEventHandler<HTMLElement>,
 	onClick?: MouseEventHandler<HTMLElement>,
 	onFocus?: FocusEventHandler<HTMLElement>,
 	size?: 'micro' | 'slim' | 'medium' | 'large',
 	children: ReactNode,
-	href?: string,
 	iconButton?: boolean,
-} & GeneralProps;
+} & ConditionalProps & GeneralProps;
 
 const appearanceTypes = {
 	primary: 'bg-blue-700 text-neutral-0 dark:text-dark-neutral-0 enabled:hover:bg-blue-800 enabled:active:bg-blue-900 dark:bg-blue-400 dark:enabled:hover:bg-blue-300 dark:enabled:active:bg-blue-200',
@@ -43,7 +52,6 @@ const sizeTypes = {
 	large: 'py-3 px-6',
 } as const;
 
-
 export default function Button({
 	className,
 	appearance = 'primary',
@@ -56,6 +64,7 @@ export default function Button({
 	children,
 	href,
 	iconButton,
+	type,
 	testId,
 	...props
 }: Props) {
@@ -86,7 +95,7 @@ export default function Button({
 			</span>
 		</>);
 
-	if (href) {
+	if (typeof href === 'string') {
 		return (
 			<Link
 				className={classes}
@@ -109,6 +118,7 @@ export default function Button({
 			onBlur={onBlur}
 			onFocus={onFocus}
 			disabled={isDisabled}
+			type={type}
 			data-testid={testId}
 			{...props}
 		>

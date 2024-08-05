@@ -38,6 +38,18 @@ const imgPathByContentType = {
 	genre: imgPath['movieCard_v'],
 }
 
+type ConditionalProps<M extends 'movie' | 'tv'> = (
+	{
+		contentType: 'collection',
+		collectionName: Collections,
+		genreName?: never,
+	} | {
+		contentType: 'genre',
+		collectionName?: never,
+		genreName: 'any' | (M extends 'movie' ? MovieGenres | MovieSubgenres : TVSeriesGenres | TVSeriesSubgenres),
+	}
+);
+
 export type Props<
 	M extends 'movie' | 'tv',
 	I = M extends 'movie' ? MovieResponse : TVSeriesResponse
@@ -56,21 +68,9 @@ export type Props<
 		errorTitle: string,
 		errorText: string,
 		loadMoreButton: string,
-		movieCard: {
-			rating: string,
-		},
+		movieCard: Record<'rating', string>,
 	},
-} & (
-		{
-			contentType: 'collection',
-			collectionName: Collections,
-			genreName?: never,
-		} | {
-			contentType: 'genre',
-			collectionName?: never,
-			genreName: 'any' | (M extends 'movie' ? MovieGenres | MovieSubgenres : TVSeriesGenres | TVSeriesSubgenres),
-		}
-	);
+} & ConditionalProps<M>;
 
 export default function InfiniteMovieFeed<
 	M extends 'movie' | 'tv',

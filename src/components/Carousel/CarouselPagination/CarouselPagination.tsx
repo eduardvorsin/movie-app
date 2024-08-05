@@ -2,10 +2,7 @@
 import { GeneralProps } from '@/types/shared';
 import { MouseEventHandler, useRef } from 'react';
 
-export type Props = {
-	activeIndex: number,
-	totalCount: number,
-} & ({
+type ConditionalProps = {
 	paginationType: 'progress' | 'fraction',
 	onDotClick?: never,
 	dictionary?: never,
@@ -13,7 +10,12 @@ export type Props = {
 	paginationType: 'dots',
 	onDotClick: (index: number) => void,
 	dictionary: Record<'label', string>,
-}) & GeneralProps;
+};
+
+export type Props = {
+	activeIndex: number,
+	totalCount: number,
+} & ConditionalProps & GeneralProps;
 
 export default function CarouselPagination({
 	className,

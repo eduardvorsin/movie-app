@@ -16,9 +16,7 @@ type Props = {
 		errorTitle: string,
 		errorText: string,
 		loadMoreButton: string,
-		personCard: {
-			rating: string,
-		},
+		personCard: Record<'rating', string>,
 	}
 } & GeneralProps;
 

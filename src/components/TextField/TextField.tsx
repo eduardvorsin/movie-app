@@ -2,7 +2,15 @@ import { ChangeEventHandler, FocusEventHandler, KeyboardEventHandler } from 'rea
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import { GeneralProps } from '@/types/shared';
 
-export type Props<C extends boolean> = {
+type ConditionalProps = {
+	clearButton: true,
+	dictionary: Record<'clearButton', string>,
+} | {
+	clearButton: false,
+	dictionary?: never,
+};
+
+export type Props = {
 	isDisabled?: boolean,
 	isInvalid?: boolean,
 	isReadOnly?: boolean,
@@ -25,11 +33,9 @@ export type Props<C extends boolean> = {
 	onKeyDown?: KeyboardEventHandler<HTMLInputElement>,
 	inputMode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'
 	type?: 'text' | 'email' | 'password' | 'search' | 'tel' | 'url'
-	clearButton: C,
-	dictionary: C extends true ? Record<'clearButton', string> : never,
-} & GeneralProps;
+} & ConditionalProps & GeneralProps;
 
-export default function TextField<C extends boolean>({
+export default function TextField({
 	className,
 	isDisabled,
 	isInvalid,
@@ -57,7 +63,7 @@ export default function TextField<C extends boolean>({
 	type,
 	dictionary,
 	...props
-}: Props<C>) {
+}: Props) {
 	const labelClasses = [
 		'block mb-1 text-100 font-regular text-dark-neutral-0 dark:text-neutral-400 cursor-[inherit] transition-colors duration-150',
 		labelHidden ? 'sr-only' : ''

@@ -30,10 +30,7 @@ export type Props = {
 		edited: string,
 		savingText: string,
 		ratingLabel: string,
-		expandableText: {
-			collapseButton: string,
-			expandButton: string,
-		},
+		expandableText: Record<'collapseButton' | 'expandButton', string>,
 	}
 } & GeneralProps;
 

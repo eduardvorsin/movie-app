@@ -18,13 +18,11 @@ export type Props = {
 			button: string,
 			themeTitle: string,
 			languageTitle: string,
-			languageSelect: { label: string },
-			themeToggle: { label: string },
+			languageSelect: Record<'label', string>,
+			themeToggle: Record<'label', string>,
 		},
-		navigationMenuButton: {
-			active: string,
-			inactive: string,
-		},
+		navigationMenuButton: Record<'active' | 'inactive', string>,
+		mainSearch: MainSearchDictionary,
 	}
 } & GeneralProps;
 

@@ -18,9 +18,7 @@ export type Props = {
 	children?: ReactNode,
 	onClick?: MouseEventHandler<HTMLAnchorElement>,
 	loading?: 'eager' | 'lazy',
-	dictionary: {
-		rating: string,
-	},
+	dictionary: Record<'rating', string>,
 } & GeneralProps;
 
 export default function PersonCard({

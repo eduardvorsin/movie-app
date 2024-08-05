@@ -3,6 +3,14 @@ import Button from '../Button/Button';
 import Title from '../Title/Title';
 import { GeneralProps, HeadingElement } from '@/types/shared';
 
+type ConditionalProps = {
+	closeButton: false,
+	dictionary?: never,
+} | {
+	closeButton: true,
+	dictionary: Record<'closeButton', string>,
+};
+
 export type Props = {
 	title?: string,
 	hideIcon?: boolean,
@@ -11,13 +19,7 @@ export type Props = {
 	onClose?: () => void,
 	titleElement?: HeadingElement,
 	actions?: ReactNode[],
-} & ({
-	closeButton: false,
-	dictionary?: never,
-} | {
-	closeButton: true,
-	dictionary: Record<'closeButton', string>,
-}) & GeneralProps;
+} & ConditionalProps & GeneralProps;
 
 const appearances = {
 	success: 'bg-green-100 dark:bg-green-1000',
