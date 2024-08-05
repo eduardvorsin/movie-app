@@ -1,4 +1,4 @@
-import { ChangeEventHandler, FocusEventHandler } from 'react';
+import { ChangeEventHandler, FocusEventHandler, KeyboardEventHandler } from 'react';
 import InlineMessage from '@/components/InlineMessage/InlineMessage';
 import { GeneralProps } from '@/types/shared';
 
@@ -22,6 +22,7 @@ export type Props = {
 	onClear?: () => void,
 	onFocus?: FocusEventHandler<HTMLInputElement>,
 	onBlur?: FocusEventHandler<HTMLInputElement>,
+	onKeyDown?: KeyboardEventHandler<HTMLInputElement>,
 	inputMode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'
 	type?: 'text' | 'email' | 'password' | 'search' | 'tel' | 'url'
 } & ({
