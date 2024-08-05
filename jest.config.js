@@ -2,6 +2,9 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: "jsdom",
+  testEnvironmentOptions: {
+    customExportConditions: [''],
+  },
   coverageProvider: 'v8',
   collectCoverageFrom: [
     '**/*.{js,jsx,ts,tsx}',
@@ -26,8 +29,10 @@ module.exports = {
     '^@/services/(.*)$': '<rootDir>/src/services/$1',
     '^@/test-utils/(.*)$': '<rootDir>/src/test-utils/$1',
     '^@/types/(.*)$': '<rootDir>/src/types/$1',
-    '@/constants': '<rootDir>/src/constants/index.ts',
+    '^@/constants': '<rootDir>/src/constants/index.ts',
+    '^@/msw/(.*)$': '<rootDir>/src/msw/$1',
   },
+  setupFiles: ['<rootDir>/jest.polyfills.js'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   testEnvironment: 'jsdom',

@@ -58,6 +58,9 @@
       "@/constants": [
         "./src/constants/index.ts",
       ],
+      "@/msw/*": [
+        "./src/msw/*",
+      ]
     },
     "types": [
       "node",

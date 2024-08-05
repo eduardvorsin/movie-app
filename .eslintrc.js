@@ -57,7 +57,9 @@ module.exports = {
           '**/jest.config.{ts,js}',
           '**/jest.setup.{ts,js}',
           '**/*.stories.*',
-          '**/.storybook/**/*.*'
+          '**/jest.polyfills.js',
+          '**/.storybook/**/*.*',
+          '**/msw/**/*.{js,jsx,ts,tsx}',
         ],
         optionalDependencies: false
       }
