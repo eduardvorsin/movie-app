@@ -50,8 +50,6 @@ module.exports = {
       'error',
       {
         devDependencies: [
-          'test.{js,jsx,ts,tsx}',
-          'test-*.{js,jsx,ts,tsx}',
           '**/*{.,_}{test,spec}.{js,jsx,ts,tsx}',
           '**/tests/**.{js,jsx,ts,tsx}',
           '**/jest.config.{ts,js}',
