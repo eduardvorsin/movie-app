@@ -4,7 +4,7 @@ module.exports = {
     'es2021': true,
     'jest': true
   },
-	parser: '@typescript-eslint/parser',
+  parser: '@typescript-eslint/parser',
   extends: [
     'plugin:jest/recommended',
     'plugin:import/recommended',
@@ -13,14 +13,14 @@ module.exports = {
     'plugin:testing-library/react',
     'next/core-web-vitals'
   ],
-	parserOptions: {
+  parserOptions: {
     ecmaVersion: 'latest',
     ecmaFeatures: {
       jsx: true
     },
     sourceType: 'module'
   },
-	plugins: [
+  plugins: [
     'jest',
     'import',
     '@typescript-eslint',
@@ -28,11 +28,10 @@ module.exports = {
     'jsx-a11y',
     'testing-library'
   ],
-	ignorePatterns: [
+  ignorePatterns: [
     'node_modules/**'
   ],
-
-	rules: {
+  rules: {
     'linebreak-style': [
       'warn',
       process.platform === 'win32' ? 'windows' : 'unix',
