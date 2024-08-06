@@ -4,8 +4,6 @@ export const fetchMoviesByFilters = async (
 	page: number,
 	options: FilterOptions<'movie'>
 ): Promise<ListsResponse<MovieResponse> | null> => {
-	if (page < 1) throw new Error('The page number cannot be less than 1');
-
 	const url = new URL('discover/movie', 'https://api.themoviedb.org/3/');
 
 	url.searchParams.append('page', page.toString());
