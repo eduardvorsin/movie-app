@@ -1,5 +1,5 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { fetchMoviesByCollection } from '@/services/fetchMovieByCollection/fetchMovieByCollection';
+import { fetchMoviesByCollection } from '@/services/fetchMoviesByCollection/fetchMoviesByCollection';
 import { ListsResponse, MovieResponse } from '@/services/types';
 import { NextRequest, NextResponse } from 'next/server';
 import { Collections } from '@/constants';

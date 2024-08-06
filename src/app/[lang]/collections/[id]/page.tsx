@@ -6,7 +6,7 @@ import Title from '@/components/Title/Title';
 import { fetchImageWithPlaceholder } from '@/helpers/fetchImageWithPlaceholder/fetchImageWithPlaceholder';
 import { fetchTranslation } from '@/i18n/server';
 import { Locales } from '@/i18n/settings';
-import { fetchMoviesByCollection } from '@/services/fetchMovieByCollection/fetchMovieByCollection';
+import { fetchMoviesByCollection } from '@/services/fetchMoviesByCollection/fetchMoviesByCollection';
 import { fetchTVSeriesByCollection } from '@/services/fetchTVSeriesByCollection/fetchTVSeriesByCollection';
 import { PlaceholderData } from '@/types/shared';
 import { Metadata } from 'next';
