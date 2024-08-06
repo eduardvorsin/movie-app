@@ -1,9 +1,7 @@
 import { Locales, fallbackLng } from "@/i18n/settings";
 import { ListsResponse, MovieResponse } from "@/services/types";
 
-type TrendingMovie = MovieResponse & { media_type: string };
-
-export const fetchTrendingMovies = async (lang?: Locales): Promise<ListsResponse<TrendingMovie> | null> => {
+export const fetchTrendingMovies = async (lang?: Locales): Promise<ListsResponse<MovieResponse> | null> => {
 	const currentLang = lang ?? fallbackLng;
 
 	let trendingMovies;
@@ -28,6 +26,6 @@ export const fetchTrendingMovies = async (lang?: Locales): Promise<ListsResponse
 		}
 	}
 
-	return trendingMovies as ListsResponse<TrendingMovie>;
+	return trendingMovies as ListsResponse<MovieResponse>;
 }
 
