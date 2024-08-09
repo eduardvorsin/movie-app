@@ -89,7 +89,10 @@ export default function InfinitePersonFeed({
 							rating={popularity}
 							dictionary={dictionary.personCard}
 						>
-							{known_for.map(credit => credit.title).filter(Boolean).join(', ')}
+							{known_for.map(({ media_type, name, title }) => {
+								const contentName = media_type === 'movie' ? title : name;
+								return contentName;
+							}).filter(Boolean).join(', ')}
 						</PersonCard>
 					))}
 				</div>
