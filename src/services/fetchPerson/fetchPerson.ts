@@ -1,7 +1,6 @@
 import { Department } from '@/types/shared';
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { CreditsResponse, ExternalIDS, PersonCredit } from '../types';
-
+import { CombinedCredits, ExternalIDS } from '../types';
 
 export type PersonDetails = {
 	adult: boolean,
@@ -19,7 +18,7 @@ export type PersonDetails = {
 	popularity: number,
 	profile_path: string | null,
 	external_ids: ExternalIDS
-	combined_credits: CreditsResponse<PersonCredit, PersonCredit & { department: Department }>,
+	combined_credits: CombinedCredits,
 };
 
 export const fetchPerson = async (id: string, options?: { lang: Locales }): Promise<PersonDetails | null> => {

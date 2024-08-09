@@ -1,13 +1,8 @@
-import { CreditsResponse, PersonCredit } from '@/services/types';
+import { CombinedCredits, PersonCredit } from '@/services/types';
 import { Department } from '@/types/shared';
 
 type Filmography = Record<Lowercase<Department>, PersonCredit[]>;
-export const createFilmographyData = (
-	credits: CreditsResponse<
-		PersonCredit,
-		PersonCredit & { department: Department }
-	>
-): Filmography => {
+export const createFilmographyData = (credits: CombinedCredits): Filmography => {
 	const filmography = {} as Filmography;
 	filmography.actors = [...credits.cast];
 

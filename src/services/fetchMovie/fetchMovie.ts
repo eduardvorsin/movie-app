@@ -1,9 +1,9 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { CreditsResponse, ListsResponse, MovieResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry, Review, Credit, ReleaseDate } from '@/services/types';
+import { CreditsResponse, ListsResponse, MovieResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry, Review, CastAndCrewCredit, ReleaseDate } from '@/services/types';
 import { Department } from '@/types/shared';
 
-export type MovieActorCredit = Credit & { character: string };
-export type MovieCrewCredit = Credit & {
+type MovieCastCredit = CastAndCrewCredit & { character: string };
+type MovieCrewCredit = CastAndCrewCredit & {
 	department: Department,
 	job: string,
 };
@@ -20,7 +20,7 @@ export type MovieDetails = Omit<MovieResponse, 'genre_ids' | 'popularity'> & {
 	status: string,
 	tagline: string,
 	external_ids: ExternalIDS,
-	credits: CreditsResponse<MovieActorCredit, MovieCrewCredit>,
+	credits: CreditsResponse<MovieCastCredit, MovieCrewCredit>,
 	similar: ListsResponse<MovieResponse>,
 	recommendations: ListsResponse<MovieResponse>,
 	reviews: ListsResponse<Review>,

@@ -1,15 +1,15 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { CreditsResponse, ListsResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry, Review, TVSeriesResponse, Credit, TVSeriesEpisode } from '@/services/types';
+import { CreditsResponse, ListsResponse, ExternalIDS, Genre, ProductionCompany, ProductionCountry, Review, TVSeriesResponse, CastAndCrewCredit, TVSeriesEpisode } from '@/services/types';
 import { Department } from '@/types/shared';
 
-export type TVSeriesActorCredit = Credit & {
+export type TVSeriesCastCredit = CastAndCrewCredit & {
 	roles: {
 		credit_id: string,
 		character: string,
 		episode_count: number,
 	}[],
 };
-export type TVSeriesCrewCredit = Credit & {
+export type TVSeriesCrewCredit = CastAndCrewCredit & {
 	department: Department,
 	jobs: {
 		credit_id: string,
@@ -48,7 +48,7 @@ type TVSeriesData = Omit<TVSeriesResponse, 'genre_ids' | 'popularity'> & {
 
 type TVSeriesAdditionalData = {
 	external_ids: ExternalIDS,
-	aggregate_credits: CreditsResponse<TVSeriesActorCredit, TVSeriesCrewCredit>,
+	aggregate_credits: CreditsResponse<TVSeriesCastCredit, TVSeriesCrewCredit>,
 	similar: ListsResponse<TVSeriesResponse>,
 	recommendations: ListsResponse<TVSeriesResponse>,
 	reviews: ListsResponse<Review>,

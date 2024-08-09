@@ -111,14 +111,6 @@ export type Review = {
 	url: string,
 };
 
-export type Credit = {
-	id: number,
-	known_for_department: Department,
-	name: string,
-	profile_path: string | null,
-	popularity: number,
-}
-
 export type PersonCredit = {
 	adult: boolean,
 	poster_path: string | null,
@@ -131,7 +123,6 @@ export type PersonCredit = {
 	vote_average: number,
 	vote_count: number,
 	character?: string,
-	department: Department,
 	job?: string,
 } & ({
 	media_type: Extract<MediaTypes, 'movie'>,
@@ -143,6 +134,50 @@ export type PersonCredit = {
 	name: string,
 });
 
+type CreditCommon = {
+	adult: boolean,
+	id: number,
+	popularity: number,
+};
+
+type CombinedCredit = CreditCommon & {
+	genre_ids: number[],
+	poster_path: string | null,
+	vote_average: number,
+	vote_count: number,
+} & ({
+	media_type: Extract<MediaTypes, 'movie'>
+	title: string,
+	release_date: string,
+	original_title: string,
+	name?: never,
+	original_name?: never,
+	episode_count?: never,
+	first_air_date?: never,
+} | {
+	media_type: Extract<MediaTypes, 'tv'>,
+	episode_count: number,
+	name: string,
+	first_air_date: string,
+	original_name: string,
+	release_date?: never,
+	title?: never,
+	original_title?: never,
+});
+
+export type CastAndCrewCredit = CreditCommon & {
+	gender: number,
+	known_for_department: Department,
+	name: string,
+	original_name: string,
+	profile_path: string | null,
+}
+
+export type CombinedCredits = CreditsResponse<
+	CombinedCredit & { character: string },
+	CombinedCredit & { department: Department, job: string }
+>;
+
 export type PopularPerson = {
 	adult: boolean,
 	gender: number,
@@ -151,7 +186,7 @@ export type PopularPerson = {
 	name: string,
 	popularity: number,
 	profile_path: string | null,
-	known_for: PersonCredit[],
+	known_for: CombinedCredit[],
 }
 
 export type TVSeriesEpisode = {

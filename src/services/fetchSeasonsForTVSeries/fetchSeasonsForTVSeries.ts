@@ -1,6 +1,17 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { Department } from '@/types/shared';
-import { TVSeriesEpisode } from '../types';
+import { CastAndCrewCredit, TVSeriesEpisode } from '../types';
+
+type Episodes = TVSeriesEpisode & {
+	episode_type: string,
+	crew: CastAndCrewCredit & {
+		department: Department,
+		job: string,
+	}[],
+	guest_stars: CastAndCrewCredit & {
+		character: string,
+	}[],
+};
 
 export type TVSeriesSeasonDetails = {
 	_id: string,
@@ -11,35 +22,7 @@ export type TVSeriesSeasonDetails = {
 	poster_path: string | null,
 	season_number: number,
 	vote_average: number,
-	episodes: (TVSeriesEpisode & {
-		episode_type: string,
-		crew: {
-			job: string,
-			department: Department,
-			credit_id: string,
-			adult: false,
-			gender: number,
-			id: number,
-			known_for_department: Department,
-			name: string,
-			original_name: string,
-			popularity: number,
-			profile_path: string | null,
-		}[],
-		guest_stars: {
-			character: string,
-			credit_id: string,
-			order: number,
-			adult: boolean,
-			gender: number,
-			id: number,
-			known_for_department: string,
-			name: string,
-			original_name: string,
-			popularity: number,
-			profile_path: string | null,
-		}[],
-	})[],
+	episodes: Episodes[],
 };
 
 export const fetchSeasonsForTVSeries = async ({ id, seasonNumber, lang }: {
