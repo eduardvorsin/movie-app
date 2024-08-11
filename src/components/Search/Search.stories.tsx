@@ -45,6 +45,14 @@ const meta: Meta<typeof Search> = {
 			description: 'The callback is executed when the input loses focus',
 			control: false,
 		},
+		onKeyDown: {
+			description: 'The callback is performed when any button is pressed',
+			control: false,
+		},
+		onClear: {
+			description: 'The callback is executed when you click on the "Clear" button',
+			control: false,
+		},
 		onSubmit: {
 			description: 'The callback is executed when the search form is submitted',
 			control: false,
@@ -78,7 +86,16 @@ type Story = StoryObj<typeof Search>;
 const SearchWithHooks = (props: Omit<Props, 'onChange' | 'value' | 'dictionary'>) => {
 	const [value, setValue] = useState<string>('');
 	const { t } = useTranslation('common');
-	const dictionary = { button: t('search.button') };
+
+	const fullDictionary = {
+		button: t('search.button'),
+		clearButton: t('search.clearButton'),
+	} as const;
+
+	const partialDictionary = {
+		button: fullDictionary['button'],
+	} as const;
+
 
 	const changeHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
 		setValue(e.currentTarget.value);
@@ -90,16 +107,36 @@ const SearchWithHooks = (props: Omit<Props, 'onChange' | 'value' | 'dictionary'>
 		if (props.onSubmit) props.onSubmit(e);
 	}
 
-	return (
-		<Search
-			{...props}
-			dictionary={dictionary}
-			className={`max-w-[13rem] ${props.className}`}
-			value={value}
-			onChange={changeHandler}
-			onSubmit={submitHandler}
-		/>
-	)
+	const classes = [
+		'max-w-[13rem]',
+		props.className
+	].join(' ');
+
+	if (props.clearButton) {
+		return (
+			<Search
+				{...props}
+				clearButton={true}
+				dictionary={fullDictionary}
+				className={classes}
+				value={value}
+				onChange={changeHandler}
+				onSubmit={submitHandler}
+			/>
+		);
+	} else {
+		return (
+			<Search
+				{...props}
+				clearButton={false}
+				dictionary={partialDictionary}
+				className={classes}
+				value={value}
+				onChange={changeHandler}
+				onSubmit={submitHandler}
+			/>
+		);
+	}
 };
 
 export const Default: Story = {
@@ -180,6 +217,9 @@ export const EventCallbacks: Story = {
 		onSubmit: {
 			action: 'Submitted',
 		},
+		onKeyDown: {
+			action: 'Key Pressed',
+		},
 	},
 	args: {
 		name: 'event callbacks',
@@ -190,7 +230,7 @@ export const EventCallbacks: Story = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'The callback function can be provided to the onFocus, onBlur onSubmit event',
+				story: 'The callback function can be provided to the onFocus, onBlur onSubmit, onKeyDown event',
 			},
 		},
 	},
@@ -231,6 +271,28 @@ export const Error: Story = {
 	render: (args) => (<SearchWithHooks {...args} />)
 };
 
+export const ClearButton: Story = {
+	args: {
+		label: 'ClearButton',
+		name: 'ClearButton',
+		id: 'ClearButton',
+		clearButton: true,
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'Allows you to clear the text inside the field when you click on the "Clear" button',
+			},
+		},
+	},
+	render: (args) => (
+		<SearchWithHooks
+			onClear={() => action('Cleared')()}
+			{...args}
+		/>
+	)
+};
+
 type Variant = {
 	label: Props['label']
 	isDisabled?: boolean,
@@ -239,6 +301,7 @@ type Variant = {
 	labelHidden?: boolean,
 	error?: Props['error'],
 	placeholder?: Props['placeholder'],
+	clearButton?: boolean,
 }
 
 const variants: Variant[] = [
@@ -266,6 +329,10 @@ const variants: Variant[] = [
 		label: 'placeholder',
 		placeholder: 'placeholder',
 	},
+	{
+		label: 'clearButton',
+		clearButton: true,
+	},
 ]
 
 export const All: Story = {
@@ -289,6 +356,7 @@ export const All: Story = {
 					isInvalid={variant.isInvalid}
 					isReadOnly={variant.isReadOnly}
 					labelHidden={variant.labelHidden}
+					clearButton={Boolean(variant.clearButton)}
 					error={variant.error}
 					onSubmit={() => { }}
 					placeholder={variant.placeholder}

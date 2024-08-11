@@ -17,6 +17,7 @@ describe('Search tests', () => {
 				value=''
 				testId='test-search'
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>
@@ -38,6 +39,7 @@ describe('Search tests', () => {
 				value=''
 				testId='test-search'
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>
@@ -61,6 +63,7 @@ describe('Search tests', () => {
 				value=''
 				testId='test-search'
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>
@@ -85,6 +88,7 @@ describe('Search tests', () => {
 				value=''
 				testId='test-search'
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				onFocus={focusMockFn}
 				dictionary={dictionary}
@@ -110,6 +114,7 @@ describe('Search tests', () => {
 				value=''
 				testId='test-search'
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				onFocus={blurMockFn}
 				dictionary={dictionary}
@@ -136,6 +141,7 @@ describe('Search tests', () => {
 				isDisabled
 				testId='test-search'
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>
@@ -163,6 +169,7 @@ describe('Search tests', () => {
 				isReadOnly
 				testId='test-search'
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				onFocus={focusMockFn}
 				dictionary={dictionary}
@@ -189,6 +196,7 @@ describe('Search tests', () => {
 				testId='test-search'
 				isInvalid
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>
@@ -210,6 +218,7 @@ describe('Search tests', () => {
 				testId='test-search'
 				labelHidden
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>
@@ -231,12 +240,40 @@ describe('Search tests', () => {
 				testId='test-search'
 				error='mock error'
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>
 		);
 
 		expect(screen.getByText<HTMLParagraphElement>('mock error')).toBeInTheDocument();
+	});
+
+	it('when you click on the "Clear" button, the mock function should be called', async () => {
+		const dictionary = { button: 'To find', clearButton: 'To clear' };
+		const user = userEvent.setup();
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn((e) => e.preventDefault());
+		const clearMockFn = jest.fn();
+
+		render(
+			<Search
+				name='test-search'
+				id='test-search'
+				label='test-search'
+				value=''
+				testId='test-search'
+				onChange={changeMockFn}
+				onClear={clearMockFn}
+				clearButton={true}
+				onSubmit={submitMockFn}
+				dictionary={dictionary}
+			/>
+		);
+
+		await user.click(screen.getByRole<HTMLButtonElement>('button', { name: /to clear/i }));
+
+		expect(clearMockFn).toHaveBeenCalledTimes(1);
 	});
 
 	it('is a basic snapshot', () => {
@@ -251,6 +288,7 @@ describe('Search tests', () => {
 				value=''
 				testId='test-search'
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>
@@ -272,6 +310,7 @@ describe('Search tests', () => {
 				testId='test-search'
 				labelHidden
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>
@@ -294,6 +333,7 @@ describe('Search tests', () => {
 				labelHidden
 				isDisabled
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>
@@ -316,6 +356,7 @@ describe('Search tests', () => {
 				labelHidden
 				isInvalid
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>
@@ -338,6 +379,28 @@ describe('Search tests', () => {
 				labelHidden
 				isReadOnly
 				onChange={changeMockFn}
+				clearButton={false}
+				onSubmit={submitMockFn}
+				dictionary={dictionary}
+			/>
+		);
+
+		expect(screen.getByTestId<HTMLDivElement>('test-search')).toMatchSnapshot();
+	});
+
+	it('is a snapshot with clearButton equal to true', () => {
+		const dictionary = { button: 'To find', clearButton: 'To clear' };
+		const changeMockFn = jest.fn();
+		const submitMockFn = jest.fn((e) => e.preventDefault());
+		render(
+			<Search
+				name='test-search'
+				id='test-search'
+				label='test-search'
+				value=''
+				testId='test-search'
+				onChange={changeMockFn}
+				clearButton={true}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>
@@ -365,6 +428,7 @@ describe('Search integration tests', () => {
 				labelHidden
 				isReadOnly
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>,
@@ -391,6 +455,7 @@ describe('Search integration tests', () => {
 				labelHidden
 				isReadOnly
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>,
@@ -416,6 +481,7 @@ describe('Search integration tests', () => {
 				labelHidden
 				isReadOnly
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>,
@@ -441,6 +507,7 @@ describe('Search integration tests', () => {
 				labelHidden
 				isReadOnly
 				onChange={changeMockFn}
+				clearButton={false}
 				onSubmit={submitMockFn}
 				dictionary={dictionary}
 			/>,
