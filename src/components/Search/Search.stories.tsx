@@ -27,6 +27,9 @@ const meta: Meta<typeof Search> = {
 		isReadOnly: {
 			description: 'Makes the input read-only',
 		},
+		clearButton: {
+			description: 'Allows you to hide or show the clear field button',
+		},
 		name: {
 			description: 'Name for the input',
 		},
