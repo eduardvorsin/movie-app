@@ -258,13 +258,15 @@
 		}
 	},
 	"search": {
-		"button": "Найти"
+		"button": "Найти",
+		"clearButton": "$t(textField.clearButton)"
 	},
 	"autocompleteSearch": {
-		"title": "Мы ничего не смогли найти по значению '{{value}}'",
-		"text": "Попробуйте другое понятие или название.",
+		"emptyStateTitle": "Мы ничего не смогли найти по вашему запросу.",
+		"emptyStateText": "Попробуйте ввести другое значение.",
 		"search": {
-			"button": "$t(search.button)"
+			"button": "$t(search.button)",
+			"clearButton": "$t(search.clearButton)"
 		}
 	},
 	"banner": {

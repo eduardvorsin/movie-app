@@ -258,13 +258,15 @@
 		}
 	},
 	"search": {
-		"button": "To find"
+		"button": "To find",
+		"clearButton": "$t(textField.clearButton)"
 	},
 	"autocompleteSearch": {
-		"title": "We can't find anything for '{{value}}'",
-		"text": "Try a different term or name.",
+		"emptyStateTitle": "We can't find anything for your request.",
+		"emptyStateText": "Try entering a different value",
 		"search": {
-			"button": "$t(search.button)"
+			"button": "$t(search.button)",
+			"clearButton": "$t(search.clearButton)"
 		}
 	},
 	"banner": {

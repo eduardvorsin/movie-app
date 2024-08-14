@@ -23,10 +23,11 @@ describe('AutocompleteSearch tests', () => {
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
 		const dictionary = {
-			title: 'We can\'t find anything for \'value\'',
-			text: 'Try a different term or name.',
+			emptyStateTitle: 'We can\'t find anything for your request.',
+			emptyStateText: 'Try entering a different value',
 			search: {
 				button: 'To find',
+				clearButton: 'To clear',
 			},
 		};
 		render(
@@ -54,10 +55,11 @@ describe('AutocompleteSearch tests', () => {
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
 		const dictionary = {
-			title: 'We can\'t find anything for \'value\'',
-			text: 'Try a different term or name.',
+			emptyStateTitle: 'We can\'t find anything for your request.',
+			emptyStateText: 'Try entering a different value',
 			search: {
 				button: 'To find',
+				clearButton: 'To clear',
 			},
 		};
 		render(
@@ -76,20 +78,21 @@ describe('AutocompleteSearch tests', () => {
 			/>
 		);
 
-		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+		await user.type(screen.getByRole<HTMLInputElement>('textbox'), ' ');
 
 		expect(screen.getByTestId<HTMLSpanElement>('test-spinner')).toBeInTheDocument();
 	});
 
-	it('if the initial Options and options are empty, a message should show that the data for the query was not found.', async () => {
+	it('If nothing is found at the user\'s request, then the corresponding message should be displayed', async () => {
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
 		const dictionary = {
-			title: 'We can\'t find anything for \'value\'',
-			text: 'Try a different term or name.',
+			emptyStateTitle: 'We can\'t find anything for your request.',
+			emptyStateText: 'Try entering a different value',
 			search: {
 				button: 'To find',
+				clearButton: 'To clear',
 			},
 		};
 		render(
@@ -107,10 +110,10 @@ describe('AutocompleteSearch tests', () => {
 			/>
 		);
 
-		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+		await user.type(screen.getByRole<HTMLInputElement>('textbox'), ' ');
 
-		expect(screen.getByText<HTMLParagraphElement>(dictionary.text)).toBeInTheDocument();
-		expect(screen.getByRole<HTMLHeadingElement>('heading', { name: dictionary.title })).toBeInTheDocument();
+		expect(screen.getByText<HTMLParagraphElement>(dictionary.emptyStateText)).toBeInTheDocument();
+		expect(screen.getByRole<HTMLHeadingElement>('heading', { name: dictionary.emptyStateTitle })).toBeInTheDocument();
 	});
 
 	it('is a basic snapshot', async () => {
@@ -118,10 +121,11 @@ describe('AutocompleteSearch tests', () => {
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
 		const dictionary = {
-			title: 'We can\'t find anything for \'value\'',
-			text: 'Try a different term or name.',
+			emptyStateTitle: 'We can\'t find anything for your request.',
+			emptyStateText: 'Try entering a different value',
 			search: {
 				button: 'To find',
+				clearButton: 'To clear',
 			},
 		};
 		render(
@@ -149,10 +153,11 @@ describe('AutocompleteSearch tests', () => {
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
 		const dictionary = {
-			title: 'We can\'t find anything for \'value\'',
-			text: 'Try a different term or name.',
+			emptyStateTitle: 'We can\'t find anything for your request.',
+			emptyStateText: 'Try entering a different value',
 			search: {
 				button: 'To find',
+				clearButton: 'To clear',
 			},
 		};
 		render(
@@ -181,10 +186,11 @@ describe('AutocompleteSearch tests', () => {
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
 		const dictionary = {
-			title: 'We can\'t find anything for \'value\'',
-			text: 'Try a different term or name.',
+			emptyStateTitle: 'We can\'t find anything for your request.',
+			emptyStateText: 'Try entering a different value',
 			search: {
 				button: 'To find',
+				clearButton: 'To clear',
 			},
 		};
 		render(
@@ -214,13 +220,14 @@ describe('AutocompleteSearch integration tests', () => {
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
-		const translation = new RegExp(i18next.t('autocompleteSearch.text'));
+		const translation = new RegExp(i18next.t('autocompleteSearch.emptyStateText'));
 
 		const dictionary = {
-			title: i18next.t('autocompleteSearch.title', { value: 'value' }),
-			text: i18next.t('autocompleteSearch.text'),
+			emptyStateTitle: 'We can\'t find anything for your request.',
+			emptyStateText: 'Try entering a different value',
 			search: {
-				button: i18next.t('autocompleteSearch.search.button'),
+				button: 'To find',
+				clearButton: 'To clear',
 			},
 		};
 		render(
@@ -239,7 +246,7 @@ describe('AutocompleteSearch integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+		await user.type(screen.getByRole<HTMLInputElement>('textbox'), ' ');
 
 		expect(screen.getByText<HTMLParagraphElement>(translation)).toBeInTheDocument();
 	});
@@ -249,13 +256,14 @@ describe('AutocompleteSearch integration tests', () => {
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
-		const translation = new RegExp(i18next.t('autocompleteSearch.text'));
+		const translation = new RegExp(i18next.t('autocompleteSearch.emptyStateText'));
 
 		const dictionary = {
-			title: i18next.t('autocompleteSearch.title', { value: 'value' }),
-			text: i18next.t('autocompleteSearch.text'),
+			emptyStateTitle: 'Мы ничего не смогли найти по вашему запросу.',
+			emptyStateText: 'Попробуйте ввести другое значение.',
 			search: {
-				button: i18next.t('autocompleteSearch.search.button'),
+				button: 'Найти',
+				clearButton: 'Очистить',
 			},
 		};
 		render(
@@ -274,7 +282,7 @@ describe('AutocompleteSearch integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+		await user.type(screen.getByRole<HTMLInputElement>('textbox'), ' ');
 
 		expect(screen.getByText<HTMLParagraphElement>(translation)).toBeInTheDocument();
 	});
@@ -286,10 +294,11 @@ describe('AutocompleteSearch integration tests', () => {
 		const submitMockFn = jest.fn();
 
 		const dictionary = {
-			title: i18next.t('autocompleteSearch.title', { value: 'value' }),
-			text: i18next.t('autocompleteSearch.text'),
+			emptyStateTitle: 'We can\'t find anything for your request.',
+			emptyStateText: 'Try entering a different value',
 			search: {
-				button: i18next.t('autocompleteSearch.search.button'),
+				button: 'To find',
+				clearButton: 'To clear',
 			},
 		};
 		render(
@@ -308,7 +317,7 @@ describe('AutocompleteSearch integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+		await user.type(screen.getByRole<HTMLInputElement>('textbox'), ' ');
 
 		expect(screen.getByTestId<HTMLDivElement>('test-autocomplete-search')).toMatchSnapshot();
 	});
@@ -320,10 +329,11 @@ describe('AutocompleteSearch integration tests', () => {
 		const submitMockFn = jest.fn();
 
 		const dictionary = {
-			title: i18next.t('autocompleteSearch.title', { value: 'value' }),
-			text: i18next.t('autocompleteSearch.text'),
+			emptyStateTitle: 'Мы ничего не смогли найти по вашему запросу.',
+			emptyStateText: 'Попробуйте ввести другое значение.',
 			search: {
-				button: i18next.t('autocompleteSearch.search.button'),
+				button: 'Найти',
+				clearButton: 'Очистить',
 			},
 		};
 		render(
@@ -342,7 +352,7 @@ describe('AutocompleteSearch integration tests', () => {
 			{ wrapper: I18nextWrapper }
 		);
 
-		await user.click(screen.getByRole<HTMLInputElement>('textbox'));
+		await user.type(screen.getByRole<HTMLInputElement>('textbox'), ' ');
 
 		expect(screen.getByTestId<HTMLDivElement>('test-autocomplete-search')).toMatchSnapshot();
 	});

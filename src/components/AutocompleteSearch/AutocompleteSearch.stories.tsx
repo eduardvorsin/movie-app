@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import AutocompleteSearch, { Props } from './AutocompleteSearch';
 import { useTranslation } from 'react-i18next';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { action } from '@storybook/addon-actions';
 
 const meta: Meta<typeof AutocompleteSearch> = {
 	title: 'UI/AutocompleteSearch',
@@ -57,6 +59,14 @@ const meta: Meta<typeof AutocompleteSearch> = {
 			description: 'The callback is executed when the search form is submitted',
 			control: false,
 		},
+		onClear: {
+			description: 'The callback is executed when you click on the "Clear" button',
+			control: false,
+		},
+		onOptionLinkClick: {
+			description: 'This callback is called when you click on the link inside the option',
+			control: false,
+		},
 		value: {
 			description: 'Input value',
 		},
@@ -91,10 +101,11 @@ const AutocompleteSearchWithHooks = (props: Omit<Props, 'dictionary'>) => {
 
 	const { t } = useTranslation('common');
 	const dictionary = {
-		title: t('autocompleteSearch.title', { value: props.value }),
-		text: t('autocompleteSearch.text'),
+		emptyStateTitle: t('autocompleteSearch.emptyStateTitle', { value: props.value }),
+		emptyStateText: t('autocompleteSearch.emptyStateText'),
 		search: {
 			button: t('search.button'),
+			clearButton: t('search.clearButton'),
 		},
 	};
 
@@ -189,6 +200,60 @@ export const InitialOptions: Story = {
 		docs: {
 			description: {
 				story: 'The state when the options are displayed by default before the search was initiated',
+			},
+		},
+	},
+	render: (args) => (<AutocompleteSearchWithHooks {...args} />),
+};
+
+export const EventCallbacks: Story = {
+	args: {
+		initialOptions: [{
+			href: '/',
+			label: 'first option',
+		}, {
+			href: '/',
+			label: 'second option',
+		}],
+		value: '',
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'The callback function can be provided to the onClear, onOptionLinkClick event',
+			},
+		},
+	},
+	render: (args) => (
+		<AutocompleteSearchWithHooks
+			{...args}
+			onOptionLinkClick={() => action('Option link clicked')()}
+			onClear={() => action('Cleared')()}
+		/>
+	)
+};
+
+export const WithIcons: Story = {
+	args: {
+		initialOptions: [{
+			href: '/',
+			label: 'first option',
+			iconType: 'tv',
+		}, {
+			href: '/',
+			label: 'second option',
+			iconType: 'movie',
+		}, {
+			href: '/',
+			label: 'third option',
+			iconType: 'person',
+		}],
+		value: '',
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'If you pass the iconType property to the options or intialOptions object, icons will be displayed inside the option',
 			},
 		},
 	},
