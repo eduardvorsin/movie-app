@@ -34,13 +34,8 @@ export default function Header({
 }: Props) {
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-	const menuOpenHandler = (): void => {
-		setIsMenuOpen((prevState) => !prevState);
-	};
-
-	const closeMenu = (): void => {
-		setIsMenuOpen(false);
-	}
+	const menuOpenHandler = (): void => setIsMenuOpen((prevState) => !prevState);
+	const closeMenu = (): void => setIsMenuOpen(false);
 
 	useLayoutEffect(() => {
 		if (isMenuOpen) {
@@ -69,7 +64,8 @@ export default function Header({
 				/>
 
 				<Navigation
-					className={`transition-transform duration-300 md:translate-x-0 ${isMenuOpen ? '' : '-translate-x-full'}`}
+					className='md:mr-10'
+					isMenuOpen={isMenuOpen}
 					dictionary={dictionary.navigation}
 					onClick={closeMenu}
 				/>

@@ -24,6 +24,7 @@ describe('Navigation tests', () => {
 		render(
 			<Navigation
 				onClick={mockFn}
+				isMenuOpen
 				dictionary={dictionary}
 				testId='test-navigation'
 			/>
@@ -49,6 +50,7 @@ describe('Navigation tests', () => {
 		};
 		render(
 			<Navigation
+				isMenuOpen
 				onClick={clickHandler}
 				dictionary={dictionary}
 				testId='test-navigation'
@@ -72,6 +74,7 @@ describe('Navigation tests', () => {
 		};
 		render(
 			<Navigation
+				isMenuOpen
 				onClick={mockFn}
 				dictionary={dictionary}
 				testId='test-navigation'
@@ -98,6 +101,7 @@ describe('Navigation integration tests', () => {
 		};
 		render(
 			<Navigation
+				isMenuOpen
 				onClick={mockFn}
 				dictionary={dictionary}
 				testId='test-navigation'
@@ -123,6 +127,7 @@ describe('Navigation integration tests', () => {
 		};
 		render(
 			<Navigation
+				isMenuOpen
 				onClick={mockFn}
 				dictionary={dictionary}
 				testId='test-navigation'
@@ -147,6 +152,7 @@ describe('Navigation integration tests', () => {
 		};
 		render(
 			<Navigation
+				isMenuOpen
 				onClick={mockFn}
 				dictionary={dictionary}
 				testId='test-navigation'
@@ -171,6 +177,7 @@ describe('Navigation integration tests', () => {
 		};
 		render(
 			<Navigation
+				isMenuOpen
 				onClick={mockFn}
 				dictionary={dictionary}
 				testId='test-navigation'

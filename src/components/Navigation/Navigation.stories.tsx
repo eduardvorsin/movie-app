@@ -9,6 +9,10 @@ const meta: Meta<typeof Navigation> = {
 		className: {
 			description: 'Additional classes for the component'
 		},
+		isMenuOpen: {
+			control: false,
+			description: 'Allows you to show/hide the menu',
+		},
 		testId: {
 			description: 'Id for testing the component',
 		},
@@ -30,7 +34,7 @@ const meta: Meta<typeof Navigation> = {
 export default meta;
 type Story = StoryObj<typeof Navigation>;
 
-const NavigationWithHooks = (props: Omit<Props, 'dictionary'>) => {
+const NavigationWithHooks = (props: Omit<Props, 'dictionary' | 'isMenuOpen'>) => {
 	const { t } = useTranslation('common');
 	const dictionary = {
 		movies: t('navigation.movies'),
@@ -43,6 +47,7 @@ const NavigationWithHooks = (props: Omit<Props, 'dictionary'>) => {
 	return (
 		<Navigation
 			{...props}
+			isMenuOpen
 			dictionary={dictionary}
 		/>);
 }

@@ -9,21 +9,29 @@ import { GeneralProps } from '@/types/shared';
 export type Props = {
 	onClick: MouseEventHandler<HTMLAnchorElement>,
 	dictionary: Record<'movies' | 'persons' | 'tv' | 'new' | 'collections', string>,
+	isMenuOpen: boolean,
 } & GeneralProps;
 
 export default function Navigation({
 	className,
 	testId,
 	onClick,
+	isMenuOpen,
 	dictionary,
 	...props
 }: Props) {
 	const routes = Object.keys(navigationRoutes);
 	const activeSegment = useSelectedLayoutSegments().find((segment) => routes.includes(segment));
 
+	const classes = [
+		'fixed inset-0 bg-neutral-100/90 dark:bg-dark-neutral-100/90 z-0 md:static md:inset-auto md:bg-transparent dark:md:bg-transparent mt-[3.75rem] md:mt-0 md:translate-x-0 transition-colors transition-transform duration-300',
+		isMenuOpen ? '' : '-translate-x-full',
+		className
+	].join(' ');
+
 	return (
 		<div
-			className={`fixed inset-0 bg-neutral-100/90 dark:bg-dark-neutral-100/90 z-0 md:static md:inset-auto md:bg-transparent dark:md:bg-transparent mt-[3.75rem] md:mt-0 transition-colors duration-150 ${className}`}
+			className={classes}
 			data-testid={testId}
 			{...props}
 		>
