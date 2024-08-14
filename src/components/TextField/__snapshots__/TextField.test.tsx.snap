@@ -94,6 +94,7 @@ exports[`TextField tests is a snapshot with clear button 1`] = `
     />
     <button
       class="text-dark-neutral-0 dark:text-neutral-400 w-5 h-5 absolute top-1/2 right-[0.5rem] -translate-y-1/2 text-0 transition-colors duration-150"
+      type="button"
     >
       To clear
       <svg

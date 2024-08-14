@@ -54,6 +54,7 @@ describe('TextField tests', () => {
 				testId='test-field'
 				isRequired
 				clearButton={false}
+				dictionary={undefined}
 			/>
 		);
 
