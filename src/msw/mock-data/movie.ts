@@ -53,19 +53,25 @@ export const movieDetailsData: MovieDetails = {
 		cast: [
 			{
 				id: 10859,
+				adult: true,
+				gender: 2,
 				known_for_department: 'Acting',
 				name: 'Райан Рейнольдс',
 				popularity: 135.301,
 				profile_path: '/2Orm6l3z3zukF1q0AgIOUqvwLeB.jpg',
 				character: 'Wade Wilson / Deadpool / Nicepool',
+				original_name: 'Ryan Reynolds'
 			},
 			{
 				id: 6968,
 				known_for_department: 'Acting',
 				name: 'Хью Джекман',
+				adult: true,
+				gender: 2,
 				popularity: 108.131,
 				profile_path: '/oX6CpXmnXCHLyqsa4NEed1DZAKx.jpg',
 				character: 'Logan / Wolverine',
+				original_name: 'Hugh Jackman',
 			},
 		],
 		crew: [
@@ -73,19 +79,25 @@ export const movieDetailsData: MovieDetails = {
 				id: 17825,
 				known_for_department: 'Directing',
 				name: 'Shawn Levy',
+				adult: true,
+				gender: 2,
 				popularity: 42.002,
 				profile_path: '/j1CXZgmfvFeD7S3PYtsEk8H3ebB.jpg',
 				department: 'Writing',
-				job: 'Writer'
+				job: 'Writer',
+				original_name: 'Shawn Levy',
 			},
 			{
 				id: 1017789,
 				known_for_department: 'Camera',
 				name: 'George Richmond',
+				adult: true,
+				gender: 2,
 				popularity: 4.804,
 				profile_path: '/xxDOdxyiwf89xE5OULLoERKW6oG.jpg',
 				department: 'Camera',
-				job: 'Director of Photography'
+				job: 'Director of Photography',
+				original_name: 'George Richmond',
 			}
 		]
 	},
