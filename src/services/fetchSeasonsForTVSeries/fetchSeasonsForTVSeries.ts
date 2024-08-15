@@ -4,13 +4,13 @@ import { CastAndCrewCredit, TVSeriesEpisode } from '../types';
 
 type Episodes = TVSeriesEpisode & {
 	episode_type: string,
-	crew: CastAndCrewCredit & {
+	crew: (CastAndCrewCredit & {
 		department: Department,
 		job: string,
-	}[],
-	guest_stars: CastAndCrewCredit & {
+	})[],
+	guest_stars: (CastAndCrewCredit & {
 		character: string,
-	}[],
+	})[],
 };
 
 export type TVSeriesSeasonDetails = {

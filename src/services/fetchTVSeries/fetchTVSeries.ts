@@ -25,7 +25,7 @@ type TVSeriesData = Omit<TVSeriesResponse, 'genre_ids' | 'popularity'> & {
 	in_production: boolean,
 	languages: string[],
 	last_air_date?: string,
-	next_episode_to_air: string,
+	next_episode_to_air: string | null,
 	number_of_episodes: number,
 	number_of_seasons: number,
 	status: string,
