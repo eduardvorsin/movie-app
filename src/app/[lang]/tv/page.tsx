@@ -12,6 +12,57 @@ import { fetchTopRatedTVSeries } from '@/services/fetchTopRatedTVSeries/fetchTop
 import { fetchUpcomingTVSeries } from '@/services/fetchUpcomingTVSeries/fetchUpcomingTVSeries';
 import { Metadata } from 'next';
 import { imgPath } from '@/constants';
+import { ListsResponse, TVSeriesResponse } from '@/services/types';
+
+const MovieCardsCarousel = ({ data, lang }: {
+	data: ListsResponse<TVSeriesResponse>,
+	lang: Locales,
+}) => {
+	return (
+		<VerticalMovieCardsCarousel
+			mousewheel
+			spaceBetween={20}
+			showPagination
+			paginationType='fraction'
+			showArrows
+			breakpoints={{
+				0: { slidesPerView: 1 },
+				375: { slidesPerView: 2 },
+				480: { slidesPerView: 3 },
+				640: { slidesPerView: 4 },
+				768: { slidesPerView: 5 },
+				1024: { slidesPerView: 6 }
+			}}
+		>
+			{data.results.slice(0, 14).map(({
+				id,
+				poster_path,
+				name,
+				vote_average,
+				first_air_date,
+				genre_ids,
+			}) => (
+				<MovieCard
+					mediaType='tv'
+					variant='vertical'
+					className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
+					movieId={id}
+					key={id}
+					src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
+					alt={name}
+					title={name}
+					titleElement='h3'
+					genres={genre_ids}
+					releaseDate={getLocalizedDate(first_air_date, lang)}
+					titleLevel={5}
+					showRating
+					rating={vote_average * 10}
+					sizes={'(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'}
+				/>
+			))}
+		</VerticalMovieCardsCarousel>
+	);
+}
 
 export async function generateMetadata(
 	{ params }: { params: { lang: Locales } },
@@ -122,60 +173,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('topRatedTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{topRatedTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={topRatedTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -190,60 +189,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('upcomingTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{upcomingTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={upcomingTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -258,61 +205,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('turkishTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{turkishTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={turkishTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -327,60 +221,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('russianTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{russianTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={russianTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -395,61 +237,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('koreanTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{koreanTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={koreanTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -464,61 +253,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('medicalTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{medicalTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={medicalTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -533,61 +269,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('historicalTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{historicalTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={historicalTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -602,61 +285,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('animeTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{animeTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={animeTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -671,61 +301,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('teenTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{teenTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={teenTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -740,61 +317,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('sportsTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{sportsTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={sportsTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -809,61 +333,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('familyTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{familyTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={familyTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -878,61 +349,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('crimeTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{crimeTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={crimeTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -947,61 +365,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('loveTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{loveTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={loveTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -1016,61 +381,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('loveTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{talkShowTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={talkShowTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -1085,61 +397,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('comedyTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{comedyTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={comedyTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -1154,61 +413,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('mysteryTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{mysteryTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={mysteryTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
@@ -1223,61 +429,8 @@ export default async function Page({ params: { lang } }: Props) {
 						>
 							{t('militaryTVSeriesTitle', { ns: 'tvSeriesPage' })}
 						</Title>
-						<VerticalMovieCardsCarousel
-							mousewheel
-							spaceBetween={20}
-							showPagination
-							paginationType='fraction'
-							showArrows
-							breakpoints={{
-								0: {
-									slidesPerView: 1,
-								},
-								375: {
-									slidesPerView: 2,
-								},
-								480: {
-									slidesPerView: 3,
-								},
-								640: {
-									slidesPerView: 4,
-								},
-								768: {
-									slidesPerView: 5,
-								},
-								1024: {
-									slidesPerView: 6,
-								}
-							}}
-						>
-							{militaryTVSeries.results.slice(0, 14).map(({
-								id,
-								poster_path,
-								name,
-								vote_average,
-								first_air_date,
-								genre_ids,
-							}) => (
-								<MovieCard
-									mediaType='tv'
-									variant='vertical'
-									className='max-w-[213px] xs:max-w-full mx-auto xs:mx-0 mb-2'
-									movieId={id}
-									key={id}
-									src={poster_path ? `${imgPath['movieCard_v']}${poster_path}` : ''}
-									alt={name}
-									title={name}
-									titleElement='h3'
-									genres={genre_ids}
-									releaseDate={getLocalizedDate(first_air_date, lang)}
-									titleLevel={5}
-									showRating
-									rating={vote_average * 10}
-									sizes='(min-width: 1230px) 183px, (min-width: 1024px) 16.6vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, (min-width: 480px) 33.3vw, (min-width: 375px) 50vw, 213px'
-									loading='lazy'
-								/>
-							))}
-						</VerticalMovieCardsCarousel>
+
+						<MovieCardsCarousel data={militaryTVSeries} lang={lang} />
 					</Container>
 				</section>
 			)}
