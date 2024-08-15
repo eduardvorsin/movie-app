@@ -4,8 +4,6 @@ export const fetchTVSeriesByFilters = async (
 	page: number,
 	options: FilterOptions<'tv'>
 ): Promise<ListsResponse<TVSeriesResponse> | null> => {
-	if (page < 1) throw new Error('The page number cannot be less than 1');
-
 	const url = new URL('discover/tv', 'https://api.themoviedb.org/3/');
 
 	url.searchParams.append('page', page.toString());
