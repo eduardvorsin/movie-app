@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 import { GeneralProps } from '@/types/shared';
 import Button from '../Button/Button';
 import PersonCard from '../PersonCard/PersonCard';
@@ -20,6 +20,55 @@ type Props = {
 	}
 } & GeneralProps;
 
+type State = {
+	status: 'idle' | 'loading' | 'error' | 'successful',
+	error: string,
+	items: PopularPerson[]
+};
+
+type Action = {
+	type: 'set_loading'
+} | {
+	type: 'set_error',
+	payload: string
+} | {
+	type: 'set_data',
+	payload: PopularPerson[],
+};
+
+const createInitialState = (initialData: PopularPerson[] | null): State => {
+	return {
+		status: 'idle' as const,
+		error: '',
+		items: initialData ?? [],
+	};
+}
+
+type Reducer = (state: State, action: Action) => State;
+
+const reducer: Reducer = (state, action) => {
+	if (action.type === 'set_loading') {
+		return {
+			status: 'loading' as const,
+			error: '',
+			items: state.items,
+		};
+	} else if (action.type === 'set_error') {
+		return {
+			status: 'error' as const,
+			error: action.payload,
+			items: [],
+		};
+	} else if (action.type === 'set_data') {
+		return {
+			status: 'successful' as const,
+			error: '',
+			items: [...state.items, ...action.payload],
+		};
+	}
+	return state;
+};
+
 export default function InfinitePersonFeed({
 	className,
 	initialData,
@@ -27,26 +76,28 @@ export default function InfinitePersonFeed({
 	dictionary,
 	...props
 }: Props) {
+
+	const [state, dispatch] = useReducer<Reducer, PopularPerson[]>(
+		reducer,
+		initialData.results,
+		createInitialState
+	);
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
 	const [page, setPage] = useState<number>(1);
-	const [items, setItems] = useState<PopularPerson[]>(initialData.results);
-	const [loading, setLoading] = useState<boolean>(false);
-	const [error, setError] = useState<boolean>(false);
 
 	const loadMore = async (page: number) => {
+		dispatch({ type: 'set_loading' });
+
 		const res = await fetch(`/api/popularPersons?page=${page}&lang=${lang}`);
 		const data = (await res.json()) as ListsResponse<PopularPerson> | null;
 		if (data?.results) {
-			setItems(prevItems => [...prevItems, ...data.results]);
+			dispatch({ type: 'set_data', payload: data.results });
 		} else {
-			setError(true);
+			dispatch({ type: 'set_error', payload: dictionary.errorText });
 		}
-
-		setLoading(false);
 	}
 
 	const clickHandler = () => {
-		setLoading(true);
 		loadMore(page + 1);
 		setPage((prevPage) => prevPage + 1);
 	};
@@ -58,7 +109,7 @@ export default function InfinitePersonFeed({
 
 	const containerClasses = [
 		'mx-auto sm:mx-0 max-w-[480px] sm:max-w-full justify-items-center sm:justify-stretch grid grid-cols-1 2xs:grid-cols-2 sm:grid-cols-[repeat(auto-fill,minmax(150px,1fr))] grid-rows-[repeat(1,1fr)] gap-5 duration-150 transition-opacity',
-		loading ? 'opacity-50 pointer-events-none' : 'opacity-100'
+		state.status === 'loading' ? 'opacity-50 pointer-events-none' : 'opacity-100'
 	].join(' ');
 
 	return (
@@ -67,9 +118,9 @@ export default function InfinitePersonFeed({
 			data-testid={testId}
 			{...props}
 		>
-			{!error && (
+			{state.status !== 'error' && (
 				<div className={containerClasses}>
-					{items.map(({
+					{state.items.map(({
 						id,
 						profile_path,
 						popularity,
@@ -98,20 +149,20 @@ export default function InfinitePersonFeed({
 				</div>
 			)}
 
-			{error && (
+			{state.status == 'error' && (
 				<Banner
 					title={dictionary.errorTitle}
 					appearance='danger'
 					closeButton={false}
 				>
-					{dictionary.errorText}
+					{state.error}
 				</Banner>
 			)}
 
-			{!error && page < initialData.total_pages && (
+			{state.status !== 'error' && page < initialData.total_pages && (
 				<Button
 					className='mt-5 text-200 md:text-[1.125rem] max-w-[300px] md:max-w-[25rem] w-full justify-center self-center'
-					isLoading={loading}
+					isLoading={state.status === 'loading'}
 					onClick={clickHandler}
 				>
 					{dictionary.loadMoreButton}
