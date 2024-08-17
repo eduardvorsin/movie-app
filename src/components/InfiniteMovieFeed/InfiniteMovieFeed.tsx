@@ -1,6 +1,6 @@
 'use client';
 
-import { CSSProperties, useState } from 'react';
+import { CSSProperties, useReducer, useState } from 'react';
 import { MovieGenres, TVSeriesGenres } from '@/types/shared';
 import Button from '../Button/Button';
 import { useParams } from 'next/navigation';
@@ -50,15 +50,14 @@ type ConditionalProps<M extends 'movie' | 'tv'> = (
 	}
 );
 
-export type Props<
-	M extends 'movie' | 'tv',
-	I = M extends 'movie' ? MovieResponse : TVSeriesResponse
-> = {
+type Data = MovieResponse | TVSeriesResponse;
+
+export type Props<M extends 'movie' | 'tv'> = {
 	className?: string,
 	testId?: string,
 	style?: CSSProperties,
 	mediaType: M,
-	initialData: ListsResponse<I>,
+	initialData: ListsResponse<Data>,
 	searchOptions?: {
 		country?: Countries,
 		timePeriod?: string,
@@ -72,10 +71,57 @@ export type Props<
 	},
 } & ConditionalProps<M>;
 
-export default function InfiniteMovieFeed<
-	M extends 'movie' | 'tv',
-	I extends MovieResponse | TVSeriesResponse = M extends 'movie' ? MovieResponse : TVSeriesResponse,
->({
+type State = {
+	status: 'loading' | 'successful' | 'error' | 'idle',
+	items: Data[],
+	error: string,
+};
+
+type Action = {
+	type: 'set_loading',
+} | {
+	type: 'set_error',
+	payload: string,
+} | {
+	type: 'set_data',
+	payload: Data[],
+};
+
+const createInitialState = (initialData: Data[] | null): State => {
+	return {
+		status: 'idle' as const,
+		items: initialData ?? [],
+		error: '',
+	};
+}
+
+type Reducer = (state: State, action: Action) => State;
+
+const reducer: Reducer = (state, action) => {
+	if (action.type === 'set_loading') {
+		return {
+			status: 'loading' as const,
+			error: '',
+			items: state.items,
+		};
+	} else if (action.type === 'set_error') {
+		return {
+			status: 'error' as const,
+			error: action.payload,
+			items: [],
+		};
+	} else if (action.type = 'set_data') {
+		return {
+			status: 'successful' as const,
+			error: '',
+			items: [...state.items, ...action.payload],
+		};
+	}
+
+	return state;
+};
+
+export default function InfiniteMovieFeed<M extends 'movie' | 'tv'>({
 	className,
 	mediaType,
 	initialData,
@@ -85,38 +131,45 @@ export default function InfiniteMovieFeed<
 	searchOptions,
 	dictionary,
 	...props
-}: Props<M, I>) {
+}: Props<M>) {
+	const [state, dispatch] = useReducer<Reducer, Data[]>(
+		reducer,
+		initialData.results,
+		createInitialState
+	);
 	const lang = useParams()?.lang as Locales ?? fallbackLng;
 	const [page, setPage] = useState<number>(1);
-	const [items, setItems] = useState<I[]>(initialData.results);
-	const [loading, setLoading] = useState<boolean>(false);
-	const [error, setError] = useState<boolean>(false);
 
 	const loadMore = async (page: number) => {
 		const id = contentType === 'collection' ? props.collectionName : props.genreName;
+		const params = {
+			page: page.toString(),
+			lang: lang,
+			country: searchOptions?.country ?? '',
+			timePeriod: searchOptions?.timePeriod ?? '',
+			sortBy: searchOptions?.sortBy ?? '',
+		};
 		const baseURL = `/api/${apiRoutes[mediaType][contentType]}/${id}`;
 		const searchParams = new URLSearchParams();
-		searchParams.set('page', page.toString());
-		searchParams.set('lang', lang);
-		searchParams.set('country', searchOptions?.country ?? '');
-		searchParams.set('timePeriod', searchOptions?.timePeriod ?? '');
-		searchParams.set('sortBy', searchOptions?.sortBy ?? '');
+
+		(Object.keys(params) as (keyof typeof params)[]).map((key) => (
+			searchParams.set(key, params[key])
+		));
 
 		const url = `${baseURL}?${searchParams.toString()}`;
+		dispatch({ type: 'set_loading' });
 
 		const res = await fetch(url);
-		const data = (await res.json()) as ListsResponse<I> | null;
+		const data = (await res.json()) as ListsResponse<MovieResponse | TVSeriesResponse> | null;
 		if (data?.results) {
-			setItems(prevItems => [...prevItems, ...data.results]);
-		} else {
-			setError(true);
-		}
+			dispatch({ type: 'set_data', payload: data.results });
 
-		setLoading(false);
+		} else {
+			dispatch({ type: 'set_error', payload: dictionary.errorText });
+		}
 	}
 
 	const clickHandler = () => {
-		setLoading(true);
 		loadMore(page + 1);
 		setPage((prevPage) => prevPage + 1);
 	};
@@ -129,7 +182,7 @@ export default function InfiniteMovieFeed<
 	const containerClasses = [
 		'grid duration-150 transition-opacity',
 		contentType === 'collection' ? 'mx-auto xs:mx-0 max-w-[320px] xs:max-w-full grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 grid-rows-1 gap-5' : 'mx-auto 2xs:mx-0 max-w-[200px] 2xs:max-w-full grid-cols-1 2xs:grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-5',
-		loading ? 'opacity-50 pointer-events-none' : 'opacity-100'
+		state.status === 'loading' ? 'opacity-50 pointer-events-none' : 'opacity-100'
 	].join(' ');
 
 	return (
@@ -138,59 +191,40 @@ export default function InfiniteMovieFeed<
 			data-testid={testId}
 			style={style}
 		>
-			{!error && (
+			{!state.error && (
 				<div className={containerClasses}>
-					{items.map((item) => {
-						if (isMovieItem(item, mediaType)) {
-							return (
-								<MovieCard
-									key={item.id}
-									mediaType='movie'
-									movieId={item.id}
-									variant={contentType === 'collection' ? 'horizontal' : 'vertical'}
-									src={
-										item.backdrop_path ? `${imgPathByContentType[contentType]}${contentType === 'collection' ? item.backdrop_path : item.poster_path}` : ''
-									}
-									alt={item.title}
-									title={item.title}
-									titleElement='h4'
-									appearance={contentType === 'collection' ? 'secondary' : 'primary'}
-									genres={item.genre_ids}
-									showRating
-									rating={item.vote_average * 10}
-									releaseDate={getLocalizedDate(item.release_date, lang)}
-									titleLevel={5}
-									sizes='(min-width: 1230px) 286px, (min-width: 1024px) 25vw, (min-width: 650px) 33.3vw, (min-width: 480px) 50vw, 320px'
-								/>
-							)
-						} else {
-							return (
-								<MovieCard
-									key={item.id}
-									mediaType='tv'
-									movieId={item.id}
-									variant={contentType === 'collection' ? 'horizontal' : 'vertical'}
-									src={
-										item.backdrop_path ? `${imgPathByContentType[contentType]}${contentType === 'collection' ? item.backdrop_path : item.poster_path}` : ''
-									}
-									alt={item.name}
-									title={item.name}
-									titleElement='h4'
-									appearance={contentType === 'collection' ? 'secondary' : 'primary'}
-									genres={item.genre_ids}
-									showRating
-									rating={item.vote_average * 10}
-									releaseDate={getLocalizedDate(item.first_air_date, lang)}
-									titleLevel={5}
-									sizes='(min-width: 1230px) 286px, (min-width: 1024px) 25vw, (min-width: 650px) 33.3vw, (min-width: 480px) 50vw, 320px'
-								/>
-							);
-						}
+					{state.items.map((item) => {
+						const contentData = {
+							title: isMovieItem(item, mediaType) ? item.title : item.name,
+							release_date: isMovieItem(item, mediaType) ? item.release_date : item.first_air_date
+						};
+
+						return (
+							<MovieCard
+								key={item.id}
+								mediaType='movie'
+								movieId={item.id}
+								variant={contentType === 'collection' ? 'horizontal' : 'vertical'}
+								src={
+									item.backdrop_path ? `${imgPathByContentType[contentType]}${contentType === 'collection' ? item.backdrop_path : item.poster_path}` : ''
+								}
+								alt={contentData.title}
+								title={contentData.title}
+								titleElement='h4'
+								appearance={contentType === 'collection' ? 'secondary' : 'primary'}
+								genres={item.genre_ids}
+								showRating
+								rating={item.vote_average * 10}
+								releaseDate={getLocalizedDate(contentData.release_date, lang)}
+								titleLevel={5}
+								sizes='(min-width: 1230px) 286px, (min-width: 1024px) 25vw, (min-width: 650px) 33.3vw, (min-width: 480px) 50vw, 320px'
+							/>
+						)
 					})}
 				</div>
 			)}
 
-			{error && (
+			{state.error && (
 				<Banner
 					closeButton={false}
 					title={dictionary.errorTitle}
@@ -200,10 +234,10 @@ export default function InfiniteMovieFeed<
 				</Banner>
 			)}
 
-			{!error && page < initialData.total_pages && (
+			{!state.error && page < initialData.total_pages && (
 				<Button
 					className='mt-5 text-200 md:text-[1.125rem] max-w-[300px] md:max-w-[25rem] w-full justify-center self-center'
-					isLoading={loading}
+					isLoading={state.status === 'loading'}
 					onClick={clickHandler}
 				>
 					{dictionary.loadMoreButton}
