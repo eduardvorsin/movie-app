@@ -63,14 +63,13 @@ export default function Breadcrumbs({
 	const totalItems = segments.map((segment, index) => (
 		<BreadcrumbsItem
 			key={segment.label}
-			className={index === segments.length - 1 ? 'pointer-events-none' : ''}
-			href={index === segments.length - 1 ? '' : segment.value}
+			href={segment.value}
 			truncationWidth={truncationWidth}
 			target={target}
-			aria-current={index === segments.length - 1 ? 'page' : undefined}
+			isLastItem={index === segments.length - 1}
 		>
 			{segment.label}
-		</BreadcrumbsItem >
+		</BreadcrumbsItem>
 	));
 
 	let visibleItems;

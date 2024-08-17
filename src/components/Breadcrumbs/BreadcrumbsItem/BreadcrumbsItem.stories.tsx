@@ -21,6 +21,9 @@ const meta: Meta<typeof BreadcrumbsItem> = {
 		testId: {
 			description: 'Id for testing the component',
 		},
+		isLastItem: {
+			description: 'Determines whether the link is the last in the list',
+		},
 		truncationWidth: {
 			description: 'Sets the maximum width of the component at which the text will be cropped',
 		},
@@ -66,6 +69,21 @@ export const TrunctionWidth: Story = {
 		docs: {
 			description: {
 				story: 'The value in pixels after which the text in the component will be cropped',
+			},
+		},
+	},
+};
+
+export const isLastItem: Story = {
+	args: {
+		children: 'Last item',
+		href: '/',
+		isLastItem: true,
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'Since the last link in the list points to the current page, we use this prop to make it inactive for users',
 			},
 		},
 	},

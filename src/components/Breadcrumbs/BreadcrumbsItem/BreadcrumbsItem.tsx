@@ -9,6 +9,7 @@ type Props = {
 	onClick?: MouseEventHandler<HTMLAnchorElement>,
 	truncationWidth?: number,
 	target?: AnchorHTMLAttributes<HTMLButtonElement>['target'],
+	isLastItem: boolean,
 } & GeneralProps;
 
 export default function BreadcrumbsItem({
@@ -17,24 +18,36 @@ export default function BreadcrumbsItem({
 	href = '',
 	onClick,
 	truncationWidth,
+	isLastItem,
 	target,
 	testId,
 	...props
 }: Props) {
 
+	const classes = [
+		'inline-flex text-200',
+		isLastItem ? 'pointer-events-none' : '',
+		className,
+	].join(' ');
+
+	const clickHandler: MouseEventHandler<HTMLAnchorElement> = (e) => {
+		if (onClick && !isLastItem) onClick(e);
+	};
+
 	return (
 		<Link
 			style={truncationWidth ? { 'maxWidth': `${truncationWidth}px` } : undefined}
-			className={`inline-flex text-200 ${className}`}
-			href={href}
-			onClick={onClick}
+			className={classes}
+			href={!isLastItem ? href : ''}
+			onClick={clickHandler}
 			target={target}
+			aria-current={isLastItem ? 'page' : undefined}
 			testId={testId}
 			{...props}
 		>
 			<span className={truncationWidth ? 'truncate' : ''}>
 				{children}
 			</span>
-		</Link>
+		</Link >
 	);
 };
