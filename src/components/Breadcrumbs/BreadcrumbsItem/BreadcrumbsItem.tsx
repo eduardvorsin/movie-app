@@ -26,7 +26,6 @@ export default function BreadcrumbsItem({
 
 	const classes = [
 		'inline-flex text-200',
-		isLastItem ? 'pointer-events-none' : '',
 		className,
 	].join(' ');
 

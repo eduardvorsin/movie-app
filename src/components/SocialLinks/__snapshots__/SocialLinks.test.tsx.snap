@@ -7,7 +7,7 @@ exports[`SocialLinks tests a snapshot with isRounded set to true 1`] = `
 >
   <a
     aria-disabled="false"
-    class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
+    class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
     href="https://www.facebook.com/ "
     rel="noopener noreferrer"
     target="_blank"
@@ -28,7 +28,7 @@ exports[`SocialLinks tests a snapshot with isRounded set to true 1`] = `
   </a>
   <a
     aria-disabled="false"
-    class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
+    class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
     href="https://www.instagram.com/ "
     rel="noopener noreferrer"
     target="_blank"
@@ -49,7 +49,7 @@ exports[`SocialLinks tests a snapshot with isRounded set to true 1`] = `
   </a>
   <a
     aria-disabled="false"
-    class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
+    class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
     href="https://www.tiktok.com/@ "
     rel="noopener noreferrer"
     target="_blank"
@@ -70,7 +70,7 @@ exports[`SocialLinks tests a snapshot with isRounded set to true 1`] = `
   </a>
   <a
     aria-disabled="false"
-    class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
+    class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
     href="https://twitter.com/ "
     rel="noopener noreferrer"
     target="_blank"
@@ -91,7 +91,7 @@ exports[`SocialLinks tests a snapshot with isRounded set to true 1`] = `
   </a>
   <a
     aria-disabled="false"
-    class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
+    class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
     href="https://www.youtube.com/@ "
     rel="noopener noreferrer"
     target="_blank"
@@ -120,7 +120,7 @@ exports[`SocialLinks tests is a basic snapshot 1`] = `
 >
   <a
     aria-disabled="false"
-    class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
+    class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
     href="https://www.facebook.com/ "
     rel="noopener noreferrer"
     target="_blank"
@@ -141,7 +141,7 @@ exports[`SocialLinks tests is a basic snapshot 1`] = `
   </a>
   <a
     aria-disabled="false"
-    class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
+    class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
     href="https://www.instagram.com/ "
     rel="noopener noreferrer"
     target="_blank"
@@ -162,7 +162,7 @@ exports[`SocialLinks tests is a basic snapshot 1`] = `
   </a>
   <a
     aria-disabled="false"
-    class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
+    class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
     href="https://www.tiktok.com/@ "
     rel="noopener noreferrer"
     target="_blank"
@@ -183,7 +183,7 @@ exports[`SocialLinks tests is a basic snapshot 1`] = `
   </a>
   <a
     aria-disabled="false"
-    class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
+    class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
     href="https://twitter.com/ "
     rel="noopener noreferrer"
     target="_blank"
@@ -204,7 +204,7 @@ exports[`SocialLinks tests is a basic snapshot 1`] = `
   </a>
   <a
     aria-disabled="false"
-    class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
+    class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  text-0 flex w-10 h-10 fill-neutral-300 [&]:text-dark-neutral-300 hover:fill-neutral-400 hover:[&]:text-dark-neutral-250 active:fill-dark-neutral-500 active:[&]:text-dark-neutral-200 dark:fill-dark-neutral-300 dark:[&]:text-neutral-300 dark:hover:fill-dark-neutral-400 dark:hover:[&]:text-neutral-200 dark:active:fill-dark-neutral-500 dark:active:[&]:text-neutral-100"
     href="https://www.youtube.com/@ "
     rel="noopener noreferrer"
     target="_blank"

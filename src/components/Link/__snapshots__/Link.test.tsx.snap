@@ -1,9 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Link tests A snapshot with an empty href 1`] = `
+<a
+  aria-disabled="true"
+  class="no-underline transition-colors duration-150 pointer-events-none cursor-default text-blue-1000 hover:text-blue-1000 active:text-blue-1000 dark:text-blue-200 dark:hover:text-blue-200 dark:active:text-blue-200  "
+  href=""
+  role="link"
+>
+  test link
+</a>
+`;
+
 exports[`Link tests is a basic snapshot 1`] = `
 <a
   aria-disabled="false"
-  class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  "
+  class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  "
   href="/"
 >
   test link
@@ -13,7 +24,7 @@ exports[`Link tests is a basic snapshot 1`] = `
 exports[`Link tests is a snapshot with isDisabled set to true 1`] = `
 <a
   aria-disabled="false"
-  class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 opacity-disabled cursor-not-allowed "
+  class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline opacity-disabled cursor-not-allowed "
   href="/"
 >
   test link
@@ -23,7 +34,7 @@ exports[`Link tests is a snapshot with isDisabled set to true 1`] = `
 exports[`Link tests is a snapshot with isExternal equal to true 1`] = `
 <a
   aria-disabled="false"
-  class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  "
+  class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  "
   href="/"
   rel="noopener noreferrer"
 >
@@ -34,7 +45,7 @@ exports[`Link tests is a snapshot with isExternal equal to true 1`] = `
 exports[`Link tests is a snapshot with the "primary" appearance type 1`] = `
 <a
   aria-disabled="false"
-  class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  "
+  class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  "
   href="/"
 >
   test link
@@ -44,7 +55,7 @@ exports[`Link tests is a snapshot with the "primary" appearance type 1`] = `
 exports[`Link tests is a snapshot with the "secondary" appearance type 1`] = `
 <a
   aria-disabled="false"
-  class="no-underline  hover:underline transition-colors duration-150 text-neutral-800 hover:text-neutral-900 active:text-neutral-1000 dark:text-dark-neutral-1000 dark:hover:text-dark-neutral-900 dark:active:text-dark-neutral-800  "
+  class="no-underline transition-colors duration-150 text-neutral-800 hover:text-neutral-900 active:text-neutral-1000 dark:text-dark-neutral-1000 dark:hover:text-dark-neutral-900 dark:active:text-dark-neutral-800 hover:underline  "
   href="/"
 >
   test link
