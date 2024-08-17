@@ -191,7 +191,7 @@ export default function InfiniteMovieFeed<M extends 'movie' | 'tv'>({
 			data-testid={testId}
 			style={style}
 		>
-			{!state.error && (
+			{state.status !== 'error' && (
 				<div className={containerClasses}>
 					{state.items.map((item) => {
 						const contentData = {
@@ -224,7 +224,7 @@ export default function InfiniteMovieFeed<M extends 'movie' | 'tv'>({
 				</div>
 			)}
 
-			{state.error && (
+			{state.status == 'error' && (
 				<Banner
 					closeButton={false}
 					title={dictionary.errorTitle}
@@ -234,7 +234,7 @@ export default function InfiniteMovieFeed<M extends 'movie' | 'tv'>({
 				</Banner>
 			)}
 
-			{!state.error && page < initialData.total_pages && (
+			{state.status !== 'error' && page < initialData.total_pages && (
 				<Button
 					className='mt-5 text-200 md:text-[1.125rem] max-w-[300px] md:max-w-[25rem] w-full justify-center self-center'
 					isLoading={state.status === 'loading'}
