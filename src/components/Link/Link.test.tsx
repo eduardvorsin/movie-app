@@ -77,6 +77,12 @@ describe('Link tests', () => {
 		expect(screen.getByRole<HTMLAnchorElement>('link')).toMatchSnapshot();
 	});
 
+	it('A snapshot with an empty href', () => {
+		render(<Link href='' >test link</Link>);
+
+		expect(screen.getByRole<HTMLAnchorElement>('link')).toMatchSnapshot();
+	});
+
 	it.each(appearances)('is a snapshot with the "%s" appearance type', (appearance) => {
 		render(<Link href='/' appearance={appearance} >test link</Link>);
 

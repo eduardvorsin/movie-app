@@ -97,6 +97,20 @@ export const External: Story = {
 	},
 };
 
+export const EmptyHref: Story = {
+	args: {
+		children: 'Empty href',
+		href: '',
+	},
+	parameters: {
+		docs: {
+			description: {
+				story: 'If the href value is missing, the link becomes inactive and its appearance changes.',
+			},
+		},
+	},
+};
+
 export const EventCallbacks: Story = {
 	argTypes: {
 		onClick: {
