@@ -72,7 +72,6 @@ export default function Search({
 			{...props}
 		>
 			<form
-				role='search'
 				onSubmit={onSubmit}
 				autoComplete='off'
 			>
