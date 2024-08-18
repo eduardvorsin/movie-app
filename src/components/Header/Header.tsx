@@ -2,12 +2,12 @@
 
 import Container from '@/components/Container/Container';
 import Logo from '@/components/Logo/Logo';
-import Button from '../Button/Button';
 import { useLayoutEffect, useState } from 'react';
 import NavigationMenuButton from '../NavigationMenuButton/NavigationMenuButton';
 import Navigation from '../Navigation/Navigation';
 import { GeneralProps } from '@/types/shared';
 import UserSettingsButton from '../UserSettingsButton/UserSettingsButton';
+import MainSearch, { MainSearchDictionary } from '../MainSearch/MainSearch';
 
 export type Props = {
 	dictionary: {
@@ -32,9 +32,13 @@ export default function Header({
 	...props
 }: Props) {
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+	const [isSearchVisible, setIsSearchVisible] = useState<boolean>(false);
 
 	const menuOpenHandler = (): void => setIsMenuOpen((prevState) => !prevState);
 	const closeMenu = (): void => setIsMenuOpen(false);
+
+	const showSearchBar = (): void => setIsSearchVisible(true);
+	const hideSearchBar = (): void => setIsSearchVisible(false);
 
 	useLayoutEffect(() => {
 		if (isMenuOpen) {
@@ -69,21 +73,15 @@ export default function Header({
 					onClick={closeMenu}
 				/>
 
-				<div className='flex ml-auto'>
+				<div className='flex flex-grow justify-end'>
 					{!isMenuOpen && (
-						<Button
-							className='mr-1'
-							appearance='secondary'
-							iconButton
-						>
-							<svg
-								className='p-2 w-[2.25rem] h-[2.25rem]'
-								viewBox='0 0 32 32'
-							>
-								<use href={'/assets/icons/search.svg#search'} />
-							</svg>
-							{dictionary.searchButton}
-						</Button>
+						<MainSearch
+							id='header-search'
+							isSearchVisible={isSearchVisible}
+							onSearchClose={hideSearchBar}
+							onSearchOpen={showSearchBar}
+							dictionary={dictionary.mainSearch}
+						/>
 					)}
 
 					{!isMenuOpen && (
@@ -92,12 +90,15 @@ export default function Header({
 						/>
 					)}
 
-					<NavigationMenuButton
-						className='md:hidden'
-						onClick={menuOpenHandler}
-						isActive={isMenuOpen}
-						dictionary={dictionary.navigationMenuButton}
-					/>
+					{!isSearchVisible && (
+						<NavigationMenuButton
+							className='md:hidden'
+							onClick={menuOpenHandler}
+							isActive={isMenuOpen}
+							dictionary={dictionary.navigationMenuButton}
+						/>
+					)}
+
 				</div>
 			</Container>
 		</header>
