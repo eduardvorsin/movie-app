@@ -29,7 +29,7 @@ exports[`Header integration tests is a snapshot with English localization 1`] = 
       </span>
     </a>
     <div
-      class="fixed inset-0 bg-neutral-100/90 dark:bg-dark-neutral-100/90 z-0 md:static md:inset-auto md:bg-transparent dark:md:bg-transparent mt-[3.75rem] md:mt-0 transition-colors duration-150 transition-transform duration-300 md:translate-x-0 -translate-x-full"
+      class="fixed inset-0 bg-neutral-100/90 dark:bg-dark-neutral-100/90 z-0 md:static md:inset-auto md:bg-transparent dark:md:bg-transparent mt-[3.75rem] md:mt-0 md:translate-x-0 transition-colors transition-transform duration-300 -translate-x-full md:mr-10"
     >
       <nav
         class="z-100 w-full p-6 pt-3 md:p-0 bg-neutral-200 dark:bg-dark-neutral-250 md:bg-transparent dark:md:bg-transparent flex flex-col md:flex-row transition-colors duration-150"
@@ -40,7 +40,7 @@ exports[`Header integration tests is a snapshot with English localization 1`] = 
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-100"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-100"
               href="/movies"
             >
               movies
@@ -49,7 +49,7 @@ exports[`Header integration tests is a snapshot with English localization 1`] = 
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
               href="/persons"
             >
               persons
@@ -58,7 +58,7 @@ exports[`Header integration tests is a snapshot with English localization 1`] = 
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
               href="/tv"
             >
               series and shows
@@ -67,7 +67,7 @@ exports[`Header integration tests is a snapshot with English localization 1`] = 
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
               href="/new"
             >
               new releases
@@ -76,7 +76,7 @@ exports[`Header integration tests is a snapshot with English localization 1`] = 
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
               href="/collections"
             >
               collections
@@ -86,25 +86,30 @@ exports[`Header integration tests is a snapshot with English localization 1`] = 
       </nav>
     </div>
     <div
-      class="flex ml-auto"
+      class="flex flex-grow justify-end"
     >
-      <button
-        class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   mr-1"
+      <search
+        class=" flex items-center justify-end flex-grow  "
+        role="search"
       >
-        <span
-          class="inline-flex items-center"
+        <button
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   mr-1"
         >
-          <svg
-            class="p-2 w-[2.25rem] h-[2.25rem]"
-            viewBox="0 0 32 32"
+          <span
+            class="inline-flex items-center"
           >
-            <use
-              href="/assets/icons/search.svg#search"
-            />
-          </svg>
-          To find
-        </span>
-      </button>
+            <svg
+              class="p-2 w-[2.25rem] h-[2.25rem]"
+              viewBox="0 0 32 32"
+            >
+              <use
+                href="/assets/icons/search.svg#search"
+              />
+            </svg>
+            Show the search field
+          </span>
+        </button>
+      </search>
       <div
         class="relative w-[2.25rem] h-[2.25rem]"
         id=":r4:"
@@ -201,7 +206,7 @@ exports[`Header integration tests is a snapshot with Russian localization 1`] = 
       </span>
     </a>
     <div
-      class="fixed inset-0 bg-neutral-100/90 dark:bg-dark-neutral-100/90 z-0 md:static md:inset-auto md:bg-transparent dark:md:bg-transparent mt-[3.75rem] md:mt-0 transition-colors duration-150 transition-transform duration-300 md:translate-x-0 -translate-x-full"
+      class="fixed inset-0 bg-neutral-100/90 dark:bg-dark-neutral-100/90 z-0 md:static md:inset-auto md:bg-transparent dark:md:bg-transparent mt-[3.75rem] md:mt-0 md:translate-x-0 transition-colors transition-transform duration-300 -translate-x-full md:mr-10"
     >
       <nav
         class="z-100 w-full p-6 pt-3 md:p-0 bg-neutral-200 dark:bg-dark-neutral-250 md:bg-transparent dark:md:bg-transparent flex flex-col md:flex-row transition-colors duration-150"
@@ -212,7 +217,7 @@ exports[`Header integration tests is a snapshot with Russian localization 1`] = 
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-100"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-100"
               href="/movies"
             >
               фильмы
@@ -221,7 +226,7 @@ exports[`Header integration tests is a snapshot with Russian localization 1`] = 
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
               href="/persons"
             >
               люди
@@ -230,7 +235,7 @@ exports[`Header integration tests is a snapshot with Russian localization 1`] = 
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
               href="/tv"
             >
               сериалы и шоу
@@ -239,7 +244,7 @@ exports[`Header integration tests is a snapshot with Russian localization 1`] = 
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
               href="/new"
             >
               новинки
@@ -248,7 +253,7 @@ exports[`Header integration tests is a snapshot with Russian localization 1`] = 
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
               href="/collections"
             >
               коллекции
@@ -258,25 +263,30 @@ exports[`Header integration tests is a snapshot with Russian localization 1`] = 
       </nav>
     </div>
     <div
-      class="flex ml-auto"
+      class="flex flex-grow justify-end"
     >
-      <button
-        class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   mr-1"
+      <search
+        class=" flex items-center justify-end flex-grow  "
+        role="search"
       >
-        <span
-          class="inline-flex items-center"
+        <button
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   mr-1"
         >
-          <svg
-            class="p-2 w-[2.25rem] h-[2.25rem]"
-            viewBox="0 0 32 32"
+          <span
+            class="inline-flex items-center"
           >
-            <use
-              href="/assets/icons/search.svg#search"
-            />
-          </svg>
-          Найти
-        </span>
-      </button>
+            <svg
+              class="p-2 w-[2.25rem] h-[2.25rem]"
+              viewBox="0 0 32 32"
+            >
+              <use
+                href="/assets/icons/search.svg#search"
+              />
+            </svg>
+            Показать поле поиска
+          </span>
+        </button>
+      </search>
       <div
         class="relative w-[2.25rem] h-[2.25rem]"
         id=":r5:"
@@ -373,7 +383,7 @@ exports[`Header tests is a basic snapshot 1`] = `
       </span>
     </a>
     <div
-      class="fixed inset-0 bg-neutral-100/90 dark:bg-dark-neutral-100/90 z-0 md:static md:inset-auto md:bg-transparent dark:md:bg-transparent mt-[3.75rem] md:mt-0 transition-colors duration-150 transition-transform duration-300 md:translate-x-0 -translate-x-full"
+      class="fixed inset-0 bg-neutral-100/90 dark:bg-dark-neutral-100/90 z-0 md:static md:inset-auto md:bg-transparent dark:md:bg-transparent mt-[3.75rem] md:mt-0 md:translate-x-0 transition-colors transition-transform duration-300 -translate-x-full md:mr-10"
     >
       <nav
         class="z-100 w-full p-6 pt-3 md:p-0 bg-neutral-200 dark:bg-dark-neutral-250 md:bg-transparent dark:md:bg-transparent flex flex-col md:flex-row transition-colors duration-150"
@@ -384,7 +394,7 @@ exports[`Header tests is a basic snapshot 1`] = `
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-100"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-100"
               href="/movies"
             >
               movies
@@ -393,7 +403,7 @@ exports[`Header tests is a basic snapshot 1`] = `
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
               href="/persons"
             >
               persons
@@ -402,7 +412,7 @@ exports[`Header tests is a basic snapshot 1`] = `
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
               href="/tv"
             >
               series and shows
@@ -411,7 +421,7 @@ exports[`Header tests is a basic snapshot 1`] = `
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
               href="/new"
             >
               new releases
@@ -420,7 +430,7 @@ exports[`Header tests is a basic snapshot 1`] = `
           <li>
             <a
               aria-disabled="false"
-              class="no-underline  hover:underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
+              class="no-underline transition-colors duration-150 text-blue-800 hover:text-blue-900 active:text-blue-1000 dark:text-blue-400 dark:hover:text-blue-300 dark:active:text-blue-200 hover:underline  inline-flex text-200 font-medium py-3 px-1 uppercase md:lowercase w-full md:w-auto md:p-0 relative before:pointer-events-none before:absolute before:bg-current before:rounded-0.5 before:top-1/2 before:-translate-y-1/2 before:h-1/2 before:w-0.5 before:-left-2 md:before:-bottom-1 md:before:left-0 md:before:w-full md:before:top-auto md:before:translate-y-0 md:before:h-0.5 before:transition-opacity before:duration-150 before:opacity-0"
               href="/collections"
             >
               collections
@@ -430,25 +440,30 @@ exports[`Header tests is a basic snapshot 1`] = `
       </nav>
     </div>
     <div
-      class="flex ml-auto"
+      class="flex flex-grow justify-end"
     >
-      <button
-        class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   mr-1"
+      <search
+        class=" flex items-center justify-end flex-grow  "
+        role="search"
       >
-        <span
-          class="inline-flex items-center"
+        <button
+          class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   mr-1"
         >
-          <svg
-            class="p-2 w-[2.25rem] h-[2.25rem]"
-            viewBox="0 0 32 32"
+          <span
+            class="inline-flex items-center"
           >
-            <use
-              href="/assets/icons/search.svg#search"
-            />
-          </svg>
-          To find
-        </span>
-      </button>
+            <svg
+              class="p-2 w-[2.25rem] h-[2.25rem]"
+              viewBox="0 0 32 32"
+            >
+              <use
+                href="/assets/icons/search.svg#search"
+              />
+            </svg>
+            Show the search field
+          </span>
+        </button>
+      </search>
       <div
         class="relative w-[2.25rem] h-[2.25rem]"
         id=":r1:"
