@@ -263,11 +263,7 @@
 	},
 	"autocompleteSearch": {
 		"emptyStateTitle": "We can't find anything for your request.",
-		"emptyStateText": "Try entering a different value",
-		"search": {
-			"button": "$t(search.button)",
-			"clearButton": "$t(search.clearButton)"
-		}
+		"emptyStateText": "Try entering a different value"
 	},
 	"banner": {
 		"closeButton": "To close"

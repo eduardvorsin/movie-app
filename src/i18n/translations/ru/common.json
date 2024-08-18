@@ -263,11 +263,7 @@
 	},
 	"autocompleteSearch": {
 		"emptyStateTitle": "Мы ничего не смогли найти по вашему запросу.",
-		"emptyStateText": "Попробуйте ввести другое значение.",
-		"search": {
-			"button": "$t(search.button)",
-			"clearButton": "$t(search.clearButton)"
-		}
+		"emptyStateText": "Попробуйте ввести другое значение."
 	},
 	"banner": {
 		"closeButton": "Закрыть"
