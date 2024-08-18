@@ -17,19 +17,20 @@ const options = [
 	}
 ];
 
+const dictionary = {
+	emptyStateTitle: 'We can\'t find anything for your request.',
+	emptyStateText: 'Try entering a different value',
+	search: {
+		button: 'To find',
+		clearButton: 'To clear',
+	},
+};
+
 describe('AutocompleteSearch tests', () => {
 	it('is rendered correctly', async () => {
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
-		const dictionary = {
-			emptyStateTitle: 'We can\'t find anything for your request.',
-			emptyStateText: 'Try entering a different value',
-			search: {
-				button: 'To find',
-				clearButton: 'To clear',
-			},
-		};
 		render(
 			<AutocompleteSearch
 				id='test-autocomplete-search'
@@ -54,14 +55,6 @@ describe('AutocompleteSearch tests', () => {
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
-		const dictionary = {
-			emptyStateTitle: 'We can\'t find anything for your request.',
-			emptyStateText: 'Try entering a different value',
-			search: {
-				button: 'To find',
-				clearButton: 'To clear',
-			},
-		};
 		render(
 			<AutocompleteSearch
 				id='test-autocomplete-search'
@@ -87,14 +80,6 @@ describe('AutocompleteSearch tests', () => {
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
-		const dictionary = {
-			emptyStateTitle: 'We can\'t find anything for your request.',
-			emptyStateText: 'Try entering a different value',
-			search: {
-				button: 'To find',
-				clearButton: 'To clear',
-			},
-		};
 		render(
 			<AutocompleteSearch
 				id='test-autocomplete-search'
@@ -120,14 +105,6 @@ describe('AutocompleteSearch tests', () => {
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
-		const dictionary = {
-			emptyStateTitle: 'We can\'t find anything for your request.',
-			emptyStateText: 'Try entering a different value',
-			search: {
-				button: 'To find',
-				clearButton: 'To clear',
-			},
-		};
 		render(
 			<AutocompleteSearch
 				id='test-autocomplete-search'
@@ -152,14 +129,6 @@ describe('AutocompleteSearch tests', () => {
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
-		const dictionary = {
-			emptyStateTitle: 'We can\'t find anything for your request.',
-			emptyStateText: 'Try entering a different value',
-			search: {
-				button: 'To find',
-				clearButton: 'To clear',
-			},
-		};
 		render(
 			<AutocompleteSearch
 				id='test-autocomplete-search'
@@ -185,14 +154,6 @@ describe('AutocompleteSearch tests', () => {
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
-		const dictionary = {
-			emptyStateTitle: 'We can\'t find anything for your request.',
-			emptyStateText: 'Try entering a different value',
-			search: {
-				button: 'To find',
-				clearButton: 'To clear',
-			},
-		};
 		render(
 			<AutocompleteSearch
 				id='test-autocomplete-search'
@@ -221,13 +182,12 @@ describe('AutocompleteSearch integration tests', () => {
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
 		const translation = new RegExp(i18next.t('autocompleteSearch.emptyStateText'));
-
 		const dictionary = {
-			emptyStateTitle: 'We can\'t find anything for your request.',
-			emptyStateText: 'Try entering a different value',
+			emptyStateTitle: i18next.t('autocompleteSearch.emptyStateTitle'),
+			emptyStateText: i18next.t('autocompleteSearch.emptyStateText'),
 			search: {
-				button: 'To find',
-				clearButton: 'To clear',
+				button: i18next.t('search.button'),
+				clearButton: i18next.t('search.clearButton'),
 			},
 		};
 		render(
@@ -257,13 +217,12 @@ describe('AutocompleteSearch integration tests', () => {
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
 		const translation = new RegExp(i18next.t('autocompleteSearch.emptyStateText'));
-
 		const dictionary = {
-			emptyStateTitle: 'Мы ничего не смогли найти по вашему запросу.',
-			emptyStateText: 'Попробуйте ввести другое значение.',
+			emptyStateTitle: i18next.t('autocompleteSearch.emptyStateTitle'),
+			emptyStateText: i18next.t('autocompleteSearch.emptyStateText'),
 			search: {
-				button: 'Найти',
-				clearButton: 'Очистить',
+				button: i18next.t('search.button'),
+				clearButton: i18next.t('search.clearButton'),
 			},
 		};
 		render(
@@ -292,13 +251,12 @@ describe('AutocompleteSearch integration tests', () => {
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
-
 		const dictionary = {
-			emptyStateTitle: 'We can\'t find anything for your request.',
-			emptyStateText: 'Try entering a different value',
+			emptyStateTitle: i18next.t('autocompleteSearch.emptyStateTitle'),
+			emptyStateText: i18next.t('autocompleteSearch.emptyStateText'),
 			search: {
-				button: 'To find',
-				clearButton: 'To clear',
+				button: i18next.t('search.button'),
+				clearButton: i18next.t('search.clearButton'),
 			},
 		};
 		render(
@@ -327,13 +285,12 @@ describe('AutocompleteSearch integration tests', () => {
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn();
-
 		const dictionary = {
-			emptyStateTitle: 'Мы ничего не смогли найти по вашему запросу.',
-			emptyStateText: 'Попробуйте ввести другое значение.',
+			emptyStateTitle: i18next.t('autocompleteSearch.emptyStateTitle'),
+			emptyStateText: i18next.t('autocompleteSearch.emptyStateText'),
 			search: {
-				button: 'Найти',
-				clearButton: 'Очистить',
+				button: i18next.t('search.button'),
+				clearButton: i18next.t('search.clearButton'),
 			},
 		};
 		render(

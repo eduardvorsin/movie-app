@@ -4,9 +4,10 @@ import i18next from "@/i18n/client";
 import I18nextWrapper from "@/test-utils/I18nextWrapper";
 import userEvent from "@testing-library/user-event";
 
+const dictionary = { playButton: 'To watch' };
+
 describe('YouTubeVideo tests', () => {
 	it('is rendered correctly', async () => {
-		const dictionary = { playButton: 'To watch' };
 		render(
 			<YouTubeVideo
 				width={386}
@@ -25,7 +26,6 @@ describe('YouTubeVideo tests', () => {
 	});
 
 	it('is a basic snapshot', async () => {
-		const dictionary = { playButton: 'To watch' };
 		render(
 			<YouTubeVideo
 				width={386}
@@ -46,7 +46,6 @@ describe('YouTubeVideo tests', () => {
 	it('is a snapshot of when the video uploaded', async () => {
 		const user = userEvent.setup();
 
-		const dictionary = { playButton: 'To watch' };
 		render(
 			<YouTubeVideo
 				width={386}
@@ -69,7 +68,6 @@ describe('YouTubeVideo tests', () => {
 	it('is a snapshot when showControls is false', async () => {
 		const user = userEvent.setup();
 
-		const dictionary = { playButton: 'To watch' };
 		render(
 			<YouTubeVideo
 				width={386}
@@ -93,7 +91,6 @@ describe('YouTubeVideo tests', () => {
 	it('is a snapshot when muted is true', async () => {
 		const user = userEvent.setup();
 
-		const dictionary = { playButton: 'To watch' };
 		render(
 			<YouTubeVideo
 				width={386}
@@ -117,7 +114,6 @@ describe('YouTubeVideo tests', () => {
 	it('is a snapshot when the value for startTime is set', async () => {
 		const user = userEvent.setup();
 
-		const dictionary = { playButton: 'To watch' };
 		render(
 			<YouTubeVideo
 				width={386}

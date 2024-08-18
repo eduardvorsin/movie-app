@@ -4,9 +4,10 @@ import userEvent from '@testing-library/user-event';
 import i18next from "@/i18n/client";
 import I18nextWrapper from "@/test-utils/I18nextWrapper";
 
+const dictionary = { button: 'To find' };
+
 describe('Search tests', () => {
 	it('is rendered correctly', () => {
-		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -27,7 +28,6 @@ describe('Search tests', () => {
 	});
 
 	it('when submitting the form, the mock function is triggered', async () => {
-		const dictionary = { button: 'To find' };
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
@@ -51,7 +51,6 @@ describe('Search tests', () => {
 	});
 
 	it('when entering text into the input, the mock function is triggered', async () => {
-		const dictionary = { button: 'To find' };
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
@@ -75,7 +74,6 @@ describe('Search tests', () => {
 	});
 
 	it('when the input receives the focus, the mock function is triggered', async () => {
-		const dictionary = { button: 'To find' };
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
@@ -101,7 +99,6 @@ describe('Search tests', () => {
 	});
 
 	it('when the input loses focus, the mock function is triggered', async () => {
-		const dictionary = { button: 'To find' };
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
@@ -128,7 +125,6 @@ describe('Search tests', () => {
 	});
 
 	it('when isDisabled is true, the input and the button become inactive', async () => {
-		const dictionary = { button: 'To find' };
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
@@ -155,7 +151,6 @@ describe('Search tests', () => {
 	});
 
 	it('with IsReadOnly set to true, the mock function is triggered when the focus is on, but not when the value is changed', async () => {
-		const dictionary = { button: 'To find' };
 		const user = userEvent.setup();
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
@@ -184,7 +179,6 @@ describe('Search tests', () => {
 	});
 
 	it('if IsInvalid is true, the input\'s border color turns red', () => {
-		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -206,7 +200,6 @@ describe('Search tests', () => {
 	});
 
 	it('when labelHidden is set to true, the label should be visible only to screen readers', () => {
-		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -228,7 +221,6 @@ describe('Search tests', () => {
 	});
 
 	it('when the error prop is not empty, an error message is displayed next to the input', () => {
-		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -277,7 +269,6 @@ describe('Search tests', () => {
 	});
 
 	it('is a basic snapshot', () => {
-		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -298,7 +289,6 @@ describe('Search tests', () => {
 	});
 
 	it('is a snapshot with labelHidden set to true', () => {
-		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -320,7 +310,6 @@ describe('Search tests', () => {
 	});
 
 	it('is a snapshot with isDisabled set to true', () => {
-		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -343,7 +332,6 @@ describe('Search tests', () => {
 	});
 
 	it('is snapshot with IsInvalid equal to true', () => {
-		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(
@@ -366,7 +354,6 @@ describe('Search tests', () => {
 	});
 
 	it('is a snapshot with IsReadOnly equal to true', () => {
-		const dictionary = { button: 'To find' };
 		const changeMockFn = jest.fn();
 		const submitMockFn = jest.fn((e) => e.preventDefault());
 		render(

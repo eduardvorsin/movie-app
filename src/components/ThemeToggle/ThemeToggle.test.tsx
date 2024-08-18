@@ -3,9 +3,11 @@ import ThemeToggle from "./ThemeToggle";
 import i18next from "@/i18n/client";
 import I18nextWrapper from "@/test-utils/I18nextWrapper";
 
+const dictionary = { label: 'Light and dark theme switch' };
+
 describe('ThemeToggle tests', () => {
 	it('is rendered correctly', async () => {
-		const dictionary = { label: 'Light and dark theme switch' };
+
 		render(
 			<ThemeToggle
 				dictionary={dictionary}
@@ -17,7 +19,6 @@ describe('ThemeToggle tests', () => {
 	});
 
 	it('is a basic snapshot', async () => {
-		const dictionary = { label: 'Light and dark theme switch' };
 		render(
 			<ThemeToggle
 				dictionary={dictionary}

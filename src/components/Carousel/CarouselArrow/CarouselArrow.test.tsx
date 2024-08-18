@@ -5,10 +5,11 @@ import i18next from "@/i18n/client";
 import I18nextWrapper from "@/test-utils/I18nextWrapper";
 
 const directions: NonNullable<Props['direction']>[] = ['left', 'right'];
+const dictionary = { direction: 'Previous slide' };
 
 describe('CarouselArrow tests', () => {
 	it('is rendered correctly', () => {
-		const dictionary = { direction: 'Previous slide' };
+
 		const mockFn = jest.fn();
 		render(
 			<CarouselArrow
@@ -24,7 +25,6 @@ describe('CarouselArrow tests', () => {
 
 	it('when clicking on a component, the mock function is called', async () => {
 		const user = userEvent.setup();
-		const dictionary = { direction: 'Previous slide' };
 		const mockFn = jest.fn();
 		render(
 			<CarouselArrow
@@ -42,7 +42,6 @@ describe('CarouselArrow tests', () => {
 
 	it('when isDisabled is set to true, the component becomes inactive', async () => {
 		const user = userEvent.setup();
-		const dictionary = { direction: 'Previous slide' };
 		const mockFn = jest.fn();
 		render(
 			<CarouselArrow
@@ -60,7 +59,6 @@ describe('CarouselArrow tests', () => {
 	});
 
 	it('is a basic snapshot', () => {
-		const dictionary = { direction: 'Previous slide' };
 		const mockFn = jest.fn();
 		render(
 			<CarouselArrow
@@ -75,7 +73,6 @@ describe('CarouselArrow tests', () => {
 	});
 
 	it('is a snapshot with isDisabled set to true', () => {
-		const dictionary = { direction: 'Previous slide' };
 		const mockFn = jest.fn();
 		render(
 			<CarouselArrow

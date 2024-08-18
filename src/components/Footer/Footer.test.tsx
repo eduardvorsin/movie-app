@@ -3,25 +3,26 @@ import Footer from "./Footer";
 import i18next from "@/i18n/client";
 import I18nextWrapper from "@/test-utils/I18nextWrapper";
 
+const dictionary = {
+	aboutTitle: 'About us',
+	description: 'Discover the world of cinema with our website!',
+	sectionsTitle: 'Sections',
+	basedOnTitle: 'Created based on',
+	logo: {
+		linkText: 'To home page',
+		altText: 'MovieWander logo'
+	},
+	navigation: {
+		movies: 'movies',
+		persons: 'persons',
+		tv: 'series and shows',
+		new: 'new releases',
+		collections: 'collections'
+	},
+};
+
 describe('Footer tests', () => {
 	it('is rendered correctly', () => {
-		const dictionary = {
-			aboutTitle: 'About us',
-			description: 'Discover the world of cinema with our website!',
-			sectionsTitle: 'Sections',
-			basedOnTitle: 'Created based on',
-			logo: {
-				linkText: 'To home page',
-				altText: 'MovieWander logo'
-			},
-			navigation: {
-				movies: 'movies',
-				persons: 'persons',
-				tv: 'series and shows',
-				new: 'new releases',
-				collections: 'collections'
-			},
-		};
 		render(
 			<Footer
 				dictionary={dictionary}
@@ -33,23 +34,6 @@ describe('Footer tests', () => {
 	});
 
 	it('is a basic snapshot', () => {
-		const dictionary = {
-			aboutTitle: 'About us',
-			description: 'Discover the world of cinema with our website!',
-			sectionsTitle: 'Sections',
-			basedOnTitle: 'Created based on',
-			logo: {
-				linkText: 'To home page',
-				altText: 'MovieWander logo'
-			},
-			navigation: {
-				movies: 'movies',
-				persons: 'persons',
-				tv: 'series and shows',
-				new: 'new releases',
-				collections: 'collections'
-			},
-		};
 		render(
 			<Footer
 				dictionary={dictionary}

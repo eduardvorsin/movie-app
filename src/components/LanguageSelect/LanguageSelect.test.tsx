@@ -9,9 +9,10 @@ jest.mock('next/navigation', () => ({
 	usePathname: () => jest.fn(),
 }));
 
+const dictionary = { label: 'Language selection' };
+
 describe('LanguageSelect tests', () => {
 	it('is rendered correctly', async () => {
-		const dictionary = { label: 'Language selection' };
 		render(
 			<LanguageSelect
 				dictionary={dictionary}
@@ -23,7 +24,6 @@ describe('LanguageSelect tests', () => {
 	});
 
 	it('is a basic snapshot', async () => {
-		const dictionary = { label: 'Language selection' };
 		render(
 			<LanguageSelect
 				dictionary={dictionary}

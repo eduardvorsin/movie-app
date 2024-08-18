@@ -3,15 +3,16 @@ import UserSettingsButton from "./UserSettingsButton";
 import i18next from "@/i18n/client";
 import I18nextWrapper from "@/test-utils/I18nextWrapper";
 
+const dictionary = {
+	button: 'Open settings',
+	themeTitle: 'The theme of the site',
+	languageTitle: 'Language Settings',
+	languageSelect: { label: 'Language selection' },
+	themeToggle: { label: 'Light and dark theme switch' },
+};
+
 describe('UserSettingsButton tests', () => {
 	it('is rendered correctly', () => {
-		const dictionary = {
-			button: 'Open settings',
-			themeTitle: 'The theme of the site',
-			languageTitle: 'Language Settings',
-			languageSelect: { label: 'Language selection' },
-			themeToggle: { label: 'Light and dark theme switch' },
-		};
 		render(
 			<UserSettingsButton
 				dictionary={dictionary}
@@ -23,13 +24,6 @@ describe('UserSettingsButton tests', () => {
 	});
 
 	it('is a basic snapshot', () => {
-		const dictionary = {
-			button: 'Open settings',
-			themeTitle: 'The theme of the site',
-			languageTitle: 'Language Settings',
-			languageSelect: { label: 'Language selection' },
-			themeToggle: { label: 'Light and dark theme switch' },
-		};
 		render(
 			<UserSettingsButton
 				dictionary={dictionary}

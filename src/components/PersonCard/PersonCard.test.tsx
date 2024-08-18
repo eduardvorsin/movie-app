@@ -7,9 +7,11 @@ import { MouseEventHandler } from 'react';
 
 const appearances: NonNullable<Props['appearance']>[] = ['primary', 'secondary'];
 
+const dictionary = { rating: 'Popularity' };
+
 describe('PersonCard tests', () => {
 	it('is rendered correctly', async () => {
-		const dictionary = { rating: 'Popularity' };
+
 
 		render(
 			<PersonCard
@@ -56,8 +58,6 @@ describe('PersonCard tests', () => {
 	});
 
 	it('if title is not an empty string, then the title is rendered', async () => {
-		const dictionary = { rating: 'Popularity' };
-
 		render(
 			<PersonCard
 				personId={1}
@@ -75,8 +75,6 @@ describe('PersonCard tests', () => {
 	});
 
 	it('if showRating is true it should show the rating value', async () => {
-		const dictionary = { rating: 'Popularity' };
-
 		render(
 			<PersonCard
 				personId={1}
@@ -95,8 +93,6 @@ describe('PersonCard tests', () => {
 	});
 
 	it('is a basic snapshot', async () => {
-		const dictionary = { rating: 'Popularity' };
-
 		render(
 			<PersonCard
 				personId={1}
@@ -113,8 +109,6 @@ describe('PersonCard tests', () => {
 	});
 
 	it('is a snapshot with title', async () => {
-		const dictionary = { rating: 'Popularity' };
-
 		render(
 			<PersonCard
 				personId={1}
@@ -131,8 +125,6 @@ describe('PersonCard tests', () => {
 	});
 
 	it('is a snapshot with showRating', async () => {
-		const dictionary = { rating: 'Popularity' };
-
 		render(
 			<PersonCard
 				personId={1}
@@ -149,8 +141,6 @@ describe('PersonCard tests', () => {
 	});
 
 	it.each(appearances)('is a snapshot with appearance equal to "$s"', async (appearance) => {
-		const dictionary = { rating: 'Popularity' };
-
 		render(
 			<PersonCard
 				personId={1}

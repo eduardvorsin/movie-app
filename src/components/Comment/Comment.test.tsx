@@ -5,18 +5,18 @@ import I18nextWrapper from '@/test-utils/I18nextWrapper';
 import Avatar from '../Avatar/Avatar';
 import CommentAction from './CommentAction/CommentAction';
 
+const dictionary = {
+	ratingLabel: 'rating',
+	edited: 'Edited',
+	savingText: 'Sending...',
+	expandableText: {
+		expandButton: 'Expand',
+		collapseButton: 'Collapse',
+	}
+};
+
 describe('Comment tests', () => {
 	it('is rendered correctly', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -40,16 +40,6 @@ describe('Comment tests', () => {
 	});
 
 	it('if isSaving is true, then a message with the value of the savingText pass should be sent', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -75,16 +65,6 @@ describe('Comment tests', () => {
 	});
 
 	it('if the value for the time parameter is not empty, it should show the time', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -109,16 +89,6 @@ describe('Comment tests', () => {
 	});
 
 	it('if isEdited is true, then the word "Edited" should be rendered', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -143,16 +113,6 @@ describe('Comment tests', () => {
 	});
 
 	it('if the value for restrictedTo is not empty, then it should render this value', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -177,16 +137,6 @@ describe('Comment tests', () => {
 	});
 
 	it('if isError is true then an error message should be displayed', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -211,16 +161,6 @@ describe('Comment tests', () => {
 	});
 
 	it('if isError is true and errorActions is not an empty array then it should render the buttons from errorActions', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -250,16 +190,6 @@ describe('Comment tests', () => {
 	});
 
 	it('if highlited is true, it should show the element to highlight', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -284,16 +214,6 @@ describe('Comment tests', () => {
 	});
 
 	it('if the rating value is not empty, then it should render it', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -318,16 +238,6 @@ describe('Comment tests', () => {
 	});
 
 	it('is a basic snapshot', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -351,16 +261,6 @@ describe('Comment tests', () => {
 	});
 
 	it('is a snapshot with the afterContent property', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -385,16 +285,6 @@ describe('Comment tests', () => {
 	});
 
 	it('snapshot with isEdited equal to true', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -419,16 +309,6 @@ describe('Comment tests', () => {
 	});
 
 	it('is a snapshot with restrictedTo', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -453,16 +333,6 @@ describe('Comment tests', () => {
 	});
 
 	it('is a snapshot with the isSaving set to true', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -487,16 +357,6 @@ describe('Comment tests', () => {
 	});
 
 	it('is a snapshot with the time property', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -521,16 +381,6 @@ describe('Comment tests', () => {
 	});
 
 	it('is a snapshot with highlited set to true', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -555,16 +405,6 @@ describe('Comment tests', () => {
 	});
 
 	it('a snapshot with an attached comment', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -605,16 +445,6 @@ describe('Comment tests', () => {
 	});
 
 	it('is a snapshot with isError equal to true and errorActions', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -643,16 +473,6 @@ describe('Comment tests', () => {
 	});
 
 	it('is a snapshot with actions', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -679,16 +499,6 @@ describe('Comment tests', () => {
 	});
 
 	it('is a snapshot with the shouldRenderNestedCommentsInline property', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'
@@ -730,16 +540,6 @@ describe('Comment tests', () => {
 	});
 
 	it('is a snapshot with rating', () => {
-		const dictionary = {
-			ratingLabel: 'rating',
-			edited: 'Edited',
-			savingText: 'Sending...',
-			expandableText: {
-				expandButton: 'Expand',
-				collapseButton: 'Collapse',
-			}
-		};
-
 		render(
 			<Comment
 				id='test-comment'

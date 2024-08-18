@@ -5,6 +5,11 @@ import I18nextWrapper from '@/test-utils/I18nextWrapper';
 
 jest.mock<typeof import('next/navigation')>('next/navigation');
 
+const dictionary = {
+	collapseButton: 'Collapse',
+	expandButton: 'Expand',
+};
+
 describe('ExpandableText tests', () => {
 	beforeEach(() => {
 		Object.defineProperty(HTMLElement.prototype, 'scrollHeight', {
@@ -17,11 +22,6 @@ describe('ExpandableText tests', () => {
 	});
 
 	it('is rendered correctly', async () => {
-		const dictionary = {
-			collapseButton: 'Collapse',
-			expandButton: 'Expand',
-		};
-
 		render(
 			<ExpandableText
 				dictionary={dictionary}
@@ -36,11 +36,6 @@ describe('ExpandableText tests', () => {
 	});
 
 	it('is a basic snapshot', async () => {
-		const dictionary = {
-			collapseButton: 'Collapse',
-			expandButton: 'Expand',
-		};
-
 		render(
 			<ExpandableText
 				dictionary={dictionary}
@@ -54,11 +49,6 @@ describe('ExpandableText tests', () => {
 	});
 
 	it('is a snapshot with defaultExpanded set to true', async () => {
-		const dictionary = {
-			collapseButton: 'Collapse',
-			expandButton: 'Expand',
-		};
-
 		render(
 			<ExpandableText
 				dictionary={dictionary}

@@ -4,6 +4,8 @@ import userEvent from '@testing-library/user-event';
 import i18next from '@/i18n/client';
 import I18nextWrapper from '@/test-utils/I18nextWrapper';
 
+const dictionary = { clearButton: 'To clear' };
+
 describe('TextField tests', () => {
 	it('is rendered correctly', () => {
 		const mockFn = jest.fn();
@@ -123,7 +125,7 @@ describe('TextField tests', () => {
 	});
 
 	it('the mock function is triggered when the clear button is clicked', async () => {
-		const dictionary = { clearButton: 'To clear' };
+
 		const user = userEvent.setup();
 		const mockFn = jest.fn();
 		render(
@@ -146,7 +148,6 @@ describe('TextField tests', () => {
 	});
 
 	it('when the clearButton prop is true, the input clearing button appears', () => {
-		const dictionary = { clearButton: 'To clear' };
 		const mockFn = jest.fn();
 		render(
 			<TextField
@@ -290,7 +291,6 @@ describe('TextField tests', () => {
 	});
 
 	it('is a snapshot with clear button', () => {
-		const dictionary = { clearButton: 'To clear' };
 		const mockFn = jest.fn();
 		render(
 			<TextField

@@ -4,6 +4,8 @@ import userEvent from "@testing-library/user-event";
 import i18next from "@/i18n/client";
 import I18nextWrapper from "@/test-utils/I18nextWrapper";
 
+const dictionary = { label: 'Carousel pagination' }
+
 describe('CarouselPagination tests', () => {
 	it('is rendered correctly', () => {
 		render(
@@ -21,7 +23,7 @@ describe('CarouselPagination tests', () => {
 	it('when clicking on the navigation element, the mock function should be called', async () => {
 		const user = userEvent.setup();
 		const mockFn = jest.fn();
-		const dictionary = { label: 'Carousel pagination' }
+
 		render(
 			<CarouselPagination
 				paginationType='dots'
@@ -66,7 +68,6 @@ describe('CarouselPagination tests', () => {
 
 	it('is a snapshot with paginationType equal to "dots"', () => {
 		const mockFn = jest.fn();
-		const dictionary = { label: 'Carousel pagination' }
 		render(
 			<CarouselPagination
 				paginationType='dots'

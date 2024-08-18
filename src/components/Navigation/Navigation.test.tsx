@@ -9,18 +9,18 @@ const mockUseSelectedLayoutSegments = jest.fn();
 jest.mock('next/navigation', () => ({
 	useSelectedLayoutSegments: () => mockUseSelectedLayoutSegments(),
 }));
+const dictionary = {
+	movies: 'movies',
+	persons: 'persons',
+	tv: 'series and shows',
+	new: 'new releases',
+	collections: 'collections',
+};
 
 describe('Navigation tests', () => {
 	it('is rendered correctly', () => {
 		mockUseSelectedLayoutSegments.mockReturnValue(['movies', '9999']);
 		const mockFn = jest.fn();
-		const dictionary = {
-			movies: 'movies',
-			persons: 'persons',
-			tv: 'series and shows',
-			new: 'new releases',
-			collections: 'collections',
-		};
 		render(
 			<Navigation
 				onClick={mockFn}
@@ -41,13 +41,6 @@ describe('Navigation tests', () => {
 			e.preventDefault();
 			mockFn();
 		};
-		const dictionary = {
-			movies: 'movies',
-			persons: 'persons',
-			tv: 'series and shows',
-			new: 'new releases',
-			collections: 'collections',
-		};
 		render(
 			<Navigation
 				isMenuOpen
@@ -65,13 +58,6 @@ describe('Navigation tests', () => {
 	it('is a basic snapshot', () => {
 		mockUseSelectedLayoutSegments.mockReturnValue(['movies', '9999']);
 		const mockFn = jest.fn();
-		const dictionary = {
-			movies: 'movies',
-			persons: 'persons',
-			tv: 'series and shows',
-			new: 'new releases',
-			collections: 'collections',
-		};
 		render(
 			<Navigation
 				isMenuOpen

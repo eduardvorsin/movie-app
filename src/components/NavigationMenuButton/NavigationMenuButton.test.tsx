@@ -4,13 +4,14 @@ import i18next from "@/i18n/client";
 import I18nextWrapper from "@/test-utils/I18nextWrapper";
 import userEvent from "@testing-library/user-event";
 
+const dictionary = {
+	active: 'Close the navigation menu',
+	inactive: 'Open the navigation menu'
+};
+
 describe('NavigationMenuButton tests', () => {
 	it('is rendered correctly', () => {
 		const mockFn = jest.fn();
-		const dictionary = {
-			active: 'Close the navigation menu',
-			inactive: 'Open the navigation menu'
-		};
 		render(
 			<NavigationMenuButton
 				onClick={mockFn}
@@ -26,10 +27,6 @@ describe('NavigationMenuButton tests', () => {
 	it('when clicking on a component, the mock function should be called', async () => {
 		const user = userEvent.setup();
 		const mockFn = jest.fn();
-		const dictionary = {
-			active: 'Close the navigation menu',
-			inactive: 'Open the navigation menu'
-		};
 		render(
 			<NavigationMenuButton
 				onClick={mockFn}
@@ -46,10 +43,6 @@ describe('NavigationMenuButton tests', () => {
 
 	it('is a basic snapshot', () => {
 		const mockFn = jest.fn();
-		const dictionary = {
-			active: 'Close the navigation menu',
-			inactive: 'Open the navigation menu'
-		};
 		render(
 			<NavigationMenuButton
 				onClick={mockFn}
@@ -64,10 +57,6 @@ describe('NavigationMenuButton tests', () => {
 
 	it('is a snapshot when isActive is true', () => {
 		const mockFn = jest.fn();
-		const dictionary = {
-			active: 'Close the navigation menu',
-			inactive: 'Open the navigation menu'
-		};
 		render(
 			<NavigationMenuButton
 				onClick={mockFn}

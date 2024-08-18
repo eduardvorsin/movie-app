@@ -4,13 +4,13 @@ import i18next from "@/i18n/client";
 import I18nextWrapper from "@/test-utils/I18nextWrapper";
 
 const sizes: NonNullable<Props['size']>[] = ['small', 'medium', 'large'];
+const dictionary = {
+	altText: 'MovieWander logo',
+	linkText: 'To home page',
+};
 
 describe('Logo tests', () => {
 	it('is rendered correctly', () => {
-		const dictionary = {
-			altText: 'MovieWander logo',
-			linkText: 'To home page',
-		};
 		render(
 			<Logo
 				size='medium'
@@ -23,10 +23,6 @@ describe('Logo tests', () => {
 	});
 
 	it('is a basic snapshot', () => {
-		const dictionary = {
-			altText: 'MovieWander logo',
-			linkText: 'To home page',
-		};
 		render(
 			<Logo
 				size='medium'
@@ -39,10 +35,6 @@ describe('Logo tests', () => {
 	});
 
 	it.each(sizes)('is a snapshot with a "%s" size', (size) => {
-		const dictionary = {
-			altText: 'MovieWander logo',
-			linkText: 'To home page',
-		};
 		render(
 			<Logo
 				size={size}
