@@ -289,5 +289,11 @@
 	},
 	"youTubeVideo": {
 		"playButton": "To watch"
+	},
+	"mainSearch": {
+		"label": "Search",
+		"placeholder": "Search for movies, TV series, actors.",
+		"openSearch": "Show the search field",
+		"closeSearch": "Hide the search field"
 	}
 }

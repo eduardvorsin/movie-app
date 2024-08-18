@@ -289,5 +289,11 @@
 	},
 	"youTubeVideo": {
 		"playButton": "Смотреть"
+	},
+	"mainSearch": {
+		"label": "Поиск",
+		"placeholder": "Искать фильмы, сериалы, актеров.",
+		"openSearch": "Показать поле поиска",
+		"closeSearch": "Скрыть поле поиска"
 	}
 }

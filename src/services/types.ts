@@ -234,3 +234,13 @@ export type FilterOptions<M extends 'movie' | 'tv'> = {
 	'release_date.gte'?: M extends 'movie' ? string : never,
 	'release_date.lte'?: M extends 'movie' ? string : never,
 };
+
+export type SearchPersonData = { media_type: Extract<MediaTypes, 'person'> } & PopularPerson;
+export type SearchTVSeriesData = { media_type: Extract<MediaTypes, 'tv'> } & TVSeriesResponse;
+export type SearchMovieData = {
+	media_type: Extract<MediaTypes, 'movie'>,
+	title: string,
+	original_title: string,
+} & Omit<MovieResponse, 'release_dates' | 'title' | 'original_title'>
+
+export type MultiSearchData = SearchPersonData | SearchTVSeriesData | SearchMovieData;
