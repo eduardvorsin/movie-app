@@ -3,7 +3,15 @@ import Carousel, { Props, getBreakpointFromValue } from "./Carousel";
 import i18next from "@/i18n/client";
 import I18nextWrapper from "@/test-utils/I18nextWrapper";
 
+Object.defineProperty(global, 'performance', {
+	writable: true,
+});
+
 const paginationTypes: NonNullable<Props['paginationType']>[] = ['dots', 'progress', 'fraction'];
+
+const slides = new Array(10).fill(null).map((_, index) => (
+	<div key={index}>index: {index}</div>
+));
 
 jest.useFakeTimers();
 describe('Carousel tests', () => {
@@ -19,9 +27,7 @@ describe('Carousel tests', () => {
 			<Carousel
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>
 		);
 
@@ -36,9 +42,7 @@ describe('Carousel tests', () => {
 				onSlideChange={mockFn}
 				showArrows
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>
 		);
 
@@ -76,9 +80,7 @@ describe('Carousel tests', () => {
 				onSlideChange={mockFn}
 				autoplay
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>
 		);
 
@@ -92,9 +94,7 @@ describe('Carousel tests', () => {
 			<Carousel
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>
 		);
 
@@ -107,9 +107,7 @@ describe('Carousel tests', () => {
 				slidesPerView={3}
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>
 		);
 
@@ -122,9 +120,7 @@ describe('Carousel tests', () => {
 				slidesPerGroup={3}
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>
 		);
 
@@ -137,9 +133,7 @@ describe('Carousel tests', () => {
 				spaceBetween={50}
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>
 		);
 
@@ -152,9 +146,7 @@ describe('Carousel tests', () => {
 				showArrows
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>
 		);
 
@@ -167,9 +159,7 @@ describe('Carousel tests', () => {
 				showPagination
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>
 		);
 
@@ -182,9 +172,7 @@ describe('Carousel tests', () => {
 				showScrollShadow
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>
 		);
 
@@ -197,9 +185,7 @@ describe('Carousel tests', () => {
 				paginationType={paginationType}
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>
 		);
 
@@ -212,9 +198,7 @@ describe('Carousel tests', () => {
 				noSwiping
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>
 		);
 
@@ -236,9 +220,7 @@ describe('Carousel tests', () => {
 				}}
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>
 		);
 
@@ -257,9 +239,7 @@ describe('Carousel integration tests', () => {
 				showPagination
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>,
 			{ wrapper: I18nextWrapper }
 		);
@@ -277,9 +257,7 @@ describe('Carousel integration tests', () => {
 				showPagination
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>,
 			{ wrapper: I18nextWrapper }
 		);
@@ -296,9 +274,7 @@ describe('Carousel integration tests', () => {
 				showPagination
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>,
 			{ wrapper: I18nextWrapper }
 		);
@@ -315,9 +291,7 @@ describe('Carousel integration tests', () => {
 				showPagination
 				testId='test-carousel'
 			>
-				{new Array(10).fill(null).map((_, index) => (
-					<div key={index}>index: {index}</div>
-				))}
+				{slides}
 			</Carousel>,
 			{ wrapper: I18nextWrapper }
 		);
