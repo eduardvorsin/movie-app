@@ -6,7 +6,6 @@ exports[`Search integration tests is a snapshot with English localization 1`] = 
 >
   <form
     autocomplete="off"
-    role="search"
   >
     <label>
       <span
@@ -55,7 +54,6 @@ exports[`Search integration tests is a snapshot with Russian localization 1`] = 
 >
   <form
     autocomplete="off"
-    role="search"
   >
     <label>
       <span
@@ -104,7 +102,6 @@ exports[`Search tests is a basic snapshot 1`] = `
 >
   <form
     autocomplete="off"
-    role="search"
   >
     <label>
       <span
@@ -152,7 +149,6 @@ exports[`Search tests is a snapshot with IsReadOnly equal to true 1`] = `
 >
   <form
     autocomplete="off"
-    role="search"
   >
     <label>
       <span
@@ -201,7 +197,6 @@ exports[`Search tests is a snapshot with clearButton equal to true 1`] = `
 >
   <form
     autocomplete="off"
-    role="search"
   >
     <label>
       <span
@@ -267,7 +262,6 @@ exports[`Search tests is a snapshot with isDisabled set to true 1`] = `
 >
   <form
     autocomplete="off"
-    role="search"
   >
     <label>
       <span
@@ -317,7 +311,6 @@ exports[`Search tests is a snapshot with labelHidden set to true 1`] = `
 >
   <form
     autocomplete="off"
-    role="search"
   >
     <label>
       <span
@@ -365,7 +358,6 @@ exports[`Search tests is snapshot with IsInvalid equal to true 1`] = `
 >
   <form
     autocomplete="off"
-    role="search"
   >
     <label>
       <span
