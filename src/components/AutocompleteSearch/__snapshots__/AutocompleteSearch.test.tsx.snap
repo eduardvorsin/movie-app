@@ -8,7 +8,6 @@ exports[`AutocompleteSearch integration tests is a snapshot with English localiz
   <div>
     <form
       autocomplete="off"
-      role="search"
     >
       <label>
         <span
@@ -103,7 +102,6 @@ exports[`AutocompleteSearch integration tests is a snapshot with Russian localiz
   <div>
     <form
       autocomplete="off"
-      role="search"
     >
       <label>
         <span
@@ -198,7 +196,6 @@ exports[`AutocompleteSearch tests is a basic snapshot 1`] = `
   <div>
     <form
       autocomplete="off"
-      role="search"
     >
       <label>
         <span
@@ -267,7 +264,6 @@ exports[`AutocompleteSearch tests is a snapshot when initialOptions and options 
   <div>
     <form
       autocomplete="off"
-      role="search"
     >
       <label>
         <span
@@ -336,7 +332,6 @@ exports[`AutocompleteSearch tests is a snapshot with isLoading is true 1`] = `
   <div>
     <form
       autocomplete="off"
-      role="search"
     >
       <label>
         <span
