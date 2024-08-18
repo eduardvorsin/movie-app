@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainSearch integration tests is a snapshot with English localization 1`] = `
+<search
+  class=" flex items-center justify-end flex-grow  "
+  data-testid="main-search"
+  role="search"
+>
+  <button
+    class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   mr-1"
+  >
+    <span
+      class="inline-flex items-center"
+    >
+      <svg
+        class="p-2 w-[2.25rem] h-[2.25rem]"
+        viewBox="0 0 32 32"
+      >
+        <use
+          href="/assets/icons/search.svg#search"
+        />
+      </svg>
+      Show the search field
+    </span>
+  </button>
+</search>
+`;
+
+exports[`MainSearch integration tests is a snapshot with Russian localization 1`] = `
+<search
+  class=" flex items-center justify-end flex-grow  "
+  data-testid="main-search"
+  role="search"
+>
+  <button
+    class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   mr-1"
+  >
+    <span
+      class="inline-flex items-center"
+    >
+      <svg
+        class="p-2 w-[2.25rem] h-[2.25rem]"
+        viewBox="0 0 32 32"
+      >
+        <use
+          href="/assets/icons/search.svg#search"
+        />
+      </svg>
+      Показать поле поиска
+    </span>
+  </button>
+</search>
+`;
+
+exports[`MainSearch tests is a basic snapshot 1`] = `
+<search
+  class=" flex items-center justify-end flex-grow  "
+  data-testid="main-search"
+  role="search"
+>
+  <button
+    class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   mr-1"
+  >
+    <span
+      class="inline-flex items-center"
+    >
+      <svg
+        class="p-2 w-[2.25rem] h-[2.25rem]"
+        viewBox="0 0 32 32"
+      >
+        <use
+          href="/assets/icons/search.svg#search"
+        />
+      </svg>
+      Show the search field
+    </span>
+  </button>
+</search>
+`;
+
+exports[`MainSearch tests is a snapshot with isSearchVisible set to true 1`] = `
+<search
+  class=" flex items-center justify-end flex-grow  h-full w-full lg:w-auto top-0 left-0 absolute px-4 py-3 lg:static lg:p-0 bg-neutral-100 dark:bg-dark-neutral-100 lg:bg-transparent lg:dark:bg-transparent"
+  data-testid="main-search"
+  role="search"
+>
+  <div
+    class="relative z-100 w-full"
+  >
+    <div>
+      <form
+        autocomplete="off"
+      >
+        <label>
+          <span
+            class="block text-100 mb-1 text-neutral-1000 dark:text-dark-neutral-1000 transition-colors duration-150 sr-only"
+          >
+            Search
+          </span>
+          <div
+            class="relative"
+          >
+            <input
+              class="outline-none w-full h-[2.25rem] py-2 bg-neutral-0 dark:bg-dark-neutral-200 border-neutral-300 dark:border-dark-neutral-350 text-neutral-1000 dark:text-dark-neutral-900 rounded rounded-[0.1875rem] border-2 text-100 enabled:hover:bg-neutral-100 enabled:hover:border-neutral-400 dark:enabled:hover:bg-dark-neutral-250 dark:enabled:hover:border-dark-neutral-350 focus:border-blue-500 dark:focus:border-blue-300 transition-colors duration-150   border-neutral-300 dark:border-dark-neutral-350 px-8"
+              id="main-search"
+              inputmode="search"
+              name="main-search"
+              placeholder="Search for movies, TV series, actors."
+              type="text"
+              value=""
+            />
+            <button
+              class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-neutral-600 enabled:hover:text-neutral-700 enabled:active:text-neutral-800 dark:text-neutral-300 dark:enabled:hover:text-neutral-200 dark:enabled:active:text-neutral-100   [&]:text-neutral-400 enabled:hover:[&]:text-neutral-300 enabled:active:[&]:text-neutral-200 dark:[&]:text-dark-neutral-600 dark:enabled:hover:text-dark-neutral-700 dark:enabled:active:text-dark-neutral-800 absolute left-[0.375rem] top-1/2 -translate-y-1/2"
+              type="button"
+            >
+              <span
+                class="inline-flex items-center"
+              >
+                <svg
+                  class="w-6 h-6 fill-current"
+                  viewBox="0 0 32 32"
+                >
+                  <use
+                    href="/assets/icons/cancel.svg#cancel"
+                  />
+                </svg>
+                To clear
+              </span>
+            </button>
+            <button
+              class="items-center font-medium rounded-1 text-center cursor-pointer min-w[2.25rem] leading-2 inline-flex transition-colors duration-150 text-0  text-dark-neutral-0 enabled:hover:text-dark-neutral-400 enabled:active:text-dark-neutral-600 dark:text-neutral-0 dark:enabled:hover:text-neutral-400 dark:enabled:active:text-neutral-600   absolute top-1/2 right-[0.375rem] -translate-y-1/2"
+            >
+              <span
+                class="inline-flex items-center"
+              >
+                <svg
+                  class="w-6 h-6 p-0.5 fill-current"
+                  viewBox="0 0 32 32"
+                >
+                  <use
+                    href="/assets/icons/loupe.svg#loupe"
+                  />
+                </svg>
+                To find
+              </span>
+            </button>
+          </div>
+        </label>
+      </form>
+    </div>
+  </div>
+</search>
+`;
