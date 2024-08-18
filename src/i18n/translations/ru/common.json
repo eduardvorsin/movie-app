@@ -113,9 +113,6 @@
 		"active": "Закрыть меню навигации",
 		"inactive": "Открыть меню навигации"
 	},
-	"header": {
-		"searchButton": "Найти"
-	},
 	"accountButton": "Войти в аккаунт",
 	"collections": {
 		"marvel": "Марвел",

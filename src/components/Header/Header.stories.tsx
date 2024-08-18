@@ -33,7 +33,6 @@ type Story = StoryObj<typeof Header>;
 const HeaderWithHooks = (props: Omit<Props, 'dictionary'>) => {
 	const { t } = useTranslation('common');
 	const dictionary = {
-		searchButton: t('header.searchButton'),
 		logo: {
 			altText: t('logo.altText'),
 			linkText: t('logo.linkText'),
@@ -44,6 +43,20 @@ const HeaderWithHooks = (props: Omit<Props, 'dictionary'>) => {
 			tv: t('navigation.tv'),
 			new: t('navigation.new'),
 			collections: t('navigation.collections'),
+		},
+		mainSearch: {
+			label: t('mainSearch.label'),
+			placeholder: t('mainSearch.placeholder'),
+			openSearch: t('mainSearch.openSearch'),
+			closeSearch: t('mainSearch.closeSearch'),
+			autocompleteSearch: {
+				emptyStateText: t('autocompleteSearch.emptyStateText'),
+				emptyStateTitle: t('autocompleteSearch.emptyStateTitle'),
+				search: {
+					button: t('search.button'),
+					clearButton: t('search.clearButton'),
+				}
+			}
 		},
 		userSettingsButton: {
 			button: t('userSettingsButton.button'),

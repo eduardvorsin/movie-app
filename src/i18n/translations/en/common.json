@@ -113,9 +113,6 @@
 		"active": "Close the navigation menu",
 		"inactive": "Open the navigation menu"
 	},
-	"header": {
-		"searchButton": "To find"
-	},
 	"accountButton": "log in to your account",
 	"collections": {
 		"marvel": "Marvel",

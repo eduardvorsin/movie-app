@@ -11,7 +11,6 @@ import UserSettingsButton from '../UserSettingsButton/UserSettingsButton';
 
 export type Props = {
 	dictionary: {
-		searchButton: string,
 		logo: Record<'altText' | 'linkText', string>,
 		navigation: Record<'movies' | 'persons' | 'tv' | 'new' | 'collections', string>,
 		userSettingsButton: {
