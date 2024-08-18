@@ -39,7 +39,8 @@
 		"persons": "$t(navigation.persons)",
 		"tv": "$t(navigation.tv)",
 		"new": "$t(navigation.new)",
-		"collections": "$t(navigation.collections)"
+		"collections": "$t(navigation.collections)",
+		"search": "поиск"
 	},
 	"expandableText": {
 		"collapseButton": "Свернуть",

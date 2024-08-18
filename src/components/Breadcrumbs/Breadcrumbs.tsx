@@ -40,8 +40,7 @@ export default function Breadcrumbs({
 			let localizedSegment = segment;
 			if (locales.includes(segment as Locales)) {
 				localizedSegment = t('breadcrumbs.home');
-			}
-			if ((Object.keys(navigationRoutes)).includes(segment)) {
+			} else if ((Object.keys(navigationRoutes)).includes(segment) || segment === 'search') {
 				localizedSegment = t(`breadcrumbs.${segment}`);
 			}
 
