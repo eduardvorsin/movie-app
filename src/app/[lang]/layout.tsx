@@ -57,9 +57,22 @@ export default async function RootLayout({
         <ThemeProvider>
           <Header
             dictionary={{
-              searchButton: t('header.searchButton'),
               logo: logoDictionary,
               navigation: navigationDictionary,
+              mainSearch: {
+                label: t('mainSearch.label'),
+                placeholder: t('mainSearch.placeholder'),
+                openSearch: t('mainSearch.openSearch'),
+                closeSearch: t('mainSearch.closeSearch'),
+                autocompleteSearch: {
+                  emptyStateText: t('autocompleteSearch.emptyStateText'),
+                  emptyStateTitle: t('autocompleteSearch.emptyStateTitle'),
+                  search: {
+                    button: t('search.button'),
+                    clearButton: t('search.clearButton'),
+                  }
+                }
+              },
               userSettingsButton: {
                 button: t('userSettingsButton.button'),
                 themeTitle: t('userSettingsButton.themeTitle'),
