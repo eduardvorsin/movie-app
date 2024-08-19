@@ -12,7 +12,6 @@ jest.mock('next/navigation', () => ({
 }));
 
 const dictionary = {
-	searchButton: 'To find',
 	logo: {
 		linkText: 'To home page',
 		altText: 'MovieWander logo'
