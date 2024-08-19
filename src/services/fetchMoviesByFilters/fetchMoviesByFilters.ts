@@ -17,7 +17,6 @@ export const fetchMoviesByFilters = async (
 			url.searchParams.append(query, value.toString());
 		});
 
-	console.log('url.href', url.href)
 	let movies;
 	try {
 		const res = await fetch(url.href, {

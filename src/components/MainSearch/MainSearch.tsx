@@ -123,7 +123,6 @@ export default function MainSearch({
 
 		const res = await fetch(`${baseURL}?${searchParams}`);
 		const data = (await res.json()) as ListsResponse<MultiSearchData> | null;
-		console.log('data', data);
 
 		if (data !== null && data?.results) {
 			dispatch({

@@ -2,8 +2,6 @@
 import { http, HttpResponse } from 'msw';
 import { movieDetailsData, moviesData } from '../mock-data/movie';
 
-console.log('process.env.API_BASE_URL', process.env.API_BASE_URL);
-
 export const handlers = [
 	http.get(`${process.env.API_BASE_URL}/${process.env.API_VERSION}/movie/:id`, ({ params }) => {
 		if (Number(params.id) < 1) {
