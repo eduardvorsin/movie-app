@@ -1,6 +1,6 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { Department } from '@/types/shared';
-import { CastAndCrewCredit, TVSeriesEpisode } from '../types';
+import { CastAndCrewCredit, TVSeriesEpisode } from '@/services/types';
 
 type Episodes = TVSeriesEpisode & {
 	episode_type: string,
@@ -31,10 +31,15 @@ export const fetchSeasonsForTVSeries = async ({ id, seasonNumber, lang }: {
 	lang: Locales
 }): Promise<TVSeriesSeasonDetails | null> => {
 	const currentLang = lang ?? fallbackLng;
+	const url = new URL(
+		`/${process.env.API_VERSION}/tv/${id}/season/${seasonNumber}`,
+		process.env.API_BASE_URL
+	);
+	url.searchParams.set('language', currentLang);
 
 	let seasonDetails;
 	try {
-		const res = await fetch(`https://api.themoviedb.org/3/tv/${id}/season/${seasonNumber}?language=${currentLang}`, {
+		const res = await fetch(url.href, {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',

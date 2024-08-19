@@ -3,10 +3,15 @@ import { ListsResponse, MovieResponse } from "@/services/types";
 
 export const fetchTrendingMovies = async (lang?: Locales): Promise<ListsResponse<MovieResponse> | null> => {
 	const currentLang = lang ?? fallbackLng;
+	const url = new URL(
+		`/${process.env.API_VERSION}/trending/movie/week`,
+		process.env.API_BASE_URL
+	);
+	url.searchParams.set('language', currentLang);
 
 	let trendingMovies;
 	try {
-		const res = await fetch(`https://api.themoviedb.org/3/trending/movie/week?language=${currentLang}`, {
+		const res = await fetch(url.href, {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',

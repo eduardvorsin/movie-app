@@ -1,0 +1,1 @@
+process.env.API_BASE_URL = 'https://api.themoviedb.org'

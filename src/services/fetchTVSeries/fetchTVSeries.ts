@@ -64,6 +64,15 @@ type TVSeriesAdditionalData = {
 
 export type TVSeriesDetails = TVSeriesData & TVSeriesAdditionalData;
 
+const appendToResponse = [
+	'external_ids',
+	'aggregate_credits',
+	'similar',
+	'recommendations',
+	'content_ratings',
+	'reviews'
+] as const;
+
 export const fetchTVSeries = async <
 	T extends boolean,
 	R = T extends true ? TVSeriesDetails : TVSeriesData,
@@ -72,15 +81,16 @@ export const fetchTVSeries = async <
 	includeAdditionalData: T,
 }): Promise<R | null> => {
 	const currentLang = options?.lang ?? fallbackLng;
+	const url = new URL(
+		`/${process.env.API_VERSION}/tv/${id}`,
+		process.env.API_BASE_URL
+	);
+	url.searchParams.append('language', currentLang);
+	if (options.includeAdditionalData) {
+		url.searchParams.append('append_to_response', appendToResponse.join(','));
+	}
 
 	let tvSeries;
-
-	const url = new URL(`tv/${id}`, 'https://api.themoviedb.org/3/');
-	if (options.includeAdditionalData) {
-		url.searchParams.append('append_to_response', 'external_ids,aggregate_credits,similar,recommendations,reviews,content_ratings');
-	}
-	url.searchParams.append('language', currentLang);
-
 	try {
 		const res = await fetch(url.href, {
 			method: 'GET',

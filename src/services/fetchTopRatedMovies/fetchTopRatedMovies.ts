@@ -1,5 +1,5 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { fetchMoviesByFilters } from '../fetchMoviesByFilters/fetchMoviesByFilters';
+import { fetchMoviesByFilters } from '@/services/fetchMoviesByFilters/fetchMoviesByFilters';
 import { ListsResponse, MovieResponse } from '../types'
 
 export const fetchTopRatedMovies = async (page: number, options?: { lang: Locales }): Promise<ListsResponse<MovieResponse> | null> => {

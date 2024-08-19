@@ -1,6 +1,6 @@
 import { Locales, fallbackLng } from "@/i18n/settings";
-import { MovieDetails, fetchMovie } from "../fetchMovie/fetchMovie";
-import { fetchMoviesByFilters } from "../fetchMoviesByFilters/fetchMoviesByFilters";
+import { MovieDetails, fetchMovie } from "@/services/fetchMovie/fetchMovie";
+import { fetchMoviesByFilters } from "@/services/fetchMoviesByFilters/fetchMoviesByFilters";
 
 export const fetchMoviesBoxOffice = async (page: number, options?: { lang: Locales }): Promise<MovieDetails[]> => {
 	const currentLang = options?.lang ?? fallbackLng;
@@ -23,10 +23,9 @@ export const fetchMoviesBoxOffice = async (page: number, options?: { lang: Local
 		return fetchMovie(id.toString(), { lang: currentLang });
 	});
 	const responses = await Promise.all(requests);
-	const moviesBoxOffice = responses.
-		filter((movie): movie is MovieDetails => {
-			return movie !== null && movie?.revenue > 0;
-		});
+	const moviesBoxOffice = responses.filter((movie): movie is MovieDetails => {
+		return movie !== null && movie?.revenue > 0;
+	});
 
 	return moviesBoxOffice;
 };

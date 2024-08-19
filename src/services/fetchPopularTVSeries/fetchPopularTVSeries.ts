@@ -7,7 +7,10 @@ export const fetchPopularTVSeries = async (page: number, options?: { lang: Local
 	const currentDate = new Date();
 	const year = currentDate.getMonth() >= 5 ? currentDate.getFullYear() : currentDate.getFullYear() - 1;
 
-	const url = new URL('discover/tv', 'https://api.themoviedb.org/3/');
+	const url = new URL(
+		`/${process.env.API_VERSION}/discover/tv`,
+		process.env.API_BASE_URL
+	);
 	const queryParams = {
 		language: currentLang,
 		page: page.toString(),

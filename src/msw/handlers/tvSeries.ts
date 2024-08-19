@@ -2,7 +2,7 @@ import { http, HttpResponse } from "msw";
 import { tvSeriesData, tvSeriesDetailsData, tvSeriesSeasonsData } from "../mock-data/tvSeries";
 
 export const handlers = [
-	http.get('https://api.themoviedb.org/3/tv/:id/season/:season_number', ({ params }) => {
+	http.get(`${process.env.API_BASE_URL}/${process.env.API_VERSION}/tv/:id/season/:season_number`, ({ params }) => {
 		if (Number(params.season_number) < 0 || Number(params.id) < 1) {
 			return HttpResponse.json({
 				"success": false,
@@ -14,7 +14,7 @@ export const handlers = [
 		return HttpResponse.json(tvSeriesSeasonsData);
 	}),
 
-	http.get('https://api.themoviedb.org/3/tv/:id', ({ params }) => {
+	http.get(`${process.env.API_BASE_URL}/${process.env.API_VERSION}/tv/:id`, ({ params }) => {
 		if (Number(params.id) < 1) {
 			return HttpResponse.json({
 				success: false,
@@ -26,7 +26,7 @@ export const handlers = [
 		return HttpResponse.json(tvSeriesDetailsData);
 	}),
 
-	http.get('https://api.themoviedb.org/3/discover/tv', ({ request }) => {
+	http.get(`${process.env.API_BASE_URL}/${process.env.API_VERSION}/discover/tv`, ({ request }) => {
 		const page = new URL(request.url).searchParams.get('page');
 
 		if (Number(page) < 1) {

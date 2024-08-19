@@ -4,8 +4,10 @@ export const fetchMoviesByFilters = async (
 	page: number,
 	options: FilterOptions<'movie'>
 ): Promise<ListsResponse<MovieResponse> | null> => {
-	const url = new URL('discover/movie', 'https://api.themoviedb.org/3/');
-
+	const url = new URL(
+		`/${process.env.API_VERSION}/discover/movie`,
+		process.env.API_BASE_URL
+	);
 	url.searchParams.append('page', page.toString());
 	(Object.keys(options) as Array<keyof typeof options>)
 		.forEach((query) => {
@@ -15,6 +17,7 @@ export const fetchMoviesByFilters = async (
 			url.searchParams.append(query, value.toString());
 		});
 
+	console.log('url.href', url.href)
 	let movies;
 	try {
 		const res = await fetch(url.href, {

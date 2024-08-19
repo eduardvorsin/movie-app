@@ -3,10 +3,16 @@ import { ListsResponse, PopularPerson } from '../types';
 
 export const fetchPopularPersons = async (page: number, options?: { lang: Locales }): Promise<ListsResponse<PopularPerson> | null> => {
 	const currentLang = options?.lang ?? fallbackLng;
+	const url = new URL(
+		`/${process.env.API_VERSION}/person/popular`,
+		process.env.API_BASE_URL
+	);
+	url.searchParams.set('page', page.toString());
+	url.searchParams.set('language', currentLang);
 
 	let popularPersons;
 	try {
-		const res = await fetch(`https://api.themoviedb.org/3/person/popular?page=${page}&language=${currentLang}`, {
+		const res = await fetch(url.href, {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',

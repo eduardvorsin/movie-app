@@ -1,10 +1,9 @@
 import { Locales } from '@/i18n/settings';
-import { fetchMoviesByFilters } from '../fetchMoviesByFilters/fetchMoviesByFilters';
-import { fetchTrailersForMediaProject } from '../fetchTrailersForMediaProject/fetchTrailersForMediaProject';
-import { TrailerResponse, TrailersResponseList } from '../types';
+import { fetchMoviesByFilters } from '@/services/fetchMoviesByFilters/fetchMoviesByFilters';
+import { fetchTrailersForMediaProject } from '@/services/fetchTrailersForMediaProject/fetchTrailersForMediaProject';
+import { TrailerResponse, TrailersResponseList } from '@/services/types';
 
 export const fetchPopularTrailers = async (page: number, options: { lang: Locales }): Promise<TrailerResponse[]> => {
-
 	const startingDate = new Date().toISOString().slice(0, 10);
 	const endDate = new Date(new Date().getTime() + 365 * 31 * 24 * 3600 * 1000).toISOString().slice(0, 10);
 

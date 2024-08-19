@@ -14,7 +14,7 @@ describe('fetchNowPlayingMovies tests', () => {
 	});
 
 	it('if an error occurred on the server, it should return null.', async () => {
-		server.use(http.get('https://api.themoviedb.org/3/discover/movie', () => {
+		server.use(http.get(`${process.env.API_BASE_URL}/${process.env.API_VERSION}/discover/movie`, () => {
 			return HttpResponse.json({
 				"success": false,
 				"status_code": 9,

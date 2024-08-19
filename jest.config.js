@@ -32,7 +32,7 @@ module.exports = {
     '^@/constants': '<rootDir>/src/constants/index.ts',
     '^@/msw/(.*)$': '<rootDir>/src/msw/$1',
   },
-  setupFiles: ['<rootDir>/jest.polyfills.js'],
+  setupFiles: ['<rootDir>/jest.polyfills.js', '<rootDir>/jest.setup-env-vars.js'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   transform: {

@@ -1,16 +1,20 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
 import { TrailersResponseList } from '../types';
-
-type MediaType = 'movie' | 'tv';
+import { MediaTypes } from '@/types/shared';
 
 const fetchTrailersByLocale = async (id: number, options: {
 	lang: Locales
-	type: MediaType,
+	type: Omit<MediaTypes, 'person'>,
 }): Promise<TrailersResponseList | null> => {
-	let trailers;
+	const url = new URL(
+		`/${process.env.API_VERSION}/${options.type}/${id}/videos`,
+		process.env.API_BASE_URL
+	);
+	url.searchParams.set('language', options.lang);
 
+	let trailers;
 	try {
-		const res = await fetch(`https://api.themoviedb.org/3/${options.type}/${id}/videos?language=${options.lang}`, {
+		const res = await fetch(url.href, {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',
@@ -35,7 +39,7 @@ const fetchTrailersByLocale = async (id: number, options: {
 
 export const fetchTrailersForMediaProject = async (id: number, options: {
 	lang: Locales,
-	type: MediaType,
+	type: Omit<MediaTypes, 'person'>,
 }): Promise<TrailersResponseList | null> => {
 	const preferredTrailers = await fetchTrailersByLocale(id, {
 		lang: options?.lang ?? fallbackLng,
@@ -47,7 +51,6 @@ export const fetchTrailersForMediaProject = async (id: number, options: {
 			lang: fallbackLng,
 			type: options.type,
 		});
-
 		return fallbackTrailers;
 	}
 

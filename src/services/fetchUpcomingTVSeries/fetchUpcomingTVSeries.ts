@@ -1,10 +1,9 @@
 
 import { Locales, fallbackLng } from "@/i18n/settings";
 import { ListsResponse, TVSeriesResponse } from "@/services/types";
-import { fetchTVSeriesByFilters } from "../fetchTVSeriesByFilters/fetchTVSeriesByFilters";
+import { fetchTVSeriesByFilters } from "@/services/fetchTVSeriesByFilters/fetchTVSeriesByFilters";
 
 export const fetchUpcomingTVSeries = async (page: number, options?: { lang: Locales }): Promise<ListsResponse<TVSeriesResponse> | null> => {
-
 	const startingDate = new Date().toISOString().slice(0, 10);
 	const endDate = new Date(new Date().getTime() + 31 * 24 * 3600 * 1000).toISOString().slice(0, 10);
 

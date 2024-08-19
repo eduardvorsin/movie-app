@@ -2,7 +2,7 @@ import { http, HttpResponse } from "msw";
 import { personDetailsData, personsData } from "../mock-data/person";
 
 export const handlers = [
-	http.get('https://api.themoviedb.org/3/person/popular', ({ request }) => {
+	http.get(`${process.env.API_BASE_URL}/${process.env.API_VERSION}/person/popular`, ({ request }) => {
 		const page = new URL(request.url).searchParams.get('page');
 
 		if (Number(page) < 1) {
@@ -16,7 +16,7 @@ export const handlers = [
 		return HttpResponse.json(personsData);
 	}),
 
-	http.get('https://api.themoviedb.org/3/person/:id', ({ params }) => {
+	http.get(`${process.env.API_BASE_URL}/${process.env.API_VERSION}/person/:id`, ({ params }) => {
 		if (Number(params.id) < 1) {
 			return HttpResponse.json({
 				success: false,

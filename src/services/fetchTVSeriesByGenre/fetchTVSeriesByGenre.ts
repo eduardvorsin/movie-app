@@ -1,7 +1,7 @@
 import { TVSeriesGenres } from './../../types/shared';
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { FilterOptions, ListsResponse, SortOptions, TVSeriesResponse } from '../types'
-import { fetchTVSeriesByFilters } from '../fetchTVSeriesByFilters/fetchTVSeriesByFilters';
+import { FilterOptions, ListsResponse, SortOptions, TVSeriesResponse } from '@/services/types'
+import { fetchTVSeriesByFilters } from '@/services/fetchTVSeriesByFilters/fetchTVSeriesByFilters';
 import { getGenreIdByName } from '@/helpers/getGenreIdByName/getGenreIdByName';
 import { getKeywordIdByName } from '@/helpers/getKeywordIdByName/getKeywordIdByName';
 import { Countries, getCountryCodeFromName } from '@/helpers/getCountryCodeFromName/getCountryCodeFromName';
@@ -28,7 +28,6 @@ export const fetchTVSeriesByGenre = async (
 	} else if (genre !== 'any' && !isSubgenre(genre)) {
 		genreId = getGenreIdByName(genre);
 	}
-
 	let firstAirDateGTE = '';
 	let firstAirDateLTE = '';
 	if (options && options.timePeriod) {
@@ -37,7 +36,6 @@ export const fetchTVSeriesByGenre = async (
 		firstAirDateLTE = `${timePeriods.at(-1)}-12-31`
 	}
 	const countryCode = getCountryCodeFromName(options?.country ?? '');
-
 
 	const config: FilterOptions<'tv'> = {
 		sort_by: options?.sortBy ?? 'vote_average.desc',

@@ -4,8 +4,10 @@ export const fetchTVSeriesByFilters = async (
 	page: number,
 	options: FilterOptions<'tv'>
 ): Promise<ListsResponse<TVSeriesResponse> | null> => {
-	const url = new URL('discover/tv', 'https://api.themoviedb.org/3/');
-
+	const url = new URL(
+		`/${process.env.API_VERSION}/discover/tv`,
+		process.env.API_BASE_URL
+	);
 	url.searchParams.append('page', page.toString());
 	(Object.keys(options) as Array<keyof typeof options>)
 		.forEach((query) => {

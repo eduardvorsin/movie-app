@@ -2,8 +2,10 @@
 import { http, HttpResponse } from 'msw';
 import { movieDetailsData, moviesData } from '../mock-data/movie';
 
+console.log('process.env.API_BASE_URL', process.env.API_BASE_URL);
+
 export const handlers = [
-	http.get('https://api.themoviedb.org/3/movie/:id', ({ params }) => {
+	http.get(`${process.env.API_BASE_URL}/${process.env.API_VERSION}/movie/:id`, ({ params }) => {
 		if (Number(params.id) < 1) {
 			return HttpResponse.json({
 				success: false,
@@ -15,7 +17,7 @@ export const handlers = [
 		return HttpResponse.json(movieDetailsData);
 	}),
 
-	http.get('https://api.themoviedb.org/3/discover/movie', ({ request }) => {
+	http.get(`${process.env.API_BASE_URL}/${process.env.API_VERSION}/discover/movie`, ({ request }) => {
 		const page = new URL(request.url).searchParams.get('page');
 
 		if (Number(page) < 1) {
@@ -29,7 +31,7 @@ export const handlers = [
 		return HttpResponse.json(moviesData);
 	}),
 
-	http.get('https://api.themoviedb.org/3/trending/movie/week', () => {
+	http.get(`${process.env.API_BASE_URL}/${process.env.API_VERSION}/trending/movie/week`, () => {
 		return HttpResponse.json(moviesData);
 	}),
 ];

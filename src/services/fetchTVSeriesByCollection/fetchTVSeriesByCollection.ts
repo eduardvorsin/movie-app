@@ -1,5 +1,5 @@
 import { Locales, fallbackLng } from '@/i18n/settings';
-import { fetchTVSeriesByFilters } from '../fetchTVSeriesByFilters/fetchTVSeriesByFilters';
+import { fetchTVSeriesByFilters } from '@/services/fetchTVSeriesByFilters/fetchTVSeriesByFilters';
 import { FilterOptions, ListsResponse, TVSeriesResponse } from '../types'
 import { Collections } from '@/constants';
 import { getKeywordIdByName } from '@/helpers/getKeywordIdByName/getKeywordIdByName';

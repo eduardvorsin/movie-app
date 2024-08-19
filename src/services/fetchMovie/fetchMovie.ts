@@ -28,12 +28,27 @@ export type MovieDetails = Omit<MovieResponse, 'genre_ids' | 'popularity'> & {
 	release_dates: { results: ReleaseDate[] },
 }
 
+const appendToResponse = [
+	'external_ids',
+	'credits',
+	'similar',
+	'recommendations',
+	'release_dates',
+	'reviews'
+] as const;
+
 export const fetchMovie = async (id: string, options?: { lang: Locales }): Promise<MovieDetails | null> => {
 	const currentLang = options?.lang ?? fallbackLng;
+	const url = new URL(
+		`/${process.env.API_VERSION}/movie/${id}`,
+		process.env.API_BASE_URL
+	);
+	url.searchParams.append('append_to_response', appendToResponse.join(','));
+	url.searchParams.append('language', currentLang);
 
 	let movie;
 	try {
-		const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?append_to_response=external_ids,credits,similar,recommendations,release_dates,reviews&language=${currentLang}`, {
+		const res = await fetch(url.href, {
 			method: 'GET',
 			headers: {
 				accept: 'application/json',
